@@ -126,6 +126,7 @@ async function boot() {
   const input = createInput(canvas, camera, rig, {
     onEscape: () => ctx.ui.escape(),
     onUse: () => { const thing = ctx.things.nearest(ctx.player.position); if (thing && !ctx.ui.busy) ctx.use(thing) },
+    onHover: ray => ctx.things.hover(ray),
     onPick: ray => { const thing = ctx.things.pick(ray); if (thing) ctx.approach(thing); return Boolean(thing) },
     onGround: point => { ctx.ui.closeDrawer(); ctx.fx.ping(point.x, point.z); ctx.player.goTo(point.x, point.z) },
   })

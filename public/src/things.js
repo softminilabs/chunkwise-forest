@@ -8,6 +8,7 @@ const ICON_RANGE = 7.5
 
 export function createThings(root, { onChoose }) {
   const list = []
+  let hovered = null
   const spot = new THREE.Vector3()
   const sphere = new THREE.Sphere()
 
@@ -51,8 +52,9 @@ export function createThings(root, { onChoose }) {
     for (const thing of list) {
       spot.set(thing.position.x, thing.height + 0.9 + Math.sin(time * 2 + thing.position.x) * 0.12, thing.position.z).project(camera)
       const gap = Math.hypot(thing.position.x - player.x, thing.position.z - player.z)
-      const shown = spot.z < 1 && Math.abs(spot.x) < 1.1 && Math.abs(spot.y) < 1.1 && !(thing.kind === 'app' && gap > ICON_RANGE)
+      const shown = spot.z < 1 && Math.abs(spot.x) < 1.1 && Math.abs(spot.y) < 1.1 && !(thing.kind === 'app' && gap > ICON_RANGE && thing !== hovered)
       thing.tag.hidden = !shown
+      thing.tag.classList.toggle('is-hover', thing === hovered)
       if (!shown) continue
       thing.tag.classList.toggle('is-near', thing === near)
       thing.tag.style.transform = `translate(-50%, -100%) translate(${((spot.x + 1) / 2 * width).toFixed(1)}px, ${((1 - spot.y) / 2 * height).toFixed(1)}px)`
@@ -61,5 +63,5 @@ export function createThings(root, { onChoose }) {
     return near
   }
 
-  return { list, add, nearest, pick, update }
+  return { list, add, nearest, pick, update, hover(ray) { hovered = ray ? pick(ray) : null; return Boolean(hovered) } }
 }

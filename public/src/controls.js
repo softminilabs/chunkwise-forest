@@ -32,6 +32,17 @@ export function createInput(canvas, camera, rig, handlers) {
   const point = new THREE.Vector3()
   const press = { active: false, x: 0, y: 0, moved: 0 }
   const blocked = () => document.body.dataset.modal === 'open'
+  const aim = event => {
+    const box = canvas.getBoundingClientRect()
+    raycaster.setFromCamera(new THREE.Vector2((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1), camera)
+    return raycaster.ray
+  }
+  let hovering = 0
+  /// 鼠标指到能用的东西上：光标变手型，它的名字标签冒出来。一帧最多查一次
+  const hover = event => {
+    cancelAnimationFrame(hovering)
+    hovering = requestAnimationFrame(() => { canvas.style.cursor = !blocked() && handlers.onHover(aim(event)) ? 'pointer' : '' })
+  }
 
   addEventListener('keydown', event => {
     if (typing() || event.metaKey || event.ctrlKey) return
@@ -45,7 +56,7 @@ export function createInput(canvas, camera, rig, handlers) {
 
   canvas.addEventListener('pointerdown', event => { Object.assign(press, { active: true, x: event.clientX, y: event.clientY, moved: 0 }); canvas.setPointerCapture(event.pointerId) })
   canvas.addEventListener('pointermove', event => {
-    if (!press.active) return
+    if (!press.active) return hover(event)
     const dx = event.clientX - press.x
     press.moved += Math.abs(dx) + Math.abs(event.clientY - press.y)
     if (press.moved > 8) { rig.yaw -= dx * 0.005; rig.yawGoal = null }
@@ -56,11 +67,12 @@ export function createInput(canvas, camera, rig, handlers) {
     if (!press.active) return
     press.active = false
     if (press.moved > 8 || blocked()) return
-    const box = canvas.getBoundingClientRect()
-    raycaster.setFromCamera(new THREE.Vector2((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1), camera)
-    if (handlers.onPick(raycaster.ray)) return
-    if (raycaster.ray.intersectPlane(ground, point)) handlers.onGround(point)
+    const ray = aim(event)
+    if (handlers.onPick(ray)) return
+    if (ray.intersectPlane(ground, point)) handlers.onGround(point)
   })
+  // 鼠标从东西上挪到它头顶的标签上不算离开：不然标签一出来就把自己弄没了，来回闪
+  canvas.addEventListener('pointerleave', event => { if (!event.relatedTarget?.closest?.('.tag')) { cancelAnimationFrame(hovering); handlers.onHover(null); canvas.style.cursor = '' } })
   canvas.addEventListener('wheel', event => { event.preventDefault(); rig.zoomGoal = Math.min(60, Math.max(18, rig.zoomGoal + event.deltaY * 0.03)) }, { passive: false })
 
   return {

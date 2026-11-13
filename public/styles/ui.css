@@ -45,6 +45,9 @@ h1, h2, h3, p { margin: 0; }
 @keyframes tag-in { from { opacity: 0; scale: .7; } }
 .tag-house .tag-text, .tag-spot .tag-text { display: flex; padding-right: 8px; }
 .tag-house .tag-text small, .tag-spot .tag-text small { display: none; }
+/* 鼠标指着的那样东西：把名字露出来 */
+.tag.is-hover .tag-text { display: flex; }
+.tag.is-hover .tag-text small { display: block; }
 .tag.is-near { padding: 6px; background: var(--lime); }
 .tag.is-near .tag-text { display: flex; }
 .tag.is-near .tag-text small { display: block; color: var(--ink); }
