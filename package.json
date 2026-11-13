@@ -1,0 +1,16 @@
+{
+  "name": "chunkwise-world",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "组块小镇：能逛的 3D 小镇，用文章学英语",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "apps": "node scripts/sync-apps.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "qrcode-generator": "2.0.4",
+    "three": "0.187.0"
+  }
+}

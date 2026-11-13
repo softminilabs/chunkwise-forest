@@ -1,0 +1,167 @@
+[
+  {
+    "id": "sundial",
+    "zh": "岁时",
+    "en": "Sundial",
+    "tagline": "把时间放在看得见的地方",
+    "taglineEn": "See where you are in time.",
+    "category": "Productivity",
+    "icon": "apps/icons/sundial.webp",
+    "store": "https://apps.apple.com/app/id6807945181",
+    "site": "https://softminilabs.github.io/sundial.html"
+  },
+  {
+    "id": "cadence",
+    "zh": "节拍间歇",
+    "en": "Cadence Intervals",
+    "tagline": "跟节拍练，每段都有动作说明",
+    "taglineEn": "Train to the beat, with every move explained.",
+    "category": "Health & Fitness",
+    "icon": "apps/icons/cadence.webp",
+    "store": "https://apps.apple.com/app/id6809324929",
+    "site": "https://softminilabs.github.io/cadence.html"
+  },
+  {
+    "id": "darealarm",
+    "zh": "特工闹钟",
+    "en": "DareAlarm",
+    "tagline": "不闯关就关不掉的任务闹钟",
+    "taglineEn": "An alarm you can't turn off until you win.",
+    "category": "Utilities",
+    "icon": "apps/icons/darealarm.webp",
+    "store": "https://apps.apple.com/app/id6761780256",
+    "site": "https://softminilabs.github.io/darealarm.html"
+  },
+  {
+    "id": "mdqr",
+    "zh": "码上美",
+    "en": "QArt",
+    "tagline": "让每一个二维码都好看到想分享",
+    "taglineEn": "QR codes you are proud to share.",
+    "category": "Utilities",
+    "icon": "apps/icons/mdqr.webp",
+    "store": "https://apps.apple.com/app/id6787645212",
+    "site": "https://softminilabs.github.io/mdqr.html"
+  },
+  {
+    "id": "ahhh",
+    "zh": "啊啊啊",
+    "en": "AHHH!",
+    "tagline": "大声喊出来的声控解压神器",
+    "taglineEn": "Yell to blast your anger away.",
+    "category": "Entertainment",
+    "icon": "apps/icons/ahhh.webp",
+    "store": "https://apps.apple.com/app/id6791314222",
+    "site": "https://softminilabs.github.io/ahhh.html"
+  },
+  {
+    "id": "subli",
+    "zh": "订况",
+    "en": "Subli",
+    "tagline": "看清每一笔订阅，不再白白续费",
+    "taglineEn": "See every subscription. Stop overpaying.",
+    "category": "Lifestyle",
+    "icon": "apps/icons/subli.webp",
+    "store": "https://apps.apple.com/app/id6772902416",
+    "site": "https://softminilabs.github.io/subli.html"
+  },
+  {
+    "id": "slong",
+    "zh": "长图拼接",
+    "en": "Long Stitch",
+    "tagline": "一串截图，一张看不出接缝的长图",
+    "taglineEn": "A stack of screenshots, one seamless image.",
+    "category": "Graphics & Design",
+    "icon": "apps/icons/slong.webp",
+    "store": "https://apps.apple.com/app/id6790084992",
+    "site": "https://softminilabs.github.io/slong.html"
+  },
+  {
+    "id": "dontforget",
+    "zh": "念念",
+    "en": "Days Since",
+    "tagline": "生日、纪念日、农历日，别忘了在乎的人",
+    "taglineEn": "Birthdays, anniversaries and the lunar calendar.",
+    "category": "Lifestyle",
+    "icon": "apps/icons/dontforget.webp",
+    "store": "https://apps.apple.com/app/id6772791871",
+    "site": "https://softminilabs.github.io/dontforget.html"
+  },
+  {
+    "id": "led",
+    "zh": "灯牌",
+    "en": "LED Sign",
+    "tagline": "手机秒变可以举起来的 LED 大字屏",
+    "taglineEn": "Turn your phone into a handheld LED marquee.",
+    "category": "Entertainment",
+    "icon": "apps/icons/led.webp",
+    "store": "https://apps.apple.com/app/id6765485195",
+    "site": "https://softminilabs.github.io/led.html"
+  },
+  {
+    "id": "lull",
+    "zh": "眠静",
+    "en": "Lull",
+    "tagline": "62 种环境音，今晚就睡个好觉",
+    "taglineEn": "62 ambient sounds for deep sleep and focus.",
+    "category": "Health & Fitness",
+    "icon": "apps/icons/lull.webp",
+    "store": "https://apps.apple.com/app/id6762201798",
+    "site": "https://softminilabs.github.io/lull.html"
+  },
+  {
+    "id": "zenpomo",
+    "zh": "番茄钟",
+    "en": "Pomodoro Clock",
+    "tagline": "安静、清晰、能坚持下去的专注计时器",
+    "taglineEn": "A calm focus timer you can stick with.",
+    "category": "Productivity",
+    "icon": "apps/icons/zenpomo.webp",
+    "store": "https://apps.apple.com/app/id6760449411",
+    "site": "https://softminilabs.github.io/zenpomo.html"
+  },
+  {
+    "id": "ligit",
+    "zh": "补光灯",
+    "en": "Colorful Light",
+    "tagline": "屏幕补光、手电、应援灯，一个就够",
+    "taglineEn": "Fill light, torch and cheer light in one.",
+    "category": "Utilities",
+    "icon": "apps/icons/ligit.webp",
+    "store": "https://apps.apple.com/app/id6738280307",
+    "site": "https://softminilabs.github.io/ligit.html"
+  },
+  {
+    "id": "aiprompt",
+    "zh": "Ai Prompt",
+    "en": "Ai Prompt",
+    "tagline": "AIGC 提示词专业助手",
+    "taglineEn": "Prompt ideas and writing support for AI.",
+    "category": "Utilities",
+    "icon": "apps/icons/aiprompt.webp",
+    "store": "https://apps.apple.com/app/id6447695834",
+    "site": "https://softminilabs.github.io/aiprompt.html"
+  },
+  {
+    "id": "counter",
+    "zh": "计数器",
+    "en": "Counter",
+    "tagline": "念珠、打卡、盘点，点一下就好",
+    "taglineEn": "Tasbih, habits and tally in one tap.",
+    "category": "Utilities",
+    "icon": "apps/icons/counter.webp",
+    "store": "https://apps.apple.com/app/id6446799575",
+    "site": "https://softminilabs.github.io/counter.html"
+  },
+  {
+    "id": "qrcode",
+    "zh": "二维码",
+    "en": "QRCode",
+    "tagline": "个性二维码生成、美化与扫码识别",
+    "taglineEn": "Generate, beautify and scan QR codes.",
+    "category": "Utilities",
+    "icon": "apps/icons/qrcode.webp",
+    "store": "https://apps.apple.com/app/id1620996505",
+    "site": "https://softminilabs.github.io/qrcode.html"
+  }
+]

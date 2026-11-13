@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+# 下面两个是 npm run sync 生成的：three.js 从 node_modules 拷来，课文和朗读从 ../chunkwise-web 拷来
+public/vendor/
+public/data/
