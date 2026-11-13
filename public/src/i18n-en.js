@@ -96,6 +96,7 @@ export const EN = {
   '开头那道题你猜对了：': 'You guessed the opening question right: ',
   '开头那道题，答案其实是：': 'The opening question. The answer was: ',
   '听完了': 'Finished',
+  '还有 {n} 句没听，听完整篇灯才亮': ({ n }) => `${n} ${Number(n) === 1 ? 'line' : 'lines'} still unheard. The lamp lights once you have heard them all.`,
   '第 {n} 课的灯亮了': 'Lesson {n} is lit',
   '收下 {n} 张新卡片，练习场里可以玩了：': 'New cards collected: {n}. You can play them in the practice ground:',
   '这一课的卡片你都收过了。': 'You already have all the cards from this lesson.',

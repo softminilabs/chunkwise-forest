@@ -62,6 +62,8 @@ function wait(session, i) {
 /// 一句读到头了。返回 true 表示已经停下来等跟读，这一帧不用再往下画
 function sentenceEnd(session, i) {
   markHeard(session, i)
+  // 补听：录音已经走到过头，只差几句没听。最后一句没听的补上了，当场算读完，不用再走到末尾
+  if (session.catchUp && session.loop === 'off' && session.heard.size === session.lesson.sentences.length) { finish(session); return true }
   if (session.loop === 'one') { session.audio.currentTime = session.lesson.timing[i].a; session.ended = -1; return false }
   if (session.mode !== 'shadow') return false
   wait(session, i)
@@ -95,6 +97,9 @@ function tick(session) {
   }
   const t = audio.currentTime
   const i = lesson.timing.findIndex((item, k) => t >= item.a && t < (lesson.timing[k + 1]?.a ?? Infinity))
+  // 网页切到后台时这里一秒才来一两次，短句子会整句漏过去：一路连着放过来的，中间那几句也算听过
+  // （拖进度条、点别的句子都会先把 playing 改掉，不会走到这儿）
+  if (!audio.paused && playing >= 0) for (let k = playing + 1; k < i; k++) markHeard(session, k)
   if (!audio.paused && i !== session.playing) { session.playing = i; session.ended = -1 }
   show(session, i)
   paint(session, t, i)
@@ -178,7 +183,6 @@ function resultNode(session, outcome) {
 function complete(session) {
   const { ctx, lesson } = session
   if (session.outcome) return
-  lesson.sentences.forEach((_, i) => markHeard(session, i))
   session.outcome = ctx.state.finish(lesson, 1)
   ctx.audio.chime(4)
   ctx.onLesson(lesson)
@@ -189,17 +193,31 @@ function finish(session) {
   if (session.finished) return
   session.finished = true
   cancelWait(session)
+  session.audio.pause()
   complete(session)
   view.main.replaceChildren(resultNode(session, session.outcome))
   view.bar.hidden = true
 }
 
-/// 录音放到头了。单句循环：最后一句也照样循环，不能就这么结束；整篇循环：记一次完成，从头再来
+/// 录音放到头了。亮不亮灯看的是每一句有没有真听过，不看录音走没走到头：
+/// 不然把进度条拖到末尾听最后一句，灯就亮了、卡片也收了。
+/// 单句循环：最后一句照样循环；整篇循环：从头再来，每一句都听过了才记完成
 function ended(session) {
-  if (session.loop === 'one') return jump(session, session.lesson.timing.length - 1)
-  if (session.loop === 'off') return finish(session)
-  complete(session)
-  jump(session, 0)
+  const { ctx, lesson, audio } = session
+  const last = lesson.timing.length - 1
+  if (session.loop === 'one') return jump(session, last)
+  // 尾音放完时最后一句也算听过（按帧检查的那边可能还没来得及记）
+  if (session.playing === last) markHeard(session, last)
+  const missing = lesson.sentences.findIndex((_, i) => !session.heard.has(i))
+  if (missing < 0 && session.loop === 'off') return finish(session)
+  if (missing < 0) complete(session)
+  if (session.loop === 'all') return jump(session, 0)
+  // 还有没听的：停到第一句没听的那儿，等人接着听
+  session.catchUp = true
+  ctx.ui.toast(t('还有 {n} 句没听，听完整篇灯才亮', { n: lesson.sentences.length - session.heard.size }))
+  session.playing = -1
+  audio.currentTime = lesson.timing[missing].a
+  tick(session)
 }
 
 /// 进度条：点和拖都行
@@ -272,7 +290,7 @@ function bind(session) {
 export async function openReader(ctx, meta) {
   const lesson = await (await fetch(`data/lessons/${meta.id}.json`)).json()
   const audio = new Audio(`data/audio/${meta.id}.m4a`)
-  const session = { ctx, lesson, audio, mode: 'read', loop: 'off', zh: false, speed: 0, outcome: null, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
+  const session = { ctx, lesson, audio, mode: 'read', loop: 'off', zh: false, speed: 0, outcome: null, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, catchUp: false, picked: null, dragging: false, onKey: null }
   session.view = buildReader(ctx, lesson, buildSide(ctx, lesson, i => jump(session, i)), MODES)
   bind(session)
   setMode(session, session.mode)
