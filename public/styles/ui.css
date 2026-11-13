@@ -88,6 +88,10 @@ h1, h2, h3, p { margin: 0; }
 .menu .stat { box-shadow: none; background: var(--sage-pale); white-space: nowrap; }
 .stat { display: flex; align-items: baseline; gap: 6px; padding: 8px 14px; border-radius: 999px; background: var(--paper); box-shadow: var(--press); font-size: 13px; color: var(--body); border: 0; }
 .stat strong { font-size: 18px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+/* 有的按钮带大一号的字（宝箱 5/15、森林 冬夜），有的只有小字（声音、EN）。小字是跟着大字的基线排的，
+   没有大字的按钮里小字就会偏高。每个按钮开头垫一个看不见的大号字，所有按钮的小字才落在同一条线上。
+   负的外边距是把它多占的那一个间距还回去 */
+.stat::before { content: "\200b"; font-size: 18px; font-weight: 700; margin-right: -6px; }
 button.stat { cursor: pointer; }
 
 /* 底下：接着学，不用走路 */
