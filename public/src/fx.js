@@ -14,7 +14,14 @@ export function createFx(scene) {
     return { mesh, velocity: new THREE.Vector3(), life: 0 }
   })
   let cursor = 0
+  // 点地面时落点冒一个圈：让人知道点到哪儿了、小陈要往哪走
+  const ring = new THREE.Mesh(new THREE.RingGeometry(0.42, 0.58, 32), flat(C.lime, { glow: true, transparent: true }))
+  ring.rotation.x = -Math.PI / 2
+  ring.visible = false
+  scene.add(ring)
+  let pinged = 0
   return {
+    ping(x, z) { ring.position.set(x, 0.1, z); ring.visible = true; pinged = 1 },
     burst(x, y, z, count = 16, power = 1) {
       for (let k = 0; k < count; k++) {
         const bit = pool[cursor = (cursor + 1) % pool.length]
@@ -26,6 +33,12 @@ export function createFx(scene) {
       }
     },
     update(dt) {
+      if (pinged > 0) {
+        pinged -= dt * 2.4
+        ring.scale.setScalar(1.9 - pinged * 1.3)
+        ring.material.opacity = Math.max(0, pinged)
+        ring.visible = pinged > 0
+      }
       for (const bit of pool) {
         if (bit.life <= 0) continue
         bit.life -= dt
