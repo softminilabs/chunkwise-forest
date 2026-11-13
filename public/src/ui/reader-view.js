@@ -21,7 +21,8 @@ export const icon = name => h('span', { class: 'icon', html: `<svg viewBox="0 0 
 /// 一句话拆成一个个词（朗读时逐词点亮），组块和生词所在的那一段套上标记，点它能看解释
 function sentenceNode(sentence, index, words, marks) {
   const node = h('span', { class: 's', 'data-i': index })
-  const markOf = (from, to) => marks.find(mark => from >= mark.r[0] && to <= mark.r[1])
+  // 一个词同时落在两张卡的范围里（生词在组块里面）时归最窄的那张：归第一张的话，里面那张在课文里就点不到了
+  const markOf = (from, to) => marks.filter(mark => from >= mark.r[0] && to <= mark.r[1]).sort((a, b) => (a.r[1] - a.r[0]) - (b.r[1] - b.r[0]))[0]
   const piece = (from, to, word) => {
     const mark = markOf(from, to)
     const text = sentence.en.slice(from, to)

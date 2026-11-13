@@ -17,15 +17,51 @@ function copyVendor() {
   cpSync('node_modules/qrcode-generator/dist/qrcode.mjs', join(VENDOR, 'qrcode.mjs'))
 }
 
-/// 一课里用到的组块：位置取这一课里第一次出现的那句
-function chunksOf(lesson, allChunks) {
+const tokens = text => [...text.matchAll(/[A-Za-z']+/g)].map(match => ({ word: match[0].toLowerCase(), from: match.index, to: match.index + match[0].length }))
+// 组块写法里的占位词：到了句子里是别的词（sb → me、doing → checking），be 会变形或缩写（He's）
+const PLACEHOLDERS = new Set(['sb', 'sth', "sb's", 'doing', 'do', 'be'])
+
+/// 手稿的填空答案在这一句里的位置；一句里出现两次时取和原来划的那段重叠最多的那一处
+function locate(text, answer, r) {
+  const needle = answer.replace(/[.,!?]+$/, '').toLowerCase()
+  const lower = text.toLowerCase()
+  let best = null
+  for (let at = lower.indexOf(needle); at >= 0; at = lower.indexOf(needle, at + 1)) {
+    const overlap = Math.min(at + needle.length, r[1]) - Math.max(at, r[0])
+    if (!best || overlap > best.overlap) best = { at, overlap }
+  }
+  return best && [best.at, best.at + needle.length]
+}
+
+/// 组块在这一句里到底占哪几个字符。网页版算出来的范围 r 常常是手稿里「原话」那一整段（he promised to call me back），
+/// 课文里的下划线和练习里的空都跟着宽了半句。这里收窄到组块自己的词：
+/// 手稿的填空答案盖得住整个组块（call me back）就用它；答案只是组块的一截（pick up 的答案是 up），
+/// 就在原来那段里找从组块第一个词到最后一个词（picked it up）；隔得太远（left … with a note）还是用答案
+function tighten(text, r, chunk, forms, answer) {
+  const content = tokens(chunk.replaceAll('/', ' ')).map(item => item.word).filter(word => !PLACEHOLDERS.has(word))
+  const answerAt = answer ? locate(text, answer, r) : null
+  if (answerAt && tokens(text.slice(...answerAt)).length >= content.length) return answerAt
+  const shapes = Object.values(forms ?? {}).filter(form => typeof form === 'string').map(tokens)
+  const first = new Set([content[0], ...shapes.map(shape => shape[0]?.word)])
+  const last = new Set([content.at(-1), ...shapes.map(shape => shape.at(-1)?.word)])
+  const words = tokens(text.slice(r[0], r[1]))
+  const i = words.findIndex(item => first.has(item.word))
+  const j = words.findLastIndex(item => last.has(item.word))
+  if (i >= 0 && j >= i && j - i + 1 <= tokens(chunk).length + 3) return [r[0] + words[i].from, r[0] + words[j].to]
+  return answerAt ?? r
+}
+
+/// 一课里用到的组块：位置取这一课里第一次出现的那句。formsOf：每个组块的变形（讲它的那一课手稿里写的）
+function chunksOf(lesson, allChunks, sentences, formsOf) {
   const found = []
   for (const chunk of allChunks) {
     const use = chunk.uses.find(item => item.l === lesson.id)
     if (!use) continue
-    // 这一课重点讲的组块，课文里另有中文的用法提示和例句
+    // 这一课重点讲的组块，课文里另有中文的用法提示和例句，练习里有手写的填空
     const taught = lesson.expressions.find(item => item.chunk === chunk.chunk)
-    found.push({ id: chunk.id, kind: 'chunk', text: chunk.chunk, zh: chunk.zh, note: chunk.def, tip: taught?.note ?? '', example: taught?.example ?? '', s: use.s, r: use.r })
+    const answer = taught && lesson.practice.cloze.find(item => item.en === taught.inText)?.answer
+    const r = tighten(sentences[use.s].en, use.r, chunk.chunk, formsOf.get(chunk.chunk), answer)
+    found.push({ id: chunk.id, kind: 'chunk', text: chunk.chunk, zh: chunk.zh, note: chunk.def, tip: taught?.note ?? '', example: taught?.example ?? '', s: use.s, r })
   }
   return found
 }
@@ -44,18 +80,20 @@ function wordsOf(lesson, sentences) {
     const start = from + Math.max(0, inner)
     let end = inner < 0 ? from + needle.length : start + item.word.length
     if (inner >= 0) while (/[a-z]/i.test(text[end] ?? '')) end += 1
+    // 所有格的 's 也算这个词的（newsagent's）：朗读的时间轴里它是一个词，不带上的话这张卡在课文里点不到
+    if (text.slice(end, end + 2).toLowerCase() === "'s") end += 2
     found.push({ id: `w-${item.word.toLowerCase().replace(/[^a-z]+/g, '-')}`, kind: 'word', text: item.word, pos: item.pos, zh: item.zh, note: item.note ?? '', s, r: [start, end] })
   }
   return found
 }
 
 /// seen：整套课里已经出过场的卡片。第一次出场的那一课记成 fresh，并把这张卡写进总表（练习场用）
-function buildLesson(lesson, allChunks, seen) {
+function buildLesson(lesson, allChunks, seen, formsOf) {
   const timing = readJSON(join(WEB, `content/audio/${lesson.id}.json`))
   const sentences = lesson.paragraphs.flatMap((paragraph, p) =>
     paragraph.en.map((en, k) => ({ en, zh: paragraph.zh[k], p, ...(paragraph.speaker && k === 0 ? { speaker: paragraph.speaker } : {}) })))
   if (sentences.length !== timing.sentences.length) throw new Error(`${lesson.id}：句子 ${sentences.length} 句，时间轴 ${timing.sentences.length} 句，对不上`)
-  const cards = [...chunksOf(lesson, allChunks), ...wordsOf(lesson, sentences)].sort((a, b) => a.s - b.s || a.r[0] - b.r[0])
+  const cards = [...chunksOf(lesson, allChunks, sentences, formsOf), ...wordsOf(lesson, sentences)].sort((a, b) => a.s - b.s || a.r[0] - b.r[0])
   for (const card of cards) {
     card.fresh = !seen.has(card.id)
     if (!card.fresh) continue
@@ -81,11 +119,13 @@ function main() {
   const units = outline.units.filter(unit => unit.number <= B1_UNITS).map(unit => ({ n: unit.number, zh: unit.title, en: '', summary: unit.summary ?? '', lessons: [] }))
   const seen = new Map()
   const files = readdirSync(join(WEB, 'content/lessons')).filter(name => name.endsWith('.json')).sort()
-  for (const name of files) {
-    const source = readJSON(join(WEB, 'content/lessons', name))
+  const sources = files.map(name => readJSON(join(WEB, 'content/lessons', name)))
+  const formsOf = new Map(sources.flatMap(source => source.expressions.map(item => [item.chunk, item.forms])))
+  for (const [k, name] of files.entries()) {
+    const source = sources[k]
     const unit = units.find(item => item.n === source.unit.number)
     if (!unit) continue
-    const lesson = buildLesson(source, allChunks, seen)
+    const lesson = buildLesson(source, allChunks, seen, formsOf)
     unit.en = source.unit.en
     unit.lessons.push({ id: lesson.id, n: lesson.n, title: lesson.title, genre: lesson.genre, words: lesson.words, seconds: lesson.seconds, cards: lesson.cards.map(card => card.id) })
     writeFileSync(join(OUT, 'lessons', name), JSON.stringify(lesson))
