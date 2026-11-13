@@ -1,4 +1,4 @@
-// 界面的几块公用地盘：右边的抽屉、盖住森林的大卡片、顶上的提示条
+// 界面的几块公用地盘：屏幕中间的小卡片（代码里沿用旧名 drawer，它原先是右边的抽屉）、盖住森林的大卡片、顶上的提示条
 import { lang, pick, t } from '../i18n.js'
 
 export function h(tag, attributes = {}, ...children) {
@@ -28,17 +28,19 @@ export function appCard(app) {
     h('a', { class: 'button', href: app.store, target: '_blank', rel: 'noopener' }, 'App Store'))
 }
 
-export function createUI(rig, audio) {
+export function createUI(audio) {
   const drawer = document.getElementById('drawer')
   const modal = document.getElementById('modal')
   const toasts = document.getElementById('toasts')
   let drawerClosed = null
   let modalClosed = null
+  // 小卡片正在淡出时的那段动画；淡完才真正收起来
+  let fading = null
 
   function closeDrawer() {
-    if (drawer.hidden) return
-    drawer.hidden = true
-    rig.sideGoal = 0
+    if (drawer.hidden || fading) return
+    fading = drawer.animate({ opacity: [1, 0] }, { duration: 200, easing: 'ease-in' })
+    fading.onfinish = () => { drawer.hidden = true; fading = null }
     const done = drawerClosed
     drawerClosed = null
     done?.()
@@ -46,6 +48,9 @@ export function createUI(rig, audio) {
 
   function openDrawer({ kicker, title, sub, body, app, onClose }) {
     closeDrawer()
+    // 上一张还在淡出就又开了一张：不等它淡完，直接换内容
+    fading?.cancel()
+    fading = null
     drawerClosed = onClose ?? null
     drawer.replaceChildren(...[
       h('header', { class: 'drawer-head' },
@@ -54,7 +59,7 @@ export function createUI(rig, audio) {
       h('div', { class: 'drawer-body' }, body),
       app && appCard(app)].filter(Boolean))
     drawer.hidden = false
-    rig.sideGoal = innerWidth > 720 ? 6.5 : 0
+    drawer.animate({ opacity: [0, 1] }, { duration: 300, easing: 'ease-out' })
     audio.pop()
   }
 
@@ -88,8 +93,8 @@ export function createUI(rig, audio) {
   return {
     openDrawer, closeDrawer, openModal, closeModal, toast,
     get busy() { return !modal.hidden },
-    get drawerOpen() { return !drawer.hidden },
-    /// Esc：先关大卡片，再关抽屉
+    get drawerOpen() { return !drawer.hidden && !fading },
+    /// Esc：先关大卡片，再关小卡片
     escape() { if (!modal.hidden) closeModal(); else closeDrawer() },
   }
 }

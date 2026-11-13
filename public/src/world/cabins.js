@@ -39,7 +39,7 @@ function build({ wide, tall, wall, roof }) {
 function place(made, x, z, turn) {
   made.root.position.set(x, height(x, z), z)
   made.root.rotation.y = turn
-  return { ...made, x, z, y: made.root.position.y, doorAt: { x: x + Math.sin(turn) * 4.3, z: z + Math.cos(turn) * 4.3 }, face: turn, lit: false }
+  return { ...made, x, z, y: made.root.position.y, doorAt: { x: x + Math.sin(turn) * 4.3, z: z + Math.cos(turn) * 4.3 }, lit: false }
 }
 
 export function createCabins(scene, course, colliders) {

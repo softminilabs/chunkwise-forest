@@ -6,26 +6,20 @@ const KEYS = { KeyW: [0, 1], ArrowUp: [0, 1], KeyS: [0, -1], ArrowDown: [0, -1],
 const typing = () => /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName ?? '')
 
 export function createRig(camera) {
-  const rig = { yaw: 0, yawGoal: null, pitch: 0.44, sky: 0, skyGoal: 0, distance: 30, focus: new THREE.Vector3(0, 0, 22), side: 0, sideGoal: 0, zoomGoal: 30 }
+  const rig = { yaw: 0, pitch: 0.44, sky: 0, skyGoal: 0, distance: 30, focus: new THREE.Vector3(0, 0, 22), zoomGoal: 30 }
   rig.update = (dt, target) => {
     rig.focus.x = damp(rig.focus.x, target.x, 5, dt)
     rig.focus.z = damp(rig.focus.z, target.z, 5, dt)
     rig.focus.y = damp(rig.focus.y, target.y, 3, dt)
-    rig.side = damp(rig.side, rig.sideGoal, 4, dt)
-    // 用一样东西时镜头绕到它正面去；绕的时候走最近的那一边
-    if (rig.yawGoal != null) rig.yaw += Math.atan2(Math.sin(rig.yawGoal - rig.yaw), Math.cos(rig.yawGoal - rig.yaw)) * (1 - Math.exp(-3 * dt))
     rig.distance = damp(rig.distance, rig.zoomGoal, 6, dt)
     // 平时是俯视，天不在画面里。要看天（流星）的时候镜头放低、抬头：人留在画面下沿，上半屏让给夜空。
     // 抬得慢、收得快：一走动就得马上看清脚下的路
     rig.sky = damp(rig.sky, rig.skyGoal, rig.skyGoal ? 1.3 : 3.5, dt)
     const pitch = rig.pitch - 0.24 * rig.sky
     const reach = Math.cos(pitch) * rig.distance
-    // 右边开着面板时把看的点往右挪，正在用的东西就留在画面左半边，不被面板盖住
-    const lookX = rig.focus.x + Math.cos(rig.yaw) * rig.side
-    const lookZ = rig.focus.z - Math.sin(rig.yaw) * rig.side
-    camera.position.set(lookX + Math.sin(rig.yaw) * reach, rig.focus.y + Math.sin(pitch) * rig.distance, lookZ + Math.cos(rig.yaw) * reach)
+    camera.position.set(rig.focus.x + Math.sin(rig.yaw) * reach, rig.focus.y + Math.sin(pitch) * rig.distance, rig.focus.z + Math.cos(rig.yaw) * reach)
     // 看的点比小陈高一截：人落在画面下三分之一，前面的房子和天露出来
-    camera.lookAt(lookX, rig.focus.y + 3.2 + 3.5 * rig.sky, lookZ)
+    camera.lookAt(rig.focus.x, rig.focus.y + 3.2 + 3.5 * rig.sky, rig.focus.z)
   }
   return rig
 }
@@ -64,7 +58,7 @@ export function createInput(canvas, camera, rig, handlers) {
     if (!press.active) return hover(event)
     const dx = event.clientX - press.x
     press.moved += Math.abs(dx) + Math.abs(event.clientY - press.y)
-    if (press.moved > 8) { rig.yaw -= dx * 0.005; rig.yawGoal = null }
+    if (press.moved > 8) rig.yaw -= dx * 0.005
     press.x = event.clientX
     press.y = event.clientY
   })

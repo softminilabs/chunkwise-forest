@@ -66,10 +66,10 @@ function openCamp(ctx) {
 function addPlaces(ctx) {
   const spot = cabin => new THREE.Vector3(cabin.x, cabin.y, cabin.z)
   for (const house of ctx.cabins.houses) {
-    ctx.things.add({ kind: 'house', title: pick(house.unit), hint: lang === 'en' ? t('{n} 课', { n: house.unit.lessons.length }) : house.unit.en, badge: house.unit.n, position: spot(house), spot: house.doorAt, stop: 1.3, height: house.height, radius: 3.4, reach: 5.8, face: house.face, use: () => openUnit(ctx, house) })
+    ctx.things.add({ kind: 'house', title: pick(house.unit), hint: lang === 'en' ? t('{n} 课', { n: house.unit.lessons.length }) : house.unit.en, badge: house.unit.n, position: spot(house), spot: house.doorAt, stop: 1.3, height: house.height, radius: 3.4, reach: 5.8, use: () => openUnit(ctx, house) })
   }
   const { lodge } = ctx.cabins
-  ctx.things.add({ kind: 'house', title: t('单词屋'), hint: t('还没开门'), badge: t('词'), position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, face: lodge.face, use: () => ctx.ui.toast(t('单词屋<b>还没开门</b>，下一步就开')) })
+  ctx.things.add({ kind: 'house', title: t('单词屋'), hint: t('还没开门'), badge: t('词'), position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, use: () => ctx.ui.toast(t('单词屋<b>还没开门</b>，下一步就开')) })
   const camp = ctx.camp.state
   ctx.things.add({ kind: 'spot', title: t('篝火'), hint: t('点火 · 坐下来练一轮'), badge: t('火'), position: new THREE.Vector3(camp.x, camp.y, camp.z), height: 2, radius: 1.8, reach: 4.4, use: () => openCamp(ctx) })
 }
@@ -81,10 +81,9 @@ function wire(ctx) {
     const spot = thing.spot ?? thing.position
     ctx.player.goTo(spot.x, spot.z, thing.stop ?? thing.reach - 0.6, () => ctx.use(thing))
   }
-  /// 用木屋的时候镜头转到门的正前方：看得见门脸，人也不会被屋子挡在后面
+  // 打开东西的时候镜头不动：内容在屏幕中间出来，场景跟着转、跟着挪反而晃眼
   ctx.use = thing => {
     ctx.ui.closeDrawer()
-    if (thing.face != null) ctx.rig.yawGoal = thing.face
     thing.use()
   }
   ctx.openLesson = meta => { ctx.ui.closeDrawer(); return openReader(ctx, meta) }
@@ -162,7 +161,7 @@ async function boot() {
   const state = createState(course)
   const audio = createAudio(state)
   const rig = createRig(camera)
-  const ctx = { course, cards, apps, state, audio, rig, camera, renderer, ui: createUI(rig, audio), sounds: createSounds(audio, state) }
+  const ctx = { course, cards, apps, state, audio, rig, camera, renderer, ui: createUI(audio), sounds: createSounds(audio, state) }
   buildWorld(ctx)
   wire(ctx)
   ctx.things = createThings(document.getElementById('tags'), { onChoose: thing => ctx.approach(thing) })
