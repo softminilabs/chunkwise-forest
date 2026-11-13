@@ -1,5 +1,5 @@
 // 天色和天气。季节默认跟着真实的日子、昼夜默认跟着真实的时间，都可以在「森林」面板里改成固定的。
-// 这里管：光、雾、天空的颜色，还有飘着的东西——雨、雪、花瓣、落叶、萤火虫、星星、流星
+// 这里管：光、雾、天空的颜色，还有飘着的东西——雨、雪、落叶、萤火虫、星星、流星
 import * as THREE from 'three'
 import { LOOK, NIGHT_SKY, damp, leafGeometry, points, seasonOf, seeded, smooth, weathersOf } from '../look.js'
 
@@ -18,7 +18,6 @@ const BOX = { x: 84, z: 72 }
 const wrap = (value, center, size) => center + ((((value - center + size / 2) % size) + size) % size) - size / 2
 // 雨有大小：春天是小雨，夏天是雷雨
 const RAIN = { spring: 200, summer: 520, autumn: 340 }
-const PETALS = ['#F9B4CA', '#FAD7E2', '#FFFFFF']
 
 const scatter = (count, top) => Array.from({ length: count }, () => ({ x: random.between(-BOX.x / 2, BOX.x / 2), y: random.between(0, top), z: random.between(-BOX.z / 2, BOX.z / 2), speed: random.between(0.7, 1.3), phase: random.next() * 6.28 }))
 
@@ -47,7 +46,8 @@ function createRain(scene) {
   }
 }
 
-/// 落叶 / 花瓣：一片片叶子形状的薄片，边落边翻。受光照，夜里会暗下去，不会像灯一样亮着
+/// 落叶：一片片叶子形状的薄片，边落边翻，只在秋天有。受光照，夜里会暗下去，不会像灯一样亮着。
+/// 春天原来飘粉色的花瓣，夜里被木屋的暖光一照是橙色的，看着就是「春天在落叶」，所以去掉了
 function createLeaves(scene) {
   const leaves = new THREE.InstancedMesh(leafGeometry(0.36), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 1, side: THREE.DoubleSide }), 64)
   leaves.frustumCulled = false
@@ -56,16 +56,15 @@ function createLeaves(scene) {
   const tint = new THREE.Color()
   scene.add(leaves)
   return {
-    /// 换季：落叶用这一季树叶的颜色，春天是花瓣
-    paint(look, season) {
-      const colors = season === 'spring' ? PETALS : look.leaf
+    /// 换季：落叶用这一季树叶的颜色
+    paint(look) {
+      const colors = look.leaf
       falling.forEach((_, i) => leaves.setColorAt(i, tint.set(colors[i % colors.length])))
       leaves.instanceColor.needsUpdate = true
     },
     update(dt, time, focus, now) {
-      leaves.visible = (now.season === 'autumn' || now.season === 'spring') && now.weather !== 'rain'
+      leaves.visible = now.season === 'autumn' && now.weather !== 'rain'
       if (!leaves.visible) return
-      const small = now.season === 'spring' ? 0.7 : 1
       falling.forEach((leaf, i) => {
         leaf.y -= 0.9 * leaf.speed * dt
         if (leaf.y < 0) leaf.y += 9
@@ -73,7 +72,6 @@ function createLeaves(scene) {
         leaf.z = wrap(leaf.z, focus.z - 6, BOX.z)
         dummy.position.set(leaf.x, focus.y + leaf.y, leaf.z)
         dummy.rotation.set(time * leaf.speed * 1.7 + leaf.phase, leaf.phase, time * leaf.speed + leaf.phase * 2)
-        dummy.scale.setScalar(small)
         dummy.updateMatrix()
         leaves.setMatrixAt(i, dummy.matrix)
       })
@@ -203,7 +201,7 @@ export function createWeather(scene, renderer, state) {
     now.paintedSeason = season
     now.painted = -1
     for (const listener of listeners) listener(LOOK[season], season)
-    air.paint(LOOK[season], season)
+    air.paint(LOOK[season])
     for (const watcher of watchers) watcher()
   }
 
