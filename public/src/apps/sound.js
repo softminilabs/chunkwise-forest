@@ -1,4 +1,4 @@
-// 跟声音有关的三样：池塘边的收音机（眠静）、节拍器（节拍间歇）、岛尖上的喇叭（啊啊啊）
+// 跟声音有关的三样：收音机（眠静）、节拍器（节拍间歇）、大喇叭（啊啊啊）
 import * as THREE from 'three'
 import { C } from '../palette.js'
 import { at, ball, box, drum, flat, group, pill, toy } from '../toy.js'
@@ -31,16 +31,10 @@ function createRain(scene) {
 
 /// 眠静：选一种环境声陪你学。选了下雨，小镇真的会下雨
 export function lull(ctx, app) {
-  const ripple = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.0, 40), flat(C.lilac))
-  ripple.rotation.x = -Math.PI / 2
-  const water = new THREE.Mesh(new THREE.CircleGeometry(2.7, 48), flat(C.white))
-  water.rotation.x = -Math.PI / 2
-  const rim = new THREE.Mesh(new THREE.RingGeometry(2.7, 3.0, 48), flat(C.lilac))
-  rim.rotation.x = -Math.PI / 2
   const antenna = toy(pill(0.04, 1.0), C.ink, { outline: 0.04 })
   antenna.rotation.z = -0.5
   const radio = group(toy(box(1.5, 1.0, 0.7, 0.2), C.violet, { outline: 0.1 }), at(toy(ball(0.3, 1), C.ink, { outline: 0 }), -0.32, 0, 0.26), at(toy(ball(0.12), C.lime, { outline: 0 }), 0.38, 0.18, 0.36), at(toy(ball(0.12), C.white, { outline: 0 }), 0.38, -0.18, 0.36), at(antenna, 0.7, 0.9, 0))
-  const node = group(at(water, 0, 0.04, -3.6), at(rim, 0, 0.045, -3.6), at(ripple, 0, 0.05, -3.6), at(radio, 0, 0.62, 0), at(toy(drum(0.9, 1.0, 0.24, 0.1), C.white, { outline: 0.09 }), 0, 0, 0))
+  const node = group(at(radio, 0, 0.62, 0), toy(drum(0.9, 1.0, 0.24, 0.1), C.white, { outline: 0.09 }))
   const rain = createRain(ctx.scene)
   function open() {
     const row = h('div', { class: 'row' })
@@ -49,10 +43,6 @@ export function lull(ctx, app) {
     ctx.ui.openDrawer({ kicker: '挑一种声音陪你学', title: '环境声', sub: '声音是现场合成的。再点一次同一个就关掉；选「下雨」，小镇会真的下起来。', app, body: [row, h('p', { class: 'note' }, '开着它去读课文也行：朗读的声音在上面，环境声垫在底下。')] })
   }
   function update(dt, time) {
-    const wave = (time * 0.5) % 1
-    ripple.scale.setScalar(0.6 + wave * 2)
-    ripple.material.opacity = 1 - wave
-    ripple.material.transparent = true
     radio.rotation.z = ctx.audio.bed ? Math.sin(time * 9) * 0.03 : 0
     rain.lines.visible = ctx.audio.bed === 'rain'
     if (rain.lines.visible) rain.update(dt)
@@ -84,8 +74,8 @@ export function cadence(ctx, app) {
   return { node, height: 3.2, size: 1.1, hint: '跟着拍子念', open, update }
 }
 
-/// 啊啊啊：岛尖上的大喇叭。按住蓄力，松手把烦心事喊飞
-export function ahhh(ctx, app) {
+/// 啊啊啊：大喇叭。按住蓄力，松手把烦心事喊飞
+export function ahhh(ctx, app, place) {
   const horn = toy(drum(1.05, 0.22, 1.9, 0.12), C.lime, { outline: 0.11 })
   horn.rotation.x = -1.15
   const rings = Array.from({ length: 3 }, () => { const ring = new THREE.Mesh(new THREE.TorusGeometry(1, 0.07, 8, 40), flat(C.white, { glow: true, transparent: true })); ring.visible = false; return ring })
@@ -95,7 +85,7 @@ export function ahhh(ctx, app) {
   function shout(power) {
     blast = 1
     ctx.audio.whoosh(power)
-    ctx.fx.burst(node.position.x, 3, node.position.z + 2, 26, 1 + power)
+    ctx.fx.burst(place.x, 3, place.z, 26, 1 + power)
     const layer = h('div', { class: 'shout', 'aria-hidden': 'true' }, WORDS.map((word, k) => h('b', { style: `--a:${k * 45 + 20}deg;--d:${(34 + power * 30).toFixed(0)}vmin;animation-delay:${k * 25}ms` }, word)))
     document.body.append(layer)
     setTimeout(() => layer.remove(), 1500)

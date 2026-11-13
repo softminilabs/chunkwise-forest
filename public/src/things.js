@@ -3,7 +3,8 @@
 // 标签是普通的网页元素，字清楚、能点，触屏上点标签就等于点东西
 import * as THREE from 'three'
 
-const ICON_RANGE = 15
+// 摊位的招牌上已经有图标了，头顶的标签只在走到跟前时才出
+const ICON_RANGE = 7.5
 
 export function createThings(root, { onChoose }) {
   const list = []

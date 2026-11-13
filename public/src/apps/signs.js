@@ -42,8 +42,9 @@ function drawDots(context, dots, offset) {
 export function led(ctx, app) {
   const screen = canvasTexture(COLS * DOT, ROWS * DOT, () => {})
   const context = screen.image.getContext('2d')
-  const node = group(at(toy(box(7.0, 1.9, 0.4, 0.22), C.ink, { outline: 0.13 }), 0, 3.0, 0), at(new THREE.Mesh(new THREE.PlaneGeometry(6.6, 6.6 * ROWS / COLS), new THREE.MeshBasicMaterial({ map: screen })), 0, 3.0, 0.21),
-    ...[-2.6, 2.6].map(x => at(toy(pill(0.12, 1.8), C.ink, { outline: 0.07 }), x, 1.05, 0)))
+  // 架得高：它立在集市后面，要从摊位的招牌上面露出来
+  const node = group(at(toy(box(7.0, 1.9, 0.4, 0.22), C.ink, { outline: 0.13 }), 0, 6.6, 0), at(new THREE.Mesh(new THREE.PlaneGeometry(6.6, 6.6 * ROWS / COLS), new THREE.MeshBasicMaterial({ map: screen })), 0, 6.6, 0.21),
+    ...[-2.6, 2.6].map(x => at(toy(pill(0.12, 5.4), C.ink, { outline: 0.07 }), x, 2.85, 0)))
   let dots = null
   let offset = 0
   let turn = 0
@@ -70,7 +71,7 @@ export function led(ctx, app) {
     // 点阵一秒画二十来次就够顺，不用每帧画两千多个点
     if (frame++ % 3 === 0) { drawDots(context, dots, offset); screen.needsUpdate = true }
   }
-  return { node, height: 4.3, size: 1.2, hint: '写句话上屏', open, update }
+  return { node, height: 7.8, size: 1.2, hint: '写句话上屏', open, update }
 }
 
 const LAMPS = [['暖白', C.glow], ['荧光绿', C.lime], ['淡紫', '#E6D2FF'], ['粉', '#FFC4E6']]
@@ -85,8 +86,8 @@ export function ligit(ctx, app) {
     return group(at(toy(pill(0.09, 3.0), C.ink, { outline: 0.07 }), 0, 1.6, 0), toy(drum(0.26, 0.4, 0.22, 0.08), C.ink, { outline: 0.07 }), at(new THREE.Mesh(ball(0.44), glow), 0, 3.45, 0), at(toy(drum(0.14, 0.5, 0.26, 0.09), C.ink, { outline: 0.07 }), 0, 3.74, 0), at(sprite, 0, 3.45, 0))
   }
   const node = lamp()
-  // 另外三盏沿着 App 街立着
-  for (const [x, z] of [[-2.3, 26], [2.3, 16], [-2.3, 16]]) { ctx.scene.add(at(lamp(), x, 0, z)); ctx.colliders.push({ x, z, r: 0.4 }) }
+  // 摊位上那盏是小样；真正照亮小镇的两盏立在广场南边的入口
+  for (const [x, z] of [[-3.4, 10.6], [3.4, 10.6]]) { ctx.scene.add(at(lamp(), x, 0, z)); ctx.colliders.push({ x, z, r: 0.4 }) }
   let cheer = false
   function open() {
     const row = h('div', { class: 'row' })

@@ -45,7 +45,7 @@ function scatter(count, color, radius, taken) {
   let seed = Math.round(radius * 9973)
   const random = () => (seed = (seed * 16807) % 2147483647) / 2147483647
   while (placed < count) {
-    const r = PLAZA + 1 + random() * (ISLAND - PLAZA - 3)
+    const r = RING + random() * (ISLAND - RING - 2)
     const a = random() * Math.PI * 2
     const x = Math.sin(a) * r
     const z = Math.cos(a) * r
@@ -62,12 +62,12 @@ export function createGround(scene, sky) {
   const plaza = lay(new THREE.CircleGeometry(PLAZA, 64), C.cream, 0.03)
   const plazaLine = lay(new THREE.RingGeometry(PLAZA - 0.75, PLAZA - 0.5, 64), C.lilac, 0.04)
   const ring = lay(new THREE.RingGeometry(RING - 1.2, RING + 1.2, 96), C.cream, 0.03)
-  const patches = [[-112, 30, 4.6], [-18, 30, 4], [75, 30, 4.4], [-90, 13.5, 3], [92, 13.5, 2.8]].map(([degrees, radius, size]) => {
+  const patches = [[-112, 30, 4.6], [-18, 30, 4], [75, 30, 4.4]].map(([degrees, radius, size]) => {
     const { x, z } = polar(degrees, radius)
     return at(lay(new THREE.CircleGeometry(size, 40), C.patch, 0.015), x, 0.015, z)
   })
   scene.add(top, plaza, plazaLine, ring, ...patches, islandBody())
-  scene.add(spoke(180, PLAZA - 0.2, 31, 2.4), spoke(-60, PLAZA - 0.2, RING, 2.2), spoke(60, PLAZA - 0.2, RING, 2.2))
+  scene.add(spoke(180, PLAZA - 0.2, RING, 2.4), spoke(-54, PLAZA - 0.2, RING, 2.2), spoke(54, PLAZA - 0.2, RING, 2.2))
   for (let i = 0; i < 9; i++) scene.add(spoke(houseAngle(i), RING, HOUSE_RING - 2.4, 1.8))
 
   const floor = new THREE.Mesh(new THREE.CircleGeometry(ISLAND, 64), sky.state.shadowFloor)
@@ -85,11 +85,10 @@ export function createGround(scene, sky) {
     const r = Math.hypot(x, z)
     const degrees = Math.atan2(x, -z) * 180 / Math.PI
     const near = target => Math.abs(((degrees - target + 540) % 360) - 180) * Math.PI / 180 * r < 1.8
-    return near(180) || (r < RING && (near(-60) || near(60))) || (r > RING && r < HOUSE_RING + 4 && Array.from({ length: 9 }, (_, i) => houseAngle(i)).some(angle => Math.abs(((degrees - angle + 540) % 360) - 180) < 9))
+    return near(180) || (r < RING && (near(-54) || near(54))) || (r > RING && r < HOUSE_RING + 4 && Array.from({ length: 9 }, (_, i) => houseAngle(i)).some(angle => Math.abs(((degrees - angle + 540) % 360) - 180) < 9))
   }
-  // 花只在路两边 4 格以外长，而且不多：满地都是小点，画面就碎了
-  const busy = (x, z) => onPath(x, z) || (Math.abs(x) < 8 && z > 9)
-  scene.add(scatter(46, C.white, 0.14, busy), scatter(30, C.lime, 0.17, busy), scatter(20, C.violet, 0.13, busy))
+  // 花只长在环路以外，而且不多：满地都是小点，画面就碎了
+  scene.add(scatter(46, C.white, 0.14, onPath), scatter(30, C.lime, 0.17, onPath), scatter(20, C.violet, 0.13, onPath))
 
   return { colliders, onPath, update(time) { drift.rotation.y = time * 0.008 } }
 }
@@ -105,9 +104,9 @@ export function createTrees(scene, colliders) {
     scene.add(at(whole, x, 0, z))
   }
   const spots = []
-  // 树只当背景：外圈一排，里面留四棵。南边的 App 街两侧不种，摊位才看得清
+  // 树只当背景：外圈一排，环路边上留四棵。广场一圈是集市，不种树
   for (let degrees = -156; degrees <= 156; degrees += 24) spots.push([degrees, 32.2 + ((degrees * 7) % 5) * 0.25])
-  spots.push([-88, 13], [88, 13], [-126, 21.5], [126, 21.5])
+  spots.push([-162, 21.5], [162, 21.5], [-126, 21.5], [126, 21.5])
   spots.forEach(([degrees, radius], i) => {
     const { x, z } = polar(degrees, radius)
     tree(x, z, 0.85 + ((i * 37) % 10) * 0.04, i % 4 === 2 ? C.lilac : C.leaf)

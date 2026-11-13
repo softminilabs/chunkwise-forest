@@ -50,7 +50,7 @@ export function sundial(ctx, app) {
 }
 
 /// 番茄钟：钟楼。开一个专注，时间到了楼顶多结一个番茄
-export function zenpomo(ctx, app) {
+export function zenpomo(ctx, app, place) {
   const clock = dial((context, size) => drawClock(context, size))
   const tomato = at(group(toy(ball(0.8, 0.86), C.violet, { outline: 0.1 }), at(toy(ball(0.26, 0.5), C.lime, { outline: 0.06 }), 0, 0.68, 0)), 0, 5.1, 0)
   const node = group(toy(drum(1.05, 1.3, 4.4, 0.25), C.lilac, { outline: 0.13 }), at(toy(drum(1.35, 1.2, 0.35, 0.12), C.white, { outline: 0.1 }), 0, 4.2, 0), tomato,
@@ -80,7 +80,7 @@ export function zenpomo(ctx, app) {
     if (left() > 0) return
     ctx.state.patch({ focusUntil: 0, tomatoes: ctx.state.town.tomatoes + 1 })
     ctx.audio.bell()
-    ctx.fx.burst(node.position.x, 5.6, node.position.z, 20)
+    ctx.fx.burst(place.x, 4.2, place.z, 20)
     ctx.ui.toast(`专注完成，<b>+1 个番茄</b>`)
   }
   return { node, height: 6.2, size: 1.5, hint: '开一个专注', open, update }
