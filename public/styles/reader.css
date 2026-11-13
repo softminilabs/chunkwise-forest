@@ -96,7 +96,7 @@
 .controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px 16px; }
 .controls > :first-child { justify-self: start; }
 .reader-opts { display: flex; align-items: center; gap: 8px; justify-self: end; }
-/* 循环和语速各占一格等宽的位置：循环换字（不循环 / 单句循环 / 整篇循环）时，播放键不会跟着左右挪 */
+/* 单句循环、整篇循环一边一个，各占一格等宽的位置，播放键才在正中 */
 .transport { display: grid; grid-template-columns: minmax(118px, 1fr) auto auto auto minmax(118px, 1fr); align-items: center; gap: 8px; }
 .transport .chip:first-child { justify-self: end; }
 .transport .chip:last-child { justify-self: start; }

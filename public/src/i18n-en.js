@@ -93,7 +93,7 @@ export const EN = {
   '上一句': 'Previous line', '上一句（←）': 'Previous line (←)', '下一句': 'Next line', '下一句（→）': 'Next line (→)',
   '听法': 'Listening mode', '换听法（M）': 'Change mode (M)',
   '看着听': 'Read along', '盲听': 'Blind', '跟读': 'Shadow',
-  '不循环': 'No loop', '单句循环': 'Loop line', '整篇循环': 'Loop all', '循环（L）': 'Loop (L)',
+  '单句循环': 'Loop line', '整篇循环': 'Loop all', '单句循环（L）': 'Loop this line (L)', '整篇循环（L）': 'Loop the whole text (L)',
   '语速（S）': 'Speed (S)', '语速 {x}×': 'Speed {x}×',
   '中文': 'Chinese', '中文（Z）': 'Chinese (Z)',
   '卡片 {n}': 'Cards {n}', '进度': 'Progress', '回森林（Esc）': 'Back to the forest (Esc)',

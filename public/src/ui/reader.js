@@ -7,8 +7,7 @@ import { t } from '../i18n.js'
 
 const SPEEDS = [1, 0.8, 1.2]
 const MODES = { read: t('看着听'), blind: t('盲听'), shadow: t('跟读') }
-const LOOPS = [['off', t('不循环')], ['one', t('单句循环')], ['all', t('整篇循环')]]
-const loopIs = (session, id) => LOOPS[session.loop][0] === id
+const LOOPS = ['off', 'one', 'all']
 
 /// 一句算读到哪儿为止。时间轴里有的句子结束得比下一句开始还晚几十毫秒，照着结束时间等就永远等不到：取两者里早的那个
 const endOf = (lesson, i) => Math.min(lesson.timing[i].b, lesson.timing[i + 1]?.a ?? Infinity)
@@ -63,7 +62,7 @@ function wait(session, i) {
 /// 一句读到头了。返回 true 表示已经停下来等跟读，这一帧不用再往下画
 function sentenceEnd(session, i) {
   markHeard(session, i)
-  if (loopIs(session, 'one')) { session.audio.currentTime = session.lesson.timing[i].a; session.ended = -1; return false }
+  if (session.loop === 'one') { session.audio.currentTime = session.lesson.timing[i].a; session.ended = -1; return false }
   if (session.mode !== 'shadow') return false
   wait(session, i)
   return true
@@ -135,11 +134,12 @@ function setZh(session, on) {
   session.view.root.dataset.zh = on ? 'all' : 'off'
 }
 
-/// 循环一个按钮三档：不循环 → 单句 → 整篇
-function setLoop(session, k) {
-  session.loop = k % LOOPS.length
-  session.view.loop.replaceChildren(icon('loop'), LOOPS[session.loop][1])
-  session.view.loop.setAttribute('aria-pressed', String(!loopIs(session, 'off')))
+/// 单句循环、整篇循环各一个按钮，只能亮一个，都不亮就是不循环。
+/// 试过并成一个按钮轮着换，默认显示「不循环」，结果看上去像单句循环没了
+function setLoop(session, loop) {
+  session.loop = loop
+  session.view.loopOne.setAttribute('aria-pressed', String(loop === 'one'))
+  session.view.loopAll.setAttribute('aria-pressed', String(loop === 'all'))
 }
 
 function setSpeed(session, k) {
@@ -196,8 +196,8 @@ function finish(session) {
 
 /// 录音放到头了。单句循环：最后一句也照样循环，不能就这么结束；整篇循环：记一次完成，从头再来
 function ended(session) {
-  if (loopIs(session, 'one')) return jump(session, session.lesson.timing.length - 1)
-  if (loopIs(session, 'off')) return finish(session)
+  if (session.loop === 'one') return jump(session, session.lesson.timing.length - 1)
+  if (session.loop === 'off') return finish(session)
   complete(session)
   jump(session, 0)
 }
@@ -224,7 +224,7 @@ const KEYS = {
   Space: toggle,
   ArrowRight: session => jump(session, session.now + 1),
   ArrowLeft: session => jump(session, session.now - 1),
-  KeyL: session => setLoop(session, session.loop + 1),
+  KeyL: session => setLoop(session, LOOPS[(LOOPS.indexOf(session.loop) + 1) % LOOPS.length]),
   KeyZ: session => setZh(session, !session.zh),
   KeyS: session => setSpeed(session, session.speed + 1),
   KeyM: session => { const ids = Object.keys(MODES); setMode(session, ids[(ids.indexOf(session.mode) + 1) % ids.length]) },
@@ -246,7 +246,9 @@ function bind(session) {
   view.prev.addEventListener('click', () => jump(session, session.now - 1))
   view.next.addEventListener('click', () => jump(session, session.now + 1))
   view.modes.addEventListener('click', event => { const button = event.target.closest('[data-mode]'); if (button) setMode(session, button.dataset.mode) })
-  view.loop.addEventListener('click', () => setLoop(session, session.loop + 1))
+  // 再点一下亮着的那个就是关掉
+  view.loopOne.addEventListener('click', () => setLoop(session, session.loop === 'one' ? 'off' : 'one'))
+  view.loopAll.addEventListener('click', () => setLoop(session, session.loop === 'all' ? 'off' : 'all'))
   view.speed.addEventListener('click', () => setSpeed(session, session.speed + 1))
   view.zh.addEventListener('click', () => setZh(session, !session.zh))
   view.cards.addEventListener('click', () => view.side.root.classList.toggle('is-up'))
@@ -270,11 +272,11 @@ function bind(session) {
 export async function openReader(ctx, meta) {
   const lesson = await (await fetch(`data/lessons/${meta.id}.json`)).json()
   const audio = new Audio(`data/audio/${meta.id}.m4a`)
-  const session = { ctx, lesson, audio, mode: 'read', loop: 0, zh: false, speed: 0, outcome: null, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
+  const session = { ctx, lesson, audio, mode: 'read', loop: 'off', zh: false, speed: 0, outcome: null, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
   session.view = buildReader(ctx, lesson, buildSide(ctx, lesson, i => jump(session, i)), MODES)
   bind(session)
   setMode(session, session.mode)
-  setLoop(session, 0)
+  setLoop(session, 'off')
   setSpeed(session, 0)
   setZh(session, false)
   ctx.ui.openModal(session.view.root, () => { audio.pause(); cancelAnimationFrame(session.raf); clearTimeout(session.waiting); removeEventListener('keydown', session.onKey) })

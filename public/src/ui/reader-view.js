@@ -11,6 +11,8 @@ const ICONS = {
   prev: '<path d="M5.5 5H8v14H5.5zM19 5.5v13L9.5 12z"/>',
   next: '<path d="M16 5h2.5v14H16zM5 5.5v13l9.5-6.5z"/>',
   loop: '<path d="M17 2.5l3 3-3 3M4 11V9.5a4 4 0 014-4h12M7 21.5l-3-3 3-3M20 13v1.5a4 4 0 01-4 4H4" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>',
+  // 单句循环：循环箭头中间一个 1
+  loop1: '<path d="M17 2.5l3 3-3 3M4 11V9.5a4 4 0 014-4h12M7 21.5l-3-3 3-3M20 13v1.5a4 4 0 01-4 4H4M11 10.2l1.4-.9v5.6" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>',
   cards: '<path d="M4 7h11v13H4zM8 4h12v13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/>',
   check: '<path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>',
 }
@@ -69,7 +71,7 @@ function ringNode(total) {
   return { root, set(count) { root.querySelector('.ring-fill').setAttribute('stroke-dashoffset', LENGTH * (1 - count / total)); root.querySelector('span').textContent = `${count}/${total}` } }
 }
 
-/// 播放条。上面一行进度，下面一行分三块：左边怎么听，中间播放（循环和语速贴着走带键），右边看不看中文
+/// 播放条。上面一行进度，下面一行分三块：左边怎么听，中间播放（两种循环一边一个，都直接摆出来），右边语速和中文
 function barNode(lesson, modes) {
   const bar = {
     fill: h('i', { class: 'seek-fill' }),
@@ -82,7 +84,8 @@ function barNode(lesson, modes) {
     total: h('span', { class: 'time' }, clock(lesson.duration)),
     modes: h('div', { class: 'segment', role: 'group', 'aria-label': t('听法'), title: t('换听法（M）') }, Object.entries(modes).map(([id, label]) => h('button', { type: 'button', 'data-mode': id }, label))),
     zh: h('button', { class: 'chip', type: 'button', title: t('中文（Z）') }, t('中文')),
-    loop: h('button', { class: 'chip', type: 'button', title: t('循环（L）') }),
+    loopOne: h('button', { class: 'chip', type: 'button', title: t('单句循环（L）') }, icon('loop1'), t('单句循环')),
+    loopAll: h('button', { class: 'chip', type: 'button', title: t('整篇循环（L）') }, icon('loop'), t('整篇循环')),
     speed: h('button', { class: 'chip', type: 'button', title: t('语速（S）') }),
     cards: h('button', { class: 'chip only-narrow', type: 'button' }, icon('cards'), t('卡片 {n}', { n: lesson.cards.length })),
   }
@@ -91,8 +94,8 @@ function barNode(lesson, modes) {
     h('div', { class: 'seek-row' }, bar.time, bar.seek, bar.total),
     h('div', { class: 'controls' },
       bar.modes,
-      h('div', { class: 'transport' }, bar.loop, bar.prev, bar.play, bar.next, bar.speed),
-      h('div', { class: 'reader-opts' }, bar.zh, bar.cards)))
+      h('div', { class: 'transport' }, bar.loopOne, bar.prev, bar.play, bar.next, bar.loopAll),
+      h('div', { class: 'reader-opts' }, bar.speed, bar.zh, bar.cards)))
   return bar
 }
 
