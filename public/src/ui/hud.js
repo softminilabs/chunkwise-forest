@@ -9,6 +9,8 @@ export function createHud(ctx) {
   const go = h('button', { class: 'go', type: 'button', onclick: () => ctx.continueLearning() })
   const drill = h('button', { class: 'go light', type: 'button', onclick: () => ctx.openPractice() })
   const sound = h('button', { class: 'stat', type: 'button', onclick: () => { ctx.state.patch({ sound: !ctx.state.town.sound }); ctx.audio.setSound(ctx.state.town.sound) } })
+  const LIGHTS = [['auto', '天色 跟时间'], ['day', '天色 白天'], ['night', '天色 夜晚']]
+  const light = h('button', { class: 'stat', type: 'button', onclick: () => { const k = LIGHTS.findIndex(([id]) => id === (ctx.state.town.light ?? 'auto')); ctx.state.patch({ light: LIGHTS[(k + 1) % LIGHTS.length][0] }); ctx.applyLight() } })
   const shown = {}
   dock.replaceChildren(h('div', { class: 'row center' }, go, drill), dock.querySelector('.keys'))
 
@@ -25,7 +27,8 @@ export function createHud(ctx) {
     const next = ctx.state.next()
     sound.textContent = ctx.state.town.sound ? '声音 开' : '声音 关'
     sound.setAttribute('aria-pressed', String(ctx.state.town.sound))
-    stats.replaceChildren(stat('streak', '连续', streak, '天', streak > 0), stat('lit', '亮灯', `${totals.lit}/${totals.lessons}`, ''), stat('cards', '卡片', totals.cards, '张'), sound)
+    light.textContent = LIGHTS.find(([id]) => id === (ctx.state.town.light ?? 'auto'))[1]
+    stats.replaceChildren(stat('streak', '连续', streak, '天', streak > 0), stat('lit', '亮灯', `${totals.lit}/${totals.lessons}`, ''), stat('cards', '卡片', totals.cards, '张'), light, sound)
     go.replaceChildren(h('span', {}, '▶'), h('div', {}, totals.lit ? '接着学' : '开始第一课', h('small', {}, ` 第 ${next.n} 课 · ${next.title}`)))
     drill.replaceChildren(h('div', {}, '练一练', h('small', {}, totals.cards < 4 ? ' 读完一课解锁' : due ? ` ${due} 张该复习` : ' 随便玩一轮')))
   }

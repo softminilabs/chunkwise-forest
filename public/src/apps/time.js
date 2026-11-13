@@ -41,9 +41,9 @@ export function sundial(ctx, app) {
     const slider = h('input', { type: 'range', min: 0, max: 24, step: 0.25, value: now.getHours() + now.getMinutes() / 60, 'aria-label': '拨动时间', oninput: () => { ctx.sky.setHour(Number(slider.value)); label.textContent = `${pad(Math.floor(slider.value))}:${pad(Math.round(slider.value % 1 * 60))}` } })
     ctx.ui.openDrawer({
       kicker: '把时间放在看得见的地方', title: `${pad(now.getHours())}:${pad(now.getMinutes())}`, sub: '小镇的天色、影子、灯，都跟着你这边的真实时间走。', app,
-      onClose: () => ctx.sky.setHour(null),
+      onClose: () => ctx.applyLight(),
       body: [bar('今天', day), bar('本周', ((now.getDay() + 6) % 7 + day) / 7, 'lime'), bar('本月', (now.getDate() - 1 + day) / monthDays), bar('今年', ((now - year) / 86400000) / days, 'lime'),
-        h('div', { class: 'tile' }, h('h3', {}, '拨一拨，看看小镇的一天 · ', label), slider, h('button', { class: 'chip', type: 'button', onclick: () => { ctx.sky.setHour(null); label.textContent = '现在' } }, '回到现在'))],
+        h('div', { class: 'tile' }, h('h3', {}, '拨一拨，看看小镇的一天 · ', label), slider, h('button', { class: 'chip', type: 'button', onclick: () => { ctx.applyLight(); label.textContent = '现在' } }, '回到现在'))],
     })
   }
   return { node, height: 2.6, size: 2.5, hint: '看今天过了多少', open }

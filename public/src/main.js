@@ -74,6 +74,8 @@ function wire(ctx) {
     ctx.player.place(house.doorAt.x, house.doorAt.z)
     return ctx.openLesson(next)
   }
+  /// 天色：跟着真实时间，或者固定成白天 / 夜晚（夜晚暗，眼睛累了可以切过去）
+  ctx.applyLight = () => ctx.sky.setHour({ day: 11, night: 21.5 }[ctx.state.town.light] ?? null)
   ctx.onLesson = lesson => { ctx.town.setProgress(ctx.state.town.stars); pending.push(lesson) }
   /// 大卡片关上、回到小镇了，才放烟花：盖着的时候放了也看不见
   ctx.celebrate = () => {
@@ -110,6 +112,7 @@ async function boot() {
   addPlaces(ctx, world.arcade)
   const myApps = createApps(ctx)
   ctx.town.setProgress(state.town.stars)
+  ctx.applyLight()
   const hud = createHud(ctx)
   const input = createInput(canvas, camera, rig, {
     onEscape: () => ctx.ui.escape(),
