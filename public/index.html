@@ -12,12 +12,18 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233F6B55'/%3E%3Cpath d='M32 10 14 38h36z' fill='%23A9D08E'/%3E%3Cpath d='M32 22 12 50h40z' fill='%23E9F3E2'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles/ui.css">
 <link rel="stylesheet" href="styles/reader.css">
+<link rel="stylesheet" href="styles/words.css">
+<link rel="stylesheet" href="styles/library.css">
+<link rel="stylesheet" href="styles/listen.css">
 <script type="importmap">{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/", "qrcode": "./vendor/qrcode.mjs" } }</script>
 <script type="module" src="src/main.js"></script>
 </head>
 <body>
 <canvas id="stage" aria-label="组块森林"></canvas>
 <div id="tags"></div>
+<div id="room-tags"></div>
+<header class="room-hud"></header>
+<div id="seat" hidden></div>
 <header class="hud" hidden>
   <div class="hud-left">
     <div class="brand sticker"><strong><span data-lang="zh">组块森林</span><span data-lang="en">Chunkwise Forest</span></strong><small><span data-lang="zh">B1 · 用文章学英语</span><span data-lang="en">B1 · Learn English through reading</span></small></div>
@@ -31,6 +37,7 @@
 <div id="sheet" hidden><aside id="drawer" class="sticker"></aside></div>
 <div id="modal" hidden></div>
 <div id="toasts" aria-live="polite"></div>
+<div id="fade"></div>
 <section id="start">
   <div class="start-card sticker">
     <p class="start-kicker"><span data-lang="zh">用文章学英语</span><span data-lang="en">Learn English through reading</span></p>

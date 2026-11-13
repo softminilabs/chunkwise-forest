@@ -18,6 +18,9 @@ import { createChests } from './world/chests.js'
 import { createLanternTree } from './world/lanterns.js'
 import { createXmas } from './world/xmas.js'
 import { ICONS, christmas, daysUntil, openCountdown, springFestival } from './ui/countdown.js'
+import { createLodge } from './ui/lodge.js'
+import { createVoice } from './words/deck.js'
+import { createWordProgress } from './words/progress.js'
 import { createLand } from './world/land.js'
 import { createWeather } from './world/weather.js'
 import { createWoods } from './world/woods.js'
@@ -74,7 +77,18 @@ function addPlaces(ctx) {
     ctx.things.add({ kind: 'house', title: pick(house.unit), hint: lang === 'en' ? t('{n} 课', { n: house.unit.lessons.length }) : house.unit.en, badge: house.unit.n, position: spot(house), spot: house.doorAt, stop: 1.3, height: house.height, radius: 3.4, reach: 5.8, use: () => openUnit(ctx, house) })
   }
   const { lodge } = ctx.cabins
-  ctx.things.add({ kind: 'house', title: t('单词屋'), hint: t('还没开门'), badge: t('词'), position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, use: () => ctx.ui.toast(t('单词屋<b>还没开门</b>，下一步就开')) })
+  const door = ctx.things.add({ kind: 'house', title: t('单词屋'), badge: t('词'), position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, use: () => ctx.lodge.enter() })
+  // 牌子上写今天还有多少要学；学过词的屋子才「有人住」（夜里窗亮、烟囱冒烟），和九间木屋一个规矩
+  const paintDoor = () => {
+    const { progress } = ctx.words
+    const due = progress.due().length
+    const left = Math.max(0, progress.store.daily - progress.newToday())
+    door.hint = due ? t('今天 {n} 个该复习', { n: due }) : left ? t('今天 {n} 个新词', { n: left }) : t('今天的学完了')
+    ctx.things.refresh(door)
+    lodge.lit = progress.learned().length > 0
+  }
+  ctx.words.progress.on(paintDoor)
+  paintDoor()
   const camp = ctx.camp.state
   ctx.things.add({ kind: 'spot', title: t('篝火'), hint: t('点火 · 坐下来练一轮'), badge: t('火'), position: new THREE.Vector3(camp.x, camp.y, camp.z), height: 2, radius: 1.8, reach: 4.4, use: () => openCamp(ctx) })
 }
@@ -182,21 +196,25 @@ async function boot() {
   const audio = createAudio(state)
   const rig = createRig(camera)
   const ctx = { course, cards, apps, state, audio, rig, camera, renderer, ui: createUI(audio), sounds: createSounds(audio, state) }
+  // lessons：课文里收过的词卡（按小写的词头找）。单词屋里同一个词要带上那句课文
+  ctx.words = { progress: createWordProgress(), voice: createVoice(), lessons: new Map(Object.values(cards).filter(card => card.kind === 'word').map(card => [card.text.toLowerCase(), card])) }
   buildWorld(ctx)
   wire(ctx)
   ctx.things = createThings(document.getElementById('tags'), { onChoose: thing => ctx.approach(thing) })
+  ctx.lodge = createLodge(ctx)
   addPlaces(ctx)
   ctx.winterThings = addFestive(ctx)
   ctx.chests = createChests(ctx, chest => ctx.openChest(chest))
   ctx.cabins.setProgress(state.town.stars)
   const hud = createHud(ctx)
   const input = createInput(canvas, camera, rig, {
-    onEscape: () => ctx.ui.escape(),
-    onUse: () => { const thing = ctx.things.nearest(ctx.player.position); if (thing && !ctx.ui.busy) ctx.use(thing) },
-    onHover: ray => ctx.things.hover(ray),
-    onPick: ray => { const thing = ctx.things.pick(ray); if (thing) ctx.approach(thing); return Boolean(thing) },
-    onGround: point => { ctx.ui.closeDrawer(); ctx.fx.ping(point.x, ctx.player.position.y, point.z); ctx.player.goTo(point.x, point.z) },
-    groundY: () => ctx.player.position.y,
+    // 在单词屋里，按键和点击都交给屋里那一套
+    onEscape: () => ctx.lodge.inside ? ctx.lodge.escape() : ctx.ui.escape(),
+    onUse: () => { if (ctx.lodge.inside) return ctx.lodge.use(); const thing = ctx.things.nearest(ctx.player.position); if (thing && !ctx.ui.busy) ctx.use(thing) },
+    onHover: ray => ctx.lodge.inside ? ctx.lodge.hover(ray) : ctx.things.hover(ray),
+    onPick: ray => { if (ctx.lodge.inside) return ctx.lodge.pick(ray); const thing = ctx.things.pick(ray); if (thing) ctx.approach(thing); return Boolean(thing) },
+    onGround: point => { if (ctx.lodge.inside) return ctx.lodge.ground(point); ctx.ui.closeDrawer(); ctx.fx.ping(point.x, ctx.player.position.y, point.z); ctx.player.goTo(point.x, point.z) },
+    groundY: () => ctx.lodge.inside ? 0 : ctx.player.position.y,
   })
   const wish = new THREE.Vector3()
   let last = performance.now()
@@ -209,9 +227,12 @@ async function boot() {
     const dt = Math.min(0.05, (now - last) / 1000)
     last = now
     // 读课文、做练习时森林定住不动：余光里一直有东西在动也费眼，顺便省电。
-    // 环境声只压低不停：雨声雷声照原样响的话，会盖住课文的录音
-    ctx.sounds.update(ctx.weather.now, ctx.camp.state, ctx.player.position, ctx.ui.busy ? 0.3 : 1)
+    // 环境声：录音正在放（课文、听单词）就全关，要听清的是录音；大卡片开着但没在放，留一点点；
+    // 在单词屋里坐下学词也压低。进了单词屋，外面的声音隔着墙只剩一点，屋里是壁炉的火声
+    const hush = ctx.speaking ? 0 : ctx.ui.busy ? 0.15 : ctx.lodge.seated ? 0.35 : 1
+    ctx.sounds.update(ctx.weather.now, ctx.camp.state, ctx.player.position, hush, ctx.lodge.inside ? 0.3 : 0)
     if (ctx.ui.busy) return
+    if (ctx.lodge.inside) return ctx.lodge.frame(dt, now / 1000, input.wish(wish))
     frame(ctx, input, wish, dt, now / 1000)
     const stride = Math.floor(ctx.player.state.stride / Math.PI)
     if (stride !== steps && ctx.player.state.moving) audio.step()
