@@ -74,7 +74,9 @@ h1, h2, h3, p { margin: 0; }
 .day span { display: flex; align-items: baseline; gap: 6px; }
 .day strong { font-size: 18px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
 .day .marks { gap: 2px; }
-.day .marks i { flex: none; width: 3px; height: 12px; border-radius: 1.5px; }
+.day .marks i { flex: none; width: 3px; height: 6px; border-radius: 1.5px; background: var(--sage-pale); }
+.day .marks .is-past { background: var(--sage); }
+.day .marks .is-now { background: var(--moss); }
 .cycle { width: 100%; }
 .cycle .kicker { display: flex; justify-content: space-between; }
 .stats { position: relative; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
