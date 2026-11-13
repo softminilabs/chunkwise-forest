@@ -69,11 +69,8 @@ function ringNode(total) {
   return { root, set(count) { root.querySelector('.ring-fill').setAttribute('stroke-dashoffset', LENGTH * (1 - count / total)); root.querySelector('span').textContent = `${count}/${total}` } }
 }
 
-/// 一组互斥的小按钮（听法、中文）。options 是 [[id, 文字], …]，点亮哪个由 reader.js 定
-const segment = (name, label, title, options) => h('div', { class: 'segment', role: 'group', 'aria-label': label, title }, options.map(([id, text]) => h('button', { type: 'button', [`data-${name}`]: id }, text)))
-
 /// 播放条。上面一行进度，下面一行分三块：左边怎么听，中间播放（循环和语速贴着走带键），右边看不看中文
-function barNode(lesson, modes, zh) {
+function barNode(lesson, modes) {
   const bar = {
     fill: h('i', { class: 'seek-fill' }),
     thumb: h('i', { class: 'seek-thumb' }),
@@ -83,8 +80,8 @@ function barNode(lesson, modes, zh) {
     next: h('button', { class: 'round', type: 'button', 'aria-label': t('下一句'), title: t('下一句（→）') }, icon('next')),
     time: h('span', { class: 'time' }, '0:00'),
     total: h('span', { class: 'time' }, clock(lesson.duration)),
-    modes: segment('mode', t('听法'), t('换听法（M）'), Object.entries(modes)),
-    zh: segment('zh', t('中文'), t('中文（Z）'), zh),
+    modes: h('div', { class: 'segment', role: 'group', 'aria-label': t('听法'), title: t('换听法（M）') }, Object.entries(modes).map(([id, label]) => h('button', { type: 'button', 'data-mode': id }, label))),
+    zh: h('button', { class: 'chip', type: 'button', title: t('中文（Z）') }, t('中文')),
     loop: h('button', { class: 'chip', type: 'button', title: t('循环（L）') }),
     speed: h('button', { class: 'chip', type: 'button', title: t('语速（S）') }),
     cards: h('button', { class: 'chip only-narrow', type: 'button' }, icon('cards'), t('卡片 {n}', { n: lesson.cards.length })),
@@ -95,17 +92,17 @@ function barNode(lesson, modes, zh) {
     h('div', { class: 'controls' },
       bar.modes,
       h('div', { class: 'transport' }, bar.loop, bar.prev, bar.play, bar.next, bar.speed),
-      h('div', { class: 'reader-opts' }, h('span', { class: 'seg-label' }, t('中文')), bar.zh, bar.cards)))
+      h('div', { class: 'reader-opts' }, bar.zh, bar.cards)))
   return bar
 }
 
-export function buildReader(ctx, lesson, side, modes, zh) {
+export function buildReader(ctx, lesson, side, modes) {
   const article = articleNode(lesson)
   const ring = ringNode(lesson.sentences.length)
-  const bar = barNode(lesson, modes, zh)
-  const view = { ...bar, bar: bar.root, article, ring, side, pre: preNode(lesson), sentences: [...article.querySelectorAll('.s')], line: h('p', { class: 'reader-line' }) }
+  const bar = barNode(lesson, modes)
+  const view = { ...bar, bar: bar.root, article, ring, side, pre: preNode(lesson), sentences: [...article.querySelectorAll('.s')] }
   view.scroll = h('div', { class: 'reader-scroll' }, view.pre, lesson.intro && h('p', { class: 'intro' }, lesson.intro), article)
-  view.main = h('div', { class: 'reader-main' }, h('div', { class: 'reader-page' }, view.scroll, view.line), side.root)
+  view.main = h('div', { class: 'reader-main' }, h('div', { class: 'reader-page' }, view.scroll), side.root)
   view.root = h('section', { class: 'reader sticker', 'aria-label': lesson.title },
     h('header', { class: 'reader-head' },
       h('div', { class: 'grow' }, h('p', { class: 'kicker' }, t('单元 {unit} · 第 {n} 课 · {genre} · {min} 分钟', { unit: lesson.unit, n: lesson.n, genre: GENRES[lesson.genre] ?? lesson.genre, min: Math.max(1, Math.round(lesson.duration / 60)) })), h('h2', { lang: 'en' }, lesson.title)),

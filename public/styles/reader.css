@@ -56,10 +56,6 @@
 .is-blind .s:not(.is-heard) { filter: blur(7px); }
 .is-blind .para-zh { display: none; }
 .is-blind .side-list { filter: blur(8px); opacity: .5; pointer-events: none; }
-/* 课文底下的一行字幕：当前句的中文，或者跟读时「轮到你了」。没话说的时候不出现 */
-.reader-line { margin: 0 36px; padding: 10px 0 12px; border-top: 2px solid var(--sage-pale); color: var(--body); font-size: 15px; font-weight: 600; text-align: center; }
-.reader-line:empty { display: none; }
-.is-waiting .reader-line { color: var(--ink); background: var(--amber-soft); }
 
 .reader-side { display: flex; flex-direction: column; min-height: 0; border-left: 2px solid var(--sage-pale); background: color-mix(in srgb, var(--sage-pale) 42%, var(--paper)); }
 .side-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 10px; }
@@ -100,7 +96,6 @@
 .controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px 16px; }
 .controls > :first-child { justify-self: start; }
 .reader-opts { display: flex; align-items: center; gap: 8px; justify-self: end; }
-.seg-label { font-size: 13px; font-weight: 700; color: var(--body); }
 /* 循环和语速各占一格等宽的位置：循环换字（不循环 / 单句循环 / 整篇循环）时，播放键不会跟着左右挪 */
 .transport { display: grid; grid-template-columns: minmax(118px, 1fr) auto auto auto minmax(118px, 1fr); align-items: center; gap: 8px; }
 .transport .chip:first-child { justify-self: end; }
@@ -108,7 +103,7 @@
 /* 一行摆不下三块时：播放那块独占第一行，听法和中文排到第二行。看的是播放条自己有多宽（不是窗口），
    英文的字长，要更早换行。两个数是量出来的：两边各留最宽那块的位置，再加中间 402 和间距 */
 .reader-bar { container-type: inline-size; }
-@container (max-width: 870px) { .controls { display: flex; flex-wrap: wrap; justify-content: center; } .transport { order: -1; flex-basis: 100%; } }
+@container (max-width: 830px) { .controls { display: flex; flex-wrap: wrap; justify-content: center; } .transport { order: -1; flex-basis: 100%; } }
 @container (max-width: 990px) { html[lang="en"] .controls { display: flex; flex-wrap: wrap; justify-content: center; } html[lang="en"] .transport { order: -1; flex-basis: 100%; } }
 .play { flex: none; display: grid; place-items: center; width: 54px; height: 54px; border: 0; border-radius: 50%; background: var(--amber); font-size: 22px; box-shadow: var(--press); transition: scale .15s var(--ease); }
 .play:active { scale: .92; }
@@ -196,7 +191,6 @@
   .reader-head h2 { font-size: 22px; }
   .reader-scroll { padding: 16px 18px 20px; }
   .article { font-size: 19px; }
-  .reader-line { margin: 0 18px; }
   .reader-bar { padding: 10px 14px 14px; }
   .ring span { display: none; }
   .pre-options, .modes, .options { grid-template-columns: 1fr; }

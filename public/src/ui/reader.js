@@ -3,26 +3,17 @@
 import { h, stars } from './core.js'
 import { buildSide } from './reader-side.js'
 import { buildReader, clock, icon } from './reader-view.js'
-import { lang, t } from '../i18n.js'
+import { t } from '../i18n.js'
 
 const SPEEDS = [1, 0.8, 1.2]
 const MODES = { read: t('看着听'), blind: t('盲听'), shadow: t('跟读') }
-const ZH = [['line', t('当前句')], ['all', t('全文')], ['off', t('关')]]
 const LOOPS = [['off', t('不循环')], ['one', t('单句循环')], ['all', t('整篇循环')]]
 const loopIs = (session, id) => LOOPS[session.loop][0] === id
 
 /// 一句算读到哪儿为止。时间轴里有的句子结束得比下一句开始还晚几十毫秒，照着结束时间等就永远等不到：取两者里早的那个
 const endOf = (lesson, i) => Math.min(lesson.timing[i].b, lesson.timing[i + 1]?.a ?? Infinity)
 
-/// 课文底下那一行字幕：等跟读时提示该你念了；中文开着「当前句」就是这一句的翻译。
-/// 其余时候什么都不写——空着的时候这一行不占地方（样式里 :empty 隐藏）
-function lineText(session) {
-  if (session.waiting) return t('轮到你了，照着念这一句。')
-  if (session.mode === 'blind' || ZH[session.zh][0] !== 'line' || session.now < 0) return ''
-  return session.lesson.sentences[session.now].zh
-}
-
-/// 读到第 i 句：亮起来、底下换成这句的中文、右边对应的卡片亮起来、滚到看得见的地方
+/// 读到第 i 句：亮起来、右边对应的卡片亮起来、滚到看得见的地方
 function show(session, i) {
   const { view } = session
   if (i === session.now) return
@@ -30,7 +21,6 @@ function show(session, i) {
   view.sentences[session.now]?.querySelector('.w.is-now')?.classList.remove('is-now')
   session.now = i
   session.word = -1
-  view.line.textContent = lineText(session)
   view.side.live(i)
   const node = view.sentences[i]
   if (!node) return
@@ -53,7 +43,6 @@ function cancelWait(session) {
   clearTimeout(session.waiting)
   session.waiting = 0
   session.view.root.classList.remove('is-waiting')
-  session.view.line.textContent = lineText(session)
 }
 
 /// 跟读：这句读完先停下，留出比这句略长的时间给人念，再接着读下一句
@@ -69,7 +58,6 @@ function wait(session, i) {
     if (lesson.timing[i + 1]) audio.currentTime = lesson.timing[i + 1].a
     audio.play().catch(() => {})
   }, ms)
-  view.line.textContent = lineText(session)
 }
 
 /// 一句读到头了。返回 true 表示已经停下来等跟读，这一帧不用再往下画
@@ -138,15 +126,13 @@ function setMode(session, mode) {
   session.mode = mode
   for (const button of view.modes.children) button.classList.toggle('is-on', button.dataset.mode === mode)
   view.root.classList.toggle('is-blind', mode === 'blind')
-  view.line.textContent = lineText(session)
 }
 
-function setZh(session, k) {
-  session.zh = k % ZH.length
-  const id = ZH[session.zh][0]
-  for (const button of session.view.zh.children) button.classList.toggle('is-on', button.dataset.zh === id)
-  session.view.root.dataset.zh = id
-  session.view.line.textContent = lineText(session)
+/// 中文译文开或关：开着时每段英文下面跟着这一段的中文
+function setZh(session, on) {
+  session.zh = on
+  session.view.zh.setAttribute('aria-pressed', String(on))
+  session.view.root.dataset.zh = on ? 'all' : 'off'
 }
 
 /// 循环一个按钮三档：不循环 → 单句 → 整篇
@@ -239,7 +225,7 @@ const KEYS = {
   ArrowRight: session => jump(session, session.now + 1),
   ArrowLeft: session => jump(session, session.now - 1),
   KeyL: session => setLoop(session, session.loop + 1),
-  KeyZ: session => setZh(session, session.zh + 1),
+  KeyZ: session => setZh(session, !session.zh),
   KeyS: session => setSpeed(session, session.speed + 1),
   KeyM: session => { const ids = Object.keys(MODES); setMode(session, ids[(ids.indexOf(session.mode) + 1) % ids.length]) },
 }
@@ -262,7 +248,7 @@ function bind(session) {
   view.modes.addEventListener('click', event => { const button = event.target.closest('[data-mode]'); if (button) setMode(session, button.dataset.mode) })
   view.loop.addEventListener('click', () => setLoop(session, session.loop + 1))
   view.speed.addEventListener('click', () => setSpeed(session, session.speed + 1))
-  view.zh.addEventListener('click', event => { const button = event.target.closest('[data-zh]'); if (button) setZh(session, ZH.findIndex(([id]) => id === button.dataset.zh)) })
+  view.zh.addEventListener('click', () => setZh(session, !session.zh))
   view.cards.addEventListener('click', () => view.side.root.classList.toggle('is-up'))
   view.pre?.addEventListener('click', event => {
     const option = event.target.closest('.pre-option')
@@ -284,14 +270,13 @@ function bind(session) {
 export async function openReader(ctx, meta) {
   const lesson = await (await fetch(`data/lessons/${meta.id}.json`)).json()
   const audio = new Audio(`data/audio/${meta.id}.m4a`)
-  const session = { ctx, lesson, audio, mode: 'read', loop: 0, zh: 0, speed: 0, outcome: null, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
-  session.view = buildReader(ctx, lesson, buildSide(ctx, lesson, i => jump(session, i)), MODES, ZH)
+  const session = { ctx, lesson, audio, mode: 'read', loop: 0, zh: false, speed: 0, outcome: null, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
+  session.view = buildReader(ctx, lesson, buildSide(ctx, lesson, i => jump(session, i)), MODES)
   bind(session)
   setMode(session, session.mode)
   setLoop(session, 0)
   setSpeed(session, 0)
-  // 英文界面默认不显示中文译文，想看再按 Z
-  setZh(session, lang === 'en' ? 2 : 0)
+  setZh(session, false)
   ctx.ui.openModal(session.view.root, () => { audio.pause(); cancelAnimationFrame(session.raf); clearTimeout(session.waiting); removeEventListener('keydown', session.onKey) })
   return { audio, lesson }
 }
