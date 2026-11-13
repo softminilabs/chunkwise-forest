@@ -88,7 +88,23 @@ function wordsOf(lesson, sentences) {
 }
 
 /// seen：整套课里已经出过场的卡片。第一次出场的那一课记成 fresh，并把这张卡写进总表（练习场用）
-function buildLesson(lesson, allChunks, seen, formsOf) {
+/// 固定种子的随机数：每次同步出来的结果一样
+function seeded(seed) {
+  let state = seed
+  return () => { state = (state + 0x6D2B79F5) | 0; let t = Math.imul(state ^ (state >>> 15), 1 | state); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 }
+}
+const shuffled = (list, random) => list.map(item => [random(), item]).sort((a, b) => a[0] - b[0]).map(pair => pair[1])
+
+/// 预测题的选项重新排位，只换顺序、不改字。手稿里正确答案很少放第一个（90 题里只有 9 题），做多了能猜出来；
+/// slot 是这一题的正确答案该放第几个，整套课里四个位置排得一样多
+function placeAnswer(pre, slot, random) {
+  if (!pre) return null
+  const options = shuffled(pre.options.filter((_, k) => k !== pre.answer), random)
+  options.splice(slot, 0, pre.options[pre.answer])
+  return { ...pre, options, answer: slot }
+}
+
+function buildLesson(lesson, allChunks, seen, formsOf, slot, random) {
   const timing = readJSON(join(WEB, `content/audio/${lesson.id}.json`))
   const sentences = lesson.paragraphs.flatMap((paragraph, p) =>
     paragraph.en.map((en, k) => ({ en, zh: paragraph.zh[k], p, ...(paragraph.speaker && k === 0 ? { speaker: paragraph.speaker } : {}) })))
@@ -101,11 +117,11 @@ function buildLesson(lesson, allChunks, seen, formsOf) {
     // 后面的课里又出现了：记成这张卡的「另一句」。练习场答对以后换一句考，考的就是这些
     if (!card.fresh) { seen.get(card.id).more.push(here); continue }
     const { fresh, ...rest } = card
-    seen.set(card.id, { ...rest, l: lesson.id, n: lesson.number, en: sentences[card.s].en, szh: sentences[card.s].zh, a: timing.sentences[card.s].start, b: timing.sentences[card.s].end })
+    seen.set(card.id, { ...rest, ...here, more: [] })
   }
   return {
     id: lesson.id, n: lesson.number, unit: lesson.unit.number, title: lesson.title, genre: lesson.genre, words: lesson.words,
-    seconds: Math.round(timing.duration), duration: timing.duration, pre: lesson.preQuestion ?? null, intro: lesson.guide?.intro ?? '', sentences,
+    seconds: Math.round(timing.duration), duration: timing.duration, pre: placeAnswer(lesson.preQuestion, slot, random), intro: lesson.guide?.intro ?? '', sentences,
     timing: timing.sentences.map(item => ({ a: item.start, b: item.end, w: item.words })),
     cards,
   }
@@ -124,11 +140,14 @@ function main() {
   const files = readdirSync(join(WEB, 'content/lessons')).filter(name => name.endsWith('.json')).sort()
   const sources = files.map(name => readJSON(join(WEB, 'content/lessons', name)))
   const formsOf = new Map(sources.flatMap(source => source.expressions.map(item => [item.chunk, item.forms])))
+  const random = seeded(20261113)
+  // 每一题的正确答案放第几个：0123 轮着排够数，再打乱，四个位置就一样多
+  const slots = shuffled(sources.map((_, k) => k % 4), random)
   for (const [k, name] of files.entries()) {
     const source = sources[k]
     const unit = units.find(item => item.n === source.unit.number)
     if (!unit) continue
-    const lesson = buildLesson(source, allChunks, seen, formsOf)
+    const lesson = buildLesson(source, allChunks, seen, formsOf, slots[k], random)
     unit.en = source.unit.en
     unit.lessons.push({ id: lesson.id, n: lesson.n, title: lesson.title, genre: lesson.genre, words: lesson.words, seconds: lesson.seconds, cards: lesson.cards.map(card => card.id) })
     writeFileSync(join(OUT, 'lessons', name), JSON.stringify(lesson))
