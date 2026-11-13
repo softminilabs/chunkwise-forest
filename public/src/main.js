@@ -66,7 +66,7 @@ function addPlaces(ctx) {
     ctx.things.add({ kind: 'house', title: house.unit.zh, hint: house.unit.en, badge: house.unit.n, position: spot(house), spot: house.doorAt, stop: 1.3, height: house.height, radius: 3.4, reach: 5.8, face: house.face, use: () => openUnit(ctx, house) })
   }
   const { lodge } = ctx.cabins
-  ctx.things.add({ kind: 'house', title: '单词屋', hint: '还在盖，下一步开门', badge: '词', position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, face: lodge.face, use: () => ctx.ui.toast('单词屋还在盖，<b>下一步</b>开门') })
+  ctx.things.add({ kind: 'house', title: '单词屋', hint: '还没开门', badge: '词', position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, face: lodge.face, use: () => ctx.ui.toast('单词屋<b>还没开门</b>，下一步就开') })
   const camp = ctx.camp.state
   ctx.things.add({ kind: 'spot', title: '篝火', hint: '点火 · 坐下来练一轮', badge: '火', position: new THREE.Vector3(camp.x, camp.y, camp.z), height: 2, radius: 1.8, reach: 4.4, use: () => openCamp(ctx) })
 }
@@ -133,11 +133,11 @@ function frame(ctx, input, wish, dt, time) {
   if (wish.lengthSq() > 0.01 && ctx.ui.drawerOpen) ctx.ui.closeDrawer()
   // 会走了，底下那行操作提示就不用一直挂着
   if (player.state.moving) document.querySelector('.keys')?.classList.add('is-gone')
-  ctx.rig.update(dt, player.position)
   ctx.rig.skyGoal = weather.now.weather === 'meteor' && !player.state.moving ? 1 : 0
-  weather.update(dt, time, player.position, camera)
+  ctx.rig.update(dt, player.position)
   // 抬头看天的时候把牌子收起来：镜头一放低，远处的牌子全叠在天边
   document.body.classList.toggle('is-stargazing', ctx.rig.sky > 0.4)
+  weather.update(dt, time, player.position, camera)
   ctx.cabins.update(weather.now.night, dt, time)
   ctx.camp.update(dt, time, weather.now.night, weather.now.weather === 'rain')
   ctx.chests.update(time, weather.now)
