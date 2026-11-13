@@ -1,5 +1,5 @@
 // 我的 15 款 App 是藏在林子里的 15 只宝箱。找到一只，打开是一张卡：图标、一句介绍、去 App Store。
-// 十二只一直在，有三只挑时候才出现（夜里、下雨天、冬天），换季换天气就有了再逛一圈的理由
+// 十二只一直在，有三只挑时候才出现（夜里、雨雪天、冬天），换季换天气就有了再逛一圈的理由
 import * as THREE from 'three'
 import { at, mat, points, shade } from '../look.js'
 import { height } from './land.js'
@@ -11,8 +11,8 @@ export const SPOTS = {
   cadence: [-20, -36, 0.9], mdqr: [-8.5, -46, 0.4], qrcode: [21, -42, -1], aiprompt: [-20, -59, 1.1], slong: [29, -66, -0.6], led: [-9.5, -75, 0.5], ahhh: [9, -107, -0.4],
   ligit: [-6, 37, 0.3, 'night'], lull: [17.5, 9.5, -1.3, 'rain'], sundial: [-7, -113, 0.4, 'winter'],
 }
-export const WHEN = { night: '夜里', rain: '下雨天', winter: '冬天' }
-const here = (when, scene) => !when || (when === 'night' ? scene.night > 0.6 : when === 'rain' ? scene.weather === 'rain' : scene.season === 'winter')
+export const WHEN = { night: '夜里', rain: '雨雪天', winter: '冬天' }
+const here = (when, scene) => !when || (when === 'night' ? scene.night > 0.6 : when === 'rain' ? scene.weather === 'rain' || scene.weather === 'snow' : scene.season === 'winter')
 
 function build() {
   const root = new THREE.Group()
@@ -25,7 +25,8 @@ function build() {
   root.add(at(lid, 0, 0.55, -0.4), at(new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.26, 0.1), gold), 0, 0.42, 0.42))
   const glint = new THREE.BufferGeometry()
   glint.setAttribute('position', new THREE.BufferAttribute(new Float32Array([0, 1.5, 0, 0.35, 1.2, 0.1, -0.3, 1.25, -0.1]), 3))
-  const spark = new THREE.Points(glint, points({ color: '#FFE08A', size: 0.34, fog: false, blending: THREE.AdditiveBlending }))
+  // 金点要跟着雾一起淡掉：不受雾影响的话，远处箱子看不见了，三颗点还亮在半空
+  const spark = new THREE.Points(glint, points({ color: '#FFE08A', size: 0.34 }))
   root.add(spark)
   return { root, lid, gold, spark }
 }
