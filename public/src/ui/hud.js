@@ -1,12 +1,28 @@
 // 顶上几个数和入口，底下两个不用走路的按钮：接着学、练一练。
 // 走路是为了好玩，不是门槛：想学的时候一步都不用走
-import { openChestList } from './chests.js'
+import { openChestCard, openChestList } from './chests.js'
 import { SEASON_NAMES } from '../look.js'
 import { h } from './core.js'
 import { openScene } from './scene.js'
 import { openSounds } from './sounds.js'
-import { openToday } from './today.js'
 import { lang, setLang, t } from '../i18n.js'
+
+/// 「组块森林」牌子下面那排 24 格：今天过到哪了。画法是岁时（我的另一款 App）的：过去的墨色，此刻一笔朱红，没到的浅灰。
+/// 上面不写字，点一下才露出它来自哪款 App——写上字就成广告了
+function dayStrip(ctx) {
+  const sundial = ctx.apps.find(app => app.id === 'sundial')
+  const strip = h('button', { class: 'day', type: 'button', onclick: () => openChestCard(ctx, sundial, ctx.chests.found(), false) })
+  const paint = () => {
+    const hour = new Date().getHours()
+    const label = t('今天 {n} / 24 小时', { n: hour })
+    strip.setAttribute('aria-label', label)
+    strip.title = label
+    strip.replaceChildren(...Array.from({ length: 24 }, (_, k) => h('i', { class: k < hour ? 'is-past' : k === hour ? 'is-now' : '' })))
+  }
+  paint()
+  setInterval(paint, 60000)
+  return strip
+}
 
 export function createHud(ctx) {
   const hud = document.querySelector('.hud')
@@ -14,7 +30,6 @@ export function createHud(ctx) {
   const dock = document.querySelector('.dock')
   const go = h('button', { class: 'go', type: 'button', onclick: () => ctx.continueLearning() })
   const drill = h('button', { class: 'go light', type: 'button', onclick: () => ctx.openPractice() })
-  const today = h('button', { class: 'stat', type: 'button', onclick: () => openToday(ctx) })
   const chests = h('button', { class: 'stat', type: 'button', onclick: () => openChestList(ctx) })
   const sounds = h('button', { class: 'stat', type: 'button', onclick: () => openSounds(ctx) }, t('声音'))
   const scene = h('button', { class: 'stat', type: 'button', onclick: () => openScene(ctx) }, t('森林'))
@@ -23,6 +38,7 @@ export function createHud(ctx) {
   const tongue = h('button', { class: 'stat', type: 'button', 'aria-label': other === 'en' ? 'Switch to English' : '切换到中文', onclick: () => { sessionStorage.setItem('cw.resume', '1'); setLang(other) } }, other === 'en' ? 'EN' : '中文')
   const shown = {}
   dock.replaceChildren(h('div', { class: 'row center' }, go, drill), dock.querySelector('.keys'))
+  hud.querySelector('.brand').append(dayStrip(ctx))
 
   function stat(key, label, value, unit, hot) {
     const node = h('div', { class: `stat${hot ? ' is-hot' : ''}${shown[key] !== undefined && shown[key] !== value ? ' is-bump' : ''}` }, label, h('strong', {}, String(value)), unit)
@@ -39,10 +55,7 @@ export function createHud(ctx) {
     const season = SEASON_NAMES[ctx.weather.now.season]
     scene.replaceChildren(t('森林'), h('strong', {}, ctx.weather.dark ? t('{season}夜', { season }) : season))
     chests.replaceChildren(t('宝箱'), h('strong', {}, `${ctx.chests.found()}/${ctx.chests.chests.length}`))
-    // 「连续几天」点开就是「今天」：今天的份做了多少
-    today.replaceChildren(t('连续'), h('strong', {}, String(streak)), t('天', { n: streak }))
-    today.classList.toggle('is-hot', streak > 0)
-    stats.replaceChildren(today, stat('lit', t('亮灯'), `${totals.lit}/${totals.lessons}`, ''), stat('cards', t('卡片'), totals.cards, t('张')), chests, sounds, scene, tongue)
+    stats.replaceChildren(stat('streak', t('连续'), streak, t('天', { n: streak }), streak > 0), stat('lit', t('亮灯'), `${totals.lit}/${totals.lessons}`, ''), stat('cards', t('卡片'), totals.cards, t('张')), chests, sounds, scene, tongue)
     go.replaceChildren(h('span', {}, '▶'), h('div', {}, totals.lit ? t('接着学') : t('开始第一课'), h('small', {}, ` ${t('第 {n} 课 · {title}', { n: next.n, title: next.title })}`)))
     drill.replaceChildren(h('div', {}, t('练一练'), h('small', {}, ` ${totals.cards < 4 ? t('读完一课解锁') : due ? t('{n} 张该复习', { n: due }) : t('随便玩一轮')}`)))
   }

@@ -62,6 +62,11 @@ h1, h2, h3, p { margin: 0; }
 .brand { display: flex; flex-direction: column; padding: 10px 18px; line-height: 1.3; }
 .brand strong { font-size: 20px; font-weight: 700; }
 .brand small { font-size: 12px; color: var(--body); }
+/* 牌子下面那排格子（今天过到哪了），岁时的画法：过去的墨色，此刻一笔朱红，没到的浅灰。朱红只在这儿用 */
+.day { display: flex; gap: 2px; width: 100%; margin-top: 5px; padding: 3px 0; border: 0; background: none; cursor: pointer; }
+.day i { flex: 1; height: 10px; border-radius: 1.5px; background: var(--sage-soft); }
+.day .is-past { background: var(--ink); }
+.day .is-now { background: var(--vermilion); }
 .stats { position: relative; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 .menu { position: absolute; top: calc(100% + 8px); right: 0; display: flex; flex-direction: column; gap: 6px; padding: 10px; border-radius: 20px; animation: tag-in .2s var(--ease); transform-origin: top right; }
 .menu .stat { box-shadow: none; background: var(--sage-pale); white-space: nowrap; }
@@ -174,11 +179,6 @@ input[type="range"] { width: 100%; accent-color: var(--moss); margin: 10px 0; }
 .chest-tile.is-found:active { scale: .96; }
 .drawer-rows { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
 .drawer-rows .kicker { margin-bottom: 8px; }
-/* 「今天」面板的格子，岁时的画法：过去的墨色，此刻一笔朱红，没到的浅灰。朱红只在这儿用 */
-.marks { display: flex; flex-wrap: wrap; gap: 4px; }
-.marks i { width: 9px; height: 24px; border-radius: 3px; background: var(--sage-soft); }
-.marks .is-past { background: var(--ink); }
-.marks .is-now { background: var(--vermilion); }
 .tag-chest b { background: var(--amber-deep); }
 
 /* 提示条 */
