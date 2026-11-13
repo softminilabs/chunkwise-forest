@@ -11,10 +11,11 @@
 npm install
 npm run sync     # 拷 three.js、整理课文和朗读到 public/（要先在 ../chunkwise-web 跑过 npm run build）
 npm run sounds   # 从 ../Lull 拷环境声到 public/sounds/
+npm run words    # 从 ../Chunkwise 拷单词本和录音到 public/words/（三百多兆，不带插画）
 npm run serve    # http://localhost:4174/
 ```
 
-`npm run apps` 从个人网站 softminilabs.github.io 重新拉一遍 App 清单和图标（新 App 上架后跑）。
+`npm run apps` 从个人网站 softminilabs.github.io 重新拉一遍 App 清单、卖点和图标，名称以 App Store 上架的为准（新 App 上架后跑）。
 
 ## 怎么玩
 
