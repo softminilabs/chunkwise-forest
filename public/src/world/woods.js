@@ -65,9 +65,9 @@ function litter(scene, random, look, season) {
   spread(new THREE.IcosahedronGeometry(0.4, 0), 80, ['#9A9892', '#86847F', '#A7A6A0'], node => { node.scale.set(random.between(0.7, 1.8), random.between(0.5, 1), random.between(0.7, 1.5)); node.position.y += 0.12 })
   const leaf = new THREE.CircleGeometry(0.2, 5)
   leaf.rotateX(-Math.PI / 2)
-  if (season === 'autumn') spread(leaf, 700, look.leaf, node => { node.position.y += 0.05; node.scale.setScalar(random.between(0.7, 1.4)) })
-  if (season === 'spring') spread(new THREE.ConeGeometry(0.13, 0.26, 5), 520, ['#F7A9C4', '#FFFFFF', '#F6D35B', '#C9A7F0'], node => { node.position.y += 0.2 })
-  if (season === 'summer') spread(new THREE.ConeGeometry(0.1, 0.22, 5), 240, ['#FFFFFF', '#F6D35B'], node => { node.position.y += 0.18 })
+  // 春夏的花和秋天的落叶一样，是贴在地上的小五边形。花做成立着的小锥，朝上朝下看着都像一地碎片
+  const flat = { spring: [520, ['#F7A9C4', '#FFFFFF', '#F6D35B', '#C9A7F0'], 0.8, 1.3], summer: [240, ['#FFFFFF', '#F6D35B'], 0.7, 1.1], autumn: [700, look.leaf, 0.7, 1.4] }[season]
+  if (flat) spread(leaf, flat[0], flat[1], node => { node.position.y += 0.05; node.scale.setScalar(random.between(flat[2], flat[3])) })
   scene.add(group)
   return group
 }
