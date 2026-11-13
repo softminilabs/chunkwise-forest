@@ -223,6 +223,8 @@ const KEYS = {
 function bind(session) {
   const { view, audio } = session
   session.onKey = event => {
+    // 拖走不等于「刚才那句读完了」：不清掉的话，单句循环会把人弹回原来那句，跟读会停下来等
+    session.playing = -1
     const action = KEYS[event.code]
     if (!action || session.finished || event.metaKey || event.ctrlKey || event.altKey) return
     event.preventDefault()
