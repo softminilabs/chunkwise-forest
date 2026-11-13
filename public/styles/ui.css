@@ -42,7 +42,8 @@ h1, h2, h3, p { margin: 0; }
 .tag-text strong { font-size: 14px; font-weight: 700; }
 .tag-text small { font-size: 11px; color: var(--body); font-weight: 600; }
 .tag kbd { display: none; font: 800 11px var(--font); padding: 3px 8px; border-radius: 8px; background: var(--ink); color: var(--paper); margin-right: 4px; }
-.tag { animation: tag-in .25s var(--ease); }
+.tag { animation: tag-in .25s var(--ease); transition: opacity .4s var(--ease); }
+.is-stargazing .tag { opacity: 0; pointer-events: none; }
 @keyframes tag-in { from { opacity: 0; scale: .7; } }
 .tag-house .tag-text, .tag-spot .tag-text { display: flex; padding-right: 8px; }
 .tag-house .tag-text small, .tag-spot .tag-text small { display: none; }

@@ -116,40 +116,54 @@ function createAir(scene) {
   }
 }
 
+// 流星往左下划，每往左一米落这么多
+const SLOPE = 0.45
+
 /// 天上的：星星一直在，夜里才显出来；流星隔几秒划一道
 function createHeaven(scene) {
-  const stars = cloud(420, () => { const a = random.next() * 6.28; const up = random.between(0.1, 1.2); return [Math.cos(a) * Math.cos(up) * 170, Math.sin(up) * 170, Math.sin(a) * Math.cos(up) * 170] }, points({ color: '#FFFFFF', size: 2.4, sizeAttenuation: false, fog: false, opacity: 0 }))
+  // 抬头看天时画面只到仰角二十度上下，所以星星多半撒在低处
+  const stars = cloud(900, () => { const a = random.next() * 6.28; const up = 0.06 + random.next() ** 2 * 1.14; return [Math.cos(a) * Math.cos(up) * 170, Math.sin(up) * 170, Math.sin(a) * Math.cos(up) * 170] }, points({ color: '#FFFFFF', size: 2.4, sizeAttenuation: false, fog: false, opacity: 0 }))
+  // 流星是一条头亮尾暗、尾巴收成尖的光带。画成线的话永远只有一个像素宽，高分屏上几乎看不见
+  const streak = new THREE.PlaneGeometry(1, 0.55)
+  streak.setAttribute('color', new THREE.BufferAttribute(new Float32Array([1, 1, 1, 0.04, 0.08, 0.16, 1, 1, 1, 0.04, 0.08, 0.16]), 3))
+  streak.attributes.position.setY(1, 0).setY(3, 0)
   const meteors = Array.from({ length: 3 }, () => {
-    const geometry = new THREE.BufferGeometry()
-    geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(6), 3))
-    geometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array([1, 1, 1, 0.05, 0.1, 0.2]), 3))
-    const line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ vertexColors: true, fog: false, transparent: true, opacity: 0 }))
-    line.frustumCulled = false
-    return { line, life: 0, x: 0, y: 0, long: 10 }
+    const mesh = new THREE.Mesh(streak, new THREE.MeshBasicMaterial({ vertexColors: true, fog: false, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending }))
+    mesh.frustumCulled = false
+    mesh.rotation.z = Math.atan(SLOPE)
+    const pivot = new THREE.Group()
+    pivot.add(mesh)
+    return { pivot, mesh, life: 0, x: 0, y: 0, long: 10 }
   })
+  const aim = new THREE.Vector3()
   const group = new THREE.Group()
-  group.add(stars, ...meteors.map(meteor => meteor.line))
+  group.add(stars, ...meteors.map(meteor => meteor.pivot))
   scene.add(group)
   let next = 1.5
   return {
     update(dt, camera, scene) {
       group.position.copy(camera.position)
-      stars.material.opacity = scene.night * (scene.weather === 'clear' || scene.weather === 'meteor' ? 0.9 : 0.25)
+      // 雨雪天是阴的，看不到星星
+      stars.material.opacity = scene.weather === 'clear' || scene.weather === 'meteor' ? scene.night * 0.9 : 0
       next -= dt
       if (scene.weather === 'meteor' && scene.night > 0.6 && next <= 0) {
         const idle = meteors.find(meteor => meteor.life <= 0)
-        if (idle) Object.assign(idle, { life: 1, x: random.between(-70, 60), y: random.between(55, 95), long: random.between(9, 18) })
+        if (idle) {
+          Object.assign(idle, { life: 1, x: random.between(-20, 80), y: random.between(22, 44), long: random.between(10, 20) })
+          idle.mesh.scale.x = idle.long * Math.hypot(1, SLOPE)
+          // 流星划在镜头正对着的那片天上：镜头转到哪边都看得到
+          camera.getWorldDirection(aim)
+          idle.pivot.rotation.y = Math.atan2(-aim.x, -aim.z)
+        }
         next = random.between(1.2, 3.6)
       }
       for (const meteor of meteors) {
-        if (meteor.life <= 0) { meteor.line.material.opacity = 0; continue }
+        if (meteor.life <= 0) { meteor.mesh.material.opacity = 0; continue }
         meteor.life -= dt * 1.3
-        const run = (1 - meteor.life) * 46
-        const position = meteor.line.geometry.attributes.position
-        position.setXYZ(0, meteor.x - run, meteor.y - run * 0.45, -130)
-        position.setXYZ(1, meteor.x - run + meteor.long, meteor.y - run * 0.45 + meteor.long * 0.45, -130)
-        position.needsUpdate = true
-        meteor.line.material.opacity = Math.sin(Math.max(0, meteor.life) * Math.PI)
+        // 头在左下、尾在右上；光带的中心比头靠后半个身长
+        const run = (1 - meteor.life) * 46 - meteor.long / 2
+        meteor.mesh.position.set(meteor.x - run, meteor.y - run * SLOPE, -130)
+        meteor.mesh.material.opacity = Math.sin(Math.max(0, meteor.life) * Math.PI)
       }
     },
   }
@@ -169,6 +183,8 @@ export function createWeather(scene, renderer, state) {
   const heaven = createHeaven(scene)
   const now = { season: 'autumn', weather: 'clear', night: 0, painted: -1, paintedSeason: '', dark: false }
   const listeners = []
+  // 季节、天气、昼夜换了以后要知道的人（顶上「森林」按钮上的字）
+  const watchers = []
   const [top, low, mix] = [new THREE.Color(), new THREE.Color(), new THREE.Color()]
 
   /// 按「森林」面板里的选择定下现在是什么季节、什么天气；季节变了就通知地面、树、木屋重新上色
@@ -187,10 +203,10 @@ export function createWeather(scene, renderer, state) {
     now.paintedSeason = season
     now.painted = -1
     for (const listener of listeners) listener(LOOK[season], season)
+    air.paint(LOOK[season], season)
+    for (const watcher of watchers) watcher()
   }
 
-  // 季节、天气、昼夜换了以后要知道的人（顶上「森林」按钮上的字）
-  const watchers = []
   function nightGoal() {
     const wish = state.town.scene.time
     if (wish !== 'auto') return wish === 'night' ? 1 : 0
@@ -203,8 +219,6 @@ export function createWeather(scene, renderer, state) {
     const look = LOOK[now.season]
     const dark = NIGHT_SKY[now.season]
     const gloom = now.weather === 'rain' ? 0.28 : now.weather === 'snow' ? 0.12 : 0
-    air.paint(LOOK[season], season)
-    for (const watcher of watchers) watcher()
     top.set(look.sky[0]).lerp(mix.set(dark[0]), Math.max(now.night, gloom))
     low.set(look.sky[1]).lerp(mix.set(dark[1]), Math.max(now.night, gloom))
     document.body.style.setProperty('--sky-top', `#${top.getHexString()}`)
@@ -223,7 +237,10 @@ export function createWeather(scene, renderer, state) {
 
   return {
     now,
+    /// 现在算不算夜里。看的是要去的那一头：刚切成夜晚、天还没黑透时，面板上就该有流星可选了
+    get dark() { return nightGoal() > 0.5 },
     onSeason(listener) { listeners.push(listener) },
+    onChange(watcher) { watchers.push(watcher) },
     resolve,
     update(dt, time, focus, camera) {
       const goal = nightGoal()
@@ -239,6 +256,3 @@ export function createWeather(scene, renderer, state) {
     repaint() { now.painted = -1 },
   }
 }
-    /// 现在算不算夜里。看的是要去的那一头：刚切成夜晚、天还没黑透时，面板上就该有流星可选了
-    get dark() { return nightGoal() > 0.5 },
-    onChange(watcher) { watchers.push(watcher) },

@@ -133,7 +133,10 @@ function frame(ctx, input, wish, dt, time) {
   // 会走了，底下那行操作提示就不用一直挂着
   if (player.state.moving) document.querySelector('.keys')?.classList.add('is-gone')
   ctx.rig.update(dt, player.position)
+  ctx.rig.skyGoal = weather.now.weather === 'meteor' && !player.state.moving ? 1 : 0
   weather.update(dt, time, player.position, camera)
+  // 抬头看天的时候把牌子收起来：镜头一放低，远处的牌子全叠在天边
+  document.body.classList.toggle('is-stargazing', ctx.rig.sky > 0.4)
   ctx.cabins.update(weather.now.night, dt, time)
   ctx.camp.update(dt, time, weather.now.night)
   ctx.chests.update(time, weather.now)
