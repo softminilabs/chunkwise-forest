@@ -1,27 +1,23 @@
 // 顶上几个数和入口，底下两个不用走路的按钮：接着学、练一练。
 // 走路是为了好玩，不是门槛：想学的时候一步都不用走
-import { openChestCard, openChestList } from './chests.js'
+import { openChestList } from './chests.js'
+import { cycles, marks, openDay, percent } from './day.js'
 import { SEASON_NAMES } from '../look.js'
 import { h } from './core.js'
 import { openScene } from './scene.js'
 import { openSounds } from './sounds.js'
 import { lang, setLang, t } from '../i18n.js'
 
-/// 「组块森林」牌子下面那排 24 格：今天过到哪了。画法是岁时（我的另一款 App）的：过去的墨色，此刻一笔朱红，没到的浅灰。
-/// 上面不写字，点一下才露出它来自哪款 App——写上字就成广告了
-function dayStrip(ctx) {
-  const sundial = ctx.apps.find(app => app.id === 'sundial')
-  const strip = h('button', { class: 'day', type: 'button', onclick: () => openChestCard(ctx, sundial, ctx.chests.found(), false) })
+/// 「组块森林」牌子下面单独的一张小牌：今天已过百分之几，底下一排 24 格。点开是右边的侧栏（ui/day.js）
+function dayCard(ctx) {
+  const card = h('button', { class: 'day sticker', type: 'button', onclick: () => openDay(ctx) })
   const paint = () => {
-    const hour = new Date().getHours()
-    const label = t('今天 {n} / 24 小时', { n: hour })
-    strip.setAttribute('aria-label', label)
-    strip.title = label
-    strip.replaceChildren(...Array.from({ length: 24 }, (_, k) => h('i', { class: k < hour ? 'is-past' : k === hour ? 'is-now' : '' })))
+    const [today] = cycles()
+    card.replaceChildren(h('span', {}, t('今天已过'), h('strong', {}, percent(today.part))), marks(today.done, today.total))
   }
   paint()
   setInterval(paint, 60000)
-  return strip
+  return card
 }
 
 export function createHud(ctx) {
@@ -38,7 +34,7 @@ export function createHud(ctx) {
   const tongue = h('button', { class: 'stat', type: 'button', 'aria-label': other === 'en' ? 'Switch to English' : '切换到中文', onclick: () => { sessionStorage.setItem('cw.resume', '1'); setLang(other) } }, other === 'en' ? 'EN' : '中文')
   const shown = {}
   dock.replaceChildren(h('div', { class: 'row center' }, go, drill), dock.querySelector('.keys'))
-  hud.querySelector('.brand').append(dayStrip(ctx))
+  hud.querySelector('.hud-left').append(dayCard(ctx))
 
   function stat(key, label, value, unit, hot) {
     const node = h('div', { class: `stat${hot ? ' is-hot' : ''}${shown[key] !== undefined && shown[key] !== value ? ' is-bump' : ''}` }, label, h('strong', {}, String(value)), unit)

@@ -10,7 +10,7 @@ export const EN = {
   '回到森林': 'Back to the forest',
   '森林没搭起来，刷新试试': 'The forest failed to load. Try refreshing.',
   '连续': 'Streak',
-  '今天 {n} / 24 小时': 'Today: {n} of 24 hours',
+  '今天已过': 'Today so far', '今天': 'Today', '本周': 'This week', '本月': 'This month', '今年': 'This year',
   '天': ({ n }) => (Number(n) === 1 ? 'day' : 'days'),
   '亮灯': 'Lamps lit',
   '卡片': 'Cards',
