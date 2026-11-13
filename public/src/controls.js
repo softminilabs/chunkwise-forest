@@ -30,7 +30,8 @@ export function createInput(canvas, camera, rig, handlers) {
   const ground = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0)
   const point = new THREE.Vector3()
   const press = { active: false, x: 0, y: 0, moved: 0 }
-  const blocked = () => document.body.dataset.modal === 'open'
+  // seat：在单词屋里坐下了（书桌前学词、壁炉前听词）
+  const blocked = () => document.body.dataset.modal === 'open' || Boolean(document.body.dataset.seat)
   const aim = event => {
     const box = canvas.getBoundingClientRect()
     raycaster.setFromCamera(new THREE.Vector2((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1), camera)

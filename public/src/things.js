@@ -6,7 +6,7 @@ import { t } from './i18n.js'
 
 const QUIET_RANGE = 7.5
 
-export function createThings(root, { onChoose }) {
+export function createThings(root, { onChoose, chrome: chromeSelector = '.hud > *' }) {
   const list = []
   const spot = new THREE.Vector3()
   const sphere = new THREE.Sphere()
@@ -59,7 +59,7 @@ export function createThings(root, { onChoose }) {
   let chrome = []
   let measuredAt = -1
   function covered(x, y, time) {
-    if (time - measuredAt > 1) { measuredAt = time; chrome = [...document.querySelectorAll('.hud > *')].map(node => node.getBoundingClientRect()) }
+    if (time - measuredAt > 1) { measuredAt = time; chrome = [...document.querySelectorAll(chromeSelector)].map(node => node.getBoundingClientRect()) }
     return chrome.some(box => x > box.left - 60 && x < box.right + 60 && y > box.top && y - 36 < box.bottom)
   }
 

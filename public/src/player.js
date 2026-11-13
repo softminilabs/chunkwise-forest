@@ -26,9 +26,14 @@ function figure() {
   return { root, upper, legs, arms }
 }
 
-export function createPlayer(scene, colliders) {
+// 森林的地面：有起伏，四周到头
+const FOREST = { x: BOUNDS.x, north: BOUNDS.north, south: BOUNDS.south, height, start: START, speed: SPEED, size: 1.15 }
+
+/// ground：他走在哪儿。默认是森林；单词屋里是一块平地，走得慢一点、人按家具的尺寸缩一点
+export function createPlayer(scene, colliders, ground = FOREST) {
   const parts = figure()
-  const position = parts.root.position.set(START.x, height(START.x, START.z), START.z)
+  parts.root.scale.setScalar(ground.size)
+  const position = parts.root.position.set(ground.start.x, ground.height(ground.start.x, ground.start.z), ground.start.z)
   const velocity = new THREE.Vector3()
   const state = { goal: null, reach: 0.4, arrive: null, stride: 0, stuck: 0, moving: false }
   parts.root.rotation.y = Math.PI
@@ -43,9 +48,9 @@ export function createPlayer(scene, colliders) {
       const min = item.r + BODY
       if (gap < min && gap > 0.0001) { position.x = item.x + dx / gap * min; position.z = item.z + dz / gap * min }
     }
-    position.x = Math.min(BOUNDS.x, Math.max(-BOUNDS.x, position.x))
-    position.z = Math.min(BOUNDS.south, Math.max(BOUNDS.north, position.z))
-    position.y = height(position.x, position.z)
+    position.x = Math.min(ground.x, Math.max(-ground.x, position.x))
+    position.z = Math.min(ground.south, Math.max(ground.north, position.z))
+    position.y = ground.height(position.x, position.z)
   }
 
   /// 走向点到的地方。被东西挡住半天没靠近，就当走到了：别让人看着小陈原地蹭
@@ -71,12 +76,12 @@ export function createPlayer(scene, colliders) {
     state.moving = speed > 0.6
     if (state.moving) parts.root.rotation.y = turn(parts.root.rotation.y, Math.atan2(velocity.x, velocity.z), 14, dt)
     state.stride += speed * dt * 1.9
-    const swing = Math.sin(state.stride) * Math.min(1, speed / SPEED)
+    const swing = Math.sin(state.stride) * Math.min(1, speed / ground.speed)
     parts.legs[0].rotation.x = swing * 0.9
     parts.legs[1].rotation.x = -swing * 0.9
     parts.arms[0].rotation.x = -swing * 0.7
     parts.arms[1].rotation.x = swing * 0.7
-    parts.upper.position.y = Math.abs(Math.cos(state.stride)) * 0.08 * Math.min(1, speed / SPEED) + Math.sin(time * 2.2) * 0.012
+    parts.upper.position.y = Math.abs(Math.cos(state.stride)) * 0.08 * Math.min(1, speed / ground.speed) + Math.sin(time * 2.2) * 0.012
     parts.upper.rotation.x = damp(parts.upper.rotation.x, state.moving ? 0.1 : 0, 8, dt)
   }
 
@@ -84,14 +89,22 @@ export function createPlayer(scene, colliders) {
     position, state, root: parts.root,
     update(dt, time, wish) {
       const direction = steer(wish, dt)
-      velocity.x = damp(velocity.x, direction.x * SPEED, 11, dt)
-      velocity.z = damp(velocity.z, direction.z * SPEED, 11, dt)
+      velocity.x = damp(velocity.x, direction.x * ground.speed, 11, dt)
+      velocity.z = damp(velocity.z, direction.z * ground.speed, 11, dt)
       position.x += velocity.x * dt
       position.z += velocity.z * dt
       collide()
       animate(dt, time)
     },
     goTo(x, z, reach = 0.4, arrive = null) { Object.assign(state, { goal: { x, z }, reach, arrive, stuck: 0 }) },
-    place(x, z) { position.set(x, height(x, z), z); velocity.set(0, 0, 0); state.goal = null },
+    place(x, z) { position.set(x, ground.height(x, z), z); velocity.set(0, 0, 0); state.goal = null },
+    /// 坐下 / 站起来。坐着的时候腿往前伸、手搭在前面；这期间不要再调 update，不然又站直了
+    sit(on) {
+      state.moving = false
+      for (const leg of parts.legs) leg.rotation.x = on ? -1.45 : 0
+      for (const arm of parts.arms) arm.rotation.x = on ? -1.0 : 0
+      parts.upper.position.y = 0
+      parts.upper.rotation.x = 0
+    },
   }
 }
