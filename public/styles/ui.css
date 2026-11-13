@@ -42,9 +42,9 @@ h1, h2, h3, p { margin: 0; }
 .tag-text strong { font-size: 14px; font-weight: 700; }
 .tag-text small { font-size: 11px; color: var(--body); font-weight: 600; }
 .tag kbd { display: none; font: 800 11px var(--font); padding: 3px 8px; border-radius: 8px; background: var(--ink); color: var(--paper); margin-right: 4px; }
-.tag { animation: tag-in .25s var(--ease); transition: opacity .4s var(--ease); }
+.tag { animation: tag-in .3s ease-out; transition: opacity .4s var(--ease); }
 .is-stargazing .tag { opacity: 0; pointer-events: none; }
-@keyframes tag-in { from { opacity: 0; scale: .7; } }
+@keyframes tag-in { from { opacity: 0; } }
 .tag-house .tag-text, .tag-spot .tag-text { display: flex; padding-right: 8px; }
 .tag-house .tag-text small, .tag-spot .tag-text small { display: none; }
 /* 鼠标指着的那样东西：把名字露出来 */
@@ -86,8 +86,10 @@ button.stat { cursor: pointer; }
 .keys.is-gone { opacity: 0; }
 
 /* 右边的抽屉：单元、App 物件的面板 */
-#drawer { position: fixed; top: 16px; right: 16px; bottom: 16px; width: min(430px, calc(100vw - 32px)); display: flex; flex-direction: column; overflow: hidden; animation: drawer-in .35s var(--ease); }
-@keyframes drawer-in { from { opacity: 0; translate: 28px 0; } }
+#drawer { position: fixed; top: 16px; right: 16px; bottom: 16px; width: min(430px, calc(100vw - 32px)); display: flex; flex-direction: column; overflow: hidden; animation: drawer-in .4s ease-out; }
+/* 走近东西时冒出来的内容（牌子、右边的面板、提示条）都在原地渐显，不带位移和缩放：滑进来、弹出来看着像飞入。
+   曲线用平缓的 ease-out，--ease 那条前冲太猛，透明度一下就到头，看不出是渐显 */
+@keyframes drawer-in { from { opacity: 0; } }
 .drawer-head { padding: 22px 24px 14px; display: flex; gap: 12px; align-items: flex-start; }
 .drawer-head h2 { font-size: 24px; font-weight: 700; line-height: 1.2; }
 .drawer-head p { font-size: 13px; color: var(--body); }
@@ -175,10 +177,10 @@ input[type="range"] { width: 100%; accent-color: var(--moss); margin: 10px 0; }
 
 /* 提示条 */
 #toasts { position: fixed; top: 84px; left: 50%; translate: -50% 0; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; z-index: 50; }
-.toast { padding: 10px 20px; border-radius: 999px; background: var(--ink); color: var(--paper); font-weight: 700; box-shadow: var(--lift); animation: toast-in .4s var(--spring), toast-out .3s ease 2.6s forwards; }
+.toast { padding: 10px 20px; border-radius: 999px; background: var(--ink); color: var(--paper); font-weight: 700; box-shadow: var(--lift); animation: toast-in .35s ease-out, toast-out .3s ease 2.6s forwards; }
 .toast b { color: var(--amber); }
-@keyframes toast-in { from { opacity: 0; translate: 0 -12px; scale: .9; } }
-@keyframes toast-out { to { opacity: 0; translate: 0 -8px; } }
+@keyframes toast-in { from { opacity: 0; } }
+@keyframes toast-out { to { opacity: 0; } }
 
 /* 开场 */
 #start { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px; background: color-mix(in srgb, var(--cream) 55%, transparent); backdrop-filter: blur(3px); z-index: 60; transition: opacity .5s ease; }
