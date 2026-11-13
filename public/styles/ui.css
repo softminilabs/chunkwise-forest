@@ -73,6 +73,7 @@ h1, h2, h3, p { margin: 0; }
 .day { display: flex; flex-direction: column; gap: 6px; padding: 8px 14px 10px; border: 0; font-size: 13px; color: var(--body); text-align: left; cursor: pointer; }
 .day span { display: flex; align-items: baseline; gap: 6px; }
 .day strong { font-size: 18px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+/* 小牌上这一排只是个陪衬，不能比上面的字抢眼：压矮、全用淡绿。墨色和朱红留给点开以后的侧栏 */
 .day .marks { gap: 2px; }
 .day .marks i { flex: none; width: 3px; height: 6px; border-radius: 1.5px; background: var(--sage-pale); }
 .day .marks .is-past { background: var(--sage); }
@@ -84,10 +85,7 @@ h1, h2, h3, p { margin: 0; }
 .menu .stat { box-shadow: none; background: var(--sage-pale); white-space: nowrap; }
 .stat { display: flex; align-items: baseline; gap: 6px; padding: 8px 14px; border-radius: 999px; background: var(--paper); box-shadow: var(--press); font-size: 13px; color: var(--body); border: 0; }
 .stat strong { font-size: 18px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
-.stat.is-hot { background: var(--amber); color: var(--ink); }
-.stat.is-bump { animation: bump .45s var(--spring); }
 button.stat { cursor: pointer; }
-@keyframes bump { 40% { scale: 1.18; } }
 
 /* 底下：接着学，不用走路 */
 .dock { position: fixed; left: 0; right: 0; bottom: 18px; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; }
