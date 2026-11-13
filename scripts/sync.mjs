@@ -96,7 +96,10 @@ function buildLesson(lesson, allChunks, seen, formsOf) {
   const cards = [...chunksOf(lesson, allChunks, sentences, formsOf), ...wordsOf(lesson, sentences)].sort((a, b) => a.s - b.s || a.r[0] - b.r[0])
   for (const card of cards) {
     card.fresh = !seen.has(card.id)
-    if (!card.fresh) continue
+    // 这张卡在这一课里是哪一句、划的是哪几个字、朗读里从几秒到几秒
+    const here = { s: card.s, r: card.r, l: lesson.id, n: lesson.number, en: sentences[card.s].en, szh: sentences[card.s].zh, a: timing.sentences[card.s].start, b: timing.sentences[card.s].end }
+    // 后面的课里又出现了：记成这张卡的「另一句」。练习场答对以后换一句考，考的就是这些
+    if (!card.fresh) { seen.get(card.id).more.push(here); continue }
     const { fresh, ...rest } = card
     seen.set(card.id, { ...rest, l: lesson.id, n: lesson.number, en: sentences[card.s].en, szh: sentences[card.s].zh, a: timing.sentences[card.s].start, b: timing.sentences[card.s].end })
   }

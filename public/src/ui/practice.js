@@ -59,12 +59,16 @@ function createGame(ctx, lesson, title) {
   return { ctx, lesson, title, root, body, dots, heading, kicker, known, all: Object.values(ctx.cards), snippet: createSnippet(), keys: null, round: { mode: null, cards: [], index: 0, right: 0, combo: 0, best: 0, missed: new Set() } }
 }
 
+/// 练习场里一张卡这次考哪一句。答对升了一格，下次就换它在别的课里出现的那一句来考：
+/// 只在学它的那句里认得，不算会用（App 的 PRD 第 8 节「迁移」）。答错打回第一格，又回到学它的那句
+const inContext = (card, box) => ({ ...card, ...[card, ...(card.more ?? [])][box % (1 + (card.more?.length ?? 0))] })
+
 /// 这一轮用哪些卡。跟着某一课练：就用那一课的，新卡在前；练习场：到期的先出
 function draw(game) {
   const { lesson, ctx } = game
   if (lesson) return shuffle(lesson.cards.map(card => ({ ...card, l: lesson.id, en: lesson.sentences[card.s].en, szh: lesson.sentences[card.s].zh, a: lesson.timing[card.s].a, b: lesson.timing[card.s].b }))).sort((a, b) => Number(b.fresh) - Number(a.fresh)).slice(0, ROUND)
   const due = new Set(ctx.state.due())
-  const owned = ctx.state.owned().map(id => ctx.cards[id]).filter(Boolean)
+  const owned = ctx.state.owned().filter(id => ctx.cards[id]).map(id => inContext(ctx.cards[id], ctx.state.town.cards[id].box))
   return [...shuffle(owned.filter(card => due.has(card.id))), ...shuffle(owned.filter(card => !due.has(card.id)))].slice(0, ROUND)
 }
 
