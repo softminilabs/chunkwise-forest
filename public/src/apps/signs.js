@@ -2,7 +2,7 @@
 import * as THREE from 'three'
 import qrcodeGenerator from 'qrcode'
 import { C } from '../palette.js'
-import { at, ball, box, canvasTexture, drum, flat, group, pill, polar, toy } from '../toy.js'
+import { at, ball, box, canvasTexture, drum, flat, group, pill, toy } from '../toy.js'
 import { h } from '../ui/core.js'
 
 const ROWS = 22
@@ -85,7 +85,8 @@ export function ligit(ctx, app) {
     return group(at(toy(pill(0.09, 3.0), C.ink, { outline: 0.07 }), 0, 1.6, 0), toy(drum(0.26, 0.4, 0.22, 0.08), C.ink, { outline: 0.07 }), at(new THREE.Mesh(ball(0.44), glow), 0, 3.45, 0), at(toy(drum(0.14, 0.5, 0.26, 0.09), C.ink, { outline: 0.07 }), 0, 3.74, 0), at(sprite, 0, 3.45, 0))
   }
   const node = lamp()
-  for (const [degrees, radius] of [[-165, 15.4], [-105, 16.2], [-30, 16.2], [30, 16.2], [105, 16.2]]) { const { x, z } = polar(degrees, radius); ctx.scene.add(at(lamp(), x, 0, z)); ctx.colliders.push({ x, z, r: 0.4 }) }
+  // 另外三盏沿着 App 街立着
+  for (const [x, z] of [[-2.3, 26], [2.3, 16], [-2.3, 16]]) { ctx.scene.add(at(lamp(), x, 0, z)); ctx.colliders.push({ x, z, r: 0.4 }) }
   let cheer = false
   function open() {
     const row = h('div', { class: 'row' })

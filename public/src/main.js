@@ -63,7 +63,7 @@ function wire(ctx) {
   /// 房子和 App 物件的正面都朝着广场：用它的时候镜头转到广场这一侧，看得见正面，人也不会被挡在后面
   ctx.use = thing => {
     ctx.ui.closeDrawer()
-    if (thing.kind !== 'spot' && Math.hypot(thing.position.x, thing.position.z) > 3) ctx.rig.yawGoal = Math.atan2(-thing.position.x, -thing.position.z)
+    if (thing.kind !== 'spot' && !thing.steady && Math.hypot(thing.position.x, thing.position.z) > 3) ctx.rig.yawGoal = Math.atan2(-thing.position.x, -thing.position.z)
     thing.use()
   }
   ctx.openLesson = meta => { ctx.ui.closeDrawer(); return openReader(ctx, meta) }
