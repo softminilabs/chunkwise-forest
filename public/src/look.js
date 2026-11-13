@@ -1,9 +1,10 @@
 // 森林长什么样，全由季节定：天（上、下两个色）、地面两个色、松树、阔叶树的几种色、小路、日光、溪水。
 // 夜里只换天色和光，东西本身的颜色不变，靠光照暗下去
 import * as THREE from 'three'
+import { t } from './i18n.js'
 
 export const SEASONS = ['spring', 'summer', 'autumn', 'winter']
-export const SEASON_NAMES = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' }
+export const SEASON_NAMES = { spring: t('春'), summer: t('夏'), autumn: t('秋'), winter: t('冬') }
 export const LOOK = {
   spring: { sky: ['#BFE1EE', '#EDF6EA'], ground: ['#A5D38C', '#B9DE9C'], pine: '#62A678', leaf: ['#BFE39B', '#F5BBCD', '#FAD7E2', '#A6D788'], path: '#E6D6B2', sun: '#FFF3DC', water: '#A9D5DE' },
   summer: { sky: ['#A3D5EC', '#E0F2E2'], ground: ['#74B868', '#8AC873'], pine: '#2F7554', leaf: ['#4FA058', '#6FBA63', '#3F8E56'], path: '#DDC99C', sun: '#FFFFFF', water: '#97CCD8' },
@@ -14,7 +15,7 @@ export const NIGHT_SKY = { spring: ['#0E1F30', '#213E4A'], summer: ['#0B1D2C', '
 
 /// 这个季节、这个时候能有哪些天气：春夏秋下雨、冬天下雪，流星只在夜里。春天不会下雪
 export const weathersOf = (season, night) => ['clear', season === 'winter' ? 'snow' : 'rain', ...(night ? ['meteor'] : [])]
-export const WEATHER_NAMES = { clear: '晴', snow: '下雪', meteor: '流星', rain: { spring: '小雨', summer: '雷雨', autumn: '秋雨' } }
+export const WEATHER_NAMES = { clear: t('晴'), snow: t('下雪'), meteor: t('流星'), rain: { spring: t('小雨'), summer: t('雷雨'), autumn: t('秋雨') } }
 
 /// 今天算哪个季节：三到五月春，六到八月夏，九到十一月秋，其余冬
 export const seasonOf = (date = new Date()) => SEASONS[Math.floor(((date.getMonth() + 10) % 12) / 3)]

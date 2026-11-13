@@ -2,10 +2,11 @@
 // 每一种也可以手动常开或关掉
 import { smooth } from './look.js'
 import { STREAM, distanceTo } from './world/land.js'
+import { t } from './i18n.js'
 
 export const SOUNDS = {
-  birds: ['晨鸟', 'morning_birds.mp3'], stream: ['溪水', 'stream.m4a'], leaves: ['林间的风', 'bamboo_wind.mp3'], wind: ['冬天的风', 'winter_wind.mp3'],
-  crickets: ['蟋蟀', 'summer_crickets.mp3'], frogs: ['蛙鸣', 'pond_frogs.mp3'], rain: ['雨打树叶', 'rain_forest.mp3'], thunder: ['雷雨', 'thunderstorm.mp3'], fire: ['篝火', 'campfire.mp3'],
+  birds: [t('晨鸟'), 'morning_birds.mp3'], stream: [t('溪水'), 'stream.m4a'], leaves: [t('林间的风'), 'bamboo_wind.mp3'], wind: [t('冬天的风'), 'winter_wind.mp3'],
+  crickets: [t('蟋蟀'), 'summer_crickets.mp3'], frogs: [t('蛙鸣'), 'pond_frogs.mp3'], rain: [t('雨打树叶'), 'rain_forest.mp3'], thunder: [t('雷雨'), 'thunderstorm.mp3'], fire: [t('篝火'), 'campfire.mp3'],
 }
 const ON_LEVEL = 0.55
 

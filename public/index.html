@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>组块森林 · 用文章学英语</title>
+<script>
+  // 语言要在第一帧之前定下来，不然英文用户会先闪一下中文。没选过就看浏览器的语言
+  document.documentElement.lang = (localStorage.getItem('cw.lang') ?? (navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en')) === 'en' ? 'en' : 'zh-CN'
+</script>
 <meta name="description" content="一片能逛的森林：九间木屋是九个单元，读完一课亮一盏灯。用文章学英语。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233F6B55'/%3E%3Cpath d='M32 10 14 38h36z' fill='%23A9D08E'/%3E%3Cpath d='M32 22 12 50h40z' fill='%23E9F3E2'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles/ui.css">
@@ -15,22 +19,23 @@
 <canvas id="stage" aria-label="组块森林"></canvas>
 <div id="tags"></div>
 <header class="hud" hidden>
-  <div class="brand sticker"><strong>组块森林</strong><small>B1 · 用文章学英语</small></div>
+  <div class="brand sticker"><strong><span data-lang="zh">组块森林</span><span data-lang="en">Chunkwise Forest</span></strong><small><span data-lang="zh">B1 · 用文章学英语</span><span data-lang="en">B1 · Learn English through reading</span></small></div>
   <div class="stats"></div>
 </header>
 <div class="dock" hidden>
   <button class="go" type="button"></button>
-  <p class="keys">WASD / 点地面走动 · 走近按空格 · 拖动转镜头</p>
+  <p class="keys"><span data-lang="zh">WASD / 点地面走动 · 走近按空格 · 拖动转镜头</span><span data-lang="en">WASD or click to walk · Space to use · Drag to look around</span></p>
 </div>
 <aside id="drawer" class="sticker" hidden></aside>
 <div id="modal" hidden></div>
 <div id="toasts" aria-live="polite"></div>
 <section id="start">
   <div class="start-card sticker">
-    <p class="start-kicker">用文章学英语</p>
-    <h1>组块森林</h1>
-    <p class="start-lead">沿着小路往里走，九间木屋是九个单元。读完一课，屋檐下亮一盏灯。</p>
-    <button class="button big" type="button" disabled>正在种树…</button>
+    <p class="start-kicker"><span data-lang="zh">用文章学英语</span><span data-lang="en">Learn English through reading</span></p>
+    <h1><span data-lang="zh">组块森林</span><span data-lang="en">Chunkwise Forest</span></h1>
+    <p class="start-lead"><span data-lang="zh">沿着小路往里走，九间木屋是九个单元。读完一课，屋檐下亮一盏灯。</span><span data-lang="en">Follow the trail into the woods. Nine cabins are nine units. Finish a lesson and a lamp lights up under the eaves.</span></p>
+    <button class="button big" type="button" disabled><span data-lang="zh">正在种树…</span><span data-lang="en">Planting trees…</span></button>
+    <button class="lang" type="button"><span data-lang="zh" lang="en">English</span><span data-lang="en" lang="zh-CN">中文</span></button>
   </div>
 </section>
 </body>

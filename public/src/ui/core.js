@@ -1,4 +1,6 @@
 // 界面的几块公用地盘：右边的抽屉、盖住森林的大卡片、顶上的提示条
+import { lang, pick, t } from '../i18n.js'
+
 export function h(tag, attributes = {}, ...children) {
   const node = document.createElement(tag)
   for (const [key, value] of Object.entries(attributes ?? {})) {
@@ -12,14 +14,17 @@ export function h(tag, attributes = {}, ...children) {
   return node
 }
 
-export const GENRES = { story: '故事', dialogue: '对话', talk: '分享', chat: '聊天', profile: '人物' }
+export const GENRES = { story: t('故事'), dialogue: t('对话'), talk: t('分享'), chat: t('聊天'), profile: t('人物') }
 
-export const stars = (count, max = 2) => h('span', { class: 'stars', 'aria-label': `${count} 颗星` }, ...Array.from({ length: max }, (_, k) => k < count ? h('i', {}, '★') : '☆'))
+export const stars = (count, max = 2) => h('span', { class: 'stars', 'aria-label': t('{n} 颗星', { n: count }) }, ...Array.from({ length: max }, (_, k) => k < count ? h('i', {}, '★') : '☆'))
+
+/// 中文界面里中英文名都写，英文界面只写英文名
+export const appName = app => lang === 'en' || app.zh === app.en ? pick(app) : `${app.zh} ${app.en}`
 
 export function appCard(app) {
   return h('div', { class: 'appcard' },
     h('img', { src: app.icon, alt: '', width: 52, height: 52 }),
-    h('div', {}, h('small', {}, '这个点子来自我做的 iPhone App'), h('strong', {}, app.zh === app.en ? app.zh : `${app.zh} ${app.en}`), h('span', {}, app.tagline)),
+    h('div', {}, h('small', {}, t('这个点子来自我做的 iPhone App')), h('strong', {}, appName(app)), h('span', {}, pick(app, 'tagline', 'taglineEn'))),
     h('a', { class: 'button', href: app.store, target: '_blank', rel: 'noopener' }, 'App Store'))
 }
 
@@ -45,7 +50,7 @@ export function createUI(rig, audio) {
     drawer.replaceChildren(...[
       h('header', { class: 'drawer-head' },
         h('div', { class: 'grow' }, kicker && h('p', { class: 'kicker' }, kicker), h('h2', {}, title), sub && h('p', {}, sub)),
-        h('button', { class: 'close', type: 'button', 'aria-label': '关上', onclick: closeDrawer }, '✕')),
+        h('button', { class: 'close', type: 'button', 'aria-label': t('关上'), onclick: closeDrawer }, '✕')),
       h('div', { class: 'drawer-body' }, body),
       app && appCard(app)].filter(Boolean))
     drawer.hidden = false

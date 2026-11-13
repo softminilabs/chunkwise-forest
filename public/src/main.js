@@ -18,6 +18,7 @@ import { createChests } from './world/chests.js'
 import { createLand } from './world/land.js'
 import { createWeather } from './world/weather.js'
 import { createWoods } from './world/woods.js'
+import { lang, pick, setLang, t } from './i18n.js'
 
 const canvas = document.getElementById('stage')
 // 画布是透明的：天空是页面背景上的一道渐变，远处的树靠雾淡进去
@@ -26,6 +27,8 @@ renderer.shadowMap.enabled = true
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(36, 1, 1, 400)
+document.title = t('组块森林 · 用文章学英语')
+canvas.setAttribute('aria-label', t('组块森林'))
 const load = url => fetch(url).then(response => response.json())
 
 function resize() {
@@ -52,23 +55,23 @@ function openCamp(ctx) {
   const raining = ctx.weather.now.weather === 'rain'
   const body = h('div', { class: 'drawer-rows' })
   const paint = () => body.replaceChildren(
-    h('button', { class: 'button big', type: 'button', disabled: raining, onclick: () => { camp.light(!camp.state.lit); ctx.audio.pop(); paint() } }, raining ? '下雨了，火点不着' : camp.state.lit ? '把火熄了' : '点燃篝火'),
-    h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openPractice() }, '坐下来练一轮'),
-    h('p', { class: 'note' }, raining ? '等雨停了再来点火。' : '火点着了有噼啪声，离得越近越响。夜里它能照亮整块空地。'))
+    h('button', { class: 'button big', type: 'button', disabled: raining, onclick: () => { camp.light(!camp.state.lit); ctx.audio.pop(); paint() } }, raining ? t('下雨了，火点不着') : camp.state.lit ? t('把火熄了') : t('点燃篝火')),
+    h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openPractice() }, t('坐下来练一轮')),
+    h('p', { class: 'note' }, raining ? t('等雨停了再来点火。') : t('火点着了有噼啪声，离得越近越响。夜里它能照亮整块空地。')))
   paint()
-  ctx.ui.openDrawer({ kicker: '林间空地', title: '篝火', sub: '学完一课，回来坐一会儿，把今天的卡片过一遍。', body })
+  ctx.ui.openDrawer({ kicker: t('林间空地'), title: t('篝火'), sub: t('学完一课，回来坐一会儿，把今天的卡片过一遍。'), body })
 }
 
 /// 把木屋、单词屋、篝火登记成能用的东西；宝箱在 world/chests.js 里自己登记
 function addPlaces(ctx) {
   const spot = cabin => new THREE.Vector3(cabin.x, cabin.y, cabin.z)
   for (const house of ctx.cabins.houses) {
-    ctx.things.add({ kind: 'house', title: house.unit.zh, hint: house.unit.en, badge: house.unit.n, position: spot(house), spot: house.doorAt, stop: 1.3, height: house.height, radius: 3.4, reach: 5.8, face: house.face, use: () => openUnit(ctx, house) })
+    ctx.things.add({ kind: 'house', title: pick(house.unit), hint: lang === 'en' ? t('{n} 课', { n: house.unit.lessons.length }) : house.unit.en, badge: house.unit.n, position: spot(house), spot: house.doorAt, stop: 1.3, height: house.height, radius: 3.4, reach: 5.8, face: house.face, use: () => openUnit(ctx, house) })
   }
   const { lodge } = ctx.cabins
-  ctx.things.add({ kind: 'house', title: '单词屋', hint: '还没开门', badge: '词', position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, face: lodge.face, use: () => ctx.ui.toast('单词屋<b>还没开门</b>，下一步就开') })
+  ctx.things.add({ kind: 'house', title: t('单词屋'), hint: t('还没开门'), badge: t('词'), position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, face: lodge.face, use: () => ctx.ui.toast(t('单词屋<b>还没开门</b>，下一步就开')) })
   const camp = ctx.camp.state
-  ctx.things.add({ kind: 'spot', title: '篝火', hint: '点火 · 坐下来练一轮', badge: '火', position: new THREE.Vector3(camp.x, camp.y, camp.z), height: 2, radius: 1.8, reach: 4.4, use: () => openCamp(ctx) })
+  ctx.things.add({ kind: 'spot', title: t('篝火'), hint: t('点火 · 坐下来练一轮'), badge: t('火'), position: new THREE.Vector3(camp.x, camp.y, camp.z), height: 2, radius: 1.8, reach: 4.4, use: () => openCamp(ctx) })
 }
 
 function wire(ctx) {
@@ -102,7 +105,7 @@ function wire(ctx) {
     const at = hit.lamp.getWorldPosition(new THREE.Vector3())
     ctx.fx.burst(at.x, at.y, at.z, 22)
     ctx.audio.chime(5)
-    ctx.ui.toast(`第 ${lesson.n} 课 <b>${'★'.repeat(ctx.state.stars(lesson.id))}</b> 灯亮了`)
+    ctx.ui.toast(t('第 {n} 课 <b>{stars}</b> 灯亮了', { n: lesson.n, stars: '★'.repeat(ctx.state.stars(lesson.id)) }))
   }
   ctx.openChest = chest => {
     const fresh = !ctx.state.town.chests[chest.app.id]
@@ -120,11 +123,18 @@ function wire(ctx) {
 function start(ctx, hud) {
   const screen = document.getElementById('start')
   const button = screen.querySelector('button')
-  const enter = () => { ctx.audio.unlock(); screen.classList.add('is-leaving'); setTimeout(() => { screen.hidden = true }, 500); hud.show(); canvas.focus() }
+  const reveal = () => { screen.classList.add('is-leaving'); setTimeout(() => { screen.hidden = true }, 500); hud.show(); canvas.focus() }
+  const enter = () => { ctx.audio.unlock(); reveal() }
   button.disabled = false
-  button.textContent = ctx.state.totals().lit ? '回到森林' : '走进森林'
+  button.textContent = ctx.state.totals().lit ? t('回到森林') : t('走进森林')
   button.addEventListener('click', enter, { once: true })
   button.focus()
+  screen.querySelector('.lang').addEventListener('click', () => setLang(lang === 'zh' ? 'en' : 'zh'))
+  // 在森林里换语言是整页重载，回来直接进森林。浏览器要等到下一次点按或按键才肯出声
+  if (!sessionStorage.getItem('cw.resume')) return
+  sessionStorage.removeItem('cw.resume')
+  reveal()
+  for (const kind of ['pointerdown', 'keydown']) addEventListener(kind, () => ctx.audio.unlock(), { once: true })
 }
 
 function frame(ctx, input, wish, dt, time) {
@@ -192,5 +202,5 @@ async function boot() {
 
 boot().catch(error => {
   console.error(error)
-  document.querySelector('#start button').textContent = '森林没搭起来，刷新试试'
+  document.querySelector('#start button').textContent = t('森林没搭起来，刷新试试')
 })

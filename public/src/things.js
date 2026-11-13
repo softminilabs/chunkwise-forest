@@ -2,6 +2,7 @@
 // 木屋和篝火是学习的地方，名字一直显示；宝箱这类 quiet 的，走到跟前、或者鼠标指上去才冒出来。
 // 标签是普通的网页元素，字清楚、能点，触屏上点标签就等于点东西
 import * as THREE from 'three'
+import { t } from './i18n.js'
 
 const QUIET_RANGE = 7.5
 
@@ -14,7 +15,7 @@ export function createThings(root, { onChoose }) {
   /// 标签里的字。东西的名字会变（宝箱打开后换成 App 的名字），所以单拎出来
   function refresh(thing) {
     thing.tag.className = `tag tag-${thing.kind}`
-    thing.tag.innerHTML = `${thing.icon ? `<img src="${thing.icon}" alt="">` : `<b>${thing.badge ?? ''}</b>`}<span class="tag-text"><strong>${thing.title}</strong><small>${thing.hint ?? ''}</small></span><kbd>空格</kbd>`
+    thing.tag.innerHTML = `${thing.icon ? `<img src="${thing.icon}" alt="">` : `<b>${thing.badge ?? ''}</b>`}<span class="tag-text"><strong>${thing.title}</strong><small>${thing.hint ?? ''}</small></span><kbd>${t('空格')}</kbd>`
   }
 
   function add(thing) {

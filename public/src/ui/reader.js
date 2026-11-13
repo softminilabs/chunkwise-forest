@@ -3,18 +3,19 @@
 import { h, stars } from './core.js'
 import { buildSide } from './reader-side.js'
 import { buildReader, clock, icon } from './reader-view.js'
+import { lang, t } from '../i18n.js'
 
 const SPEEDS = [1, 0.8, 1.2]
-const MODES = { read: '看着听', blind: '盲听', shadow: '跟读' }
-const ZH = [['line', '中文 当前句'], ['all', '中文 全文'], ['off', '中文 关']]
-const HINTS = { read: '点播放开始听，也可以直接点任何一句。划了线的词点一下看解释。', blind: '盲听：没听过的句子先糊着，听完一句显一句。', shadow: '跟读：每句读完会停一下，轮到你照着念。' }
+const MODES = { read: t('看着听'), blind: t('盲听'), shadow: t('跟读') }
+const ZH = [['line', t('中文 当前句')], ['all', t('中文 全文')], ['off', t('中文 关')]]
+const HINTS = { read: t('点播放开始听，也可以直接点任何一句。划了线的词点一下看解释。'), blind: t('盲听：没听过的句子先糊着，听完一句显一句。'), shadow: t('跟读：每句读完会停一下，轮到你照着念。') }
 
 /// 一句算读到哪儿为止。时间轴里有的句子结束得比下一句开始还晚几十毫秒，照着结束时间等就永远等不到：取两者里早的那个
 const endOf = (lesson, i) => Math.min(lesson.timing[i].b, lesson.timing[i + 1]?.a ?? Infinity)
 
 /// 课文底下那一条写什么：等跟读时是提示，否则是当前这句的中文（没开「当前句」就写这种听法的说明）
 function lineText(session) {
-  if (session.waiting) return '轮到你了，照着念这一句。'
+  if (session.waiting) return t('轮到你了，照着念这一句。')
   if (session.mode === 'blind' || ZH[session.zh][0] !== 'line' || session.now < 0) return HINTS[session.mode]
   return session.lesson.sentences[session.now].zh
 }
@@ -157,7 +158,7 @@ function nextSpeed(session) {
 function guessLine(session) {
   const { pre } = session.lesson
   if (!pre) return null
-  const lead = session.picked == null ? '开头那道题的答案：' : session.picked === pre.answer ? '开头那道题你猜对了：' : '开头那道题，答案其实是：'
+  const lead = session.picked == null ? t('开头那道题的答案：') : session.picked === pre.answer ? t('开头那道题你猜对了：') : t('开头那道题，答案其实是：')
   return h('p', { class: 'note' }, lead, h('b', { lang: 'en' }, pre.options[pre.answer]))
 }
 
@@ -167,16 +168,16 @@ function resultNode(session, outcome) {
   const next = ctx.state.lessons[index + 1]
   const count = outcome.fresh.length
   return h('div', { class: 'result' },
-    h('p', { class: 'kicker' }, '听完了'),
-    h('h2', {}, `第 ${lesson.n} 课的灯亮了 `, stars(ctx.state.stars(lesson.id))),
+    h('p', { class: 'kicker' }, t('听完了')),
+    h('h2', {}, `${t('第 {n} 课的灯亮了', { n: lesson.n })} `, stars(ctx.state.stars(lesson.id))),
     guessLine(session),
-    h('p', { class: 'note' }, count ? `收下 ${count} 张新卡片，练习场里可以玩了：` : '这一课的卡片你都收过了。'),
+    h('p', { class: 'note' }, count ? t('收下 {n} 张新卡片，练习场里可以玩了：', { n: count }) : t('这一课的卡片你都收过了。')),
     h('div', { class: 'cards' }, outcome.fresh.map((card, k) => h('div', { class: `card card-${card.kind}`, style: `animation-delay:${k * 60}ms` }, h('strong', {}, card.text), h('small', {}, card.zh)))),
     h('div', { class: 'row center' },
-      h('button', { class: 'button big', type: 'button', onclick: () => ctx.openPractice({ mode: 'cloze', lesson, title: `第 ${lesson.n} 课 · 练一练` }) }, '练一练，再拿一颗星'),
-      next && h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openLesson(next) }, `下一课：${next.title}`),
-      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openLesson(ctx.state.lessons[index]) }, '再听一遍'),
-      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.ui.closeModal() }, '回森林')))
+      h('button', { class: 'button big', type: 'button', onclick: () => ctx.openPractice({ mode: 'cloze', lesson, title: t('第 {n} 课 · 练一练', { n: lesson.n }) }) }, t('练一练，再拿一颗星')),
+      next && h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openLesson(next) }, t('下一课：{title}', { title: next.title })),
+      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openLesson(ctx.state.lessons[index]) }, t('再听一遍')),
+      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.ui.closeModal() }, t('回森林'))))
 }
 
 function finish(session) {
@@ -226,8 +227,8 @@ function bind(session) {
     event.preventDefault()
     action(session)
   }
-  audio.addEventListener('play', () => { view.play.replaceChildren(icon('pause')); view.play.setAttribute('aria-label', '暂停'); tick(session) })
-  audio.addEventListener('pause', () => { view.play.replaceChildren(icon('play')); view.play.setAttribute('aria-label', '播放') })
+  audio.addEventListener('play', () => { view.play.replaceChildren(icon('pause')); view.play.setAttribute('aria-label', t('暂停')); tick(session) })
+  audio.addEventListener('pause', () => { view.play.replaceChildren(icon('play')); view.play.setAttribute('aria-label', t('播放')) })
   audio.addEventListener('timeupdate', () => tick(session))
   audio.addEventListener('ended', () => finish(session))
   view.play.addEventListener('click', () => toggle(session))
@@ -261,7 +262,8 @@ export async function openReader(ctx, meta) {
   const session = { ctx, lesson, audio, mode: 'read', loop: false, zh: 0, speed: 0, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
   session.view = buildReader(ctx, lesson, buildSide(ctx, lesson, i => jump(session, i)), MODES)
   bind(session)
-  setZh(session, 0)
+  // 英文界面默认不显示中文译文，想看再按 Z
+  setZh(session, lang === 'en' ? 2 : 0)
   ctx.ui.openModal(session.view.root, () => { audio.pause(); cancelAnimationFrame(session.raf); clearTimeout(session.waiting); removeEventListener('keydown', session.onKey) })
   return { audio, lesson }
 }

@@ -2,6 +2,7 @@
 // 点一张看解释，「听这句」跳到课文里它出现的地方。窄屏上它是从底下升起来的一层
 import { h } from './core.js'
 import { icon } from './reader-view.js'
+import { t } from '../i18n.js'
 
 function itemNode(ctx, card, onJump) {
   const owned = Boolean(ctx.state.town.cards[card.id])
@@ -11,17 +12,17 @@ function itemNode(ctx, card, onJump) {
     h('button', { class: 'item-head', type: 'button', 'aria-expanded': 'false' },
       h('span', { class: 'item-text' }, h('strong', { lang: 'en' }, card.text), card.pos && h('small', {}, card.pos)),
       h('span', { class: 'item-zh' }, card.zh),
-      owned && h('i', { class: 'owned', title: '已经收过了' }, icon('check'))),
-    h('div', { class: 'item-detail', hidden: true }, ...lines, h('button', { class: 'chip', type: 'button', onclick: () => onJump(card.s) }, icon('play'), '听这句')))
+      owned && h('i', { class: 'owned', title: t('已经收过了') }, icon('check'))),
+    h('div', { class: 'item-detail', hidden: true }, ...lines, h('button', { class: 'chip', type: 'button', onclick: () => onJump(card.s) }, icon('play'), t('听这句'))))
 }
 
 export function buildSide(ctx, lesson, onJump) {
   const items = lesson.cards.map(card => itemNode(ctx, card, onJump))
   const list = h('div', { class: 'side-list' }, items)
   const counts = { all: items.length, chunk: lesson.cards.filter(card => card.kind === 'chunk').length, word: lesson.cards.filter(card => card.kind === 'word').length }
-  const filters = h('div', { class: 'segment small', role: 'group', 'aria-label': '筛选' }, [['all', '全部'], ['chunk', '组块'], ['word', '生词']].map(([id, label]) => h('button', { type: 'button', 'data-filter': id, class: id === 'all' ? 'is-on' : '' }, `${label} ${counts[id]}`)))
-  const root = h('aside', { class: 'reader-side', 'aria-label': '这一课的卡片' },
-    h('header', { class: 'side-head' }, h('h3', {}, '这一课的卡片'), h('button', { class: 'close only-narrow', type: 'button', 'aria-label': '收起', onclick: () => root.classList.remove('is-up') }, '✕')),
+  const filters = h('div', { class: 'segment small', role: 'group', 'aria-label': t('筛选') }, [['all', t('全部')], ['chunk', t('组块')], ['word', t('生词')]].map(([id, label]) => h('button', { type: 'button', 'data-filter': id, class: id === 'all' ? 'is-on' : '' }, `${label} ${counts[id]}`)))
+  const root = h('aside', { class: 'reader-side', 'aria-label': t('这一课的卡片') },
+    h('header', { class: 'side-head' }, h('h3', {}, t('这一课的卡片')), h('button', { class: 'close only-narrow', type: 'button', 'aria-label': t('收起'), onclick: () => root.classList.remove('is-up') }, '✕')),
     filters, list)
 
   function open(id, on = true) {

@@ -3,6 +3,7 @@
 import * as THREE from 'three'
 import { at, mat, points, shade } from '../look.js'
 import { height } from './land.js'
+import { pick, t } from '../i18n.js'
 
 // [x, z, 朝向, 什么时候才出现]。只有第一只摆在空地边上一眼能看见，算是教人怎么玩；
 // 其余的在木屋背后、林子里、溪边、小路尽头，要走过去才发现
@@ -11,7 +12,7 @@ export const SPOTS = {
   cadence: [-20, -36, 0.9], mdqr: [-8.5, -46, 0.4], qrcode: [21, -42, -1], aiprompt: [-20, -59, 1.1], slong: [29, -66, -0.6], led: [-9.5, -75, 0.5], ahhh: [9, -107, -0.4],
   ligit: [-6, 37, 0.3, 'night'], lull: [17.5, 9.5, -1.3, 'rain'], sundial: [-7, -113, 0.4, 'winter'],
 }
-export const WHEN = { night: '夜里', rain: '雨雪天', winter: '冬天' }
+export const WHEN = { night: t('夜里'), rain: t('雨雪天'), winter: t('冬天') }
 const here = (when, scene) => !when || (when === 'night' ? scene.night > 0.6 : when === 'rain' ? scene.weather === 'rain' || scene.weather === 'snow' : scene.season === 'winter')
 
 function build() {
@@ -40,7 +41,7 @@ export function createChests(ctx, onOpen) {
     ctx.scene.add(made.root)
     ctx.colliders.push({ x, z, r: 0.7 })
     const chest = { ...made, app, when }
-    chest.thing = ctx.things.add({ kind: 'chest', quiet: true, badge: '?', title: '一只宝箱', hint: '打开看看', position: made.root.position, height: 1.2, radius: 1.3, reach: 3, use: () => onOpen(chest) })
+    chest.thing = ctx.things.add({ kind: 'chest', quiet: true, badge: '?', title: t('一只宝箱'), hint: t('打开看看'), position: made.root.position, height: 1.2, radius: 1.3, reach: 3, use: () => onOpen(chest) })
     return chest
   })
 
@@ -49,7 +50,7 @@ export function createChests(ctx, onOpen) {
     const found = Boolean(ctx.state.town.chests[chest.app.id])
     chest.lid.rotation.x = found ? -1.15 : 0
     chest.spark.visible = !found
-    Object.assign(chest.thing, found ? { icon: chest.app.icon, title: chest.app.zh, hint: chest.app.tagline } : { icon: null, title: '一只宝箱', hint: '打开看看' })
+    Object.assign(chest.thing, found ? { icon: chest.app.icon, title: pick(chest.app), hint: pick(chest.app, 'tagline', 'taglineEn') } : { icon: null, title: t('一只宝箱'), hint: t('打开看看') })
     ctx.things.refresh(chest.thing)
   }
   chests.forEach(paint)
