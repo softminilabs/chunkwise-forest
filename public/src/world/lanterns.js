@@ -4,8 +4,7 @@ import * as THREE from 'three'
 import { at, mat, shade } from '../look.js'
 import { height } from './land.js'
 
-// 这个位置七米之内没有别的树，从开场的镜头看过去前面也没有松树挡着（量过、看过）。
-// 树林是按固定的随机数种的，不能为了它去改种树的规则
+// 这个位置七米之内没有别的树。从开场的镜头看过去，原来有两棵松树挡在它前面，在 woods.js 的 CLEARED 里拿掉了
 export const LANTERN_TREE = { x: -6, z: 22.5 }
 // 六根枝：[从树干多高的地方分出去, 朝哪个方向, 多长, 往上翘多少（弧度，0 是平伸）]
 const BRANCHES = [[2.5, 0.3, 2.5, 0.5], [2.9, 2.2, 2.3, 0.6], [3.2, 4.1, 2.4, 0.55], [3.7, 1.2, 2.0, 0.75], [4.0, 3.2, 1.9, 0.8], [4.3, 5.3, 1.8, 0.85]]
@@ -47,7 +46,7 @@ export function createLanternTree(scene, colliders) {
   const root = new THREE.Group()
   const bark = mat('#7A5C46')
   const leaf = mat('#6FBA63')
-  const red = new THREE.MeshStandardMaterial({ color: '#C8372D', emissive: '#D9361E', emissiveIntensity: 0.3, roughness: 0.55, flatShading: true })
+  const red = new THREE.MeshStandardMaterial({ color: '#C8372D', emissive: '#E8423E', emissiveIntensity: 0.3, roughness: 0.55, flatShading: true })
   const tips = skeleton(root, bark)
   // 不是冬天的时候：枝头各一团叶子，顶上一大团
   const crown = new THREE.Group()
@@ -58,7 +57,8 @@ export function createLanternTree(scene, colliders) {
   const hung = tips.map(tip => at(lantern(red, mat('#D9A531'), mat('#4A3A30')), tip.x * 0.92, tip.y - 0.04, tip.z * 0.92))
   for (const tip of tips) { const pad = at(new THREE.Mesh(new THREE.IcosahedronGeometry(0.3, 1), mat(SNOW)), tip.x, tip.y + 0.08, tip.z); pad.scale.y = 0.55; winter.add(pad) }
   // 暖光放在树前面，离灯笼远一点：贴着放会在灯笼上烧出一块白
-  const glow = at(new THREE.PointLight('#FF8A4A', 0, 15, 2), 0, 2.6, 3.8)
+  // 灯笼照出来的是淡红色的光，不是橙色
+  const glow = at(new THREE.PointLight('#FF9C9C', 0, 15, 2), 0, 2.6, 3.8)
   winter.add(...hung, glow)
   root.add(crown, winter)
   root.position.set(LANTERN_TREE.x, height(LANTERN_TREE.x, LANTERN_TREE.z), LANTERN_TREE.z)
