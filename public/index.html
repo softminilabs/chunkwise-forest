@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>组块小镇 · 用文章学英语</title>
+<meta name="description" content="一座能逛的 3D 小镇：九栋房子是九个单元，读完一课亮一盏灯。用文章学英语。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23A768FA'/%3E%3Ccircle cx='26' cy='36' r='15' fill='%23CBED19'/%3E%3Ccircle cx='41' cy='30' r='12' fill='%23191917'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles/ui.css">
+<link rel="stylesheet" href="styles/reader.css">
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/", "qrcode": "./vendor/qrcode.mjs" } }</script>
+<script type="module" src="src/main.js"></script>
+</head>
+<body>
+<canvas id="stage" aria-label="组块小镇"></canvas>
+<div id="tags"></div>
+<header class="hud" hidden>
+  <div class="brand sticker"><strong>组块小镇</strong><small>B1 · 用文章学英语</small></div>
+  <div class="stats"></div>
+</header>
+<div class="dock" hidden>
+  <button class="go" type="button"></button>
+  <p class="keys">WASD / 点地面走动 · 走近按空格 · 拖动转镜头</p>
+</div>
+<aside id="drawer" class="sticker" hidden></aside>
+<div id="modal" hidden></div>
+<div id="toasts" aria-live="polite"></div>
+<section id="start">
+  <div class="start-card sticker">
+    <p class="start-kicker">用文章学英语</p>
+    <h1>组块小镇</h1>
+    <p class="start-lead">九栋房子是九个单元。读完一课，门口亮一盏灯。</p>
+    <button class="button big" type="button" disabled>正在搭小镇…</button>
+  </div>
+</section>
+</body>
+</html>
