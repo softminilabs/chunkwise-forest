@@ -66,6 +66,16 @@ function wire(ctx) {
     if (thing.kind !== 'spot' && !thing.steady && Math.hypot(thing.position.x, thing.position.z) > 3) ctx.rig.yawGoal = Math.atan2(-thing.position.x, -thing.position.z)
     thing.use()
   }
+  /// 从目录里点一样东西：人直接站到它正前方两三步的地方，再用它
+  ctx.visit = thing => {
+    const { x, z } = thing.position
+    const onStreet = thing.steady && Math.abs(x) > 1
+    const far = Math.hypot(x, z)
+    const [dx, dz] = onStreet ? [-Math.sign(x), 0] : far > 1 ? [-x / far, -z / far] : [0, 1]
+    const step = thing.reach - 0.9
+    ctx.player.place(x + dx * step, z + dz * step)
+    ctx.use(thing)
+  }
   ctx.openLesson = meta => { ctx.ui.closeDrawer(); return openReader(ctx, meta) }
   ctx.openPractice = options => { ctx.ui.closeDrawer(); openPractice(ctx, options) }
   ctx.continueLearning = () => {

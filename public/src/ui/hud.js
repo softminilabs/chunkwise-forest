@@ -1,5 +1,6 @@
 // 顶上的三个数、底下两个不用走路的按钮：接着学、练一练。
 // 走路是为了好玩，不是门槛：想学的时候一步都不用走
+import { openAppsList } from './apps-list.js'
 import { h } from './core.js'
 
 export function createHud(ctx) {
@@ -11,6 +12,7 @@ export function createHud(ctx) {
   const sound = h('button', { class: 'stat', type: 'button', onclick: () => { ctx.state.patch({ sound: !ctx.state.town.sound }); ctx.audio.setSound(ctx.state.town.sound) } })
   const LIGHTS = [['auto', '天色 跟时间'], ['day', '天色 白天'], ['night', '天色 夜晚']]
   const light = h('button', { class: 'stat', type: 'button', onclick: () => { const k = LIGHTS.findIndex(([id]) => id === (ctx.state.town.light ?? 'auto')); ctx.state.patch({ light: LIGHTS[(k + 1) % LIGHTS.length][0] }); ctx.applyLight() } })
+  const mine = h('button', { class: 'stat', type: 'button', onclick: () => openAppsList(ctx) }, '我的 App', h('strong', {}, String(ctx.apps.length)))
   const shown = {}
   dock.replaceChildren(h('div', { class: 'row center' }, go, drill), dock.querySelector('.keys'))
 
@@ -28,7 +30,7 @@ export function createHud(ctx) {
     sound.textContent = ctx.state.town.sound ? '声音 开' : '声音 关'
     sound.setAttribute('aria-pressed', String(ctx.state.town.sound))
     light.textContent = LIGHTS.find(([id]) => id === (ctx.state.town.light ?? 'auto'))[1]
-    stats.replaceChildren(stat('streak', '连续', streak, '天', streak > 0), stat('lit', '亮灯', `${totals.lit}/${totals.lessons}`, ''), stat('cards', '卡片', totals.cards, '张'), light, sound)
+    stats.replaceChildren(stat('streak', '连续', streak, '天', streak > 0), stat('lit', '亮灯', `${totals.lit}/${totals.lessons}`, ''), stat('cards', '卡片', totals.cards, '张'), mine, light, sound)
     go.replaceChildren(h('span', {}, '▶'), h('div', {}, totals.lit ? '接着学' : '开始第一课', h('small', {}, ` 第 ${next.n} 课 · ${next.title}`)))
     drill.replaceChildren(h('div', {}, '练一练', h('small', {}, totals.cards < 4 ? ' 读完一课解锁' : due ? ` ${due} 张该复习` : ' 随便玩一轮')))
   }
