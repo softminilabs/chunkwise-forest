@@ -82,6 +82,13 @@ h1, h2, h3, p { margin: 0; }
 .day .marks { gap: 2px; }
 .day .marks i { height: 6px; border-radius: 1.5px; }
 .cycle { width: 100%; }
+/* 节日倒计时卡：中间一个大大的天数 */
+.countdown { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 22px 16px 26px; border-radius: 20px; background: var(--sage-pale); }
+.countdown-icon svg { display: block; width: 44px; height: 44px; margin-bottom: 6px; }
+.countdown small { font-size: 14px; color: var(--body); }
+.countdown small:empty { display: none; }
+.countdown strong { font-size: 84px; font-weight: 700; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.countdown strong.is-today { font-size: 40px; line-height: 1.4; }
 .cycle .kicker { display: flex; justify-content: space-between; }
 .stats { position: relative; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 .menu { position: absolute; top: calc(100% + 8px); right: 0; display: flex; flex-direction: column; gap: 6px; padding: 10px; border-radius: 20px; animation: tag-in .2s var(--ease); transform-origin: top right; }

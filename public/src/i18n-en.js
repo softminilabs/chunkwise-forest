@@ -68,6 +68,12 @@ export const EN = {
   '小陈换了新工作，和伦敦、班加罗尔的同事远程合作。语法主线：从句。': 'Chen starts a new job, working remotely with colleagues in London and Bangalore. Grammar thread: clauses.',
   '一个开发团队的两周：排查问题、代码评审、上线、开会。': 'Two weeks in a dev team: debugging, code review, shipping, meetings.',
 
+  // 冬天的圣诞树和灯笼
+  '圣诞树': 'Christmas tree', '圣诞节': 'Christmas', '灯笼': 'Lanterns', '春节': 'Lunar New Year', '正月初一': 'first day of the lunar year',
+  '离{name}还有 {n} 天': ({ name, n }) => `${n} ${Number(n) === 1 ? 'day' : 'days'} to ${name}`,
+  '今天就是{name}': 'Today is {name}',
+  '还有': '', '天': ({ n }) => (Number(n) === 1 ? 'day to go' : 'days to go'), '就是今天': 'Today',
+
   // 宝箱
   '一只宝箱': 'A chest', '打开看看': 'Open it',
   '夜里': 'At night', '雨雪天': 'Rain or snow', '冬天': 'In winter',

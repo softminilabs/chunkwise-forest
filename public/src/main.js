@@ -12,9 +12,11 @@ import { createHud } from './ui/hud.js'
 import { openPractice } from './ui/practice.js'
 import { openReader } from './ui/reader.js'
 import { openUnit } from './ui/unit.js'
-import { createCabins } from './world/cabins.js'
+import { LANTERN_DROP, createCabins } from './world/cabins.js'
 import { createCamp } from './world/camp.js'
 import { createChests } from './world/chests.js'
+import { createXmas } from './world/xmas.js'
+import { ICONS, christmas, daysUntil, openCountdown, springFestival } from './ui/countdown.js'
 import { createLand } from './world/land.js'
 import { createWeather } from './world/weather.js'
 import { createWoods } from './world/woods.js'
@@ -45,9 +47,10 @@ function buildWorld(ctx) {
   const woods = createWoods(scene, colliders)
   const cabins = createCabins(scene, ctx.course, colliders)
   const weather = createWeather(scene, renderer, ctx.state)
-  weather.onSeason((look, season) => { land.paint(look); woods.paint(look, season); cabins.paint(season) })
+  const xmas = createXmas(scene, colliders)
+  weather.onSeason((look, season) => { land.paint(look); woods.paint(look, season); cabins.paint(season); xmas.paint(look, season) })
   weather.resolve()
-  Object.assign(ctx, { scene, colliders, cabins, weather, camp: createCamp(scene, colliders), player: createPlayer(scene, colliders), fx: createFx(scene) })
+  Object.assign(ctx, { scene, colliders, cabins, weather, xmas, camp: createCamp(scene, colliders), player: createPlayer(scene, colliders), fx: createFx(scene) })
 }
 
 function openCamp(ctx) {
@@ -72,6 +75,21 @@ function addPlaces(ctx) {
   ctx.things.add({ kind: 'house', title: t('单词屋'), hint: t('还没开门'), badge: t('词'), position: spot(lodge), spot: lodge.doorAt, stop: 1.3, height: lodge.height, radius: 3.8, reach: 6, use: () => ctx.ui.toast(t('单词屋<b>还没开门</b>，下一步就开')) })
   const camp = ctx.camp.state
   ctx.things.add({ kind: 'spot', title: t('篝火'), hint: t('点火 · 坐下来练一轮'), badge: t('火'), position: new THREE.Vector3(camp.x, camp.y, camp.z), height: 2, radius: 1.8, reach: 4.4, use: () => openCamp(ctx) })
+}
+
+/// 冬天才有的两样：开场右手边的圣诞树、每间屋门口的红灯笼。点它们看离圣诞节、离春节还有几天。
+/// 返回这些东西的清单：不是冬天的时候要把它们关掉（frame 里）
+function addFestive(ctx) {
+  const xmas = { title: t('圣诞节'), day: christmas(), icon: ICONS.star }
+  const spring = { title: t('春节'), day: springFestival(), icon: ICONS.lantern, note: t('正月初一') }
+  const hint = festival => { const left = daysUntil(festival.day); return left ? t('离{name}还有 {n} 天', { name: festival.title, n: left }) : t('今天就是{name}', { name: festival.title }) }
+  const winter = [ctx.things.add({ kind: 'spot', title: t('圣诞树'), hint: hint(xmas), badge: '★', position: ctx.xmas.position, height: 6.4, radius: 2.2, reach: 4.6, use: () => openCountdown(ctx, xmas) })]
+  for (const cabin of ctx.cabins.all) {
+    cabin.root.updateMatrixWorld(true)
+    // 灯笼只认鼠标和手指（hoverOnly）：走到门口按空格进的是木屋
+    for (const item of cabin.lanterns) winter.push(ctx.things.add({ kind: 'spot', hoverOnly: true, title: t('灯笼'), hint: hint(spring), badge: '福', position: item.localToWorld(new THREE.Vector3(0, -LANTERN_DROP, 0)), height: 0.2, radius: 0.5, spot: cabin.doorAt, stop: 1.3, use: () => openCountdown(ctx, spring) }))
+  }
+  return winter
 }
 
 function wire(ctx) {
@@ -148,6 +166,8 @@ function frame(ctx, input, wish, dt, time) {
   document.body.classList.toggle('is-stargazing', ctx.rig.sky > 0.4)
   weather.update(dt, time, player.position, camera)
   ctx.cabins.update(weather.now.night, dt, time)
+  ctx.xmas.update(weather.now.night, time)
+  for (const thing of ctx.winterThings) thing.off = weather.now.season !== 'winter'
   ctx.camp.update(dt, time, weather.now.night, weather.now.weather === 'rain')
   ctx.chests.update(time, weather.now)
   ctx.fx.update(dt)
@@ -166,6 +186,7 @@ async function boot() {
   wire(ctx)
   ctx.things = createThings(document.getElementById('tags'), { onChoose: thing => ctx.approach(thing) })
   addPlaces(ctx)
+  ctx.winterThings = addFestive(ctx)
   ctx.chests = createChests(ctx, chest => ctx.openChest(chest))
   ctx.cabins.setProgress(state.town.stars)
   const hud = createHud(ctx)

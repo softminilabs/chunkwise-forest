@@ -35,7 +35,8 @@ export function createThings(root, { onChoose }) {
     let bestGap = Infinity
     for (const thing of list) {
       const gap = Math.hypot(thing.position.x - position.x, thing.position.z - position.z)
-      if (!thing.off && gap < thing.reach + 1.4 && gap < bestGap) { best = thing; bestGap = gap }
+      // hoverOnly 的东西（木屋门口的灯笼）只认鼠标和手指：按空格要进的是木屋，不能被它抢走
+      if (!thing.off && !thing.hoverOnly && gap < thing.reach + 1.4 && gap < bestGap) { best = thing; bestGap = gap }
     }
     return best
   }
@@ -69,7 +70,7 @@ export function createThings(root, { onChoose }) {
       const gap = Math.hypot(thing.position.x - player.x, thing.position.z - player.z)
       const x = (spot.x + 1) / 2 * width
       const y = (1 - spot.y) / 2 * height
-      const shown = !thing.off && spot.z < 1 && Math.abs(spot.x) < 1.1 && Math.abs(spot.y) < 1.1 && gap < 70 && !(thing.quiet && gap > QUIET_RANGE && thing !== hovered) && (thing === near || !covered(x, y, time))
+      const shown = !thing.off && spot.z < 1 && Math.abs(spot.x) < 1.1 && Math.abs(spot.y) < 1.1 && gap < 70 && !(thing.quiet && gap > QUIET_RANGE && thing !== hovered) && !(thing.hoverOnly && thing !== hovered) && (thing === near || !covered(x, y, time))
       thing.tag.hidden = !shown
       thing.tag.classList.toggle('is-hover', thing === hovered)
       if (!shown) continue
