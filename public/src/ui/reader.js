@@ -5,7 +5,8 @@ import { buildSide } from './reader-side.js'
 import { buildReader, clock, icon } from './reader-view.js'
 import { t } from '../i18n.js'
 
-const SPEEDS = [1, 0.8, 1.2]
+// 课文录音平均每分钟 163 个词，App 的 PRD 给 B1 定的是 140：慢的那一档取 0.85 倍，正好落在 140 上下
+const SPEEDS = [1, 0.85, 1.2]
 const MODES = { read: t('看着听'), blind: t('盲听'), shadow: t('跟读') }
 const LOOPS = ['off', 'one', 'all']
 
