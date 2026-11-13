@@ -41,8 +41,14 @@ h1, h2, h3, p { margin: 0; }
 .tag-text strong { font-size: 14px; font-weight: 800; }
 .tag-text small { font-size: 11px; color: var(--body); font-weight: 600; }
 .tag kbd { display: none; font: 800 11px var(--font); padding: 3px 8px; border-radius: 8px; background: var(--ink); color: var(--white); margin-right: 4px; }
-.tag-house .tag-text { display: flex; padding-right: 8px; }
-.tag-house .tag-text small { display: none; }
+.tag { animation: tag-in .25s var(--ease); }
+@keyframes tag-in { from { opacity: 0; scale: .7; } }
+.tag-house .tag-text, .tag-spot .tag-text { display: flex; padding-right: 8px; }
+.tag-house .tag-text small, .tag-spot .tag-text small { display: none; }
+/* 远处的房子只剩一个数字 */
+.tag.is-far { padding: 3px; }
+.tag.is-far .tag-text { display: none; }
+.tag.is-far b { width: 24px; height: 24px; font-size: 13px; }
 .tag.is-near { padding: 6px; background: var(--lime); }
 .tag.is-near .tag-text { display: flex; }
 .tag.is-near .tag-text small { display: block; color: var(--ink); }
