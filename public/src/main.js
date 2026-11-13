@@ -49,11 +49,12 @@ function buildWorld(ctx) {
 
 function openCamp(ctx) {
   const { camp } = ctx
+  const raining = ctx.weather.now.weather === 'rain'
   const body = h('div', { class: 'drawer-rows' })
   const paint = () => body.replaceChildren(
-    h('button', { class: 'button big', type: 'button', onclick: () => { camp.light(!camp.state.lit); ctx.audio.pop(); paint() } }, camp.state.lit ? '把火熄了' : '点燃篝火'),
+    h('button', { class: 'button big', type: 'button', disabled: raining, onclick: () => { camp.light(!camp.state.lit); ctx.audio.pop(); paint() } }, raining ? '下雨了，火点不着' : camp.state.lit ? '把火熄了' : '点燃篝火'),
     h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openPractice() }, '坐下来练一轮'),
-    h('p', { class: 'note' }, '火点着了有噼啪声，离得越近越响。夜里它能照亮整块空地。'))
+    h('p', { class: 'note' }, raining ? '等雨停了再来点火。' : '火点着了有噼啪声，离得越近越响。夜里它能照亮整块空地。'))
   paint()
   ctx.ui.openDrawer({ kicker: '林间空地', title: '篝火', sub: '学完一课，回来坐一会儿，把今天的卡片过一遍。', body })
 }
@@ -138,7 +139,7 @@ function frame(ctx, input, wish, dt, time) {
   // 抬头看天的时候把牌子收起来：镜头一放低，远处的牌子全叠在天边
   document.body.classList.toggle('is-stargazing', ctx.rig.sky > 0.4)
   ctx.cabins.update(weather.now.night, dt, time)
-  ctx.camp.update(dt, time, weather.now.night)
+  ctx.camp.update(dt, time, weather.now.night, weather.now.weather === 'rain')
   ctx.chests.update(time, weather.now)
   ctx.fx.update(dt)
   ctx.celebrate()

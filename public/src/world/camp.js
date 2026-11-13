@@ -24,7 +24,9 @@ export function createCamp(scene, colliders) {
   return {
     state,
     light(on) { state.lit = on },
-    update(dt, time, night) {
+    update(dt, time, night, raining) {
+      // 雨里火留不住；雪天照样能烧
+      if (raining) state.lit = false
       state.heat += ((state.lit ? 1 : 0) - state.heat) * Math.min(1, dt * 2.5)
       const flicker = 0.85 + Math.sin(time * 11) * 0.08 + Math.sin(time * 23.7) * 0.07
       flames.forEach((cone, k) => { cone.visible = state.heat > 0.03; cone.scale.set(state.heat, state.heat * (flicker + k * 0.06), state.heat) })
