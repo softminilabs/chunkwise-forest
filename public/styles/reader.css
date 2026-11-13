@@ -1,5 +1,6 @@
-/* 盖在森林上面的大卡片：读课文、练习场 */
-#modal { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px; background: var(--veil); backdrop-filter: blur(6px); z-index: 40; animation: fade-in .25s ease; }
+/* 盖在森林上面的那一层：读课文、练习场的大卡片（#modal），和点开东西出来的小卡片（#sheet）。两种是同一个样子 */
+#modal, #sheet { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px; background: var(--veil); backdrop-filter: blur(6px); z-index: 40; animation: fade-in .25s ease; }
+#sheet { z-index: 39; }
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes card-in { from { opacity: 0; translate: 0 18px; scale: .97; } }
 .icon { display: inline-grid; }

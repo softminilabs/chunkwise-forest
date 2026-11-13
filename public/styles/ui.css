@@ -42,7 +42,7 @@ h1, h2, h3, p { margin: 0; }
 .tag-text strong { font-size: 14px; font-weight: 700; }
 .tag-text small { font-size: 11px; color: var(--body); font-weight: 600; }
 .tag kbd { display: none; font: 800 11px var(--font); padding: 3px 8px; border-radius: 8px; background: var(--ink); color: var(--paper); margin-right: 4px; }
-/* 冒出来的东西（牌子、提示条、屏幕中间的小卡片）都在原地渐显，不带位移和缩放：滑进来、弹出来看着像飞入。
+/* 森林里冒出来的东西（牌子、提示条）都在原地渐显，不带位移和缩放：滑进来、弹出来看着像飞入。
    曲线用平缓的 ease-out，--ease 那条前冲太猛，透明度一下就到头，看不出是渐显 */
 .tag { animation: tag-in .3s ease-out; transition: opacity .4s var(--ease); }
 .is-stargazing .tag { opacity: 0; pointer-events: none; }
@@ -100,8 +100,8 @@ button.stat { cursor: pointer; }
 .keys.is-gone { opacity: 0; }
 
 /* 右边的抽屉：单元、App 物件的面板 */
-/* 点开东西出来的小卡片：在屏幕正中，不贴边，镜头也不跟着动。淡入淡出在 ui/core.js 里做（开和关都要） */
-#drawer { position: fixed; top: 50%; left: 50%; translate: -50% -50%; width: min(440px, calc(100vw - 32px)); max-height: min(84vh, 760px); display: flex; flex-direction: column; overflow: hidden; }
+/* 点开东西出来的小卡片：在屏幕正中，底下那层和出来的动效跟练习场的大卡片是同一套（reader.css 里的 #sheet、card-in）。关的时候在 ui/core.js 里淡出 */
+#drawer { width: min(440px, 100%); max-height: min(84vh, 760px); display: flex; flex-direction: column; overflow: hidden; animation: card-in .4s var(--ease); }
 .drawer-head { padding: 22px 24px 14px; display: flex; gap: 12px; align-items: flex-start; }
 .drawer-head h2 { font-size: 24px; font-weight: 700; line-height: 1.2; }
 .drawer-head p { font-size: 13px; color: var(--body); }
