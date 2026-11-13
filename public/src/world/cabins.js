@@ -1,5 +1,5 @@
 // 九间木屋 = B1 的九个单元，外加空地旁的单词屋。读过课的屋子才「有人住」：夜里窗户亮、烟囱冒烟；
-// 屋檐下挂十盏小灯，一课一盏。冬天门两边各挂一只红灯笼，点它看离春节还有几天
+// 屋檐下挂十盏小灯，一课一盏
 import * as THREE from 'three'
 import { at, mat, shade } from '../look.js'
 import { CABINS, CLEARING, LODGE, height } from './land.js'
@@ -8,23 +8,6 @@ const WALLS = ['#A77F5C', '#B48A62', '#9C7654']
 const ROOFS = ['#4E6E66', '#7A4B3E', '#5B6B86', '#6B5A3E']
 const SNOW = '#F4F8FA'
 const LAMP = { off: '#77736A', one: '#FFD27A', two: '#FFF0B8' }
-// 所有灯笼共用这几样材质：夜里一起亮起来，只用改一处
-const LANTERN = { red: new THREE.MeshStandardMaterial({ color: '#C8372D', emissive: '#FF4A1F', emissiveIntensity: 0.25, roughness: 0.55, flatShading: true }), gold: mat('#D9A531'), cord: mat('#4A3A30') }
-// 灯笼肚子比挂点低这么多。登记成能点的东西时要用它算灯笼在哪儿
-export const LANTERN_DROP = 0.62
-
-/// 一只红灯笼：从挂点垂下来一根绳、金色的上下盖、红肚子、底下一条穗子
-function lantern() {
-  const group = new THREE.Group()
-  const body = new THREE.Mesh(new THREE.SphereGeometry(0.27, 10, 7), LANTERN.red)
-  body.scale.y = 0.82
-  group.add(at(new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.34, 4), LANTERN.cord), 0, -0.17, 0),
-    at(new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.15, 0.07, 10), LANTERN.gold), 0, -0.39, 0),
-    shade(at(body, 0, -LANTERN_DROP, 0)),
-    at(new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.13, 0.07, 10), LANTERN.gold), 0, -0.85, 0),
-    at(new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.012, 0.32, 6), LANTERN.gold), 0, -1.04, 0))
-  return group
-}
 
 function build({ wide, tall, wall, roof }) {
   const root = new THREE.Group()
@@ -49,11 +32,8 @@ function build({ wide, tall, wall, roof }) {
   const smoke = [0, 1, 2].map(k => at(new THREE.Mesh(new THREE.IcosahedronGeometry(0.34 + k * 0.16, 1), new THREE.MeshStandardMaterial({ color: '#E9EEF0', transparent: true, opacity: 0, roughness: 1 })), wide / 2 - 1.1, tall + 3, -0.9))
   const lamps = Array.from({ length: 10 }, (_, k) => at(new THREE.Mesh(new THREE.SphereGeometry(0.13, 10, 8), new THREE.MeshStandardMaterial({ color: LAMP.off, emissive: '#FFB03A', emissiveIntensity: 0, roughness: 0.7 })), (k / 9 - 0.5) * (wide - 1), tall - 0.22, 2.3))
   const glow = at(new THREE.PointLight('#FFB866', 0, 16, 2), 0, 1.9, 3.4)
-  // 灯笼挂在门两边、屋檐下那排小灯的外面一点。
-  // 左右 0.82：正好落在门框和窗户之间，不挡窗
-  const lanterns = [-1, 1].map(side => at(lantern(), side * 0.82, tall - 0.05, 2.62))
-  root.add(...smoke, ...lamps, glow, ...lanterns)
-  return { root, pane, top, roof, eave, smoke, lamps, glow, lanterns, chimney: { x: wide / 2 - 1.1, y: tall + 3 } }
+  root.add(...smoke, ...lamps, glow)
+  return { root, pane, top, roof, eave, smoke, lamps, glow, chimney: { x: wide / 2 - 1.1, y: tall + 3 } }
 }
 
 function place(made, x, z, turn) {
@@ -71,7 +51,7 @@ export function createCabins(scene, course, colliders) {
   for (const cabin of all) { scene.add(cabin.root); colliders.push({ x: cabin.x, z: cabin.z, r: 3.7 }) }
 
   return {
-    houses, lodge, all,
+    houses, lodge,
     /// stars：{ 课 id: 星数 }。有一课读过，这间屋就算有人住了
     setProgress(stars) {
       for (const house of houses) {
@@ -92,14 +72,9 @@ export function createCabins(scene, course, colliders) {
       return null
     },
     paint(season) {
-      for (const cabin of all) {
-        cabin.top.color.set(season === 'winter' ? SNOW : cabin.roof)
-        cabin.eave.visible = season === 'winter'
-        for (const item of cabin.lanterns) item.visible = season === 'winter'
-      }
+      for (const cabin of all) { cabin.top.color.set(season === 'winter' ? SNOW : cabin.roof); cabin.eave.visible = season === 'winter' }
     },
     update(night, dt, time) {
-      LANTERN.red.emissiveIntensity = 0.25 + night * 1.7
       for (const cabin of all) {
         const on = cabin.lit ? 1 : 0
         cabin.pane.emissiveIntensity = on * (0.15 + night * 2.1)
