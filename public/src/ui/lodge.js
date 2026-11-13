@@ -157,7 +157,7 @@ export function createLodge(ctx) {
     const { createListen } = await import('./words-listen.js')
     const listen = createListen(ctx)
     ctx.ui.openModal(h('section', { class: 'listen-card sticker', 'aria-label': t('听单词') },
-      h('header', { class: 'reader-head' }, h('div', { class: 'grow' }, h('h2', {}, t('听单词'))), h('button', { class: 'close', type: 'button', 'aria-label': t('关上'), onclick: () => ctx.ui.closeModal() }, '✕')),
+      h('header', { class: 'reader-head' }, h('div', { class: 'grow' }), h('button', { class: 'close', type: 'button', 'aria-label': t('关上'), onclick: () => ctx.ui.closeModal() }, '✕')),
       listen.node), () => listen.stop())
     listen.start()
   }

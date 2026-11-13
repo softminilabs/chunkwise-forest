@@ -1,0 +1,41 @@
+/* 听单词的播放器。它自己不带底色和外边距：摆在屋里那张纸上还是森林上的大卡片里，由放它的地方定。
+   大小跟着它自己有多宽走（cqi），不看窗口：同一个窗口里它可能只占半边 */
+.listen { container-type: inline-size; flex: 1 1 auto; display: flex; flex-direction: column; gap: clamp(8px, 1.8vh, 16px); min-height: 0; max-height: 100%; animation: listen-in .35s ease-out; }
+@keyframes listen-in { from { opacity: 0; } }
+.listen-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.listen-count { font-size: 14px; font-weight: 800; color: var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* 放不下时只有词这一块自己滚，设置和按键一直在 */
+.listen-now { flex: 1 1 auto; display: flex; flex-direction: column; gap: clamp(5px, 1.2vh, 10px); min-height: 0; overflow-y: auto; }
+.listen-now > * { animation: listen-in .4s ease-out; }
+/* 一个字母大约 0.6 个字宽：十二个字母以内用足大小，再长就按字母数缩，一行摆得下 */
+.listen-word { font: 800 clamp(30px, min(12cqi, 150cqi / var(--n)), 88px)/1.05 var(--read); overflow-wrap: anywhere; }
+.listen-ipa { font-size: clamp(14px, 3cqi, 19px); color: var(--body); }
+.listen-ipa b { margin-right: .5em; font-size: .8em; color: var(--ink); }
+.listen-senses { margin: 0; padding: 0; list-style: none; font-size: clamp(17px, 3.6cqi, 24px); font-weight: 700; line-height: 1.35; }
+.listen-senses i { margin-right: .5em; font-style: normal; font-size: .6em; font-weight: 600; color: var(--body); }
+/* 英文界面的意思是一整句话，不是两三个字 */
+html[lang="en"] .listen-senses { font: 600 clamp(15px, 2.8cqi, 19px)/1.4 var(--read); }
+html[lang="en"] .listen-senses i { font-size: .8em; }
+.listen-ex { font: 600 clamp(16px, 3.1cqi, 21px)/1.4 var(--read); }
+.listen-ex small { display: block; font: 600 .72em/1.5 var(--font); color: var(--body); }
+.listen-none { margin: auto 0; font-size: clamp(20px, 5cqi, 30px); font-weight: 800; color: var(--body); }
+/* 还没报到的先藏着，位置留着：亮出来的时候上面的词不跳 */
+.listen-senses, .listen-ex, .listen-ex small { transition: opacity .4s ease; }
+.listen[data-show="0"] .listen-senses, .listen:is([data-show="0"], [data-show="1"]) .listen-ex, .listen:not([data-show="3"]) .listen-ex small { opacity: 0; }
+
+/* 五样设置挨着排，一行摆得下几样就摆几样：排成整齐的两列要三行，纸上就没地方放词了 */
+.listen-opts { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px clamp(12px, 3cqi, 22px); padding-top: clamp(8px, 1.8vh, 14px); border-top: 2px solid var(--sage-pale); }
+.listen-opt { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; max-width: 100%; font-size: 13px; font-weight: 700; }
+/* 英文的字长，一排摆不下就折行，不撑出去 */
+.listen-opt .segment { flex-wrap: wrap; max-width: 100%; border-radius: 16px; }
+
+/* 上一个、暂停、下一个跟在设置后面：最后一行还有地方就靠右，没地方才自己占一行。
+   总是自己占一行的话，屋里那张纸上词和例句就摆不全，得滚着看 */
+.listen-keys { flex: 1 0 auto; display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
+@container (max-width: 480px) { .listen-keys { justify-content: center; } }
+.listen-keys button { display: grid; place-items: center; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--sage-pale); font-size: 18px; transition: scale .15s var(--ease), background-color .15s ease, opacity .2s ease; }
+.listen-keys .listen-main { width: 60px; height: 60px; background: var(--amber); font-size: 24px; box-shadow: var(--press); }
+.listen-keys button:active { scale: .92; }
+.listen-keys button:disabled { opacity: .4; cursor: default; }
+@media (hover: hover) and (pointer: fine) { .listen-keys button:not(.listen-main, :disabled):hover { background: var(--sage-soft); } }

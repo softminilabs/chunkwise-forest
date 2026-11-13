@@ -107,7 +107,8 @@ body[data-seat] .room-hud, body[data-seat] #room-tags, body[data-seat] .room-don
 
 /* 森林里直接开「听单词」：一张大卡片 */
 .listen-card { width: min(760px, 100%); max-height: min(92vh, 860px); display: flex; flex-direction: column; overflow: hidden; animation: card-in .4s var(--ease); }
-.listen-card > .listen { flex: 1; min-height: 0; overflow-y: auto; padding: 4px 26px 26px; }
+/* 播放器自己管滚动（只有词那一块滚），这里只给留白 */
+.listen-card > .listen { padding: 4px 26px 26px; }
 
 /* 手机：纸占满宽，两栏收成一栏 */
 @media (max-width: 720px) {

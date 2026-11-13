@@ -1,4 +1,4 @@
-// 顶上右边几个入口（都是能点开的：宝箱、声音、森林、语言），底下两个不用走路的按钮：接着学、练一练。
+// 顶上右边几个入口（都是能点开的：宝箱、声音、森林、语言），底下三个不用走路的按钮：接着学、练一练、听单词。
 // 走路是为了好玩，不是门槛：想学的时候一步都不用走
 import { openChestList } from './chests.js'
 import { cycles, marks, openDay, percent } from './day.js'
@@ -26,13 +26,15 @@ export function createHud(ctx) {
   const dock = document.querySelector('.dock')
   const go = h('button', { class: 'go', type: 'button', onclick: () => ctx.continueLearning() })
   const drill = h('button', { class: 'go light', type: 'button', onclick: () => ctx.openPractice() })
+  // 听单词不用进单词屋就能开：闭着眼听的东西，走一趟路没必要
+  const listen = h('button', { class: 'go light', type: 'button', onclick: () => ctx.lodge.listenOutside() }, h('div', {}, t('听单词')))
   const chests = h('button', { class: 'stat', type: 'button', onclick: () => openChestList(ctx) })
   const sounds = h('button', { class: 'stat', type: 'button', onclick: () => openSounds(ctx) }, t('声音'))
   const scene = h('button', { class: 'stat', type: 'button', onclick: () => openScene(ctx) }, t('森林'))
   // 换语言是整页重载。记一笔「已经进了森林」，重载回来就不再停在开场那张卡片上
   const other = lang === 'zh' ? 'en' : 'zh'
   const tongue = h('button', { class: 'stat', type: 'button', 'aria-label': other === 'en' ? 'Switch to English' : '切换到中文', onclick: () => { sessionStorage.setItem('cw.resume', '1'); setLang(other) } }, other === 'en' ? 'EN' : '中文')
-  dock.replaceChildren(h('div', { class: 'row center' }, go, drill), dock.querySelector('.keys'))
+  dock.replaceChildren(h('div', { class: 'row center' }, go, drill, listen), dock.querySelector('.keys'))
   hud.querySelector('.hud-left').append(dayCard(ctx))
   stats.replaceChildren(chests, sounds, scene, tongue)
 
