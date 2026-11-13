@@ -1,8 +1,8 @@
 [
   {
     "id": "sundial",
-    "zh": "岁时",
-    "en": "Sundial",
+    "zh": "岁时日晷",
+    "en": "Sundial Time Marks",
     "tagline": "把时间放在看得见的地方",
     "taglineEn": "See where you are in time.",
     "category": "Productivity",
@@ -79,7 +79,7 @@
   {
     "id": "dontforget",
     "zh": "念念",
-    "en": "Days Since",
+    "en": "Anniversary-Birthday Countdown",
     "tagline": "生日、纪念日、农历日，别忘了在乎的人",
     "taglineEn": "Birthdays, anniversaries and the lunar calendar.",
     "category": "Lifestyle",
