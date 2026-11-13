@@ -1,7 +1,7 @@
 // 天色和天气。季节默认跟着真实的日子、昼夜默认跟着真实的时间，都可以在「森林」面板里改成固定的。
 // 这里管：光、雾、天空的颜色，还有飘着的东西——雨、雪、花瓣、落叶、萤火虫、星星、流星
 import * as THREE from 'three'
-import { LOOK, NIGHT_SKY, damp, points, seasonOf, seeded, smooth, weathersOf } from '../look.js'
+import { LOOK, NIGHT_SKY, damp, leafGeometry, points, seasonOf, seeded, smooth, weathersOf } from '../look.js'
 
 const random = seeded(3)
 const cloud = (count, make, material) => {
@@ -47,9 +47,9 @@ function createRain(scene) {
   }
 }
 
-/// 落叶 / 花瓣：一片片五边形的小叶子，边落边翻。受光照，夜里会暗下去，不会像灯一样亮着
+/// 落叶 / 花瓣：一片片叶子形状的薄片，边落边翻。受光照，夜里会暗下去，不会像灯一样亮着
 function createLeaves(scene) {
-  const leaves = new THREE.InstancedMesh(new THREE.CircleGeometry(0.17, 5), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 1, side: THREE.DoubleSide }), 64)
+  const leaves = new THREE.InstancedMesh(leafGeometry(0.36), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 1, side: THREE.DoubleSide }), 64)
   leaves.frustumCulled = false
   const falling = scatter(64, 9)
   const dummy = new THREE.Object3D()

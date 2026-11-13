@@ -1,6 +1,6 @@
 // 树和地上的零碎。树都用实例化画：七八百棵只要几次绘制。换季时只改每棵树的颜色和阔叶树冠的大小（冬天叶子掉了）
 import * as THREE from 'three'
-import { mat, seeded, smooth } from '../look.js'
+import { leafGeometry, mat, seeded, smooth } from '../look.js'
 import { SPOTS } from './chests.js'
 import { BOUNDS, CABINS, CLEARING, LODGE, STREAM, distanceTo, height, nearPath } from './land.js'
 
@@ -63,11 +63,11 @@ function litter(scene, random, look, season) {
   }
   spread(new THREE.IcosahedronGeometry(0.55, 1), 120, season === 'winter' ? ['#E8F0F4', '#DCE7EC'] : [look.pine, look.leaf[0]], node => { node.scale.set(random.between(0.8, 1.5), random.between(0.6, 0.9), random.between(0.8, 1.5)); node.position.y += 0.25 })
   spread(new THREE.IcosahedronGeometry(0.4, 0), 80, ['#9A9892', '#86847F', '#A7A6A0'], node => { node.scale.set(random.between(0.7, 1.8), random.between(0.5, 1), random.between(0.7, 1.5)); node.position.y += 0.12 })
-  const leaf = new THREE.CircleGeometry(0.2, 5)
-  leaf.rotateX(-Math.PI / 2)
-  // 春夏的花和秋天的落叶一样，是贴在地上的小五边形。花做成立着的小锥，朝上朝下看着都像一地碎片
-  const flat = { spring: [520, ['#F7A9C4', '#FFFFFF', '#F6D35B', '#C9A7F0'], 0.8, 1.3], summer: [240, ['#FFFFFF', '#F6D35B'], 0.7, 1.1], autumn: [700, look.leaf, 0.7, 1.4] }[season]
-  if (flat) spread(leaf, flat[0], flat[1], node => { node.position.y += 0.05; node.scale.setScalar(random.between(flat[2], flat[3])) })
+  // 贴在地上的小薄片：春夏是花（五边形），秋天是落叶（和天上飘的同一个叶子形状）。
+  // 花做成立着的小锥，朝上朝下看着都像一地碎片
+  const flower = new THREE.CircleGeometry(0.2, 5).rotateX(-Math.PI / 2)
+  const flat = { spring: [flower, 520, ['#F7A9C4', '#FFFFFF', '#F6D35B', '#C9A7F0'], 0.8, 1.3], summer: [flower, 240, ['#FFFFFF', '#F6D35B'], 0.7, 1.1], autumn: [leafGeometry(0.42).rotateX(-Math.PI / 2), 700, look.leaf, 0.7, 1.4] }[season]
+  if (flat) spread(flat[0], flat[1], flat[2], node => { node.position.y += 0.05; node.scale.setScalar(random.between(flat[3], flat[4])) })
   scene.add(group)
   return group
 }

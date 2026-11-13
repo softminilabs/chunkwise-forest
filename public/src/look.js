@@ -46,4 +46,16 @@ export const dot = (() => {
   context.fillRect(0, 0, 32, 32)
   return new THREE.CanvasTexture(canvas)
 })()
+/// 一片叶子的轮廓：两头尖、中间鼓的薄片。飘着的落叶、花瓣和地上的落叶都用它。
+/// 画成五边形的话，离镜头近的时候看着是一块方块，认不出是叶子
+export function leafGeometry(long) {
+  const half = long / 2
+  const bulge = long * 0.45
+  const shape = new THREE.Shape()
+  shape.moveTo(-half, 0)
+  shape.quadraticCurveTo(0, bulge, half, 0)
+  shape.quadraticCurveTo(0, -bulge, -half, 0)
+  return new THREE.ShapeGeometry(shape, 6)
+}
+
 export const points = options => new THREE.PointsMaterial({ map: dot, transparent: true, depthWrite: false, ...options })
