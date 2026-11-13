@@ -43,11 +43,10 @@ export const EN = {
   // 声音
   '晨鸟': 'Morning birds', '溪水': 'Stream', '林间的风': 'Wind in the trees', '冬天的风': 'Winter wind',
   '蟋蟀': 'Crickets', '蛙鸣': 'Frogs', '雨打树叶': 'Rain on leaves', '篝火': 'Campfire',
-  '自动': 'Auto', '常开': 'Always on', '关': 'Off',
-  '正在响': 'Playing', '这会儿没有': 'Silent right now',
+  '恢复自动搭配': 'Back to automatic',
   '全部静音': 'Mute all', '打开声音': 'Turn sound on', '环境声音量': 'Ambience volume',
   '学习时垫在底下的声音': 'Background sound for studying',
-  '「自动」会跟着季节、昼夜、天气，还有你离篝火和小溪多远来配。点一下换成常开或关。': '“Auto” follows the season, the time of day and the weather, and how close you are to the campfire and the stream. Tap a sound to keep it always on or turn it off.',
+  '跟着季节、昼夜和天气自动搭配，点一下单独开关。': 'Sounds follow the season, the time of day and the weather. Tap one to turn it on or off.',
 
   // 篝火、单词屋、木屋
   '林间空地': 'The clearing',

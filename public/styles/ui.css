@@ -138,7 +138,6 @@ button.stat { cursor: pointer; }
 .lesson.is-next b { background: var(--amber); color: var(--ink); }
 @media (hover: hover) and (pointer: fine) { .lesson:not(.is-next):hover, .chip:not(.is-on):hover, .close:hover { background: var(--sage-soft); } }
 .app-row img { border-radius: 10px; display: block; }
-.go-see { font-size: 12px; font-weight: 700; color: var(--moss-deep); white-space: nowrap; }
 .stars { font-size: 15px; letter-spacing: 1px; color: var(--sage); white-space: nowrap; }
 .stars i { font-style: normal; color: var(--moss-deep); }
 .is-next .stars { color: rgba(255, 255, 255, .3); }
