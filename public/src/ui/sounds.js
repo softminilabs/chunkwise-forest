@@ -5,6 +5,8 @@ import { t } from '../i18n.js'
 
 const MODES = ['auto', 'on', 'off']
 const LABELS = { auto: t('自动'), on: t('常开'), off: t('关') }
+// 图标是番茄钟 App（ZenPomo）里那套声音图标，在 public/icons/sounds/。当遮罩用：颜色跟着文字色走，响和不响不用各备一张图
+const icon = id => h('i', { class: 'sound-icon', style: `-webkit-mask-image:url(icons/sounds/${id}.svg);mask-image:url(icons/sounds/${id}.svg)` })
 
 export function openSounds(ctx) {
   const list = h('div', { class: 'lessons' })
@@ -12,7 +14,7 @@ export function openSounds(ctx) {
     const mode = ctx.state.town.mix[id] ?? 'auto'
     const live = ctx.sounds.levels[id] > 0.01
     return h('button', { class: `lesson sound-row${live ? ' is-done' : ''}`, type: 'button', onclick: () => { ctx.state.patch({ mix: { ...ctx.state.town.mix, [id]: MODES[(MODES.indexOf(mode) + 1) % MODES.length] } }); ctx.audio.tap(); setTimeout(paint, 60) } },
-      h('b', {}, live ? '♪' : '·'), h('div', {}, h('strong', {}, name), h('small', {}, live ? t('正在响') : t('这会儿没有'))), h('span', { class: 'go-see' }, LABELS[mode]))
+      h('b', {}, icon(id)), h('div', {}, h('strong', {}, name), h('small', {}, live ? t('正在响') : t('这会儿没有'))), h('span', { class: 'go-see' }, LABELS[mode]))
   }))
   paint()
   const mute = h('button', { class: 'chip', type: 'button', onclick: () => { ctx.state.patch({ sound: !ctx.state.town.sound }); ctx.audio.setSound(ctx.state.town.sound); label() } })
