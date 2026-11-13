@@ -7,6 +7,10 @@ import { BOUNDS, CABINS, CLEARING, LODGE, STREAM, distanceTo, height, nearPath }
 const dummy = new THREE.Object3D()
 const tint = new THREE.Color()
 
+// 开场镜头里正好挡在灯笼树前面（两棵）、贴在圣诞树背后（三棵）的树，种完以后单独拿掉，那两棵树才各自站得清楚。
+// 不能写成上面那种「这里不种」的条件：少种一棵，后面的随机数就全错开了，整片林子都会挪位
+const CLEARED = [[-5.7, 30.7], [-7.3, 33.8], [9.8, 20.6], [10.9, 20.4], [13.1, 18.8]]
+
 function treeSpots(random) {
   const spots = []
   while (spots.length < 760) {
@@ -21,7 +25,7 @@ function treeSpots(random) {
     if (random.next() > 0.35 + smooth(6, 30, path) * 0.65) continue
     spots.push({ x, z, y: height(x, z), size: random.between(0.8, 1.35) * (0.8 + smooth(6, 34, path) * 0.7), pine: random.next() < 0.5, turn: random.next() * 6.28, hue: random.next(), pick: random.next() })
   }
-  return spots
+  return spots.filter(spot => !CLEARED.some(([x, z]) => Math.hypot(spot.x - x, spot.z - z) < 0.3))
 }
 
 /// 一层实例：同一个几何体，画在每个点上。place 决定它相对树根放在哪、多大
