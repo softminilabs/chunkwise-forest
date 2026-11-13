@@ -137,7 +137,6 @@ function frame(ctx, input, wish, dt, time) {
   ctx.cabins.update(weather.now.night, dt, time)
   ctx.camp.update(dt, time, weather.now.night)
   ctx.chests.update(time, weather.now)
-  ctx.sounds.update(weather.now, ctx.camp.state, player.position)
   ctx.fx.update(dt)
   ctx.celebrate()
   ctx.things.update(camera, player.position, time, innerWidth, innerHeight)
@@ -175,7 +174,9 @@ async function boot() {
   renderer.setAnimationLoop(now => {
     const dt = Math.min(0.05, (now - last) / 1000)
     last = now
-    // 读课文、做练习时森林定住不动：余光里一直有东西在动也费眼，顺便省电
+    // 读课文、做练习时森林定住不动：余光里一直有东西在动也费眼，顺便省电。
+    // 环境声只压低不停：雨声雷声照原样响的话，会盖住课文的录音
+    ctx.sounds.update(ctx.weather.now, ctx.camp.state, ctx.player.position, ctx.ui.busy ? 0.3 : 1)
     if (ctx.ui.busy) return
     frame(ctx, input, wish, dt, now / 1000)
     const stride = Math.floor(ctx.player.state.stride / Math.PI)

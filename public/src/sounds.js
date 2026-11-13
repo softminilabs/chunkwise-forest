@@ -54,11 +54,12 @@ export function createSounds(audio, state) {
 
   return {
     levels,
-    update(scene, camp, player) {
+    /// hush：读课文、做练习时传一个小于 1 的数，把环境声整体压低
+    update(scene, camp, player, hush = 1) {
       const auto = natural(scene, camp, player)
       for (const id of Object.keys(SOUNDS)) {
         const mode = state.town.mix[id] ?? 'auto'
-        const level = (mode === 'off' ? 0 : mode === 'on' ? ON_LEVEL : auto[id]) * state.town.volume
+        const level = (mode === 'off' ? 0 : mode === 'on' ? ON_LEVEL : auto[id]) * state.town.volume * hush
         levels[id] = level
         if (level < 0.01 && !voices[id]) continue
         const item = voice(id)
