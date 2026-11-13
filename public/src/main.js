@@ -131,6 +131,8 @@ async function boot() {
     const dt = Math.min(0.05, (now - last) / 1000)
     const time = now / 1000
     last = now
+    // 读课文、做练习时小镇定住不动：余光里一直有东西在动也费眼，顺便省电
+    if (ctx.ui.busy) return
     ctx.player.update(dt, time, input.wish(wish))
     if (wish.lengthSq() > 0.01 && ctx.ui.drawerOpen) ctx.ui.closeDrawer()
     const stride = Math.floor(ctx.player.state.stride / Math.PI)
