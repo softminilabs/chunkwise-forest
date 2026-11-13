@@ -1,26 +1,31 @@
-// 小镇里能用的东西（房子、我的 App 变成的物件）。每样东西头顶有个标签，但不是一直都在：
-// 二十多个标签全飘着，画面就被盖满了。九栋房子和练习场是学习的地方，名字一直显示；App 的图标走到附近才冒出来，走到跟前才展开名字和按键提示。
+// 森林里能用的东西（木屋、篝火、宝箱）。每样东西头顶有个标签，但不是一直都在：
+// 木屋和篝火是学习的地方，名字一直显示；宝箱这类 quiet 的，走到跟前、或者鼠标指上去才冒出来。
 // 标签是普通的网页元素，字清楚、能点，触屏上点标签就等于点东西
 import * as THREE from 'three'
 
-// 摊位的招牌上已经有图标了，头顶的标签只在走到跟前时才出
-const ICON_RANGE = 7.5
+const QUIET_RANGE = 7.5
 
 export function createThings(root, { onChoose }) {
   const list = []
-  let hovered = null
   const spot = new THREE.Vector3()
   const sphere = new THREE.Sphere()
+  let hovered = null
+
+  /// 标签里的字。东西的名字会变（宝箱打开后换成 App 的名字），所以单拎出来
+  function refresh(thing) {
+    thing.tag.className = `tag tag-${thing.kind}`
+    thing.tag.innerHTML = `${thing.icon ? `<img src="${thing.icon}" alt="">` : `<b>${thing.badge ?? ''}</b>`}<span class="tag-text"><strong>${thing.title}</strong><small>${thing.hint ?? ''}</small></span><kbd>空格</kbd>`
+  }
 
   function add(thing) {
     const tag = document.createElement('button')
     tag.type = 'button'
-    tag.className = `tag tag-${thing.kind}`
-    tag.innerHTML = `${thing.icon ? `<img src="${thing.icon}" alt="">` : `<b>${thing.badge ?? ''}</b>`}<span class="tag-text"><strong>${thing.title}</strong><small>${thing.hint ?? ''}</small></span><kbd>空格</kbd>`
-    tag.addEventListener('click', () => onChoose(thing))
+    tag.addEventListener('click', () => onChoose(entry))
     root.append(tag)
-    list.push({ reach: 3.2, radius: 2, height: 3, ...thing, tag })
-    return list.at(-1)
+    const entry = { reach: 3.2, radius: 2, height: 3, ...thing, tag }
+    refresh(entry)
+    list.push(entry)
+    return entry
   }
 
   /// 离得最近、够得着的那一个
@@ -29,7 +34,7 @@ export function createThings(root, { onChoose }) {
     let bestGap = Infinity
     for (const thing of list) {
       const gap = Math.hypot(thing.position.x - position.x, thing.position.z - position.z)
-      if (gap < thing.reach + 1.4 && gap < bestGap) { best = thing; bestGap = gap }
+      if (!thing.off && gap < thing.reach + 1.4 && gap < bestGap) { best = thing; bestGap = gap }
     }
     return best
   }
@@ -38,7 +43,8 @@ export function createThings(root, { onChoose }) {
     let best = null
     let bestGap = Infinity
     for (const thing of list) {
-      sphere.center.set(thing.position.x, thing.height * 0.5, thing.position.z)
+      if (thing.off) continue
+      sphere.center.set(thing.position.x, thing.position.y + thing.height * 0.5, thing.position.z)
       sphere.radius = Math.max(thing.radius, thing.height * 0.5)
       if (!ray.intersectsSphere(sphere)) continue
       const gap = ray.origin.distanceTo(sphere.center)
@@ -50,9 +56,9 @@ export function createThings(root, { onChoose }) {
   function update(camera, player, time, width, height) {
     const near = nearest(player)
     for (const thing of list) {
-      spot.set(thing.position.x, thing.height + 0.9 + Math.sin(time * 2 + thing.position.x) * 0.12, thing.position.z).project(camera)
+      spot.set(thing.position.x, thing.position.y + thing.height + 0.9 + Math.sin(time * 2 + thing.position.x) * 0.1, thing.position.z).project(camera)
       const gap = Math.hypot(thing.position.x - player.x, thing.position.z - player.z)
-      const shown = spot.z < 1 && Math.abs(spot.x) < 1.1 && Math.abs(spot.y) < 1.1 && !(thing.kind === 'app' && gap > ICON_RANGE && thing !== hovered)
+      const shown = !thing.off && spot.z < 1 && Math.abs(spot.x) < 1.1 && Math.abs(spot.y) < 1.1 && gap < 70 && !(thing.quiet && gap > QUIET_RANGE && thing !== hovered)
       thing.tag.hidden = !shown
       thing.tag.classList.toggle('is-hover', thing === hovered)
       if (!shown) continue
@@ -63,5 +69,5 @@ export function createThings(root, { onChoose }) {
     return near
   }
 
-  return { list, add, nearest, pick, update, hover(ray) { hovered = ray ? pick(ray) : null; return Boolean(hovered) } }
+  return { list, add, refresh, nearest, pick, update, hover(ray) { hovered = ray ? pick(ray) : null; return Boolean(hovered) } }
 }

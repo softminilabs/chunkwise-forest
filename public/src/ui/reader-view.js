@@ -98,7 +98,7 @@ export function buildReader(ctx, lesson, side, modes) {
   view.root = h('section', { class: 'reader sticker', 'aria-label': lesson.title },
     h('header', { class: 'reader-head' },
       h('div', { class: 'grow' }, h('p', { class: 'kicker' }, `单元 ${lesson.unit} · 第 ${lesson.n} 课 · ${GENRES[lesson.genre] ?? lesson.genre} · ${Math.max(1, Math.round(lesson.duration / 60))} 分钟`), h('h2', { lang: 'en' }, lesson.title)),
-      ring.root, h('button', { class: 'close', type: 'button', 'aria-label': '关上', title: '回小镇（Esc）', onclick: () => ctx.ui.closeModal() }, '✕')),
+      ring.root, h('button', { class: 'close', type: 'button', 'aria-label': '关上', title: '回森林（Esc）', onclick: () => ctx.ui.closeModal() }, '✕')),
     view.main, view.bar)
   return view
 }

@@ -1,5 +1,5 @@
 // 学习记录存在这台电脑的浏览器里，没有登录。读过 / 听完沿用网页版的键（cw.visited、cw.done），
-// 两个站放在同一个域名下时进度是通的；小镇自己多出来的东西都在 cw.town 里
+// 两个站放在同一个域名下时进度是通的；森林自己多出来的东西都在 cw.town 里
 const read = (key, fallback) => { try { return JSON.parse(localStorage.getItem(`cw.${key}`)) ?? fallback } catch { return fallback } }
 const write = (key, value) => { try { localStorage.setItem(`cw.${key}`, JSON.stringify(value)) } catch {} }
 const DAY = 86400000
@@ -9,8 +9,10 @@ const BOXES = [0, 1, 2, 4, 8, 16, 30]
 export const dayKey = (date = new Date()) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
 
 export function createState(course) {
-  const town = { stars: {}, cards: {}, days: {}, first: Date.now(), goal: 1, tomatoes: 0, taps: 0, led: '', lamp: 0, sound: true, qr: '', ...read('town', {}) }
-  // 在网页版里听完的课，到小镇里直接算一颗星
+  const saved = read('town', {})
+  // scene：季节、昼夜跟着真实的日子和时间（auto），或者固定；mix：每种环境声是自动、常开还是关；chests：找到了哪些宝箱
+  const town = { stars: {}, cards: {}, days: {}, first: Date.now(), goal: 1, sound: true, volume: 0.8, mix: {}, chests: {}, ...saved, scene: { season: 'auto', time: 'auto', weather: 'clear', ...saved.scene } }
+  // 在网页版里听完的课，到森林里直接算一颗星
   for (const id of Object.keys(read('done', {}))) town.stars[id] ??= 1
   const listeners = new Set()
   const lessons = course.units.flatMap(unit => unit.lessons)

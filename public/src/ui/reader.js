@@ -176,7 +176,7 @@ function resultNode(session, outcome) {
       h('button', { class: 'button big', type: 'button', onclick: () => ctx.openPractice({ mode: 'cloze', lesson, title: `第 ${lesson.n} 课 · 练一练` }) }, '练一练，再拿一颗星'),
       next && h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openLesson(next) }, `下一课：${next.title}`),
       h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.openLesson(ctx.state.lessons[index]) }, '再听一遍'),
-      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.ui.closeModal() }, '回小镇')))
+      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.ui.closeModal() }, '回森林')))
 }
 
 function finish(session) {

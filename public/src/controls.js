@@ -1,15 +1,16 @@
 // 镜头和操作。走路：WASD / 方向键，或者点地面；点东西就走过去用它；拖动转镜头，滚轮远近
 import * as THREE from 'three'
-import { damp } from './player.js'
+import { damp } from './look.js'
 
 const KEYS = { KeyW: [0, 1], ArrowUp: [0, 1], KeyS: [0, -1], ArrowDown: [0, -1], KeyA: [-1, 0], ArrowLeft: [-1, 0], KeyD: [1, 0], ArrowRight: [1, 0] }
 const typing = () => /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName ?? '')
 
 export function createRig(camera) {
-  const rig = { yaw: 0, yawGoal: null, pitch: 0.5, distance: 32, focus: new THREE.Vector3(0, 0, 8), side: 0, sideGoal: 0, zoomGoal: 32 }
+  const rig = { yaw: 0, yawGoal: null, pitch: 0.44, distance: 30, focus: new THREE.Vector3(0, 0, 22), side: 0, sideGoal: 0, zoomGoal: 30 }
   rig.update = (dt, target) => {
     rig.focus.x = damp(rig.focus.x, target.x, 5, dt)
     rig.focus.z = damp(rig.focus.z, target.z, 5, dt)
+    rig.focus.y = damp(rig.focus.y, target.y, 3, dt)
     rig.side = damp(rig.side, rig.sideGoal, 4, dt)
     // 用一样东西时镜头绕到它正面去；绕的时候走最近的那一边
     if (rig.yawGoal != null) rig.yaw += Math.atan2(Math.sin(rig.yawGoal - rig.yaw), Math.cos(rig.yawGoal - rig.yaw)) * (1 - Math.exp(-3 * dt))
@@ -18,9 +19,9 @@ export function createRig(camera) {
     // 右边开着面板时把看的点往右挪，正在用的东西就留在画面左半边，不被面板盖住
     const lookX = rig.focus.x + Math.cos(rig.yaw) * rig.side
     const lookZ = rig.focus.z - Math.sin(rig.yaw) * rig.side
-    camera.position.set(lookX + Math.sin(rig.yaw) * reach, Math.sin(rig.pitch) * rig.distance, lookZ + Math.cos(rig.yaw) * reach)
+    camera.position.set(lookX + Math.sin(rig.yaw) * reach, rig.focus.y + Math.sin(rig.pitch) * rig.distance, lookZ + Math.cos(rig.yaw) * reach)
     // 看的点比小陈高一截：人落在画面下三分之一，前面的房子和天露出来
-    camera.lookAt(lookX, 3.4, lookZ)
+    camera.lookAt(lookX, rig.focus.y + 3.2, lookZ)
   }
   return rig
 }
@@ -69,11 +70,13 @@ export function createInput(canvas, camera, rig, handlers) {
     if (press.moved > 8 || blocked()) return
     const ray = aim(event)
     if (handlers.onPick(ray)) return
+    // 地面有起伏，拿人脚下那么高的一个平面来接点击，近处是准的
+    ground.constant = -handlers.groundY()
     if (ray.intersectPlane(ground, point)) handlers.onGround(point)
   })
   // 鼠标从东西上挪到它头顶的标签上不算离开：不然标签一出来就把自己弄没了，来回闪
   canvas.addEventListener('pointerleave', event => { if (!event.relatedTarget?.closest?.('.tag')) { cancelAnimationFrame(hovering); handlers.onHover(null); canvas.style.cursor = '' } })
-  canvas.addEventListener('wheel', event => { event.preventDefault(); rig.zoomGoal = Math.min(60, Math.max(18, rig.zoomGoal + event.deltaY * 0.03)) }, { passive: false })
+  canvas.addEventListener('wheel', event => { event.preventDefault(); rig.zoomGoal = Math.min(48, Math.max(16, rig.zoomGoal + event.deltaY * 0.03)) }, { passive: false })
 
   return {
     /// 按键换算成世界里的方向：以镜头朝向为准，W 永远是往画面上方走

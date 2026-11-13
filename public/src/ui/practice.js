@@ -218,7 +218,7 @@ function result(game) {
     h('div', { class: 'row center' },
       h('button', { class: 'button big', type: 'button', onclick: () => start(game, round.mode) }, '再来一轮'),
       !lesson && h('button', { class: 'button plain big', type: 'button', onclick: () => menu(game) }, '换个玩法'),
-      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.ui.closeModal() }, '回小镇'))))
+      h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.ui.closeModal() }, '回森林'))))
 }
 
 export function openPractice(ctx, { mode = null, lesson = null, title = '练习场' } = {}) {

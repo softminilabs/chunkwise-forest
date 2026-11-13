@@ -1,4 +1,4 @@
-// 界面的几块公用地盘：右边的抽屉、盖住小镇的大卡片、顶上的提示条
+// 界面的几块公用地盘：右边的抽屉、盖住森林的大卡片、顶上的提示条
 export function h(tag, attributes = {}, ...children) {
   const node = document.createElement(tag)
   for (const [key, value] of Object.entries(attributes ?? {})) {
