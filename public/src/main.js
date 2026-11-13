@@ -87,7 +87,7 @@ function addFestive(ctx) {
   const hint = festival => { const left = daysUntil(festival.day); return left ? t('离{name}还有 {n} 天', { name: festival.title, n: left }) : t('今天就是{name}', { name: festival.title }) }
   return [
     ctx.things.add({ kind: 'spot', title: t('圣诞树'), hint: hint(xmas), badge: '★', position: ctx.xmas.position, height: 6.4, radius: 2.2, reach: 4.6, use: () => openCountdown(ctx, xmas) }),
-    ctx.things.add({ kind: 'spot', title: t('灯笼'), hint: hint(spring), badge: '福', position: ctx.lanterns.position, height: 5.6, radius: 2.4, reach: 4.6, use: () => openCountdown(ctx, spring) }),
+    ctx.things.add({ kind: 'spot', look: 'fu', title: t('灯笼'), hint: hint(spring), badge: '福', position: ctx.lanterns.position, height: 5.6, radius: 2.4, reach: 4.6, use: () => openCountdown(ctx, spring) }),
   ]
 }
 

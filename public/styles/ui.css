@@ -204,6 +204,8 @@ input[type="range"] { width: 100%; accent-color: var(--moss); margin: 10px 0; }
 .drawer-rows { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
 .drawer-rows .kicker { margin-bottom: 8px; }
 .tag-chest b { background: var(--amber-deep); }
+/* 灯笼树牌子上的「福」：红底金字，和灯笼一个红。走近时牌子变色，它不跟着变 */
+.tag-fu b, .tag-fu.is-near b { background: #C8372D; color: #FFD86B; }
 
 /* 提示条 */
 #toasts { position: fixed; top: 84px; left: 50%; translate: -50% 0; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; z-index: 50; }

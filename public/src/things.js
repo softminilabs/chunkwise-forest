@@ -14,7 +14,8 @@ export function createThings(root, { onChoose }) {
 
   /// 标签里的字。东西的名字会变（宝箱打开后换成 App 的名字），所以单拎出来
   function refresh(thing) {
-    thing.tag.className = `tag tag-${thing.kind}`
+    // look：这块牌子另外的样子（灯笼树的「福」是红底金字）
+    thing.tag.className = `tag tag-${thing.kind}${thing.look ? ` tag-${thing.look}` : ''}`
     thing.tag.innerHTML = `${thing.icon ? `<img src="${thing.icon}" alt="">` : `<b>${thing.badge ?? ''}</b>`}<span class="tag-text"><strong>${thing.title}</strong><small>${thing.hint ?? ''}</small></span><kbd>${t('空格')}</kbd>`
   }
 
