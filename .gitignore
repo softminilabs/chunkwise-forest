@@ -5,3 +5,5 @@ public/vendor/
 public/data/
 # npm run sounds 从 ../Lull 拷来的环境声
 public/sounds/
+# npm run words 从 ../Chunkwise 拷来的单词本和录音（三百多兆）
+public/words/

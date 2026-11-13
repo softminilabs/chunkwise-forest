@@ -8,6 +8,7 @@
     "sync": "node scripts/sync.mjs",
     "apps": "node scripts/sync-apps.mjs",
     "sounds": "node scripts/sync-sounds.mjs",
+    "words": "node scripts/sync-words.mjs",
     "serve": "node scripts/serve.mjs"
   },
   "dependencies": {
