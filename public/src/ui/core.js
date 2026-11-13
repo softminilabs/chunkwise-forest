@@ -39,6 +39,7 @@ export function createUI(audio) {
   let modalClosed = null
   // 小卡片正在淡出时的那段动画；淡完才真正收起来
   let fading = null
+  let modalFading = null
   sheet.addEventListener('click', event => { if (event.target === sheet) closeDrawer() })
 
   function closeDrawer() {
@@ -68,13 +69,14 @@ export function createUI(audio) {
   }
 
   function closeModal() {
-    if (modal.hidden) return
-    modal.hidden = true
-    modal.replaceChildren()
+    if (modal.hidden || modalFading) return
     delete document.body.dataset.modal
     const done = modalClosed
     modalClosed = null
     done?.()
+    // 和小卡片一样：淡出去再收起来，不是啪地一下没了
+    modalFading = modal.animate({ opacity: [1, 0] }, { duration: 200, easing: 'ease-in' })
+    modalFading.onfinish = () => { modal.hidden = true; modal.replaceChildren(); modalFading = null }
   }
 
   function openModal(node, onClose) {
@@ -82,6 +84,9 @@ export function createUI(audio) {
     const previous = modalClosed
     modalClosed = null
     previous?.()
+    // 上一张还在淡出就又开了一张（练习场里点「去读一课」）：不等它淡完
+    modalFading?.cancel()
+    modalFading = null
     modalClosed = onClose ?? null
     modal.replaceChildren(node)
     modal.hidden = false
@@ -96,9 +101,9 @@ export function createUI(audio) {
 
   return {
     openDrawer, closeDrawer, openModal, closeModal, toast,
-    get busy() { return !modal.hidden },
+    get busy() { return !modal.hidden && !modalFading },
     get drawerOpen() { return !sheet.hidden && !fading },
     /// Esc：先关大卡片，再关小卡片
-    escape() { if (!modal.hidden) closeModal(); else closeDrawer() },
+    escape() { if (!modal.hidden && !modalFading) closeModal(); else closeDrawer() },
   }
 }

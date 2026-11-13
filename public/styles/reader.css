@@ -114,6 +114,9 @@
 .seek-row .time:last-child { text-align: right; }
 .practice { width: min(680px, 100%); max-height: min(92vh, 860px); display: flex; flex-direction: column; overflow: hidden; animation: card-in .4s var(--ease); }
 
+/* 大卡片里面换内容（练习场选玩法 → 一道题 → 下一题 → 结果；课文读完出结果）：新内容淡进来 */
+.practice-body > *, .reader-main > .result { animation: fade-in .35s ease-out; }
+
 /* 读完、练完的结果 */
 .result { position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 20px 26px 30px; text-align: center; overflow-y: auto; }
 .result h2 { font-size: 30px; font-weight: 800; }
