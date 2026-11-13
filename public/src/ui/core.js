@@ -12,6 +12,8 @@ export function h(tag, attributes = {}, ...children) {
   return node
 }
 
+export const GENRES = { story: '故事', dialogue: '对话', talk: '分享', chat: '聊天', profile: '人物' }
+
 export const stars = (count, max = 2) => h('span', { class: 'stars', 'aria-label': `${count} 颗星` }, ...Array.from({ length: max }, (_, k) => k < count ? h('i', {}, '★') : '☆'))
 
 export function appCard(app) {

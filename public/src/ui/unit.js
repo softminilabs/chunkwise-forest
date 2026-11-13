@@ -1,7 +1,5 @@
 // 走进一栋房子：这个单元的十课
-import { h, stars } from './core.js'
-
-const GENRES = { story: '故事', dialogue: '对话', talk: '分享', chat: '聊天', profile: '人物' }
+import { GENRES, h, stars } from './core.js'
 
 export function openUnit(ctx, house) {
   const unit = house.unit

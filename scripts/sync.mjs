@@ -22,7 +22,10 @@ function chunksOf(lesson, allChunks) {
   const found = []
   for (const chunk of allChunks) {
     const use = chunk.uses.find(item => item.l === lesson.id)
-    if (use) found.push({ id: chunk.id, kind: 'chunk', text: chunk.chunk, zh: chunk.zh, note: chunk.def, s: use.s, r: use.r })
+    if (!use) continue
+    // 这一课重点讲的组块，课文里另有中文的用法提示和例句
+    const taught = lesson.expressions.find(item => item.chunk === chunk.chunk)
+    found.push({ id: chunk.id, kind: 'chunk', text: chunk.chunk, zh: chunk.zh, note: chunk.def, tip: taught?.note ?? '', example: taught?.example ?? '', s: use.s, r: use.r })
   }
   return found
 }
@@ -61,7 +64,7 @@ function buildLesson(lesson, allChunks, seen) {
   }
   return {
     id: lesson.id, n: lesson.number, unit: lesson.unit.number, title: lesson.title, genre: lesson.genre, words: lesson.words,
-    seconds: Math.round(timing.duration), sentences,
+    seconds: Math.round(timing.duration), duration: timing.duration, pre: lesson.preQuestion ?? null, intro: lesson.guide?.intro ?? '', sentences,
     timing: timing.sentences.map(item => ({ a: item.start, b: item.end, w: item.words })),
     cards,
   }
