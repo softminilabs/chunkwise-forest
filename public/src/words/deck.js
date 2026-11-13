@@ -33,8 +33,15 @@ export function createVoice() {
       finish()
       audio.src = url
       audio.currentTime = from
-      audio.ontimeupdate = () => { if (audio.currentTime >= to) { audio.pause(); finish() } }
-      return new Promise(done => { settle = done; audio.play().catch(finish) })
+      const stop = () => { if (audio.currentTime >= to) { audio.pause(); finish() } }
+      // timeupdate 一秒才来四次，只靠它会把下一句的头带出来，所以每帧也看一眼；页面在后台时没有帧，还得靠它兜底
+      audio.ontimeupdate = stop
+      return new Promise(done => {
+        settle = done
+        const watch = () => { if (settle !== done) return; stop(); if (settle === done) requestAnimationFrame(watch) }
+        if (to < Infinity) requestAnimationFrame(watch)
+        audio.play().catch(finish)
+      })
     },
     stop() { audio.pause(); finish() },
   }
