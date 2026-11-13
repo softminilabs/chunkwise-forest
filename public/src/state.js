@@ -6,7 +6,11 @@ const DAY = 86400000
 const RIGHT_GOAL = 5
 // 卡片的复习间隔（天）：答对往后挪一格，答错回到第一格，今天还会再出现
 const BOXES = [0, 1, 2, 4, 8, 16, 30]
-export const dayKey = (date = new Date()) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+// 一天从凌晨 4 点算起：过了零点接着学，还算前一天（和 App 的 PRD 第 19 节一个规矩）
+const CUTOFF = 4 * 3600000
+/// 这是第几个学习日（按本地时间）。排复习、算「今天」都用它
+const learningDay = (ms = Date.now()) => { const date = new Date(ms - CUTOFF); return Math.floor((date.getTime() - date.getTimezoneOffset() * 60000) / DAY) }
+export const dayKey = (date = new Date(Date.now() - CUTOFF)) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
 
 export function createState(course) {
   const saved = read('town', {})
@@ -18,7 +22,7 @@ export function createState(course) {
   const lessons = course.units.flatMap(unit => unit.lessons)
   const today = () => (town.days[dayKey()] ??= { lessons: 0, right: 0 })
   const save = () => { write('town', town); for (const listener of listeners) listener() }
-  const studied = offset => (town.days[dayKey(new Date(Date.now() - offset * DAY))]?.lessons ?? 0) > 0
+  const studied = offset => (town.days[dayKey(new Date(Date.now() - CUTOFF - offset * DAY))]?.lessons ?? 0) > 0
 
   return {
     town, lessons, save,
@@ -42,18 +46,23 @@ export function createState(course) {
       return { gained: Math.max(0, stars - before), fresh }
     },
 
-    /// 练习里答了一张卡
+    /// 练习里答了一张卡。排程一天只认这张卡的第一次作答，后面再答是当场巩固、不改排程：
+    /// 不然同一晚把一张卡连着答对六次，它就一路升到 30 天那一格了。
+    /// 还没到期的卡提前答对也不升格；答错说明忘了，不管到没到期都打回第一格
     review(id, right) {
       const card = town.cards[id]
+      const day = learningDay()
       if (right) today().right += 1
-      if (card) {
+      if (card && card.seen !== day && (!right || learningDay(card.due) <= day)) {
         card.box = right ? Math.min(BOXES.length - 1, card.box + 1) : 0
         card.due = Date.now() + BOXES[card.box] * DAY
+        card.seen = day
       }
       save()
     },
     owned: () => Object.keys(town.cards),
-    due: () => Object.entries(town.cards).filter(([, card]) => card.due <= Date.now()).map(([id]) => id),
+    // 到没到期按天算：昨晚九点练过、隔一天的卡，今天一早就该到期，不用等到晚上九点
+    due: () => Object.entries(town.cards).filter(([, card]) => learningDay(card.due) <= learningDay()).map(([id]) => id),
 
     /// 连续几天：今天还没学也不断，只要昨天学了
     streak() {
