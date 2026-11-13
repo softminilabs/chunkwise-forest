@@ -25,7 +25,7 @@ export const appName = app => lang === 'en' || app.zh === app.en ? pick(app) : `
 export function appCard(app) {
   return h('div', { class: 'appcard' },
     h('img', { src: app.icon, alt: '', width: 52, height: 52 }),
-    h('div', {}, h('small', {}, t('这个点子来自我做的 iPhone App')), h('strong', {}, appName(app)), h('span', {}, pick(app, 'tagline', 'taglineEn'))),
+    h('div', {}, h('strong', {}, appName(app)), h('span', {}, pick(app, 'tagline', 'taglineEn'))),
     h('a', { class: 'button', href: app.store, target: '_blank', rel: 'noopener' }, 'App Store'))
 }
 

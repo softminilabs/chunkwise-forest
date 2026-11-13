@@ -79,7 +79,6 @@ export const EN = {
   '夜里': 'At night', '雨雪天': 'Rain or snow', '冬天': 'In winter',
   '找到了！第 {n} / {total} 只': 'Found one! {n} of {total}',
   '我做的 App': 'An app I made',
-  '这个点子来自我做的 iPhone App': 'This idea comes from an iPhone app I made',
   '看看找到了哪些': 'See what I have found',
   '还没找到': 'Not found yet',
   '林子里藏着我做的 App': 'Apps I made, hidden in the woods',
