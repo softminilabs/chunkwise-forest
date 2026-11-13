@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>单词屋 · 屋内样张</title>
+<style>
+  :root {
+    --ink: #26302B; --body: #5B655F; --muted: #96A09A; --paper: #FBF8F1; --moss: #3F6B55; --sage-soft: #D9E4DA; --sage-pale: #EBF0E8;
+    --amber: #E9B949; --amber-soft: #F6ECCB; --mark: #F2DE9B; --shade: 20 32 26;
+    --lift: 0 2px 0 rgb(var(--shade) / .08), 0 10px 26px rgb(var(--shade) / .14);
+    --press: 0 1px 0 rgb(var(--shade) / .08), 0 4px 12px rgb(var(--shade) / .12);
+    --font: Charter, "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+    --read: Charter, Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+    --speaker: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3.5 9v6h4l5.5 4.5v-15L7.5 9h-4z'/%3E%3Cpath d='M16.5 8.6a4.8 4.8 0 0 1 0 6.8M19 6a8.5 8.5 0 0 1 0 12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; overflow: hidden; font: 500 15px/1.5 var(--font); color: var(--ink); }
+  /* 屋子外面是一片暗：剖开的木屋像一只亮着的盒子 */
+  body { background: radial-gradient(120% 90% at 50% 30%, #3A4F45, #18211D); }
+  body[data-time="night"] { background: radial-gradient(120% 90% at 50% 30%, #1D2925, #0B100E); }
+  h1, h2, p, ul { margin: 0; padding: 0; }
+  button { font: inherit; color: inherit; border: 0; cursor: pointer; }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+
+  /* 哪个画面露哪些东西 */
+  body:not([data-view="room"]) .room-only, body[data-view="room"] .seat-only, body[data-page=""] .page-only, body:not([data-page=""]) .hud, body:not([data-page=""]) .keys { display: none; }
+  body:not([data-card="done"]) .done, body[data-card="done"] .keys { display: none; }
+  body[data-sheet="today"] .sheet-in:not([data-for="today"]), body[data-sheet="word"] .sheet-in:not([data-for="word"]), body[data-sheet="listen"] .sheet-in:not([data-for="listen"]) { display: none; }
+  body:not([data-sheet="word"]) .answers, body:not([data-sheet="listen"]) .transport, body[data-sheet="today"] .bar .track, body[data-sheet="today"] .bar .count { display: none; }
+  body:not([data-page="library"]) .browse, body:not([data-page="detail"]) .detail { display: none; }
+  /* 正面是一张短纸条：只有词、发音、例句。翻面时纸往下展开，释义这些才出来（上面的字不动） */
+  body[data-card="front"] .back-only { display: none; }
+  body[data-card="front"] .answers .after, body:not([data-card="front"]) .answers .before { display: none; }
+
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--paper); box-shadow: var(--press); font-weight: 700; font-size: 14px; white-space: nowrap; }
+  .hud { position: fixed; left: 20px; top: 18px; display: flex; align-items: center; gap: 10px; }
+  .brand { padding: 10px 18px; border-radius: 16px; background: var(--paper); box-shadow: var(--lift); line-height: 1.3; }
+  .brand strong { display: block; font-size: 20px; }
+  .brand small { color: var(--body); font-size: 12px; font-weight: 600; }
+  .keys { position: fixed; left: 0; right: 0; bottom: 20px; text-align: center; font-size: 13px; color: rgb(255 255 255 / .7); font-weight: 600; }
+  body:not([data-page=""]) #tags { display: none; }
+  .tag { position: fixed; cursor: pointer; translate: -50% -100%; display: flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px; border-radius: 16px; background: var(--paper); box-shadow: var(--press); white-space: nowrap; line-height: 1.2; }
+  .tag b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--moss); color: var(--paper); font-size: 15px; }
+  .tag strong { font-size: 14px; display: block; }
+  .tag small { font-size: 11px; color: var(--ink); font-weight: 600; opacity: .8; }
+  .tag kbd { min-width: 0; height: auto; font: 800 11px var(--font); padding: 3px 8px; border-radius: 8px; background: var(--ink); color: var(--paper); }
+  .tag.is-near { background: var(--amber); padding-right: 6px; }
+  .tag.is-near b { background: var(--ink); }
+
+  .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 999px; background: var(--moss); color: var(--paper); font-weight: 700; font-size: 18px; box-shadow: var(--press); white-space: nowrap; }
+  .button.plain { background: var(--sage-pale); color: var(--ink); }
+  .button.soft { background: var(--sage-soft); color: var(--ink); }
+  kbd { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 7px; border-radius: 8px; background: rgb(255 255 255 / .22); font: 800 12px var(--font); }
+  .button.soft kbd { background: rgb(var(--shade) / .1); }
+  .segment { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--sage-pale); }
+  .segment button { padding: 7px 15px; border-radius: 999px; background: none; color: var(--body); font-weight: 800; font-size: 14px; white-space: nowrap; }
+  .segment button.is-on { background: var(--ink); color: var(--paper); }
+  .kicker { font-size: 13px; font-weight: 700; color: var(--moss); letter-spacing: .04em; }
+  mark { background: linear-gradient(transparent 58%, var(--mark) 58%, var(--mark) 92%, transparent 92%); color: inherit; }
+  /* 喇叭：点了出声音的地方都是它（单词的发音、例句） */
+  .speaker { flex: none; display: inline-block; width: 1.25em; height: 1.25em; background: currentColor; -webkit-mask: var(--speaker) center / contain no-repeat; mask: var(--speaker) center / contain no-repeat; }
+  /* 一个发音 = 一颗按钮：喇叭和音标装在同一颗胶囊里，整颗都能点。英式在前，美式在后 */
+  .pron { display: inline-flex; align-items: center; gap: .45em; padding: .4em .95em .4em .7em; border-radius: 999px; background: var(--sage-pale); color: var(--ink); font-size: 14px; white-space: nowrap; }
+  .pron b { font-size: .8em; }
+  .say.is-mute { visibility: hidden; }
+  .say { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--sage-soft); color: var(--ink); font-size: 14px; }
+
+  .done { position: fixed; left: 50%; bottom: 30px; translate: -50% 0; width: min(880px, 92vw); display: flex; align-items: center; gap: 18px; padding: 20px 22px 20px 30px; border-radius: 24px; background: var(--paper); box-shadow: var(--lift); }
+  .done div { flex: 1; min-width: 0; }
+  .done strong { display: block; font-size: 24px; line-height: 1.3; }
+  .done small { font-size: 14px; color: var(--body); font-weight: 600; }
+
+  /* 坐下来（书桌前学词、壁炉前听词）：墙上钉着一张大纸，底下是按钮 */
+  .bar { position: fixed; left: 20px; right: 4%; top: 18px; display: flex; align-items: center; gap: 16px; }
+  .bar .track { flex: 1; height: 10px; border-radius: 999px; background: rgb(255 255 255 / .3); overflow: hidden; margin-left: 12%; }
+  .bar .track i { display: block; height: 100%; width: 64%; border-radius: 999px; background: var(--amber); }
+  .bar .count { font-weight: 700; color: var(--paper); font-variant-numeric: tabular-nums; text-shadow: 0 1px 4px rgb(0 0 0 / .4); }
+  .sheet { position: fixed; left: 23%; right: 13%; top: 10%; bottom: 20%; container-type: size; }
+  body[data-view="listen"] .sheet { left: 45%; right: 4%; bottom: 19%; }
+  .sheet-in { max-height: 100%; padding: 4.6cqh 5cqw 5.2cqh; border-radius: 6px; background: var(--paper); box-shadow: 0 3px 0 rgb(var(--shade) / .1), 0 18px 40px rgb(var(--shade) / .4); display: flex; flex-direction: column; gap: 2.2cqh; overflow: hidden auto; }
+  /* 两颗图钉 */
+  .sheet::before, .sheet::after { content: ""; position: absolute; top: -7px; width: 16px; height: 16px; border-radius: 50%; background: var(--amber); box-shadow: 0 2px 3px rgb(0 0 0 / .35); z-index: 1; }
+  .sheet::before { left: 6%; }
+  .sheet::after { right: 6%; }
+  .sheet .kicker { font-size: max(12px, 2.3cqh); }
+  .sheet h1 { font: 800 13cqh/1.05 var(--read); }
+  .sheet h1.zh { font: 800 8cqh/1.15 var(--font); }
+  .says { display: flex; align-items: center; flex-wrap: wrap; gap: 1.4cqh 1.6cqh; font-size: 3.1cqh; color: var(--body); }
+  .says span { display: inline-flex; align-items: center; gap: 1.2cqh; }
+  .says span b { color: var(--ink); font-size: 2.5cqh; }
+  .sheet .pron { font-size: 3.1cqh; }
+  .ex, .heard { display: flex; gap: 1.6cqh; align-items: flex-start; }
+  .ex p { font: 600 3.9cqh/1.45 var(--read); }
+  .ex small { display: block; font: 600 2.7cqh/1.5 var(--font); color: var(--body); }
+  .more { display: grid; grid-template-columns: 5fr 6fr; gap: 2.4cqh 5cqw; padding-top: 2.6cqh; border-top: 2px solid var(--sage-pale); }
+  .more > div { display: flex; flex-direction: column; gap: 2cqh; min-width: 0; }
+  .senses { list-style: none; font-size: 4.2cqh; font-weight: 700; line-height: 1.4; }
+  .senses i { font-style: normal; font-size: 2.5cqh; color: var(--body); font-weight: 600; margin-right: 1.2cqh; }
+  .cols { display: flex; flex-direction: column; gap: .5cqh; }
+  .cols b { font: 700 3cqh var(--read); margin-right: 1.2cqh; }
+  .cols span, .tip { font-size: 2.5cqh; color: var(--body); font-weight: 600; }
+  .tip b { color: var(--ink); margin-right: 1cqh; }
+  .heard p { font: 600 2.9cqh/1.5 var(--read); }
+  .heard .kicker { display: block; font-family: var(--font); }
+  .answers { position: fixed; left: 23%; right: 13%; bottom: 7%; display: flex; gap: 12px; }
+  .answers .button { flex: 1; padding: 18px; font-size: 20px; }
+  .answers .known { flex: none; padding: 18px 26px; font-size: 16px; }
+
+  /* 今天的词：复习、新词各一行大按钮，底下两样设置直接摆出来 */
+  .plan { display: flex; align-items: center; gap: 2.4cqh; padding: 3cqh 3cqh 3cqh 4cqh; border-radius: 3cqh; background: var(--sage-pale); text-align: left; }
+  .plan b { font-size: 4.6cqh; min-width: 3.4em; }
+  .plan span { flex: 1; font-size: 3cqh; color: var(--body); font-weight: 600; }
+  .plan i { font-style: normal; display: inline-flex; align-items: center; gap: 1.2cqh; padding: 1.6cqh 3.4cqh; border-radius: 999px; background: var(--moss); color: var(--paper); font-weight: 700; font-size: 3cqh; }
+  .plan.is-next { background: var(--ink); color: var(--paper); }
+  .plan.is-next span { color: rgb(255 255 255 / .72); }
+  .plan.is-next i { background: var(--amber); color: var(--ink); }
+  .plan.is-next kbd { background: rgb(var(--shade) / .14); }
+  .opt { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 700; font-size: max(13px, 2.6cqh); }
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqh 4cqw; padding-top: 2.6cqh; border-top: 2px solid var(--sage-pale); margin-top: auto; }
+  .opts .opt { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .opts .segment button { padding: 6px 12px; font-size: 13px; }
+
+  /* 听单词：纸上是正在放的那个词，底下是上一个、暂停、下一个 */
+  .transport { position: fixed; left: 45%; right: 4%; bottom: 6%; display: flex; align-items: center; justify-content: center; gap: 18px; }
+  .transport button { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: var(--paper); box-shadow: var(--press); font-size: 20px; }
+  .transport .main { width: 78px; height: 78px; background: var(--amber); font-size: 26px; }
+
+  /* 词库：点书架出来的大页面 */
+  .veil { position: fixed; inset: 0; background: rgb(14 24 20 / .62); backdrop-filter: blur(6px); }
+  .library { position: fixed; left: 50%; top: 3vh; translate: -50% 0; width: min(1240px, 95vw); height: 94vh; border-radius: 28px; background: var(--paper); box-shadow: var(--lift); overflow: hidden; }
+  .browse, .detail { height: 100%; display: flex; flex-direction: column; }
+  .lib-head { display: flex; align-items: center; gap: 14px; padding: 22px 28px 14px; }
+  .lib-head h2 { font-size: 30px; font-weight: 800; line-height: 1.2; }
+  .lib-head small { color: var(--body); font-size: 14px; font-weight: 600; }
+  .lib-head .grow { flex: 1; }
+  .close { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--sage-pale); font-size: 16px; font-weight: 700; }
+  .levels { display: flex; gap: 8px; padding: 0 28px; }
+  .levels button { flex: 1; display: flex; align-items: baseline; justify-content: center; gap: 8px; padding: 12px; border-radius: 18px; background: var(--sage-pale); font-size: 22px; font-weight: 800; }
+  .levels small { font-size: 13px; color: var(--body); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .levels .is-on { background: var(--ink); color: var(--paper); }
+  .levels .is-on small { color: rgb(255 255 255 / .7); }
+  .topics { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 28px 16px; border-bottom: 2px solid var(--sage-pale); }
+  .topics button { padding: 7px 14px; border-radius: 999px; background: var(--sage-pale); font-weight: 700; font-size: 14px; }
+  .topics small { font-size: 12px; color: var(--body); font-weight: 600; margin-left: 5px; font-variant-numeric: tabular-nums; }
+  .topics .is-on { background: var(--moss); color: var(--paper); }
+  .topics .is-on small { color: rgb(255 255 255 / .75); }
+  .grid { flex: 1; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); align-content: start; gap: 12px; padding: 18px 28px 28px; }
+  .wcard { position: relative; cursor: pointer; display: flex; flex-direction: column; gap: 4px; padding: 16px 16px 14px; border-radius: 20px; background: var(--sage-pale); }
+  .wcard strong { font: 800 24px/1.2 var(--read); }
+  .wcard span { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wcard span i { font-style: normal; color: var(--body); font-size: 13px; margin-right: 6px; }
+  /* 两个发音放不下一行就折成两行 */
+  .wcard .plays { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .wcard .pron { background: var(--paper); box-shadow: var(--press); font-size: 13.5px; }
+  /* 学过的词：卡片是暖色的，右上角写着「学过」。原来只画一个点，看不出是什么意思 */
+  .wcard.is-known { background: var(--amber-soft); }
+  .wcard.is-known::after { content: "学过"; position: absolute; right: 14px; top: 14px; padding: 2px 9px; border-radius: 999px; background: var(--amber); font-size: 12px; font-weight: 700; }
+  .detail-body { flex: 1; overflow-y: auto; display: grid; grid-template-columns: 5fr 6fr; gap: 28px 56px; padding: 18px 44px 36px; align-content: start; }
+  .detail-body > div { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+  .detail h1 { font: 800 88px/1.05 var(--read); }
+  .detail .says { gap: 10px; }
+  .detail .pron { font-size: 20px; }
+  .detail .senses { font-size: 26px; }
+  .detail .senses i { font-size: 15px; margin-right: 10px; }
+  .detail .senses small { display: block; font: 600 15px/1.5 var(--read); color: var(--body); margin: 0 0 8px 2px; }
+  .detail .tip, .detail .cols span { font-size: 15px; }
+  .detail .cols { gap: 4px; }
+  .detail .cols b { font-size: 19px; margin-right: 10px; }
+  .detail .ex, .detail .heard { gap: 12px; }
+  .detail .ex p { font-size: 22px; }
+  .detail .ex small { font-size: 15px; }
+  .detail .heard p { font-size: 19px; }
+  .status { align-self: flex-start; padding: 7px 14px; border-radius: 999px; background: var(--amber-soft); font-weight: 700; font-size: 14px; }
+</style>
+<script type="importmap">{ "imports": { "three": "../vendor/three.module.js" } }</script>
+<script type="module" src="lodge.js"></script>
+</head>
+<body>
+<canvas id="stage"></canvas>
+
+<div class="hud room-only"><button class="pill" type="button">← 回森林</button><div class="brand"><strong>单词屋</strong><small>在学 B1 · 学过 136 个</small></div></div>
+<div id="tags" class="room-only"></div>
+<p class="keys room-only">点地面走动 · 走近按空格</p>
+<div class="done room-only"><div><strong>今天的 22 个词学完了</strong><small>4 个新词钉到板上了 · 第一次就记得的 82% · 明天有 14 个该复习</small></div><button class="button plain" type="button">再学 10 个</button><button class="button" type="button">回森林</button></div>
+
+<div class="veil page-only"></div>
+<section class="library page-only">
+  <div class="browse">
+    <header class="lib-head"><h2>词库</h2><small class="count"></small><span class="grow"></span><button class="button plain" type="button" style="padding:10px 20px;font-size:15px">▶ 听这一组</button><button class="close shut" type="button">✕</button></header>
+    <nav class="levels"></nav>
+    <nav class="topics"></nav>
+    <div class="grid"></div>
+  </div>
+  <div class="detail">
+    <header class="lib-head"><button class="button plain back" type="button" style="padding:10px 20px;font-size:15px"></button><span class="grow"></span><small class="where"></small><button class="close prev" type="button">‹</button><button class="close next" type="button">›</button><button class="close shut" type="button">✕</button></header>
+    <div class="detail-body"></div>
+  </div>
+</section>
+
+<header class="bar seat-only"><button class="pill" type="button">← 回屋里</button><div class="track"><i></i></div><span class="count">14 / 22</span></header>
+<article class="sheet seat-only">
+  <div class="sheet-in" data-for="today">
+    <p class="kicker">11 月 13 日 · 星期五</p>
+    <h1 class="zh">今天的词</h1>
+    <button class="plan is-next" type="button"><b>复习</b><span>12 个到期</span><i>开始 <kbd>空格</kbd></i></button>
+    <button class="plan" type="button"><b>新词</b><span>今天 10 个 · 还没学</span><i>开始</i></button>
+    <div class="opts">
+      <div class="opt"><span>新词学哪一级</span><div class="segment"><button type="button">A2</button><button class="is-on" type="button">B1</button><button type="button">B2</button><button type="button">C1</button><button type="button">C2</button></div></div>
+      <div class="opt"><span>每天几个新词</span><div class="segment"><button type="button">5</button><button class="is-on" type="button">10</button><button type="button">15</button><button type="button">20</button></div></div>
+    </div>
+  </div>
+  <div class="sheet-in" data-for="word">
+    <p class="kicker">新词 · B1 · 日常</p>
+    <h1 lang="en">delivery</h1>
+    <div class="says"><button class="pron" type="button"><i class="speaker"></i><b>英</b>/dɪˈlɪvəri/</button><button class="pron" type="button"><i class="speaker"></i><b>美</b>/dɪˈlɪvəri/</button></div>
+    <div class="ex"><button class="say" type="button"><i class="speaker"></i></button><p lang="en">Our grocery <mark>delivery</mark> arrived just before we started cooking.<small class="back-only">我们订购的食品杂货在开始做饭前刚好送到了。</small></p></div>
+    <div class="more back-only">
+      <div>
+        <ul class="senses"><li><i>n.</i>递送；交付</li><li><i>n.</i>分娩</li><li><i>n.</i>演讲方式；表达方式</li></ul>
+        <p class="tip"><b>辨析</b>delivery 指递送服务或过程；deliver 是动词。</p>
+      </div>
+      <div>
+        <div class="cols"><div><b lang="en">free delivery</b><span>免费配送</span></div><div><b lang="en">delivery service</b><span>配送服务</span></div><div><b lang="en">delivery driver</b><span>送货司机</span></div><div><b lang="en">a smooth delivery</b><span>顺利分娩</span></div></div>
+        <div class="heard"><button class="say" type="button"><i class="speaker"></i></button><p lang="en"><span class="kicker">第 9 课里听过</span>The next morning, the lift was broken — again — and a <mark>delivery</mark> man carried an enormous box all the way up the stairs.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="sheet-in" data-for="listen">
+    <p class="kicker">听单词 · 今天的词</p>
+    <h1 lang="en">queue</h1>
+    <div class="says"><span><b>英</b>/kjuː/</span></div>
+    <ul class="senses"><li><i>n.</i>等候的队伍</li><li><i>v.</i>排队等候</li></ul>
+    <div class="ex"><p lang="en">We joined the <mark>queue</mark> outside the bakery this morning.<small>今天早上我们加入了面包店外的队伍。</small></p></div>
+    <div class="opts">
+      <div class="opt"><span>听哪些</span><div class="segment"><button class="is-on" type="button">今天的词</button><button type="button">在学的</button><button type="button">学过的</button></div></div>
+      <div class="opt"><span>发音</span><div class="segment"><button class="is-on" type="button">英音</button><button type="button">美音</button></div></div>
+      <div class="opt"><span>听完词，停几秒再报意思</span><div class="segment"><button type="button">不停</button><button class="is-on" type="button">2 秒</button><button type="button">4 秒</button></div></div>
+      <div class="opt"><span>例句</span><div class="segment"><button class="is-on" type="button">读</button><button type="button">不读</button></div></div>
+      <div class="opt"><span>放到什么时候</span><div class="segment"><button class="is-on" type="button">放完这组</button><button type="button">15 分</button><button type="button">30 分</button><button type="button">60 分</button></div></div>
+    </div>
+  </div>
+</article>
+<footer class="answers seat-only">
+  <button class="button before" type="button">看意思 <kbd>空格</kbd></button>
+  <button class="button soft after" type="button"><kbd>←</kbd> 忘了</button>
+  <button class="button after" type="button">记得 <kbd>→</kbd></button>
+  <button class="button plain known after" type="button">早就会了</button>
+</footer>
+<footer class="transport seat-only"><button type="button">⏮</button><button class="main" type="button">⏸</button><button type="button">⏭</button></footer>
+</body>
+</html>
