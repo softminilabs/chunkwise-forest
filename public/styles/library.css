@@ -1,0 +1,80 @@
+/* 词库：单词屋书架上点开的大页面，装在 #modal 里。喇叭、发音胶囊、例句、搭配这些学词时也用的样子在 words.css，
+   这里只有词库页自己的版式，和那些公用类在这一页里用多大的字 */
+.library { position: relative; width: min(1240px, 100%); height: 94vh; overflow: hidden; border-radius: 28px; animation: card-in .4s var(--ease); }
+.library .browse, .library .detail { height: 100%; display: flex; flex-direction: column; }
+/* 详情盖在列表上面，列表不收起来：收起来再放出来，滚到哪儿了不是每个浏览器都留着 */
+.library .detail { position: absolute; inset: 0; z-index: 2; background: var(--paper); animation: fade-in .25s ease-out; }
+.lib-head { display: flex; align-items: center; gap: 14px; padding: 22px 28px 14px; }
+.lib-head h2 { font-size: 30px; font-weight: 800; line-height: 1.2; }
+.lib-head small { color: var(--body); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.lib-head .grow { flex: 1; }
+.lib-head .button { padding: 10px 20px; font-size: 15px; }
+
+.library .levels { display: flex; gap: 8px; padding: 0 28px; }
+/* 词数跟在级别后面，窄了放不下就自己折到下一行 */
+.library .levels button { flex: 1; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 0 8px; padding: 12px 6px; border: 0; border-radius: 18px; background: var(--sage-pale); font-size: 22px; font-weight: 800; transition: scale .15s var(--ease), background-color .15s ease; }
+.library .levels small { font-size: 13px; color: var(--body); font-weight: 600; font-variant-numeric: tabular-nums; }
+.library .levels .is-on { background: var(--ink); color: var(--paper); }
+.library .levels .is-on small { color: rgb(255 255 255 / .7); }
+.library .topics { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 28px 16px; border-bottom: 2px solid var(--sage-pale); }
+.library .topics button { padding: 7px 14px; border: 0; border-radius: 999px; background: var(--sage-pale); font-weight: 700; font-size: 14px; transition: scale .15s var(--ease), background-color .15s ease; }
+.library .topics small { font-size: 12px; color: var(--body); font-weight: 600; margin-left: 5px; font-variant-numeric: tabular-nums; }
+.library .topics .is-on { background: var(--moss); color: var(--paper); }
+.library .topics .is-on small { color: rgb(255 255 255 / .75); }
+.library :is(.levels, .topics) button:active { scale: .96; }
+
+.library .grid { flex: 1; min-height: 0; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); align-content: start; gap: 12px; padding: 18px 28px 28px; }
+.wcard { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 16px 16px 14px; border-radius: 20px; background: var(--sage-pale); cursor: pointer; animation: fade-in .3s ease-out; transition: background-color .15s ease; }
+.wcard strong { font: 800 24px/1.2 var(--read); overflow-wrap: anywhere; }
+.wcard span { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wcard span i { font-style: normal; color: var(--body); font-size: 13px; margin-right: 6px; }
+/* 两个发音放不下一行就折成两行 */
+.wcard .plays { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.wcard .pron { background: var(--paper); box-shadow: var(--press); font-size: 13.5px; }
+/* 学过的词：右上角一个深绿色的点，卡片底色和没学的一样 */
+.wcard.is-known::after { content: ""; position: absolute; right: 16px; top: 18px; width: 10px; height: 10px; border-radius: 50%; background: var(--moss); }
+@media (hover: hover) and (pointer: fine) { .library :is(.levels, .topics) button:not(.is-on):hover, .wcard:hover { background: var(--sage-soft); } }
+
+.library .detail-body { flex: 1; min-height: 0; overflow-y: auto; display: grid; grid-template-columns: 5fr 6fr; gap: 28px 56px; padding: 18px 44px 36px; align-content: start; }
+.library .detail-body > div { display: flex; flex-direction: column; gap: 18px; min-width: 0; container-type: inline-size; animation: fade-in .3s ease-out; }
+/* 词头放得下就是 88px，放不下才缩到刚好一行（--w 是脚本量的词宽，单位是字高）。
+   96 不是 100：画布上量的和真排出来的差一点点，留个余量 */
+.library h1 { font: 800 88px/1.05 var(--read); font-size: min(88px, 96cqi / var(--w)); overflow-wrap: anywhere; }
+.library .detail .pron { font-size: 20px; }
+.library .senses { font-size: 26px; }
+.library .senses i { font-size: 15px; margin-right: 10px; }
+.library .senses small { font-size: 15px; margin: 0 0 8px 2px; }
+.library .tip, .library .cols span { font-size: 15px; }
+.library .cols b { font-size: 19px; }
+.library .ex p { font-size: 22px; }
+.library .ex small { font-size: 15px; }
+.library .heard p { font-size: 19px; }
+
+/* 英文界面：卡片上是一整句英文释义，一行只够开个头，放两行；详情里释义也是句子，用不着那么大的字 */
+html[lang="en"] .wcard span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; font-size: 14px; line-height: 1.4; }
+/* 释义有一行的有两行的：发音贴着卡片底，同一排才对得齐 */
+html[lang="en"] .wcard .plays { margin-top: auto; padding-top: 8px; }
+html[lang="en"] .library .senses { font: 600 19px/1.45 var(--read); }
+html[lang="en"] .library .senses li + li { margin-top: 8px; }
+
+@media (max-width: 860px) {
+  .library { height: 96vh; }
+  .lib-head { flex-wrap: wrap; gap: 8px 10px; padding: 14px 18px 10px; }
+  .lib-head h2 { font-size: 22px; line-height: 36px; }
+  .lib-head .button { padding: 8px 16px; font-size: 14px; }
+  .lib-head .where { order: 1; flex-basis: 100%; }
+  /* 话题要占好几行，只让网格滚的话没剩多少地方看卡片：整页一起滚，标题那行留在顶上 */
+  .library .browse { overflow-y: auto; }
+  .library .browse .lib-head { position: sticky; top: 0; z-index: 1; padding-right: 64px; background: var(--paper); }
+  /* ✕ 钉在右上角：这一行放不下要折行的时候，掉下去的不能是它 */
+  .library .browse .lib-head .close { position: absolute; right: 18px; top: 14px; }
+  .library .grid { flex: none; overflow: visible; padding: 14px 18px 20px; }
+  .library .levels { gap: 6px; padding: 0 18px; }
+  .library .levels button { padding: 8px 4px; font-size: 19px; }
+  .library .topics { gap: 6px; padding: 12px 18px 14px; }
+  .library .detail-body { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 6px 18px 24px; }
+  .library h1 { font-size: min(64px, 96cqi / var(--w)); }
+  .library .senses { font-size: 22px; }
+  .library .ex p { font-size: 19px; }
+  .library .heard p { font-size: 17px; }
+}
