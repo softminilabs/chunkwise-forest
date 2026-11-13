@@ -31,7 +31,9 @@ export function createState(course) {
       const before = town.stars[lesson.id] ?? 0
       const fresh = lesson.cards.filter(card => !town.cards[card.id])
       for (const card of fresh) town.cards[card.id] = { box: 0, due: Date.now() }
-      if (before === 0) today().lessons += 1
+      // 一颗星是「听完一遍」，两颗星是练习过关。今天每听完一遍都算读了一课，重听的也算：
+      // 只认第一次的话，重听不算数，90 课全读完以后「今天」那一格就再也填不上了
+      if (stars === 1) today().lessons += 1
       town.stars[lesson.id] = Math.max(before, stars)
       write('visited', { ...read('visited', {}), [lesson.id]: true })
       write('done', { ...read('done', {}), [lesson.id]: true })
