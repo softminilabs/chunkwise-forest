@@ -5,6 +5,7 @@ import { SEASON_NAMES } from '../look.js'
 import { h } from './core.js'
 import { openScene } from './scene.js'
 import { openSounds } from './sounds.js'
+import { openToday } from './today.js'
 import { lang, setLang, t } from '../i18n.js'
 
 export function createHud(ctx) {
@@ -13,6 +14,7 @@ export function createHud(ctx) {
   const dock = document.querySelector('.dock')
   const go = h('button', { class: 'go', type: 'button', onclick: () => ctx.continueLearning() })
   const drill = h('button', { class: 'go light', type: 'button', onclick: () => ctx.openPractice() })
+  const today = h('button', { class: 'stat', type: 'button', onclick: () => openToday(ctx) })
   const chests = h('button', { class: 'stat', type: 'button', onclick: () => openChestList(ctx) })
   const sounds = h('button', { class: 'stat', type: 'button', onclick: () => openSounds(ctx) }, t('声音'))
   const scene = h('button', { class: 'stat', type: 'button', onclick: () => openScene(ctx) }, t('森林'))
@@ -37,7 +39,10 @@ export function createHud(ctx) {
     const season = SEASON_NAMES[ctx.weather.now.season]
     scene.replaceChildren(t('森林'), h('strong', {}, ctx.weather.dark ? t('{season}夜', { season }) : season))
     chests.replaceChildren(t('宝箱'), h('strong', {}, `${ctx.chests.found()}/${ctx.chests.chests.length}`))
-    stats.replaceChildren(stat('streak', t('连续'), streak, t('天', { n: streak }), streak > 0), stat('lit', t('亮灯'), `${totals.lit}/${totals.lessons}`, ''), stat('cards', t('卡片'), totals.cards, t('张')), chests, sounds, scene, tongue)
+    // 「连续几天」点开就是「今天」：今天的份做了多少
+    today.replaceChildren(t('连续'), h('strong', {}, String(streak)), t('天', { n: streak }))
+    today.classList.toggle('is-hot', streak > 0)
+    stats.replaceChildren(today, stat('lit', t('亮灯'), `${totals.lit}/${totals.lessons}`, ''), stat('cards', t('卡片'), totals.cards, t('张')), chests, sounds, scene, tongue)
     go.replaceChildren(h('span', {}, '▶'), h('div', {}, totals.lit ? t('接着学') : t('开始第一课'), h('small', {}, ` ${t('第 {n} 课 · {title}', { n: next.n, title: next.title })}`)))
     drill.replaceChildren(h('div', {}, t('练一练'), h('small', {}, ` ${totals.cards < 4 ? t('读完一课解锁') : due ? t('{n} 张该复习', { n: due }) : t('随便玩一轮')}`)))
   }
