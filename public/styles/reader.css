@@ -44,8 +44,11 @@
 [data-zh="all"] .para-zh { display: block; }
 [data-zh="off"] .pre-zh { display: none; }
 .s { cursor: pointer; border-radius: 8px; padding: 2px 0; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-color .2s ease, filter .4s ease; }
-.s.is-now { background: var(--sage-pale); }
-.w.is-now { color: var(--moss-deep); }
+/* 正在读的句子：一条看得清的灰绿底；正在读的词：琥珀色小底块，用外扩的阴影撑大一圈，不挤动旁边的字。
+   句子的底色原来用 --sage-pale，压在纸色上几乎看不出来 */
+.s.is-now { background: color-mix(in srgb, var(--sage) 60%, var(--paper)); }
+.w { border-radius: 5px; transition: background-color .12s ease, box-shadow .12s ease; }
+.w.is-now { background: var(--amber); box-shadow: 0 0 0 3px var(--amber); }
 /* 组块：荧光笔划过的下半截；生词：紫色的点线。点它们是看解释 */
 .m-chunk { background: linear-gradient(transparent 58%, var(--mark) 58%, var(--mark) 92%, transparent 92%); cursor: help; }
 .m-word { text-decoration: underline dotted 3px var(--moss); text-underline-offset: 6px; cursor: help; }
