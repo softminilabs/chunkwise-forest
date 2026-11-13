@@ -7,8 +7,9 @@ import { lang, t } from '../i18n.js'
 
 const SPEEDS = [1, 0.8, 1.2]
 const MODES = { read: t('看着听'), blind: t('盲听'), shadow: t('跟读') }
-const ZH = [['line', t('中文 当前句')], ['all', t('中文 全文')], ['off', t('中文 关')]]
-const HINTS = { read: t('点播放开始听，也可以直接点任何一句。划了线的词点一下看解释。'), blind: t('盲听：没听过的句子先糊着，听完一句显一句。'), shadow: t('跟读：每句读完会停一下，轮到你照着念。') }
+const ZH = [['line', t('当前句')], ['all', t('全文')], ['off', t('关')]]
+const LOOPS = [['off', t('不循环')], ['one', t('单句循环')], ['all', t('整篇循环')]]
+const loopIs = (session, id) => LOOPS[session.loop][0] === id
 
 /// 一句算读到哪儿为止。时间轴里有的句子结束得比下一句开始还晚几十毫秒，照着结束时间等就永远等不到：取两者里早的那个
 const endOf = (lesson, i) => Math.min(lesson.timing[i].b, lesson.timing[i + 1]?.a ?? Infinity)
@@ -16,7 +17,7 @@ const endOf = (lesson, i) => Math.min(lesson.timing[i].b, lesson.timing[i + 1]?.
 /// 课文底下那一条写什么：等跟读时是提示，否则是当前这句的中文（没开「当前句」就写这种听法的说明）
 function lineText(session) {
   if (session.waiting) return t('轮到你了，照着念这一句。')
-  if (session.mode === 'blind' || ZH[session.zh][0] !== 'line' || session.now < 0) return HINTS[session.mode]
+  if (session.mode === 'blind' || ZH[session.zh][0] !== 'line' || session.now < 0) return ''
   return session.lesson.sentences[session.now].zh
 }
 

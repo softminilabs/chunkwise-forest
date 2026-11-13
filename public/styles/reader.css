@@ -56,8 +56,10 @@
 .is-blind .s:not(.is-heard) { filter: blur(7px); }
 .is-blind .para-zh { display: none; }
 .is-blind .side-list { filter: blur(8px); opacity: .5; pointer-events: none; }
-.reader-line { margin: 0 28px 14px; padding: 10px 16px; min-height: 43px; border-radius: 16px; background: var(--ink); color: var(--paper); font-size: 15px; font-weight: 600; transition: background-color .2s ease, color .2s ease; }
-.is-waiting .reader-line { background: var(--amber); color: var(--ink); }
+/* 课文底下的一行字幕：当前句的中文，或者跟读时「轮到你了」。没话说的时候不出现 */
+.reader-line { margin: 0 36px; padding: 10px 0 12px; border-top: 2px solid var(--sage-pale); color: var(--body); font-size: 15px; font-weight: 600; text-align: center; }
+.reader-line:empty { display: none; }
+.is-waiting .reader-line { color: var(--ink); background: var(--amber-soft); }
 
 .reader-side { display: flex; flex-direction: column; min-height: 0; border-left: 2px solid var(--sage-pale); background: color-mix(in srgb, var(--sage-pale) 42%, var(--paper)); }
 .side-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 10px; }
@@ -179,7 +181,7 @@
   .reader-head h2 { font-size: 22px; }
   .reader-scroll { padding: 16px 18px 20px; }
   .article { font-size: 19px; }
-  .reader-line { margin: 0 14px 10px; }
+  .reader-line { margin: 0 18px; }
   .reader-bar { padding: 10px 14px 14px; }
   .controls { justify-content: center; }
   .time, .ring span { display: none; }
