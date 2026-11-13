@@ -15,8 +15,8 @@ const STYLES = [
   { w: 5.6, h: 4.0, d: 4.6, wall: C.lilac, roof: 'gable', top: C.ink, door: C.white },
   { w: 5.0, h: 4.2, d: 4.6, wall: C.violet, roof: 'dome', top: C.white, door: C.lime },
 ]
-const BULB = { off: '#C9B2EE', one: C.lime, two: '#FFF27A' }
-const pane = flat('#D9C6FF', { glow: true })
+const BULB = { off: C.bulbOff, one: C.lime, two: C.bulbTwo }
+const pane = flat(C.pane, { glow: true })
 
 function roofOf(style) {
   const { w, h, d, top } = style
@@ -97,7 +97,7 @@ export function createHouses(scene, course, colliders) {
     scene.add(house.root)
     colliders.push({ x: house.x, z: house.z, r: 3.5 })
   }
-  const day = new THREE.Color('#D9C6FF')
+  const day = new THREE.Color(C.pane)
   const lit = new THREE.Color(C.glow)
   return {
     houses,

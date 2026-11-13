@@ -1,6 +1,6 @@
 // 天色跟着真实时间走（岁时 Sundial 的点子：把时间放在看得见的地方）：太阳的方向、影子、天空、灯光的明暗都由它定
 import * as THREE from 'three'
-import { SKY } from '../palette.js'
+import { C, SKY } from '../palette.js'
 import { tintFlats, tintOutlines } from '../toy.js'
 
 const smooth = (edge0, edge1, x) => { const t = Math.min(1, Math.max(0, (x - edge0) / (edge1 - edge0))); return t * t * (3 - 2 * t) }
@@ -18,7 +18,7 @@ export function createSky(scene) {
   scene.add(sun, sun.target, hemi)
   scene.background = new THREE.Color(SKY.day.sky)
 
-  const shadowFloor = new THREE.ShadowMaterial({ color: 0x4a2c8f, opacity: 0.26 })
+  const shadowFloor = new THREE.ShadowMaterial({ color: C.shade, opacity: 0.26 })
   const scratch = new THREE.Color()
   const state = { hour: 12, override: null, night: 0, applied: -1, shadowFloor }
 

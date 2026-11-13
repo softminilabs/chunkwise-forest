@@ -8,6 +8,8 @@ const shades = new THREE.DataTexture(new Uint8Array([168, 222, 255]), 3, 1, THRE
 shades.minFilter = shades.magFilter = THREE.NearestFilter
 shades.needsUpdate = true
 
+// 白边整体收细一成：边太粗，满屏都是高对比的白线
+const OUTLINE = 0.9
 const toons = new Map()
 const outlines = new Map()
 const flats = []
@@ -41,7 +43,7 @@ export function tintOutlines(color) { for (const material of outlines.values()) 
 export function toy(geometry, color, { outline = 0.1, cast = true, material } = {}) {
   const mesh = new THREE.Mesh(geometry, material ?? paint(color))
   mesh.castShadow = cast
-  if (outline) mesh.add(new THREE.Mesh(geometry, outlineMaterial(outline)))
+  if (outline) mesh.add(new THREE.Mesh(geometry, outlineMaterial(Number((outline * OUTLINE).toFixed(3)))))
   return mesh
 }
 

@@ -64,7 +64,7 @@ export function createGround(scene, sky) {
   const ring = lay(new THREE.RingGeometry(RING - 1.2, RING + 1.2, 96), C.cream, 0.03)
   const patches = [[-150, 30, 4.6], [-95, 13.5, 3], [-18, 30, 4], [75, 30, 4.4], [128, 13, 2.6], [165, 28, 3.6], [-55, 23, 2.4], [20, 13.5, 2.2]].map(([degrees, radius, size]) => {
     const { x, z } = polar(degrees, radius)
-    return at(lay(new THREE.CircleGeometry(size, 40), '#D8B8FC', 0.015), x, 0.015, z)
+    return at(lay(new THREE.CircleGeometry(size, 40), C.patch, 0.015), x, 0.015, z)
   })
   scene.add(top, plaza, plazaLine, ring, ...patches, islandBody())
   scene.add(spoke(180, PLAZA - 0.2, 31, 2.4), spoke(-60, PLAZA - 0.2, RING, 2.2), spoke(60, PLAZA - 0.2, RING, 2.2))
@@ -107,7 +107,7 @@ export function createTrees(scene, colliders) {
   spots.push([-150, 12.6], [150, 12.6], [-28, 12.4], [34, 13], [-84, 13], [86, 12.6], [-100, 22.5], [171, 20], [-171, 20])
   spots.forEach(([degrees, radius], i) => {
     const { x, z } = polar(degrees, radius)
-    tree(x, z, 0.85 + ((i * 37) % 10) * 0.04, i % 4 === 2 ? C.lilac : C.lime)
+    tree(x, z, 0.85 + ((i * 37) % 10) * 0.04, i % 4 === 2 ? C.lilac : C.leaf)
   })
   return { update(time) { for (const crown of crowns) crown.node.rotation.z = Math.sin(time * 1.1 + crown.phase) * 0.035 } }
 }
