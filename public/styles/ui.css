@@ -61,7 +61,9 @@ h1, h2, h3, p { margin: 0; }
 .brand { display: flex; flex-direction: column; padding: 10px 18px; line-height: 1.25; rotate: -2deg; }
 .brand strong { font-size: 20px; font-weight: 800; }
 .brand small { font-size: 12px; color: var(--body); }
-.stats { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.stats { position: relative; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.menu { position: absolute; top: calc(100% + 8px); right: 0; display: flex; flex-direction: column; gap: 6px; padding: 10px; border-radius: 20px; animation: tag-in .2s var(--ease); transform-origin: top right; }
+.menu .stat { box-shadow: none; background: var(--lilac-pale); white-space: nowrap; }
 .stat { display: flex; align-items: baseline; gap: 6px; padding: 8px 14px; border-radius: 999px; background: var(--white); box-shadow: var(--press); font-size: 13px; color: var(--body); border: 0; }
 .stat strong { font-size: 18px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
 .stat.is-hot { background: var(--lime); color: var(--ink); }
@@ -79,7 +81,8 @@ button.stat { cursor: pointer; }
 .go div { text-align: left; line-height: 1.25; }
 .go.light { background: var(--white); color: var(--ink); padding: 12px 22px; }
 .dock .row { gap: 10px; }
-.keys { font-size: 12px; color: var(--body); background: rgba(255, 255, 255, .72); padding: 3px 12px; border-radius: 999px; }
+.keys { font-size: 12px; color: var(--body); background: rgba(255, 255, 255, .72); padding: 3px 12px; border-radius: 999px; transition: opacity .6s ease 2s; }
+.keys.is-gone { opacity: 0; }
 
 /* 右边的抽屉：单元、App 物件的面板 */
 #drawer { position: fixed; top: 16px; right: 16px; bottom: 16px; width: min(430px, calc(100vw - 32px)); display: flex; flex-direction: column; overflow: hidden; animation: drawer-in .35s var(--ease); }

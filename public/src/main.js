@@ -147,6 +147,8 @@ async function boot() {
     if (wish.lengthSq() > 0.01 && ctx.ui.drawerOpen) ctx.ui.closeDrawer()
     const stride = Math.floor(ctx.player.state.stride / Math.PI)
     if (stride !== steps && ctx.player.state.moving) audio.step()
+    // 会走了，底下那行操作提示就不用一直挂着
+    if (ctx.player.state.moving) document.querySelector('.keys')?.classList.add('is-gone')
     steps = stride
     rig.update(dt, ctx.player.position)
     ctx.sky.update(ctx.player.position)
