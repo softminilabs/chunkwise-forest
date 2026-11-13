@@ -9,6 +9,8 @@ export const SOUNDS = {
   crickets: [t('蟋蟀'), 'summer_crickets.mp3'], frogs: [t('蛙鸣'), 'pond_frogs.mp3'], rain: [t('雨打树叶'), 'rain_forest.mp3'], thunder: [t('雷雨'), 'thunderstorm.mp3'], fire: [t('篝火'), 'campfire.mp3'],
 }
 const ON_LEVEL = 0.55
+// 在单词屋里，外面的声音隔着墙只剩这么一点
+const INDOORS = 0.18
 
 // 「自动」的搭配表：每个季节，白天、夜里各有什么底声；下雨、下雪时换成另一组（鸟和虫都不叫了）。数字是音量 0–1
 const MIX = {
@@ -55,9 +57,11 @@ export function createSounds(audio, state) {
 
   return {
     levels,
-    /// hush：读课文、做练习时传一个小于 1 的数，把环境声整体压低
-    update(scene, camp, player, hush = 1) {
+    /// hush：读课文、做练习、学词时传一个小于 1 的数，把环境声整体压低；录音在放的时候传 0。
+    /// hearth：在单词屋里时壁炉的火声多响（不在屋里传 0）
+    update(scene, camp, player, hush = 1, hearth = 0) {
       const auto = natural(scene, camp, player)
+      if (hearth) { for (const id of Object.keys(auto)) auto[id] *= INDOORS; auto.fire = hearth }
       for (const id of Object.keys(SOUNDS)) {
         const mode = state.town.mix[id] ?? 'auto'
         const level = (mode === 'off' ? 0 : mode === 'on' ? ON_LEVEL : auto[id]) * state.town.volume * hush

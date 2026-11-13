@@ -257,8 +257,9 @@ function bind(session) {
     event.preventDefault()
     action(session)
   }
-  audio.addEventListener('play', () => { view.play.replaceChildren(icon('pause')); view.play.setAttribute('aria-label', t('暂停')); tick(session) })
-  audio.addEventListener('pause', () => { view.play.replaceChildren(icon('play')); view.play.setAttribute('aria-label', t('播放')) })
+  // speaking：录音正在放。森林的环境声看它，放的时候全关，停下来才回来一点（main.js）
+  audio.addEventListener('play', () => { session.ctx.speaking = true; view.play.replaceChildren(icon('pause')); view.play.setAttribute('aria-label', t('暂停')); tick(session) })
+  audio.addEventListener('pause', () => { session.ctx.speaking = false; view.play.replaceChildren(icon('play')); view.play.setAttribute('aria-label', t('播放')) })
   audio.addEventListener('timeupdate', () => tick(session))
   audio.addEventListener('ended', () => ended(session))
   view.play.addEventListener('click', () => toggle(session))
