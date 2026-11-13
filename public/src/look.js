@@ -5,12 +5,16 @@ import * as THREE from 'three'
 export const SEASONS = ['spring', 'summer', 'autumn', 'winter']
 export const SEASON_NAMES = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' }
 export const LOOK = {
-  spring: { sky: ['#BFE1EE', '#EDF6EA'], ground: ['#A5D38C', '#B9DE9C'], pine: '#62A678', leaf: ['#BFE39B', '#F5BBCD', '#FAD7E2', '#A6D788'], path: '#E6D6B2', sun: '#FFF3DC', water: '#A9D5DE', drift: '#F9B4CA' },
-  summer: { sky: ['#A3D5EC', '#E0F2E2'], ground: ['#74B868', '#8AC873'], pine: '#2F7554', leaf: ['#4FA058', '#6FBA63', '#3F8E56'], path: '#DDC99C', sun: '#FFFFFF', water: '#97CCD8', drift: null },
-  autumn: { sky: ['#EFD3AE', '#F9EDDA'], ground: ['#AEB068', '#BFB267'], pine: '#4F7254', leaf: ['#E68B3B', '#D9573B', '#F2BE48', '#C96C2F'], path: '#E3CFA2', sun: '#FFE0B4', water: '#A6C9CD', drift: '#E98A34' },
-  winter: { sky: ['#C6DAE9', '#EFF5F8'], ground: ['#F3F7F9', '#E4EDF2'], pine: '#3F685A', leaf: ['#E8F0F4'], path: '#DDE6EB', sun: '#F3F7FF', water: '#D5E8F0', drift: null },
+  spring: { sky: ['#BFE1EE', '#EDF6EA'], ground: ['#A5D38C', '#B9DE9C'], pine: '#62A678', leaf: ['#BFE39B', '#F5BBCD', '#FAD7E2', '#A6D788'], path: '#E6D6B2', sun: '#FFF3DC', water: '#A9D5DE' },
+  summer: { sky: ['#A3D5EC', '#E0F2E2'], ground: ['#74B868', '#8AC873'], pine: '#2F7554', leaf: ['#4FA058', '#6FBA63', '#3F8E56'], path: '#DDC99C', sun: '#FFFFFF', water: '#97CCD8' },
+  autumn: { sky: ['#EFD3AE', '#F9EDDA'], ground: ['#AEB068', '#BFB267'], pine: '#4F7254', leaf: ['#E68B3B', '#D9573B', '#F2BE48', '#C96C2F'], path: '#E3CFA2', sun: '#FFE0B4', water: '#A6C9CD' },
+  winter: { sky: ['#C6DAE9', '#EFF5F8'], ground: ['#F3F7F9', '#E4EDF2'], pine: '#3F685A', leaf: ['#E8F0F4'], path: '#DDE6EB', sun: '#F3F7FF', water: '#D5E8F0' },
 }
 export const NIGHT_SKY = { spring: ['#0E1F30', '#213E4A'], summer: ['#0B1D2C', '#1B3D42'], autumn: ['#121A2E', '#2B3147'], winter: ['#111A2D', '#2B394F'] }
+
+/// 这个季节、这个时候能有哪些天气：春夏秋下雨、冬天下雪，流星只在夜里。春天不会下雪
+export const weathersOf = (season, night) => ['clear', season === 'winter' ? 'snow' : 'rain', ...(night ? ['meteor'] : [])]
+export const WEATHER_NAMES = { clear: '晴', snow: '下雪', meteor: '流星', rain: { spring: '小雨', summer: '雷雨', autumn: '秋雨' } }
 
 /// 今天算哪个季节：三到五月春，六到八月夏，九到十一月秋，其余冬
 export const seasonOf = (date = new Date()) => SEASONS[Math.floor(((date.getMonth() + 10) % 12) / 3)]

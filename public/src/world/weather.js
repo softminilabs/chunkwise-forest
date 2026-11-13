@@ -1,7 +1,7 @@
 // 天色和天气。季节默认跟着真实的日子、昼夜默认跟着真实的时间，都可以在「森林」面板里改成固定的。
 // 这里管：光、雾、天空的颜色，还有飘着的东西——雨、雪、花瓣、落叶、萤火虫、星星、流星
 import * as THREE from 'three'
-import { LOOK, NIGHT_SKY, damp, points, seasonOf, seeded, smooth } from '../look.js'
+import { LOOK, NIGHT_SKY, damp, points, seasonOf, seeded, smooth, weathersOf } from '../look.js'
 
 const random = seeded(3)
 const cloud = (count, make, material) => {
@@ -12,50 +12,106 @@ const cloud = (count, make, material) => {
   return node
 }
 
-/// 围着人飘的四样：雨、雪、花瓣或落叶、萤火虫。它们的盒子跟着人走，所以走到哪儿都在下
-function createAir(scene) {
-  const rainSpots = Array.from({ length: 520 }, () => ({ x: random.between(-42, 42), y: random.between(0, 26), z: random.between(-40, 30), speed: random.between(30, 40) }))
-  const rainGeometry = new THREE.BufferGeometry()
-  rainGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(rainSpots.length * 6), 3))
-  const rain = new THREE.LineSegments(rainGeometry, new THREE.LineBasicMaterial({ color: '#FFFFFF', transparent: true, opacity: 0.55 }))
+// 飘的东西都活动在罩着人的一个盒子里，但位置是森林里的固定位置：人往前走，它们留在原地，
+// 走出盒子的那些从另一头补进来。要是整团绑在人身上，看着就是一群点跟着人飘
+const BOX = { x: 84, z: 72 }
+const wrap = (value, center, size) => center + ((((value - center + size / 2) % size) + size) % size) - size / 2
+// 雨有大小：春天是小雨，夏天是雷雨
+const RAIN = { spring: 200, summer: 520, autumn: 340 }
+const PETALS = ['#F9B4CA', '#FAD7E2', '#FFFFFF']
+
+const scatter = (count, top) => Array.from({ length: count }, () => ({ x: random.between(-BOX.x / 2, BOX.x / 2), y: random.between(0, top), z: random.between(-BOX.z / 2, BOX.z / 2), speed: random.between(0.7, 1.3), phase: random.next() * 6.28 }))
+
+/// 雨：一根根斜着的短线。返回每帧调一次的函数
+function createRain(scene) {
+  const drops = scatter(520, 26)
+  const geometry = new THREE.BufferGeometry()
+  geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(drops.length * 6), 3))
+  const rain = new THREE.LineSegments(geometry, new THREE.LineBasicMaterial({ color: '#FFFFFF', transparent: true, opacity: 0.5 }))
   rain.frustumCulled = false
-  const snow = cloud(700, () => [random.between(-44, 44), random.between(0, 22), random.between(-40, 30)], points({ color: '#FFFFFF', size: 0.34, opacity: 0.95 }))
-  const drift = cloud(110, () => [random.between(-34, 34), random.between(0.2, 13), random.between(-30, 26)], points({ size: 0.4 }))
-  const flies = cloud(46, () => [random.between(-24, 24), random.between(0.6, 3.6), random.between(-18, 14)], points({ color: '#E4F26A', size: 0.5, fog: false, blending: THREE.AdditiveBlending }))
-  const homes = Float32Array.from(flies.geometry.attributes.position.array)
-  const group = new THREE.Group()
-  group.add(rain, snow, drift, flies)
-  scene.add(group)
-  const fall = (node, speed, sway, time, dt, top) => {
-    const position = node.geometry.attributes.position
-    for (let i = 0; i < position.count; i++) {
-      let y = position.getY(i) - speed * dt
-      if (y < 0) y += top
-      position.setY(i, y)
-      position.setX(i, position.getX(i) + Math.sin(time * 0.8 + i) * sway * dt)
-    }
+  scene.add(rain)
+  return (dt, focus, now) => {
+    rain.visible = now.weather === 'rain'
+    if (!rain.visible) return
+    const position = geometry.attributes.position
+    geometry.setDrawRange(0, (RAIN[now.season] ?? 340) * 2)
+    drops.forEach((drop, i) => {
+      drop.y -= 34 * drop.speed * dt
+      if (drop.y < 0) drop.y += 26
+      drop.x = wrap(drop.x, focus.x, BOX.x)
+      drop.z = wrap(drop.z, focus.z - 6, BOX.z)
+      position.setXYZ(i * 2, drop.x, focus.y + drop.y, drop.z)
+      position.setXYZ(i * 2 + 1, drop.x - 0.25, focus.y + drop.y + 1.2, drop.z)
+    })
     position.needsUpdate = true
   }
+}
+
+/// 落叶 / 花瓣：一片片五边形的小叶子，边落边翻。受光照，夜里会暗下去，不会像灯一样亮着
+function createLeaves(scene) {
+  const leaves = new THREE.InstancedMesh(new THREE.CircleGeometry(0.17, 5), new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 1, side: THREE.DoubleSide }), 64)
+  leaves.frustumCulled = false
+  const falling = scatter(64, 9)
+  const dummy = new THREE.Object3D()
+  const tint = new THREE.Color()
+  scene.add(leaves)
   return {
-    update(dt, time, focus, scene) {
-      group.position.set(focus.x, focus.y, focus.z)
-      rain.visible = scene.weather === 'rain'
-      snow.visible = scene.weather === 'snow' || (scene.season === 'winter' && scene.weather === 'clear')
-      drift.visible = Boolean(LOOK[scene.season].drift) && scene.weather !== 'rain'
-      flies.visible = scene.season === 'summer' && scene.night > 0.5 && scene.weather === 'clear'
-      if (rain.visible) {
-        const position = rainGeometry.attributes.position
-        rainSpots.forEach((drop, i) => { drop.y -= drop.speed * dt; if (drop.y < 0) drop.y = 26; position.setXYZ(i * 2, drop.x, drop.y, drop.z); position.setXYZ(i * 2 + 1, drop.x - 0.25, drop.y + 1.2, drop.z) })
-        position.needsUpdate = true
-      }
-      if (snow.visible) fall(snow, 2.4, 0.6, time, dt, 22)
-      if (drift.visible) { drift.material.color.set(LOOK[scene.season].drift); fall(drift, 0.9, 1.1, time, dt, 13) }
-      if (flies.visible) {
-        const position = flies.geometry.attributes.position
-        for (let i = 0; i < position.count; i++) position.setXYZ(i, homes[i * 3] + Math.sin(time * 0.5 + i) * 1.6, homes[i * 3 + 1] + Math.sin(time * 0.9 + i * 2) * 0.5, homes[i * 3 + 2] + Math.cos(time * 0.4 + i) * 1.6)
-        position.needsUpdate = true
-        flies.material.opacity = 0.6 + Math.sin(time * 3) * 0.3
-      }
+    /// 换季：落叶用这一季树叶的颜色，春天是花瓣
+    paint(look, season) {
+      const colors = season === 'spring' ? PETALS : look.leaf
+      falling.forEach((_, i) => leaves.setColorAt(i, tint.set(colors[i % colors.length])))
+      leaves.instanceColor.needsUpdate = true
+    },
+    update(dt, time, focus, now) {
+      leaves.visible = (now.season === 'autumn' || now.season === 'spring') && now.weather !== 'rain'
+      if (!leaves.visible) return
+      const small = now.season === 'spring' ? 0.7 : 1
+      falling.forEach((leaf, i) => {
+        leaf.y -= 0.9 * leaf.speed * dt
+        if (leaf.y < 0) leaf.y += 9
+        leaf.x = wrap(leaf.x + (0.5 + Math.sin(time * 0.9 + leaf.phase)) * 0.7 * dt, focus.x, BOX.x)
+        leaf.z = wrap(leaf.z, focus.z - 6, BOX.z)
+        dummy.position.set(leaf.x, focus.y + leaf.y, leaf.z)
+        dummy.rotation.set(time * leaf.speed * 1.7 + leaf.phase, leaf.phase, time * leaf.speed + leaf.phase * 2)
+        dummy.scale.setScalar(small)
+        dummy.updateMatrix()
+        leaves.setMatrixAt(i, dummy.matrix)
+      })
+      leaves.instanceMatrix.needsUpdate = true
+    },
+  }
+}
+
+/// 飘在空中的全部：雨、落叶，加上雪和萤火虫这两团点
+function createAir(scene) {
+  const rain = createRain(scene)
+  const leaves = createLeaves(scene)
+  const cloudOf = (list, material) => { const node = cloud(list.length, () => [0, 0, 0], material); node.userData.list = list; return node }
+  const snow = cloudOf(scatter(700, 22), points({ color: '#FFFFFF', size: 0.34, opacity: 0.95 }))
+  const flies = cloudOf(scatter(46, 3.2), points({ color: '#E4F26A', size: 0.5, fog: false, blending: THREE.AdditiveBlending }))
+  scene.add(snow, flies)
+
+  function place(node, focus, dt, fall, sway, time, top) {
+    const position = node.geometry.attributes.position
+    node.userData.list.forEach((item, i) => {
+      item.y -= fall * item.speed * dt
+      if (item.y < 0) item.y += top
+      item.x = wrap(item.x + Math.sin(time * 0.8 + item.phase) * sway * dt, focus.x, BOX.x)
+      item.z = wrap(item.z, focus.z - 6, BOX.z)
+      position.setXYZ(i, item.x, focus.y + item.y, item.z)
+    })
+    position.needsUpdate = true
+  }
+
+  return {
+    paint: leaves.paint,
+    update(dt, time, focus, now) {
+      rain(dt, focus, now)
+      leaves.update(dt, time, focus, now)
+      snow.visible = now.weather === 'snow'
+      flies.visible = now.season === 'summer' && now.night > 0.5 && now.weather !== 'rain'
+      if (snow.visible) place(snow, focus, dt, 2.4, 0.6, time, 22)
+      if (flies.visible) { place(flies, focus, dt, 0, 1.2, time, 3.2); flies.material.opacity = 0.6 + Math.sin(time * 3) * 0.3 }
     },
   }
 }
@@ -111,7 +167,7 @@ export function createWeather(scene, renderer, state) {
   scene.fog = new THREE.Fog('#ffffff', 34, 118)
   const air = createAir(scene)
   const heaven = createHeaven(scene)
-  const now = { season: 'autumn', weather: 'clear', night: 0, painted: -1, paintedSeason: '' }
+  const now = { season: 'autumn', weather: 'clear', night: 0, painted: -1, paintedSeason: '', dark: false }
   const listeners = []
   const [top, low, mix] = [new THREE.Color(), new THREE.Color(), new THREE.Color()]
 
@@ -119,14 +175,22 @@ export function createWeather(scene, renderer, state) {
   function resolve() {
     const wish = state.town.scene
     const season = wish.season === 'auto' ? seasonOf() : wish.season
-    now.weather = wish.weather
-    if (season === now.season && now.paintedSeason) return
+    // 这个季节、这个时候不会有的天气要换掉，并且记下来，面板上才对得上：
+    // 雨和雪互相顶替（秋天的雨到了冬天就是雪），白天的流星改回晴
+    const allowed = weathersOf(season, nightGoal() > 0.5)
+    const falling = wish.weather === 'rain' || wish.weather === 'snow'
+    const weather = allowed.includes(wish.weather) ? wish.weather : falling ? allowed[1] : 'clear'
+    if (weather !== wish.weather) state.patch({ scene: { ...wish, weather } })
+    now.weather = weather
+    if (season === now.season && now.paintedSeason) { for (const watcher of watchers) watcher(); return }
     now.season = season
     now.paintedSeason = season
     now.painted = -1
     for (const listener of listeners) listener(LOOK[season], season)
   }
 
+  // 季节、天气、昼夜换了以后要知道的人（顶上「森林」按钮上的字）
+  const watchers = []
   function nightGoal() {
     const wish = state.town.scene.time
     if (wish !== 'auto') return wish === 'night' ? 1 : 0
@@ -138,7 +202,9 @@ export function createWeather(scene, renderer, state) {
   function paint() {
     const look = LOOK[now.season]
     const dark = NIGHT_SKY[now.season]
-    const gloom = now.weather === 'rain' ? 0.25 : 0
+    const gloom = now.weather === 'rain' ? 0.28 : now.weather === 'snow' ? 0.12 : 0
+    air.paint(LOOK[season], season)
+    for (const watcher of watchers) watcher()
     top.set(look.sky[0]).lerp(mix.set(dark[0]), Math.max(now.night, gloom))
     low.set(look.sky[1]).lerp(mix.set(dark[1]), Math.max(now.night, gloom))
     document.body.style.setProperty('--sky-top', `#${top.getHexString()}`)
@@ -160,7 +226,10 @@ export function createWeather(scene, renderer, state) {
     onSeason(listener) { listeners.push(listener) },
     resolve,
     update(dt, time, focus, camera) {
-      now.night = damp(now.night, nightGoal(), 1.6, dt)
+      const goal = nightGoal()
+      now.night = damp(now.night, goal, 1.6, dt)
+      // 跟着真实时间走的时候，天黑、天亮是自己发生的：天亮了流星要收掉，顶上的字也要换
+      if (goal > 0.5 !== now.dark) { now.dark = goal > 0.5; resolve() }
       if (Math.abs(now.night - now.painted) > 0.004) paint()
       sun.target.position.copy(focus)
       sun.position.set(focus.x - 28, focus.y + 42, focus.z + 22)
@@ -170,3 +239,6 @@ export function createWeather(scene, renderer, state) {
     repaint() { now.painted = -1 },
   }
 }
+    /// 现在算不算夜里。看的是要去的那一头：刚切成夜晚、天还没黑透时，面板上就该有流星可选了
+    get dark() { return nightGoal() > 0.5 },
+    onChange(watcher) { watchers.push(watcher) },
