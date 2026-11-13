@@ -14,7 +14,8 @@ const loopIs = (session, id) => LOOPS[session.loop][0] === id
 /// 一句算读到哪儿为止。时间轴里有的句子结束得比下一句开始还晚几十毫秒，照着结束时间等就永远等不到：取两者里早的那个
 const endOf = (lesson, i) => Math.min(lesson.timing[i].b, lesson.timing[i + 1]?.a ?? Infinity)
 
-/// 课文底下那一条写什么：等跟读时是提示，否则是当前这句的中文（没开「当前句」就写这种听法的说明）
+/// 课文底下那一行字幕：等跟读时提示该你念了；中文开着「当前句」就是这一句的翻译。
+/// 其余时候什么都不写——空着的时候这一行不占地方（样式里 :empty 隐藏）
 function lineText(session) {
   if (session.waiting) return t('轮到你了，照着念这一句。')
   if (session.mode === 'blind' || ZH[session.zh][0] !== 'line' || session.now < 0) return ''
@@ -74,7 +75,7 @@ function wait(session, i) {
 /// 一句读到头了。返回 true 表示已经停下来等跟读，这一帧不用再往下画
 function sentenceEnd(session, i) {
   markHeard(session, i)
-  if (session.loop) { session.audio.currentTime = session.lesson.timing[i].a; session.ended = -1; return false }
+  if (loopIs(session, 'one')) { session.audio.currentTime = session.lesson.timing[i].a; session.ended = -1; return false }
   if (session.mode !== 'shadow') return false
   wait(session, i)
   return true
@@ -88,10 +89,12 @@ function paint(session, t, i) {
     view.sentences[i].querySelector(`.w[data-w="${k}"]`)?.classList.add('is-now')
     session.word = k
   }
-  const part = Math.min(1, t / (audio.duration || lesson.duration))
+  const total = audio.duration || lesson.duration
+  const part = Math.min(1, t / total)
   view.fill.style.width = `${part * 100}%`
   view.thumb.style.left = `${part * 100}%`
-  view.time.textContent = `${clock(t)} / ${clock(audio.duration || lesson.duration)}`
+  view.time.textContent = clock(t)
+  view.total.textContent = clock(total)
 }
 
 /// timeupdate 一秒只来四次，逐词点亮会一卡一卡：播放时按动画帧跟
@@ -140,20 +143,23 @@ function setMode(session, mode) {
 
 function setZh(session, k) {
   session.zh = k % ZH.length
-  session.view.zh.textContent = ZH[session.zh][1]
-  session.view.root.dataset.zh = ZH[session.zh][0]
+  const id = ZH[session.zh][0]
+  for (const button of session.view.zh.children) button.classList.toggle('is-on', button.dataset.zh === id)
+  session.view.root.dataset.zh = id
   session.view.line.textContent = lineText(session)
 }
 
-function setLoop(session, on) {
-  session.loop = on
-  session.view.loop.setAttribute('aria-pressed', String(on))
+/// 循环一个按钮三档：不循环 → 单句 → 整篇
+function setLoop(session, k) {
+  session.loop = k % LOOPS.length
+  session.view.loop.replaceChildren(icon('loop'), LOOPS[session.loop][1])
+  session.view.loop.setAttribute('aria-pressed', String(!loopIs(session, 'off')))
 }
 
-function nextSpeed(session) {
-  session.speed = (session.speed + 1) % SPEEDS.length
+function setSpeed(session, k) {
+  session.speed = k % SPEEDS.length
   session.audio.playbackRate = SPEEDS[session.speed]
-  session.view.speed.textContent = `${SPEEDS[session.speed]}×`
+  session.view.speed.textContent = t('语速 {x}×', { x: SPEEDS[session.speed] })
 }
 
 function guessLine(session) {
@@ -181,17 +187,33 @@ function resultNode(session, outcome) {
       h('button', { class: 'button plain big', type: 'button', onclick: () => ctx.ui.closeModal() }, t('回森林'))))
 }
 
+/// 整篇听完了：亮灯、收卡片。只算一次——整篇循环时每一遍都会走到这儿，
+/// 而且第一遍收了哪些新卡片要留着，等最后出结果页时给人看
+function complete(session) {
+  const { ctx, lesson } = session
+  if (session.outcome) return
+  lesson.sentences.forEach((_, i) => markHeard(session, i))
+  session.outcome = ctx.state.finish(lesson, 1)
+  ctx.audio.chime(4)
+  ctx.onLesson(lesson)
+}
+
 function finish(session) {
-  const { ctx, lesson, view } = session
+  const { view } = session
   if (session.finished) return
   session.finished = true
   cancelWait(session)
-  lesson.sentences.forEach((_, i) => markHeard(session, i))
-  const outcome = ctx.state.finish(lesson, 1)
-  ctx.audio.chime(4)
-  view.main.replaceChildren(resultNode(session, outcome))
+  complete(session)
+  view.main.replaceChildren(resultNode(session, session.outcome))
   view.bar.hidden = true
-  ctx.onLesson(lesson)
+}
+
+/// 录音放到头了。单句循环：最后一句也照样循环，不能就这么结束；整篇循环：记一次完成，从头再来
+function ended(session) {
+  if (loopIs(session, 'one')) return jump(session, session.lesson.timing.length - 1)
+  if (loopIs(session, 'off')) return finish(session)
+  complete(session)
+  jump(session, 0)
 }
 
 /// 进度条：点和拖都行
@@ -201,6 +223,8 @@ function bindSeek(session) {
     const box = view.seek.getBoundingClientRect()
     cancelWait(session)
     audio.currentTime = Math.min(1, Math.max(0, (event.clientX - box.left) / box.width)) * (audio.duration || lesson.duration)
+    // 拖走不等于「刚才那句读完了」：不清掉的话，单句循环会把人弹回原来那句，跟读会停下来等
+    session.playing = -1
     session.ended = -1
     tick(session)
   }
@@ -214,17 +238,15 @@ const KEYS = {
   Space: toggle,
   ArrowRight: session => jump(session, session.now + 1),
   ArrowLeft: session => jump(session, session.now - 1),
-  KeyL: session => setLoop(session, !session.loop),
+  KeyL: session => setLoop(session, session.loop + 1),
   KeyZ: session => setZh(session, session.zh + 1),
-  KeyS: nextSpeed,
+  KeyS: session => setSpeed(session, session.speed + 1),
   KeyM: session => { const ids = Object.keys(MODES); setMode(session, ids[(ids.indexOf(session.mode) + 1) % ids.length]) },
 }
 
 function bind(session) {
   const { view, audio } = session
   session.onKey = event => {
-    // 拖走不等于「刚才那句读完了」：不清掉的话，单句循环会把人弹回原来那句，跟读会停下来等
-    session.playing = -1
     const action = KEYS[event.code]
     if (!action || session.finished || event.metaKey || event.ctrlKey || event.altKey) return
     event.preventDefault()
@@ -233,14 +255,14 @@ function bind(session) {
   audio.addEventListener('play', () => { view.play.replaceChildren(icon('pause')); view.play.setAttribute('aria-label', t('暂停')); tick(session) })
   audio.addEventListener('pause', () => { view.play.replaceChildren(icon('play')); view.play.setAttribute('aria-label', t('播放')) })
   audio.addEventListener('timeupdate', () => tick(session))
-  audio.addEventListener('ended', () => finish(session))
+  audio.addEventListener('ended', () => ended(session))
   view.play.addEventListener('click', () => toggle(session))
   view.prev.addEventListener('click', () => jump(session, session.now - 1))
   view.next.addEventListener('click', () => jump(session, session.now + 1))
   view.modes.addEventListener('click', event => { const button = event.target.closest('[data-mode]'); if (button) setMode(session, button.dataset.mode) })
-  view.loop.addEventListener('click', () => setLoop(session, !session.loop))
-  view.speed.addEventListener('click', () => nextSpeed(session))
-  view.zh.addEventListener('click', () => setZh(session, session.zh + 1))
+  view.loop.addEventListener('click', () => setLoop(session, session.loop + 1))
+  view.speed.addEventListener('click', () => setSpeed(session, session.speed + 1))
+  view.zh.addEventListener('click', event => { const button = event.target.closest('[data-zh]'); if (button) setZh(session, ZH.findIndex(([id]) => id === button.dataset.zh)) })
   view.cards.addEventListener('click', () => view.side.root.classList.toggle('is-up'))
   view.pre?.addEventListener('click', event => {
     const option = event.target.closest('.pre-option')
@@ -262,9 +284,12 @@ function bind(session) {
 export async function openReader(ctx, meta) {
   const lesson = await (await fetch(`data/lessons/${meta.id}.json`)).json()
   const audio = new Audio(`data/audio/${meta.id}.m4a`)
-  const session = { ctx, lesson, audio, mode: 'read', loop: false, zh: 0, speed: 0, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
-  session.view = buildReader(ctx, lesson, buildSide(ctx, lesson, i => jump(session, i)), MODES)
+  const session = { ctx, lesson, audio, mode: 'read', loop: 0, zh: 0, speed: 0, outcome: null, now: -1, word: -1, playing: -1, ended: -1, heard: new Set(), waiting: 0, raf: 0, finished: false, picked: null, dragging: false, onKey: null }
+  session.view = buildReader(ctx, lesson, buildSide(ctx, lesson, i => jump(session, i)), MODES, ZH)
   bind(session)
+  setMode(session, session.mode)
+  setLoop(session, 0)
+  setSpeed(session, 0)
   // 英文界面默认不显示中文译文，想看再按 Z
   setZh(session, lang === 'en' ? 2 : 0)
   ctx.ui.openModal(session.view.root, () => { audio.pause(); cancelAnimationFrame(session.raf); clearTimeout(session.waiting); removeEventListener('keydown', session.onKey) })

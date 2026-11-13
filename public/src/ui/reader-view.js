@@ -69,7 +69,11 @@ function ringNode(total) {
   return { root, set(count) { root.querySelector('.ring-fill').setAttribute('stroke-dashoffset', LENGTH * (1 - count / total)); root.querySelector('span').textContent = `${count}/${total}` } }
 }
 
-function barNode(lesson, modes) {
+/// 一组互斥的小按钮（听法、中文）。options 是 [[id, 文字], …]，点亮哪个由 reader.js 定
+const segment = (name, label, title, options) => h('div', { class: 'segment', role: 'group', 'aria-label': label, title }, options.map(([id, text]) => h('button', { type: 'button', [`data-${name}`]: id }, text)))
+
+/// 播放条。上面一行进度，下面一行分三块：左边怎么听，中间播放（循环和语速贴着走带键），右边看不看中文
+function barNode(lesson, modes, zh) {
   const bar = {
     fill: h('i', { class: 'seek-fill' }),
     thumb: h('i', { class: 'seek-thumb' }),
@@ -77,22 +81,28 @@ function barNode(lesson, modes) {
     play: h('button', { class: 'play', type: 'button', 'aria-label': t('播放'), title: t('播放 / 暂停（空格）') }, icon('play')),
     prev: h('button', { class: 'round', type: 'button', 'aria-label': t('上一句'), title: t('上一句（←）') }, icon('prev')),
     next: h('button', { class: 'round', type: 'button', 'aria-label': t('下一句'), title: t('下一句（→）') }, icon('next')),
-    time: h('span', { class: 'time' }, `0:00 / ${clock(lesson.duration)}`),
-    modes: h('div', { class: 'segment', role: 'group', 'aria-label': t('听法'), title: t('换听法（M）') }, Object.entries(modes).map(([id, label]) => h('button', { type: 'button', 'data-mode': id, class: id === 'read' ? 'is-on' : '' }, label))),
-    loop: h('button', { class: 'chip', type: 'button', 'aria-pressed': 'false', title: t('单句循环（L）') }, icon('loop'), t('单句循环')),
-    speed: h('button', { class: 'chip', type: 'button', title: t('语速（S）') }, '1×'),
-    zh: h('button', { class: 'chip', type: 'button', title: t('中文（Z）') }, t('中文 当前句')),
+    time: h('span', { class: 'time' }, '0:00'),
+    total: h('span', { class: 'time' }, clock(lesson.duration)),
+    modes: segment('mode', t('听法'), t('换听法（M）'), Object.entries(modes)),
+    zh: segment('zh', t('中文'), t('中文（Z）'), zh),
+    loop: h('button', { class: 'chip', type: 'button', title: t('循环（L）') }),
+    speed: h('button', { class: 'chip', type: 'button', title: t('语速（S）') }),
     cards: h('button', { class: 'chip only-narrow', type: 'button' }, icon('cards'), t('卡片 {n}', { n: lesson.cards.length })),
   }
   bar.seek = h('div', { class: 'seek', role: 'slider', 'aria-label': t('进度'), tabindex: 0 }, ...bar.ticks, bar.fill, bar.thumb)
-  bar.root = h('footer', { class: 'reader-bar' }, bar.seek, h('div', { class: 'controls' }, h('div', { class: 'transport' }, bar.prev, bar.play, bar.next, bar.time), bar.modes, h('div', { class: 'row' }, bar.loop, bar.speed, bar.zh, bar.cards)))
+  bar.root = h('footer', { class: 'reader-bar' },
+    h('div', { class: 'seek-row' }, bar.time, bar.seek, bar.total),
+    h('div', { class: 'controls' },
+      bar.modes,
+      h('div', { class: 'transport' }, bar.loop, bar.prev, bar.play, bar.next, bar.speed),
+      h('div', { class: 'reader-opts' }, h('span', { class: 'seg-label' }, t('中文')), bar.zh, bar.cards)))
   return bar
 }
 
-export function buildReader(ctx, lesson, side, modes) {
+export function buildReader(ctx, lesson, side, modes, zh) {
   const article = articleNode(lesson)
   const ring = ringNode(lesson.sentences.length)
-  const bar = barNode(lesson, modes)
+  const bar = barNode(lesson, modes, zh)
   const view = { ...bar, bar: bar.root, article, ring, side, pre: preNode(lesson), sentences: [...article.querySelectorAll('.s')], line: h('p', { class: 'reader-line' }) }
   view.scroll = h('div', { class: 'reader-scroll' }, view.pre, lesson.intro && h('p', { class: 'intro' }, lesson.intro), article)
   view.main = h('div', { class: 'reader-main' }, h('div', { class: 'reader-page' }, view.scroll, view.line), side.root)

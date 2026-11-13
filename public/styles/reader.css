@@ -77,7 +77,8 @@
 .owned { grid-row: 1; grid-column: 2; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--amber); font-size: 12px; font-style: normal; }
 .item-detail { display: flex; flex-direction: column; gap: 6px; padding: 0 12px 12px; font-size: 13px; line-height: 1.65; color: var(--body); animation: card-in .25s var(--ease); }
 .item-example { font-style: italic; }
-.item-detail .chip, .reader-bar .chip { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; }
+.item-detail .chip, .reader-bar .chip { display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; }
+.item-detail .chip { align-self: flex-start; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 /* 只在窄屏出现的按钮（打开 / 收起卡片栏）。写在 .chip 的 display 后面，不然会被它盖掉 */
 .only-narrow, .reader-bar .chip.only-narrow { display: none; }
@@ -87,20 +88,34 @@
 /* 跟读的等待：播放条顶上一条线走完，就接着读下一句 */
 .is-waiting .reader-bar::before { content: ""; position: absolute; left: 24px; right: 24px; top: -3px; height: 4px; border-radius: 4px; background: var(--amber-deep); transform-origin: left; animation: wait var(--wait, 3s) linear forwards; }
 @keyframes wait { from { transform: scaleX(1); } to { transform: scaleX(0); } }
-.seek { position: relative; height: 18px; cursor: pointer; touch-action: none; }
+.seek-row { display: flex; align-items: center; gap: 12px; }
+.seek { position: relative; flex: 1; height: 18px; cursor: pointer; touch-action: none; }
 .seek::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 6px; border-radius: 999px; background: var(--sage-pale); }
 .seek-fill { position: absolute; left: 0; top: 6px; width: 0; height: 6px; border-radius: 999px; background: var(--moss); }
 .seek-thumb { position: absolute; left: 0; top: 1px; width: 16px; height: 16px; margin-left: -8px; border: 4px solid var(--moss); border-radius: 50%; background: var(--paper); box-shadow: var(--press); }
 /* 每句开头一道刻度，听过的那句刻度变实 */
 .tick { position: absolute; top: 4px; width: 2px; height: 10px; border-radius: 2px; background: var(--sage); opacity: .7; pointer-events: none; }
 .tick.is-heard { background: var(--moss-deep); opacity: 1; }
-.controls { display: flex; align-items: center; justify-content: space-between; gap: 10px 14px; flex-wrap: wrap; }
-.transport { display: flex; align-items: center; gap: 8px; }
+/* 三块：左边怎么听，中间播放，右边看不看中文。左右两格等宽，中间那块才在正中 */
+.controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px 16px; }
+.controls > :first-child { justify-self: start; }
+.reader-opts { display: flex; align-items: center; gap: 8px; justify-self: end; }
+.seg-label { font-size: 13px; font-weight: 700; color: var(--body); }
+/* 循环和语速各占一格等宽的位置：循环换字（不循环 / 单句循环 / 整篇循环）时，播放键不会跟着左右挪 */
+.transport { display: grid; grid-template-columns: minmax(118px, 1fr) auto auto auto minmax(118px, 1fr); align-items: center; gap: 8px; }
+.transport .chip:first-child { justify-self: end; }
+.transport .chip:last-child { justify-self: start; }
+/* 一行摆不下三块时：播放那块独占第一行，听法和中文排到第二行。看的是播放条自己有多宽（不是窗口），
+   英文的字长，要更早换行。两个数是量出来的：两边各留最宽那块的位置，再加中间 402 和间距 */
+.reader-bar { container-type: inline-size; }
+@container (max-width: 870px) { .controls { display: flex; flex-wrap: wrap; justify-content: center; } .transport { order: -1; flex-basis: 100%; } }
+@container (max-width: 990px) { html[lang="en"] .controls { display: flex; flex-wrap: wrap; justify-content: center; } html[lang="en"] .transport { order: -1; flex-basis: 100%; } }
 .play { flex: none; display: grid; place-items: center; width: 54px; height: 54px; border: 0; border-radius: 50%; background: var(--amber); font-size: 22px; box-shadow: var(--press); transition: scale .15s var(--ease); }
 .play:active { scale: .92; }
 .round { display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--sage-pale); font-size: 17px; transition: scale .15s var(--ease), background-color .15s ease; }
 .round:active { scale: .9; }
-.time { margin-left: 6px; font-size: 13px; color: var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.time { min-width: 30px; font-size: 12px; color: var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.seek-row .time:last-child { text-align: right; }
 .practice { width: min(680px, 100%); max-height: min(92vh, 860px); display: flex; flex-direction: column; overflow: hidden; animation: card-in .4s var(--ease); }
 
 /* 读完、练完的结果 */
@@ -183,8 +198,7 @@
   .article { font-size: 19px; }
   .reader-line { margin: 0 18px; }
   .reader-bar { padding: 10px 14px 14px; }
-  .controls { justify-content: center; }
-  .time, .ring span { display: none; }
+  .ring span { display: none; }
   .pre-options, .modes, .options { grid-template-columns: 1fr; }
   .mode { min-height: 0; padding: 16px; }
   .practice-body { padding: 4px 18px 20px; }
