@@ -1,6 +1,6 @@
 // 花盆里养成的树和花，种进森林里。每种只建一次模型，按材质并成几块，再用实例画到各个位置上
 import * as THREE from 'three'
-import { mat, seeded } from '../look.js'
+import { at, mat, seeded, shade } from '../look.js'
 import { t } from '../i18n.js'
 import { SPOTS as CHESTS } from './chests.js'
 import { CABINS, CLEARING, LODGE, STREAM, distanceTo, height, nearPath, trailX } from './land.js'
@@ -277,6 +277,24 @@ function advance(growing, dt) {
   }
 }
 
+/// 给盆里那一棵留的位置上立的小木牌：一摊翻过的土，一根桩子顶着一块牌子，牌子上画着一棵芽
+function stake() {
+  const [wood, leaf] = [mat('#7A5638'), mat('#4E9A5B')]
+  const soil = shade(at(new THREE.Mesh(new THREE.IcosahedronGeometry(0.8, 1), mat('#6E4D38')), 0, 0, 0.55))
+  soil.scale.y = 0.2
+  const face = at(new THREE.Group(), 0, 1.4, 0.08)
+  face.add(shade(new THREE.Mesh(new THREE.BoxGeometry(1, 0.7, 0.08), mat('#DCC396'))), at(new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.3, 0.02), leaf), 0, -0.1, 0.05))
+  for (const side of [-1, 1]) {
+    const blade = at(new THREE.Mesh(new THREE.IcosahedronGeometry(0.14, 0), leaf), side * 0.13, 0.09, 0.05)
+    blade.scale.set(1, 0.55, 0.12)
+    blade.rotation.z = side * 0.55
+    face.add(blade)
+  }
+  // 牌子歪一点：正正的像路标，歪一点才像随手插在地里的
+  face.rotation.z = -0.06
+  return new THREE.Group().add(soil, shade(at(new THREE.Mesh(new THREE.BoxGeometry(0.12, 1.5, 0.12), wood), 0, 0.75, 0)), face)
+}
+
 export function createPlanted(scene, colliders, weather) {
   const kinds = {}
   const placed = new Map()
@@ -284,8 +302,17 @@ export function createPlanted(scene, colliders, weather) {
   const growing = []
   let winter = false
   const meshes = () => Object.values(kinds).flatMap(kind => kind.meshes)
+  const sign = stake()
+  sign.visible = false
+  scene.add(sign)
 
   return {
+    /// 盆里那一棵定好的位置上立一块小木牌，牌面朝着镜头。盆空着、或者林子里没有它的位置，就收起来
+    reserve(seed, slot) {
+      const spot = seed && SPOTS[HABITAT[seed]]?.[slot]
+      sign.visible = Boolean(spot)
+      if (spot) at(sign, spot.x, height(spot.x, spot.z), spot.z).rotation.y = 0.2
+    },
     /// 把这些摆进林子。items：[{ seed: 'pine' | 'peach', slot }]，slot 是它在自己那一类位置表里排第几
     set(items) {
       for (const grow of growing.splice(0)) grow.done()

@@ -161,7 +161,11 @@ function plantOut(ctx) {
   const planted = () => ctx.garden.store.done.filter(item => item.slot != null)
   let shown = ''
   // 得水、浇水也会通知，林子里的只在种的东西变了时才重摆
-  const plant = () => { const key = JSON.stringify(planted().map(item => [item.seed, item.slot])); if (key !== shown) { shown = key; ctx.planted.set(planted()) } }
+  const plant = () => {
+    ctx.planted.reserve(ctx.garden.store.seed, ctx.garden.store.slot)
+    const key = JSON.stringify(planted().map(item => [item.seed, item.slot]))
+    if (key !== shown) { shown = key; ctx.planted.set(planted()) }
+  }
   ctx.garden.on(plant)
   plant()
   /// 把人送到林子里某个位置跟前（地图上的「去看看」）。item：刚长成的那一棵，给了就让它当场从地里长出来
