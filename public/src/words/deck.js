@@ -23,27 +23,41 @@ export const soundUrl = (kind, word) => `words/audio/${kind}/${word.id}.mp3`
 export function createVoice() {
   const audio = new Audio()
   let settle = null
-  const finish = () => { const done = settle; settle = null; done?.() }
-  audio.addEventListener('ended', finish)
-  audio.addEventListener('error', finish)
+  // 每放一段新的、每停一次就加一：循环读的那一轮看到它变了，就知道自己被顶掉了
+  let turn = 0
+  const finish = whole => { const done = settle; settle = null; done?.(whole) }
+  audio.addEventListener('ended', () => finish(true))
+  audio.addEventListener('error', () => finish())
+
+  function start(url, from = 0, to = Infinity) {
+    finish()
+    audio.src = url
+    audio.currentTime = from
+    const stop = () => { if (audio.currentTime >= to) { audio.pause(); finish(true) } }
+    // timeupdate 一秒才来四次，只靠它会把下一句的头带出来，所以每帧也看一眼；页面在后台时没有帧，还得靠它兜底
+    audio.ontimeupdate = stop
+    return new Promise(done => {
+      settle = done
+      const watch = () => { if (settle !== done) return; stop(); if (settle === done) requestAnimationFrame(watch) }
+      if (to < Infinity) requestAnimationFrame(watch)
+      audio.play().catch(() => finish())
+    })
+  }
+
   return {
     /// 放一段录音。返回的 Promise 在放完、被打断、或者放不出来的时候了结：听单词要等上一段完了才放下一段。
     /// from、to：只放其中一段（课文录音里的那一句）
-    play(url, from = 0, to = Infinity) {
-      finish()
-      audio.src = url
-      audio.currentTime = from
-      const stop = () => { if (audio.currentTime >= to) { audio.pause(); finish() } }
-      // timeupdate 一秒才来四次，只靠它会把下一句的头带出来，所以每帧也看一眼；页面在后台时没有帧，还得靠它兜底
-      audio.ontimeupdate = stop
-      return new Promise(done => {
-        settle = done
-        const watch = () => { if (settle !== done) return; stop(); if (settle === done) requestAnimationFrame(watch) }
-        if (to < Infinity) requestAnimationFrame(watch)
-        audio.play().catch(finish)
-      })
+    play(url, from, to) { turn += 1; return start(url, from, to) },
+    /// 循环读一段：读完隔 gap() 秒再读，直到放了别的、停了、或者放不出来。
+    /// gap 每读完一遍再问一次：中途把循环关了，读完这一遍就停
+    async loop(url, gap) {
+      const mine = ++turn
+      while (await start(url) && mine === turn && gap()) {
+        await new Promise(done => setTimeout(done, gap() * 1000))
+        if (mine !== turn) return
+      }
     },
-    stop() { audio.pause(); finish() },
+    stop() { turn += 1; audio.pause(); finish() },
   }
 }
 

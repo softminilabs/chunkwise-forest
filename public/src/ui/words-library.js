@@ -2,6 +2,7 @@
 import { h } from './core.js'
 import { lang, pick, t } from '../i18n.js'
 import { findIn, loadIndex, loadLevel, soundUrl } from '../words/deck.js'
+import { prons } from './words-pron.js'
 
 // 一个级别一两千个词，一口气全画出来会卡：一次只画这么多张，滚到底再接着画
 const BATCH = 60
@@ -21,11 +22,11 @@ function widthOf(text) {
 /// 话题的名字 index.json 里只有中文，英文界面拿话题的 id 当名字
 const topicName = (view, id) => id === 'all' ? t('全部') : inChinese ? view.index.topics.find(([key]) => key === id)[1] : id[0].toUpperCase() + id.slice(1)
 
-/// 一个发音：喇叭和音标装在一颗按钮里。kind：uk 英音、us 美音；label：详情里音标前的「英」「美」，列表卡片上不写
-function pron(view, word, kind, label) {
+/// 列表卡片上的一个发音：喇叭和音标装在一颗按钮里，只读一遍。kind：uk 英音、us 美音
+function pron(view, word, kind) {
   // 卡片整张都能点：点发音不能连带把详情打开
   const play = event => { event.stopPropagation(); view.voice.play(soundUrl(kind, word)) }
-  return h('button', { class: 'pron', type: 'button', 'aria-label': kind === 'uk' ? t('英式发音') : t('美式发音'), onclick: play }, speaker(), label && h('b', {}, label), word[kind])
+  return h('button', { class: 'pron', type: 'button', 'aria-label': kind === 'uk' ? t('英式发音') : t('美式发音'), onclick: play }, speaker(), word[kind])
 }
 
 function card(view, word, k) {
@@ -99,7 +100,7 @@ function detail(view, word) {
   const sense = item => h('li', {}, h('i', {}, item.pos), pick(item), inChinese && h('small', { lang: 'en' }, item.en))
   return [
     h('div', {}, h('h1', { lang: 'en', style: `--w:${widthOf(word.w)}` }, word.w),
-      h('div', { class: 'says' }, pron(view, word, 'uk', t('英')), pron(view, word, 'us', t('美'))),
+      prons(view.voice, word),
       h('ul', { class: 'senses' }, word.senses.map(sense)),
       inChinese && word.tip && h('p', { class: 'tip' }, h('b', {}, t('辨析')), word.tip),
       word.fam.length > 0 && h('p', { class: 'tip' }, h('b', {}, t('同族')), word.fam.join(inChinese ? '、' : ', '))),

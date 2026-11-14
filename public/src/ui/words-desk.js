@@ -5,6 +5,7 @@ import { h } from './core.js'
 import { lang, t } from '../i18n.js'
 import { findIn, loadIndex, loadLevel, soundUrl, wordsOf } from '../words/deck.js'
 import { DAILY, LEVELS } from '../words/progress.js'
+import { prons } from './words-pron.js'
 
 const speaker = () => h('i', { class: 'speaker' })
 const say = play => h('button', { class: 'say', type: 'button', onclick: play }, speaker())
@@ -70,8 +71,6 @@ async function start(desk, refs) {
   showCard(desk)
 }
 
-/// 一个发音：喇叭和音标装在一颗按钮里。kind：uk 英音、us 美音
-const pron = (desk, word, kind, label) => h('button', { class: 'pron', type: 'button', onclick: () => desk.voice.play(soundUrl(kind, word)) }, speaker(), h('b', {}, label), word[kind])
 const topicName = (desk, id) => lang === 'zh' ? desk.topics.get(id) ?? id : id[0].toUpperCase() + id.slice(1)
 
 /// 翻面才露出来的那一块：左边释义和辨析，右边搭配和课文里的那一句。英文界面下只有中文的东西不出
@@ -100,7 +99,7 @@ function showCard(desk) {
   desk.paper.replaceChildren(
     h('p', { class: 'kicker' }, [phase === 'new' || phase === 'learning' ? t('新词') : t('复习'), lv, topicName(desk, word.topic)].join(' · ')),
     h('h2', { lang: 'en', class: word.w.length > 11 ? 'is-long' : '' }, word.w),
-    h('div', { class: 'says' }, pron(desk, word, 'uk', t('英')), pron(desk, word, 'us', t('美'))),
+    prons(desk.voice, word),
     h('div', { class: 'ex' }, say(() => desk.voice.play(soundUrl('ex', word))), h('p', { lang: 'en' }, marked(word.ex[0].en, findIn(word.ex[0].en, word)), lang === 'zh' && meaning)),
     more)
   desk.paper.scrollTop = 0

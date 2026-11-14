@@ -10,6 +10,10 @@
 .pron { display: inline-flex; align-items: center; gap: .45em; padding: .4em .95em .4em .7em; border: 0; border-radius: 999px; background: var(--sage-pale); color: var(--ink); font-size: 14px; white-space: nowrap; transition: scale .15s var(--ease), background-color .15s ease; }
 .pron:active, .say:active { scale: .95; }
 .pron b { font-size: .8em; }
+/* 正在循环读的那一颗 */
+.pron.is-on { background: var(--ink); color: var(--paper); }
+/* 循环读：跟在两颗发音后面，三档直接摆着 */
+.loop { display: inline-flex; align-items: center; gap: 8px; margin-left: 6px; font-size: 13px; font-weight: 700; color: var(--body); white-space: nowrap; }
 .say { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 50%; background: var(--sage-soft); color: var(--ink); font-size: 14px; transition: scale .15s var(--ease); }
 /* 这条例句没有录音：喇叭的位置留着，下面的句子才对得齐 */
 .say.is-mute { visibility: hidden; }

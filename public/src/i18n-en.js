@@ -175,6 +175,7 @@ export const EN = {
   '上一个': 'Previous word', '下一个': 'Next word',
   '英式发音': 'British pronunciation', '美式发音': 'American pronunciation',
   '同族': 'Word family',
+  '循环读': 'Repeat', '关': 'Off', '隔 {n} 秒': '{n}s gap',
 
   // 听单词
   '这一组': 'This set',
