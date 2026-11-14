@@ -228,6 +228,21 @@ input[type="range"] { width: 100%; accent-color: var(--moss); margin: 10px 0; }
 .start-kicker { display: inline-block; padding: 4px 16px; border-radius: 999px; background: var(--sage-pale); color: var(--moss-deep); font-size: 14px; }
 .start-card h1 { font-size: 64px; font-weight: 700; line-height: 1.15; margin: 10px 0 6px; }
 .start-lead { color: var(--body); margin-bottom: 24px; font-size: 16px; }
+/* 开始页上教怎么玩：三样操作各一幅小图，趁着加载的工夫看。有鼠标的画键帽和鼠标，只有手指的画手指 */
+.start-how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 24px; padding: 16px 8px 14px; list-style: none; border-radius: 20px; background: var(--sage-pale); }
+.start-how li { display: flex; flex-direction: column; align-items: center; font-size: 15px; line-height: 1.35; }
+.how-art { height: 62px; margin-bottom: 8px; display: grid; place-items: center; color: var(--moss); }
+.how-art svg { height: 40px; }
+.start-how kbd { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: var(--paper); color: var(--ink); font: 800 13px var(--font); box-shadow: 0 0 0 1px rgb(var(--shade) / .1), 0 3px 0 rgb(var(--shade) / .16); }
+.start-how .wasd { display: grid; grid-template-columns: repeat(3, 28px); gap: 4px; }
+/* W 单独在上面一排的中间，A S D 在下面一排 */
+.start-how .wasd kbd:first-child { grid-column: 2; }
+.start-how .wasd kbd:nth-child(n+2) { grid-row: 2; }
+.start-how .space { width: 92px; }
+.start-how b { font-weight: 800; }
+.start-how small { font-size: 12px; color: var(--body); }
+.for-touch { display: none; }
+@media (hover: none) and (pointer: coarse) { .for-keys { display: none; } .for-touch { display: grid; } }
 /* 页面里两种语言都写着，按 <html lang> 只显示一种 */
 html[lang="en"] [data-lang="zh"], html:not([lang="en"]) [data-lang="en"] { display: none; }
 html[lang="en"] .start-card h1 { font-size: clamp(34px, 9vw, 52px); }
