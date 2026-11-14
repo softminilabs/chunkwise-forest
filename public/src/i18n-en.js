@@ -255,7 +255,7 @@ export const EN = {
   '语法': 'Grammar', '时态': 'Tenses', '动词': 'Verbs', '句子': 'Sentences', '名词和代词': 'Nouns and pronouns',
   '形容词、副词和介词': 'Adjectives, adverbs and prepositions', 'B2 进阶': 'B2 advanced',
   '词形表': 'Word forms', '速查表': 'Cheat sheets',
-  '小测': 'Quiz', '用起来': 'Use it', '相关': 'Related',
+  '小测': 'Quiz', '用起来': 'Use it', '相关': 'Related', '说明': 'What the patterns mean',
   '你的答案': 'Your answer', '检查': 'Check', '看答案': 'Show answer', '答案：': 'Answer: ', '不对。': 'Not quite.',
   '搜原形、过去式、中文': 'Search base form, past or meaning', '按变化规律筛': 'Filter by pattern',
 }

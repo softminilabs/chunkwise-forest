@@ -1,5 +1,5 @@
 // 讲堂里格式和别的专题不一样的三张表：不规则动词、名词单复数、介词 in / on / at。搬自网页版的 special.mjs。
-// 每个函数返回 { lead, sections: [[标题, html]] }，和普通专题一样排进页面
+// 每个函数返回 { lead, info, sections: [[标题, html]] }，和普通专题一样排进页面；info 是标题后面那个「i」点开的说明
 import { t } from '../i18n.js'
 import { chips, esc, list, markup, mistake, sound } from './hall-doc.js'
 
@@ -13,7 +13,7 @@ function irregularVerbs(data) {
   const note = item => [item.note, item.alt?.note].filter(Boolean).map(text => `<small>${esc(text)}</small>`).join('')
   const rows = data.items.map(item => `<tr data-pattern="${esc(item.pattern)}"><td lang="en">${esc(item.base)}</td>${form(item, 'past')}${form(item, 'pp')}<td>${esc(item.zh)}${note(item)}</td><td><span class="lv">${esc(item.level)}</span></td><td>${esc(item.pattern)}</td></tr>`).join('')
   const head = [...data.columns, '意思', '级别', '规律'].map(text => `<th>${esc(text)}</th>`).join('')
-  return { sections: [['', `${legend}${tools}<div class="table-wrap"><table class="verbs"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`]] }
+  return { info: legend, sections: [['', `${tools}<div class="table-wrap"><table class="verbs"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`]] }
 }
 
 /// 不规则动词表上面的搜索和按规律筛

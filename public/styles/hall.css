@@ -107,8 +107,14 @@
 .hall-doc td small { display: block; font: 600 14px/1.5 var(--font); color: var(--body); }
 
 /* 三张特殊的表 */
-.hall-doc .pattern-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr)); gap: 2px 20px; font-size: 15px; color: var(--body); }
-.hall-doc .pattern-legend strong { margin-right: 4px; color: var(--ink); }
+/* 标题后面的「i」和它点开的那一小块说明：浮在正文上面，不占正文的地方 */
+.hall-info-wrap { position: relative; align-self: center; }
+.hall-info { width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%; background: var(--sage-pale); color: var(--moss-deep); font: italic 800 16px/26px var(--read); cursor: pointer; transition: background-color .15s ease, color .15s ease; }
+.hall-info[aria-expanded="true"] { background: var(--moss); color: var(--paper); }
+.hall-pop { position: absolute; top: calc(100% + 10px); left: 0; z-index: 5; width: max-content; max-width: min(460px, calc(100vw - 64px)); padding: 14px 18px; border-radius: 16px; background: var(--paper); box-shadow: var(--lift); opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s; }
+.hall-pop.is-open { opacity: 1; visibility: visible; }
+.hall-pop .pattern-legend { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; font: 600 15px/1.5 var(--font); color: var(--body); }
+.hall-pop .pattern-legend strong { margin-right: 6px; color: var(--ink); }
 .hall-doc .verb-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 16px 0 12px; }
 .hall-doc .verb-search { flex: 0 1 320px; min-width: 0; padding: 7px 16px; border: 3px solid var(--sage-soft); border-radius: 999px; background: var(--paper); font-size: 16px; font-weight: 600; }
 .hall-doc .verb-search:focus { outline: none; border-color: var(--moss); }
@@ -140,6 +146,8 @@ html[lang="en"] .hall-doc .quiz-feedback strong { margin-right: 6px; }
 .hall-doc .quiz-answer span { font: 600 18px/1.5 var(--read); }
 
 @media (hover: hover) and (pointer: fine) {
+  .hall-info:hover { background: var(--sage-soft); }
+  .hall-info[aria-expanded="true"]:hover { background: var(--moss-deep); }
   .hall-topic:not(.is-on):hover, .hall-fold-head:hover { background: var(--sage-soft); }
   /* 选中的（深绿底、浅色字）只能再深一档，不能变浅 */
   .hall-topic.is-on:hover, .hall .chip.is-on:hover { background: var(--moss-deep); }
@@ -149,6 +157,10 @@ html[lang="en"] .hall-doc .quiz-feedback strong { margin-right: 6px; }
 
 /* 窄屏：只剩一栏。左边那一栏变成盖在小节和正文上面的一层，「目录」按钮开关它；它是原地淡出来的，不从边上滑进来 */
 @media (max-width: 720px) {
+  /* 窄屏上那块说明贴着卡片两边排：跟着「i」的位置走会伸出屏幕 */
+  .hall-head { position: relative; }
+  .hall-info-wrap { position: static; }
+  .hall-pop { top: calc(100% - 4px); left: 18px; right: 18px; width: auto; max-width: none; }
   .hall { --pad: 18px; grid-template: "head" auto "tabs" auto "body" minmax(0, 1fr) / minmax(0, 1fr); }
   .hall-nav { grid-area: tabs-start / 1 / body-end / auto; z-index: 2; border-right: 0; border-top: 2px solid var(--sage-pale); opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s; }
   .hall.is-nav .hall-nav { opacity: 1; visibility: visible; }

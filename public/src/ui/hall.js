@@ -103,7 +103,29 @@ function pageNode(view, topic, data) {
     stops.push([t('小测'), quiz])
   }
   page.append(...tailNodes(view, data))
-  return { page, stops }
+  return { page, stops, info: special?.info }
+}
+
+/// 标题后面的「i」：点开是一小块说明，再点一下、点别处、按 Esc 收起。
+/// 不规则动词里 AAA、AAB 各是什么意思放在这儿，不占正文顶上的地方
+function infoNode(html) {
+  const pop = h('div', { class: 'hall-pop', html })
+  const button = h('button', { class: 'hall-info', type: 'button', 'aria-label': t('说明'), 'aria-expanded': 'false' }, 'i')
+  const wrap = h('span', { class: 'hall-info-wrap' }, button, pop)
+  const away = event => {
+    if (event.type === 'keydown' ? event.key !== 'Escape' : wrap.contains(event.target)) return
+    // 这一下 Esc 只收起说明，不让它接着把整张卡片也关了
+    event.stopPropagation()
+    set(false)
+  }
+  const set = on => {
+    button.setAttribute('aria-expanded', String(on))
+    pop.classList.toggle('is-open', on)
+    // 开着的时候才听，收起就不听了：换专题、关卡片都不会留下没人管的监听
+    for (const kind of ['pointerdown', 'keydown']) document[on ? 'addEventListener' : 'removeEventListener'](kind, away, true)
+  }
+  button.addEventListener('click', () => set(button.getAttribute('aria-expanded') !== 'true'))
+  return wrap
 }
 
 /// 顶上那一排里选中第 k 个；它不在那一排看得见的地方时，把它挪到中间
@@ -144,11 +166,11 @@ async function select(view, topic) {
   const [data] = await Promise.all([load(`${topic.kind}/${topic.file}`), ...gone])
   // 等的工夫里又点了别的：这一个不画了
   if (view.topic !== topic) return
-  const { page, stops } = pageNode(view, topic, data)
+  const { page, stops, info } = pageNode(view, topic, data)
   view.stops = stops.map(([, node]) => node)
   view.stop = 0
   view.held = false
-  view.title.replaceChildren(...titleNodes(topic, data).filter(Boolean))
+  view.title.replaceChildren(...titleNodes(topic, data).filter(Boolean), ...(info ? [infoNode(info)] : []))
   view.tabs.replaceChildren(...stops.map(([name], k) => h('button', { class: k ? 'chip' : 'chip is-on', type: 'button', onclick: () => jump(view, k) }, name)))
   view.tabs.hidden = !stops.length
   view.scroll.replaceChildren(page)
