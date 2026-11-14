@@ -5,6 +5,7 @@ import { t } from '../i18n.js'
 import { SPOTS as CHESTS } from './chests.js'
 import { CABINS, CLEARING, LODGE, height, nearPath, trailX } from './land.js'
 import { PLANTS } from './plants/index.js'
+import { TREES } from './woods.js'
 
 export const HABITAT = { pine: 'tree', peach: 'flower' }
 // 移栽以后放大几倍：松树比小人高一头，是林子里的小树；花矮一点，不能高过屋檐
@@ -15,15 +16,17 @@ const SNOW = mat('#F4F8FA')
 const UP = new THREE.Vector3(0, 1, 0)
 const dummy = new THREE.Object3D()
 
-/// 小路边上的一个位置。正好落在木屋的岔路口、拐弯的内侧（离路面太近）、或者挨着已经排好的一棵，就沿着路前后挪一挪
+/// 小路边上的一个位置：贴着两边原有的树线（林子从离路 6 米多才开始），不是站在人走的那条空地里。
+/// 正好落在木屋的岔路口、挤着原有的树、或者挨着已经排好的一棵，就沿着路前后挪一挪
 function roadside(z, side, random, taken) {
-  const reach = side * random.between(3.6, 4.4)
+  const reach = side * random.between(5.3, 6)
   const turn = random.next() * 6.28
   for (const nudge of [0, 1.5, -1.5, 3, -3, 4.5, -4.5]) {
     const lean = trailX(z + nudge + 0.5) - trailX(z + nudge - 0.5)
     const x = trailX(z + nudge) + reach / Math.hypot(1, lean)
     const far = z + nudge - reach * lean / Math.hypot(1, lean)
-    if (nearPath(x, far) < 3.3 || taken.some(other => Math.hypot(other.x - x, other.z - far) < 3.6)) continue
+    // 原有的树冠大约是 1.5 × size 那么宽，再留出这棵小树自己的一圈
+    if (nearPath(x, far) < 3.3 || taken.some(other => Math.hypot(other.x - x, other.z - far) < 3.6) || TREES.some(tree => Math.hypot(tree.x - x, tree.z - far) < 1.5 * tree.size + 1.2)) continue
     return { x, z: far, turn, where: t('小路旁，第 {n} 间木屋附近', { n: Math.min(9, Math.max(1, Math.round((-9 - far) / 11.5) + 1)) }) }
   }
   return null

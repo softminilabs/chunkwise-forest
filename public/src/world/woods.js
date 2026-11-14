@@ -76,8 +76,11 @@ function litter(scene, random, look, season) {
   return group
 }
 
+/// 林子里原有的每一棵树在哪儿、多大。种进林子的东西（planted.js）要让开它们
+export const TREES = treeSpots(seeded(20261113))
+
 export function createWoods(scene, colliders) {
-  const spots = treeSpots(seeded(20261113))
+  const spots = TREES
   const pines = spots.filter(spot => spot.pine)
   const leafy = spots.filter(spot => !spot.pine)
   for (const spot of spots) colliders.push({ x: spot.x, z: spot.z, r: 0.35 * spot.size })
