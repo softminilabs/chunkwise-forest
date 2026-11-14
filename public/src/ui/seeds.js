@@ -3,18 +3,13 @@
 import { h } from './core.js'
 import { t } from '../i18n.js'
 import { LESSON_DROPS, WORD_DROPS } from '../garden.js'
-import { PLANNED, PLANTS } from '../world/plants/index.js'
+import { PLANNED, PLANTS, plantName } from '../world/plants/index.js'
 import { dropsFor } from '../world/plants/stages.js'
 import { portrait } from '../world/portrait.js'
 
-const NAMES = {
-  pine: t('松树'), peach: t('桃花'),
-  toadstool: t('红蘑菇'), sunflower: t('向日葵'), glowcap: t('夜光蘑菇'), plum: t('梅花'), maple: t('枫树'), bamboo: t('竹子'),
-}
 const STAGES = [t('种子'), t('芽'), t('小苗'), t('小树'), t('长成')]
 // 还没做模型的种子拍不了照：让拍照的那只花盆种一个什么都不长的，拍下来就是一只空花盆
 const EMPTY = { id: 'empty', build: () => null }
-export const plantName = id => NAMES[id]
 
 const ready = plant => plant.id in PLANTS
 const drops = n => h('small', {}, t('{n} 滴', { n }))

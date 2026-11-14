@@ -1,9 +1,9 @@
 // 森林地图：一张俯视的图，标着自己种的每一样和「你在这儿」。给一棵挑位置、换位置也在这张图上
 import { h } from './core.js'
 import { lang, t } from '../i18n.js'
-import { plantName } from './seeds.js'
 import { CABINS, CLEARING, LODGE, STREAM, trailX } from '../world/land.js'
 import { HABITAT, SPOTS } from '../world/planted.js'
+import { plantName } from '../world/plants/index.js'
 
 const AREA = { west: -23, east: 36, north: -119, south: 55 }
 const COLORS = { pine: '#2F7554', peach: '#F08DB0' }

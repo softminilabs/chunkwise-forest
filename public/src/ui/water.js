@@ -3,7 +3,7 @@
 import { h } from './core.js'
 import { t } from '../i18n.js'
 import { LESSON_DROPS, WORD_DROPS } from '../garden.js'
-import { plantName } from './seeds.js'
+import { plantName } from '../world/plants/index.js'
 
 const drop = () => h('i', { class: 'drop' })
 const wait = ms => new Promise(done => setTimeout(done, ms))

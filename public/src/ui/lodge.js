@@ -7,10 +7,10 @@ import { createPlayer } from '../player.js'
 import { createThings } from '../things.js'
 import { PLACES, ROOM_COLLIDERS, ROOM_GROUND, SEATS, createRoom } from '../world/room.js'
 import { HABITAT, SPOTS } from '../world/planted.js'
-import { PLANTS } from '../world/plants/index.js'
+import { PLANTS, plantName } from '../world/plants/index.js'
 import { portrait } from '../world/portrait.js'
 import { loadIndex, loadLevel } from '../words/deck.js'
-import { openSeeds, plantName } from './seeds.js'
+import { openSeeds } from './seeds.js'
 import { openDesk } from './words-desk.js'
 
 const FADE = 340
