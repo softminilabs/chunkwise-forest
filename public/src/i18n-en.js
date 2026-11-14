@@ -39,7 +39,7 @@ export const EN = {
   // 声音
   '晨鸟': 'Morning birds', '溪水': 'Stream', '林间的风': 'Wind in the trees', '冬天的风': 'Winter wind',
   '蟋蟀': 'Crickets', '蛙鸣': 'Frogs', '雨打树叶': 'Rain on leaves', '篝火': 'Campfire',
-  '啄木鸟': 'Woodpecker', '蝉鸣': 'Cicadas', '猫头鹰': 'Owl', '小雨': 'Light rain', '雨打窗': 'Rain on the window',
+  '蝉鸣': 'Cicadas', '猫头鹰': 'Owl', '小雨': 'Light rain', '雨打窗': 'Rain on the window',
   '恢复自动搭配': 'Back to automatic',
   '全部静音': 'Mute all', '打开声音': 'Turn sound on', '环境声音量': 'Ambience volume',
   '学习时垫在底下的声音': 'Background sound for studying',

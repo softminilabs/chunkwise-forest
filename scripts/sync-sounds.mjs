@@ -10,7 +10,7 @@ const MOODIST = `${homedir()}/Documents/Sounds`
 const OUT = 'public/sounds'
 const FILES = ['morning_birds.mp3', 'pond_frogs.mp3', 'summer_crickets.mp3', 'bamboo_wind.mp3', 'winter_wind.mp3', 'rain_forest.mp3', 'thunderstorm.mp3', 'campfire.mp3', 'cicada.mp3']
 // 眠静没收的几种：[声音库里的文件, 拷过来叫什么]
-const EXTRA = [['animals/owl.mp3', 'owl.mp3'], ['animals/woodpecker.mp3', 'woodpecker.mp3'], ['rain/light-rain.mp3', 'light_rain.mp3'], ['rain/rain-on-window.mp3', 'rain_window.mp3']]
+const EXTRA = [['animals/owl.mp3', 'owl.mp3'], ['rain/light-rain.mp3', 'light_rain.mp3'], ['rain/rain-on-window.mp3', 'rain_window.mp3']]
 
 if (!existsSync(LULL)) throw new Error(`没找到眠静的声音：${LULL}`)
 if (!existsSync(MOODIST)) throw new Error(`没找到 Moodist 的声音库：${MOODIST}`)

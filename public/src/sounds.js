@@ -7,11 +7,11 @@ import { t } from './i18n.js'
 export const SOUNDS = {
   birds: [t('晨鸟'), 'morning_birds.mp3'], stream: [t('溪水'), 'stream.m4a'], leaves: [t('林间的风'), 'bamboo_wind.mp3'], wind: [t('冬天的风'), 'winter_wind.mp3'],
   crickets: [t('蟋蟀'), 'summer_crickets.mp3'], frogs: [t('蛙鸣'), 'pond_frogs.mp3'], rain: [t('雨打树叶'), 'rain_forest.mp3'], thunder: [t('雷雨'), 'thunderstorm.mp3'], fire: [t('篝火'), 'campfire.mp3'],
-  woodpecker: [t('啄木鸟'), 'woodpecker.mp3'], cicada: [t('蝉鸣'), 'cicada.mp3'], owl: [t('猫头鹰'), 'owl.mp3'], drizzle: [t('小雨'), 'light_rain.mp3'], window: [t('雨打窗'), 'rain_window.mp3'],
+  cicada: [t('蝉鸣'), 'cicada.mp3'], owl: [t('猫头鹰'), 'owl.mp3'], drizzle: [t('小雨'), 'light_rain.mp3'], window: [t('雨打窗'), 'rain_window.mp3'],
 }
-// 这几种不是一直响的：放完一遍歇一阵再放，歇多久在这个范围里随机（秒）。猫头鹰和啄木鸟的录音大半是空白，
+// 这几种不是一直响的：放完一遍歇一阵再放，歇多久在这个范围里随机（秒）。猫头鹰的录音大半是空白，
 // 连着循环就成了隔几秒准时叫一声；蝉鸣的录音结尾是淡出的，首尾接不上
-const NOW_AND_THEN = { owl: [14, 40], woodpecker: [10, 30], cicada: [1, 6] }
+const NOW_AND_THEN = { owl: [14, 40], cicada: [1, 6] }
 const ON_LEVEL = 0.55
 // 在单词屋里，外面的声音隔着墙只剩这么一点
 const INDOORS = 0.18
@@ -20,9 +20,9 @@ const WINDOW_RAIN = 0.14
 
 // 「自动」的搭配表：每个季节，白天、夜里各有什么底声；下雨、下雪时换成另一组（鸟和虫都不叫了）。数字是音量 0–1
 const MIX = {
-  spring: { day: { birds: 0.6, leaves: 0.15, woodpecker: 0.3 }, night: { frogs: 0.5, crickets: 0.12 }, rain: { drizzle: 0.25, frogs: 0.3 } },
+  spring: { day: { birds: 0.6, leaves: 0.15 }, night: { frogs: 0.5, crickets: 0.12 }, rain: { drizzle: 0.25, frogs: 0.3 } },
   summer: { day: { birds: 0.3, leaves: 0.2, cicada: 0.7 }, night: { crickets: 0.6, frogs: 0.25 }, rain: { rain: 0.7, thunder: 0.4 } },
-  autumn: { day: { leaves: 0.5, birds: 0.2, woodpecker: 0.25 }, night: { crickets: 0.28, leaves: 0.3, owl: 0.8 }, rain: { rain: 0.6, leaves: 0.2 } },
+  autumn: { day: { leaves: 0.5, birds: 0.2 }, night: { crickets: 0.28, leaves: 0.3, owl: 0.8 }, rain: { rain: 0.6, leaves: 0.2 } },
   winter: { day: { wind: 0.4 }, night: { wind: 0.55, owl: 0.8 }, snow: { wind: 0.3 } },
 }
 // 小溪四季都在流，冬天结了冰，只剩一点点声音
