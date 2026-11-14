@@ -206,7 +206,6 @@ export const EN = {
   '在单词屋把种子养大，它就会种到这里': 'Grow a seed in the Word Lodge and it will be planted here',
   '把{name}种在哪儿': ({ name }) => `Where should the ${name.toLowerCase()} go?`,
   '亮着的圈是空位，点哪个种哪个。种下就不能挪了。': 'The rings are free spots. Tap one to plant there. Once planted, it stays put.',
-  '离篝火最近的空位': 'The free spot nearest the campfire',
   '点一下你种的树或花': 'Tap a tree or flower you planted',
   '{date}种下': 'Planted {date}',
   '去看看': 'Go and see', '就种这儿': 'Plant it here', '你': 'You',

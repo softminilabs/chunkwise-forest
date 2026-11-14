@@ -88,9 +88,8 @@ function head(view) {
   return [h('h2', {}, t('森林地图')), h('p', {}, count ? t('你种下了 {n} 样', { n: count }) : t('在单词屋把种子养大，它就会种到这里'))]
 }
 
-function note(view) {
-  const { picking, chosen } = view
-  if (picking) return [h('strong', {}, SPOTS[HABITAT[picking.seed]][chosen].where), chosen === view.offered && h('span', {}, t('离篝火最近的空位'))]
+/// 选中的那一样是什么、哪天种的、在哪儿（挑位置时没有这一块）
+function note({ chosen }) {
   if (!chosen) return [h('span', {}, t('点一下你种的树或花'))]
   const date = new Date(chosen.at).toLocaleDateString(lang === 'en' ? 'en-GB' : 'zh-CN', { month: 'long', day: 'numeric' })
   return [h('strong', {}, plantName(chosen.seed), h('small', {}, t('{date}种下', { date }))), h('span', {}, spotOf(chosen).where)]
@@ -117,8 +116,10 @@ function paint(view) {
   const { ctx, picking, chosen } = view
   const id = item => item && `${ctx.garden.store.done.indexOf(item)}:${item.slot}`
   for (const node of view.slots.children) node.classList.toggle('is-on', Number(node.dataset.slot) === chosen)
-  if (!picking) swap(view.focus, id(chosen), () => [chosen && s('g', { transform: at(spotOf(chosen)) }, s('circle', { r: 13 }), glyph(chosen.seed))])
-  swap(view.note, picking ? chosen : id(chosen), () => note(view))
+  if (!picking) {
+    swap(view.focus, id(chosen), () => [chosen && s('g', { transform: at(spotOf(chosen)) }, s('circle', { r: 13 }), glyph(chosen.seed))])
+    swap(view.note, id(chosen), () => note(view))
+  }
   view.actions.firstChild.disabled = chosen == null
 }
 
@@ -132,6 +133,7 @@ function draw(view) {
   view.head.replaceChildren(...head(view))
   view.actions.replaceChildren(action(view))
   view.foot.hidden = !picking && !planted(ctx).length
+  view.note.hidden = Boolean(picking)
   // 挑位置时，已经种下的都压淡，亮着的只有空位
   view.marks.classList.toggle('is-dim', Boolean(picking))
   view.slots.classList.toggle('is-open', Boolean(picking))
@@ -143,7 +145,7 @@ function draw(view) {
 /// 空位亮着圈，先替人选好离篝火最近的那个；点了「就种这儿」就调 onPick(slot)，卡片由调用的一方关。这一类得还有空位
 export function openMap(ctx, { pick } = {}) {
   const view = { ctx, picking: pick ?? null, chosen: null }
-  if (pick) view.chosen = view.offered = ctx.garden.free(pick.seed)[0]
+  if (pick) view.chosen = ctx.garden.free(pick.seed)[0]
   const layer = name => view[name] = s('g', { class: `map-${name}` })
   view.svg = s('svg', { class: 'map-svg' }, layer('land'), layer('marks'), layer('you'), layer('slots'), layer('focus'))
   view.you.append(s('circle', { class: 'pulse', r: 10 }), s('circle', { r: 10 }), s('text', {}, t('你')))
