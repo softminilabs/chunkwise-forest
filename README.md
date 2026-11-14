@@ -42,30 +42,6 @@ It runs in the browser. There is no account and nothing to install.
 
 Progress is kept in your browser (`localStorage`). Clearing site data, or opening the site in another browser, starts again from zero.
 
-### Run it locally
-
-```bash
-git clone https://github.com/Softminilabs/chunkwise-forest.git
-cd chunkwise-forest
-node scripts/serve.mjs
-```
-
-Then open http://localhost:4174/. Node.js 20 or later is enough; there is no build step and nothing to install. Any other static file server pointed at `public/` works too.
-
-### How it is built
-
-- [three.js](https://threejs.org/) for the scene, plain ES modules, no bundler and no framework.
-- Everything is static files. The site root is `public/`.
-
-| Path | What is there |
-| --- | --- |
-| `public/src/world/` | Terrain and trail, trees, cabins, campfire, sky and weather, chests, the Word Lodge room, the plants |
-| `public/src/ui/` | Top bar, cards and drawers, the lesson reader, practice, the Word Lodge, the map |
-| `public/src/words/` | Word data loading and the review schedule |
-| `public/src/sounds.js` | Which ambient sounds play, and how loud |
-| `public/src/i18n-en.js` | English interface text |
-| `scripts/serve.mjs` | Local preview server |
-
 ### Credits and licenses
 
 - **Word list, definitions, example sentences and their recordings** are adapted from [Word Atlas (词光)](https://github.com/designfuchen/word-atlas) by Word Atlas contributors, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: entries from A2 to C2 were selected and reformatted for this project, and the illustrations are not included.
@@ -105,30 +81,6 @@ Then open http://localhost:4174/. Node.js 20 or later is enough; there is no bui
 | 拉近拉远 | 滚轮 | |
 
 学习进度存在浏览器里（`localStorage`）。清掉网站数据，或者换一个浏览器打开，就会从头开始。
-
-### 在本地跑起来
-
-```bash
-git clone https://github.com/Softminilabs/chunkwise-forest.git
-cd chunkwise-forest
-node scripts/serve.mjs
-```
-
-然后打开 http://localhost:4174/ 。有 Node.js 20 或更新的版本就够了，不需要构建，也不用安装依赖。换成别的静态文件服务器、指到 `public/` 也一样能跑。
-
-### 怎么做的
-
-- 场景用 [three.js](https://threejs.org/)，原生 ES 模块，没有打包工具，也没有框架。
-- 全部是静态文件，网站的根目录是 `public/`。
-
-| 位置 | 内容 |
-| --- | --- |
-| `public/src/world/` | 地形和小路、树、木屋、篝火、天色和天气、宝箱、单词屋的屋子、养的植物 |
-| `public/src/ui/` | 顶栏、卡片和抽屉、读课文、练习、单词屋、地图 |
-| `public/src/words/` | 词库的读取和复习排程 |
-| `public/src/sounds.js` | 环境声：什么时候响哪几种、各多响 |
-| `public/src/i18n-en.js` | 英文界面的文字 |
-| `scripts/serve.mjs` | 本地预览 |
 
 ### 署名和授权
 
