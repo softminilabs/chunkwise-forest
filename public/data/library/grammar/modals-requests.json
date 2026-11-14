@@ -1,0 +1,408 @@
+{
+ "id": "g-modals-requests",
+ "title": "情态动词：请求与提议",
+ "en": "Modals: Requests and Offers",
+ "group": "动词",
+ "level": "B1",
+ "order": 15,
+ "keywords": [
+  "主动帮忙和请人做事"
+ ],
+ "related": [
+  "g-modals-ability",
+  "g-gerund-infinitive",
+  "g-imperatives",
+  "g-questions"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "**请人做事**用 Can you / Could you …?；**问自己能不能做**用 Can I / Could I …?；**主动帮忙**用 Shall I …? 或 I'll …。越客气，句子就越长、越绕。",
+   "uses": [
+    {
+     "zh": "请别人做事",
+     "en": "[[Could you]] ((send)) me the link?",
+     "en_zh": "你能把链接发我吗？"
+    },
+    {
+     "zh": "问自己可不可以",
+     "en": "[[Could I]] ((join)) the call?",
+     "en_zh": "我可以加入这个通话吗？"
+    },
+    {
+     "zh": "主动帮别人",
+     "en": "[[Shall I]] ((book)) a meeting room?",
+     "en_zh": "要我订个会议室吗？"
+    }
+   ],
+   "signals": [
+    "Can you",
+    "Could you",
+    "Would you",
+    "Would you mind",
+    "Shall I",
+    "I'll",
+    "Do you want me to",
+    "Let me"
+   ]
+  },
+  "ask": {
+   "title": "请别人做事", "short": "请人",
+   "text": "像楼梯一样一级比一级客气：**Can you** 随便，**Could you / Would you** 客气，加上 please 更好。后面都跟动词原形。",
+   "formula": [
+    "Can / Could / Would you",
+    "动词原形",
+    "其他？"
+   ],
+   "examples": [
+    {
+     "en": "[[Can you]] ((pass)) me the charger?",
+     "zh": "能把充电器递给我吗？",
+     "rule": "朋友之间"
+    },
+    {
+     "en": "[[Could you]] ((review)) my pull request <<when you have a minute>>?",
+     "zh": "你有空的时候能帮我看看这个 PR 吗？",
+     "rule": "同事之间，客气"
+    },
+    {
+     "en": "[[Would you]] ((give)) me a hand with this, please?",
+     "zh": "能麻烦你帮我一下吗？",
+     "rule": "最客气"
+    }
+   ],
+   "notes": [
+    "答应别人：Sure. / Of course. / No problem.",
+    "拒绝要先道歉：Sorry, I can't right now — I'm in a meeting."
+   ]
+  },
+  "mind": {
+   "title": "Would you mind …?", "short": "mind",
+   "text": "mind 是「介意」。后面的动词要加 **-ing**。小心回答：别人问「你介意吗」，**同意**要说 **No / Not at all**（不介意）。",
+   "formula": [
+    "Would you mind",
+    "动词 + ing",
+    "其他？"
+   ],
+   "examples": [
+    {
+     "en": "[[Would you mind sending]] it again?",
+     "zh": "你介意再发一遍吗？",
+     "answer": "Not at all. / No, of course not."
+    },
+    {
+     "en": "[[Would you mind not using]] your phone here?",
+     "zh": "麻烦你在这儿别用手机，好吗？"
+    },
+    {
+     "en": "[[Do you mind if I]] ((open)) the window?",
+     "zh": "我开一下窗你介意吗？",
+     "answer": "No, go ahead."
+    }
+   ],
+   "wrong": {
+    "bad": "Would you mind ~~to send~~ it again?",
+    "good": "[[Would you mind sending]] it again?"
+   },
+   "tip": "回答 Yes 等于说「我介意」，就是不答应。"
+  },
+  "permission": {
+   "title": "我可以……吗", "short": "我可以",
+   "text": "问自己能不能做一件事：**Can I** 随便，**Could I** 客气，**May I** 最正式。也可以说 **Do you mind if I …?**",
+   "examples": [
+    {
+     "en": "[[Can I]] ((sit)) here?",
+     "zh": "我可以坐这儿吗？"
+    },
+    {
+     "en": "[[Could I]] ((have)) a glass of water, please?",
+     "zh": "可以给我一杯水吗？"
+    },
+    {
+     "en": "[[May I]] ((ask)) who's calling?",
+     "zh": "请问您是哪位？"
+    }
+   ]
+  },
+  "offer": {
+   "title": "主动帮忙", "short": "帮忙",
+   "text": "想帮别人一把，有好几种说法。**Shall I …?** 是问「要我……吗」；**I'll …** 是当场决定「我来」。",
+   "items": [
+    {
+     "rule": "问对方要不要：Shall I …?",
+     "en": "[[Shall I]] ((take)) notes?",
+     "zh": "要我做会议记录吗？"
+    },
+    {
+     "rule": "当场决定我来：I'll …",
+     "en": "[[I'll]] ((get)) the door.",
+     "zh": "我去开门。"
+    },
+    {
+     "rule": "问对方要不要：Do you want me to …?",
+     "en": "[[Do you want me to]] ((call)) him?",
+     "zh": "要我给他打电话吗？"
+    },
+    {
+     "rule": "直接接过去：Let me …",
+     "en": "[[Let me]] ((check)) the logs.",
+     "zh": "我来看看日志。"
+    },
+    {
+     "rule": "请别人吃喝：Would you like …?",
+     "en": "[[Would you like]] a coffee?",
+     "zh": "你要来杯咖啡吗？"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "Could you",
+     "this": {
+      "meaning": "Can you：随口，朋友之间",
+      "en": "[[Can you]] ((help)) me?"
+     },
+     "that": {
+      "meaning": "Could you：客气，同事、陌生人",
+      "en": "[[Could you]] ((help)) me?"
+     }
+    },
+    {
+     "with": "Will you",
+     "this": {
+      "meaning": "Shall I：我来帮你，好吗",
+      "en": "[[Shall I]] ((open)) the window?"
+     },
+     "that": {
+      "meaning": "Will you：你来做，好吗",
+      "en": "[[Will you]] ((open)) the window?"
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Would you mind ~~to check~~ this?",
+     "good": "[[Would you mind checking]] this?",
+     "why": "mind 后面用 -ing。"
+    },
+    {
+     "bad": "Do you want ~~that I~~ help?",
+     "good": "[[Do you want me to]] ((help))?",
+     "why": "want 后面说 me to do。"
+    },
+    {
+     "bad": "Let me ~~to~~ check.",
+     "good": "[[Let me]] ((check)).",
+     "why": "let me 后面直接跟原形。"
+    },
+    {
+     "bad": "Shall I ~~to~~ book a room?",
+     "good": "[[Shall I]] ((book)) a room?",
+     "why": "shall 后面直接跟原形。"
+    },
+    {
+     "bad": "— Would you mind waiting? — ~~Yes, sure.~~",
+     "good": "— Would you mind waiting? — [[Not at all.]]",
+     "why": "答 Yes 是「我介意」，同意要说 Not at all。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "You see your colleague carrying lots of boxes. You say: \"___ help you?\"",
+   "options": [
+    "Shall I",
+    "Will you",
+    "Could you"
+   ],
+   "answer": "Shall I",
+   "explain": "主动帮忙用 [[Shall I]] …?"
+  },
+  {
+   "id": "q02",
+   "section": "ask",
+   "type": "choice",
+   "prompt": "Which is the most polite?",
+   "options": [
+    "Send me the file.",
+    "Can you send me the file?",
+    "Could you send me the file, please?"
+   ],
+   "answer": "Could you send me the file, please?",
+   "explain": "[[Could you]] … please? 最客气。"
+  },
+  {
+   "id": "q03",
+   "section": "ask",
+   "type": "fill",
+   "prompt": "Could you ___ (review) my pull request?",
+   "answer": "review",
+   "accept": [],
+   "explain": "could you 后面用原形：((review))。"
+  },
+  {
+   "id": "q04",
+   "section": "mind",
+   "type": "fill",
+   "prompt": "Would you mind ___ (send) it again?",
+   "answer": "sending",
+   "accept": [],
+   "traps": [
+    {
+     "input": "to send",
+     "note": "mind 后面用 -ing，不用 to do。"
+    }
+   ],
+   "explain": "mind 后面用 -ing：[[sending]]。"
+  },
+  {
+   "id": "q05",
+   "section": "mind",
+   "type": "choice",
+   "prompt": "— Would you mind waiting a minute? — ___ (你愿意等)",
+   "options": [
+    "Yes, I would.",
+    "Not at all.",
+    "Yes, I mind."
+   ],
+   "answer": "Not at all.",
+   "explain": "不介意才是答应：[[Not at all.]]"
+  },
+  {
+   "id": "q06",
+   "section": "mind",
+   "type": "fix",
+   "prompt": "改错：Would you mind to close the window?",
+   "answer": "Would you mind closing the window?",
+   "accept": [],
+   "explain": "mind 后面用 -ing：[[closing]]。"
+  },
+  {
+   "id": "q07",
+   "section": "permission",
+   "type": "choice",
+   "prompt": "On the phone at work: \"___ ask who's calling?\"",
+   "options": [
+    "May I",
+    "Shall you",
+    "Do I"
+   ],
+   "answer": "May I",
+   "explain": "正式场合问自己可不可以：[[May I]]。"
+  },
+  {
+   "id": "q08",
+   "section": "permission",
+   "type": "translate",
+   "prompt": "翻译：我可以加入这个通话吗？",
+   "answer": "Could I join the call?",
+   "accept": [
+    "Can I join the call?",
+    "May I join the call?",
+    "Could I join this call?",
+    "Can I join this call?",
+    "May I join this call?"
+   ],
+   "explain": "问自己可不可以：[[Could I]] ((join)) …？"
+  },
+  {
+   "id": "q09",
+   "section": "offer",
+   "type": "fix",
+   "prompt": "改错：Do you want that I call him?",
+   "answer": "Do you want me to call him?",
+   "accept": [],
+   "explain": "说成 [[Do you want me to]] ((call)) him?"
+  },
+  {
+   "id": "q10",
+   "section": "offer",
+   "type": "fix",
+   "prompt": "改错：Let me to check the logs.",
+   "answer": "Let me check the logs.",
+   "accept": [],
+   "explain": "[[Let me]] 后面直接跟原形。"
+  },
+  {
+   "id": "q11",
+   "section": "offer",
+   "type": "choice",
+   "prompt": "The phone is ringing. \"Don't worry, ___ get it.\"",
+   "options": [
+    "I'll",
+    "I shall to",
+    "I'm"
+   ],
+   "answer": "I'll",
+   "explain": "当场决定我来：[[I'll]] ((get)) it。"
+  },
+  {
+   "id": "q12",
+   "section": "offer",
+   "type": "make-question",
+   "prompt": "用 Would you like 主动请同事喝咖啡。",
+   "answer": "Would you like a coffee?",
+   "accept": [
+    "Would you like some coffee?",
+    "Would you like a cup of coffee?"
+   ],
+   "explain": "请别人吃喝：[[Would you like]] …？"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "You want your colleague to open the window. You say: \"___ open the window?\"",
+   "options": [
+    "Shall I",
+    "Could you",
+    "Let me"
+   ],
+   "answer": "Could you",
+   "explain": "让对方做用 [[Could you]]；Shall I 是我来做。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Shall I to book a meeting room?",
+   "answer": "Shall I book a meeting room?",
+   "accept": [],
+   "explain": "shall 后面直接跟原形：((book))。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：你介意我开一下窗吗？",
+   "answer": "Do you mind if I open the window?",
+   "accept": [
+    "Would you mind if I opened the window?",
+    "Do you mind if I open the window a bit?",
+    "Would you mind if I open the window?"
+   ],
+   "explain": "问自己能不能做：[[Do you mind if I]] ((open)) …？"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话：客气地请同事帮你做一件事；用 Would you mind … 再请一件事；最后主动提出帮别人做一件事。",
+  "rules": [
+   "Can / Could / Would you、Shall I、Let me 后面用动词原形",
+   "Would you mind 后面用 -ing；Do you want me to + 原形"
+  ],
+  "note": "规则判情态动词后的原形和 mind + -ing（计分）；离线模型给更自然、更客气的说法（AI 建议，不计分）"
+ }
+}

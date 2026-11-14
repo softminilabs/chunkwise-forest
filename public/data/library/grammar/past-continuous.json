@@ -1,0 +1,452 @@
+{
+ "id": "g-past-continuous",
+ "title": "过去进行时",
+ "en": "Past Continuous",
+ "group": "时态",
+ "level": "B1",
+ "order": 4,
+ "keywords": [
+  "过去进行时"
+ ],
+ "related": [
+  "g-past-simple",
+  "g-present-continuous",
+  "g-past-perfect"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "过去进行时说的是**过去某一刻「正在做」**的事。像给过去拍一张照片：那一刻你在干嘛？公式：**was / were + 动词 ing。**",
+   "uses": [
+    {
+     "zh": "过去某个时间点正在做",
+     "en": "<<At ten last night>>, I [[was fixing]] a bug.",
+     "en_zh": "昨晚十点，我正在修 bug。"
+    },
+    {
+     "zh": "正在做的时候，突然发生了另一件事",
+     "en": "I [[was having]] lunch <<when>> the server went down.",
+     "en_zh": "我正吃着午饭，服务器挂了。"
+    },
+    {
+     "zh": "两件事同时在进行",
+     "en": "<<While>> I [[was coding]], my cat [[was sleeping]] on the desk.",
+     "en_zh": "我写代码的时候，猫在桌上睡觉。"
+    }
+   ],
+   "signals": [
+    "at 8 last night",
+    "at this time yesterday",
+    "when",
+    "while",
+    "all morning",
+    "all day yesterday"
+   ]
+  },
+  "positive": {
+   "title": "肯定句",
+   "short": "肯定",
+   "formula": [
+    "主语",
+    "was / were",
+    "动词 + ing",
+    "其他"
+   ],
+   "rule": "I 和他她它用 was，你、我们、他们用 were。后面的动词加 ing。就是把现在进行时的 be **换成过去的样子**。",
+   "examples": [
+    {
+     "en": "I [[was waiting]] for the bus <<at eight o'clock>>.",
+     "zh": "八点的时候我在等公交。"
+    },
+    {
+     "en": "The team [[was testing]] the app <<all afternoon>>.",
+     "zh": "团队整个下午都在测 App。"
+    },
+    {
+     "en": "They [[were talking]] about the release <<when>> I walked in.",
+     "zh": "我进去的时候，他们正在聊发布的事。"
+    }
+   ],
+   "wrong": {
+    "bad": "I ~~was wait~~ for you.",
+    "good": "I [[was waiting]] for you."
+   }
+  },
+  "negq": {
+   "title": "否定和疑问",
+   "short": "否定疑问",
+   "rule": "否定：在 was / were 后面加 not。疑问：把 was / were 搬到最前面。动词一直是 ing。",
+   "examples": [
+    {
+     "en": "Sorry, I [[wasn't listening]].",
+     "zh": "抱歉，我刚才没在听。"
+    },
+    {
+     "en": "They [[weren't working]] <<at the weekend>>.",
+     "zh": "他们周末没在工作。"
+    },
+    {
+     "en": "[[Were]] you [[sleeping]] <<when>> I called?",
+     "zh": "我打电话时你在睡觉吗？",
+     "answer": "Yes, I [[was]]. / No, I [[wasn't]]."
+    },
+    {
+     "en": "What [[were]] you [[doing]] <<at 3 pm>>?",
+     "zh": "下午三点你在干什么？",
+     "answer": "I [[was reviewing]] Tom's code."
+    }
+   ],
+   "contractions": [
+    "was not = [[wasn't]]",
+    "were not = [[weren't]]"
+   ]
+  },
+  "table": {
+   "title": "一张表看全",
+   "short": "一张表",
+   "verb": "work",
+   "rows": [
+    {
+     "who": "I",
+     "pos": "I [[was working]].",
+     "neg": "I [[wasn't working]].",
+     "negFull": "I was not working.",
+     "q": "[[Was]] I [[working]]?",
+     "short": "Yes, you [[were]]. / No, you [[weren't]]."
+    },
+    {
+     "who": "you",
+     "pos": "You [[were working]].",
+     "neg": "You [[weren't working]].",
+     "negFull": "You were not working.",
+     "q": "[[Were]] you [[working]]?",
+     "short": "Yes, I [[was]]. / No, I [[wasn't]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "He [[was working]].",
+     "neg": "He [[wasn't working]].",
+     "negFull": "He was not working.",
+     "q": "[[Was]] he [[working]]?",
+     "short": "Yes, he [[was]]. / No, he [[wasn't]]."
+    },
+    {
+     "who": "we",
+     "pos": "We [[were working]].",
+     "neg": "We [[weren't working]].",
+     "negFull": "We were not working.",
+     "q": "[[Were]] we [[working]]?",
+     "short": "Yes, we [[were]]. / No, we [[weren't]]."
+    },
+    {
+     "who": "they",
+     "pos": "They [[were working]].",
+     "neg": "They [[weren't working]].",
+     "negFull": "They were not working.",
+     "q": "[[Were]] they [[working]]?",
+     "short": "Yes, they [[were]]. / No, they [[weren't]]."
+    }
+   ],
+   "tip": "只要记住一件事：I 和他她它用 was，其他用 were。后面的 working 一直不变。"
+  },
+  "interrupt": {
+   "title": "when 和 while：被打断",
+   "short": "打断",
+   "text": "一件**长**的事正在进行，一件**短**的事突然插进来。口诀：**长的用进行时，短的用一般过去时。**",
+   "items": [
+    {
+     "rule": "长的事 + when + 短的事",
+     "en": "I [[was walking]] home <<when>> it [[started]] to rain.",
+     "zh": "我正走在回家路上，突然下起雨来。"
+    },
+    {
+     "rule": "while + 长的事，再说短的事",
+     "en": "<<While>> we [[were having]] the meeting, the fire alarm [[went]] off.",
+     "zh": "我们正在开会，火警响了。"
+    },
+    {
+     "rule": "两件长的事同时进行，两边都用进行时",
+     "en": "<<While>> I [[was cooking]], my flatmate [[was doing]] the washing-up.",
+     "zh": "我做饭的时候，室友在洗碗。"
+    }
+   ],
+   "notes": [
+    "小窍门：when 后面常跟短的事，while 后面常跟长的事。"
+   ]
+  },
+  "story": {
+   "title": "讲故事先搭背景",
+   "short": "讲故事",
+   "text": "讲故事时，先用过去进行时**搭背景**（天气怎样、大家在干嘛），再用一般过去时说**发生了什么**。",
+   "examples": [
+    {
+     "en": "It [[was raining]] and everyone [[was working]] quietly. Then the lights [[went]] out.",
+     "zh": "外面在下雨，大家都在安静地干活。然后灯突然灭了。"
+    },
+    {
+     "en": "The sun [[was shining]] and we [[were sitting]] in the garden. Suddenly my phone [[rang]].",
+     "zh": "阳光很好，我们坐在花园里。突然我的手机响了。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "和其他时态比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一般过去时",
+     "this": {
+      "meaning": "老板到的那一刻，我正在吃",
+      "en": "<<When>> the boss arrived, I [[was having]] lunch."
+     },
+     "that": {
+      "meaning": "老板到了，我才开始吃",
+      "en": "<<When>> the boss arrived, I [[had]] lunch."
+     }
+    },
+    {
+     "with": "现在进行时",
+     "this": {
+      "meaning": "过去那一刻正在做",
+      "en": "I [[was working]] <<at this time yesterday>>."
+     },
+     "that": {
+      "meaning": "现在这一刻正在做",
+      "en": "I[['m working]] <<right now>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "She ~~was cook~~ when I got home.",
+     "good": "She [[was cooking]] when I got home.",
+     "why": "was 后面的动词要加 ing。"
+    },
+    {
+     "bad": "We ~~was~~ waiting for you.",
+     "good": "We [[were]] waiting for you.",
+     "why": "we 用 were。"
+    },
+    {
+     "bad": "I was sleeping when the phone ~~was ringing~~.",
+     "good": "I [[was sleeping]] when the phone [[rang]].",
+     "why": "突然发生的短动作用一般过去时。"
+    },
+    {
+     "bad": "~~Did~~ you working at nine?",
+     "good": "[[Were]] you [[working]] at nine?",
+     "why": "进行时用 was / were 来问，不用 did。"
+    },
+    {
+     "bad": "I ~~was knowing~~ the answer.",
+     "good": "I [[knew]] the answer.",
+     "why": "know 是状态，不用进行时。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "At 9 pm yesterday, I ___ TV.",
+   "options": [
+    "watched",
+    "was watching",
+    "am watching",
+    "watch"
+   ],
+   "answer": "was watching",
+   "explain": "过去那一刻正在做：I [[was watching]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：昨晚十点我正在修 bug。",
+   "answer": "I was fixing a bug at ten last night.",
+   "accept": [
+    "At ten last night, I was fixing a bug.",
+    "At ten last night I was fixing a bug.",
+    "I was fixing a bug at 10 last night.",
+    "At 10 last night, I was fixing a bug.",
+    "At 10 last night I was fixing a bug."
+   ],
+   "explain": "<<at ten last night>> 那一刻正在修：I [[was fixing]]。"
+  },
+  {
+   "id": "q03",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "They ___ (talk) about the bug when I walked in.",
+   "answer": "were talking",
+   "accept": [],
+   "explain": "they 用 were：They [[were talking]]。"
+  },
+  {
+   "id": "q04",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "My phone ___ (charge) all morning.",
+   "answer": "was charging",
+   "accept": [],
+   "explain": "my phone 是「它」，用 was：[[was charging]]。"
+  },
+  {
+   "id": "q05",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成否定句：She was listening.",
+   "answer": "She wasn't listening.",
+   "accept": [
+    "She was not listening."
+   ],
+   "traps": [
+    {
+     "input": "She didn't listening.",
+     "note": "过去进行时在 was 后面加 not，不用 didn't。"
+    }
+   ],
+   "explain": "She [[wasn't listening]]：was 后面加 not。"
+  },
+  {
+   "id": "q06",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成一般疑问句：They were working late.",
+   "answer": "Were they working late?",
+   "accept": [],
+   "explain": "把 [[Were]] 搬到最前面。"
+  },
+  {
+   "id": "q07",
+   "section": "negq",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：I was reviewing the code at 3 pm.（问对方「在做什么」）",
+   "answer": "What were you doing at 3 pm?",
+   "accept": [
+    "What were you doing at 3pm?",
+    "What were you doing?"
+   ],
+   "traps": [
+    {
+     "input": "What did you doing at 3 pm?",
+     "note": "进行时用 were 来问，不用 did。"
+    }
+   ],
+   "explain": "What [[were]] you [[doing]]？疑问词 + were + 主语 + 动词 ing。"
+  },
+  {
+   "id": "q08",
+   "section": "table",
+   "type": "choice",
+   "prompt": "We ___ for the train when it started to snow.",
+   "options": [
+    "was waiting",
+    "were waiting",
+    "waited"
+   ],
+   "answer": "were waiting",
+   "explain": "we 用 were：We [[were waiting]]。"
+  },
+  {
+   "id": "q09",
+   "section": "table",
+   "type": "fill",
+   "prompt": "— Was Tom working at the weekend? — No, he ___.",
+   "answer": "wasn't",
+   "accept": [
+    "was not"
+   ],
+   "explain": "用 was 问，就用 [[wasn't]] 答。"
+  },
+  {
+   "id": "q10",
+   "section": "interrupt",
+   "type": "fill",
+   "prompt": "I was walking home when it ___ (start) to rain.",
+   "answer": "started",
+   "accept": [],
+   "explain": "突然插进来的短动作用一般过去时：[[started]]。"
+  },
+  {
+   "id": "q11",
+   "section": "interrupt",
+   "type": "choice",
+   "prompt": "While we ___ the meeting, the fire alarm went off.",
+   "options": [
+    "had",
+    "were having",
+    "have"
+   ],
+   "answer": "were having",
+   "explain": "<<While>> 后面是长的事：we [[were having]]。"
+  },
+  {
+   "id": "q12",
+   "section": "interrupt",
+   "type": "fix",
+   "prompt": "改错：I was sleeping when the phone was ringing.",
+   "answer": "I was sleeping when the phone rang.",
+   "accept": [],
+   "explain": "电话响是突然发生的短动作：[[rang]]。"
+  },
+  {
+   "id": "q13",
+   "section": "story",
+   "type": "fill",
+   "prompt": "It was a cold night. The wind ___ (blow) and the streets were empty.",
+   "answer": "was blowing",
+   "accept": [],
+   "explain": "搭背景用过去进行时：The wind [[was blowing]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "When the boss arrived, I ___ lunch, so I asked him to wait a minute.",
+   "options": [
+    "had",
+    "was having"
+   ],
+   "answer": "was having",
+   "explain": "老板到的那一刻我正在吃：[[was having]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：We was waiting for you.",
+   "answer": "We were waiting for you.",
+   "accept": [],
+   "explain": "we 用 [[were]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I was knowing the answer.",
+   "answer": "I knew the answer.",
+   "accept": [],
+   "explain": "know 是状态，不用进行时：I [[knew]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用过去进行时说 3 句话：昨天某个时间你和同事分别在做什么。至少一句用 when 讲「正在做的时候突然发生了什么」。",
+  "rules": [
+   "过去进行时 = was / were + 动词 ing",
+   "I / he / she / it 用 was，you / we / they 用 were",
+   "when 后面突然发生的短动作用一般过去时"
+  ],
+  "note": "规则判 was / were + ing 和 when 的用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

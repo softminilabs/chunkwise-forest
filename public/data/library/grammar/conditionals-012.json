@@ -1,0 +1,405 @@
+{
+ "id": "g-conditionals-012",
+ "title": "条件句：零、第一、第二",
+ "en": "Zero, First and Second Conditionals",
+ "group": "句子",
+ "level": "B1",
+ "order": 33,
+ "keywords": [
+  "第一条件句",
+  "第二条件句"
+ ],
+ "related": [
+  "g-conditionals-3-mixed",
+  "g-adverbial-time-condition",
+  "g-wish"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "条件句就是「**如果……就……**」。按这件事**有多大可能**分三种：每次都这样（零）、真有可能发生（第一）、只是假设、不太可能（第二）。",
+   "uses": [
+    {
+     "zh": "零：每次都这样",
+     "en": "If you [[heat]] ice, it [[melt{s}]].",
+     "en_zh": "冰一加热就会化。"
+    },
+    {
+     "zh": "第一：真有可能发生",
+     "en": "If it [[rain{s}]], we[['ll stay]] in.",
+     "en_zh": "要是下雨，我们就待在家里。"
+    },
+    {
+     "zh": "第二：只是假设",
+     "en": "If I [[had]] more time, I[['d learn]] Japanese.",
+     "en_zh": "要是我有更多时间，我就学日语。"
+    }
+   ],
+   "signals": [
+    "if",
+    "unless",
+    "will",
+    "would",
+    "If I were you"
+   ]
+  },
+  "zero": {
+   "title": "零条件句：每次都这样",
+   "short": "零",
+   "formula": [
+    "If + 一般现在时",
+    "一般现在时"
+   ],
+   "rule": "说规律、事实、每次都会发生的事。两半都用一般现在时。这里的 if 几乎等于 when（每当）。",
+   "examples": [
+    {
+     "en": "If you [[press]] this button, the app [[restart{s}]].",
+     "zh": "按这个按钮，App 就会重启。"
+    },
+    {
+     "en": "If I [[drink]] coffee after four, I [[can't]] sleep.",
+     "zh": "我四点以后喝咖啡就睡不着。"
+    },
+    {
+     "en": "If the tests [[fail]], the build [[stop{s}]].",
+     "zh": "测试一失败，构建就停。"
+    }
+   ]
+  },
+  "first": {
+   "title": "第一条件句：真有可能",
+   "short": "第一",
+   "formula": [
+    "If + 一般现在时",
+    "will + 动词原形"
+   ],
+   "rule": "说将来**真有可能**发生的事和它的结果。**if 那半句不用 will**，will 放在另一半。",
+   "examples": [
+    {
+     "en": "If it [[rain{s}]] tomorrow, we[['ll work]] from home.",
+     "zh": "明天要是下雨，我们就在家办公。"
+    },
+    {
+     "en": "If you [[finish]] early, you [[can]] go home.",
+     "zh": "你要是早做完，就可以回家。"
+    },
+    {
+     "en": "If we [[don't fix]] this, users [[will complain]].",
+     "zh": "我们不修好这个，用户会投诉的。"
+    }
+   ],
+   "wrong": {
+    "bad": "If it ~~will rain~~, we'll stay in.",
+    "good": "If it [[rain{s}]], we[['ll stay]] in."
+   }
+  },
+  "second": {
+   "title": "第二条件句：只是假设",
+   "short": "第二",
+   "formula": [
+    "If + 一般过去时",
+    "would + 动词原形"
+   ],
+   "rule": "说**现在不是真的**、或**不太可能**的事。用过去时**不是说过去**，是在说「这离现实很远」。",
+   "examples": [
+    {
+     "en": "If I [[had]] a car, I[['d drive]] you to the airport.",
+     "zh": "我要是有车，就开车送你去机场。"
+    },
+    {
+     "en": "If I [[were]] you, I[['d ask]] for a pay rise.",
+     "zh": "我要是你，就去要求加薪。"
+    },
+    {
+     "en": "If we [[didn't have]] so many meetings, we[['d finish]] faster.",
+     "zh": "要是没这么多会，我们能做得更快。"
+    }
+   ],
+   "notes": [
+    "If I were you 是给建议的固定说法。口语里 If I was … 也常听到，但 If I were you 最好记牢。"
+   ]
+  },
+  "options": {
+   "title": "主句还能换别的词",
+   "short": "换词",
+   "items": [
+    {
+     "rule": "不太确定 → **might**",
+     "en": "If it rains, we [[might]] cancel the picnic.",
+     "zh": "要是下雨，我们可能会取消野餐。"
+    },
+    {
+     "rule": "叫别人做事 → 直接用动词原形",
+     "en": "If you see Tom, [[tell]] him I'm running late.",
+     "zh": "你见到 Tom 就跟他说我要晚点到。"
+    },
+    {
+     "rule": "第二条件句里「能」→ **could**",
+     "en": "If I had a car, I [[could]] drive you.",
+     "zh": "我要是有车，就能送你了。"
+    },
+    {
+     "rule": "**unless** = if … not",
+     "en": "[[Unless]] you hurry, you'll miss the train.",
+     "zh": "你不快点就赶不上火车了。"
+    }
+   ]
+  },
+  "compare": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "第二条件句",
+     "this": {
+      "meaning": "第一：真有可能拿到这份工作",
+      "en": "If I [[get]] the job, I[['ll move]] to London."
+     },
+     "that": {
+      "meaning": "第二：觉得不太可能",
+      "en": "If I [[got]] the job, I[['d move]] to London."
+     }
+    },
+    {
+     "with": "零条件句",
+     "this": {
+      "meaning": "第一：说这一次的具体结果",
+      "en": "If you [[call]] me later, I[['ll explain]]."
+     },
+     "that": {
+      "meaning": "零：说每次都这样",
+      "en": "If you [[call]] after six, nobody [[answer{s}]]."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "If it ~~will rain~~, we'll stay in.",
+     "good": "If it [[rain{s}]], we'll stay in.",
+     "why": "if 那半句不用 will。"
+    },
+    {
+     "bad": "If I ~~would have~~ more time, I'd travel.",
+     "good": "If I [[had]] more time, I'd travel.",
+     "why": "if 那半句不用 would。"
+    },
+    {
+     "bad": "If I had a car, I ~~will~~ drive you.",
+     "good": "If I had a car, I [[would]] drive you.",
+     "why": "第二条件句的另一半用 would。"
+    },
+    {
+     "bad": "If I ~~am~~ you, I'd say no.",
+     "good": "If I [[were]] you, I'd say no.",
+     "why": "假设用过去时 were。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "If I ___ more time, I'd learn Japanese.",
+   "options": [
+    "have",
+    "had",
+    "will have",
+    "would have"
+   ],
+   "answer": "had",
+   "explain": "假设，用过去时 [[had]]。"
+  },
+  {
+   "id": "q02",
+   "section": "zero",
+   "type": "fill",
+   "prompt": "If you ___ (press) this button, the app restarts.",
+   "answer": "press",
+   "accept": [],
+   "explain": "每次都这样：两半都用一般现在时 [[press]]。"
+  },
+  {
+   "id": "q03",
+   "section": "zero",
+   "type": "choice",
+   "prompt": "If the tests fail, the build ___.",
+   "options": [
+    "stops",
+    "stopped",
+    "would stop"
+   ],
+   "answer": "stops",
+   "explain": "说规律，用一般现在时 [[stop{s}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "first",
+   "type": "fill",
+   "prompt": "If it ___ (rain) tomorrow, we'll work from home.",
+   "answer": "rains",
+   "accept": [],
+   "traps": [
+    {
+     "input": "will rain",
+     "note": "if 那半句不用 will。"
+    }
+   ],
+   "explain": "if 那半句不用 will：[[rain{s}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "first",
+   "type": "fill",
+   "prompt": "If we don't fix this, users ___ (complain).",
+   "answer": "will complain",
+   "accept": [
+    "'ll complain"
+   ],
+   "explain": "另一半用 [[will]] + 动词原形。"
+  },
+  {
+   "id": "q06",
+   "section": "first",
+   "type": "fix",
+   "prompt": "改错：If you will finish early, you can go home.",
+   "answer": "If you finish early, you can go home.",
+   "accept": [],
+   "explain": "if 那半句用一般现在时 [[finish]]。"
+  },
+  {
+   "id": "q07",
+   "section": "second",
+   "type": "fill",
+   "prompt": "If I ___ (be) you, I'd ask for a pay rise.",
+   "answer": "were",
+   "accept": [
+    "was"
+   ],
+   "explain": "If I [[were]] you，给建议的固定说法。"
+  },
+  {
+   "id": "q08",
+   "section": "second",
+   "type": "fill",
+   "prompt": "If I had a car, I ___ (drive) you to the airport.",
+   "answer": "would drive",
+   "accept": [
+    "'d drive"
+   ],
+   "traps": [
+    {
+     "input": "will drive",
+     "note": "假设的事，用 would，不用 will。"
+    }
+   ],
+   "explain": "第二条件句另一半用 [[would]] + 原形。"
+  },
+  {
+   "id": "q09",
+   "section": "second",
+   "type": "translate",
+   "prompt": "翻译：要是没这么多会，我们能做得更快。",
+   "answer": "If we didn't have so many meetings, we would finish faster.",
+   "accept": [
+    "If we didn't have so many meetings, we'd finish faster.",
+    "If we didn't have so many meetings, we could finish faster.",
+    "If we didn't have so many meetings, we would work faster.",
+    "If we didn't have so many meetings, we'd work faster.",
+    "If we didn't have so many meetings, we could work faster."
+   ],
+   "explain": "现在不是真的 → If + 过去时，另一半 [[would]]。"
+  },
+  {
+   "id": "q10",
+   "section": "options",
+   "type": "choice",
+   "prompt": "If it rains, we ___ cancel the picnic.（不太确定）",
+   "options": [
+    "might",
+    "would",
+    "did"
+   ],
+   "answer": "might",
+   "explain": "不确定用 [[might]]。"
+  },
+  {
+   "id": "q11",
+   "section": "options",
+   "type": "transform",
+   "prompt": "用 unless 改写：If you don't hurry, you'll miss the train.",
+   "answer": "Unless you hurry, you'll miss the train.",
+   "accept": [
+    "Unless you hurry, you will miss the train.",
+    "You'll miss the train unless you hurry.",
+    "You will miss the train unless you hurry."
+   ],
+   "explain": "if … not = [[unless]]。"
+  },
+  {
+   "id": "q12",
+   "section": "compare",
+   "type": "choice",
+   "prompt": "你觉得自己不太可能拿到这份工作：If I ___ the job, I'd move to London.",
+   "options": [
+    "get",
+    "got",
+    "will get"
+   ],
+   "answer": "got",
+   "explain": "不太可能 → 第二条件句，用过去时 [[got]]。"
+  },
+  {
+   "id": "q13",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：If I would have more time, I'd travel.",
+   "answer": "If I had more time, I'd travel.",
+   "accept": [
+    "If I had more time, I would travel."
+   ],
+   "explain": "if 那半句不用 would：If I [[had]]。"
+  },
+  {
+   "id": "q14",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：If I had a car, I will drive you.",
+   "answer": "If I had a car, I would drive you.",
+   "accept": [
+    "If I had a car, I'd drive you.",
+    "If I had a car, I could drive you."
+   ],
+   "explain": "第二条件句另一半用 [[would]]。"
+  },
+  {
+   "id": "q15",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：If I am you, I'd say no.",
+   "answer": "If I were you, I'd say no.",
+   "accept": [
+    "If I were you, I would say no.",
+    "If I was you, I'd say no."
+   ],
+   "explain": "假设用 [[were]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句条件句：一句说一个总是这样的规律，一句说明天或下周真可能发生的事，一句用 If I were you 给同事一个建议。",
+  "rules": [
+   "if 那半句不用 will / would",
+   "第二条件句：If + 过去时，另一半 would + 原形"
+  ],
+  "note": "规则判 if 半句和主句的时态搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

@@ -1,0 +1,400 @@
+{
+ "id": "g-modals-ability",
+ "title": "情态动词：能力与许可",
+ "en": "Modals: Ability and Permission",
+ "group": "动词",
+ "level": "A2",
+ "order": 14,
+ "keywords": [
+  "能力：can"
+ ],
+ "related": [
+  "g-modals-requests",
+  "g-modals-obligation",
+  "g-modals-deduction"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "can 有两个意思：**「会、能做到」**和**「可以、被允许」**。它后面的动词永远用**原形**，而且 can 自己从来不加 s。",
+   "uses": [
+    {
+     "zh": "会、能做到（能力）",
+     "en": "I [[can]] ((speak)) three languages.",
+     "en_zh": "我会说三种语言。"
+    },
+    {
+     "zh": "可以（许可）",
+     "en": "You [[can]] ((use)) my laptop.",
+     "en_zh": "你可以用我的电脑。"
+    },
+    {
+     "zh": "请求许可",
+     "en": "[[Can]] I ((leave)) early today?",
+     "en_zh": "我今天可以早点走吗？"
+    }
+   ]
+  },
+  "now": {
+   "title": "现在会不会", "short": "现在",
+   "text": "can 很懒，**谁用都一个样**：I can、he can、they can。否定是 can't（cannot），问句把 can 放最前面。",
+   "formula": [
+    "主语",
+    "can / can't",
+    "动词原形",
+    "其他"
+   ],
+   "examples": [
+    {
+     "en": "She [[can]] ((write)) Swift and Kotlin.",
+     "zh": "她会写 Swift 和 Kotlin。"
+    },
+    {
+     "en": "I [[can't]] ((open)) this file.",
+     "zh": "我打不开这个文件。"
+    },
+    {
+     "en": "[[Can]] you ((see)) my screen?",
+     "zh": "你能看到我的屏幕吗？",
+     "answer": "Yes, I [[can]]. / No, I [[can't]]."
+    }
+   ],
+   "wrong": {
+    "bad": "He ~~cans~~ swim~~s~~.",
+    "good": "He [[can]] ((swim))."
+   },
+   "notes": [
+    "can't 英式读 /kɑːnt/，和 can 的 /kən/ 差别很大，听的时候注意。"
+   ]
+  },
+  "past": {
+   "title": "过去会不会", "short": "过去",
+   "text": "过去**一直都会**的本事，用 **could**。可是说某**一次**终于做成了，不用 could，要用 **was able to** 或 **managed to**。",
+   "items": [
+    {
+     "rule": "小时候一直会：could",
+     "en": "I [[could]] ((read)) <<when I was four>>.",
+     "zh": "我四岁就会认字了。"
+    },
+    {
+     "rule": "过去做不到：couldn't 都能用",
+     "en": "I [[couldn't]] ((log)) in <<yesterday>>.",
+     "zh": "我昨天登不进去。"
+    },
+    {
+     "rule": "某一次终于做成：was able to / managed to",
+     "en": "We [[were able to]] ((fix)) the bug before the release.",
+     "zh": "我们在发版前把 bug 修好了。"
+    },
+    {
+     "rule": "某一次终于做成：was able to / managed to",
+     "en": "She [[managed to]] ((catch)) the last train.",
+     "zh": "她赶上了末班车。"
+    }
+   ],
+   "tip": "口诀：**会了很久用 could，做成一次用 managed to。**"
+  },
+  "able": {
+   "title": "be able to 来补位", "short": "补位",
+   "text": "can 只有现在和过去两种样子。说**将来、已经、想要能够**时，can 用不了，就请 **be able to** 来帮忙。",
+   "items": [
+    {
+     "rule": "将来：will be able to",
+     "en": "You[['ll be able to]] ((work)) from home next month.",
+     "zh": "下个月你就可以在家办公了。"
+    },
+    {
+     "rule": "到现在：have been able to",
+     "en": "I [[haven't been able to]] ((reach)) him all day.",
+     "zh": "我一整天都没联系上他。"
+    },
+    {
+     "rule": "跟在别的动词后面：to be able to",
+     "en": "I'd love [[to be able to]] ((play)) the piano.",
+     "zh": "我真希望自己会弹钢琴。"
+    }
+   ],
+   "wrong": {
+    "bad": "You ~~will can~~ log in tomorrow.",
+    "good": "You[['ll be able to]] ((log)) in tomorrow."
+   }
+  },
+  "permission": {
+   "title": "可以吗？可以 / 不可以", "short": "许可",
+   "text": "问「我可以……吗」：can 最随便，could 客气一点，may 最正式。说「不许」用 can't。",
+   "items": [
+    {
+     "rule": "朋友、同事之间：Can I …?",
+     "en": "[[Can]] I ((borrow)) your charger?",
+     "zh": "我可以借一下你的充电器吗？"
+    },
+    {
+     "rule": "更客气：Could I …?",
+     "en": "[[Could]] I ((ask)) you a quick question?",
+     "zh": "我能问你一个小问题吗？"
+    },
+    {
+     "rule": "很正式：May I …?",
+     "en": "[[May]] I ((come)) in?",
+     "zh": "我可以进来吗？"
+    },
+    {
+     "rule": "不许：can't",
+     "en": "You [[can't]] ((park)) here.",
+     "zh": "这里不能停车。"
+    }
+   ],
+   "notes": [
+    "回答别用 could：Yes, you [[can]]. / Of course. 不说 Yes, you could。"
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "was able to",
+     "this": {
+      "meaning": "could：过去一直都会",
+      "en": "He [[could]] ((swim)) when he was five."
+     },
+     "that": {
+      "meaning": "was able to：那一次做成了",
+      "en": "He [[was able to]] ((swim)) to the shore."
+     }
+    },
+    {
+     "with": "may",
+     "this": {
+      "meaning": "can：随口问，日常",
+      "en": "[[Can]] I ((sit)) here?"
+     },
+     "that": {
+      "meaning": "may：正式、礼貌",
+      "en": "[[May]] I ((sit)) here?"
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "She can ~~speaks~~ French.",
+     "good": "She [[can]] ((speak)) French.",
+     "why": "can 后面用原形。"
+    },
+    {
+     "bad": "I can ~~to~~ help you.",
+     "good": "I [[can]] ((help)) you.",
+     "why": "can 后面不加 to。"
+    },
+    {
+     "bad": "You ~~will can~~ see it tomorrow.",
+     "good": "You[['ll be able to]] ((see)) it tomorrow.",
+     "why": "两个情态动词不能挨着，用 be able to。"
+    },
+    {
+     "bad": "We ~~could~~ finish it on time yesterday.",
+     "good": "We [[managed to]] ((finish)) it on time yesterday.",
+     "why": "某一次做成了用 managed to / was able to。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "My sister ___ play the guitar.",
+   "options": [
+    "can",
+    "cans",
+    "can to"
+   ],
+   "answer": "can",
+   "explain": "can 谁用都一样，不加 s：[[can]]。"
+  },
+  {
+   "id": "q02",
+   "section": "now",
+   "type": "fill",
+   "prompt": "He can ___ (write) Swift.",
+   "answer": "write",
+   "accept": [],
+   "traps": [
+    {
+     "input": "writes",
+     "note": "can 后面用原形。"
+    }
+   ],
+   "explain": "can 后面用原形：can ((write))。"
+  },
+  {
+   "id": "q03",
+   "section": "now",
+   "type": "transform",
+   "prompt": "改成否定句：I can open this file.",
+   "answer": "I can't open this file.",
+   "accept": [
+    "I cannot open this file."
+   ],
+   "explain": "can 后面加 not：[[can't]]。"
+  },
+  {
+   "id": "q04",
+   "section": "now",
+   "type": "transform",
+   "prompt": "改成一般疑问句：You can see my screen.",
+   "answer": "Can you see my screen?",
+   "accept": [],
+   "explain": "把 [[Can]] 放到最前面。"
+  },
+  {
+   "id": "q05",
+   "section": "past",
+   "type": "choice",
+   "prompt": "When I was four, I ___ read.",
+   "options": [
+    "could",
+    "can",
+    "managed to"
+   ],
+   "answer": "could",
+   "explain": "小时候一直会的本事，用 [[could]]。"
+  },
+  {
+   "id": "q06",
+   "section": "past",
+   "type": "choice",
+   "prompt": "The traffic was terrible, but we ___ catch the train.",
+   "options": [
+    "could",
+    "managed to",
+    "can"
+   ],
+   "answer": "managed to",
+   "explain": "某一次终于做成，用 [[managed to]]。"
+  },
+  {
+   "id": "q07",
+   "section": "past",
+   "type": "fill",
+   "prompt": "I ___ (not / log) in yesterday. The server was down.",
+   "answer": "couldn't log",
+   "accept": [
+    "could not log",
+    "wasn't able to log",
+    "was not able to log"
+   ],
+   "explain": "过去做不到用 [[couldn't]] ((log))。"
+  },
+  {
+   "id": "q08",
+   "section": "able",
+   "type": "fill",
+   "prompt": "You ___ (be able to) work from home next month.",
+   "answer": "will be able to",
+   "accept": [
+    "'ll be able to"
+   ],
+   "traps": [
+    {
+     "input": "will can",
+     "note": "will 和 can 不能挨着。"
+    }
+   ],
+   "explain": "将来用 [[will be able to]]。"
+  },
+  {
+   "id": "q09",
+   "section": "able",
+   "type": "fix",
+   "prompt": "改错：I haven't could reach him all day.",
+   "answer": "I haven't been able to reach him all day.",
+   "accept": [
+    "I have not been able to reach him all day."
+   ],
+   "explain": "到现在用 [[haven't been able to]]。"
+  },
+  {
+   "id": "q10",
+   "section": "permission",
+   "type": "choice",
+   "prompt": "Which is the most formal way to ask?",
+   "options": [
+    "Can I come in?",
+    "May I come in?",
+    "I come in?"
+   ],
+   "answer": "May I come in?",
+   "explain": "[[May]] I …? 最正式。"
+  },
+  {
+   "id": "q11",
+   "section": "permission",
+   "type": "choice",
+   "prompt": "— Could I borrow your charger? — Yes, of course you ___.",
+   "options": [
+    "can",
+    "could",
+    "may to"
+   ],
+   "answer": "can",
+   "explain": "回答用 [[can]]，不用 could。"
+  },
+  {
+   "id": "q12",
+   "section": "permission",
+   "type": "translate",
+   "prompt": "翻译：这里不能停车。",
+   "answer": "You can't park here.",
+   "accept": [
+    "You cannot park here."
+   ],
+   "explain": "不许用 [[can't]]：You can't ((park)) here。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：She can speaks French.",
+   "answer": "She can speak French.",
+   "accept": [],
+   "explain": "can 后面用原形：can ((speak))。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I can to help you.",
+   "answer": "I can help you.",
+   "accept": [],
+   "explain": "can 后面不加 to。"
+  },
+  {
+   "id": "q15",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我今天可以早点走吗？",
+   "answer": "Can I leave early today?",
+   "accept": [
+    "Could I leave early today?",
+    "May I leave early today?"
+   ],
+   "explain": "请求许可：[[Can]] I ((leave)) …？"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话：一句说你现在会的一项本事，一句说你小时候会或不会的事（could / couldn't），一句礼貌地问同事你能不能借用某样东西。",
+  "rules": [
+   "can / could / may 后面用动词原形，不加 to，不加 s",
+   "将来或完成时说「能」用 be able to，不说 will can"
+  ],
+  "note": "规则判情态动词后的原形和 be able to 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

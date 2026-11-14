@@ -1,0 +1,572 @@
+{
+ "id": "forms-adjectives-adverbs",
+ "title": "形容词和副词",
+ "en": "Adjectives and Adverbs",
+ "group": "词形变化",
+ "order": 3,
+ "symbol": "textformat.size",
+ "summary": "比较级、最高级、怎么变成 -ly",
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "形容词说**人和东西怎么样**：a [[quick]] fix。副词说**事情怎么做**：fix it [[quick{ly}]]。要比一比，就加 -er / -est，或者在前面加 more / most。",
+   "uses": [
+    {
+     "zh": "形容词：东西怎么样",
+     "en": "It was a [[quick]] fix.",
+     "en_zh": "这是个很快的修复。"
+    },
+    {
+     "zh": "副词：事情怎么做",
+     "en": "She fixed it [[quick{ly}]].",
+     "en_zh": "她很快就把它修好了。"
+    },
+    {
+     "zh": "比较级：两个比",
+     "en": "The new build is [[fast{er}]] <<than>> the old one.",
+     "en_zh": "新构建比旧的快。"
+    },
+    {
+     "zh": "最高级：一群里最",
+     "en": "This is [[the slow{est}]] screen in the app.",
+     "en_zh": "这是 App 里最慢的页面。"
+    }
+   ],
+   "signals": [
+    "than",
+    "the …est",
+    "more",
+    "most",
+    "-ly"
+   ]
+  },
+  "compare": {
+   "title": "比较级和最高级怎么拼",
+   "short": "怎么拼",
+   "rule": "口诀：**短词加 er，长词加 more**。一个音的短词加 -er / -est；y 结尾的 easy 也加；两个音以上的长词，前面加 more / most。",
+   "rules": [
+    {
+     "ending": "大多数短词",
+     "change": "加 er / est",
+     "examples": [
+      "fast → [[fast{er}]] → [[the fast{est}]]",
+      "cheap → [[cheap{er}]] → [[the cheap{est}]]",
+      "small → [[small{er}]] → [[the small{est}]]"
+     ]
+    },
+    {
+     "ending": "e 结尾",
+     "change": "只加 r / st",
+     "examples": [
+      "safe → [[safe{r}]] → [[the safe{st}]]",
+      "late → [[late{r}]] → [[the late{st}]]",
+      "large → [[large{r}]] → [[the large{st}]]"
+     ]
+    },
+    {
+     "ending": "一个元音 + 一个辅音结尾",
+     "change": "双写最后一个字母",
+     "examples": [
+      "big → [[big{ger}]] → [[the big{gest}]]",
+      "hot → [[hot{ter}]] → [[the hot{test}]]",
+      "thin → [[thin{ner}]] → [[the thin{nest}]]"
+     ]
+    },
+    {
+     "ending": "辅音 + y 结尾",
+     "change": "y 变 i，加 er / est",
+     "examples": [
+      "eas~~y~~ → [[eas{ier}]] → [[the eas{iest}]]",
+      "bus~~y~~ → [[bus{ier}]] → [[the bus{iest}]]",
+      "earl~~y~~ → [[earl{ier}]] → [[the earl{iest}]]"
+     ]
+    },
+    {
+     "ending": "两个音以上的长词",
+     "change": "前面加 more / most",
+     "examples": [
+      "useful → [[more useful]] → [[the most useful]]",
+      "stable → [[more stable]] → [[the most stable]]",
+      "expensive → [[more expensive]] → [[the most expensive]]"
+     ]
+    },
+    {
+     "ending": "-ly 副词",
+     "change": "前面加 more / most",
+     "examples": [
+      "quickly → [[more quickly]] → [[the most quickly]]",
+      "carefully → [[more carefully]] → [[the most carefully]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "Can you make the button [[big{ger}]]?",
+     "zh": "能把按钮做大一点吗？"
+    },
+    {
+     "en": "Friday is [[the bus{iest}]] day of the week.",
+     "zh": "周五是一周里最忙的一天。"
+    },
+    {
+     "en": "The new API is [[more stable]] than the old one.",
+     "zh": "新接口比旧的更稳定。"
+    }
+   ]
+  },
+  "irregular": {
+   "title": "不规则的，要单独记",
+   "short": "不规则",
+   "rule": "下面几个不按规则变，用得最多，要背下来。good 和 well 共用一套，bad 和 badly 共用一套。",
+   "rules": [
+    {
+     "ending": "好 good / well",
+     "change": "better · best",
+     "examples": [
+      "good → [[better]] → [[the best]]",
+      "well → [[better]] → [[the best]]"
+     ]
+    },
+    {
+     "ending": "坏 bad / badly",
+     "change": "worse · worst",
+     "examples": [
+      "bad → [[worse]] → [[the worst]]",
+      "badly → [[worse]] → [[the worst]]"
+     ]
+    },
+    {
+     "ending": "远 far",
+     "change": "further · furthest",
+     "examples": [
+      "far → [[further]] → [[the furthest]]",
+      "far → [[farther]] → [[the farthest]]"
+     ]
+    },
+    {
+     "ending": "少 little",
+     "change": "less · least",
+     "examples": [
+      "little → [[less]] → [[the least]]"
+     ]
+    },
+    {
+     "ending": "多 many / much",
+     "change": "more · most",
+     "examples": [
+      "many → [[more]] → [[the most]]",
+      "much → [[more]] → [[the most]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "This build is [[better]] than yesterday's.",
+     "zh": "这个构建比昨天的好。"
+    },
+    {
+     "en": "That was [[the worst]] release we've ever had.",
+     "zh": "那是我们做过最糟的一次发布。"
+    },
+    {
+     "en": "We spent [[less]] time on testing this sprint.",
+     "zh": "这个迭代我们花在测试上的时间更少。"
+    },
+    {
+     "en": "Who wrote [[the most]] code this week?",
+     "zh": "这周谁写的代码最多？"
+    }
+   ],
+   "notes": [
+    "说「进一步」只用 further：Any [[further]] questions? 还有别的问题吗？"
+   ]
+  },
+  "to-adverb": {
+   "title": "形容词怎么变副词",
+   "short": "变副词",
+   "rule": "大多数形容词后面加 -ly 就成了副词。只有结尾是 y、le、ic、ll 的，要稍微改一下。",
+   "rules": [
+    {
+     "ending": "大多数",
+     "change": "直接加 ly",
+     "examples": [
+      "quick → [[quick{ly}]]",
+      "careful → [[careful{ly}]]",
+      "safe → [[safe{ly}]]",
+      "clear → [[clear{ly}]]"
+     ]
+    },
+    {
+     "ending": "辅音 + y 结尾",
+     "change": "y 变 i，加 ly",
+     "examples": [
+      "happ~~y~~ → [[happ{ily}]]",
+      "eas~~y~~ → [[eas{ily}]]",
+      "bus~~y~~ → [[bus{ily}]]"
+     ]
+    },
+    {
+     "ending": "辅音 + le 结尾",
+     "change": "去掉 e，加 y",
+     "examples": [
+      "gentl~~e~~ → [[gentl{y}]]",
+      "simpl~~e~~ → [[simpl{y}]]",
+      "possibl~~e~~ → [[possibl{y}]]"
+     ]
+    },
+    {
+     "ending": "ic 结尾",
+     "change": "加 ally",
+     "examples": [
+      "basic → [[basic{ally}]]",
+      "automatic → [[automatic{ally}]]",
+      "dynamic → [[dynamic{ally}]]"
+     ]
+    },
+    {
+     "ending": "ll 结尾",
+     "change": "只加 y",
+     "examples": [
+      "full → [[full{y}]]"
+     ]
+    },
+    {
+     "ending": "要单独记",
+     "change": "去掉 e 再加 ly",
+     "examples": [
+      "tru~~e~~ → [[tru{ly}]]",
+      "du~~e~~ → [[du{ly}]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "Please read the spec [[careful{ly}]].",
+     "zh": "请仔细读一下需求文档。"
+    },
+    {
+     "en": "The cell height changes [[automatic{ally}]].",
+     "zh": "单元格高度会自动变。"
+    },
+    {
+     "en": "[[Basic{ally}]], the bug is in the cache.",
+     "zh": "说白了，bug 在缓存里。"
+    },
+    {
+     "en": "She explained it [[gentl{y}]] and [[clear{ly}]].",
+     "zh": "她讲得很温和，也很清楚。"
+    }
+   ]
+  },
+  "plain-adverbs": {
+   "title": "不加 ly 的副词",
+   "short": "不加ly",
+   "rule": "有几个副词和形容词长得一样，不能加 -ly。有的加了 -ly 意思就全变了：hard 是「努力」，hardly 是「几乎不」。",
+   "items": [
+    {
+     "rule": "fast → fast，没有 fastly",
+     "en": "The app runs [[fast]] now.",
+     "zh": "这个 App 现在跑得很快。"
+    },
+    {
+     "rule": "hard = 努力、用力",
+     "en": "She works [[hard]].",
+     "zh": "她工作很努力。"
+    },
+    {
+     "rule": "hardly = 几乎不",
+     "en": "I [[hardly]] slept last night.",
+     "zh": "我昨晚几乎没睡。"
+    },
+    {
+     "rule": "good 的副词是 well",
+     "en": "You did [[well]] in the demo.",
+     "zh": "你演示做得很好。"
+    },
+    {
+     "rule": "late = 晚",
+     "en": "The meeting started [[late]].",
+     "zh": "会开始得晚了。"
+    },
+    {
+     "rule": "lately = 最近",
+     "en": "Have you talked to Tom [[lately]]?",
+     "zh": "你最近跟 Tom 聊过吗？"
+    },
+    {
+     "rule": "early → early，没有 earlily",
+     "en": "We shipped [[early]] this time.",
+     "zh": "这次我们提早发布了。"
+    }
+   ],
+   "tip": "口诀：**good 是样子，well 是做法**。The code is [[good]]. It works [[well]]."
+  },
+  "ly-adjectives": {
+   "title": "长得像副词的形容词",
+   "short": "假副词",
+   "rule": "friendly、likely 这些虽然有 -ly，其实是形容词，用来修饰人和东西。要说「怎么做」，换成 in a … way。",
+   "items": [
+    {
+     "rule": "friendly = 友好的",
+     "en": "Our new PM is very [[friendly]].",
+     "zh": "我们新来的产品经理很友好。"
+    },
+    {
+     "rule": "likely = 很可能的",
+     "en": "A delay is [[likely]].",
+     "zh": "很可能会延期。"
+    },
+    {
+     "rule": "lovely = 美好的",
+     "en": "It was a [[lovely]] day.",
+     "zh": "那天天气真好。"
+    },
+    {
+     "rule": "costly = 代价高的",
+     "en": "That bug was [[costly]].",
+     "zh": "那个 bug 损失很大。"
+    },
+    {
+     "rule": "daily = 每天的；weekly、monthly 同理",
+     "en": "We have a [[daily]] stand-up.",
+     "zh": "我们每天开站会。"
+    },
+    {
+     "rule": "要当副词：in a friendly way",
+     "en": "She answered [[in a friendly way]].",
+     "zh": "她回答得很友好。"
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "The app runs ~~fastly~~.",
+     "good": "The app runs [[fast]].",
+     "why": "fast 本身就是副词，没有 fastly。"
+    },
+    {
+     "bad": "It works ~~good~~.",
+     "good": "It works [[well]].",
+     "why": "修饰动词用 well，good 修饰东西。"
+    },
+    {
+     "bad": "Read it ~~careful~~.",
+     "good": "Read it [[careful{ly}]].",
+     "why": "修饰动词要用副词，加 -ly。"
+    },
+    {
+     "bad": "I ~~hardly~~ worked all day.",
+     "good": "I worked [[hard]] all day.",
+     "why": "hardly 是「几乎不」，努力是 hard。"
+    },
+    {
+     "bad": "She replied ~~friendly~~.",
+     "good": "She replied [[in a friendly way]].",
+     "why": "friendly 是形容词，不能直接修饰动词。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Please test it ___ before the release.",
+   "options": [
+    "careful",
+    "carefully",
+    "care"
+   ],
+   "answer": "carefully",
+   "explain": "修饰动词 test，用副词 [[careful{ly}]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "It was a ___ fix, only five minutes.",
+   "options": [
+    "quick",
+    "quickly",
+    "quickness"
+   ],
+   "answer": "quick",
+   "explain": "修饰名词 fix，用形容词 [[quick]]。"
+  },
+  {
+   "id": "q03",
+   "section": "compare",
+   "type": "fill",
+   "prompt": "big 的比较级是 ___",
+   "answer": "bigger",
+   "accept": [],
+   "traps": [
+    {
+     "input": "biger",
+     "note": "big 要双写 g。"
+    }
+   ],
+   "explain": "一个元音 + 一个辅音结尾，双写：[[big{ger}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "compare",
+   "type": "fill",
+   "prompt": "Friday is the ___ (busy) day of the week.",
+   "answer": "busiest",
+   "accept": [],
+   "traps": [
+    {
+     "input": "busyest",
+     "note": "y 要变成 i。"
+    }
+   ],
+   "explain": "辅音 + y：y 变 i 加 est，[[bus{iest}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：The new API is reliabler than the old one.",
+   "answer": "The new API is more reliable than the old one.",
+   "accept": [],
+   "explain": "reliable 是长词，用 [[more reliable]]。"
+  },
+  {
+   "id": "q06",
+   "section": "irregular",
+   "type": "choice",
+   "prompt": "bad → worse → ___",
+   "options": [
+    "the baddest",
+    "the worst",
+    "the most bad"
+   ],
+   "answer": "the worst",
+   "explain": "bad 不规则：[[worse]] → [[the worst]]。"
+  },
+  {
+   "id": "q07",
+   "section": "irregular",
+   "type": "translate",
+   "prompt": "翻译：这个构建比昨天的好。",
+   "answer": "This build is better than yesterday's.",
+   "accept": [
+    "This build is better than yesterday's build.",
+    "This build is better than yesterday's one.",
+    "This build is better than the one yesterday."
+   ],
+   "explain": "good 的比较级是 [[better]]。"
+  },
+  {
+   "id": "q08",
+   "section": "to-adverb",
+   "type": "fill",
+   "prompt": "happy 的副词是 ___",
+   "answer": "happily",
+   "accept": [],
+   "traps": [
+    {
+     "input": "happyly",
+     "note": "y 要变成 i。"
+    }
+   ],
+   "explain": "辅音 + y：y 变 i 加 ly，[[happ{ily}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "to-adverb",
+   "type": "fill",
+   "prompt": "The cell height changes ___ (automatic).",
+   "answer": "automatically",
+   "accept": [],
+   "traps": [
+    {
+     "input": "automaticly",
+     "note": "ic 结尾要加 ally。"
+    }
+   ],
+   "explain": "ic 结尾加 ally：[[automatic{ally}]]。"
+  },
+  {
+   "id": "q10",
+   "section": "to-adverb",
+   "type": "transform",
+   "prompt": "把 gentle 变成副词",
+   "answer": "gently",
+   "accept": [],
+   "traps": [
+    {
+     "input": "gentlely",
+     "note": "去掉 e 再加 y。"
+    }
+   ],
+   "explain": "le 结尾：去 e 加 y，[[gentl{y}]]。"
+  },
+  {
+   "id": "q11",
+   "section": "plain-adverbs",
+   "type": "choice",
+   "prompt": "She works really ___. She never stops.",
+   "options": [
+    "hard",
+    "hardly",
+    "hardy"
+   ],
+   "answer": "hard",
+   "explain": "努力是 [[hard]]，hardly 是「几乎不」。"
+  },
+  {
+   "id": "q12",
+   "section": "plain-adverbs",
+   "type": "fix",
+   "prompt": "改错：You did good in the demo.",
+   "answer": "You did well in the demo.",
+   "accept": [],
+   "explain": "修饰动词 did，用 [[well]]。"
+  },
+  {
+   "id": "q13",
+   "section": "plain-adverbs",
+   "type": "choice",
+   "prompt": "Have you seen Anna ___? She's been off sick.",
+   "options": [
+    "late",
+    "lately",
+    "later"
+   ],
+   "answer": "lately",
+   "explain": "「最近」是 [[lately]]。"
+  },
+  {
+   "id": "q14",
+   "section": "ly-adjectives",
+   "type": "choice",
+   "prompt": "A delay is ___ if the server isn't ready.",
+   "options": [
+    "likely",
+    "like",
+    "alike"
+   ],
+   "answer": "likely",
+   "explain": "likely 是形容词「很可能的」，放在 is 后面。"
+  },
+  {
+   "id": "q15",
+   "section": "ly-adjectives",
+   "type": "fix",
+   "prompt": "改错：The app runs fastly now.",
+   "answer": "The app runs fast now.",
+   "accept": [],
+   "explain": "fast 本身就是副词。"
+  }
+ ]
+}

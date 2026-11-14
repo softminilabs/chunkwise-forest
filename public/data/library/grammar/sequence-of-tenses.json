@@ -1,0 +1,447 @@
+{
+ "id": "g-sequence-of-tenses",
+ "title": "时态配合",
+ "en": "Sequence of Tenses",
+ "group": "时态",
+ "level": "B2",
+ "order": 12,
+ "keywords": [
+  "时态后退",
+  "将来的时间从句"
+ ],
+ "related": [
+  "g-reported-speech",
+  "g-object-clauses",
+  "g-adverbial-time-condition",
+  "g-future-forms"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "一句话里有两个动词时，它们的时态要**互相配合**。记两条：前面说了 said、thought 这类过去，后面跟着**往后退一步**；when、if 后面说将来，**不用 will**。",
+   "uses": [
+    {
+     "zh": "前面是过去，后面跟着退",
+     "en": "She <<said>> she [[was]] busy.",
+     "en_zh": "她说她很忙。"
+    },
+    {
+     "zh": "前面是过去，后面跟着退",
+     "en": "I <<thought>> you [[worked]] in London.",
+     "en_zh": "我还以为你在伦敦工作。"
+    },
+    {
+     "zh": "when 后面说将来，用现在时",
+     "en": "I'll call you <<when>> I [[get]] home.",
+     "en_zh": "我到家就给你打电话。"
+    }
+   ],
+   "signals": [
+    "said",
+    "told",
+    "thought",
+    "knew",
+    "didn't know",
+    "when",
+    "as soon as",
+    "after",
+    "before",
+    "until",
+    "if"
+   ]
+  },
+  "backshift": {
+   "title": "往后退一步", "short": "后退",
+   "text": "像搬家一样，每个时态往「过去」那边挪一格。你说话的时候，那件事已经是过去听到的了，所以跟着变旧。",
+   "rules": [
+    {
+     "ending": "一般现在时",
+     "change": "退成一般过去时",
+     "examples": [
+      "is → [[was]]",
+      "work → [[worked]]"
+     ]
+    },
+    {
+     "ending": "现在进行时",
+     "change": "退成过去进行时",
+     "examples": [
+      "is fixing → [[was fixing]]"
+     ]
+    },
+    {
+     "ending": "现在完成时 / 一般过去时",
+     "change": "退成过去完成时",
+     "examples": [
+      "has finished → [[had finished]]",
+      "left → [[had left]]"
+     ]
+    },
+    {
+     "ending": "will / can / may",
+     "change": "退成 would / could / might",
+     "examples": [
+      "will → [[would]]",
+      "can → [[could]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "Tom <<said>> the build [[was failing]].",
+     "zh": "汤姆说构建一直失败。",
+     "rule": "原话：The build is failing."
+    },
+    {
+     "en": "I <<didn't know>> you [[had left]] the company.",
+     "zh": "我不知道你已经离职了。",
+     "rule": "原来的事：You left the company."
+    },
+    {
+     "en": "She <<told>> me she [[would]] send it on Friday.",
+     "zh": "她跟我说她周五会发过来。",
+     "rule": "原话：I will send it on Friday."
+    }
+   ]
+  },
+  "noshift": {
+   "title": "什么时候不用退", "short": "不退",
+   "text": "两种情况可以不退：前面那个动词本身是**现在时**；或者说的事**到现在还是真的**。",
+   "items": [
+    {
+     "rule": "前面是现在时（says、think、know），后面照原样",
+     "en": "He <<says>> he[['s]] busy.",
+     "zh": "他说他很忙。"
+    },
+    {
+     "rule": "永远都对的事，可以不退",
+     "en": "Our teacher <<said>> the Earth [[goes]] round the Sun.",
+     "zh": "老师说地球绕着太阳转。"
+    },
+    {
+     "rule": "到现在还是这样，可以不退（退也不算错）",
+     "en": "Anna <<said>> she [[lives]] in Leeds.",
+     "zh": "安娜说她住在利兹。"
+    }
+   ],
+   "tip": "前面是过去时（said、told）又拿不准的时候，就退，退了基本不会错。"
+  },
+  "timeclause": {
+   "title": "when 后面说将来", "short": "将来",
+   "text": "when、as soon as、before、after、until、if 后面说将来的事，**用一般现在时，不用 will**。will 只放在另一半里。",
+   "formula": [
+    "When / As soon as …",
+    "一般现在时",
+    "主句用 will / 祈使句"
+   ],
+   "examples": [
+    {
+     "en": "<<As soon as>> the review [[is]] done, I'll merge it.",
+     "zh": "评审一结束我就合并。"
+    },
+    {
+     "en": "Don't leave <<until>> Sam [[arrives]].",
+     "zh": "等萨姆来了再走。"
+    },
+    {
+     "en": "<<If>> it [[rains]] at the weekend, we'll stay in.",
+     "zh": "要是周末下雨，我们就待在家里。"
+    }
+   ],
+   "wrong": {
+    "bad": "When I ~~will get~~ home, I'll call you.",
+    "good": "<<When>> I [[get]] home, I'll call you."
+   }
+  },
+  "finished": {
+   "title": "做完了再做", "short": "做完",
+   "text": "想强调「先把这件事**做完**，再做下一件」，when、after 后面用 **have done**。还是不用 will。",
+   "formula": [
+    "When / After …",
+    "have / has + 过去分词",
+    "主句用 will"
+   ],
+   "examples": [
+    {
+     "en": "<<When>> I[['ve finished]] this ticket, I'll help you.",
+     "zh": "等我做完这个工单就来帮你。"
+    },
+    {
+     "en": "You can go home <<after>> you[['ve sent]] the report.",
+     "zh": "报告发出去以后你就可以回家了。"
+    },
+    {
+     "en": "<<As soon as>> they[['ve fixed]] the bug, we'll release.",
+     "zh": "他们一修好这个 bug，我们就发版。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "问句里的 when",
+     "this": {
+      "meaning": "「等……的时候」，不用 will",
+      "en": "I'll tell you <<when>> it [[is]] ready."
+     },
+     "that": {
+      "meaning": "「什么时候？」，可以用 will",
+      "en": "<<When>> [[will]] it be ready?"
+     }
+    },
+    {
+     "with": "前面是现在时",
+     "this": {
+      "meaning": "前面过去，后面退",
+      "en": "He <<said>> he [[was]] tired."
+     },
+     "that": {
+      "meaning": "前面现在，后面不退",
+      "en": "He <<says>> he[['s]] tired."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "She said she ~~is~~ busy yesterday.",
+     "good": "She said she [[was]] busy yesterday.",
+     "why": "前面是 said，后面跟着退一步。"
+    },
+    {
+     "bad": "I'll text you when I ~~will arrive~~.",
+     "good": "I'll text you when I [[arrive]].",
+     "why": "when 后面说将来，用现在时。"
+    },
+    {
+     "bad": "He told me he ~~will~~ help.",
+     "good": "He told me he [[would]] help.",
+     "why": "will 退一步变成 would。"
+    },
+    {
+     "bad": "I didn't know you ~~have moved~~.",
+     "good": "I didn't know you [[had moved]].",
+     "why": "have done 退一步变成 had done。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I'll call you when I ___ home.",
+   "options": [
+    "get",
+    "will get",
+    "got"
+   ],
+   "answer": "get",
+   "explain": "<<when>> 后面说将来用现在时：I [[get]] home。"
+  },
+  {
+   "id": "q02",
+   "section": "backshift",
+   "type": "fill",
+   "prompt": "She said she ___ (be) tired.",
+   "answer": "was",
+   "accept": [],
+   "explain": "前面是 said，is 退一步变成 [[was]]。"
+  },
+  {
+   "id": "q03",
+   "section": "backshift",
+   "type": "transform",
+   "prompt": "改成转述：Leo said, \"I can fix it.\"",
+   "answer": "Leo said he could fix it.",
+   "accept": [
+    "Leo said that he could fix it."
+   ],
+   "traps": [
+    {
+     "input": "Leo said he can fix it.",
+     "note": "前面是 said，can 要退成 could。"
+    }
+   ],
+   "explain": "can 退一步是 [[could]]。"
+  },
+  {
+   "id": "q04",
+   "section": "backshift",
+   "type": "fill",
+   "prompt": "I didn't know you ___ (leave) the company.",
+   "answer": "had left",
+   "accept": [],
+   "explain": "离职发生在「不知道」之前，退成 [[had left]]。"
+  },
+  {
+   "id": "q05",
+   "section": "backshift",
+   "type": "choice",
+   "prompt": "Tom told me he ___ send the file the next day, but he never did.",
+   "options": [
+    "will",
+    "would",
+    "is"
+   ],
+   "answer": "would",
+   "explain": "told 是过去，will 退成 [[would]]。"
+  },
+  {
+   "id": "q06",
+   "section": "noshift",
+   "type": "choice",
+   "prompt": "He says he ___ busy right now.",
+   "options": [
+    "is",
+    "was",
+    "had been"
+   ],
+   "answer": "is",
+   "explain": "前面是 <<says>>（现在时），后面不用退：[[is]]。"
+  },
+  {
+   "id": "q07",
+   "section": "noshift",
+   "type": "choice",
+   "prompt": "Our teacher said water ___ at 100 degrees.",
+   "options": [
+    "boils",
+    "will boil",
+    "boiling"
+   ],
+   "answer": "boils",
+   "explain": "永远都对的事可以不退：[[boils]]。"
+  },
+  {
+   "id": "q08",
+   "section": "timeclause",
+   "type": "fill",
+   "prompt": "As soon as the review ___ (be) done, I'll merge it.",
+   "answer": "is",
+   "accept": [],
+   "traps": [
+    {
+     "input": "will be",
+     "note": "as soon as 后面说将来，不用 will。"
+    }
+   ],
+   "explain": "<<As soon as>> 后面用现在时：[[is]]。"
+  },
+  {
+   "id": "q09",
+   "section": "timeclause",
+   "type": "fix",
+   "prompt": "改错：Don't leave until Sam will arrive.",
+   "answer": "Don't leave until Sam arrives.",
+   "accept": [],
+   "explain": "<<until>> 后面用现在时：Sam [[arrives]]。"
+  },
+  {
+   "id": "q10",
+   "section": "timeclause",
+   "type": "fill",
+   "prompt": "If it ___ (rain) at the weekend, we'll stay in.",
+   "answer": "rains",
+   "accept": [],
+   "explain": "<<If>> 后面说将来，用现在时：it [[rains]]。"
+  },
+  {
+   "id": "q11",
+   "section": "finished",
+   "type": "fill",
+   "prompt": "When I ___ (finish) this ticket, I'll help you.",
+   "answer": "have finished",
+   "accept": [
+    "'ve finished",
+    "finish"
+   ],
+   "explain": "强调先做完，用 [[have finished]]；用 finish 也对。"
+  },
+  {
+   "id": "q12",
+   "section": "finished",
+   "type": "choice",
+   "prompt": "You can go home after you ___ the report.",
+   "options": [
+    "will send",
+    "have sent",
+    "had sent"
+   ],
+   "answer": "have sent",
+   "explain": "先做完再走，用 [[have sent]]，不用 will。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "___ will the new version be ready?",
+   "options": [
+    "When",
+    "Until",
+    "As soon as"
+   ],
+   "answer": "When",
+   "explain": "这是问「什么时候？」，问句里的 [[When]] 可以跟 will。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：She said she is busy yesterday.",
+   "answer": "She said she was busy yesterday.",
+   "accept": [],
+   "explain": "said 是过去，后面退成 [[was]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：我一到办公室就给你发消息。",
+   "answer": "I'll text you as soon as I get to the office.",
+   "accept": [
+    "I will text you as soon as I get to the office.",
+    "I'll message you as soon as I get to the office.",
+    "I will message you as soon as I get to the office.",
+    "As soon as I get to the office, I'll text you.",
+    "As soon as I get to the office, I'll message you.",
+    "I'll text you as soon as I arrive at the office.",
+    "I'll message you as soon as I arrive at the office."
+   ],
+   "traps": [
+    {
+     "input": "I'll text you as soon as I will get to the office.",
+     "note": "as soon as 后面不用 will。"
+    }
+   ],
+   "explain": "<<as soon as>> 后面用现在时：I [[get]] to the office。"
+  },
+  {
+   "id": "q16",
+   "section": "backshift",
+   "type": "translate",
+   "prompt": "翻译：我还以为你在伦敦工作。",
+   "answer": "I thought you worked in London.",
+   "accept": [
+    "I thought that you worked in London."
+   ],
+   "explain": "前面是 <<thought>>，work 退成 [[worked]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话：转述一位同事昨天说过的一句话；再用 when 或 as soon as 说一件你接下来要做的事；最后用 after … have done 说一个先后安排。",
+  "rules": [
+   "said / told / thought 后面的时态往过去退一步",
+   "when / as soon as / after / until / if 说将来时不用 will"
+  ],
+  "note": "规则判时态后退和时间从句里有没有 will（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

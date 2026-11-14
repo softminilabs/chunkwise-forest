@@ -1,0 +1,1085 @@
+{
+ "id": "ref-irregular-verbs",
+ "title": "不规则动词",
+ "columns": [
+  "原形",
+  "过去式",
+  "过去分词"
+ ],
+ "patterns": {
+  "AAA": "三个形态一样（cut · cut · cut）",
+  "AAB": "原形和过去式一样（beat · beat · beaten）",
+  "ABA": "原形和过去分词一样（come · came · come）",
+  "ABB": "过去式和过去分词一样（bring · brought · brought）",
+  "ABC": "三个都不一样（write · wrote · written）",
+  "特殊": "情态动词等"
+ },
+ "ipa": "音标不写在这里：App 从 ipa-dict（美式）和 ECDICT（英式）取，每个形态单独取",
+ "items": [
+  {
+   "base": "arise",
+   "past": "arose",
+   "pp": "arisen",
+   "zh": "出现；产生",
+   "level": "B2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "be",
+   "past": "was / were",
+   "pp": "been",
+   "zh": "是；在",
+   "level": "A1",
+   "pattern": "ABC",
+   "note": "was 用于 I / he / she / it，were 用于 you / we / they"
+  },
+  {
+   "base": "beat",
+   "past": "beat",
+   "pp": "beaten",
+   "zh": "打败；敲打",
+   "level": "B1",
+   "pattern": "AAB"
+  },
+  {
+   "base": "become",
+   "past": "became",
+   "pp": "become",
+   "zh": "变成",
+   "level": "A2",
+   "pattern": "ABA"
+  },
+  {
+   "base": "begin",
+   "past": "began",
+   "pp": "begun",
+   "zh": "开始",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "bend",
+   "past": "bent",
+   "pp": "bent",
+   "zh": "弯曲",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "bet",
+   "past": "bet",
+   "pp": "bet",
+   "zh": "打赌",
+   "level": "B1",
+   "pattern": "AAA"
+  },
+  {
+   "base": "bite",
+   "past": "bit",
+   "pp": "bitten",
+   "zh": "咬",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "blow",
+   "past": "blew",
+   "pp": "blown",
+   "zh": "吹",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "break",
+   "past": "broke",
+   "pp": "broken",
+   "zh": "打破；弄坏",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "bring",
+   "past": "brought",
+   "pp": "brought",
+   "zh": "带来",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "broadcast",
+   "past": "broadcast",
+   "pp": "broadcast",
+   "zh": "广播；播出",
+   "level": "B2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "build",
+   "past": "built",
+   "pp": "built",
+   "zh": "建造",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "burn",
+   "past": "burned",
+   "pp": "burned",
+   "zh": "燃烧；烧伤",
+   "level": "B1",
+   "pattern": "ABB",
+   "alt": {
+    "past": "burnt",
+    "pp": "burnt",
+    "note": "英式常用 burnt"
+   }
+  },
+  {
+   "base": "burst",
+   "past": "burst",
+   "pp": "burst",
+   "zh": "爆裂",
+   "level": "B2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "buy",
+   "past": "bought",
+   "pp": "bought",
+   "zh": "买",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "can",
+   "past": "could",
+   "pp": "—",
+   "zh": "能；会",
+   "level": "A1",
+   "pattern": "特殊",
+   "note": "情态动词，没有过去分词"
+  },
+  {
+   "base": "catch",
+   "past": "caught",
+   "pp": "caught",
+   "zh": "抓住；赶上",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "choose",
+   "past": "chose",
+   "pp": "chosen",
+   "zh": "选择",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "come",
+   "past": "came",
+   "pp": "come",
+   "zh": "来",
+   "level": "A1",
+   "pattern": "ABA"
+  },
+  {
+   "base": "cost",
+   "past": "cost",
+   "pp": "cost",
+   "zh": "花费",
+   "level": "A2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "cut",
+   "past": "cut",
+   "pp": "cut",
+   "zh": "切；剪；削减",
+   "level": "A2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "deal",
+   "past": "dealt",
+   "pp": "dealt",
+   "zh": "处理；交易",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "dig",
+   "past": "dug",
+   "pp": "dug",
+   "zh": "挖",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "do",
+   "past": "did",
+   "pp": "done",
+   "zh": "做",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "draw",
+   "past": "drew",
+   "pp": "drawn",
+   "zh": "画；拉",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "dream",
+   "past": "dreamed",
+   "pp": "dreamed",
+   "zh": "做梦；梦想",
+   "level": "A2",
+   "pattern": "ABB",
+   "alt": {
+    "past": "dreamt",
+    "pp": "dreamt",
+    "note": "英式常用 dreamt"
+   }
+  },
+  {
+   "base": "drink",
+   "past": "drank",
+   "pp": "drunk",
+   "zh": "喝",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "drive",
+   "past": "drove",
+   "pp": "driven",
+   "zh": "驾驶",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "eat",
+   "past": "ate",
+   "pp": "eaten",
+   "zh": "吃",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "fall",
+   "past": "fell",
+   "pp": "fallen",
+   "zh": "落下；摔倒",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "feed",
+   "past": "fed",
+   "pp": "fed",
+   "zh": "喂养",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "feel",
+   "past": "felt",
+   "pp": "felt",
+   "zh": "感觉",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "fight",
+   "past": "fought",
+   "pp": "fought",
+   "zh": "打架；争取",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "find",
+   "past": "found",
+   "pp": "found",
+   "zh": "找到；发现",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "flee",
+   "past": "fled",
+   "pp": "fled",
+   "zh": "逃离",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "fly",
+   "past": "flew",
+   "pp": "flown",
+   "zh": "飞",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "forbid",
+   "past": "forbade",
+   "pp": "forbidden",
+   "zh": "禁止",
+   "level": "B2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "forecast",
+   "past": "forecast",
+   "pp": "forecast",
+   "zh": "预测",
+   "level": "B2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "forget",
+   "past": "forgot",
+   "pp": "forgotten",
+   "zh": "忘记",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "forgive",
+   "past": "forgave",
+   "pp": "forgiven",
+   "zh": "原谅",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "freeze",
+   "past": "froze",
+   "pp": "frozen",
+   "zh": "冻结；（程序）卡死",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "get",
+   "past": "got",
+   "pp": "got",
+   "zh": "得到；变得",
+   "level": "A1",
+   "pattern": "ABB",
+   "alt": {
+    "pp": "gotten",
+    "note": "美式过去分词常用 gotten"
+   }
+  },
+  {
+   "base": "give",
+   "past": "gave",
+   "pp": "given",
+   "zh": "给",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "go",
+   "past": "went",
+   "pp": "gone",
+   "zh": "去",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "grow",
+   "past": "grew",
+   "pp": "grown",
+   "zh": "生长；增长",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "hang",
+   "past": "hung",
+   "pp": "hung",
+   "zh": "挂",
+   "level": "B1",
+   "pattern": "ABB",
+   "alt": {
+    "past": "hanged",
+    "pp": "hanged",
+    "note": "「绞死」的意思用 hanged"
+   }
+  },
+  {
+   "base": "have",
+   "past": "had",
+   "pp": "had",
+   "zh": "有；吃",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "hear",
+   "past": "heard",
+   "pp": "heard",
+   "zh": "听见",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "hide",
+   "past": "hid",
+   "pp": "hidden",
+   "zh": "藏；隐藏",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "hit",
+   "past": "hit",
+   "pp": "hit",
+   "zh": "打；撞",
+   "level": "A2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "hold",
+   "past": "held",
+   "pp": "held",
+   "zh": "拿着；举行",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "hurt",
+   "past": "hurt",
+   "pp": "hurt",
+   "zh": "伤害；疼",
+   "level": "A2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "keep",
+   "past": "kept",
+   "pp": "kept",
+   "zh": "保持；留着",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "know",
+   "past": "knew",
+   "pp": "known",
+   "zh": "知道；认识",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "lay",
+   "past": "laid",
+   "pp": "laid",
+   "zh": "放置",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "lead",
+   "past": "led",
+   "pp": "led",
+   "zh": "带领；导致",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "learn",
+   "past": "learned",
+   "pp": "learned",
+   "zh": "学习",
+   "level": "A1",
+   "pattern": "ABB",
+   "alt": {
+    "past": "learnt",
+    "pp": "learnt",
+    "note": "英式常用 learnt"
+   }
+  },
+  {
+   "base": "leave",
+   "past": "left",
+   "pp": "left",
+   "zh": "离开；留下",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "lend",
+   "past": "lent",
+   "pp": "lent",
+   "zh": "借给",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "let",
+   "past": "let",
+   "pp": "let",
+   "zh": "让",
+   "level": "A2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "lie",
+   "past": "lay",
+   "pp": "lain",
+   "zh": "躺",
+   "level": "B1",
+   "pattern": "ABC",
+   "alt": {
+    "past": "lied",
+    "pp": "lied",
+    "note": "lie 当「说谎」讲是规则变化：lied"
+   }
+  },
+  {
+   "base": "light",
+   "past": "lit",
+   "pp": "lit",
+   "zh": "点燃；照亮",
+   "level": "B1",
+   "pattern": "ABB",
+   "alt": {
+    "past": "lighted",
+    "pp": "lighted",
+    "note": "也说 lighted"
+   }
+  },
+  {
+   "base": "lose",
+   "past": "lost",
+   "pp": "lost",
+   "zh": "丢失；输掉",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "make",
+   "past": "made",
+   "pp": "made",
+   "zh": "做；制造",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "mean",
+   "past": "meant",
+   "pp": "meant",
+   "zh": "意思是",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "meet",
+   "past": "met",
+   "pp": "met",
+   "zh": "遇见；见面",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "mistake",
+   "past": "mistook",
+   "pp": "mistaken",
+   "zh": "弄错",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "overcome",
+   "past": "overcame",
+   "pp": "overcome",
+   "zh": "克服",
+   "level": "B2",
+   "pattern": "ABA"
+  },
+  {
+   "base": "pay",
+   "past": "paid",
+   "pp": "paid",
+   "zh": "付钱",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "put",
+   "past": "put",
+   "pp": "put",
+   "zh": "放",
+   "level": "A1",
+   "pattern": "AAA"
+  },
+  {
+   "base": "quit",
+   "past": "quit",
+   "pp": "quit",
+   "zh": "放弃；辞职",
+   "level": "B1",
+   "pattern": "AAA"
+  },
+  {
+   "base": "read",
+   "past": "read",
+   "pp": "read",
+   "zh": "读",
+   "level": "A1",
+   "pattern": "AAA",
+   "note": "拼写不变，读音变：read /riːd/ → read /red/"
+  },
+  {
+   "base": "ride",
+   "past": "rode",
+   "pp": "ridden",
+   "zh": "骑；乘",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "ring",
+   "past": "rang",
+   "pp": "rung",
+   "zh": "打电话；响",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "rise",
+   "past": "rose",
+   "pp": "risen",
+   "zh": "上升",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "run",
+   "past": "ran",
+   "pp": "run",
+   "zh": "跑；运行",
+   "level": "A1",
+   "pattern": "ABA"
+  },
+  {
+   "base": "say",
+   "past": "said",
+   "pp": "said",
+   "zh": "说",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "see",
+   "past": "saw",
+   "pp": "seen",
+   "zh": "看见",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "seek",
+   "past": "sought",
+   "pp": "sought",
+   "zh": "寻求",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "sell",
+   "past": "sold",
+   "pp": "sold",
+   "zh": "卖",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "send",
+   "past": "sent",
+   "pp": "sent",
+   "zh": "发送",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "set",
+   "past": "set",
+   "pp": "set",
+   "zh": "设置；放",
+   "level": "B1",
+   "pattern": "AAA"
+  },
+  {
+   "base": "shake",
+   "past": "shook",
+   "pp": "shaken",
+   "zh": "摇动；握（手）",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "shine",
+   "past": "shone",
+   "pp": "shone",
+   "zh": "照耀",
+   "level": "B1",
+   "pattern": "ABB",
+   "alt": {
+    "past": "shined",
+    "pp": "shined",
+    "note": "「擦亮」的意思用 shined"
+   }
+  },
+  {
+   "base": "shoot",
+   "past": "shot",
+   "pp": "shot",
+   "zh": "射击；拍摄",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "show",
+   "past": "showed",
+   "pp": "shown",
+   "zh": "展示",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "shrink",
+   "past": "shrank",
+   "pp": "shrunk",
+   "zh": "缩小",
+   "level": "B2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "shut",
+   "past": "shut",
+   "pp": "shut",
+   "zh": "关上",
+   "level": "A2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "sing",
+   "past": "sang",
+   "pp": "sung",
+   "zh": "唱",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "sink",
+   "past": "sank",
+   "pp": "sunk",
+   "zh": "下沉",
+   "level": "B2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "sit",
+   "past": "sat",
+   "pp": "sat",
+   "zh": "坐",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "sleep",
+   "past": "slept",
+   "pp": "slept",
+   "zh": "睡觉",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "slide",
+   "past": "slid",
+   "pp": "slid",
+   "zh": "滑动",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "smell",
+   "past": "smelled",
+   "pp": "smelled",
+   "zh": "闻；有…气味",
+   "level": "A2",
+   "pattern": "ABB",
+   "alt": {
+    "past": "smelt",
+    "pp": "smelt",
+    "note": "英式常用 smelt"
+   }
+  },
+  {
+   "base": "speak",
+   "past": "spoke",
+   "pp": "spoken",
+   "zh": "说（语言）；讲话",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "spell",
+   "past": "spelled",
+   "pp": "spelled",
+   "zh": "拼写",
+   "level": "A1",
+   "pattern": "ABB",
+   "alt": {
+    "past": "spelt",
+    "pp": "spelt",
+    "note": "英式常用 spelt"
+   }
+  },
+  {
+   "base": "spend",
+   "past": "spent",
+   "pp": "spent",
+   "zh": "花（时间、钱）",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "spill",
+   "past": "spilled",
+   "pp": "spilled",
+   "zh": "洒出",
+   "level": "B1",
+   "pattern": "ABB",
+   "alt": {
+    "past": "spilt",
+    "pp": "spilt",
+    "note": "英式常用 spilt"
+   }
+  },
+  {
+   "base": "spin",
+   "past": "spun",
+   "pp": "spun",
+   "zh": "旋转",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "split",
+   "past": "split",
+   "pp": "split",
+   "zh": "分开；拆分",
+   "level": "B2",
+   "pattern": "AAA"
+  },
+  {
+   "base": "spread",
+   "past": "spread",
+   "pp": "spread",
+   "zh": "传播；展开",
+   "level": "B1",
+   "pattern": "AAA"
+  },
+  {
+   "base": "stand",
+   "past": "stood",
+   "pp": "stood",
+   "zh": "站；忍受",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "steal",
+   "past": "stole",
+   "pp": "stolen",
+   "zh": "偷",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "stick",
+   "past": "stuck",
+   "pp": "stuck",
+   "zh": "粘住；卡住",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "sting",
+   "past": "stung",
+   "pp": "stung",
+   "zh": "刺；蜇",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "strike",
+   "past": "struck",
+   "pp": "struck",
+   "zh": "打击；罢工",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "swear",
+   "past": "swore",
+   "pp": "sworn",
+   "zh": "发誓；骂人",
+   "level": "B2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "sweep",
+   "past": "swept",
+   "pp": "swept",
+   "zh": "扫",
+   "level": "B1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "swim",
+   "past": "swam",
+   "pp": "swum",
+   "zh": "游泳",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "swing",
+   "past": "swung",
+   "pp": "swung",
+   "zh": "摆动",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "take",
+   "past": "took",
+   "pp": "taken",
+   "zh": "拿；花费；乘坐",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "teach",
+   "past": "taught",
+   "pp": "taught",
+   "zh": "教",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "tear",
+   "past": "tore",
+   "pp": "torn",
+   "zh": "撕",
+   "level": "B1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "tell",
+   "past": "told",
+   "pp": "told",
+   "zh": "告诉",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "think",
+   "past": "thought",
+   "pp": "thought",
+   "zh": "想；认为",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "throw",
+   "past": "threw",
+   "pp": "thrown",
+   "zh": "扔",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "understand",
+   "past": "understood",
+   "pp": "understood",
+   "zh": "理解",
+   "level": "A1",
+   "pattern": "ABB"
+  },
+  {
+   "base": "upset",
+   "past": "upset",
+   "pp": "upset",
+   "zh": "使不安；打乱",
+   "level": "B1",
+   "pattern": "AAA"
+  },
+  {
+   "base": "wake",
+   "past": "woke",
+   "pp": "woken",
+   "zh": "醒；叫醒",
+   "level": "A2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "wear",
+   "past": "wore",
+   "pp": "worn",
+   "zh": "穿；戴",
+   "level": "A1",
+   "pattern": "ABC"
+  },
+  {
+   "base": "weep",
+   "past": "wept",
+   "pp": "wept",
+   "zh": "哭泣",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "win",
+   "past": "won",
+   "pp": "won",
+   "zh": "赢",
+   "level": "A2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "wind",
+   "past": "wound",
+   "pp": "wound",
+   "zh": "缠绕；（路）蜿蜒",
+   "level": "B2",
+   "pattern": "ABB"
+  },
+  {
+   "base": "withdraw",
+   "past": "withdrew",
+   "pp": "withdrawn",
+   "zh": "撤回；取（钱）",
+   "level": "B2",
+   "pattern": "ABC"
+  },
+  {
+   "base": "write",
+   "past": "wrote",
+   "pp": "written",
+   "zh": "写",
+   "level": "A1",
+   "pattern": "ABC"
+  }
+ ]
+}

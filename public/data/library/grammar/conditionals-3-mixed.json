@@ -1,0 +1,411 @@
+{
+ "id": "g-conditionals-3-mixed",
+ "title": "条件句：第三与混合",
+ "en": "Third and Mixed Conditionals",
+ "group": "句子",
+ "level": "B2",
+ "order": 34,
+ "keywords": [
+  "第三条件句",
+  "混合条件句"
+ ],
+ "related": [
+  "g-conditionals-012",
+  "g-wish",
+  "g-modals-deduction"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "第三条件句说**过去没发生的事**：「当时要是……就会……」，常用来后悔或庆幸。混合条件句把过去和现在连起来：「当时要是……**现在**就……」。",
+   "uses": [
+    {
+     "zh": "后悔：当时没做",
+     "en": "If I [[had tested]] it, I [[would have found]] the bug.",
+     "en_zh": "我当时要是测一下，就能发现这个 bug 了。"
+    },
+    {
+     "zh": "庆幸：幸好没发生",
+     "en": "If we [[hadn't left]] early, we [[would have missed]] the train.",
+     "en_zh": "我们要是没早点出发，就赶不上火车了。"
+    },
+    {
+     "zh": "混合：过去的事影响现在",
+     "en": "If I [[had taken]] that job, I [[would be]] in London now.",
+     "en_zh": "我当时要是接了那份工作，现在就在伦敦了。"
+    }
+   ],
+   "signals": [
+    "if",
+    "had done",
+    "would have",
+    "could have",
+    "might have"
+   ]
+  },
+  "third": {
+   "title": "第三条件句：当时要是……",
+   "short": "第三",
+   "formula": [
+    "If + had + 过去分词",
+    "would have + 过去分词"
+   ],
+   "rule": "两半说的都是**过去**，而且**都没真的发生**。if 那半用 had done，另一半用 would have done。",
+   "examples": [
+    {
+     "en": "If you [[had told]] me, I [[would have helped]].",
+     "zh": "你当时要是告诉我，我就帮你了。"
+    },
+    {
+     "en": "If it [[hadn't rained]], we [[would have gone]] to the beach.",
+     "zh": "要不是下雨，我们就去海边了。"
+    },
+    {
+     "en": "If I [[had known]] about the meeting, I [[would have come]].",
+     "zh": "我要是知道有这个会，我就来了。"
+    }
+   ],
+   "wrong": {
+    "bad": "If I ~~would have known~~, I'd have come.",
+    "good": "If I [[had known]], I'd have come."
+   }
+  },
+  "speak": {
+   "title": "口语里怎么说",
+   "short": "口语",
+   "rule": "说话时会缩得很短，两个 'd 意思不一样：**if 后面的 'd 是 had，另一半的 'd 是 would。**",
+   "examples": [
+    {
+     "rule": "第一个 'd = had，第二个 'd = would",
+     "en": "If I[['d]] known, I[['d]] have come.",
+     "zh": "我要是知道，就来了。"
+    },
+    {
+     "rule": "would have 读起来像 would've",
+     "en": "I [[would've]] called you.",
+     "zh": "我本来会给你打电话的。"
+    }
+   ],
+   "contractions": [
+    "I had = [[I'd]]",
+    "I would = [[I'd]]",
+    "would have = [[would've]]",
+    "would not have = [[wouldn't have]]"
+   ],
+   "notes": [
+    "would've 听起来像 would of，但**写的时候一定是 would have**。"
+   ]
+  },
+  "modals": {
+   "title": "could have 和 might have",
+   "short": "换词",
+   "items": [
+    {
+     "rule": "**could have** = 本来能够",
+     "en": "If you'd asked, I [[could have]] helped.",
+     "zh": "你当时要是问一句，我本来能帮上忙的。"
+    },
+    {
+     "rule": "**might have** = 说不定会",
+     "en": "If we'd tested more, we [[might have]] caught it.",
+     "zh": "我们当时多测一些，说不定就发现了。"
+    },
+    {
+     "rule": "**wouldn't have** = 本来不会",
+     "en": "If she hadn't reminded me, I [[wouldn't have]] remembered.",
+     "zh": "要不是她提醒我，我就忘了。"
+    }
+   ]
+  },
+  "mixed": {
+   "title": "混合条件句：过去和现在连起来",
+   "short": "混合",
+   "rule": "过去的事影响**现在**：If + had done，另一半用 would + 动词原形。现在的情况影响**过去**：If + 过去时，另一半用 would have done。",
+   "items": [
+    {
+     "rule": "过去 → 现在",
+     "en": "If I [[had taken]] that job, I [[would be]] in London <<now>>.",
+     "zh": "我当时要是接了那份工作，现在就在伦敦了。"
+    },
+    {
+     "rule": "过去 → 现在",
+     "en": "If I [[hadn't stayed]] up so late, I [[wouldn't be]] so tired <<today>>.",
+     "zh": "我昨晚要是没熬那么晚，今天就不会这么累。"
+    },
+    {
+     "rule": "现在 → 过去：我一直都害羞",
+     "en": "If I [[weren't]] so shy, I [[would have spoken]] up in the meeting.",
+     "zh": "我要不是这么害羞，会上就发言了。"
+    }
+   ],
+   "tip": "先问自己：「原因」是过去还是现在？「结果」是过去还是现在？各用各的。"
+  },
+  "compare": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "第二条件句",
+     "this": {
+      "meaning": "第三：当时没时间（过去）",
+      "en": "If I [[had had]] time, I[['d have helped]] you."
+     },
+     "that": {
+      "meaning": "第二：现在没时间",
+      "en": "If I [[had]] time, I[['d help]] you."
+     }
+    },
+    {
+     "with": "混合条件句",
+     "this": {
+      "meaning": "第三：结果也在过去",
+      "en": "If I'd slept, I [[would have felt]] better yesterday."
+     },
+     "that": {
+      "meaning": "混合：结果在现在",
+      "en": "If I'd slept, I [[would feel]] better <<now>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "If I ~~would have known~~, I'd have come.",
+     "good": "If I [[had known]], I'd have come.",
+     "why": "if 那半句用 had done。"
+    },
+    {
+     "bad": "I would ~~of~~ helped you.",
+     "good": "I would [[have]] helped you.",
+     "why": "写出来是 would have。"
+    },
+    {
+     "bad": "If you had ~~came~~ earlier, you'd have met her.",
+     "good": "If you had [[come]] earlier, you'd have met her.",
+     "why": "had 后面用过去分词 come。"
+    },
+    {
+     "bad": "If I ~~knew~~ yesterday, I'd have told you.",
+     "good": "If I [[had known]] yesterday, I'd have told you.",
+     "why": "过去没发生的事，用 had known。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我当时要是测一下，就能发现这个 bug 了。",
+   "answer": "If I had tested it, I would have found the bug.",
+   "accept": [
+    "If I'd tested it, I'd have found the bug.",
+    "If I had tested it, I'd have found the bug.",
+    "If I'd tested it, I would have found the bug.",
+    "If I had tested it, I could have found the bug."
+   ],
+   "explain": "过去没发生：If + [[had tested]]，另一半 [[would have found]]。"
+  },
+  {
+   "id": "q02",
+   "section": "third",
+   "type": "fill",
+   "prompt": "If you ___ (tell) me, I would have helped.",
+   "answer": "had told",
+   "accept": [
+    "'d told"
+   ],
+   "traps": [
+    {
+     "input": "would have told",
+     "note": "if 那半句不用 would，用 had told。"
+    }
+   ],
+   "explain": "if 那半用 [[had told]]。"
+  },
+  {
+   "id": "q03",
+   "section": "third",
+   "type": "fill",
+   "prompt": "If it hadn't rained, we ___ (go) to the beach.",
+   "answer": "would have gone",
+   "accept": [
+    "'d have gone",
+    "would've gone"
+   ],
+   "traps": [
+    {
+     "input": "would have went",
+     "note": "have 后面用过去分词 gone。"
+    }
+   ],
+   "explain": "另一半用 [[would have gone]]。"
+  },
+  {
+   "id": "q04",
+   "section": "third",
+   "type": "transform",
+   "prompt": "改成第三条件句：I didn't know about the meeting, so I didn't come.",
+   "answer": "If I had known about the meeting, I would have come.",
+   "accept": [
+    "If I'd known about the meeting, I'd have come.",
+    "If I had known about the meeting, I'd have come.",
+    "If I'd known about the meeting, I would have come."
+   ],
+   "explain": "事实反过来说：If I [[had known]] …, I [[would have come]]。"
+  },
+  {
+   "id": "q05",
+   "section": "speak",
+   "type": "choice",
+   "prompt": "If I'd known, I'd have come. 第一个 'd 是：",
+   "options": [
+    "had",
+    "would",
+    "did"
+   ],
+   "answer": "had",
+   "explain": "if 后面的 'd 是 [[had]]。"
+  },
+  {
+   "id": "q06",
+   "section": "speak",
+   "type": "fix",
+   "prompt": "改错：I would of helped you.",
+   "answer": "I would have helped you.",
+   "accept": [
+    "I'd have helped you.",
+    "I would've helped you."
+   ],
+   "explain": "写出来是 would [[have]]。"
+  },
+  {
+   "id": "q07",
+   "section": "modals",
+   "type": "choice",
+   "prompt": "If you'd asked, I ___ helped.（本来能够）",
+   "options": [
+    "could have",
+    "can have",
+    "could",
+    "would"
+   ],
+   "answer": "could have",
+   "explain": "本来能够 = [[could have]]。"
+  },
+  {
+   "id": "q08",
+   "section": "modals",
+   "type": "fill",
+   "prompt": "If we'd tested more, we ___ ___ caught it.（说不定会）",
+   "answer": "might have",
+   "accept": [],
+   "explain": "说不定会 = [[might have]]。"
+  },
+  {
+   "id": "q09",
+   "section": "mixed",
+   "type": "choice",
+   "prompt": "If I had taken that job, I ___ in London now.",
+   "options": [
+    "would be",
+    "would have been",
+    "will be"
+   ],
+   "answer": "would be",
+   "explain": "原因在过去，结果在现在（<<now>>）→ [[would be]]。"
+  },
+  {
+   "id": "q10",
+   "section": "mixed",
+   "type": "fill",
+   "prompt": "If I hadn't stayed up so late, I ___ (not be) so tired today.",
+   "answer": "wouldn't be",
+   "accept": [
+    "would not be"
+   ],
+   "explain": "结果在今天 → [[wouldn't be]]。"
+  },
+  {
+   "id": "q11",
+   "section": "mixed",
+   "type": "transform",
+   "prompt": "用混合条件句改写：I didn't learn French at school, so I can't speak it now.",
+   "answer": "If I had learnt French at school, I could speak it now.",
+   "accept": [
+    "If I had learned French at school, I could speak it now.",
+    "If I'd learnt French at school, I could speak it now.",
+    "If I'd learned French at school, I could speak it now.",
+    "If I had learnt French at school, I would be able to speak it now.",
+    "If I had learned French at school, I would be able to speak it now."
+   ],
+   "explain": "过去 → 现在：If + [[had learnt]]，另一半 [[could]] + 原形。"
+  },
+  {
+   "id": "q12",
+   "section": "compare",
+   "type": "choice",
+   "prompt": "当时没时间：If I ___ time, I'd have helped you.",
+   "options": [
+    "had",
+    "had had",
+    "would have"
+   ],
+   "answer": "had had",
+   "explain": "过去的事 → had + 过去分词：[[had had]]。"
+  },
+  {
+   "id": "q13",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：If you had came earlier, you'd have met her.",
+   "answer": "If you had come earlier, you'd have met her.",
+   "accept": [
+    "If you had come earlier, you would have met her.",
+    "If you'd come earlier, you'd have met her.",
+    "If you'd come earlier, you would have met her."
+   ],
+   "explain": "had 后面用过去分词 [[come]]。"
+  },
+  {
+   "id": "q14",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：If I knew yesterday, I'd have told you.",
+   "answer": "If I had known yesterday, I'd have told you.",
+   "accept": [
+    "If I had known yesterday, I would have told you.",
+    "If I'd known yesterday, I'd have told you."
+   ],
+   "explain": "过去没发生的事：If I [[had known]]。"
+  },
+  {
+   "id": "q15",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：If I would have known, I'd have come.",
+   "answer": "If I had known, I'd have come.",
+   "accept": [
+    "If I had known, I would have come.",
+    "If I'd known, I'd have come."
+   ],
+   "explain": "if 那半句用 [[had known]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "回想一次工作或生活里的小失误，用 3 句话说：当时要是……就会……；再用一句混合条件句说它对现在的影响。",
+  "rules": [
+   "第三条件句：If + had done，另一半 would have done",
+   "if 那半句不用 would；写 would have，不写 would of"
+  ],
+  "note": "规则判 had done / would have done 搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

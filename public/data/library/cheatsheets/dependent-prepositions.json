@@ -1,0 +1,731 @@
+{
+ "id": "cheat-dependent-prepositions",
+ "title": "固定介词搭配",
+ "en": "Dependent Prepositions",
+ "group": "速查表",
+ "order": 4,
+ "symbol": "link",
+ "summary": "depend on、interested in 等常用搭配",
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "很多词后面跟哪个介词是固定的，没道理可讲，只能整块记。按「词 + 介词」查，点句子听，连同介词一起读顺口。"
+  },
+  "verbOnIn": {
+   "title": "动词 + on / in / at",
+   "short": "动词1",
+   "rule": "**on** 常和「依靠、专注、针对」有关；**in** 常和「在某个领域里、结果是」有关；**at** 常和「看向、到达某一点」有关。",
+   "items": [
+    {
+     "en": "It [[depends on]] the budget.",
+     "zh": "这要看预算。",
+     "rule": "depend on · 取决于"
+    },
+    {
+     "en": "We [[rely on]] this library a lot.",
+     "zh": "我们很依赖这个库。",
+     "rule": "rely on · 依赖"
+    },
+    {
+     "en": "Let's [[focus on]] the crash first.",
+     "zh": "先集中处理闪退。",
+     "rule": "focus on · 专注于"
+    },
+    {
+     "en": "I'm [[working on]] the login page.",
+     "zh": "我在做登录页。",
+     "rule": "work on · 在做（某事）"
+    },
+    {
+     "en": "Can you [[comment on]] my design?",
+     "zh": "你能对我的设计提点意见吗？",
+     "rule": "comment on · 评论"
+    },
+    {
+     "en": "We need to [[agree on]] a date.",
+     "zh": "我们得商定一个日期。",
+     "rule": "agree on · 就（某事）达成一致"
+    },
+    {
+     "en": "Have you [[decided on]] a name yet?",
+     "zh": "名字定了吗？",
+     "rule": "decide on · 选定"
+    },
+    {
+     "en": "You can [[count on]] me.",
+     "zh": "你可以指望我。",
+     "rule": "count on · 指望"
+    },
+    {
+     "en": "He [[insisted on]] testing it again.",
+     "zh": "他坚持要再测一遍。",
+     "rule": "insist on + doing · 坚持"
+    },
+    {
+     "en": "She [[specialises in]] accessibility.",
+     "zh": "她专门做无障碍。",
+     "rule": "specialise in · 专攻"
+    },
+    {
+     "en": "The change [[resulted in]] fewer crashes.",
+     "zh": "这次改动让闪退少了。",
+     "rule": "result in · 导致（结果）"
+    },
+    {
+     "en": "We [[believe in]] shipping small updates.",
+     "zh": "我们相信小步发布是对的。",
+     "rule": "believe in · 相信（某种做法）"
+    },
+    {
+     "en": "The company is [[investing in]] AI.",
+     "zh": "公司在投资人工智能。",
+     "rule": "invest in · 投资于"
+    },
+    {
+     "en": "Everyone should [[take part in]] the review.",
+     "zh": "每个人都应该参加评审。",
+     "rule": "take part in · 参加"
+    },
+    {
+     "en": "Can you [[look at]] this error?",
+     "zh": "你能看看这个报错吗？",
+     "rule": "look at · 看"
+    },
+    {
+     "en": "We [[arrived at]] the same answer.",
+     "zh": "我们得出了同样的答案。",
+     "rule": "arrive at · 得出（结论）；到达（地点）"
+    }
+   ]
+  },
+  "verbForTo": {
+   "title": "动词 + for / to",
+   "short": "动词2",
+   "rule": "**for** 常和「为了、换取、等待」有关；**to** 常和「朝向某人、回应」有关。",
+   "items": [
+    {
+     "en": "I'm [[waiting for]] the build.",
+     "zh": "我在等构建。",
+     "rule": "wait for · 等"
+    },
+    {
+     "en": "She [[applied for]] the iOS role.",
+     "zh": "她申请了 iOS 的岗位。",
+     "rule": "apply for · 申请"
+    },
+    {
+     "en": "Don't be afraid to [[ask for]] help.",
+     "zh": "别怕找人帮忙。",
+     "rule": "ask for · 请求、要"
+    },
+    {
+     "en": "Who's [[paying for]] the licence?",
+     "zh": "授权费谁来出？",
+     "rule": "pay for · 付……的钱"
+    },
+    {
+     "en": "I'm [[looking for]] the old version.",
+     "zh": "我在找旧版本。",
+     "rule": "look for · 找"
+    },
+    {
+     "en": "I [[apologise for]] the delay.",
+     "zh": "抱歉耽误了。",
+     "rule": "apologise for · 为……道歉"
+    },
+    {
+     "en": "We need to [[prepare for]] the release.",
+     "zh": "我们得为发版做准备。",
+     "rule": "prepare for · 为……做准备"
+    },
+    {
+     "en": "I'd like to [[thank]] Tom [[for]] his help.",
+     "zh": "我想谢谢汤姆的帮忙。",
+     "rule": "thank someone for · 为……感谢某人"
+    },
+    {
+     "en": "Please [[listen to]] the recording.",
+     "zh": "请听一下录音。",
+     "rule": "listen to · 听"
+    },
+    {
+     "en": "I'll [[reply to]] your email today.",
+     "zh": "我今天回你邮件。",
+     "rule": "reply to · 回复"
+    },
+    {
+     "en": "How should we [[respond to]] the client?",
+     "zh": "我们该怎么回应客户？",
+     "rule": "respond to · 回应"
+    },
+    {
+     "en": "This file [[belongs to]] the old project.",
+     "zh": "这个文件是旧项目的。",
+     "rule": "belong to · 属于"
+    },
+    {
+     "en": "I'll [[talk to]] the designer.",
+     "zh": "我去跟设计师聊聊。",
+     "rule": "talk to · 跟……说"
+    },
+    {
+     "en": "Can you [[explain]] it [[to]] me?",
+     "zh": "你能给我讲讲吗？",
+     "rule": "explain something to someone · 向某人解释"
+    },
+    {
+     "en": "Which ticket are you [[referring to]]?",
+     "zh": "你说的是哪张工单？",
+     "rule": "refer to · 指的是"
+    },
+    {
+     "en": "She [[contributed to]] the open-source project.",
+     "zh": "她给那个开源项目贡献过代码。",
+     "rule": "contribute to · 为……出力"
+    },
+    {
+     "en": "Small bugs can [[lead to]] big problems.",
+     "zh": "小 bug 可能引出大问题。",
+     "rule": "lead to · 导致"
+    }
+   ]
+  },
+  "verbOther": {
+   "title": "动词 + about / with / of / from",
+   "short": "动词3",
+   "rule": "**about** 是「关于」；**with** 是「和、处理」；**of** 多半表示「想到、组成」；**from** 是「来自、和……不同」。",
+   "items": [
+    {
+     "en": "I'll [[think about]] it.",
+     "zh": "我考虑一下。",
+     "rule": "think about · 考虑"
+    },
+    {
+     "en": "Let's [[talk about]] the timeline.",
+     "zh": "我们聊聊时间安排。",
+     "rule": "talk about · 谈论"
+    },
+    {
+     "en": "Users [[complained about]] the new layout.",
+     "zh": "用户抱怨新布局。",
+     "rule": "complain about · 抱怨"
+    },
+    {
+     "en": "Don't [[worry about]] the tests.",
+     "zh": "测试的事别担心。",
+     "rule": "worry about · 担心"
+    },
+    {
+     "en": "We really [[care about]] performance.",
+     "zh": "我们很在意性能。",
+     "rule": "care about · 在乎"
+    },
+    {
+     "en": "Have you [[heard about]] the reorganisation?",
+     "zh": "你听说重组的事了吗？",
+     "rule": "hear about · 听说（某事的细节）"
+    },
+    {
+     "en": "I'll [[deal with]] it tomorrow.",
+     "zh": "我明天处理。",
+     "rule": "deal with · 处理"
+    },
+    {
+     "en": "I [[agree with]] Sarah.",
+     "zh": "我同意萨拉的看法。",
+     "rule": "agree with + 人 / 观点 · 同意"
+    },
+    {
+     "en": "Can you [[help]] me [[with]] this bug?",
+     "zh": "你能帮我看看这个 bug 吗？",
+     "rule": "help someone with · 帮某人做"
+    },
+    {
+     "en": "How do you [[cope with]] so many meetings?",
+     "zh": "这么多会你是怎么扛过来的？",
+     "rule": "cope with · 应付"
+    },
+    {
+     "en": "I [[work with]] two designers.",
+     "zh": "我和两个设计师一起工作。",
+     "rule": "work with · 和……一起工作"
+    },
+    {
+     "en": "Can you [[think of]] a better name?",
+     "zh": "你能想个更好的名字吗？",
+     "rule": "think of · 想出"
+    },
+    {
+     "en": "The team [[consists of]] five people.",
+     "zh": "团队由五个人组成。",
+     "rule": "consist of · 由……组成"
+    },
+    {
+     "en": "That [[reminds]] me [[of]] the old bug.",
+     "zh": "这让我想起那个老 bug。",
+     "rule": "remind someone of · 让人想起"
+    },
+    {
+     "en": "My manager [[approved of]] the plan.",
+     "zh": "经理认可了这个方案。",
+     "rule": "approve of · 赞成"
+    },
+    {
+     "en": "The app [[suffers from]] slow start-up.",
+     "zh": "这个 App 启动慢。",
+     "rule": "suffer from · 受……之苦"
+    },
+    {
+     "en": "Everyone will [[benefit from]] this change.",
+     "zh": "这个改动对大家都有好处。",
+     "rule": "benefit from · 从……获益"
+    },
+    {
+     "en": "This version [[differs from]] the last one.",
+     "zh": "这个版本和上一版不一样。",
+     "rule": "differ from · 和……不同"
+    }
+   ]
+  },
+  "adjective": {
+   "title": "形容词 + 介词",
+   "short": "形容词",
+   "rule": "形容词后面的介词也是固定的。常和 be、feel、get 一起用：I'm **interested in**、I got **tired of**。",
+   "items": [
+    {
+     "en": "Are you [[aware of]] the issue?",
+     "zh": "你知道这个问题吗？",
+     "rule": "aware of · 知道、意识到"
+    },
+    {
+     "en": "Is it [[capable of]] handling that much data?",
+     "zh": "它能处理那么多数据吗？",
+     "rule": "capable of · 有能力"
+    },
+    {
+     "en": "I'm [[proud of]] this release.",
+     "zh": "我为这次发版感到骄傲。",
+     "rule": "proud of · 为……骄傲"
+    },
+    {
+     "en": "I'm [[tired of]] fixing the same bug.",
+     "zh": "老修同一个 bug，我烦了。",
+     "rule": "tired of · 厌烦"
+    },
+    {
+     "en": "Are you [[sure of]] the numbers?",
+     "zh": "这些数字你确定吗？",
+     "rule": "sure of / sure about · 确定"
+    },
+    {
+     "en": "Don't be [[afraid of]] asking questions.",
+     "zh": "别怕提问。",
+     "rule": "afraid of · 害怕"
+    },
+    {
+     "en": "I'm [[worried about]] the deadline.",
+     "zh": "我担心截止日期。",
+     "rule": "worried about · 担心"
+    },
+    {
+     "en": "We're [[excited about]] the new feature.",
+     "zh": "我们对新功能很兴奋。",
+     "rule": "excited about · 对……兴奋"
+    },
+    {
+     "en": "We're [[serious about]] privacy.",
+     "zh": "我们对隐私是认真的。",
+     "rule": "serious about · 对……认真"
+    },
+    {
+     "en": "I'm [[happy with]] the result.",
+     "zh": "我对结果很满意。",
+     "rule": "happy with · 对……满意"
+    },
+    {
+     "en": "Are you [[familiar with]] SwiftUI?",
+     "zh": "你熟悉 SwiftUI 吗？",
+     "rule": "familiar with · 熟悉"
+    },
+    {
+     "en": "I'm [[busy with]] the release this week.",
+     "zh": "我这周忙着发版。",
+     "rule": "busy with · 忙于"
+    },
+    {
+     "en": "It isn't [[compatible with]] iOS 16.",
+     "zh": "它不兼容 iOS 16。",
+     "rule": "compatible with · 兼容"
+    },
+    {
+     "en": "She's really [[good at]] debugging.",
+     "zh": "她很会调试。",
+     "rule": "good at · 擅长"
+    },
+    {
+     "en": "I'm [[bad at]] remembering names.",
+     "zh": "我记名字很差。",
+     "rule": "bad at · 不擅长"
+    },
+    {
+     "en": "I was [[surprised by]] the feedback.",
+     "zh": "反馈让我很意外。",
+     "rule": "surprised by / at · 对……吃惊"
+    },
+    {
+     "en": "I'm [[interested in]] machine learning.",
+     "zh": "我对机器学习感兴趣。",
+     "rule": "interested in · 对……感兴趣"
+    },
+    {
+     "en": "Who's [[involved in]] the project?",
+     "zh": "哪些人参与了这个项目？",
+     "rule": "involved in · 参与"
+    },
+    {
+     "en": "Who's [[responsible for]] the server?",
+     "zh": "服务器谁负责？",
+     "rule": "responsible for · 负责"
+    },
+    {
+     "en": "Are we [[ready for]] the demo?",
+     "zh": "演示准备好了吗？",
+     "rule": "ready for · 为……准备好"
+    },
+    {
+     "en": "This screen is [[similar to]] the old one.",
+     "zh": "这个页面和旧的差不多。",
+     "rule": "similar to · 和……相似"
+    },
+    {
+     "en": "I'm [[new to]] the team.",
+     "zh": "我是团队新人。",
+     "rule": "new to · 对……陌生、刚来"
+    },
+    {
+     "en": "The new design is [[different from]] the old one.",
+     "zh": "新设计和旧的不一样。",
+     "rule": "different from · 和……不同"
+    }
+   ],
+   "tip": "different 在英式英语里用 **from** 最稳；different to 也常听到，different than 是美式。"
+  },
+  "noun": {
+   "title": "名词 + 介词",
+   "short": "名词",
+   "rule": "名词后面也有固定介词，写邮件、写文档最常用。动词和名词有时跟的介词不一样：**increase** sales（动词，不加）↔ an **increase in** sales（名词，加 in）。",
+   "items": [
+    {
+     "en": "What's the [[reason for]] the delay?",
+     "zh": "延期的原因是什么？",
+     "rule": "reason for · ……的原因"
+    },
+    {
+     "en": "There's no [[need for]] another meeting.",
+     "zh": "没必要再开会了。",
+     "rule": "need for · 对……的需要"
+    },
+    {
+     "en": "I've sent a [[request for]] access.",
+     "zh": "我已经提交了权限申请。",
+     "rule": "request for · 对……的请求"
+    },
+    {
+     "en": "We found a [[solution to]] the problem.",
+     "zh": "我们找到了解决办法。",
+     "rule": "solution to · ……的解决办法"
+    },
+    {
+     "en": "Do you have [[access to]] the server?",
+     "zh": "你有服务器权限吗？",
+     "rule": "access to · 访问……的权限"
+    },
+    {
+     "en": "I like your [[approach to]] testing.",
+     "zh": "我喜欢你做测试的思路。",
+     "rule": "approach to · 对……的做法"
+    },
+    {
+     "en": "We saw an [[increase in]] downloads.",
+     "zh": "下载量涨了。",
+     "rule": "increase in · ……的增加"
+    },
+    {
+     "en": "There's been a [[drop in]] crashes.",
+     "zh": "闪退少了。",
+     "rule": "drop in · ……的下降"
+    },
+    {
+     "en": "We noticed a [[change in]] user behaviour.",
+     "zh": "我们注意到用户行为有变化。",
+     "rule": "change in · ……的变化"
+    },
+    {
+     "en": "She has a lot of [[experience in]] fintech.",
+     "zh": "她在金融科技方面经验丰富。",
+     "rule": "experience in · 在……方面的经验"
+    },
+    {
+     "en": "The main [[cause of]] the bug was a race condition.",
+     "zh": "这个 bug 主要是竞态条件引起的。",
+     "rule": "cause of · ……的原因"
+    },
+    {
+     "en": "There's a [[lack of]] documentation.",
+     "zh": "文档太少了。",
+     "rule": "lack of · 缺少（名词才加 of）"
+    },
+    {
+     "en": "Can you give me an [[example of]] that?",
+     "zh": "你能举个例子吗？",
+     "rule": "example of · ……的例子"
+    },
+    {
+     "en": "Can I get some [[feedback on]] my PR?",
+     "zh": "能给我的 PR 提点意见吗？",
+     "rule": "feedback on · 对……的反馈"
+    },
+    {
+     "en": "What's the [[impact on]] users?",
+     "zh": "对用户有什么影响？",
+     "rule": "impact on / effect on · 对……的影响"
+    },
+    {
+     "en": "There's a [[problem with]] the payment page.",
+     "zh": "支付页有问题。",
+     "rule": "problem with / issue with · ……有问题"
+    }
+   ]
+  },
+  "mistakes": {
+   "title": "最常见的错",
+   "short": "易错",
+   "text": "中国人最容易错的两类：**不该加介词的加了**（discuss、mention、contact 直接跟宾语），**该加的漏了**（listen to、reply to）。",
+   "commonMistakes": [
+    {
+     "bad": "Let's discuss ~~about~~ the design.",
+     "good": "Let's [[discuss]] the design.",
+     "why": "discuss 后面直接跟事情。talk about 才要 about。"
+    },
+    {
+     "bad": "He mentioned ~~about~~ the deadline.",
+     "good": "He [[mentioned]] the deadline.",
+     "why": "mention 直接跟宾语，不加 about。"
+    },
+    {
+     "bad": "I'll contact ~~with~~ the client.",
+     "good": "I'll [[contact]] the client.",
+     "why": "contact 直接跟人。"
+    },
+    {
+     "bad": "Can you join ~~to~~ the call?",
+     "good": "Can you [[join]] the call?",
+     "why": "join 直接跟会议、团队。"
+    },
+    {
+     "bad": "We need to emphasise ~~on~~ security.",
+     "good": "We need to [[emphasise]] security.",
+     "why": "动词 emphasise 不加 on；名词才说 put emphasis on。"
+    },
+    {
+     "bad": "It depends ~~of~~ the budget.",
+     "good": "It [[depends on]] the budget.",
+     "why": "depend 只跟 on。"
+    },
+    {
+     "bad": "She's good ~~in~~ maths.",
+     "good": "She's [[good at]] maths.",
+     "why": "擅长用 good at。"
+    },
+    {
+     "bad": "I'm interested ~~about~~ AI.",
+     "good": "I'm [[interested in]] AI.",
+     "why": "interested 只跟 in。"
+    },
+    {
+     "bad": "He didn't reply ~~me~~.",
+     "good": "He didn't [[reply to]] me.",
+     "why": "reply 后面要加 to 才能跟人。"
+    },
+    {
+     "bad": "Please listen ~~me~~.",
+     "good": "Please [[listen to]] me.",
+     "why": "listen 后面要加 to。"
+    },
+    {
+     "bad": "Please explain ~~me~~ the issue.",
+     "good": "Please [[explain]] the issue [[to me]].",
+     "why": "explain 不能直接跟人，要说 explain something to someone。"
+    },
+    {
+     "bad": "We arrived ~~to~~ the office late.",
+     "good": "We [[arrived at]] the office late.",
+     "why": "arrive 用 at（地点）或 in（城市、国家），不用 to。"
+    }
+   ],
+   "tip": "直接跟宾语、**不加介词**的动词：discuss, mention, contact, join, attend, enter, approach, answer, emphasise, marry。"
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Can you help me ___ this bug?",
+   "options": [
+    "with",
+    "for",
+    "to",
+    "at"
+   ],
+   "answer": "with",
+   "explain": "help someone [[with]] something：帮某人做某事。"
+  },
+  {
+   "id": "q02",
+   "section": "verbOnIn",
+   "type": "choice",
+   "prompt": "It depends ___ the budget.",
+   "options": [
+    "of",
+    "on",
+    "in",
+    "from"
+   ],
+   "answer": "on",
+   "explain": "[[depend on]]：取决于。没有 depend of。"
+  },
+  {
+   "id": "q03",
+   "section": "verbOnIn",
+   "type": "fill",
+   "prompt": "She specialises ___ accessibility.",
+   "answer": "in",
+   "accept": [],
+   "explain": "[[specialise in]]：专攻某个领域。"
+  },
+  {
+   "id": "q04",
+   "section": "verbForTo",
+   "type": "choice",
+   "prompt": "I'll reply ___ your email today.",
+   "options": [
+    "to",
+    "for",
+    "on",
+    "at"
+   ],
+   "answer": "to",
+   "explain": "[[reply to]]：回复某人或某封邮件。"
+  },
+  {
+   "id": "q05",
+   "section": "verbForTo",
+   "type": "fill",
+   "prompt": "I apologise ___ the delay.",
+   "answer": "for",
+   "accept": [],
+   "explain": "[[apologise for]]：为某事道歉。"
+  },
+  {
+   "id": "q06",
+   "section": "verbOther",
+   "type": "choice",
+   "prompt": "The team consists ___ five people.",
+   "options": [
+    "in",
+    "of",
+    "with",
+    "from"
+   ],
+   "answer": "of",
+   "explain": "[[consist of]]：由……组成。"
+  },
+  {
+   "id": "q07",
+   "section": "verbOther",
+   "type": "fill",
+   "prompt": "Everyone will benefit ___ this change.",
+   "answer": "from",
+   "accept": [],
+   "explain": "[[benefit from]]：从……获益。"
+  },
+  {
+   "id": "q08",
+   "section": "adjective",
+   "type": "choice",
+   "prompt": "She's really good ___ debugging.",
+   "options": [
+    "in",
+    "at",
+    "on",
+    "with"
+   ],
+   "answer": "at",
+   "explain": "[[good at]]：擅长。"
+  },
+  {
+   "id": "q09",
+   "section": "adjective",
+   "type": "fill",
+   "prompt": "Are you familiar ___ SwiftUI?",
+   "answer": "with",
+   "accept": [],
+   "explain": "[[familiar with]]：熟悉。"
+  },
+  {
+   "id": "q10",
+   "section": "noun",
+   "type": "choice",
+   "prompt": "We found a solution ___ the problem.",
+   "options": [
+    "at",
+    "of",
+    "to",
+    "on"
+   ],
+   "answer": "to",
+   "explain": "[[solution to]]：……的解决办法。"
+  },
+  {
+   "id": "q11",
+   "section": "noun",
+   "type": "fill",
+   "prompt": "We saw an increase ___ downloads.",
+   "answer": "in",
+   "accept": [],
+   "explain": "名词 [[increase in]]：……的增加。"
+  },
+  {
+   "id": "q12",
+   "section": "mistakes",
+   "type": "choice",
+   "prompt": "Which sentence is correct?",
+   "options": [
+    "Let's discuss about the design.",
+    "Let's discuss the design.",
+    "Let's discuss on the design.",
+    "Let's discuss for the design."
+   ],
+   "answer": "Let's discuss the design.",
+   "explain": "[[discuss]] 直接跟宾语，不加 about。"
+  },
+  {
+   "id": "q13",
+   "section": "mistakes",
+   "type": "fill",
+   "prompt": "He didn't reply ___ me.",
+   "answer": "to",
+   "accept": [],
+   "explain": "reply 后面要加 to 才能跟人：[[reply to]] me。"
+  }
+ ]
+}

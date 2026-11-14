@@ -1,0 +1,427 @@
+{
+ "id": "g-used-to-would",
+ "title": "used to 和 would",
+ "en": "Used to and Would",
+ "group": "时态",
+ "level": "B1",
+ "order": 10,
+ "keywords": [
+  "used to",
+  "would：讲过去"
+ ],
+ "related": [
+  "g-past-simple",
+  "g-gerund-infinitive",
+  "g-stative-verbs"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "used to 说的是**「以前常这样，现在不这样了」**，像在翻老照片：以前住哪、以前爱干嘛。would 也能讲以前**反复做**的事。",
+   "uses": [
+    {
+     "zh": "以前的习惯，现在没有了",
+     "en": "I [[used to]] ((drink)) three coffees a day.",
+     "en_zh": "我以前一天喝三杯咖啡。（现在不了）"
+    },
+    {
+     "zh": "以前的状态，现在变了",
+     "en": "We [[used to]] ((live)) in a tiny flat.",
+     "en_zh": "我们以前住在一间很小的公寓里。"
+    },
+    {
+     "zh": "回忆以前反复做的事",
+     "en": "<<Every summer>>, we [[would]] ((go)) to the seaside.",
+     "en_zh": "以前每年夏天，我们都会去海边。"
+    }
+   ],
+   "signals": [
+    "when I was a child",
+    "at university",
+    "in the past",
+    "every summer",
+    "not any more",
+    "these days"
+   ]
+  },
+  "positive": {
+   "title": "肯定句",
+   "short": "肯定",
+   "formula": [
+    "主语",
+    "used to",
+    "动词原形",
+    "其他"
+   ],
+   "rule": "**used to + 动词原形**，所有人都一样。动作、状态都能用。它只说过去，现在的习惯不用它。",
+   "examples": [
+    {
+     "en": "I [[used to]] ((work)) for a bank.",
+     "zh": "我以前在银行上班。"
+    },
+    {
+     "en": "This street [[used to]] ((be)) really quiet.",
+     "zh": "这条街以前很安静。"
+    },
+    {
+     "en": "She [[used to]] ((write)) Objective-C, but now she uses Swift.",
+     "zh": "她以前写 Objective-C，现在用 Swift。"
+    }
+   ],
+   "wrong": {
+    "bad": "I used to ~~working~~ late.",
+    "good": "I [[used to]] ((work)) late."
+   },
+   "notes": [
+    "used to 读作 /ˈjuːstə/，中间的 d 几乎听不到。"
+   ]
+  },
+  "negq": {
+   "title": "否定和疑问",
+   "short": "否定疑问",
+   "rule": "否定用 didn't use to，疑问用 Did … use to？**d 只能出现一次**：did 已经是过去了，use 就不加 d。",
+   "examples": [
+    {
+     "en": "I [[didn't use to]] ((like)) coffee.",
+     "zh": "我以前不喜欢咖啡。"
+    },
+    {
+     "en": "[[Did]] you [[use to]] ((play)) football at school?",
+     "zh": "你上学的时候常踢足球吗？",
+     "answer": "Yes, I [[did]]. / No, I [[didn't]]."
+    },
+    {
+     "en": "Where [[did]] you [[use to]] ((live))?",
+     "zh": "你以前住在哪儿？",
+     "answer": "I [[used to]] ((live)) in Leeds."
+    }
+   ],
+   "wrong": {
+    "bad": "Did you ~~used~~ to play football?",
+    "good": "[[Did]] you [[use to]] ((play)) football?"
+   },
+   "notes": [
+    "口语里也常说 never used to：I <<never>> [[used to]] ((eat)) breakfast.（我以前从不吃早饭。）"
+   ]
+  },
+  "would": {
+   "title": "would：讲以前反复做的事",
+   "short": "回忆",
+   "text": "回忆往事时，would 可以代替 used to，讲**以前一次次重复的动作**。但它**不能讲状态**：住在哪、有什么、喜欢什么。",
+   "items": [
+    {
+     "rule": "反复的动作：可以用 would",
+     "en": "On Fridays, my dad [[would]] ((take)) us for fish and chips.",
+     "zh": "以前每周五，爸爸都会带我们去吃炸鱼薯条。"
+    },
+    {
+     "rule": "反复的动作：可以用 would",
+     "en": "After work, we [[would]] ((play)) table tennis for hours.",
+     "zh": "以前下班后，我们会打好几个小时乒乓球。"
+    },
+    {
+     "rule": "状态：只能用 used to",
+     "en": "I [[used to]] ((have)) a red bike.",
+     "zh": "我以前有一辆红色自行车。（不说 I would have）"
+    },
+    {
+     "rule": "讲故事：先用 used to 开头，后面接 would",
+     "en": "We [[used to]] ((visit)) my gran every summer. She [[would]] ((bake)) scones for us.",
+     "zh": "我们以前每年夏天都去看外婆，她会给我们烤司康饼。"
+    }
+   ]
+  },
+  "beused": {
+   "title": "长得像的 be used to",
+   "short": "别搞混",
+   "text": "**be used to + 动词 ing（或名词）** 意思完全不同：「**已经习惯了**」，而且能说现在。别被长相骗了。",
+   "items": [
+    {
+     "rule": "used to + 原形：以前常这样",
+     "en": "I [[used to]] ((work)) nights.",
+     "zh": "我以前上夜班。"
+    },
+    {
+     "rule": "be used to + ing：现在已经习惯了",
+     "en": "I[['m used to working]] nights.",
+     "zh": "我已经习惯上夜班了。"
+    },
+    {
+     "rule": "get used to + ing：慢慢变习惯",
+     "en": "I'm still [[getting used to driving]] on the left.",
+     "zh": "我还在慢慢习惯靠左开车。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一般过去时",
+     "this": {
+      "meaning": "used to：以前常这样，现在不这样了",
+      "en": "I [[used to]] ((go)) to the gym."
+     },
+     "that": {
+      "meaning": "一般过去时：只说发生过，可以只有一次",
+      "en": "I [[went]] to the gym <<yesterday>>."
+     }
+    },
+    {
+     "with": "be used to",
+     "this": {
+      "meaning": "used to + 原形：以前常这样",
+      "en": "I [[used to]] ((live)) alone."
+     },
+     "that": {
+      "meaning": "be used to + ing：现在已经习惯了",
+      "en": "I[['m used to living]] alone."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I ~~use to~~ live in Leeds.",
+     "good": "I [[used to]] ((live)) in Leeds.",
+     "why": "肯定句里要写 used，带 d。"
+    },
+    {
+     "bad": "Did you ~~used~~ to smoke?",
+     "good": "[[Did]] you [[use to]] ((smoke))?",
+     "why": "did 已经带了过去，use 不加 d。"
+    },
+    {
+     "bad": "I ~~would have~~ a dog when I was a kid.",
+     "good": "I [[used to]] ((have)) a dog when I was a kid.",
+     "why": "有一只狗是状态，不能用 would。"
+    },
+    {
+     "bad": "I'm used to ~~work~~ late.",
+     "good": "I[['m used to working]] late.",
+     "why": "be used to 后面接 ing。"
+    },
+    {
+     "bad": "I ~~usually go~~ to the gym, but I stopped last year.",
+     "good": "I [[used to]] ((go)) to the gym, but I stopped last year.",
+     "why": "现在不去了，说以前的习惯用 used to。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I ___ three coffees a day, but now I only have one.",
+   "options": [
+    "drink",
+    "used to drink",
+    "am used to drinking",
+    "use to drink"
+   ],
+   "answer": "used to drink",
+   "explain": "以前常这样，现在不这样了：[[used to]] ((drink))。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我们以前住在一间很小的公寓里。",
+   "answer": "We used to live in a tiny flat.",
+   "accept": [
+    "We used to live in a small flat.",
+    "We used to live in a very small flat.",
+    "We used to live in a tiny apartment.",
+    "We used to live in a small apartment."
+   ],
+   "explain": "以前的状态：We [[used to]] ((live))。"
+  },
+  {
+   "id": "q03",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "This street ___ (be) really quiet, but now it's full of cafés.",
+   "answer": "used to be",
+   "accept": [],
+   "explain": "以前的状态，现在变了：[[used to]] ((be))。"
+  },
+  {
+   "id": "q04",
+   "section": "positive",
+   "type": "fix",
+   "prompt": "改错：I use to work for a bank.",
+   "answer": "I used to work for a bank.",
+   "accept": [],
+   "explain": "肯定句写 [[used to]]，带 d。"
+  },
+  {
+   "id": "q05",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成否定句：I used to like coffee.",
+   "answer": "I didn't use to like coffee.",
+   "accept": [
+    "I did not use to like coffee.",
+    "I never used to like coffee."
+   ],
+   "traps": [
+    {
+     "input": "I didn't used to like coffee.",
+     "note": "didn't 后面用 use，不加 d。"
+    }
+   ],
+   "explain": "I [[didn't use to]] ((like))：d 只能出现一次。"
+  },
+  {
+   "id": "q06",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成一般疑问句：You used to play football.",
+   "answer": "Did you use to play football?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Did you used to play football?",
+     "note": "did 已经带了过去，use 不加 d。"
+    }
+   ],
+   "explain": "[[Did]] you [[use to]] ((play))？"
+  },
+  {
+   "id": "q07",
+   "section": "negq",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：She used to live in Leeds.（问「在哪里」）",
+   "answer": "Where did she use to live?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Where did she used to live?",
+     "note": "did 后面用 use，不加 d。"
+    }
+   ],
+   "explain": "Where [[did]] she [[use to]] ((live))？"
+  },
+  {
+   "id": "q08",
+   "section": "would",
+   "type": "choice",
+   "prompt": "哪一句是对的？",
+   "options": [
+    "When I was a child, I would have a red bike.",
+    "When I was a child, I used to have a red bike."
+   ],
+   "answer": "When I was a child, I used to have a red bike.",
+   "explain": "有一辆自行车是状态，只能用 [[used to]]。"
+  },
+  {
+   "id": "q09",
+   "section": "would",
+   "type": "fill",
+   "prompt": "Every summer, my gran ___ (bake) scones for us.（用 would）",
+   "answer": "would bake",
+   "accept": [
+    "'d bake"
+   ],
+   "explain": "以前反复做的动作，可以用 [[would]] ((bake))。"
+  },
+  {
+   "id": "q10",
+   "section": "would",
+   "type": "fix",
+   "prompt": "改错：I would have a dog when I was a kid.",
+   "answer": "I used to have a dog when I was a kid.",
+   "accept": [],
+   "explain": "状态不能用 would：I [[used to]] ((have))。"
+  },
+  {
+   "id": "q11",
+   "section": "beused",
+   "type": "choice",
+   "prompt": "I've lived in London for ten years, so I ___ the noise.",
+   "options": [
+    "used to",
+    "am used to"
+   ],
+   "answer": "am used to",
+   "explain": "现在已经习惯了：I [[am used to]] the noise。"
+  },
+  {
+   "id": "q12",
+   "section": "beused",
+   "type": "fill",
+   "prompt": "I'm still getting used to ___ (drive) on the left.",
+   "answer": "driving",
+   "accept": [],
+   "explain": "get used to 后面接 ing：[[getting used to driving]]。"
+  },
+  {
+   "id": "q13",
+   "section": "beused",
+   "type": "fix",
+   "prompt": "改错：I'm used to work late.",
+   "answer": "I'm used to working late.",
+   "accept": [
+    "I am used to working late."
+   ],
+   "explain": "be used to 后面接 ing：I[['m used to working]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I ___ to the gym yesterday.",
+   "options": [
+    "used to go",
+    "went"
+   ],
+   "answer": "went",
+   "explain": "<<yesterday>> 只说了一次，用一般过去时：I [[went]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I ___ to the gym a lot, but I stopped last year.",
+   "options": [
+    "used to go",
+    "am used to going",
+    "go"
+   ],
+   "answer": "used to go",
+   "explain": "以前常去，现在不去了：[[used to]] ((go))。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：我已经习惯早起了。",
+   "answer": "I'm used to getting up early.",
+   "accept": [
+    "I am used to getting up early.",
+    "I'm used to waking up early.",
+    "I am used to waking up early."
+   ],
+   "explain": "现在已经习惯：I[['m used to getting]] up early。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 used to 说 3 件你以前常做、现在不做了的事（比如上学时、刚工作时）。至少一句否定或疑问，再试一句 would。",
+  "rules": [
+   "used to + 动词原形",
+   "否定和疑问用 didn't use to / Did … use to，use 不加 d",
+   "would 只讲反复的动作，不讲状态"
+  ],
+  "note": "规则判 used to / use to 和 would 的用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

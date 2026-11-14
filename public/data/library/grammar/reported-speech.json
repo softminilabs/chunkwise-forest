@@ -1,0 +1,446 @@
+{
+ "id": "g-reported-speech",
+ "title": "间接引语",
+ "en": "Reported Speech",
+ "group": "句子",
+ "level": "B1",
+ "order": 35,
+ "keywords": [
+  "间接引语",
+  "转述"
+ ],
+ "related": [
+  "g-sequence-of-tenses",
+  "g-object-clauses",
+  "g-past-perfect"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "间接引语就是**转述别人说过的话**，不加引号。话是「以前说的」，所以动词常常**往过去退一步**；我、你、今天、这里这些词也要跟着换。",
+   "uses": [
+    {
+     "zh": "转述别人说的话",
+     "en": "She said she [[was]] tired.",
+     "en_zh": "她说她累了。"
+    },
+    {
+     "zh": "转述别人问的问题",
+     "en": "He asked [[if]] I [[had]] a minute.",
+     "en_zh": "他问我有没有空。"
+    },
+    {
+     "zh": "转述别人让你做的事",
+     "en": "My manager told me [[to]] ((update)) the doc.",
+     "en_zh": "经理让我更新一下文档。"
+    }
+   ],
+   "signals": [
+    "said",
+    "told",
+    "asked",
+    "explained",
+    "that",
+    "if",
+    "whether"
+   ]
+  },
+  "backshift": {
+   "title": "动词往后退一步",
+   "short": "后退",
+   "rule": "转述时，动词往「过去」退一步。口诀：**现在变过去，过去变完成，will 变 would，can 变 could。**",
+   "items": [
+    {
+     "rule": "am / is → was",
+     "en": "\"I'm tired.\" → She said she [[was]] tired.",
+     "zh": "「我累了。」→ 她说她累了。"
+    },
+    {
+     "rule": "一般现在时 → 一般过去时",
+     "en": "\"I work in Leeds.\" → He said he [[worked]] in Leeds.",
+     "zh": "「我在利兹工作。」→ 他说他在利兹工作。"
+    },
+    {
+     "rule": "一般过去时 → 过去完成时",
+     "en": "\"I fixed it.\" → She said she [[had fixed]] it.",
+     "zh": "「我修好了。」→ 她说她已经修好了。"
+    },
+    {
+     "rule": "will → would",
+     "en": "\"I'll call you.\" → He said he [[would]] call me.",
+     "zh": "「我会给你打电话。」→ 他说他会给我打电话。"
+    },
+    {
+     "rule": "can → could",
+     "en": "\"I can help.\" → She said she [[could]] help.",
+     "zh": "「我能帮忙。」→ 她说她能帮忙。"
+    }
+   ],
+   "notes": [
+    "说的事到现在还对，也可以不退：He said Swift [[is]] easy to learn."
+   ]
+  },
+  "words": {
+   "title": "人称、时间、地点跟着换",
+   "short": "换词",
+   "rule": "站在**转述的人**的角度重新说：「我」可能变成「他」，「明天」可能已经过去了，「这里」变成「那里」。",
+   "items": [
+    {
+     "rule": "tomorrow → the next day",
+     "en": "\"I'll do it tomorrow.\" → He said he would do it [[the next day]].",
+     "zh": "「我明天做。」→ 他说他第二天做。"
+    },
+    {
+     "rule": "yesterday → the day before",
+     "en": "\"I saw it yesterday.\" → She said she had seen it [[the day before]].",
+     "zh": "「我昨天看到的。」→ 她说她前一天看到的。"
+    },
+    {
+     "rule": "today → that day",
+     "en": "\"I'm busy today.\" → He said he was busy [[that day]].",
+     "zh": "「我今天很忙。」→ 他说他那天很忙。"
+    },
+    {
+     "rule": "here → there",
+     "en": "\"I like it here.\" → She said she liked it [[there]].",
+     "zh": "「我喜欢这儿。」→ 她说她喜欢那儿。"
+    }
+   ],
+   "tip": "如果是当天转述、还在同一个地方，today、here 就不用换。"
+  },
+  "sayTell": {
+   "title": "say 和 tell",
+   "short": "say",
+   "rule": "**tell 后面一定要跟人**：tell me、tell him。**say 后面不直接跟人**，要跟人就说 say to me。",
+   "examples": [
+    {
+     "en": "She [[told]] me (that) the release was delayed.",
+     "zh": "她告诉我发布推迟了。"
+    },
+    {
+     "en": "She [[said]] (that) the release was delayed.",
+     "zh": "她说发布推迟了。"
+    },
+    {
+     "en": "He [[said]] to me that he was leaving.",
+     "zh": "他跟我说他要走了。"
+    }
+   ],
+   "wrong": {
+    "bad": "She ~~said me~~ that it was delayed.",
+    "good": "She [[told]] me that it was delayed."
+   },
+   "notes": [
+    "that 在 said / told 后面常常省掉，口语里更常省。"
+   ]
+  },
+  "questions": {
+   "title": "转述问题",
+   "short": "问题",
+   "rule": "转述问题时，**句子变回普通顺序**：主语在前，动词在后；不要 do / does / did，问号也去掉。没有疑问词的问题用 **if** 或 **whether**。",
+   "examples": [
+    {
+     "en": "\"Are you free?\" → He asked [[if]] I [[was]] free.",
+     "zh": "「你有空吗？」→ 他问我有没有空。"
+    },
+    {
+     "en": "\"Where do you live?\" → She asked where I [[lived]].",
+     "zh": "「你住哪儿？」→ 她问我住在哪儿。"
+    },
+    {
+     "en": "\"Have you finished?\" → He asked [[whether]] I [[had finished]].",
+     "zh": "「你做完了吗？」→ 他问我做完了没有。"
+    }
+   ],
+   "wrong": {
+    "bad": "She asked where ~~did I live~~.",
+    "good": "She asked where [[I lived]]."
+   }
+  },
+  "commands": {
+   "title": "转述请求和命令",
+   "short": "请求",
+   "formula": [
+    "tell / ask",
+    "人",
+    "(not) to + 动词原形"
+   ],
+   "rule": "别人让你做事：tell / ask + 人 + **to do**。让你别做：**not to do**。",
+   "examples": [
+    {
+     "en": "\"Please check the logs.\" → He asked me [[to check]] the logs.",
+     "zh": "「请看一下日志。」→ 他让我看一下日志。"
+    },
+    {
+     "en": "\"Don't push to main.\" → She told us [[not to push]] to main.",
+     "zh": "「别往 main 上推。」→ 她叫我们别往 main 上推。"
+    },
+    {
+     "en": "\"Can you send me the file?\" → Tom asked me [[to send]] him the file.",
+     "zh": "「你能把文件发我吗？」→ Tom 让我把文件发给他。"
+    }
+   ]
+  },
+  "compare": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "直接引语",
+     "this": {
+      "meaning": "间接引语：转述，不加引号，动词后退",
+      "en": "She said she [[was]] ready."
+     },
+     "that": {
+      "meaning": "直接引语：原话照搬，加引号",
+      "en": "She said, \"I [[am]] ready.\""
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "She ~~said me~~ she was tired.",
+     "good": "She [[told]] me she was tired.",
+     "why": "tell 后面跟人，say 不直接跟人。"
+    },
+    {
+     "bad": "He asked where ~~did I work~~.",
+     "good": "He asked where [[I worked]].",
+     "why": "转述问题用普通顺序，不用 did。"
+    },
+    {
+     "bad": "She told me ~~don't~~ touch it.",
+     "good": "She told me [[not to]] touch it.",
+     "why": "让别人别做：not to do。"
+    },
+    {
+     "bad": "He asked ~~that~~ I was free.",
+     "good": "He asked [[if]] I was free.",
+     "why": "转述是非问题用 if / whether。"
+    },
+    {
+     "bad": "He said he ~~will~~ call me.",
+     "good": "He said he [[would]] call me.",
+     "why": "转述时 will 变 would。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：她说她累了。",
+   "answer": "She said she was tired.",
+   "accept": [
+    "She said that she was tired."
+   ],
+   "explain": "转述，am 退成 [[was]]。"
+  },
+  {
+   "id": "q02",
+   "section": "backshift",
+   "type": "transform",
+   "prompt": "转述：Leo: \"I work in Leeds.\" → Leo said he ...",
+   "answer": "Leo said he worked in Leeds.",
+   "accept": [
+    "Leo said that he worked in Leeds.",
+    "Leo said he works in Leeds."
+   ],
+   "explain": "一般现在时退成过去时：[[worked]]。"
+  },
+  {
+   "id": "q03",
+   "section": "backshift",
+   "type": "transform",
+   "prompt": "转述：Amy: \"I fixed it.\" → Amy said she ...",
+   "answer": "Amy said she had fixed it.",
+   "accept": [
+    "Amy said that she had fixed it.",
+    "Amy said she'd fixed it.",
+    "Amy said she fixed it."
+   ],
+   "explain": "过去时退成过去完成时：[[had fixed]]。"
+  },
+  {
+   "id": "q04",
+   "section": "backshift",
+   "type": "fill",
+   "prompt": "\"I'll call you.\" → He said he ___ call me.",
+   "answer": "would",
+   "accept": [],
+   "traps": [
+    {
+     "input": "will",
+     "note": "转述时 will 往后退成 would。"
+    }
+   ],
+   "explain": "will 变 [[would]]。"
+  },
+  {
+   "id": "q05",
+   "section": "words",
+   "type": "choice",
+   "prompt": "\"I'll do it tomorrow.\" → He said he would do it ___.（一周后转述）",
+   "options": [
+    "tomorrow",
+    "the next day",
+    "the day before"
+   ],
+   "answer": "the next day",
+   "explain": "时间已经过去了，tomorrow 变成 [[the next day]]。"
+  },
+  {
+   "id": "q06",
+   "section": "words",
+   "type": "fill",
+   "prompt": "\"I saw it yesterday.\" → She said she had seen it the day ___.",
+   "answer": "before",
+   "accept": [],
+   "explain": "yesterday → the day [[before]]。"
+  },
+  {
+   "id": "q07",
+   "section": "sayTell",
+   "type": "choice",
+   "prompt": "She ___ me that the release was delayed.",
+   "options": [
+    "said",
+    "told",
+    "spoke",
+    "talked"
+   ],
+   "answer": "told",
+   "explain": "后面跟人 me，用 [[told]]。"
+  },
+  {
+   "id": "q08",
+   "section": "sayTell",
+   "type": "fix",
+   "prompt": "改错：She said me that she was leaving.",
+   "answer": "She told me that she was leaving.",
+   "accept": [
+    "She told me she was leaving.",
+    "She said to me that she was leaving.",
+    "She said that she was leaving."
+   ],
+   "explain": "后面跟人，用 [[told]]。"
+  },
+  {
+   "id": "q09",
+   "section": "questions",
+   "type": "transform",
+   "prompt": "转述：\"Are you free?\" → He asked ...",
+   "answer": "He asked if I was free.",
+   "accept": [
+    "He asked whether I was free.",
+    "He asked me if I was free.",
+    "He asked me whether I was free."
+   ],
+   "traps": [
+    {
+     "input": "He asked if was I free.",
+     "note": "转述问题用普通顺序：I was。"
+    }
+   ],
+   "explain": "是非问题用 [[if]]，顺序是 I was。"
+  },
+  {
+   "id": "q10",
+   "section": "questions",
+   "type": "transform",
+   "prompt": "转述：\"Where do you live?\" → She asked ...",
+   "answer": "She asked where I lived.",
+   "accept": [
+    "She asked me where I lived."
+   ],
+   "traps": [
+    {
+     "input": "She asked where did I live.",
+     "note": "转述问题不用 did，说 where I lived。"
+    }
+   ],
+   "explain": "去掉 do，主语在前：where [[I lived]]。"
+  },
+  {
+   "id": "q11",
+   "section": "questions",
+   "type": "fix",
+   "prompt": "改错：He asked where did I work.",
+   "answer": "He asked where I worked.",
+   "accept": [
+    "He asked me where I worked."
+   ],
+   "explain": "普通顺序：where [[I worked]]。"
+  },
+  {
+   "id": "q12",
+   "section": "commands",
+   "type": "transform",
+   "prompt": "转述：\"Please check the logs.\" → He asked me ...",
+   "answer": "He asked me to check the logs.",
+   "accept": [],
+   "explain": "ask + 人 + [[to check]]。"
+  },
+  {
+   "id": "q13",
+   "section": "commands",
+   "type": "transform",
+   "prompt": "转述：\"Don't push to main.\" → She told us ...",
+   "answer": "She told us not to push to main.",
+   "accept": [],
+   "explain": "别做：[[not to push]]。"
+  },
+  {
+   "id": "q14",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：She told me don't touch it.",
+   "answer": "She told me not to touch it.",
+   "accept": [],
+   "explain": "让别人别做：[[not to]] + 动词原形。"
+  },
+  {
+   "id": "q15",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：He asked that I was free.",
+   "answer": "He asked if I was free.",
+   "accept": [
+    "He asked whether I was free.",
+    "He asked me if I was free.",
+    "He asked me whether I was free."
+   ],
+   "explain": "转述是非问题用 [[if]] / whether。"
+  },
+  {
+   "id": "q16",
+   "section": "compare",
+   "type": "choice",
+   "prompt": "哪一句是间接引语？",
+   "options": [
+    "She said she was ready.",
+    "She said, \"I am ready.\""
+   ],
+   "answer": "She said she was ready.",
+   "explain": "不加引号、动词后退的是间接引语。"
+  }
+ ],
+ "openTask": {
+  "prompt": "转述你今天在会上或聊天里听到的 3 句话：一句陈述、一句问题、一句别人让你做的事。",
+  "rules": [
+   "动词按需要往后退一步（is → was，will → would）",
+   "转述问题用普通顺序，不用 do / does / did；请求用 to do / not to do"
+  ],
+  "note": "规则判时态后退、语序和 to do（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

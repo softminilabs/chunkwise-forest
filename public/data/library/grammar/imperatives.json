@@ -1,0 +1,439 @@
+{
+ "id": "g-imperatives",
+ "title": "祈使句",
+ "en": "Imperatives",
+ "group": "句子",
+ "level": "A2",
+ "order": 26,
+ "keywords": [
+  "祈使句"
+ ],
+ "related": [
+  "g-modals-requests",
+  "g-tag-questions",
+  "g-phrasal-verbs"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "祈使句就是**叫别人做事**的句子：请求、提醒、指路、说明步骤。做法最简单：**直接用动词原形开头**，不用说 you。",
+   "uses": [
+    {
+     "zh": "叫人做",
+     "en": "[[Close]] the door, please.",
+     "en_zh": "请把门关上。"
+    },
+    {
+     "zh": "叫人别做",
+     "en": "[[Don't]] ((touch)) that!",
+     "en_zh": "别碰那个！"
+    },
+    {
+     "zh": "叫大家一起做",
+     "en": "[[Let's]] ((take)) a break.",
+     "en_zh": "我们休息一下吧。"
+    }
+   ],
+   "signals": [
+    "please",
+    "don't",
+    "let's",
+    "never",
+    "always"
+   ]
+  },
+  "positive": {
+   "title": "叫人做",
+   "short": "肯定",
+   "formula": [
+    "动词原形",
+    "其他"
+   ],
+   "rule": "动词原形开头就行。加 please 更礼貌，放开头、放句尾都可以。后面是形容词时，用 **Be** 开头。",
+   "examples": [
+    {
+     "en": "[[Restart]] the app and try again.",
+     "zh": "重启一下 App 再试试。"
+    },
+    {
+     "en": "Please [[send]] me the link.",
+     "zh": "请把链接发给我。"
+    },
+    {
+     "en": "[[Turn]] left at the lights.",
+     "zh": "到红绿灯左转。"
+    },
+    {
+     "en": "[[Be]] careful, the floor's wet.",
+     "zh": "小心，地板是湿的。"
+    }
+   ],
+   "wrong": {
+    "bad": "Please ~~to send~~ me the link.",
+    "good": "Please [[send]] me the link."
+   }
+  },
+  "negative": {
+   "title": "叫人别做",
+   "short": "否定",
+   "formula": [
+    "Don't",
+    "动词原形",
+    "其他"
+   ],
+   "rule": "前面加 **Don't** 就行。连 be 也一样：Don't be late，不说 Be not late。语气更重可以用 **Never**。",
+   "examples": [
+    {
+     "en": "[[Don't]] ((push)) straight to main.",
+     "zh": "别直接推到 main 分支。"
+    },
+    {
+     "en": "[[Don't]] ((be)) late for the demo.",
+     "zh": "演示别迟到。"
+    },
+    {
+     "en": "[[Don't]] ((worry)), I'll sort it out.",
+     "zh": "别担心，我来处理。"
+    },
+    {
+     "en": "[[Never]] ((share)) your password.",
+     "zh": "永远不要把密码告诉别人。"
+    }
+   ],
+   "wrong": {
+    "bad": "~~Not~~ touch the cable.",
+    "good": "[[Don't]] ((touch)) the cable."
+   }
+  },
+  "lets": {
+   "title": "一起做：Let's",
+   "short": "一起",
+   "formula": [
+    "Let's",
+    "动词原形",
+    "其他"
+   ],
+   "rule": "Let's = let us，意思是「**咱们一起……吧**」。不想一起做，就说 **Let's not**。",
+   "examples": [
+    {
+     "en": "[[Let's]] ((start)) the meeting.",
+     "zh": "我们开会吧。"
+    },
+    {
+     "en": "[[Let's]] ((grab)) lunch, shall we?",
+     "zh": "一起去吃午饭吧，好吗？"
+    },
+    {
+     "en": "[[Let's not]] ((rush)) this release.",
+     "zh": "这次发版我们别太赶。"
+    }
+   ],
+   "wrong": {
+    "bad": "Let's ~~don't~~ wait.",
+    "good": "[[Let's not]] ((wait))."
+   }
+  },
+  "polite": {
+   "title": "说得客气一点",
+   "short": "客气",
+   "rule": "直接用祈使句，对熟人没问题；对同事、客户，有时会**太硬**。下面几种办法能让它变软。",
+   "items": [
+    {
+     "rule": "加 please",
+     "en": "Please [[have]] a seat.",
+     "zh": "请坐。"
+    },
+    {
+     "rule": "加个小尾巴 will you / could you",
+     "en": "[[Check]] this PR for me, could you?",
+     "zh": "帮我看一下这个 PR，好吗？"
+    },
+    {
+     "rule": "前面加 Do，表示热情邀请",
+     "en": "[[Do]] ((help)) yourself to coffee.",
+     "zh": "咖啡请随便喝。"
+    },
+    {
+     "rule": "加 just，听起来事很小",
+     "en": "[[Just]] [[click]] here and you're done.",
+     "zh": "点一下这里就好了。"
+    }
+   ]
+  },
+  "when": {
+   "title": "什么时候用",
+   "short": "何时用",
+   "rule": "祈使句最常出现在这几种地方，都是**要对方马上去做**的事。",
+   "items": [
+    {
+     "rule": "操作说明、步骤",
+     "en": "[[Open]] Settings, then [[tap]] General.",
+     "zh": "打开设置，然后点「通用」。"
+    },
+    {
+     "rule": "提醒、警告",
+     "en": "[[Watch out]]! There's a car coming.",
+     "zh": "小心！有车过来了。"
+    },
+    {
+     "rule": "祝福、道别",
+     "en": "[[Have]] a lovely weekend!",
+     "zh": "周末愉快！"
+    },
+    {
+     "rule": "菜谱",
+     "en": "[[Add]] a pinch of salt and [[stir]] well.",
+     "zh": "加一小撮盐，搅匀。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "客气的请求",
+     "this": {
+      "meaning": "祈使句：直接、简短，适合熟人和说明书",
+      "en": "[[Send]] me the file."
+     },
+     "that": {
+      "meaning": "Could you…?：客气，适合同事和客户",
+      "en": "[[Could you]] send me the file?"
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "~~Not~~ forget your badge.",
+     "good": "[[Don't]] ((forget)) your badge.",
+     "why": "叫人别做，用 Don't，不用 Not。"
+    },
+    {
+     "bad": "Don't ~~be worry~~.",
+     "good": "[[Don't]] ((worry)).",
+     "why": "worry 本身就是动词，不用加 be。"
+    },
+    {
+     "bad": "~~Be not~~ late.",
+     "good": "[[Don't]] ((be)) late.",
+     "why": "be 的否定也用 Don't be。"
+    },
+    {
+     "bad": "Let's ~~to go~~.",
+     "good": "[[Let's]] ((go)).",
+     "why": "Let's 后面直接用原形，不加 to。"
+    },
+    {
+     "bad": "Let's ~~don't~~ wait.",
+     "good": "[[Let's not]] ((wait)).",
+     "why": "Let's 的否定是 Let's not。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "___ the door, please. It's cold.",
+   "options": [
+    "Close",
+    "Closing",
+    "You closing",
+    "To close"
+   ],
+   "answer": "Close",
+   "explain": "叫人做事，动词原形开头：[[Close]]。"
+  },
+  {
+   "id": "q02",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "___ careful! The floor's wet.",
+   "answer": "Be",
+   "accept": [],
+   "explain": "后面是形容词 careful，用 [[Be]] 开头。"
+  },
+  {
+   "id": "q03",
+   "section": "positive",
+   "type": "translate",
+   "prompt": "翻译：请把链接发给我。",
+   "answer": "Please send me the link.",
+   "accept": [
+    "Send me the link, please.",
+    "Please send the link to me.",
+    "Send the link to me, please."
+   ],
+   "explain": "please + 动词原形：Please [[send]]…"
+  },
+  {
+   "id": "q04",
+   "section": "negative",
+   "type": "transform",
+   "prompt": "改成否定（叫人别做）：Push to main.",
+   "answer": "Don't push to main.",
+   "accept": [
+    "Do not push to main."
+   ],
+   "explain": "前面加 [[Don't]]。"
+  },
+  {
+   "id": "q05",
+   "section": "negative",
+   "type": "fix",
+   "prompt": "改错：Be not late for the demo.",
+   "answer": "Don't be late for the demo.",
+   "accept": [
+    "Do not be late for the demo."
+   ],
+   "explain": "be 的否定也用 [[Don't]] ((be))。"
+  },
+  {
+   "id": "q06",
+   "section": "negative",
+   "type": "fix",
+   "prompt": "改错：Don't be worry, I'll fix it.",
+   "answer": "Don't worry, I'll fix it.",
+   "accept": [
+    "Don't worry, I will fix it.",
+    "Do not worry, I'll fix it."
+   ],
+   "explain": "worry 本身就是动词：[[Don't]] ((worry))。"
+  },
+  {
+   "id": "q07",
+   "section": "negative",
+   "type": "choice",
+   "prompt": "___ share your password with anyone.",
+   "options": [
+    "Never",
+    "Not",
+    "No"
+   ],
+   "answer": "Never",
+   "explain": "语气很重的「永远别」：[[Never]]。"
+  },
+  {
+   "id": "q08",
+   "section": "lets",
+   "type": "choice",
+   "prompt": "Let's ___ the meeting now.",
+   "options": [
+    "start",
+    "to start",
+    "starting",
+    "starts"
+   ],
+   "answer": "start",
+   "explain": "Let's 后面用原形：[[start]]。"
+  },
+  {
+   "id": "q09",
+   "section": "lets",
+   "type": "transform",
+   "prompt": "改成否定：Let's rush this release.",
+   "answer": "Let's not rush this release.",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Let's don't rush this release.",
+     "note": "Let's 的否定是 Let's not。"
+    }
+   ],
+   "explain": "Let's 的否定是 [[Let's not]]。"
+  },
+  {
+   "id": "q10",
+   "section": "polite",
+   "type": "choice",
+   "prompt": "下面哪一句对客户说最客气？",
+   "options": [
+    "Could you send me the file, please?",
+    "Send me the file.",
+    "You send me the file."
+   ],
+   "answer": "Could you send me the file, please?",
+   "explain": "[[Could you]]…please? 最客气。"
+  },
+  {
+   "id": "q11",
+   "section": "polite",
+   "type": "fill",
+   "prompt": "Check this PR for me, ___ you? (填一个词，让语气客气)",
+   "answer": "could",
+   "accept": [
+    "will",
+    "would",
+    "can"
+   ],
+   "explain": "加个小尾巴：[[could]] you？"
+  },
+  {
+   "id": "q12",
+   "section": "when",
+   "type": "choice",
+   "prompt": "操作说明：Open Settings, then ___ General.",
+   "options": [
+    "tap",
+    "tapping",
+    "you tap",
+    "to tap"
+   ],
+   "answer": "tap",
+   "explain": "说明步骤用动词原形：[[tap]]。"
+  },
+  {
+   "id": "q13",
+   "section": "when",
+   "type": "translate",
+   "prompt": "翻译：周末愉快！",
+   "answer": "Have a nice weekend!",
+   "accept": [
+    "Have a good weekend!",
+    "Have a lovely weekend!",
+    "Have a great weekend!",
+    "Enjoy your weekend!"
+   ],
+   "explain": "祝福也用祈使句：[[Have]] a nice weekend。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Not forget your badge.",
+   "answer": "Don't forget your badge.",
+   "accept": [
+    "Do not forget your badge."
+   ],
+   "explain": "叫人别做用 [[Don't]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Let's to go home.",
+   "answer": "Let's go home.",
+   "accept": [],
+   "explain": "Let's 后面直接用原形：[[Let's]] ((go))。"
+  }
+ ],
+ "openTask": {
+  "prompt": "给新来的同事写 4 条第一天的小提示：2 条叫他做，1 条叫他别做，1 条用 Let's 约他一起做。",
+  "rules": [
+   "祈使句用动词原形开头，不加 you",
+   "否定用 Don't + 原形，Let's 的否定是 Let's not"
+  ],
+  "note": "规则判动词原形和 Don't / Let's not（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

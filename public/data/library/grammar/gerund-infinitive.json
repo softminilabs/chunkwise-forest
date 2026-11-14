@@ -1,0 +1,525 @@
+{
+ "id": "g-gerund-infinitive",
+ "title": "动名词还是不定式",
+ "en": "Gerund or Infinitive",
+ "group": "动词",
+ "level": "B1",
+ "order": 18,
+ "keywords": [
+  "动词 + doing",
+  "动词 + to do",
+  "+ doing 和 to do",
+  "介词 + doing",
+  "固定说法 + doing",
+  "sb to do",
+  "keep doing",
+  "by doing",
+  "without doing",
+  "suggest / recommend",
+  "动词后面接什么"
+ ],
+ "related": [
+  "g-causative-verbs",
+  "g-modals-requests",
+  "g-perception-verbs",
+  "g-phrasal-verbs"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "一个动词后面再跟一个动词时，第二个要变样子：要么 **doing**，要么 **to do**。用哪个，是**前面那个词说了算**。感觉上：doing 多说**做过的、在做的**，to do 多说**还没做、要去做的**。",
+   "uses": [
+    {
+     "zh": "前面那个词要 doing",
+     "en": "I <<enjoy>> [[work{ing}]] with this team.",
+     "en_zh": "我很喜欢和这个团队一起工作。"
+    },
+    {
+     "zh": "前面那个词要 to do",
+     "en": "We <<decided>> [[to release]] on Monday.",
+     "en_zh": "我们决定周一发版。"
+    },
+    {
+     "zh": "介词后面一定是 doing",
+     "en": "Thanks <<for>> [[help{ing}]] me.",
+     "en_zh": "谢谢你帮我。"
+    }
+   ]
+  },
+  "doing": {
+   "title": "后面跟 doing 的词", "short": "+ing",
+   "text": "这些词后面的动词加 **-ing**。不用死记全部，先记最常用的一组，口诀：**喜欢做完、别躲、继续、考虑建议**。",
+   "rules": [
+    {
+     "ending": "喜欢、介意",
+     "change": "+ doing",
+     "examples": [
+      "[[enjoy]]",
+      "[[mind]]",
+      "[[can't stand]]"
+     ]
+    },
+    {
+     "ending": "做完、别躲",
+     "change": "+ doing",
+     "examples": [
+      "[[finish]]",
+      "[[avoid]]",
+      "[[give up]]"
+     ]
+    },
+    {
+     "ending": "继续、练习",
+     "change": "+ doing",
+     "examples": [
+      "[[keep]]",
+      "[[practise]]",
+      "[[carry on]]"
+     ]
+    },
+    {
+     "ending": "考虑、建议",
+     "change": "+ doing",
+     "examples": [
+      "[[consider]]",
+      "[[suggest]]",
+      "[[recommend]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "Have you <<finished>> [[test{ing}]] the new build?",
+     "zh": "新版本你测完了吗？"
+    },
+    {
+     "en": "The app <<keeps>> [[crash{ing}]] on iPad.",
+     "zh": "这个 App 在 iPad 上老是崩溃。"
+    },
+    {
+     "en": "I <<suggest>> [[wait{ing}]] until Monday.",
+     "zh": "我建议等到周一。"
+    }
+   ]
+  },
+  "todo": {
+   "title": "后面跟 to do 的词", "short": "+to",
+   "text": "这些词大多和**「打算、希望、答应」**有关，事情还没发生，所以用 **to do**，像一支箭指向将来。",
+   "rules": [
+    {
+     "ending": "想要、需要",
+     "change": "+ to do",
+     "examples": [
+      "[[want]]",
+      "[[need]]",
+      "[[would like]]"
+     ]
+    },
+    {
+     "ending": "打算、决定",
+     "change": "+ to do",
+     "examples": [
+      "[[plan]]",
+      "[[decide]]",
+      "[[hope]]",
+      "[[expect]]"
+     ]
+    },
+    {
+     "ending": "答应、同意",
+     "change": "+ to do",
+     "examples": [
+      "[[promise]]",
+      "[[agree]]",
+      "[[offer]]",
+      "[[refuse]]"
+     ]
+    },
+    {
+     "ending": "做到",
+     "change": "+ to do",
+     "examples": [
+      "[[manage]]",
+      "[[afford]]",
+      "[[learn]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "I <<need>> [[to update]] my CV.",
+     "zh": "我需要更新一下简历。"
+    },
+    {
+     "en": "She <<promised>> [[to send]] the designs today.",
+     "zh": "她答应今天把设计稿发过来。"
+    },
+    {
+     "en": "We can't <<afford>> [[to miss]] this deadline.",
+     "zh": "这个截止日期我们可错过不起。"
+    }
+   ]
+  },
+  "both": {
+   "title": "两种都行", "short": "都行",
+   "text": "有几个词后面 doing 和 to do **都可以，意思也差不多**：开始、继续、喜欢、讨厌这几个。",
+   "items": [
+    {
+     "rule": "start / begin",
+     "en": "It <<started>> [[rain{ing}]]. / It <<started>> [[to rain]].",
+     "zh": "开始下雨了。"
+    },
+    {
+     "rule": "like / love / hate",
+     "en": "I <<love>> [[cook{ing}]]. / I <<love>> [[to cook]].",
+     "zh": "我喜欢做饭。"
+    },
+    {
+     "rule": "continue",
+     "en": "We'll <<continue>> [[work{ing}]] on it tomorrow.",
+     "zh": "我们明天接着做。"
+    }
+   ],
+   "notes": [
+    "但 would like / would love 后面只能用 to do：I'd like [[to go]]，不说 I'd like going。"
+   ]
+  },
+  "change": {
+   "title": "换了就变意思", "short": "变意思",
+   "text": "这几个词最调皮：跟 doing 和跟 to do **意思完全不一样**。记住：**doing 往回看（已经做过），to do 往前看（还要去做）**。",
+   "pairs": [
+    {
+     "with": "remember to do",
+     "this": {
+      "meaning": "remember doing：记得做过",
+      "en": "I <<remember>> [[lock{ing}]] the door."
+     },
+     "that": {
+      "meaning": "remember to do：记得要去做",
+      "en": "<<Remember>> [[to lock]] the door."
+     }
+    },
+    {
+     "with": "stop to do",
+     "this": {
+      "meaning": "stop doing：不再做了",
+      "en": "I <<stopped>> [[drink{ing}]] coffee."
+     },
+     "that": {
+      "meaning": "stop to do：停下来去做别的",
+      "en": "I <<stopped>> [[to drink]] some coffee."
+     }
+    },
+    {
+     "with": "try to do",
+     "this": {
+      "meaning": "try doing：试试这个办法",
+      "en": "<<Try>> [[restart{ing}]] your phone."
+     },
+     "that": {
+      "meaning": "try to do：努力想做到",
+      "en": "I <<tried>> [[to fix]] it, but I couldn't."
+     }
+    },
+    {
+     "with": "forget to do",
+     "this": {
+      "meaning": "forget doing：忘了做过（常用 I'll never forget）",
+      "en": "I'll never <<forget>> [[meet{ing}]] you."
+     },
+     "that": {
+      "meaning": "forget to do：忘了去做",
+      "en": "I <<forgot>> [[to reply]] to his email."
+     }
+    }
+   ]
+  },
+  "prep": {
+   "title": "介词后面一律 doing", "short": "介词",
+   "text": "at、for、before、without 这类小词（介词）后面，动词**一律加 -ing**。最坑的是：有些固定说法里的 to 也是介词，后面同样用 **doing**。",
+   "items": [
+    {
+     "rule": "be good at + doing",
+     "en": "He's good <<at>> [[explain{ing}]] things.",
+     "zh": "他很会把事情讲清楚。"
+    },
+    {
+     "rule": "before / after + doing",
+     "en": "Test it <<before>> [[merg{ing}]].",
+     "zh": "合并之前先测一下。"
+    },
+    {
+     "rule": "without + doing",
+     "en": "She left <<without>> [[say{ing}]] goodbye.",
+     "zh": "她没说再见就走了。"
+    },
+    {
+     "rule": "固定说法里的 to：look forward to + doing",
+     "en": "I'm <<looking forward to>> [[see{ing}]] you.",
+     "zh": "期待见到你。"
+    },
+    {
+     "rule": "固定说法里的 to：be used to + doing（习惯了）",
+     "en": "I'm <<used to>> [[work{ing}]] late.",
+     "zh": "我习惯加班了。"
+    }
+   ],
+   "wrong": {
+    "bad": "I'm looking forward to ~~hear~~ from you.",
+    "good": "I'm looking forward to [[hear{ing}]] from you."
+   }
+  },
+  "mistakes": {
+   "title": "最常见的错", "short": "易错",
+   "commonMistakes": [
+    {
+     "bad": "I enjoy ~~to work~~ from home.",
+     "good": "I enjoy [[work{ing}]] from home.",
+     "why": "enjoy 后面跟 doing。"
+    },
+    {
+     "bad": "I want ~~going~~ home.",
+     "good": "I want [[to go]] home.",
+     "why": "want 后面跟 to do。"
+    },
+    {
+     "bad": "Thanks for ~~help~~ me.",
+     "good": "Thanks for [[help{ing}]] me.",
+     "why": "介词 for 后面跟 doing。"
+    },
+    {
+     "bad": "I look forward to ~~meet~~ you.",
+     "good": "I look forward to [[meet{ing}]] you.",
+     "why": "look forward to 的 to 是介词，后面跟 doing。"
+    },
+    {
+     "bad": "Would you mind ~~to wait~~?",
+     "good": "Would you mind [[wait{ing}]]?",
+     "why": "mind 后面跟 doing。"
+    }
+   ],
+   "tip": "拿不准的时候，先看前面是不是介词：是介词，就一定是 doing。"
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "We decided ___ on Monday.",
+   "options": [
+    "to release",
+    "releasing",
+    "release"
+   ],
+   "answer": "to release",
+   "explain": "decide 后面跟 to do：[[to release]]。"
+  },
+  {
+   "id": "q02",
+   "section": "doing",
+   "type": "fill",
+   "prompt": "Have you finished ___ (test) the new build?",
+   "answer": "testing",
+   "accept": [],
+   "traps": [
+    {
+     "input": "to test",
+     "note": "finish 后面跟 doing。"
+    }
+   ],
+   "explain": "finish 后面跟 doing：[[test{ing}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "doing",
+   "type": "fill",
+   "prompt": "The app keeps ___ (crash) on iPad.",
+   "answer": "crashing",
+   "accept": [],
+   "explain": "keep 后面跟 doing：[[crash{ing}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "doing",
+   "type": "choice",
+   "prompt": "I suggest ___ until Monday.",
+   "options": [
+    "waiting",
+    "to wait",
+    "wait"
+   ],
+   "answer": "waiting",
+   "explain": "suggest 后面跟 doing：[[wait{ing}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "todo",
+   "type": "fill",
+   "prompt": "She promised ___ (send) the designs today.",
+   "answer": "to send",
+   "accept": [],
+   "explain": "promise 后面跟 to do：[[to send]]。"
+  },
+  {
+   "id": "q06",
+   "section": "todo",
+   "type": "fix",
+   "prompt": "改错：I want going home early today.",
+   "answer": "I want to go home early today.",
+   "accept": [],
+   "explain": "want 后面跟 to do：[[to go]]。"
+  },
+  {
+   "id": "q07",
+   "section": "both",
+   "type": "choice",
+   "prompt": "Which sentence is wrong?",
+   "options": [
+    "It started raining.",
+    "It started to rain.",
+    "I'd like going out."
+   ],
+   "answer": "I'd like going out.",
+   "explain": "would like 后面只能用 to do：I'd like [[to go]] out。"
+  },
+  {
+   "id": "q08",
+   "section": "change",
+   "type": "choice",
+   "prompt": "I clearly remember ___ the door, so it must be locked.",
+   "options": [
+    "locking",
+    "to lock"
+   ],
+   "answer": "locking",
+   "explain": "记得已经做过：remember [[lock{ing}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "change",
+   "type": "choice",
+   "prompt": "Please remember ___ the door when you leave.",
+   "options": [
+    "locking",
+    "to lock"
+   ],
+   "answer": "to lock",
+   "explain": "记得要去做：remember [[to lock]]。"
+  },
+  {
+   "id": "q10",
+   "section": "change",
+   "type": "fill",
+   "prompt": "I've stopped ___ (drink) coffee. Now I only drink tea.",
+   "answer": "drinking",
+   "accept": [],
+   "traps": [
+    {
+     "input": "to drink",
+     "note": "stop to drink 是「停下来去喝」，意思反了。"
+    }
+   ],
+   "explain": "不再做了：stopped [[drink{ing}]]。"
+  },
+  {
+   "id": "q11",
+   "section": "change",
+   "type": "translate",
+   "prompt": "翻译：我忘了回复他的邮件。",
+   "answer": "I forgot to reply to his email.",
+   "accept": [
+    "I forgot to answer his email.",
+    "I forgot to reply to his e-mail."
+   ],
+   "explain": "忘了去做：forgot [[to reply]]。"
+  },
+  {
+   "id": "q12",
+   "section": "prep",
+   "type": "fill",
+   "prompt": "I'm looking forward to ___ (hear) from you.",
+   "answer": "hearing",
+   "accept": [],
+   "traps": [
+    {
+     "input": "hear",
+     "note": "这里的 to 是介词，后面跟 doing。"
+    }
+   ],
+   "explain": "look forward to 后面跟 doing：[[hear{ing}]]。"
+  },
+  {
+   "id": "q13",
+   "section": "prep",
+   "type": "fill",
+   "prompt": "Test it before ___ (merge).",
+   "answer": "merging",
+   "accept": [],
+   "explain": "介词 before 后面跟 doing：[[merg{ing}]]。"
+  },
+  {
+   "id": "q14",
+   "section": "prep",
+   "type": "transform",
+   "prompt": "用 without 合并成一句：She left. She didn't say goodbye.",
+   "answer": "She left without saying goodbye.",
+   "accept": [],
+   "explain": "without 后面跟 doing：[[say{ing}]]。"
+  },
+  {
+   "id": "q15",
+   "section": "mistakes",
+   "type": "fix",
+   "prompt": "改错：I enjoy to work from home.",
+   "answer": "I enjoy working from home.",
+   "accept": [],
+   "explain": "enjoy 后面跟 doing：[[work{ing}]]。"
+  },
+  {
+   "id": "q16",
+   "section": "mistakes",
+   "type": "fix",
+   "prompt": "改错：Thanks for help me with the release.",
+   "answer": "Thanks for helping me with the release.",
+   "accept": [
+    "Thank you for helping me with the release."
+   ],
+   "explain": "介词 for 后面跟 doing：[[help{ing}]]。"
+  },
+  {
+   "id": "q17",
+   "section": "mistakes",
+   "type": "translate",
+   "prompt": "翻译：我习惯加班了。",
+   "answer": "I'm used to working late.",
+   "accept": [
+    "I am used to working late.",
+    "I'm used to working overtime.",
+    "I am used to working overtime."
+   ],
+   "traps": [
+    {
+     "input": "I'm used to work late.",
+     "note": "be used to 的 to 是介词，后面跟 doing。"
+    }
+   ],
+   "explain": "be used to 后面跟 doing：[[work{ing}]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话说说你的工作：一句用 enjoy / avoid + doing，一句用 want / plan / hope + to do，一句用 look forward to + doing 说你期待的事。",
+  "rules": [
+   "enjoy / finish / avoid / keep / suggest / mind 后面用 doing",
+   "want / need / decide / plan / hope / promise 后面用 to do；介词和 look forward to 后面用 doing"
+  ],
+  "note": "规则判 doing / to do 有没有搭配对（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

@@ -1,0 +1,488 @@
+{
+ "id": "cheat-stress-weak-forms",
+ "title": "重音和弱读",
+ "en": "Stress and Weak Forms",
+ "group": "速查表",
+ "order": 2,
+ "symbol": "waveform",
+ "summary": "听不懂快语速，多半卡在这里",
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "英语说话有轻有重：重要的词读得重、读得慢，小词读得轻、读得快。听不懂快语速，多半是没认出那些轻读的小词。先看规律，再点句子听，跟着读。"
+  },
+  "word": {
+   "title": "单词重音：名词前，动词后",
+   "short": "单词",
+   "rule": "同一个双音节词，**当名词时重音在前**，**当动词时重音在后**。小标题里大写的音节读重。每句话里同一个词出现两次，点开听重音怎么挪。",
+   "items": [
+    {
+     "en": "Can you [[record]] the call? I need a [[record]] of it.",
+     "zh": "你能把通话录下来吗？我需要一份记录。",
+     "rule": "reCORD 动词 · REcord 名词"
+    },
+    {
+     "en": "I'll [[present]] the demo. It's a little [[present]] for the team.",
+     "zh": "我来讲这个演示。这是给团队的一点小礼物。",
+     "rule": "preSENT 动词 · PREsent 名词"
+    },
+    {
+     "en": "They [[project]] ten percent growth for this [[project]].",
+     "zh": "他们预计这个项目能增长百分之十。",
+     "rule": "proJECT 动词 · PROject 名词"
+    },
+    {
+     "en": "We want to [[increase]] sales. We saw a big [[increase]] last month.",
+     "zh": "我们想提高销量。上个月涨了很多。",
+     "rule": "inCREASE 动词 · INcrease 名词"
+    },
+    {
+     "en": "Please [[update]] the app. The [[update]] fixes the crash.",
+     "zh": "请更新一下 App。这次更新修好了闪退。",
+     "rule": "upDATE 动词 · UPdate 名词"
+    },
+    {
+     "en": "You can [[export]] the data. The [[export]] is a CSV file.",
+     "zh": "你可以导出数据。导出来的是一个 CSV 文件。",
+     "rule": "exPORT 动词 · EXport 名词"
+    },
+    {
+     "en": "The two changes [[conflict]]. Let's fix the [[conflict]] first.",
+     "zh": "这两处改动冲突了。先把冲突解决。",
+     "rule": "conFLICT 动词 · CONflict 名词"
+    },
+    {
+     "en": "Things [[progress]] slowly, but we're making [[progress]].",
+     "zh": "事情推进得慢，但我们在进步。",
+     "rule": "proGRESS 动词 · PROgress 名词"
+    },
+    {
+     "en": "The colours [[contrast]] well. I like the [[contrast]].",
+     "zh": "这几个颜色对比很鲜明。我喜欢这种对比。",
+     "rule": "conTRAST 动词 · CONtrast 名词"
+    }
+   ],
+   "tip": "大部分双音节名词和形容词重音在前（**TA**ble, **HAP**py），大部分双音节动词重音在后（be**GIN**, de**CIDE**）。拿不准就先读前面。"
+  },
+  "suffix": {
+   "title": "后缀管重音",
+   "short": "后缀",
+   "text": "有些词尾一出现，重音的位置就定了。点按钮听，注意哪个音节最响。",
+   "sound": [
+    {
+     "say": "-tion / -sion",
+     "when": "重音在它前面那个音节",
+     "examples": [
+      "decision",
+      "information",
+      "presentation",
+      "discussion",
+      "application"
+     ]
+    },
+    {
+     "say": "-ic / -ical",
+     "when": "重音在它前面那个音节",
+     "examples": [
+      "automatic",
+      "specific",
+      "technical",
+      "logical",
+      "economic"
+     ]
+    },
+    {
+     "say": "-ity",
+     "when": "重音在它前面那个音节",
+     "examples": [
+      "ability",
+      "security",
+      "availability",
+      "reliability",
+      "priority"
+     ]
+    },
+    {
+     "say": "-ee / -eer",
+     "when": "重音就在它自己身上",
+     "examples": [
+      "employee",
+      "attendee",
+      "trainee",
+      "engineer",
+      "volunteer"
+     ]
+    },
+    {
+     "say": "加后缀，重音会挪",
+     "when": "同一个词根，重音跑到不同位置",
+     "examples": [
+      "photograph",
+      "photography",
+      "photographic",
+      "analyse",
+      "analysis"
+     ]
+    }
+   ],
+   "tip": "**-tion 前一个音节最响**，这一条最管用：会议、项目、文档里到处都是 -tion 词。"
+  },
+  "sentence": {
+   "title": "句子重音：实词重，虚词轻",
+   "short": "句子",
+   "rule": "一句话里，**带意思的词读重**（名词、动词、形容词、副词、否定词、疑问词），**搭架子的小词读轻**（a、the、to、of、and、is、was、can、I、you……）。",
+   "notes": [
+    "读重：**report, send, fix, quickly, never, can't, why**",
+    "读轻：a, the, to, of, for, and, but, is, are, was, can, have, you, it"
+   ],
+   "items": [
+    {
+     "en": "I [[sent]] the [[report]] to [[Tom]] on [[Monday]].",
+     "zh": "我周一把报告发给汤姆了。",
+     "rule": "只有四个词读重，其他一带而过"
+    },
+    {
+     "en": "We [[need]] to [[fix]] the [[login]] [[bug]].",
+     "zh": "我们得修一下登录的问题。",
+     "rule": "to 和 the 几乎听不见"
+    },
+    {
+     "en": "I can [[come]], but I [[can't]] stay [[long]].",
+     "zh": "我能来，但待不久。",
+     "rule": "can 读轻，can't 读重：靠重音分辨"
+    },
+    {
+     "en": "[[Why]] did the [[build]] [[fail]]?",
+     "zh": "构建为什么失败了？",
+     "rule": "疑问词读重"
+    },
+    {
+     "en": "The bug is in the [[iOS]] app, not the [[Android]] one.",
+     "zh": "问题出在 iOS 版，不是安卓版。",
+     "rule": "对比的时候，想强调哪个就重读哪个"
+    },
+    {
+     "en": "I [[didn't]] say [[that]].",
+     "zh": "我没那么说。",
+     "rule": "重读不同的词，意思的重点就不同"
+    }
+   ],
+   "tip": "自己说话时，把重音放在关键词上，小词说快一点，就会自然很多。**每个词都读得一样重，听起来像机器人。**"
+  },
+  "weak": {
+   "title": "弱读速查",
+   "short": "弱读",
+   "text": "下面这些小词单独念时很清楚，放进句子里就变轻、变短，元音多半变成轻轻的 /ə/。**听的时候别等它，自己说时别读重。**",
+   "items": [
+    {
+     "en": "Can I ask [[a]] quick question?",
+     "zh": "我能问个小问题吗？",
+     "rule": "a · /ə/"
+    },
+    {
+     "en": "It takes [[an]] hour to build.",
+     "zh": "构建要一个小时。",
+     "rule": "an · /ən/"
+    },
+    {
+     "en": "Check [[the]] logs first.",
+     "zh": "先看看日志。",
+     "rule": "the · /ðə/，元音前读 /ði/"
+    },
+    {
+     "en": "Build [[and]] run it again.",
+     "zh": "重新构建再跑一遍。",
+     "rule": "and · /ən/ 或只剩 /n/"
+    },
+    {
+     "en": "It works, [[but]] it's slow.",
+     "zh": "能用，但是慢。",
+     "rule": "but · /bət/"
+    },
+    {
+     "en": "Today [[or]] tomorrow?",
+     "zh": "今天还是明天？",
+     "rule": "or · /ə/"
+    },
+    {
+     "en": "I need [[to]] fix this.",
+     "zh": "我得把这个修好。",
+     "rule": "to · /tə/"
+    },
+    {
+     "en": "Thanks [[for]] your help.",
+     "zh": "谢谢你的帮忙。",
+     "rule": "for · /fə/"
+    },
+    {
+     "en": "Most [[of]] the tests passed.",
+     "zh": "大部分测试都过了。",
+     "rule": "of · /əv/，快的时候只剩 /ə/"
+    },
+    {
+     "en": "There's a message [[from]] the client.",
+     "zh": "客户发来一条消息。",
+     "rule": "from · /frəm/"
+    },
+    {
+     "en": "Let's meet [[at]] three.",
+     "zh": "我们三点见。",
+     "rule": "at · /ət/"
+    },
+    {
+     "en": "It's [[as]] fast [[as]] before.",
+     "zh": "跟以前一样快。",
+     "rule": "as · /əz/"
+    },
+    {
+     "en": "It's faster [[than]] the old one.",
+     "zh": "比旧的快。",
+     "rule": "than · /ðən/"
+    },
+    {
+     "en": "I think [[that]] it's fine.",
+     "zh": "我觉得没问题。",
+     "rule": "that · /ðət/，只有当连接词时才弱读"
+    },
+    {
+     "en": "Let's get [[some]] coffee.",
+     "zh": "我们去买点咖啡吧。",
+     "rule": "some · /səm/"
+    },
+    {
+     "en": "I [[can]] help you with that.",
+     "zh": "这个我能帮你。",
+     "rule": "can · /kən/，can't 永远不弱读"
+    },
+    {
+     "en": "[[Could]] you send it again?",
+     "zh": "你能再发一次吗？",
+     "rule": "could · /kəd/"
+    },
+    {
+     "en": "That [[would]] be great.",
+     "zh": "那就太好了。",
+     "rule": "would · /wəd/，常缩成 'd"
+    },
+    {
+     "en": "We [[should]] ship it today.",
+     "zh": "我们应该今天发版。",
+     "rule": "should · /ʃəd/"
+    },
+    {
+     "en": "You [[must]] be tired.",
+     "zh": "你一定累了吧。",
+     "rule": "must · /məst/，s 后面的 t 常常听不见"
+    },
+    {
+     "en": "The tests [[have]] passed.",
+     "zh": "测试已经通过了。",
+     "rule": "have · /əv/，当助动词时"
+    },
+    {
+     "en": "The build [[has]] failed again.",
+     "zh": "构建又失败了。",
+     "rule": "has · /həz/ 或 /əz/"
+    },
+    {
+     "en": "What [[do]] you think?",
+     "zh": "你怎么看？",
+     "rule": "do · /də/"
+    },
+    {
+     "en": "When [[does]] it start?",
+     "zh": "什么时候开始？",
+     "rule": "does · /dəz/"
+    },
+    {
+     "en": "It [[was]] a long day.",
+     "zh": "今天真漫长。",
+     "rule": "was · /wəz/"
+    },
+    {
+     "en": "We [[were]] on a call.",
+     "zh": "我们刚才在开会。",
+     "rule": "were · /wə/"
+    },
+    {
+     "en": "Where [[are]] the files?",
+     "zh": "文件在哪儿？",
+     "rule": "are · /ə/"
+    },
+    {
+     "en": "[[There]]'s a problem with the server.",
+     "zh": "服务器出了点问题。",
+     "rule": "there · /ðə/，「有」的意思时"
+    },
+    {
+     "en": "Just ask [[them]].",
+     "zh": "直接问他们就行。",
+     "rule": "them · /ðəm/，快的时候像 'em"
+    },
+    {
+     "en": "Tell [[him]] I'll call back.",
+     "zh": "跟他说我待会儿回电话。",
+     "rule": "him · /ɪm/，h 不发音"
+    },
+    {
+     "en": "I'll send [[her]] the link.",
+     "zh": "我把链接发给她。",
+     "rule": "her · /ə/，h 不发音"
+    },
+    {
+     "en": "Send [[us]] the details.",
+     "zh": "把细节发给我们。",
+     "rule": "us · /əs/"
+    },
+    {
+     "en": "I [[should have]] checked first.",
+     "zh": "我早该先查一下的。",
+     "rule": "should have · /ʃʊdəv/，听起来像 should of"
+    },
+    {
+     "en": "It [[could have]] been worse.",
+     "zh": "本来可能更糟。",
+     "rule": "could have · /kʊdəv/"
+    },
+    {
+     "en": "I [[would have]] told you.",
+     "zh": "我本来会告诉你的。",
+     "rule": "would have · /wʊdəv/"
+    }
+   ],
+   "notes": [
+    "**放在句末或者要强调时，读回原来的音**：Where are you **from**? Yes, I **can**.",
+    "否定的缩写 can't、don't、isn't、wasn't **从不弱读**，而且常常是句子里最重的词。"
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I should ~~of~~ checked first.",
+     "good": "I [[should have]] checked first.",
+     "why": "听起来像 of，其实是 have。写的时候只能写 should have 或 should've。"
+    },
+    {
+     "bad": "I ~~CAN~~ help you.（每个字都读得很重）",
+     "good": "I [[can]] help you.",
+     "why": "can 读重，别人会以为你在说 can't 或者在强调「我真的能」。平常读轻 /kən/。"
+    }
+   ]
+  },
+  "casual": {
+   "title": "口语里粘在一起的词",
+   "short": "粘读",
+   "text": "说得快时，两三个词会粘成一个。**这些只在聊天口语里出现，邮件、文档、PR 里不要写。**你自己不用学着说，听得懂就行。",
+   "items": [
+    {
+     "en": "I'm [[gonna]] grab a coffee.",
+     "zh": "我去买杯咖啡。",
+     "rule": "gonna = going to · 只在「打算做」时这样说，「去某地」不能"
+    },
+    {
+     "en": "Do you [[wanna]] pair on this?",
+     "zh": "要不要一起搞这个？",
+     "rule": "wanna = want to"
+    },
+    {
+     "en": "I've [[gotta]] go, I've got another call.",
+     "zh": "我得走了，还有个会。",
+     "rule": "gotta = have got to，「必须」"
+    },
+    {
+     "en": "I [[dunno]], let me check.",
+     "zh": "我不知道，我查一下。",
+     "rule": "dunno = don't know"
+    },
+    {
+     "en": "It's [[kinda]] slow on older phones.",
+     "zh": "在旧手机上有点慢。",
+     "rule": "kinda = kind of，「有点」"
+    },
+    {
+     "en": "[[Lemme]] have a look.",
+     "zh": "我看看。",
+     "rule": "lemme = let me"
+    },
+    {
+     "en": "[[Gimme]] a sec.",
+     "zh": "等我一下。",
+     "rule": "gimme = give me"
+    },
+    {
+     "en": "We [[have to]] fix it first.",
+     "zh": "我们得先修好它。",
+     "rule": "have to · 听起来像 hafta"
+    },
+    {
+     "en": "[[Did you]] see my message?",
+     "zh": "你看到我的消息了吗？",
+     "rule": "did you · 听起来像 didja"
+    },
+    {
+     "en": "[[What do you]] think?",
+     "zh": "你觉得呢？",
+     "rule": "what do you · 听起来像 whaddya"
+    }
+   ]
+  },
+  "linking": {
+   "title": "连读",
+   "short": "连读",
+   "text": "单词和单词之间不停顿，像一条线连下去。认得这几种连法，「一串听不清的音」就能拆回单词。",
+   "items": [
+    {
+     "en": "[[Check it out]].",
+     "zh": "看看这个。",
+     "rule": "辅音 + 元音，连起来：che-ki-tout"
+    },
+    {
+     "en": "Can you [[pick it up]]?",
+     "zh": "你能接一下吗？",
+     "rule": "辅音 + 元音：pi-ki-tup"
+    },
+    {
+     "en": "See you [[next time]].",
+     "zh": "下次见。",
+     "rule": "相邻的 t 只读一次：nex-time"
+    },
+    {
+     "en": "It's been a [[bad day]].",
+     "zh": "今天真不顺。",
+     "rule": "相同的辅音只读一次，稍微拖长"
+    },
+    {
+     "en": "[[Did you]] push it?",
+     "zh": "你推上去了吗？",
+     "rule": "d + y 变成「几」的音：di-ju"
+    },
+    {
+     "en": "[[Got you]].",
+     "zh": "明白了。",
+     "rule": "t + y 变成「七」的音：go-tcha"
+    },
+    {
+     "en": "Let's [[go on]].",
+     "zh": "我们继续。",
+     "rule": "元音 + 元音，中间加一个轻轻的 w：go-won"
+    },
+    {
+     "en": "[[I agree]].",
+     "zh": "我同意。",
+     "rule": "元音 + 元音，中间加一个轻轻的 y：I-yagree"
+    },
+    {
+     "en": "[[Where is it]]?",
+     "zh": "它在哪儿？",
+     "rule": "英式英语 r 平时不读，后面接元音时才读出来：wea-ri-zit"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "id": "ref-prepositions-in-on-at",
+ "title": "介词 in / on / at",
+ "idea": "at 是「点」，on 是「面、线、具体的一天」，in 是「里面、一段时间」。时间和地点都按这个想。",
+ "categories": [
+  {
+   "id": "t-clock",
+   "kind": "时间",
+   "prep": "at",
+   "rule": "具体的钟点、时刻用 at",
+   "items": [
+    "7 o'clock",
+    "9:30",
+    "noon",
+    "midnight",
+    "lunchtime",
+    "the end of the day"
+   ],
+   "example": "The stand-up starts [[at]] 9:30."
+  },
+  {
+   "id": "t-day",
+   "kind": "时间",
+   "prep": "on",
+   "rule": "具体的某一天用 on（星期几、日期、某天的上午）",
+   "items": [
+    "Monday",
+    "Friday morning",
+    "December 8th",
+    "my birthday",
+    "New Year's Day",
+    "the first day"
+   ],
+   "example": "Let's ship it [[on]] Friday.",
+   "note": "in the morning，但 on Friday morning：说到具体哪一天就用 on"
+  },
+  {
+   "id": "t-long",
+   "kind": "时间",
+   "prep": "in",
+   "rule": "一段较长的时间用 in（月、年、季节、世纪、上午下午晚上）",
+   "items": [
+    "May",
+    "2026",
+    "the summer",
+    "the morning",
+    "the evening",
+    "the 1990s"
+   ],
+   "example": "We launched the app [[in]] 2026."
+  },
+  {
+   "id": "t-night",
+   "kind": "时间",
+   "prep": "at",
+   "rule": "几个固定说法用 at",
+   "items": [
+    "night",
+    "the weekend",
+    "Christmas",
+    "the moment",
+    "the same time"
+   ],
+   "example": "I usually read [[at]] night.",
+   "accept": {
+    "the weekend": [
+     "at",
+     "on"
+    ]
+   },
+   "note": "the weekend：英式 at，美式 on，两个都算对"
+  },
+  {
+   "id": "t-within",
+   "kind": "时间",
+   "prep": "in",
+   "rule": "「多久以后」用 in",
+   "items": [
+    "two days",
+    "ten minutes",
+    "a week",
+    "an hour"
+   ],
+   "example": "I'll get back to you [[in]] ten minutes."
+  },
+  {
+   "id": "p-point",
+   "kind": "地点",
+   "prep": "at",
+   "rule": "一个点、一个地址、在某处做某事用 at",
+   "items": [
+    "the station",
+    "the door",
+    "work",
+    "home",
+    "the front desk",
+    "the bus stop"
+   ],
+   "example": "I'm [[at]] work until six."
+  },
+  {
+   "id": "p-surface",
+   "kind": "地点",
+   "prep": "on",
+   "rule": "在表面上、在线上用 on",
+   "items": [
+    "the table",
+    "the wall",
+    "the screen",
+    "the second floor",
+    "the bus",
+    "the train"
+   ],
+   "example": "The error message is [[on]] the screen."
+  },
+  {
+   "id": "p-inside",
+   "kind": "地点",
+   "prep": "in",
+   "rule": "在里面、在一个范围内用 in（房间、城市、国家、车里）",
+   "items": [
+    "the room",
+    "Shanghai",
+    "China",
+    "a taxi",
+    "the car",
+    "the photo"
+   ],
+   "example": "She lives [[in]] Shanghai.",
+   "note": "on the bus，但 in a taxi / in the car：能站起来走动的大交通工具用 on"
+  },
+  {
+   "id": "d-platform",
+   "kind": "工作和开发",
+   "prep": "on",
+   "rule": "在某个平台、网站、系统版本上用 on",
+   "items": [
+    "GitHub",
+    "Slack",
+    "the website",
+    "iOS 26",
+    "a call",
+    "line 42"
+   ],
+   "example": "I left a comment [[on]] GitHub."
+  },
+  {
+   "id": "d-inside",
+   "kind": "工作和开发",
+   "prep": "in",
+   "rule": "在某个东西的内部用 in（代码、App、文件、会议里）",
+   "items": [
+    "the code",
+    "the app",
+    "this file",
+    "production",
+    "Swift",
+    "the meeting"
+   ],
+   "example": "The bug only happens [[in]] production.",
+   "accept": {
+    "the meeting": [
+     "in",
+     "at"
+    ]
+   },
+   "note": "in the meeting 强调在会上，at the meeting 强调在会场；两个都常用"
+  },
+  {
+   "id": "d-point",
+   "kind": "工作和开发",
+   "prep": "at",
+   "rule": "几个固定说法用 at",
+   "items": [
+    "runtime",
+    "the end of the sprint",
+    "a high level",
+    "first glance"
+   ],
+   "example": "The app crashed [[at]] runtime."
+  }
+ ],
+ "forGeneration": {
+  "pick": "按薄弱点选一个类别，再从 items 里选一个词，答案取 prep（accept 里的多个答案都算对）",
+  "modelWrites": "一个 B1 难度、贴近使用者工作或生活、不超过 16 个词的句子，原样包含「___ + 所选的词」，只空这一处；附中文翻译",
+  "verify": [
+   "只有一个空",
+   "所选的词原样出现在空后面",
+   "句长 ≤ 16 词",
+   "生词不超过当前等级",
+   "让模型不看答案再做一遍，答案和规则答案一致"
+  ],
+  "fallback": "连续 3 次没通过检查，就用 example 里的句子"
+ }
+}

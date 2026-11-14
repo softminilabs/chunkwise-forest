@@ -1,0 +1,388 @@
+{
+ "id": "g-cleft-sentences",
+ "title": "强调句",
+ "en": "Cleft Sentences",
+ "group": "句子",
+ "level": "B2",
+ "order": 36,
+ "keywords": [
+  "强调句"
+ ],
+ "related": [
+  "g-relative-clauses",
+  "g-inversion",
+  "g-discourse-markers"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "强调句就是把一句话**拆成两半**，把最想强调的部分**拎出来摆在显眼处**。常用两种：**It was … that …**（「就是……」）和 **What … is …**（「……的是……」）。",
+   "uses": [
+    {
+     "zh": "强调是谁",
+     "en": "[[It was]] Maya [[who]] found the bug.",
+     "en_zh": "发现这个 bug 的就是 Maya。"
+    },
+    {
+     "zh": "强调是什么",
+     "en": "[[What]] I need [[is]] a coffee.",
+     "en_zh": "我需要的是一杯咖啡。"
+    },
+    {
+     "zh": "强调什么时候",
+     "en": "[[It was]] on Friday [[that]] the server went down.",
+     "en_zh": "服务器就是周五挂的。"
+    }
+   ],
+   "signals": [
+    "It is … that",
+    "It was … who",
+    "What … is",
+    "All … is",
+    "The reason … is"
+   ]
+  },
+  "itThat": {
+   "title": "It is / It was … that …",
+   "short": "It句",
+   "formula": [
+    "It is / It was",
+    "要强调的部分",
+    "that / who",
+    "剩下的部分"
+   ],
+   "rule": "把要强调的放进 It was 和 that 中间。过去的事用 It was。强调人可以用 who。检查办法：**去掉 It was 和 that，句子还是完整的。**",
+   "examples": [
+    {
+     "en": "[[It was]] the API [[that]] caused the crash, not the app.",
+     "zh": "导致崩溃的是 API，不是 App。"
+    },
+    {
+     "en": "[[It's]] Sam [[who]] knows the most about Core Data.",
+     "zh": "最懂 Core Data 的是 Sam。"
+    },
+    {
+     "en": "[[It was]] in 2019 [[that]] I joined the team.",
+     "zh": "我是 2019 年加入团队的。"
+    }
+   ],
+   "tip": "常常后面跟一句 not …，说「是这个，不是那个」。"
+  },
+  "what": {
+   "title": "What … is …：先卖关子",
+   "short": "What",
+   "formula": [
+    "What + 主语 + 动词",
+    "is / was",
+    "重点"
+   ],
+   "rule": "先卖个关子，**把重点留到最后说**。口语里很常用，用来说想要的、需要的、喜欢的、担心的。",
+   "examples": [
+    {
+     "en": "[[What]] I love about Swift [[is]] how clean it looks.",
+     "zh": "我喜欢 Swift 的地方是它看起来很干净。"
+    },
+    {
+     "en": "[[What]] worries me [[is]] the deadline.",
+     "zh": "让我担心的是截止日期。"
+    },
+    {
+     "en": "[[What]] we need [[is]] more tests.",
+     "zh": "我们需要的是更多测试。"
+    }
+   ]
+  },
+  "action": {
+   "title": "强调做了什么",
+   "short": "动作",
+   "rule": "想强调「**做了什么动作**」，用 What + 主语 + **do / did** + is / was，再接**动词原形**。",
+   "formula": [
+    "What + 主语 + did",
+    "was",
+    "(to) + 动词原形"
+   ],
+   "examples": [
+    {
+     "en": "[[What I did was]] ((call)) the client directly.",
+     "zh": "我做的就是直接给客户打了电话。"
+    },
+    {
+     "en": "[[What you should do is]] ((restart)) the simulator.",
+     "zh": "你该做的是重启模拟器。"
+    },
+    {
+     "en": "[[What happened was]] the build server ran out of space.",
+     "zh": "事情是这样的：构建服务器磁盘满了。"
+    }
+   ],
+   "wrong": {
+    "bad": "What I did was ~~called~~ the client.",
+    "good": "[[What I did was]] ((call)) the client."
+   }
+  },
+  "other": {
+   "title": "其他强调说法",
+   "short": "其他",
+   "items": [
+    {
+     "rule": "**All … is** = 唯一想要的、只是",
+     "en": "[[All]] I want [[is]] a quiet weekend.",
+     "zh": "我就想要一个安静的周末。"
+    },
+    {
+     "rule": "**The reason … is that**，不说 is because",
+     "en": "[[The reason]] I left [[is that]] the commute was too long.",
+     "zh": "我离职是因为通勤太远。"
+    },
+    {
+     "rule": "**The thing … is** = What … is",
+     "en": "[[The thing]] I like most [[is]] the team.",
+     "zh": "我最喜欢的是这个团队。"
+    },
+    {
+     "rule": "动词前加 **do / does / did**，强调「真的」",
+     "en": "I [[did]] ((send)) the email!",
+     "zh": "我真的发了那封邮件！"
+    }
+   ]
+  },
+  "compare": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "普通句",
+     "this": {
+      "meaning": "强调句：突出「是 Maya，不是别人」",
+      "en": "[[It was]] Maya [[who]] found the bug."
+     },
+     "that": {
+      "meaning": "普通句：只是说出这件事",
+      "en": "Maya found the bug."
+     }
+    },
+    {
+     "with": "定语从句",
+     "this": {
+      "meaning": "强调句：去掉 It was … that 句子还完整",
+      "en": "[[It was]] the API [[that]] failed."
+     },
+     "that": {
+      "meaning": "定语从句：that 后面是在说明是哪个",
+      "en": "This is the API [[that]] failed."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "It ~~is~~ in 2019 that I joined.",
+     "good": "[[It was]] in 2019 [[that]] I joined.",
+     "why": "过去的事用 It was。"
+    },
+    {
+     "bad": "It's the deadline ~~what~~ worries me.",
+     "good": "[[It's]] the deadline [[that]] worries me.",
+     "why": "It … 句里用 that，不用 what。"
+    },
+    {
+     "bad": "What I need ~~it~~ is a break.",
+     "good": "[[What]] I need [[is]] a break.",
+     "why": "what 已经代替了要的东西，不用 it。"
+    },
+    {
+     "bad": "What I did was ~~called~~ the client.",
+     "good": "What I did was [[call]] the client.",
+     "why": "was 后面用动词原形。"
+    },
+    {
+     "bad": "The reason is ~~because~~ I was ill.",
+     "good": "The reason is [[that]] I was ill.",
+     "why": "the reason is 后面接 that。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我需要的是一杯咖啡。",
+   "answer": "What I need is a coffee.",
+   "accept": [
+    "What I need is a cup of coffee.",
+    "All I need is a coffee."
+   ],
+   "explain": "先卖关子：[[What]] I need [[is]] …"
+  },
+  {
+   "id": "q02",
+   "section": "itThat",
+   "type": "transform",
+   "prompt": "用 It was … who 强调 Maya：Maya found the bug.",
+   "answer": "It was Maya who found the bug.",
+   "accept": [
+    "It was Maya that found the bug."
+   ],
+   "explain": "把 Maya 放进 [[It was]] 和 [[who]] 中间。"
+  },
+  {
+   "id": "q03",
+   "section": "itThat",
+   "type": "transform",
+   "prompt": "用 It was … that 强调时间：The server went down on Friday.",
+   "answer": "It was on Friday that the server went down.",
+   "accept": [],
+   "explain": "把 on Friday 放进 [[It was]] 和 [[that]] 中间。"
+  },
+  {
+   "id": "q04",
+   "section": "itThat",
+   "type": "choice",
+   "prompt": "___ in 2019 that I joined the team.",
+   "options": [
+    "It is",
+    "It was",
+    "There was",
+    "What was"
+   ],
+   "answer": "It was",
+   "explain": "过去的事用 [[It was]]。"
+  },
+  {
+   "id": "q05",
+   "section": "what",
+   "type": "transform",
+   "prompt": "用 What … is 改写：The deadline worries me.",
+   "answer": "What worries me is the deadline.",
+   "accept": [
+    "The deadline is what worries me."
+   ],
+   "explain": "[[What]] worries me [[is]] + 重点。"
+  },
+  {
+   "id": "q06",
+   "section": "what",
+   "type": "fill",
+   "prompt": "___ I love about Swift is how clean it looks.",
+   "answer": "What",
+   "accept": [],
+   "explain": "先卖关子用 [[What]]。"
+  },
+  {
+   "id": "q07",
+   "section": "what",
+   "type": "fix",
+   "prompt": "改错：What I need it is a break.",
+   "answer": "What I need is a break.",
+   "accept": [],
+   "explain": "what 已经代替了要的东西，去掉 it。"
+  },
+  {
+   "id": "q08",
+   "section": "action",
+   "type": "choice",
+   "prompt": "What I did was ___ the client directly.",
+   "options": [
+    "call",
+    "called",
+    "calling"
+   ],
+   "answer": "call",
+   "explain": "was 后面用动词原形 [[call]]。"
+  },
+  {
+   "id": "q09",
+   "section": "action",
+   "type": "transform",
+   "prompt": "用 What you should do is 改写：You should restart the simulator.",
+   "answer": "What you should do is restart the simulator.",
+   "accept": [
+    "What you should do is to restart the simulator."
+   ],
+   "explain": "[[What you should do is]] + 动词原形。"
+  },
+  {
+   "id": "q10",
+   "section": "other",
+   "type": "fill",
+   "prompt": "___ I want is a quiet weekend.（我就想要……）",
+   "answer": "All",
+   "accept": [],
+   "explain": "「唯一想要」= [[All]] … is。"
+  },
+  {
+   "id": "q11",
+   "section": "other",
+   "type": "fix",
+   "prompt": "改错：The reason I left is because the commute was too long.",
+   "answer": "The reason I left is that the commute was too long.",
+   "accept": [
+    "I left because the commute was too long.",
+    "The reason I left was that the commute was too long."
+   ],
+   "explain": "the reason … is 后面接 [[that]]。"
+  },
+  {
+   "id": "q12",
+   "section": "other",
+   "type": "choice",
+   "prompt": "强调「我真的发了」：I ___ send the email!",
+   "options": [
+    "did",
+    "was",
+    "had"
+   ],
+   "answer": "did",
+   "explain": "动词前加 [[did]]，强调「真的」。"
+  },
+  {
+   "id": "q13",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：It's the deadline what worries me.",
+   "answer": "It's the deadline that worries me.",
+   "accept": [
+    "It is the deadline that worries me."
+   ],
+   "explain": "It … 句里用 [[that]]。"
+  },
+  {
+   "id": "q14",
+   "section": "compare",
+   "type": "choice",
+   "prompt": "哪一句是强调句？",
+   "options": [
+    "It was the API that failed.",
+    "This is the API that failed."
+   ],
+   "answer": "It was the API that failed.",
+   "explain": "去掉 It was … that 还剩 the API failed，是强调句。"
+  },
+  {
+   "id": "q15",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：It is in 2019 that I joined.",
+   "answer": "It was in 2019 that I joined.",
+   "accept": [],
+   "explain": "过去的事用 [[It was]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句强调句说说你的工作：一句 It was … that / who，一句 What I … is，一句 All I want is 或 The reason … is that。",
+  "rules": [
+   "It 句过去的事用 It was，人可以用 who",
+   "What … was 后面接动词时用原形；the reason … is that"
+  ],
+  "note": "规则判强调句结构（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

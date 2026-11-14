@@ -1,0 +1,396 @@
+{
+ "id": "g-prepositions-place",
+ "title": "地点介词",
+ "en": "Prepositions of Place",
+ "group": "形容词、副词和介词",
+ "level": "A2",
+ "order": 48,
+ "keywords": [
+  "地点介词"
+ ],
+ "related": [
+  "g-prepositions-time",
+  "g-there-be",
+  "g-articles"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "地点介词告诉别人**东西在哪儿**。最常用的三个这样记：**at 是一个点，on 是一个面，in 是一个盒子**。再加上 under、next to 这些，位置就说清了。",
+   "uses": [
+    {
+     "zh": "一个点：车站、门口、公司",
+     "en": "I'm [[at]] the station now.",
+     "en_zh": "我现在在车站。"
+    },
+    {
+     "zh": "一个面：桌上、墙上、屏幕上",
+     "en": "Your keys are [[on]] the table.",
+     "en_zh": "你的钥匙在桌上。"
+    },
+    {
+     "zh": "一个盒子：包里、房间里、城市里",
+     "en": "The charger is [[in]] my bag.",
+     "en_zh": "充电器在我包里。"
+    }
+   ]
+  },
+  "at": {
+   "title": "at：一个点", "short": "at",
+   "rule": "at 把地方看成**地图上的一个点**：车站、门口、公司、一场活动。只说「在那儿」，不管在里面还是外面。",
+   "examples": [
+    {
+     "en": "I'll wait for you [[at]] the bus stop.",
+     "zh": "我在公交站等你。"
+    },
+    {
+     "en": "She's [[at]] work until six.",
+     "zh": "她六点前都在上班。"
+    },
+    {
+     "en": "I met him [[at]] a conference in Berlin.",
+     "zh": "我是在柏林的一个大会上认识他的。"
+    }
+   ],
+   "notes": [
+    "固定说法要整个记：[[at]] home、[[at]] work、[[at]] school、[[at]] the top of the page。"
+   ]
+  },
+  "on": {
+   "title": "on：一个面", "short": "on",
+   "rule": "on 是**贴在一个面上**：桌面、墙上、屏幕上、某一层楼。左边、右边也用 on：on the left。",
+   "examples": [
+    {
+     "en": "There's a coffee stain [[on]] my desk.",
+     "zh": "我桌上有一块咖啡渍。"
+    },
+    {
+     "en": "The error message is [[on]] the screen.",
+     "zh": "错误提示就在屏幕上。"
+    },
+    {
+     "en": "Our office is [[on]] the third floor.",
+     "zh": "我们办公室在三楼。"
+    }
+   ],
+   "notes": [
+    "公交、火车、飞机，人能在里面站起来走动，用 on：[[on]] the bus、[[on]] the train、[[on]] the plane。"
+   ]
+  },
+  "in": {
+   "title": "in：一个盒子", "short": "in",
+   "rule": "in 是**在一个有边的空间里面**：房间、包里、文件夹、城市、国家。就像东西被放进了盒子。",
+   "examples": [
+    {
+     "en": "The meeting is [[in]] Room 3.",
+     "zh": "会在 3 号会议室开。"
+    },
+    {
+     "en": "She lives [[in]] Manchester.",
+     "zh": "她住在曼彻斯特。"
+    },
+    {
+     "en": "The file is [[in]] the Downloads folder.",
+     "zh": "文件在「下载」文件夹里。"
+    }
+   ],
+   "notes": [
+    "小汽车、出租车，坐进去站不起来，用 in：[[in]] a taxi、[[in]] the car。",
+    "到达城市、国家说 arrive [[in]]；到达一个地点说 arrive [[at]]。没有 arrive to。"
+   ]
+  },
+  "position": {
+   "title": "其他位置词", "short": "位置",
+   "items": [
+    {
+     "rule": "under：在……下面",
+     "en": "The cables are [[under]] the desk.",
+     "zh": "线都在桌子底下。"
+    },
+    {
+     "rule": "above：在……上面（不挨着）",
+     "en": "Put the logo [[above]] the title.",
+     "zh": "把 logo 放在标题上面。"
+    },
+    {
+     "rule": "next to：在……旁边",
+     "en": "The printer is [[next to]] the kitchen.",
+     "zh": "打印机在厨房旁边。"
+    },
+    {
+     "rule": "between A and B：在 A 和 B 中间",
+     "en": "The café is [[between]] the bank and the gym.",
+     "zh": "咖啡馆在银行和健身房中间。"
+    },
+    {
+     "rule": "behind：在……后面；in front of：在……前面",
+     "en": "There's a car park [[behind]] the building.",
+     "zh": "楼后面有个停车场。"
+    },
+    {
+     "rule": "opposite：在……对面（隔着马路）",
+     "en": "The bus stop is [[opposite]] the hotel.",
+     "zh": "公交站在酒店对面。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "in the office",
+     "this": {
+      "meaning": "at the office：在公司（那个地点）",
+      "en": "Sorry, I'm still [[at]] the office."
+     },
+     "that": {
+      "meaning": "in the office：在办公室里面",
+      "en": "It's cold [[in]] the office today."
+     }
+    },
+    {
+     "with": "in the car",
+     "this": {
+      "meaning": "on the bus：能站着走动",
+      "en": "I read on my phone [[on]] the bus."
+     },
+     "that": {
+      "meaning": "in the car：坐进去站不起来",
+      "en": "I left my umbrella [[in]] the car."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "He's sitting ~~in~~ the bus.",
+     "good": "He's sitting [[on]] the bus.",
+     "why": "公交车用 on。"
+    },
+    {
+     "bad": "I'm ~~in~~ home today.",
+     "good": "I'm [[at]] home today.",
+     "why": "固定说法：at home。"
+    },
+    {
+     "bad": "We arrived ~~to~~ London at midnight.",
+     "good": "We arrived [[in]] London at midnight.",
+     "why": "到达城市用 arrive in，没有 arrive to。"
+    },
+    {
+     "bad": "She lives ~~at~~ Paris.",
+     "good": "She lives [[in]] Paris.",
+     "why": "城市是一个大盒子，用 in。"
+    },
+    {
+     "bad": "The café is between the bank ~~or~~ the gym.",
+     "good": "The café is [[between]] the bank [[and]] the gym.",
+     "why": "between 后面用 and 连两样东西。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Your keys are ___ the table.",
+   "options": [
+    "in",
+    "on",
+    "at"
+   ],
+   "answer": "on",
+   "explain": "放在桌面上，用 [[on]]。"
+  },
+  {
+   "id": "q02",
+   "section": "at",
+   "type": "fill",
+   "prompt": "I'll wait for you ___ the bus stop.",
+   "answer": "at",
+   "accept": [],
+   "explain": "公交站是一个点，用 [[at]]。"
+  },
+  {
+   "id": "q03",
+   "section": "at",
+   "type": "fill",
+   "prompt": "She's still ___ work. She'll be home at seven.",
+   "answer": "at",
+   "accept": [],
+   "explain": "固定说法：[[at]] work。"
+  },
+  {
+   "id": "q04",
+   "section": "on",
+   "type": "choice",
+   "prompt": "I'll call you when I'm ___ the train.",
+   "options": [
+    "in",
+    "on",
+    "at"
+   ],
+   "answer": "on",
+   "explain": "火车上能站起来走动，用 [[on]]。"
+  },
+  {
+   "id": "q05",
+   "section": "on",
+   "type": "fill",
+   "prompt": "The settings button is ___ the left.",
+   "answer": "on",
+   "accept": [],
+   "explain": "左边、右边用 [[on]]：[[on]] the left。"
+  },
+  {
+   "id": "q06",
+   "section": "in",
+   "type": "fill",
+   "prompt": "Our office is ___ Manchester.",
+   "answer": "in",
+   "accept": [],
+   "explain": "城市是一个大盒子，用 [[in]]。"
+  },
+  {
+   "id": "q07",
+   "section": "in",
+   "type": "choice",
+   "prompt": "Get ___ the taxi, we're late!",
+   "options": [
+    "in",
+    "on",
+    "at"
+   ],
+   "answer": "in",
+   "explain": "出租车坐进去站不起来，用 [[in]]。"
+  },
+  {
+   "id": "q08",
+   "section": "in",
+   "type": "fix",
+   "prompt": "改错：We arrived to London at midnight.",
+   "answer": "We arrived in London at midnight.",
+   "accept": [],
+   "traps": [
+    {
+     "input": "We arrived at London at midnight.",
+     "note": "城市、国家用 arrive in；arrive at 用在车站、机场这样的地点。"
+    }
+   ],
+   "explain": "到达城市用 arrive [[in]]。"
+  },
+  {
+   "id": "q09",
+   "section": "position",
+   "type": "choice",
+   "prompt": "The printer is ___ the kitchen and the meeting room.",
+   "options": [
+    "between",
+    "next",
+    "opposite",
+    "among"
+   ],
+   "answer": "between",
+   "explain": "在两样东西中间：[[between]] A and B。"
+  },
+  {
+   "id": "q10",
+   "section": "position",
+   "type": "fill",
+   "prompt": "The bus stop is right ___ the hotel, on the other side of the road.",
+   "answer": "opposite",
+   "accept": [
+    "across from"
+   ],
+   "explain": "隔着马路面对面：[[opposite]]。"
+  },
+  {
+   "id": "q11",
+   "section": "position",
+   "type": "choice",
+   "prompt": "Put the logo ___ the title, not below it.",
+   "options": [
+    "above",
+    "on",
+    "under"
+   ],
+   "answer": "above",
+   "explain": "在上面但不挨着：[[above]]。"
+  },
+  {
+   "id": "q12",
+   "section": "position",
+   "type": "fill",
+   "prompt": "There's a car park ___ the building.（在楼后面）",
+   "answer": "behind",
+   "accept": [],
+   "explain": "在后面：[[behind]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I'm in home today.",
+   "answer": "I'm at home today.",
+   "accept": [
+    "I am at home today.",
+    "I'm home today.",
+    "I am home today."
+   ],
+   "explain": "固定说法：[[at]] home。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：He's sitting in the bus.",
+   "answer": "He's sitting on the bus.",
+   "accept": [
+    "He is sitting on the bus."
+   ],
+   "explain": "公交车用 [[on]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "The file is ___ the Downloads folder.",
+   "options": [
+    "in",
+    "on",
+    "at"
+   ],
+   "answer": "in",
+   "explain": "文件夹像个盒子，用 [[in]]。"
+  },
+  {
+   "id": "q16",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：充电器在我包里。",
+   "answer": "The charger is in my bag.",
+   "accept": [
+    "My charger is in my bag.",
+    "The charger's in my bag.",
+    "The charger is in my backpack."
+   ],
+   "explain": "包是一个盒子，用 [[in]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用地点介词说 3 句话，描述你的工位或房间：东西放在哪里，旁边、上面、下面有什么。",
+  "rules": [
+   "一个点用 at，一个面用 on，一个空间用 in",
+   "between 后面用 A and B"
+  ],
+  "note": "规则判地点介词的搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

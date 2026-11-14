@@ -1,0 +1,406 @@
+{
+ "id": "g-inversion",
+ "title": "倒装",
+ "en": "Inversion",
+ "group": "句子",
+ "level": "B2",
+ "order": 37,
+ "keywords": [
+  "倒装"
+ ],
+ "related": [
+  "g-tag-questions",
+  "g-conditionals-3-mixed",
+  "g-cleft-sentences"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "倒装就是**把助动词（do、have、can 这类）搬到主语前面**，像问句，但不是在提问。常用来附和别人（So do I），或把 never 放句首、让语气更强。",
+   "uses": [
+    {
+     "zh": "附和别人：我也是",
+     "en": "— I love this app. — [[So do I]].",
+     "en_zh": "——我很喜欢这个 App。——我也是。"
+    },
+    {
+     "zh": "否定词放句首，语气更强",
+     "en": "[[Never have I]] seen such messy code.",
+     "en_zh": "我从没见过这么乱的代码。"
+    },
+    {
+     "zh": "正式说法里省掉 if",
+     "en": "[[Had I]] known, I would have helped.",
+     "en_zh": "我要是早知道，就帮忙了。"
+    }
+   ],
+   "signals": [
+    "so",
+    "neither",
+    "nor",
+    "never",
+    "rarely",
+    "hardly",
+    "not only",
+    "no sooner",
+    "only then"
+   ]
+  },
+  "soNeither": {
+   "title": "So do I / Neither do I",
+   "short": "附和",
+   "formula": [
+    "So / Neither",
+    "助动词",
+    "主语"
+   ],
+   "rule": "别人说了**肯定**的，你也一样：**So** + 助动词 + I。别人说了**否定**的，你也一样：**Neither** + 助动词 + I。助动词跟着原句走。",
+   "examples": [
+    {
+     "en": "— I can't make it tonight. — [[Neither can]] I.",
+     "zh": "——我今晚去不了。——我也去不了。"
+    },
+    {
+     "en": "— I've finished my tasks. — [[So have]] I.",
+     "zh": "——我的活干完了。——我也是。"
+    },
+    {
+     "en": "— Tom didn't like the film. — [[Neither did]] Anna.",
+     "zh": "——Tom 不喜欢那部电影。——Anna 也不喜欢。"
+    }
+   ],
+   "notes": [
+    "原句没有助动词（I love…），就用 do / does / did 来接：So [[do]] I。",
+    "口语里说 Me too / Me neither 也完全可以。"
+   ]
+  },
+  "negative": {
+   "title": "否定词放句首",
+   "short": "否定",
+   "formula": [
+    "Never / Rarely / Not only…",
+    "助动词",
+    "主语",
+    "动词"
+   ],
+   "rule": "never（从不）、rarely（很少）、not only（不但）这类词放到句首时，后面像问句一样：**助动词 + 主语 + 动词**。听起来更正式、更有力。",
+   "examples": [
+    {
+     "en": "[[Never have I]] seen such a messy codebase.",
+     "zh": "我从没见过这么乱的代码库。"
+    },
+    {
+     "en": "[[Rarely do]] we ((get)) a bug this bad.",
+     "zh": "我们很少遇到这么严重的 bug。"
+    },
+    {
+     "en": "[[Not only did]] he ((fix)) it, he also wrote tests.",
+     "zh": "他不但修好了，还写了测试。"
+    }
+   ],
+   "wrong": {
+    "bad": "Never ~~I have~~ seen such a mess.",
+    "good": "[[Never have I]] seen such a mess."
+   }
+  },
+  "time": {
+   "title": "「刚……就……」和 Only",
+   "short": "刚就",
+   "rule": "「刚……就……」用 **Hardly had I … when …** 或 **No sooner had I … than …**。Only after 放句首，**后半句**倒装。",
+   "examples": [
+    {
+     "en": "[[Hardly had I]] sat down [[when]] my phone rang.",
+     "zh": "我刚坐下电话就响了。"
+    },
+    {
+     "en": "[[No sooner had]] we released it [[than]] users found a bug.",
+     "zh": "我们刚发布，用户就发现了一个 bug。"
+    },
+    {
+     "en": "Only after the call [[did I]] ((realise)) my mistake.",
+     "zh": "打完电话我才意识到自己错了。"
+    }
+   ],
+   "tip": "配对记：hardly 配 when，no sooner 配 than。"
+  },
+  "noIf": {
+   "title": "省掉 if 的倒装",
+   "short": "省if",
+   "rule": "正式说法里可以**去掉 if**，把 had、should、were 搬到主语前面。意思不变，只是更正式，邮件里常见。",
+   "items": [
+    {
+     "rule": "= If I had known",
+     "en": "[[Had I]] known, I would have helped.",
+     "zh": "我要是早知道，就帮忙了。"
+    },
+    {
+     "rule": "= If you need anything",
+     "en": "[[Should]] you need anything, just let me know.",
+     "zh": "如有需要，随时告诉我。"
+    },
+    {
+     "rule": "= If I were you",
+     "en": "[[Were I]] you, I'd take the offer.",
+     "zh": "我要是你，就接受这个 offer。"
+    }
+   ]
+  },
+  "compare": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "普通语序",
+     "this": {
+      "meaning": "倒装：语气强，更正式",
+      "en": "Never [[have I]] seen such a mess."
+     },
+     "that": {
+      "meaning": "普通语序：平常说话",
+      "en": "I [[have never]] seen such a mess."
+     }
+    },
+    {
+     "with": "Me too / Me neither",
+     "this": {
+      "meaning": "So / Neither：完整的说法，助动词要对上",
+      "en": "— I'm tired. — [[So am]] I."
+     },
+     "that": {
+      "meaning": "Me too：口语，最省事",
+      "en": "— I'm tired. — Me too."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Never ~~I have~~ seen this.",
+     "good": "[[Never have I]] seen this.",
+     "why": "否定词放句首，助动词放主语前面。"
+    },
+    {
+     "bad": "— I love it. — So ~~I do~~.",
+     "good": "— I love it. — [[So do I]].",
+     "why": "附和别人时是 So do I。"
+    },
+    {
+     "bad": "— I can't swim. — Neither ~~can't~~ I.",
+     "good": "— I can't swim. — [[Neither can]] I.",
+     "why": "neither 本身就是否定，助动词用肯定。"
+    },
+    {
+     "bad": "Not only ~~he fixed~~ it, he also tested it.",
+     "good": "[[Not only did he]] ((fix)) it, he also tested it.",
+     "why": "not only 放句首要倒装。"
+    },
+    {
+     "bad": "Hardly had I arrived ~~than~~ it rained.",
+     "good": "Hardly had I arrived [[when]] it rained.",
+     "why": "hardly 配 when。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "— I love this app. — ___",
+   "options": [
+    "So do I.",
+    "So I do.",
+    "Neither do I.",
+    "So am I."
+   ],
+   "answer": "So do I.",
+   "explain": "肯定句，附和用 [[So do I]]。"
+  },
+  {
+   "id": "q02",
+   "section": "soNeither",
+   "type": "fill",
+   "prompt": "— I can't make it tonight. — Neither ___ I.",
+   "answer": "can",
+   "accept": [],
+   "traps": [
+    {
+     "input": "can't",
+     "note": "neither 已经有「不」，用肯定的 can。"
+    }
+   ],
+   "explain": "原句是 can't，接 Neither [[can]] I。"
+  },
+  {
+   "id": "q03",
+   "section": "soNeither",
+   "type": "fill",
+   "prompt": "— I've finished my tasks. — So ___ I.",
+   "answer": "have",
+   "accept": [],
+   "explain": "原句是 I've，用 So [[have]] I。"
+  },
+  {
+   "id": "q04",
+   "section": "soNeither",
+   "type": "choice",
+   "prompt": "— Tom didn't like the film. — ___ Anna.",
+   "options": [
+    "So did",
+    "Neither did",
+    "Neither didn't",
+    "So didn't"
+   ],
+   "answer": "Neither did",
+   "explain": "否定 + 过去 → [[Neither did]]。"
+  },
+  {
+   "id": "q05",
+   "section": "negative",
+   "type": "transform",
+   "prompt": "用 Never 开头改写：I have never seen such a messy codebase.",
+   "answer": "Never have I seen such a messy codebase.",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Never I have seen such a messy codebase.",
+     "note": "never 放句首，要把 have 放到 I 前面。"
+    }
+   ],
+   "explain": "Never + [[have I]] + seen。"
+  },
+  {
+   "id": "q06",
+   "section": "negative",
+   "type": "fill",
+   "prompt": "Rarely ___ we get a bug this bad.",
+   "answer": "do",
+   "accept": [],
+   "explain": "一般现在时，借助动词 [[do]]。"
+  },
+  {
+   "id": "q07",
+   "section": "negative",
+   "type": "fix",
+   "prompt": "改错：Not only he fixed it, he also wrote tests.",
+   "answer": "Not only did he fix it, he also wrote tests.",
+   "accept": [
+    "Not only did he fix it, but he also wrote tests."
+   ],
+   "explain": "not only 放句首：[[did he]] ((fix))。"
+  },
+  {
+   "id": "q08",
+   "section": "time",
+   "type": "choice",
+   "prompt": "Hardly had I sat down ___ my phone rang.",
+   "options": [
+    "when",
+    "than",
+    "then"
+   ],
+   "answer": "when",
+   "explain": "hardly 配 [[when]]。"
+  },
+  {
+   "id": "q09",
+   "section": "time",
+   "type": "fill",
+   "prompt": "No sooner had we released it ___ users found a bug.",
+   "answer": "than",
+   "accept": [],
+   "explain": "no sooner 配 [[than]]。"
+  },
+  {
+   "id": "q10",
+   "section": "time",
+   "type": "transform",
+   "prompt": "用 Only after 开头改写：I realised my mistake only after the call.",
+   "answer": "Only after the call did I realise my mistake.",
+   "accept": [
+    "Only after the call did I realize my mistake."
+   ],
+   "explain": "Only after … 后半句倒装：[[did I]] ((realise))。"
+  },
+  {
+   "id": "q11",
+   "section": "noIf",
+   "type": "transform",
+   "prompt": "去掉 if：If I had known, I would have helped.",
+   "answer": "Had I known, I would have helped.",
+   "accept": [
+    "Had I known, I'd have helped."
+   ],
+   "explain": "把 had 搬到前面：[[Had I]] known。"
+  },
+  {
+   "id": "q12",
+   "section": "noIf",
+   "type": "choice",
+   "prompt": "___ you need anything, just let me know.（正式邮件）",
+   "options": [
+    "Should",
+    "Would",
+    "Do",
+    "Had"
+   ],
+   "answer": "Should",
+   "explain": "= If you need，正式说法用 [[Should]]。"
+  },
+  {
+   "id": "q13",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：— I love it. — So I do.",
+   "answer": "So do I.",
+   "accept": [
+    "— I love it. — So do I.",
+    "So do I",
+    "Me too."
+   ],
+   "explain": "附和别人是 [[So do I]]。"
+  },
+  {
+   "id": "q14",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：— I can't swim. — Neither can't I.",
+   "answer": "Neither can I.",
+   "accept": [
+    "— I can't swim. — Neither can I.",
+    "Neither can I",
+    "Nor can I.",
+    "Me neither."
+   ],
+   "explain": "neither 后面用肯定 [[can]]。"
+  },
+  {
+   "id": "q15",
+   "section": "compare",
+   "type": "translate",
+   "prompt": "翻译：——我累了。——我也是。（用 So）",
+   "answer": "So am I.",
+   "accept": [
+    "— I'm tired. — So am I.",
+    "So am I"
+   ],
+   "explain": "原句是 I'm，附和用 [[So am I]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话：一句用 So / Neither 附和同事的话，一句用 Never 或 Rarely 开头说一次少见的经历，一句用 Should you … 写正式邮件结尾。",
+  "rules": [
+   "So / Neither 后面：助动词 + 主语，助动词跟原句走",
+   "否定词放句首时，助动词放到主语前面"
+  ],
+  "note": "规则判倒装语序（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

@@ -1,0 +1,467 @@
+{
+ "id": "g-adverb-position",
+ "title": "副词的位置",
+ "en": "Where Adverbs Go",
+ "group": "形容词、副词和介词",
+ "level": "B1",
+ "order": 46,
+ "keywords": [
+  "频率",
+  "放在句子里的位置"
+ ],
+ "related": [
+  "g-ed-ing-adjectives",
+  "g-comparatives",
+  "g-present-simple"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "副词说的是**多常、怎么做、在哪、什么时候**。它常待在三个地方：句子开头、动词前面、句子末尾。最要紧的一条：**别把它插在动词和后面的东西中间。**",
+   "uses": [
+    {
+     "zh": "多常：放在动词前面",
+     "en": "I [[usually]] start work at nine.",
+     "en_zh": "我通常九点开始工作。"
+    },
+    {
+     "zh": "怎么做：放在句子末尾",
+     "en": "She speaks English [[well]].",
+     "en_zh": "她英语说得很好。"
+    },
+    {
+     "zh": "对整件事的看法：放在句子开头",
+     "en": "[[Luckily]], nobody noticed.",
+     "en_zh": "幸好没人注意到。"
+    }
+   ]
+  },
+  "frequency": {
+   "title": "多常：放哪儿",
+   "short": "频率",
+   "formula": [
+    "主语",
+    "频率副词",
+    "动词"
+   ],
+   "rule": "always、usually、often、never 这类说「多常」的词，放在**普通动词前面**，但放在 **be 动词后面**。口诀：**动词前，be 后。**",
+   "examples": [
+    {
+     "en": "I [[often]] work late on Thursdays.",
+     "zh": "我周四常常加班。"
+    },
+    {
+     "en": "We [[never]] release on a Friday.",
+     "zh": "我们从不在周五发版。"
+    },
+    {
+     "en": "She's [[always]] on time.",
+     "zh": "她总是很准时。"
+    }
+   ],
+   "notes": [
+    "从常到不常：always › usually › often › sometimes › rarely › never"
+   ],
+   "wrong": {
+    "bad": "I go ~~often~~ to the gym.",
+    "good": "I [[often]] go to the gym."
+   }
+  },
+  "helper": {
+   "title": "有 can、have、don't 的时候",
+   "short": "助动词",
+   "rule": "句子里有 can、will、have、don't 这类「帮忙的小词」时，副词放在它**后面**，主要动词前面。",
+   "examples": [
+    {
+     "en": "We've [[already]] fixed it.",
+     "zh": "我们已经修好了。"
+    },
+    {
+     "en": "I don't [[usually]] drink coffee after lunch.",
+     "zh": "我午饭后一般不喝咖啡。"
+    },
+    {
+     "en": "You should [[always]] write tests.",
+     "zh": "你应该一直写测试。"
+    },
+    {
+     "en": "I can [[never]] remember his name.",
+     "zh": "我总是记不住他的名字。"
+    }
+   ]
+  },
+  "end": {
+   "title": "怎么做、在哪、什么时候：句尾",
+   "short": "句尾",
+   "rule": "说「怎么做、在哪、什么时候」的词（well、quickly、at home、yesterday），一般放在**句子末尾**。几个一起出现，顺序是：**怎么做 → 在哪 → 什么时候**。",
+   "examples": [
+    {
+     "en": "She explained it [[clearly]].",
+     "zh": "她讲得很清楚。"
+    },
+    {
+     "en": "I worked [[at home]] [[yesterday]].",
+     "zh": "我昨天在家工作。"
+    },
+    {
+     "en": "He spoke [[quietly]] [[in the meeting]] [[this morning]].",
+     "zh": "他今天早上开会时说话很小声。"
+    }
+   ]
+  },
+  "middle": {
+   "title": "别插在中间",
+   "short": "别插",
+   "rule": "动词和它后面的东西是一对好朋友，**中间不能插副词**。中文说「我很喜欢咖啡」，英语要说 I like coffee very much。",
+   "examples": [
+    {
+     "en": "I like coffee [[very much]].",
+     "zh": "我很喜欢咖啡。"
+    },
+    {
+     "en": "Please read the instructions [[carefully]].",
+     "zh": "请仔细阅读说明。"
+    },
+    {
+     "en": "He fixed the bug [[quickly]].",
+     "zh": "他很快就把 bug 修好了。"
+    }
+   ],
+   "wrong": {
+    "bad": "She speaks ~~very well~~ English.",
+    "good": "She speaks English [[very well]]."
+   }
+  },
+  "start": {
+   "title": "放句首",
+   "short": "句首",
+   "rule": "说**对整件事的看法**（幸好、说实话、可惜），或者想先把时间说出来，就放在句首，后面常加个逗号。",
+   "items": [
+    {
+     "rule": "对整件事的看法",
+     "en": "[[Luckily]], we had a backup.",
+     "zh": "幸好我们有备份。"
+    },
+    {
+     "rule": "说实话",
+     "en": "[[Honestly]], I don't think it's ready.",
+     "zh": "说实话，我觉得它还没准备好。"
+    },
+    {
+     "rule": "先说时间",
+     "en": "[[Yesterday]], the server went down twice.",
+     "zh": "昨天服务器宕了两次。"
+    },
+    {
+     "rule": "sometimes 也能放句首",
+     "en": "[[Sometimes]] I work from a café.",
+     "zh": "我有时在咖啡馆办公。"
+    }
+   ]
+  },
+  "special": {
+   "title": "几个特别的词",
+   "short": "特别",
+   "rule": "有几个词有自己固定的位置，记住它们就不会出错。",
+   "items": [
+    {
+     "rule": "also 放动词前；too 放句尾",
+     "en": "I [[also]] like tea. / I like tea [[too]].",
+     "zh": "我也喜欢茶。"
+    },
+    {
+     "rule": "yet 放在否定句、问句的末尾",
+     "en": "I haven't finished [[yet]].",
+     "zh": "我还没做完。"
+    },
+    {
+     "rule": "still 放动词前、be 后",
+     "en": "The bug is [[still]] there.",
+     "zh": "那个 bug 还在。"
+    },
+    {
+     "rule": "enough 放在形容词后面",
+     "en": "Is the font big [[enough]]?",
+     "zh": "字体够大吗？"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "形容词",
+     "this": {
+      "meaning": "副词：说怎么做",
+      "en": "She drives [[careful{ly}]]."
+     },
+     "that": {
+      "meaning": "形容词：说是什么样的",
+      "en": "She's a [[careful]] driver."
+     }
+    },
+    {
+     "with": "be 动词",
+     "this": {
+      "meaning": "普通动词：副词放前面",
+      "en": "He [[usually]] works late."
+     },
+     "that": {
+      "meaning": "be 动词：副词放后面",
+      "en": "He's [[usually]] late."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I like ~~very much~~ coffee.",
+     "good": "I like coffee [[very much]].",
+     "why": "动词和后面的东西中间不能插副词。"
+    },
+    {
+     "bad": "She ~~always is~~ late.",
+     "good": "She [[is always]] late.",
+     "why": "be 动词后面放频率副词。"
+    },
+    {
+     "bad": "I go ~~often~~ to the gym.",
+     "good": "I [[often]] go to the gym.",
+     "why": "频率副词放在普通动词前面。"
+    },
+    {
+     "bad": "He drives very ~~careful~~.",
+     "good": "He drives very [[careful{ly}]].",
+     "why": "说「怎么开车」用副词 carefully。"
+    },
+    {
+     "bad": "Is the font ~~enough big~~?",
+     "good": "Is the font [[big enough]]?",
+     "why": "enough 放在形容词后面。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "哪句话是对的？",
+   "options": [
+    "I usually start work at nine.",
+    "I start usually work at nine.",
+    "I start work at usually nine."
+   ],
+   "answer": "I usually start work at nine.",
+   "explain": "说「多常」的 [[usually]] 放在动词前面。"
+  },
+  {
+   "id": "q02",
+   "section": "frequency",
+   "type": "transform",
+   "prompt": "把 often 放进句子：I work late on Thursdays.",
+   "answer": "I often work late on Thursdays.",
+   "accept": [],
+   "explain": "放在普通动词前面：I [[often]] work。"
+  },
+  {
+   "id": "q03",
+   "section": "frequency",
+   "type": "choice",
+   "prompt": "She ___ on time.",
+   "options": [
+    "always is",
+    "is always",
+    "always"
+   ],
+   "answer": "is always",
+   "explain": "be 动词后面：[[is always]]。"
+  },
+  {
+   "id": "q04",
+   "section": "frequency",
+   "type": "fix",
+   "prompt": "改错：I go often to the gym.",
+   "answer": "I often go to the gym.",
+   "accept": [],
+   "explain": "频率副词放在动词前面：I [[often]] go。"
+  },
+  {
+   "id": "q05",
+   "section": "helper",
+   "type": "transform",
+   "prompt": "把 already 放进句子：We've fixed it.",
+   "answer": "We've already fixed it.",
+   "accept": [
+    "We have already fixed it."
+   ],
+   "explain": "放在 have 后面、动词前面：We've [[already]] fixed it。"
+  },
+  {
+   "id": "q06",
+   "section": "helper",
+   "type": "choice",
+   "prompt": "You should ___ tests.",
+   "options": [
+    "always write",
+    "write always",
+    "always to write"
+   ],
+   "answer": "always write",
+   "explain": "放在 should 后面、动词前面：should [[always]] write。"
+  },
+  {
+   "id": "q07",
+   "section": "end",
+   "type": "translate",
+   "prompt": "翻译：我昨天在家工作。",
+   "answer": "I worked at home yesterday.",
+   "accept": [
+    "I worked from home yesterday.",
+    "Yesterday I worked at home.",
+    "Yesterday I worked from home.",
+    "Yesterday, I worked at home.",
+    "Yesterday, I worked from home."
+   ],
+   "traps": [
+    {
+     "input": "I yesterday worked at home.",
+     "note": "yesterday 放句尾或句首，不放在主语和动词中间。"
+    }
+   ],
+   "explain": "先说在哪，再说什么时候：[[at home]] [[yesterday]]。"
+  },
+  {
+   "id": "q08",
+   "section": "end",
+   "type": "fill",
+   "prompt": "She explained it very ___ (clear).",
+   "answer": "clearly",
+   "accept": [],
+   "explain": "说「怎么讲」用副词，放句尾：[[clear{ly}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "middle",
+   "type": "fix",
+   "prompt": "改错：I like very much coffee.",
+   "answer": "I like coffee very much.",
+   "accept": [],
+   "explain": "very much 放到句尾：I like coffee [[very much]]。"
+  },
+  {
+   "id": "q10",
+   "section": "middle",
+   "type": "fix",
+   "prompt": "改错：She speaks very well English.",
+   "answer": "She speaks English very well.",
+   "accept": [],
+   "explain": "speaks 和 English 中间不能插：speaks English [[very well]]。"
+  },
+  {
+   "id": "q11",
+   "section": "start",
+   "type": "choice",
+   "prompt": "___, we had a backup, so nobody lost any data.",
+   "options": [
+    "Luckily",
+    "Lucky",
+    "Luck"
+   ],
+   "answer": "Luckily",
+   "explain": "对整件事的看法，用副词放句首：[[Luckily]]。"
+  },
+  {
+   "id": "q12",
+   "section": "start",
+   "type": "translate",
+   "prompt": "翻译：说实话，我觉得它还没准备好。",
+   "answer": "Honestly, I don't think it's ready yet.",
+   "accept": [
+    "Honestly, I don't think it's ready.",
+    "Honestly, I don't think it is ready yet.",
+    "To be honest, I don't think it's ready yet.",
+    "To be honest, I don't think it's ready.",
+    "Honestly, I don't think it is ready.",
+    "To be honest, I don't think it is ready."
+   ],
+   "explain": "「说实话」放句首加逗号：[[Honestly]], …"
+  },
+  {
+   "id": "q13",
+   "section": "special",
+   "type": "choice",
+   "prompt": "I haven't finished ___.",
+   "options": [
+    "yet",
+    "still",
+    "already"
+   ],
+   "answer": "yet",
+   "explain": "否定句末尾用 [[yet]]。"
+  },
+  {
+   "id": "q14",
+   "section": "special",
+   "type": "fix",
+   "prompt": "改错：Is the font enough big?",
+   "answer": "Is the font big enough?",
+   "accept": [],
+   "explain": "enough 放在形容词后面：[[big enough]]。"
+  },
+  {
+   "id": "q15",
+   "section": "special",
+   "type": "choice",
+   "prompt": "I like tea. I ___ like coffee.",
+   "options": [
+    "also",
+    "too",
+    "either"
+   ],
+   "answer": "also",
+   "explain": "放在动词前面的是 [[also]]；too 要放句尾。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "She drives very ___.",
+   "options": [
+    "careful",
+    "carefully"
+   ],
+   "answer": "carefully",
+   "explain": "说「怎么开车」用副词：[[careful{ly}]]。"
+  },
+  {
+   "id": "q17",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：He always is late for stand-up.",
+   "answer": "He's always late for stand-up.",
+   "accept": [
+    "He is always late for stand-up."
+   ],
+   "explain": "be 动词后面放频率副词：He's [[always]] late。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话说说你平常的工作习惯：至少一句带 always / usually / never，一句带 be 动词加频率副词，一句在句尾说「怎么做」或「什么时候」。",
+  "rules": [
+   "频率副词放在普通动词前、be 动词和助动词后",
+   "动词和宾语之间不插副词",
+   "方式、地点、时间放句尾，顺序是方式 → 地点 → 时间"
+  ],
+  "note": "规则判副词位置（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

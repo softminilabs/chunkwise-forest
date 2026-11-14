@@ -1,0 +1,452 @@
+{
+ "id": "g-stative-verbs",
+ "title": "状态动词与动作动词",
+ "en": "State and Action Verbs",
+ "group": "时态",
+ "level": "B1",
+ "order": 11,
+ "keywords": [
+  "状态动词"
+ ],
+ "related": [
+  "g-present-continuous",
+  "g-present-simple",
+  "g-present-perfect-continuous",
+  "g-perception-verbs"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "动词分两种。**动作动词**是看得见在做的事，比如跑、写、开会；**状态动词**是心里、脑子里本来就有的样子，比如知道、喜欢。状态动词一般**不加 -ing**。",
+   "uses": [
+    {
+     "zh": "动作：能「正在做」",
+     "en": "I[['m writing]] the release notes <<now>>.",
+     "en_zh": "我现在正在写发布说明。"
+    },
+    {
+     "zh": "状态：脑子里知道",
+     "en": "I [[know]] the answer.",
+     "en_zh": "我知道答案。"
+    },
+    {
+     "zh": "状态：心里喜欢不喜欢",
+     "en": "She [[likes]] the new design.",
+     "en_zh": "她喜欢新的设计。"
+    }
+   ]
+  },
+  "test": {
+   "title": "怎么分辨", "short": "分辨",
+   "text": "问自己一句：**这件事能不能做到一半停下来？** 能停下来的是动作，可以用 -ing；停不下来、一直都在的是状态，用一般时态。",
+   "examples": [
+    {
+     "en": "I[['m learning]] SwiftUI <<at the moment>>.",
+     "zh": "我这阵子在学 SwiftUI。",
+     "rule": "学习可以学到一半，是动作"
+    },
+    {
+     "en": "I [[understand]] the problem <<now>>.",
+     "zh": "我现在明白这个问题了。",
+     "rule": "明白就是明白，没法明白一半，是状态"
+    },
+    {
+     "en": "This flat [[belongs]] to my aunt.",
+     "zh": "这套公寓是我姑姑的。",
+     "rule": "属于谁，一直是这样，是状态"
+    }
+   ],
+   "wrong": {
+    "bad": "I~~'m understanding~~ the problem now.",
+    "good": "I [[understand]] the problem now."
+   },
+   "tip": "就算句子里有 now，状态动词也不用 -ing。"
+  },
+  "types": {
+   "title": "常见的状态动词", "short": "四类",
+   "text": "状态动词不多，分成四类记就行。见到它们，先想到**不用 -ing**。",
+   "rules": [
+    {
+     "ending": "想法",
+     "change": "脑子里知道、相信、记得",
+     "examples": [
+      "[[know]]",
+      "[[believe]]",
+      "[[understand]]",
+      "[[remember]]",
+      "[[mean]]"
+     ]
+    },
+    {
+     "ending": "感觉",
+     "change": "心里喜欢、讨厌、想要",
+     "examples": [
+      "[[like]]",
+      "[[love]]",
+      "[[hate]]",
+      "[[prefer]]",
+      "[[want]]",
+      "[[need]]"
+     ]
+    },
+    {
+     "ending": "拥有",
+     "change": "有、属于、包含",
+     "examples": [
+      "[[own]]",
+      "[[belong]]",
+      "[[include]]",
+      "[[contain]]"
+     ]
+    },
+    {
+     "ending": "样子",
+     "change": "看起来、似乎、要花多少",
+     "examples": [
+      "[[seem]]",
+      "[[look like]]",
+      "[[cost]]",
+      "[[weigh]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "The update [[includes]] two bug fixes.",
+     "zh": "这次更新包含两个 bug 修复。"
+    },
+    {
+     "en": "This ticket [[seems]] easy.",
+     "zh": "这个工单看起来挺简单。"
+    }
+   ]
+  },
+  "both": {
+   "title": "一个词两个意思", "short": "两用",
+   "text": "有些词**当状态讲**不加 -ing，**当动作讲**就可以加 -ing。看它在这句话里是哪个意思。",
+   "items": [
+    {
+     "rule": "think：「认为」是状态；「正在想」是动作",
+     "en": "I [[think]] it's a bug. / I[['m thinking]] about it.",
+     "zh": "我认为这是个 bug。/ 我正在考虑这件事。"
+    },
+    {
+     "rule": "have：「拥有」是状态；「吃、开会、过得」是动作",
+     "en": "She [[has]] a new laptop. / She[['s having]] lunch.",
+     "zh": "她有一台新电脑。/ 她正在吃午饭。"
+    },
+    {
+     "rule": "see：「看见、明白」是状态；「约见」是动作",
+     "en": "I [[see]] what you mean. / I[['m seeing]] the client <<tomorrow>>.",
+     "zh": "我明白你的意思。/ 我明天要见客户。"
+    },
+    {
+     "rule": "taste：「尝起来」是状态；「去尝」是动作",
+     "en": "This soup [[tastes]] great. / He[['s tasting]] the soup.",
+     "zh": "这汤味道很好。/ 他在尝汤。"
+    }
+   ],
+   "notes": [
+    "广告里的 I'm loving it 是故意说得特别，平时别这样用。"
+   ]
+  },
+  "perfect": {
+   "title": "说「已经多久了」", "short": "多久",
+   "text": "说「从……到现在一直」时，动作动词可以用 have been doing；状态动词不行，要用 **have done**。",
+   "formula": [
+    "主语",
+    "have / has + 过去分词",
+    "for / since …"
+   ],
+   "examples": [
+    {
+     "en": "I[['ve known]] Mia <<for>> ten years.",
+     "zh": "我认识米娅十年了。"
+    },
+    {
+     "en": "He[['s had]] this phone <<since>> 2021.",
+     "zh": "这部手机他从 2021 年用到现在。"
+    },
+    {
+     "en": "We[['ve been working]] on this bug <<since>> lunch.",
+     "zh": "我们从午饭后一直在搞这个 bug。",
+     "rule": "work 是动作，可以用 been working"
+    }
+   ],
+   "wrong": {
+    "bad": "I~~'ve been knowing~~ Mia for ten years.",
+    "good": "I[['ve known]] Mia for ten years."
+   }
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "现在进行时",
+     "this": {
+      "meaning": "状态：本来就这样",
+      "en": "I [[think]] the plan is good."
+     },
+     "that": {
+      "meaning": "动作：正在做",
+      "en": "I[['m thinking]] about the plan."
+     }
+    },
+    {
+     "with": "动作的 have",
+     "this": {
+      "meaning": "有（状态）",
+      "en": "We [[have]] a meeting room on the third floor."
+     },
+     "that": {
+      "meaning": "开（动作）",
+      "en": "We[['re having]] a meeting <<right now>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I~~'m knowing~~ how to fix it.",
+     "good": "I [[know]] how to fix it.",
+     "why": "know 是脑子里的状态，不加 -ing。"
+    },
+    {
+     "bad": "Are you ~~wanting~~ a coffee?",
+     "good": "[[Do]] you ((want)) a coffee?",
+     "why": "want 是心里的状态，问句用 do。"
+    },
+    {
+     "bad": "This bag ~~is belonging~~ to Tom.",
+     "good": "This bag [[belongs]] to Tom.",
+     "why": "属于谁是状态，用一般现在时。"
+    },
+    {
+     "bad": "I~~'ve been knowing~~ him since uni.",
+     "good": "I[['ve known]] him since uni.",
+     "why": "状态动词说「多久」用 have done。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I ___ what you mean.",
+   "options": [
+    "know",
+    "am knowing",
+    "knowing"
+   ],
+   "answer": "know",
+   "explain": "know 是状态，不加 -ing：I [[know]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Be quiet, please. I ___ an email to the client.",
+   "options": [
+    "write",
+    "am writing",
+    "writes"
+   ],
+   "answer": "am writing",
+   "explain": "写邮件是动作，此刻正在做：[[am writing]]。"
+  },
+  {
+   "id": "q03",
+   "section": "test",
+   "type": "fill",
+   "prompt": "I ___ (understand) the problem now.",
+   "answer": "understand",
+   "accept": [],
+   "traps": [
+    {
+     "input": "am understanding",
+     "note": "understand 是状态，就算有 now 也不加 -ing。"
+    }
+   ],
+   "explain": "明白没法明白一半，是状态：I [[understand]]。"
+  },
+  {
+   "id": "q04",
+   "section": "test",
+   "type": "fill",
+   "prompt": "Shh! The baby ___ (sleep).",
+   "answer": "is sleeping",
+   "accept": [
+    "'s sleeping"
+   ],
+   "explain": "睡觉能睡到一半，是动作：[[is sleeping]]。"
+  },
+  {
+   "id": "q05",
+   "section": "types",
+   "type": "choice",
+   "prompt": "Which verb is NOT a state verb?",
+   "options": [
+    "believe",
+    "own",
+    "prefer",
+    "run"
+   ],
+   "answer": "run",
+   "explain": "run 是看得见的动作，其余三个是想法、拥有、感觉。"
+  },
+  {
+   "id": "q06",
+   "section": "types",
+   "type": "fill",
+   "prompt": "This laptop ___ (belong) to the company.",
+   "answer": "belongs",
+   "accept": [],
+   "traps": [
+    {
+     "input": "is belonging",
+     "note": "belong 是状态，不加 -ing。"
+    }
+   ],
+   "explain": "属于是状态：[[belong{s}]]。"
+  },
+  {
+   "id": "q07",
+   "section": "types",
+   "type": "fix",
+   "prompt": "改错：The price is including VAT.",
+   "answer": "The price includes VAT.",
+   "accept": [],
+   "explain": "include 是「包含」，是状态：[[includes]]。"
+  },
+  {
+   "id": "q08",
+   "section": "both",
+   "type": "choice",
+   "prompt": "She can't talk now. She ___ lunch with a client.",
+   "options": [
+    "has",
+    "is having",
+    "have"
+   ],
+   "answer": "is having",
+   "explain": "这里 have 是「吃」，是动作：[[is having]]。"
+  },
+  {
+   "id": "q09",
+   "section": "both",
+   "type": "choice",
+   "prompt": "I ___ this design is too busy.",
+   "options": [
+    "think",
+    "am thinking"
+   ],
+   "answer": "think",
+   "explain": "think 当「认为」讲是状态：I [[think]]。"
+  },
+  {
+   "id": "q10",
+   "section": "both",
+   "type": "fill",
+   "prompt": "I ___ (see) the dentist tomorrow morning.",
+   "answer": "am seeing",
+   "accept": [
+    "'m seeing"
+   ],
+   "explain": "see 当「约见」讲是动作，已经约好用进行时：[[am seeing]]。"
+  },
+  {
+   "id": "q11",
+   "section": "perfect",
+   "type": "fill",
+   "prompt": "I ___ (know) Sam for ten years.",
+   "answer": "have known",
+   "accept": [
+    "'ve known"
+   ],
+   "traps": [
+    {
+     "input": "have been knowing",
+     "note": "know 是状态，不能用 been knowing。"
+    }
+   ],
+   "explain": "状态动词说「多久了」用 have done：[[have known]]。"
+  },
+  {
+   "id": "q12",
+   "section": "perfect",
+   "type": "fill",
+   "prompt": "We ___ (work) on this bug since lunch.",
+   "answer": "have been working",
+   "accept": [
+    "'ve been working"
+   ],
+   "explain": "work 是动作，可以用 [[have been working]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Are you wanting a coffee?",
+   "answer": "Do you want a coffee?",
+   "accept": [],
+   "explain": "want 是状态，问句用 [[Do]] you ((want))。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "transform",
+   "prompt": "改成正确的说法：I'm not believing his story.",
+   "answer": "I don't believe his story.",
+   "accept": [
+    "I do not believe his story."
+   ],
+   "explain": "believe 是状态，否定用 [[don't]] ((believe))。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：我需要更多时间。",
+   "answer": "I need more time.",
+   "accept": [
+    "I need some more time."
+   ],
+   "traps": [
+    {
+     "input": "I'm needing more time.",
+     "note": "need 是状态，不加 -ing。"
+    }
+   ],
+   "explain": "need 是状态动词：I [[need]]。"
+  },
+  {
+   "id": "q16",
+   "section": "both",
+   "type": "translate",
+   "prompt": "翻译：我正在考虑换工作。",
+   "answer": "I'm thinking about changing jobs.",
+   "accept": [
+    "I am thinking about changing jobs.",
+    "I'm thinking of changing jobs.",
+    "I am thinking of changing jobs."
+   ],
+   "explain": "think 当「考虑」讲是动作：I[['m thinking]] about …。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话：一句用 know / like / need 这类状态动词说你自己，一句用 think 说你的看法，一句用 I'm thinking about … 说你正在考虑的事。",
+  "rules": [
+   "know / like / need / want / belong 等状态动词不用进行时",
+   "think 表示「认为」用一般现在时，表示「考虑」可以用进行时"
+  ],
+  "note": "规则判状态动词有没有误用 -ing（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

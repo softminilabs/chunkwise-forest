@@ -1,0 +1,434 @@
+{
+ "id": "g-passive",
+ "title": "被动语态",
+ "en": "The Passive",
+ "group": "动词",
+ "level": "B1",
+ "order": 23,
+ "keywords": [
+  "被动",
+  "情态动词被动",
+  "get + 过去分词"
+ ],
+ "related": [
+  "g-causative-verbs",
+  "g-present-perfect",
+  "g-modals-obligation"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "被动就是把**「被做的那个东西」**放到句子开头。重点不是谁做的，而是这件东西**怎么了**：bug 被修好了、App 被下载了。",
+   "uses": [
+    {
+     "zh": "东西怎么了",
+     "en": "The bug [[was fixed]] <<yesterday>>.",
+     "en_zh": "那个 bug 昨天修好了。"
+    },
+    {
+     "zh": "一直这样的事",
+     "en": "English [[is spoken]] all over the world.",
+     "en_zh": "全世界都说英语。"
+    },
+    {
+     "zh": "将来要发生在它身上",
+     "en": "The app [[will be released]] <<next week>>.",
+     "en_zh": "App 下周发布。"
+    }
+   ],
+   "signals": [
+    "by"
+   ]
+  },
+  "form": {
+   "title": "怎么构成",
+   "short": "构成",
+   "formula": [
+    "被做的东西",
+    "be",
+    "过去分词"
+   ],
+   "rule": "**be 管时间**（is、was、will be），**过去分词**（fixed、written 这种词）**管意思**。想说是谁做的，后面加 by + 人。",
+   "examples": [
+    {
+     "en": "Our app [[is used]] by two million people.",
+     "zh": "我们的 App 有两百万人在用。"
+    },
+    {
+     "en": "This screen [[was designed]] <<by>> Mia.",
+     "zh": "这个页面是 Mia 设计的。"
+    },
+    {
+     "en": "The office [[is cleaned]] every evening.",
+     "zh": "办公室每天晚上都有人打扫。"
+    }
+   ],
+   "wrong": {
+    "bad": "The bug ~~fixed~~ yesterday.",
+    "good": "The bug [[was fixed]] yesterday."
+   }
+  },
+  "tenses": {
+   "title": "各种时间的被动",
+   "short": "时态",
+   "rule": "时间变了，**只改 be**，后面的过去分词不动。",
+   "items": [
+    {
+     "rule": "平常：is / are + 过去分词",
+     "en": "Tests [[are run]] on every commit.",
+     "zh": "每次提交都会跑测试。"
+    },
+    {
+     "rule": "过去：was / were + 过去分词",
+     "en": "The feature [[was cancelled]] last month.",
+     "zh": "这个功能上个月被砍掉了。"
+    },
+    {
+     "rule": "正在：is being + 过去分词",
+     "en": "Your order [[is being prepared]].",
+     "zh": "您的订单正在准备中。"
+    },
+    {
+     "rule": "已经：has been + 过去分词",
+     "en": "The meeting [[has been moved]] to Thursday.",
+     "zh": "会议已经改到周四了。"
+    },
+    {
+     "rule": "将来：will be + 过去分词",
+     "en": "You [[will be contacted]] by email.",
+     "zh": "我们会通过邮件联系您。"
+    }
+   ]
+  },
+  "modal": {
+   "title": "can / must 的被动",
+   "short": "情态",
+   "formula": [
+    "东西",
+    "can / must / should…",
+    "be",
+    "过去分词"
+   ],
+   "rule": "can、must、should 后面先放 **be 原形**，再放过去分词。不管主语是谁，都用 be，不用 is / are。",
+   "examples": [
+    {
+     "en": "This [[must be done]] by Friday.",
+     "zh": "这件事周五前必须做完。"
+    },
+    {
+     "en": "The file [[can't be opened]].",
+     "zh": "这个文件打不开。"
+    },
+    {
+     "en": "Passwords [[should be changed]] regularly.",
+     "zh": "密码应该定期更换。"
+    },
+    {
+     "en": "[[Can]] it [[be fixed]] today?",
+     "zh": "今天能修好吗？",
+     "answer": "Yes, it [[can]]. / No, I'm afraid not."
+    }
+   ],
+   "wrong": {
+    "bad": "It must ~~is~~ done today.",
+    "good": "It [[must be done]] today."
+   }
+  },
+  "get": {
+   "title": "get + 过去分词",
+   "short": "get",
+   "rule": "口语里常用 get 代替 be，多说**突然发生的、不太好的事**：被偷、被拒、被困住。否定和疑问要借 do / did。",
+   "examples": [
+    {
+     "en": "My phone [[got stolen]] on the Tube.",
+     "zh": "我的手机在地铁上被偷了。"
+    },
+    {
+     "en": "Our app [[got rejected]] by Apple again.",
+     "zh": "我们的 App 又被苹果拒了。"
+    },
+    {
+     "en": "I [[didn't get invited]] to the party.",
+     "zh": "我没被邀请去派对。"
+    },
+    {
+     "en": "[[Did]] you [[get paid]] this month?",
+     "zh": "你这个月发工资了吗？"
+    }
+   ]
+  },
+  "when": {
+   "title": "什么时候用被动",
+   "short": "何时用",
+   "rule": "主动说「**谁做了什么**」，被动说「**东西怎么了**」。下面这几种情况，被动更自然。",
+   "items": [
+    {
+     "rule": "不知道是谁做的",
+     "en": "My bike [[was stolen]] last night.",
+     "zh": "我的自行车昨晚被偷了。"
+    },
+    {
+     "rule": "谁做的不重要",
+     "en": "The road [[is being repaired]].",
+     "zh": "路正在修。"
+    },
+    {
+     "rule": "通知、说明，听起来客观",
+     "en": "Users [[are asked]] to update the app.",
+     "zh": "请用户更新 App。"
+    },
+    {
+     "rule": "不想点名是谁",
+     "en": "Some mistakes [[were made]].",
+     "zh": "出了一些差错。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "主动",
+     "this": {
+      "meaning": "被动：重点是东西怎么了",
+      "en": "The update [[was released]] on Monday."
+     },
+     "that": {
+      "meaning": "主动：重点是谁做的",
+      "en": "We [[released]] the update on Monday."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "The bug ~~fixed~~ last night.",
+     "good": "The bug [[was fixed]] last night.",
+     "why": "bug 自己不会修，是被修好的，要加 was。"
+    },
+    {
+     "bad": "It must ~~is~~ finished today.",
+     "good": "It [[must be finished]] today.",
+     "why": "must 后面用 be 原形。"
+    },
+    {
+     "bad": "The new version was ~~release~~ yesterday.",
+     "good": "The new version [[was released]] yesterday.",
+     "why": "be 后面要用过去分词。"
+    },
+    {
+     "bad": "The accident ~~was happened~~ at night.",
+     "good": "The accident [[happened]] at night.",
+     "why": "happen 后面不能跟东西，没有被动。"
+    },
+    {
+     "bad": "I ~~borned~~ in 1990.",
+     "good": "I [[was born]] in 1990.",
+     "why": "「出生」永远是被动：was born。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "The app ___ by millions of people.",
+   "options": [
+    "uses",
+    "is used",
+    "is using",
+    "used"
+   ],
+   "answer": "is used",
+   "explain": "app 是被用的：[[is used]]。"
+  },
+  {
+   "id": "q02",
+   "section": "form",
+   "type": "fill",
+   "prompt": "This screen ___ (design) by Mia last year.",
+   "answer": "was designed",
+   "accept": [],
+   "traps": [
+    {
+     "input": "designed",
+     "note": "screen 是被设计的，要加 was。"
+    }
+   ],
+   "explain": "去年 + 被设计：[[was designed]]。"
+  },
+  {
+   "id": "q03",
+   "section": "form",
+   "type": "transform",
+   "prompt": "改成被动：Mia wrote the report.",
+   "answer": "The report was written by Mia.",
+   "accept": [],
+   "explain": "东西放前面：The report [[was written]] by Mia。"
+  },
+  {
+   "id": "q04",
+   "section": "tenses",
+   "type": "fill",
+   "prompt": "The meeting has ___ (move) to Thursday.",
+   "answer": "been moved",
+   "accept": [],
+   "explain": "已经被改：has [[been moved]]。"
+  },
+  {
+   "id": "q05",
+   "section": "tenses",
+   "type": "choice",
+   "prompt": "Sorry, the room ___ at the moment.",
+   "options": [
+    "is being cleaned",
+    "is cleaning",
+    "has cleaned"
+   ],
+   "answer": "is being cleaned",
+   "explain": "「此刻正在被打扫」：[[is being cleaned]]。"
+  },
+  {
+   "id": "q06",
+   "section": "tenses",
+   "type": "transform",
+   "prompt": "改成被动：They will send the invoice tomorrow.",
+   "answer": "The invoice will be sent tomorrow.",
+   "accept": [],
+   "explain": "将来：[[will be sent]]。"
+  },
+  {
+   "id": "q07",
+   "section": "modal",
+   "type": "fill",
+   "prompt": "This must ___ (do) by Friday.",
+   "answer": "be done",
+   "accept": [],
+   "traps": [
+    {
+     "input": "is done",
+     "note": "must 后面用 be 原形。"
+    }
+   ],
+   "explain": "must 后面：[[be done]]。"
+  },
+  {
+   "id": "q08",
+   "section": "modal",
+   "type": "fix",
+   "prompt": "改错：The file can't opened.",
+   "answer": "The file can't be opened.",
+   "accept": [
+    "The file cannot be opened.",
+    "The file can not be opened."
+   ],
+   "explain": "can't 后面要加 be：[[can't be opened]]。"
+  },
+  {
+   "id": "q09",
+   "section": "modal",
+   "type": "make-question",
+   "prompt": "改成一般疑问句：It can be fixed today.",
+   "answer": "Can it be fixed today?",
+   "accept": [],
+   "explain": "把 can 放最前面：[[Can]] it [[be fixed]]？"
+  },
+  {
+   "id": "q10",
+   "section": "get",
+   "type": "choice",
+   "prompt": "My wallet ___ on the bus yesterday.",
+   "options": [
+    "got stolen",
+    "got stole",
+    "stole"
+   ],
+   "answer": "got stolen",
+   "explain": "口语说倒霉事常用 get：[[got stolen]]。"
+  },
+  {
+   "id": "q11",
+   "section": "get",
+   "type": "translate",
+   "prompt": "翻译：我们的 App 又被拒了。",
+   "answer": "Our app got rejected again.",
+   "accept": [
+    "Our app was rejected again.",
+    "Our app has been rejected again.",
+    "Our app's been rejected again."
+   ],
+   "explain": "口语说倒霉事：[[got rejected]]。"
+  },
+  {
+   "id": "q12",
+   "section": "when",
+   "type": "choice",
+   "prompt": "公司通知里最自然的说法是哪一句？",
+   "options": [
+    "Staff are asked to wear their badges.",
+    "We ask staff wear their badges.",
+    "Staff ask to wear their badges."
+   ],
+   "answer": "Staff are asked to wear their badges.",
+   "explain": "通知里用被动，听起来客观：[[are asked]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：The accident was happened at night.",
+   "answer": "The accident happened at night.",
+   "accept": [],
+   "explain": "happen 没有被动：[[happened]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I borned in 1990.",
+   "answer": "I was born in 1990.",
+   "accept": [],
+   "explain": "「出生」要用 [[was born]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "The new version ___ (release) yesterday.",
+   "answer": "was released",
+   "accept": [],
+   "explain": "被发布 + 昨天：[[was released]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：这个 bug 昨天修好了。",
+   "answer": "The bug was fixed yesterday.",
+   "accept": [
+    "This bug was fixed yesterday.",
+    "The bug got fixed yesterday.",
+    "This bug got fixed yesterday."
+   ],
+   "explain": "bug 是被修的：[[was fixed]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用被动语态写 3 句话，说说你们团队最近的一个项目：一句说过去发生的，一句用 must / should / can，一句说将来。",
+  "rules": [
+   "被动 = be + 过去分词，be 跟着时间变",
+   "情态动词后面用 be 原形 + 过去分词"
+  ],
+  "note": "规则判 be + 过去分词的形式（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

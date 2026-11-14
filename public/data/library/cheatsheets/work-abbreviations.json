@@ -1,0 +1,411 @@
+{
+ "id": "cheat-work-abbreviations",
+ "title": "职场和开发缩写",
+ "en": "Workplace and Dev Abbreviations",
+ "group": "速查表",
+ "order": 7,
+ "symbol": "text.bubble",
+ "summary": "ASAP、FYI、LGTM、ETA、WIP…",
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "按场景查缩写：中文是全称、意思和例句译文，小标题写着怎么读。标了「只写不说」的，开口时要说全称。",
+   "notes": [
+    "**读法有三种**：一个字母一个字母读（F-Y-I）；拼成一个词读（nit、JSON）；或者干脆说全称（AFAIK 说 as far as I know）。"
+   ]
+  },
+  "chat": {
+   "title": "邮件和聊天",
+   "short": "聊天",
+   "items": [
+    {
+     "en": "Could you send it [[ASAP]]?",
+     "zh": "as soon as possible · 尽快｜你能尽快发过来吗？",
+     "rule": "ASAP · 读 A-S-A-P，也有人读 ay-sap"
+    },
+    {
+     "en": "[[FYI]], the server will be down tonight.",
+     "zh": "for your information · 供你参考、告诉你一声｜说一声，今晚服务器要停机。",
+     "rule": "FYI · 读 F-Y-I，口语也常用"
+    },
+    {
+     "en": "I'll finish it by [[EOD]].",
+     "zh": "end of day · 今天下班前｜我今天下班前做完。",
+     "rule": "EOD · 读 E-O-D；EOW 是这周结束前（周五下班前）"
+    },
+    {
+     "en": "I'm [[OOO]] next week.",
+     "zh": "out of office · 不在办公室、休假｜我下周休假。",
+     "rule": "OOO · 只写不说，说出来用 out of office"
+    },
+    {
+     "en": "I'm [[WFH]] today.",
+     "zh": "working from home · 在家办公｜我今天在家办公。",
+     "rule": "WFH · 多半只写，说的时候一般说 working from home"
+    },
+    {
+     "en": "The date is still [[TBC]].",
+     "zh": "to be confirmed · 待确认｜日期还没最后确认。",
+     "rule": "TBC · 读 T-B-C；已有初步安排，还没敲定"
+    },
+    {
+     "en": "The venue is [[TBD]].",
+     "zh": "to be decided / determined · 待定｜地点还没定。",
+     "rule": "TBD · 读 T-B-D；完全还没定"
+    },
+    {
+     "en": "[[AFAIK]], nobody's working on it.",
+     "zh": "as far as I know · 据我所知｜据我所知，没人在做这个。",
+     "rule": "AFAIK · 只写不说"
+    },
+    {
+     "en": "[[IMO]], we should keep it simple.",
+     "zh": "in my opinion · 我认为｜我觉得应该保持简单。",
+     "rule": "IMO · 只写不说，说 in my opinion"
+    },
+    {
+     "en": "[[BTW]], the meeting has moved to three.",
+     "zh": "by the way · 顺便说一下｜顺便说一下，会改到三点了。",
+     "rule": "BTW · 只写不说，说 by the way"
+    },
+    {
+     "en": "[[FWIW]], it worked on my machine.",
+     "zh": "for what it's worth · 仅供参考｜仅供参考，在我电脑上是好的。",
+     "rule": "FWIW · 只写不说"
+    },
+    {
+     "en": "[[IIRC]], we fixed this last year.",
+     "zh": "if I remember correctly · 如果我没记错｜我没记错的话，这个去年修过。",
+     "rule": "IIRC · 只写不说"
+    },
+    {
+     "en": "[[TL;DR]]: the release is delayed.",
+     "zh": "too long; didn't read · 长话短说、一句话总结｜一句话总结：发版推迟了。",
+     "rule": "TL;DR · 读 T-L-D-R，放在长消息最前面"
+    },
+    {
+     "en": "I'll [[cc]] you on the email.",
+     "zh": "carbon copy · 抄送｜我发邮件时抄送你。",
+     "rule": "cc · 读 C-C，可以当动词用"
+    },
+    {
+     "en": "We support big brands, [[e.g.]] banks and airlines.",
+     "zh": "exempli gratia（拉丁文） · 例如｜我们服务大品牌，比如银行和航空公司。",
+     "rule": "e.g. · 只写不说，说出来用 for example"
+    },
+    {
+     "en": "It only works on one device, [[i.e.]] your phone.",
+     "zh": "id est（拉丁文） · 也就是说｜它只在一台设备上能用，也就是你的手机。",
+     "rule": "i.e. · 只写不说，说出来用 that is"
+    },
+    {
+     "en": "Just put [[N/A]] if it doesn't apply.",
+     "zh": "not applicable · 不适用｜不适用的话填 N/A 就行。",
+     "rule": "N/A · 读 N-A，多半只在表格里写"
+    },
+    {
+     "en": "[[np]], happy to help.",
+     "zh": "no problem · 没问题｜没问题，乐意帮忙。",
+     "rule": "np · 只写不说，聊天里的随口回复"
+    }
+   ]
+  },
+  "code": {
+   "title": "代码和评审",
+   "short": "代码",
+   "items": [
+    {
+     "en": "I've opened a [[PR]] for the fix.",
+     "zh": "pull request · 合并请求｜我为这个修复提了个 PR。",
+     "rule": "PR · 读 P-R"
+    },
+    {
+     "en": "[[LGTM]], ship it.",
+     "zh": "looks good to me · 我看没问题｜我看没问题，发吧。",
+     "rule": "LGTM · 只写不说，评审里点通过时写"
+    },
+    {
+     "en": "It's still [[WIP]], so don't merge it yet.",
+     "zh": "work in progress · 还在做｜还没做完，先别合。",
+     "rule": "WIP · 读 W-I-P，也有人读 wip"
+    },
+    {
+     "en": "[[Nit]]: this variable name could be clearer.",
+     "zh": "nitpick · 小问题、吹毛求疵｜小问题：这个变量名可以更清楚。",
+     "rule": "nit · 读成一个词 nit；表示不改也行"
+    },
+    {
+     "en": "[[PTAL]] when you have a minute.",
+     "zh": "please take a look · 请看一下｜你有空的时候看一下。",
+     "rule": "PTAL · 只写不说"
+    },
+    {
+     "en": "I've written an [[RFC]] for the new architecture.",
+     "zh": "request for comments · 征求意见稿｜我写了一份新架构的征求意见稿。",
+     "rule": "RFC · 读 R-F-C"
+    },
+    {
+     "en": "I left a [[TODO]] in the code.",
+     "zh": "to do · 待办｜我在代码里留了个待办。",
+     "rule": "TODO · 读 to-do"
+    },
+    {
+     "en": "There's a [[FIXME]] in the login code.",
+     "zh": "fix me · 这里要修｜登录代码里有个待修复标记。",
+     "rule": "FIXME · 读 fix-me"
+    },
+    {
+     "en": "[[WFM]], I can't reproduce it.",
+     "zh": "works for me · 我这边是好的｜我这边正常，复现不了。",
+     "rule": "WFM · 只写不说"
+    },
+    {
+     "en": "Can you give me a [[repro]]?",
+     "zh": "reproduction · 复现步骤｜能给我复现步骤吗？",
+     "rule": "repro · 读成一个词 ree-pro"
+    },
+    {
+     "en": "Closing this as a [[dupe]].",
+     "zh": "duplicate · 重复的工单｜这个和别的重复了，关掉。",
+     "rule": "dupe · 读成一个词 dupe"
+    },
+    {
+     "en": "Have you cloned the [[repo]]?",
+     "zh": "repository · 代码仓库｜仓库你克隆了吗？",
+     "rule": "repo · 读成一个词 ree-po"
+    },
+    {
+     "en": "Is the bug on [[prod]] or staging?",
+     "zh": "production · 线上环境｜这个 bug 是在线上还是预发环境？",
+     "rule": "prod · 读成一个词 prod"
+    },
+    {
+     "en": "Check the [[env]] variables.",
+     "zh": "environment · 环境｜检查一下环境变量。",
+     "rule": "env · 读成一个词 env，或者说 environment"
+    }
+   ]
+  },
+  "project": {
+   "title": "项目和管理",
+   "short": "项目",
+   "items": [
+    {
+     "en": "What's the [[ETA]] on the fix?",
+     "zh": "estimated time of arrival · 预计完成时间｜这个修复预计什么时候好？",
+     "rule": "ETA · 读 E-T-A"
+    },
+    {
+     "en": "Let's ship an [[MVP]] first.",
+     "zh": "minimum viable product · 最小可用产品｜先发一个最小可用版本。",
+     "rule": "MVP · 读 M-V-P"
+    },
+    {
+     "en": "Our main [[KPI]] is daily active users.",
+     "zh": "key performance indicator · 关键绩效指标｜我们的主要指标是日活。",
+     "rule": "KPI · 读 K-P-I"
+    },
+    {
+     "en": "This feature is part of our [[OKRs]].",
+     "zh": "objectives and key results · 目标与关键成果｜这个功能是我们季度目标的一部分。",
+     "rule": "OKR · 读 O-K-R"
+    },
+    {
+     "en": "It's with [[QA]] now.",
+     "zh": "quality assurance · 测试、质量保证｜现在在测试那边。",
+     "rule": "QA · 读 Q-A"
+    },
+    {
+     "en": "The client starts [[UAT]] on Monday.",
+     "zh": "user acceptance testing · 用户验收测试｜客户周一开始验收。",
+     "rule": "UAT · 读 U-A-T"
+    },
+    {
+     "en": "The [[SLA]] says we fix it within four hours.",
+     "zh": "service level agreement · 服务等级协议｜协议规定四小时内修好。",
+     "rule": "SLA · 读 S-L-A"
+    },
+    {
+     "en": "Let's build a quick [[POC]].",
+     "zh": "proof of concept · 概念验证｜先做个快速验证。",
+     "rule": "POC · 读 P-O-C"
+    },
+    {
+     "en": "Ask the [[PM]] about the priority.",
+     "zh": "product manager / project manager · 产品经理 / 项目经理｜优先级去问产品经理。",
+     "rule": "PM · 读 P-M"
+    },
+    {
+     "en": "What's the [[ROI]] on this?",
+     "zh": "return on investment · 投资回报｜这个投入产出比怎么样？",
+     "rule": "ROI · 读 R-O-I"
+    },
+    {
+     "en": "We'll launch it in [[Q3]].",
+     "zh": "the third quarter · 第三季度｜我们第三季度上线。",
+     "rule": "Q3 · 读 Q-three；H2 是下半年"
+    },
+    {
+     "en": "I have a [[one-to-one]] with my manager.",
+     "zh": "one-to-one · 一对一面谈｜我和经理有个一对一。",
+     "rule": "1:1 · 写作 1:1，读 one-to-one"
+    },
+    {
+     "en": "Please ask [[HR]] about holidays.",
+     "zh": "human resources · 人事部｜假期的事请问人事。",
+     "rule": "HR · 读 H-R"
+    },
+    {
+     "en": "The [[R&D]] team is growing.",
+     "zh": "research and development · 研发｜研发团队在扩大。",
+     "rule": "R&D · 读 R-and-D"
+    }
+   ]
+  },
+  "dev": {
+   "title": "开发常用",
+   "short": "开发",
+   "items": [
+    {
+     "en": "The [[API]] returns JSON.",
+     "zh": "application programming interface · 接口｜接口返回 JSON。",
+     "rule": "API · 读 A-P-I"
+    },
+    {
+     "en": "We use their [[SDK]] for payments.",
+     "zh": "software development kit · 开发工具包｜我们用他们的工具包做支付。",
+     "rule": "SDK · 读 S-D-K"
+    },
+    {
+     "en": "The [[UI]] looks great.",
+     "zh": "user interface · 界面｜界面很好看。",
+     "rule": "UI · 读 U-I"
+    },
+    {
+     "en": "The [[UX]] of the sign-up flow needs work.",
+     "zh": "user experience · 用户体验｜注册流程的体验还要改进。",
+     "rule": "UX · 读 U-X"
+    },
+    {
+     "en": "The [[CI]] is failing again.",
+     "zh": "continuous integration · 持续集成｜持续集成又挂了。",
+     "rule": "CI/CD · 读 C-I、C-D；CD 是持续交付（或持续部署）"
+    },
+    {
+     "en": "Which [[IDE]] do you use?",
+     "zh": "integrated development environment · 开发工具｜你用哪个开发工具？",
+     "rule": "IDE · 读 I-D-E"
+    },
+    {
+     "en": "The data comes back as [[JSON]].",
+     "zh": "JavaScript Object Notation · 一种数据格式｜数据以 JSON 格式返回。",
+     "rule": "JSON · 读成一个词 jay-son"
+    },
+    {
+     "en": "Write a [[SQL]] query for it.",
+     "zh": "Structured Query Language · 数据库查询语言｜给它写个查询语句。",
+     "rule": "SQL · 读 S-Q-L 或 sequel，两种都对"
+    },
+    {
+     "en": "Send me the [[URL]].",
+     "zh": "uniform resource locator · 网址｜把网址发我。",
+     "rule": "URL · 读 U-R-L"
+    },
+    {
+     "en": "Can you record a [[GIF]] of the bug?",
+     "zh": "graphics interchange format · 动图｜你能录个 bug 的动图吗？",
+     "rule": "GIF · 读 gif 或 jif，都有人用"
+    },
+    {
+     "en": "We support [[SSO]] for big clients.",
+     "zh": "single sign-on · 单点登录｜我们为大客户提供单点登录。",
+     "rule": "SSO · 读 S-S-O"
+    },
+    {
+     "en": "Please turn on [[2FA]].",
+     "zh": "two-factor authentication · 两步验证｜请打开两步验证。",
+     "rule": "2FA · 读 two-F-A"
+    },
+    {
+     "en": "You can run it from the [[CLI]].",
+     "zh": "command-line interface · 命令行｜你可以在命令行里跑。",
+     "rule": "CLI · 读 C-L-I"
+    },
+    {
+     "en": "Connect to the [[VPN]] first.",
+     "zh": "virtual private network · 虚拟专用网｜先连上 VPN。",
+     "rule": "VPN · 读 V-P-N"
+    },
+    {
+     "en": "Images load from a [[CDN]].",
+     "zh": "content delivery network · 内容分发网络｜图片从 CDN 加载。",
+     "rule": "CDN · 读 C-D-N"
+    },
+    {
+     "en": "We added an [[LLM]] to the search.",
+     "zh": "large language model · 大语言模型｜我们在搜索里加了大模型。",
+     "rule": "LLM · 读 L-L-M"
+    }
+   ]
+  },
+  "ios": {
+   "title": "iOS 开发",
+   "short": "iOS",
+   "items": [
+    {
+     "en": "It only runs on [[iOS]] 17 and later.",
+     "zh": "iPhone OS · 苹果手机系统｜只能在 iOS 17 及以上运行。",
+     "rule": "iOS · 读 eye-oh-ess"
+    },
+    {
+     "en": "We added an [[IAP]] for the pro plan.",
+     "zh": "in-app purchase · 应用内购买｜我们给专业版加了内购。",
+     "rule": "IAP · 读 I-A-P，开会时常说 in-app purchase"
+    },
+    {
+     "en": "The build is on [[TestFlight]] now.",
+     "zh": "TestFlight · 苹果的测试分发平台｜这个版本已经上 TestFlight 了。",
+     "rule": "TestFlight · 文字里有人缩成 TF，说的时候说全称"
+    },
+    {
+     "en": "Check the [[HIG]] before you design it.",
+     "zh": "Human Interface Guidelines · 苹果人机界面指南｜设计前先看看苹果的界面指南。",
+     "rule": "HIG · 读 H-I-G"
+    },
+    {
+     "en": "We moved to [[SPM]] from CocoaPods.",
+     "zh": "Swift Package Manager · Swift 包管理器｜我们从 CocoaPods 换成了 SPM。",
+     "rule": "SPM · 读 S-P-M"
+    },
+    {
+     "en": "The push failed because the [[APNs]] certificate expired.",
+     "zh": "Apple Push Notification service · 苹果推送服务｜推送失败了，因为推送证书过期了。",
+     "rule": "APNs · 读 A-P-N-s"
+    },
+    {
+     "en": "Upload the [[dSYM]] so we can read the crash logs.",
+     "zh": "debug symbols · 调试符号文件｜把符号文件传上去，我们才能看懂崩溃日志。",
+     "rule": "dSYM · 读 dee-sim"
+    },
+    {
+     "en": "Are you going to [[WWDC]] this year?",
+     "zh": "Apple Worldwide Developers Conference · 苹果全球开发者大会｜你今年去 WWDC 吗？",
+     "rule": "WWDC · 读 W-W-D-C"
+    },
+    {
+     "en": "This [[VC]] is too big.",
+     "zh": "view controller · 视图控制器｜这个视图控制器太大了。",
+     "rule": "VC · 读 V-C，或者说 view controller"
+    }
+   ]
+  }
+ }
+}

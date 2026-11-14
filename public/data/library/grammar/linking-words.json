@@ -1,0 +1,400 @@
+{
+ "id": "g-linking-words",
+ "title": "连接词",
+ "en": "Linking Words",
+ "group": "形容词、副词和介词",
+ "level": "B1",
+ "order": 50,
+ "keywords": [
+  "however",
+  "对比：whereas",
+  "结果：so / therefore"
+ ],
+ "related": [
+  "g-adverbial-reason-result",
+  "g-discourse-markers",
+  "g-too-enough-so-such"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "连接词像**句子之间的路标**，告诉听的人下一句往哪走：**再加一点**（also）、**拐个弯**（but、however）、**说结果**（so、therefore）。",
+   "uses": [
+    {
+     "zh": "再加一点",
+     "en": "We fixed the crash. We [[also]] made the login faster.",
+     "en_zh": "我们修好了崩溃，还让登录变快了。"
+    },
+    {
+     "zh": "拐个弯",
+     "en": "The design looks great. [[However]], it's hard to build.",
+     "en_zh": "设计看着很棒，不过很难做出来。"
+    },
+    {
+     "zh": "说结果",
+     "en": "The server was down, [[so]] we couldn't test.",
+     "en_zh": "服务器挂了，所以我们没法测试。"
+    }
+   ]
+  },
+  "add": {
+   "title": "再加一点", "short": "加",
+   "rule": "also 放在**动词前面**（be 动词后面）；too 和 as well 放在**句子最后**。in addition 更正式，放句子开头。",
+   "examples": [
+    {
+     "en": "I [[also]] updated the docs.",
+     "zh": "我还更新了文档。"
+    },
+    {
+     "en": "Can you check the iPad layout [[as well]]?",
+     "zh": "你能把 iPad 的布局也看一下吗？"
+    },
+    {
+     "en": "[[In addition]], we need a new privacy policy.",
+     "zh": "另外，我们还需要一份新的隐私政策。"
+    }
+   ]
+  },
+  "but": {
+   "title": "拐个弯", "short": "转折",
+   "rule": "but 连在一句话**中间**；**however 一般放新句子开头，后面加逗号**，比 but 正式。although 带着半句话，不能单独站着。",
+   "examples": [
+    {
+     "en": "It's a small change, [[but]] it took all day.",
+     "zh": "这个改动很小，但花了一整天。"
+    },
+    {
+     "en": "The tests passed. [[However]], the app still crashes on old iPhones.",
+     "zh": "测试都过了。不过 App 在旧 iPhone 上还是会崩。"
+    },
+    {
+     "en": "[[Although]] it was raining, we went for a walk.",
+     "zh": "虽然在下雨，我们还是去散步了。"
+    }
+   ],
+   "wrong": {
+    "bad": "The tests passed~~, however~~ the app still crashes.",
+    "good": "The tests passed. [[However]], the app still crashes."
+   }
+  },
+  "compare": {
+   "title": "两边对比", "short": "对比",
+   "rule": "whereas 和 while 把**两样东西摆在一起**，说它们不一样。没有「没想到」的感觉，只是左边这样、右边那样。",
+   "examples": [
+    {
+     "en": "Android uses Kotlin, [[whereas]] iOS uses Swift.",
+     "zh": "安卓用 Kotlin，而 iOS 用 Swift。"
+    },
+    {
+     "en": "I like working early, [[while]] Tom prefers late nights.",
+     "zh": "我喜欢早点干活，而汤姆喜欢熬夜。"
+    }
+   ],
+   "notes": [
+    "whereas 连的是一句话里的两半；However 后面是新的一句，两个不能随便换。"
+   ]
+  },
+  "result": {
+   "title": "说结果", "short": "结果",
+   "rule": "so 最口语，放在两句中间。**therefore 和 as a result 更正式**，常放在新句子开头，后面加逗号。",
+   "examples": [
+    {
+     "en": "The API changed, [[so]] we had to update the app.",
+     "zh": "接口改了，所以我们得更新 App。"
+    },
+    {
+     "en": "The build failed. [[As a result]], the release was delayed.",
+     "zh": "构建失败了，结果发布推迟了。"
+    },
+    {
+     "en": "Very few people use iOS 15. [[Therefore]], we'll drop it.",
+     "zh": "用 iOS 15 的人很少，所以我们不再支持它。"
+    }
+   ]
+  },
+  "reason": {
+   "title": "说原因", "short": "原因",
+   "rule": "because 后面跟**一整句话**（有人、有动作）；because of 和 due to 后面只跟**一个名词**。since 放句首是「既然」，后面也跟一整句话。",
+   "examples": [
+    {
+     "en": "We stayed in [[because]] it was raining.",
+     "zh": "因为下雨，我们待在家里。"
+    },
+    {
+     "en": "The flight was cancelled [[because of]] the fog.",
+     "zh": "航班因为大雾取消了。"
+    },
+    {
+     "en": "[[Since]] you're here, can you review my PR?",
+     "zh": "既然你在，能帮我看下 PR 吗？"
+    }
+   ]
+  },
+  "mix": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "however",
+     "this": {
+      "meaning": "but：一句话中间，口语",
+      "en": "It's fast, [[but]] it's expensive."
+     },
+     "that": {
+      "meaning": "however：新句子开头，正式一点",
+      "en": "It's fast. [[However]], it's expensive."
+     }
+    },
+    {
+     "with": "so",
+     "this": {
+      "meaning": "because 后面是原因",
+      "en": "I left early [[because]] I was tired."
+     },
+     "that": {
+      "meaning": "so 后面是结果",
+      "en": "I was tired, [[so]] I left early."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Although it was late, ~~but~~ we kept working.",
+     "good": "[[Although]] it was late, we kept working.",
+     "why": "中文能说「虽然……但是」，英文 although 和 but 只能用一个。"
+    },
+    {
+     "bad": "Because it was raining, ~~so~~ we stayed in.",
+     "good": "[[Because]] it was raining, we stayed in.",
+     "why": "中文能说「因为……所以」，英文 because 和 so 只能用一个。"
+    },
+    {
+     "bad": "~~Because~~ the traffic, I was late.",
+     "good": "[[Because of]] the traffic, I was late.",
+     "why": "the traffic 只是名词，用 because of。"
+    },
+    {
+     "bad": "I ~~too~~ like it.",
+     "good": "I [[also]] like it. / I like it [[too]].",
+     "why": "too 放句尾；放动词前用 also。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "The server was down, ___ we couldn't test the app.",
+   "options": [
+    "so",
+    "but",
+    "because",
+    "however"
+   ],
+   "answer": "so",
+   "explain": "后面是结果：[[so]]。"
+  },
+  {
+   "id": "q02",
+   "section": "add",
+   "type": "choice",
+   "prompt": "I fixed the crash. I ___ updated the docs.",
+   "options": [
+    "also",
+    "too",
+    "as well"
+   ],
+   "answer": "also",
+   "explain": "放在动词前面的是 [[also]]；too 和 as well 放句尾。"
+  },
+  {
+   "id": "q03",
+   "section": "add",
+   "type": "fill",
+   "prompt": "Can you check the iPad layout as ___?",
+   "answer": "well",
+   "accept": [],
+   "explain": "句尾的「也」：[[as well]]。"
+  },
+  {
+   "id": "q04",
+   "section": "add",
+   "type": "fill",
+   "prompt": "I like it, and my wife likes it ___.",
+   "answer": "too",
+   "accept": [
+    "as well"
+   ],
+   "explain": "句尾的「也」：[[too]]。"
+  },
+  {
+   "id": "q05",
+   "section": "but",
+   "type": "fix",
+   "prompt": "改错：Although it was late, but we kept working.",
+   "answer": "Although it was late, we kept working.",
+   "accept": [
+    "It was late, but we kept working.",
+    "Although it was late we kept working."
+   ],
+   "explain": "[[although]] 和 [[but]] 只能留一个。"
+  },
+  {
+   "id": "q06",
+   "section": "but",
+   "type": "choice",
+   "prompt": "The tests passed. ___, the app still crashes on older iPhones.",
+   "options": [
+    "However",
+    "Although",
+    "Because",
+    "Therefore"
+   ],
+   "answer": "However",
+   "explain": "新句子开头，后面有逗号：[[However]]。"
+  },
+  {
+   "id": "q07",
+   "section": "but",
+   "type": "transform",
+   "prompt": "用 although 改写：It was raining, but we went for a walk.",
+   "answer": "Although it was raining, we went for a walk.",
+   "accept": [
+    "We went for a walk although it was raining.",
+    "Although it was raining we went for a walk."
+   ],
+   "explain": "用了 [[although]]，就去掉 but。"
+  },
+  {
+   "id": "q08",
+   "section": "compare",
+   "type": "fill",
+   "prompt": "Android apps are often written in Kotlin, ___ iOS apps use Swift.",
+   "answer": "whereas",
+   "accept": [
+    "while",
+    "whilst"
+   ],
+   "explain": "两边摆一起对比：[[whereas]]。"
+  },
+  {
+   "id": "q09",
+   "section": "compare",
+   "type": "choice",
+   "prompt": "I like working early in the morning, ___ my brother prefers late nights.",
+   "options": [
+    "whereas",
+    "however",
+    "so",
+    "because"
+   ],
+   "answer": "whereas",
+   "explain": "我这样、他那样，用 [[whereas]]。"
+  },
+  {
+   "id": "q10",
+   "section": "result",
+   "type": "fill",
+   "prompt": "The build failed. As a ___, the release was delayed.",
+   "answer": "result",
+   "accept": [],
+   "explain": "正式地说结果：[[As a result]]。"
+  },
+  {
+   "id": "q11",
+   "section": "result",
+   "type": "choice",
+   "prompt": "Very few people use iOS 15. ___, we'll stop supporting it.",
+   "options": [
+    "Therefore",
+    "Whereas",
+    "Although",
+    "Because"
+   ],
+   "answer": "Therefore",
+   "explain": "新句子开头说结果：[[Therefore]]。"
+  },
+  {
+   "id": "q12",
+   "section": "reason",
+   "type": "choice",
+   "prompt": "The flight was cancelled ___ the fog.",
+   "options": [
+    "because",
+    "because of",
+    "so"
+   ],
+   "answer": "because of",
+   "explain": "the fog 是名词：[[because of]]。"
+  },
+  {
+   "id": "q13",
+   "section": "reason",
+   "type": "fix",
+   "prompt": "改错：Because it was raining, so we stayed in.",
+   "answer": "Because it was raining, we stayed in.",
+   "accept": [
+    "It was raining, so we stayed in.",
+    "We stayed in because it was raining."
+   ],
+   "explain": "[[because]] 和 [[so]] 只能留一个。"
+  },
+  {
+   "id": "q14",
+   "section": "mix",
+   "type": "transform",
+   "prompt": "用 so 改写：I left early because I was tired.",
+   "answer": "I was tired, so I left early.",
+   "accept": [
+    "I was tired so I left early."
+   ],
+   "explain": "原因在前，[[so]] 后面说结果。"
+  },
+  {
+   "id": "q15",
+   "section": "mix",
+   "type": "choice",
+   "prompt": "哪一句的标点是对的？",
+   "options": [
+    "The design is great, however it's hard to build.",
+    "The design is great. However, it's hard to build.",
+    "The design is great however, it's hard to build."
+   ],
+   "answer": "The design is great. However, it's hard to build.",
+   "explain": "[[However]] 开一个新句子，后面加逗号；也可以直接换成 but。"
+  },
+  {
+   "id": "q16",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：这个改动很小，但是花了一整天。",
+   "answer": "It's a small change, but it took all day.",
+   "accept": [
+    "It was a small change, but it took all day.",
+    "It's a small change, but it took the whole day.",
+    "It was a small change, but it took the whole day.",
+    "The change is small, but it took all day.",
+    "The change was small, but it took all day.",
+    "The change was small, but it took the whole day."
+   ],
+   "explain": "一句话中间拐弯：[[but]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 到 4 句话讲一次项目出问题的经过：发生了什么、为什么、结果怎样。至少用到 however、so / therefore、because / because of 中的三个。",
+  "rules": [
+   "although 不和 but 一起用，because 不和 so 一起用",
+   "because 后面接句子，because of 后面接名词",
+   "however 开头的句子后面加逗号"
+  ],
+  "note": "规则判连接词的搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

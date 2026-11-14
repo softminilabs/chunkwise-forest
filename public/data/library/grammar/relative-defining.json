@@ -1,0 +1,370 @@
+{
+ "id": "g-relative-defining",
+ "title": "定语从句：限定与非限定",
+ "en": "Defining and Non-defining Relative Clauses",
+ "group": "句子",
+ "level": "B2",
+ "order": 30,
+ "keywords": [
+  "非限制性定语从句",
+  "定语从句的简化"
+ ],
+ "related": [
+  "g-relative-clauses",
+  "g-participle-clauses",
+  "g-linking-words"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "定语从句分两种：**限定的**帮你挑出「是哪一个」，去掉就不知道说谁；**非限定的**只是「顺便补一句」，前后有逗号，去掉了意思还完整。",
+   "uses": [
+    {
+     "zh": "挑出是哪一个（没有逗号）",
+     "en": "The colleague [[who]] sits next to me is from Leeds.",
+     "en_zh": "坐我旁边的那个同事是利兹人。"
+    },
+    {
+     "zh": "顺便补一句（有逗号）",
+     "en": "My manager, [[who]] is from Leeds, loves tea.",
+     "en_zh": "我的经理是利兹人，特别爱喝茶。"
+    },
+    {
+     "zh": "补充说明前面整件事",
+     "en": "The release was delayed, [[which]] annoyed everyone.",
+     "en_zh": "发布推迟了，这让大家都很恼火。"
+    }
+   ]
+  },
+  "defining": {
+   "title": "限定：挑出是哪一个",
+   "short": "限定",
+   "rule": "**没有逗号**。去掉这句，听的人就不知道你说的是哪一个。可以用 that；后面紧跟另一个人时，who / which / that 还能省掉。",
+   "examples": [
+    {
+     "en": "The tests [[that]] failed last night are all UI tests.",
+     "zh": "昨晚失败的那些测试都是 UI 测试。"
+    },
+    {
+     "en": "The designer [[who]] made our icons is leaving.",
+     "zh": "做我们图标的那位设计师要走了。"
+    },
+    {
+     "en": "The ticket ([[that]]) you opened is a duplicate.",
+     "zh": "你开的那个工单是重复的。"
+    }
+   ],
+   "tip": "试试去掉它：「The designer is leaving.」哪个设计师？说不清 → 这就是限定的。"
+  },
+  "nonDefining": {
+   "title": "非限定：顺便补一句",
+   "short": "非限定",
+   "rule": "前后用**逗号**隔开，像括号里的悄悄话。说的人或东西大家已经知道是谁了。**不能用 that，也不能省掉 who / which。**",
+   "examples": [
+    {
+     "en": "My sister, [[who]] lives in Bristol, is a nurse.",
+     "zh": "我姐姐住在布里斯托尔，她是护士。"
+    },
+    {
+     "en": "Swift, [[which]] Apple released in 2014, is easy to read.",
+     "zh": "Swift 是苹果在 2014 年发布的，读起来很容易。"
+    },
+    {
+     "en": "Our CTO, [[whose]] office is upstairs, wants a demo.",
+     "zh": "我们的 CTO 想看个演示，他办公室在楼上。"
+    }
+   ],
+   "wrong": {
+    "bad": "Our app, ~~that~~ has two million users, is free.",
+    "good": "Our app, [[which]] has two million users, is free."
+   },
+   "notes": [
+    "人名、my mum、London 这种本来就只有一个的，后面的从句几乎都是非限定的，要加逗号。"
+   ]
+  },
+  "whichWhole": {
+   "title": "which 指前面一整件事",
+   "short": "整件事",
+   "rule": "句子最后加「, which …」，which 可以指**前面整件事**，意思像「这件事」，中文常说「这让……」「这挺……」。",
+   "examples": [
+    {
+     "en": "The build failed again, [[which]] was annoying.",
+     "zh": "构建又失败了，真烦人。"
+    },
+    {
+     "en": "He fixed it in ten minutes, [[which]] surprised everyone.",
+     "zh": "他十分钟就修好了，大家都很惊讶。"
+    },
+    {
+     "en": "We finished early, [[which]] meant we could go home.",
+     "zh": "我们提前做完了，所以能回家了。"
+    }
+   ],
+   "notes": [
+    "这种用法只能用 which，不能用 what 或 that，前面一定有逗号。"
+   ]
+  },
+  "reduce": {
+   "title": "把定语从句变短",
+   "short": "变短",
+   "rule": "定语从句可以「压缩」：主动的 who / which + 动词，变成 **-ing**；被动的 which is + done，只留 **done**。意思不变，说起来更利落。",
+   "items": [
+    {
+     "rule": "主动 → -ing（= who is talking）",
+     "en": "The man [[talking]] to Sam is our new PM.",
+     "zh": "正在和 Sam 说话的那个人是我们的新项目经理。"
+    },
+    {
+     "rule": "被动 → 过去分词（= which were reported）",
+     "en": "The bugs [[reported]] last week are all fixed.",
+     "zh": "上周报上来的 bug 都修好了。"
+    },
+    {
+     "rule": "主动 → -ing（= who wants）",
+     "en": "Anyone [[wanting]] a ticket should email me.",
+     "zh": "想要票的人给我发邮件。"
+    },
+    {
+     "rule": "first、last、only 后面 → to + 动词",
+     "en": "She was the first person [[to reply]].",
+     "zh": "她是第一个回复的人。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "有逗号和没逗号比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "加不加逗号",
+     "this": {
+      "meaning": "没逗号：我有好几个兄弟，说的是住伦敦的那个",
+      "en": "My brother [[who]] lives in London is a doctor."
+     },
+     "that": {
+      "meaning": "有逗号：我只有一个兄弟，顺便说他住伦敦",
+      "en": "My brother, [[who]] lives in London, is a doctor."
+     }
+    },
+    {
+     "with": "所有人还是一部分人",
+     "this": {
+      "meaning": "没逗号：只有知道 bug 的那几个人修了",
+      "en": "The developers [[who]] knew about the bug fixed it."
+     },
+     "that": {
+      "meaning": "有逗号：开发们都知道，也都修了",
+      "en": "The developers, [[who]] knew about the bug, fixed it."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "London, ~~that~~ is my favourite city, is expensive.",
+     "good": "London, [[which]] is my favourite city, is expensive.",
+     "why": "有逗号的不能用 that。"
+    },
+    {
+     "bad": "My mum, ~~is~~ a teacher, loves books.",
+     "good": "My mum, [[who]] is a teacher, loves books.",
+     "why": "有逗号的 who / which 不能省。"
+    },
+    {
+     "bad": "It rained all day, ~~what~~ ruined our picnic.",
+     "good": "It rained all day, [[which]] ruined our picnic.",
+     "why": "指前面整件事用 which，不用 what。"
+    },
+    {
+     "bad": "The man ~~talked~~ to Sam is our PM.",
+     "good": "The man [[talking]] to Sam is our PM.",
+     "why": "主动的变短用 -ing。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "哪一句是「顺便补一句」的非限定从句？",
+   "options": [
+    "My manager, who is from Leeds, loves tea.",
+    "The man who called you is here.",
+    "The tests that failed are UI tests."
+   ],
+   "answer": "My manager, who is from Leeds, loves tea.",
+   "explain": "有逗号、去掉还完整的是非限定。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我姐姐住在布里斯托尔，她是护士。（用 who）",
+   "answer": "My sister, who lives in Bristol, is a nurse.",
+   "accept": [
+    "My sister, who is a nurse, lives in Bristol.",
+    "My sister, who's a nurse, lives in Bristol."
+   ],
+   "explain": "姐姐只有一个，用逗号 + [[who]]。"
+  },
+  {
+   "id": "q03",
+   "section": "defining",
+   "type": "fill",
+   "prompt": "The tests ___ failed last night are all UI tests.",
+   "answer": "that",
+   "accept": [
+    "which"
+   ],
+   "explain": "没逗号，挑出是哪些测试，用 [[that]]。"
+  },
+  {
+   "id": "q04",
+   "section": "defining",
+   "type": "choice",
+   "prompt": "哪一句里的关系词可以省掉？",
+   "options": [
+    "The ticket that you opened is a duplicate.",
+    "My sister, who you met, is a nurse.",
+    "The man who called is here."
+   ],
+   "answer": "The ticket that you opened is a duplicate.",
+   "explain": "限定从句，后面紧跟 you，可以省。"
+  },
+  {
+   "id": "q05",
+   "section": "nonDefining",
+   "type": "fix",
+   "prompt": "改错：Our app, that has two million users, is free.",
+   "answer": "Our app, which has two million users, is free.",
+   "accept": [],
+   "explain": "有逗号的不能用 that，换成 [[which]]。"
+  },
+  {
+   "id": "q06",
+   "section": "nonDefining",
+   "type": "transform",
+   "prompt": "用 who 合成一句：My manager loves tea. She is from Leeds.",
+   "answer": "My manager, who is from Leeds, loves tea.",
+   "accept": [
+    "My manager, who's from Leeds, loves tea."
+   ],
+   "explain": "经理只有一个，用逗号把 [[who]] is from Leeds 插进去。"
+  },
+  {
+   "id": "q07",
+   "section": "nonDefining",
+   "type": "fill",
+   "prompt": "Our CTO, ___ office is upstairs, wants a demo.",
+   "answer": "whose",
+   "accept": [],
+   "explain": "「他的办公室」→ [[whose]] office。"
+  },
+  {
+   "id": "q08",
+   "section": "whichWhole",
+   "type": "choice",
+   "prompt": "The build failed again, ___ was annoying.",
+   "options": [
+    "that",
+    "what",
+    "which",
+    "it"
+   ],
+   "answer": "which",
+   "explain": "指前面整件事，用 [[which]]。"
+  },
+  {
+   "id": "q09",
+   "section": "whichWhole",
+   "type": "transform",
+   "prompt": "用 which 合成一句：He fixed it in ten minutes. That surprised everyone.",
+   "answer": "He fixed it in ten minutes, which surprised everyone.",
+   "accept": [],
+   "explain": "That 换成 [[which]]，前面加逗号。"
+  },
+  {
+   "id": "q10",
+   "section": "reduce",
+   "type": "transform",
+   "prompt": "变短：The man who is talking to Sam is our new PM.",
+   "answer": "The man talking to Sam is our new PM.",
+   "accept": [],
+   "explain": "who is talking 压缩成 [[talking]]。"
+  },
+  {
+   "id": "q11",
+   "section": "reduce",
+   "type": "fill",
+   "prompt": "The bugs ___ (report) last week are all fixed.",
+   "answer": "reported",
+   "accept": [],
+   "traps": [
+    {
+     "input": "reporting",
+     "note": "bug 不会自己报，是被报的，用 reported。"
+    }
+   ],
+   "explain": "bug 是「被报的」，只留过去分词 [[reported]]。"
+  },
+  {
+   "id": "q12",
+   "section": "reduce",
+   "type": "fill",
+   "prompt": "She was the first person ___ (reply) to my email.",
+   "answer": "to reply",
+   "accept": [],
+   "explain": "first 后面用 [[to reply]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "「我只有一个兄弟，顺便说他住伦敦」应该说：",
+   "options": [
+    "My brother who lives in London is a doctor.",
+    "My brother, who lives in London, is a doctor."
+   ],
+   "answer": "My brother, who lives in London, is a doctor.",
+   "explain": "只有一个，是顺便补充，要加逗号。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：It rained all day, what ruined our picnic.",
+   "answer": "It rained all day, which ruined our picnic.",
+   "accept": [],
+   "explain": "指前面整件事用 [[which]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：My mum, is a teacher, loves books.",
+   "answer": "My mum, who is a teacher, loves books.",
+   "accept": [
+    "My mum, who's a teacher, loves books.",
+    "My mum, a teacher, loves books."
+   ],
+   "explain": "有逗号的 [[who]] 不能省。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话介绍你的城市、团队或一个 App：一句用限定从句（没逗号），一句用非限定从句（有逗号），一句用「, which …」评论前面整件事。",
+  "rules": [
+   "有逗号的从句不用 that，也不省 who / which",
+   "「, which …」指前面整件事"
+  ],
+  "note": "规则判逗号和 that / which 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

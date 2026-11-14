@@ -1,0 +1,453 @@
+{
+ "id": "g-modals-obligation",
+ "title": "情态动词：义务与建议",
+ "en": "Modals: Obligation and Advice",
+ "group": "动词",
+ "level": "B1",
+ "order": 16,
+ "keywords": [
+  "必须和不必",
+  "提建议",
+  "should / ought to / had better"
+ ],
+ "related": [
+  "g-modals-ability",
+  "g-modals-deduction",
+  "g-modals-requests"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "**must / have to** 是「必须」；**mustn't** 是「不许」；**don't have to** 是「不必」；**should** 是「最好、应该」；**had better** 是「最好……不然有麻烦」。",
+   "uses": [
+    {
+     "zh": "必须",
+     "en": "I [[have to]] ((finish)) this <<by Friday>>.",
+     "en_zh": "我必须在周五前做完这个。"
+    },
+    {
+     "zh": "不必（做不做都行）",
+     "en": "You [[don't have to]] ((come)) to the meeting.",
+     "en_zh": "你不必来开会。"
+    },
+    {
+     "zh": "建议",
+     "en": "You [[should]] ((talk)) to your manager.",
+     "en_zh": "你应该跟你的经理谈谈。"
+    }
+   ]
+  },
+  "must": {
+   "title": "必须：must 和 have to", "short": "必须",
+   "text": "意思差不多。**must 是自己心里觉得必须**；**have to 是规定、别人要求的**。拿不准就用 have to，日常说话它更常见。",
+   "items": [
+    {
+     "rule": "自己觉得必须：must",
+     "en": "I [[must]] ((call)) my mum tonight.",
+     "zh": "我今晚一定得给妈妈打个电话。"
+    },
+    {
+     "rule": "公司规定：have to",
+     "en": "We [[have to]] ((wear)) a badge in the office.",
+     "zh": "在办公室我们必须戴工牌。"
+    },
+    {
+     "rule": "他她它用 has to",
+     "en": "She [[has to]] ((fix)) it before the release.",
+     "zh": "她必须在发版前修好它。"
+    }
+   ],
+   "notes": [
+    "have to 是普通动词，问句和否定要请 do 帮忙：[[Do]] you [[have to]] ((work)) at the weekend?"
+   ]
+  },
+  "mustnt": {
+   "title": "不许和不必", "short": "不许",
+   "text": "最容易搞反的一对！**mustn't = 不许做**（红灯，做了就错）；**don't have to = 不用做**（绿灯，做不做都行）。",
+   "items": [
+    {
+     "rule": "不许：mustn't",
+     "en": "You [[mustn't]] ((share)) your password.",
+     "zh": "你不许把密码告诉别人。"
+    },
+    {
+     "rule": "不许：mustn't",
+     "en": "You [[mustn't]] ((push)) straight to main.",
+     "zh": "不许直接推到 main 分支。"
+    },
+    {
+     "rule": "不必：don't have to",
+     "en": "You [[don't have to]] ((wear)) a suit on Fridays.",
+     "zh": "周五你不用穿西装。"
+    },
+    {
+     "rule": "不必：needn't 也行",
+     "en": "You [[needn't]] ((wait)) for me.",
+     "zh": "你不用等我。"
+    }
+   ],
+   "wrong": {
+    "bad": "You ~~don't have to~~ smoke in here. It's against the rules.",
+    "good": "You [[mustn't]] ((smoke)) in here. It's against the rules."
+   }
+  },
+  "past": {
+   "title": "过去和将来", "short": "过去",
+   "text": "must 没有过去式。说「当时必须」用 **had to**，「当时不必」用 **didn't have to**；说将来用 **will have to**。",
+   "examples": [
+    {
+     "en": "I [[had to]] ((work)) late <<last night>>.",
+     "zh": "我昨晚不得不加班。"
+    },
+    {
+     "en": "We [[didn't have to]] ((pay)) for the tickets.",
+     "zh": "我们当时不用花钱买票。"
+    },
+    {
+     "en": "You[['ll have to]] ((update)) the app <<next week>>.",
+     "zh": "下周你得更新这个 App。"
+    }
+   ],
+   "wrong": {
+    "bad": "I ~~musted~~ leave early yesterday.",
+    "good": "I [[had to]] ((leave)) early yesterday."
+   }
+  },
+  "should": {
+   "title": "提建议：should / ought to", "short": "建议",
+   "text": "should 是温和地说「我觉得你最好……」，不是命令。**ought to** 意思一样，只是更正式一点。",
+   "formula": [
+    "主语",
+    "should / shouldn't / ought to",
+    "动词原形",
+    "其他"
+   ],
+   "examples": [
+    {
+     "en": "You [[should]] ((get)) some rest.",
+     "zh": "你应该好好休息一下。"
+    },
+    {
+     "en": "We [[shouldn't]] ((release)) on a Friday.",
+     "zh": "我们不应该在周五发版。"
+    },
+    {
+     "en": "You [[ought to]] ((back up)) your files.",
+     "zh": "你应该备份一下文件。"
+    },
+    {
+     "en": "[[Should]] I ((tell)) the client?",
+     "zh": "我该告诉客户吗？",
+     "answer": "Yes, I think you [[should]]."
+    }
+   ]
+  },
+  "better": {
+   "title": "最好……不然：had better", "short": "最好",
+   "text": "had better 比 should **语气重**，意思是「最好赶紧……，不然会有麻烦」。常缩写成 **'d better**，后面跟原形，否定是 **'d better not**。",
+   "formula": [
+    "主语",
+    "'d better (not)",
+    "动词原形"
+   ],
+   "examples": [
+    {
+     "en": "We[['d better]] ((leave)) now, or we'll miss the train.",
+     "zh": "我们最好现在就走，不然要赶不上火车了。"
+    },
+    {
+     "en": "You[['d better not]] ((be)) late again.",
+     "zh": "你最好别再迟到了。"
+    },
+    {
+     "en": "I[['d better]] ((check)) the logs before I go home.",
+     "zh": "我回家前最好看一下日志。"
+    }
+   ],
+   "wrong": {
+    "bad": "You'd better ~~to~~ ask Tom.",
+    "good": "You[['d better]] ((ask)) Tom."
+   },
+   "tip": "had better 虽然有 had，说的是现在和马上，不是过去。"
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "don't have to",
+     "this": {
+      "meaning": "mustn't：不许，做了就错",
+      "en": "You [[mustn't]] ((tell)) anyone."
+     },
+     "that": {
+      "meaning": "don't have to：不必，做不做都行",
+      "en": "You [[don't have to]] ((tell)) anyone."
+     }
+    },
+    {
+     "with": "had better",
+     "this": {
+      "meaning": "should：温和的建议",
+      "en": "You [[should]] ((save)) your work."
+     },
+     "that": {
+      "meaning": "had better：不然有麻烦",
+      "en": "You[['d better]] ((save)) your work — the battery's dying."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "You ~~don't have to~~ park here. It's for staff only.",
+     "good": "You [[mustn't]] ((park)) here. It's for staff only.",
+     "why": "「不许」用 mustn't；don't have to 是「不必」。"
+    },
+    {
+     "bad": "He ~~have to~~ work at the weekend.",
+     "good": "He [[has to]] ((work)) at the weekend.",
+     "why": "他她它用 has to。"
+    },
+    {
+     "bad": "You should ~~to~~ see a doctor.",
+     "good": "You [[should]] ((see)) a doctor.",
+     "why": "should 后面直接跟原形。"
+    },
+    {
+     "bad": "You'd better ~~not to~~ forget.",
+     "good": "You[['d better not]] ((forget)).",
+     "why": "had better not 后面直接跟原形。"
+    },
+    {
+     "bad": "I ~~must~~ work late yesterday.",
+     "good": "I [[had to]] ((work)) late yesterday.",
+     "why": "过去的「必须」用 had to。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "You ___ come tomorrow. It's a holiday.",
+   "options": [
+    "mustn't",
+    "don't have to",
+    "have to"
+   ],
+   "answer": "don't have to",
+   "explain": "放假了，不用来：[[don't have to]]。"
+  },
+  {
+   "id": "q02",
+   "section": "must",
+   "type": "fill",
+   "prompt": "She ___ (have to) fix it before the release.",
+   "answer": "has to",
+   "accept": [],
+   "traps": [
+    {
+     "input": "have to",
+     "note": "she 用 has to。"
+    }
+   ],
+   "explain": "他她它用 [[has to]]。"
+  },
+  {
+   "id": "q03",
+   "section": "must",
+   "type": "transform",
+   "prompt": "改成一般疑问句：You have to work at the weekend.",
+   "answer": "Do you have to work at the weekend?",
+   "accept": [
+    "Do you have to work on the weekend?"
+   ],
+   "traps": [
+    {
+     "input": "Have you to work at the weekend?",
+     "note": "have to 要请 do 帮忙变问句。"
+    }
+   ],
+   "explain": "have to 是普通动词：[[Do]] you [[have to]] …？"
+  },
+  {
+   "id": "q04",
+   "section": "mustnt",
+   "type": "choice",
+   "prompt": "You ___ share your password with anyone.",
+   "options": [
+    "mustn't",
+    "don't have to",
+    "needn't"
+   ],
+   "answer": "mustn't",
+   "explain": "这是「不许」：[[mustn't]]。"
+  },
+  {
+   "id": "q05",
+   "section": "mustnt",
+   "type": "choice",
+   "prompt": "You ___ wear a suit. Jeans are fine.",
+   "options": [
+    "mustn't",
+    "don't have to",
+    "had better"
+   ],
+   "answer": "don't have to",
+   "explain": "牛仔裤也行，就是「不必」：[[don't have to]]。"
+  },
+  {
+   "id": "q06",
+   "section": "mustnt",
+   "type": "fix",
+   "prompt": "改错：You don't have to smoke in here. It's against the rules.",
+   "answer": "You mustn't smoke in here. It's against the rules.",
+   "accept": [
+    "You must not smoke in here. It's against the rules."
+   ],
+   "explain": "违反规定是「不许」：[[mustn't]]。"
+  },
+  {
+   "id": "q07",
+   "section": "past",
+   "type": "fill",
+   "prompt": "I ___ (have to) work late last night.",
+   "answer": "had to",
+   "accept": [],
+   "traps": [
+    {
+     "input": "must",
+     "note": "must 没有过去式，用 had to。"
+    }
+   ],
+   "explain": "过去的「必须」用 [[had to]]。"
+  },
+  {
+   "id": "q08",
+   "section": "past",
+   "type": "transform",
+   "prompt": "改成过去时：We don't have to pay for the tickets.",
+   "answer": "We didn't have to pay for the tickets.",
+   "accept": [
+    "We did not have to pay for the tickets."
+   ],
+   "explain": "当时不必：[[didn't have to]]。"
+  },
+  {
+   "id": "q09",
+   "section": "should",
+   "type": "fill",
+   "prompt": "You look tired. You ___ get some rest.（给个建议）",
+   "answer": "should",
+   "accept": [
+    "ought to"
+   ],
+   "explain": "温和的建议：You [[should]] ((get)) some rest。"
+  },
+  {
+   "id": "q10",
+   "section": "should",
+   "type": "fix",
+   "prompt": "改错：You should to see a doctor.",
+   "answer": "You should see a doctor.",
+   "accept": [],
+   "explain": "should 后面直接跟原形。"
+  },
+  {
+   "id": "q11",
+   "section": "should",
+   "type": "translate",
+   "prompt": "翻译：我们不应该在周五发版。",
+   "answer": "We shouldn't release on a Friday.",
+   "accept": [
+    "We should not release on a Friday.",
+    "We shouldn't release on Friday.",
+    "We should not release on Friday.",
+    "We shouldn't release on Fridays."
+   ],
+   "explain": "不应该：[[shouldn't]] ((release))。"
+  },
+  {
+   "id": "q12",
+   "section": "better",
+   "type": "choice",
+   "prompt": "We ___ leave now, or we'll miss the train.",
+   "options": [
+    "'d better",
+    "'d better to",
+    "better had"
+   ],
+   "answer": "'d better",
+   "explain": "不走就有麻烦：We[['d better]] ((leave))。"
+  },
+  {
+   "id": "q13",
+   "section": "better",
+   "type": "fix",
+   "prompt": "改错：You'd better not to be late again.",
+   "answer": "You'd better not be late again.",
+   "accept": [
+    "You had better not be late again."
+   ],
+   "explain": "had better not 后面直接跟原形：[['d better not]] ((be))。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：He have to work at the weekend.",
+   "answer": "He has to work at the weekend.",
+   "accept": [
+    "He has to work on the weekend."
+   ],
+   "explain": "他她它用 [[has to]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "Your battery is at 2%. You ___ save your work now!",
+   "options": [
+    "'d better",
+    "don't have to",
+    "mustn't"
+   ],
+   "answer": "'d better",
+   "explain": "不保存就有麻烦，用语气重的 [[had better]]。"
+  },
+  {
+   "id": "q16",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：你不必来开会。",
+   "answer": "You don't have to come to the meeting.",
+   "accept": [
+    "You do not have to come to the meeting.",
+    "You needn't come to the meeting."
+   ],
+   "traps": [
+    {
+     "input": "You mustn't come to the meeting.",
+     "note": "mustn't 是「不许来」，不是「不必来」。"
+    }
+   ],
+   "explain": "不必：[[don't have to]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话介绍你们团队的规矩：一件必须做的事（have to），一件不许做的事（mustn't），一件不必做的事（don't have to）。再给新同事一条建议（should）。",
+  "rules": [
+   "mustn't 表示不许，don't have to 表示不必，不能混用",
+   "must / should / had better 后面用原形，不加 to；he / she 用 has to"
+  ],
+  "note": "规则判 mustn't 和 don't have to 是否用对、情态动词后的原形（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

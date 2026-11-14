@@ -1,0 +1,412 @@
+{
+ "id": "g-articles",
+ "title": "冠词",
+ "en": "Articles",
+ "group": "名词和代词",
+ "level": "A2",
+ "order": 39,
+ "keywords": [
+  "冠词"
+ ],
+ "related": [
+  "g-countable",
+  "g-quantifiers",
+  "g-pronouns"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "a / an 是「**随便一个**、第一次说到」；the 是「**就是那个**，你我都知道是哪个」；什么都不加，是「**泛泛地说一类东西**」。",
+   "uses": [
+    {
+     "zh": "随便一个、第一次说",
+     "en": "I saw [[a]] great talk about SwiftUI.",
+     "en_zh": "我看了一个很棒的 SwiftUI 演讲。"
+    },
+    {
+     "zh": "就是那个，大家都知道",
+     "en": "Can you send me [[the]] link?",
+     "en_zh": "你能把那个链接发我吗？"
+    },
+    {
+     "zh": "泛泛地说一类东西",
+     "en": "I don't like [[meetings]].",
+     "en_zh": "我不喜欢开会。"
+    }
+   ]
+  },
+  "a-an": {
+   "title": "a 还是 an",
+   "short": "a/an",
+   "rule": "看**读音**，不看字母：后面的词开头读的是 a、e、i、o 这类元音，用 an；否则用 a。",
+   "rules": [
+    {
+     "ending": "开头是元音的音",
+     "change": "用 an",
+     "examples": [
+      "[[an]] app",
+      "[[an]] iPhone",
+      "[[an]] hour（h 不发音）",
+      "[[an]] MVP（读 em）"
+     ]
+    },
+    {
+     "ending": "开头是辅音的音",
+     "change": "用 a",
+     "examples": [
+      "[[a]] bug",
+      "[[a]] user（u 读 you）",
+      "[[a]] one-off fix（读 wʌn）"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "She's [[an]] iOS developer.",
+     "zh": "她是一名 iOS 开发者。"
+    },
+    {
+     "en": "The fix took [[an]] hour.",
+     "zh": "修这个花了一个小时。"
+    },
+    {
+     "en": "That's [[a]] useful tip.",
+     "zh": "这是个有用的小窍门。"
+    }
+   ]
+  },
+  "first": {
+   "title": "第一次说 a，再说 the",
+   "short": "先后",
+   "rule": "第一次提到，对方还不知道是哪个，用 a；再说起它，对方已经知道了，就换成 the。",
+   "examples": [
+    {
+     "en": "I found [[a]] bug. [[The]] bug only happens on iPad.",
+     "zh": "我发现了一个 bug。这个 bug 只在 iPad 上出现。"
+    },
+    {
+     "en": "There's [[a]] new café near the office. [[The]] coffee there is great.",
+     "zh": "公司附近开了家新咖啡馆，那里的咖啡很好喝。"
+    },
+    {
+     "en": "We hired [[a]] designer last month. [[The]] designer is from Leeds.",
+     "zh": "我们上个月招了个设计师，这位设计师是利兹人。"
+    }
+   ]
+  },
+  "the": {
+   "title": "什么时候用 the",
+   "short": "用 the",
+   "rule": "一句话：**听的人知道你说的是哪一个**，就用 the。下面几种最常见。",
+   "items": [
+    {
+     "rule": "世上只有一个的",
+     "en": "[[The]] sun is out today.",
+     "zh": "今天出太阳了。"
+    },
+    {
+     "rule": "眼前这个，双方都知道",
+     "en": "Could you close [[the]] window?",
+     "zh": "你能把窗户关上吗？"
+    },
+    {
+     "rule": "后面有一句话说明是哪个",
+     "en": "[[The]] build that failed last night is fixed now.",
+     "zh": "昨晚失败的那个构建现在修好了。"
+    },
+    {
+     "rule": "「最」和「第几」前面",
+     "en": "This is [[the]] best release so far.",
+     "zh": "这是到目前为止最好的一个版本。"
+    }
+   ],
+   "notes": [
+    "乐器前面也用 the：I play [[the]] guitar at the weekend."
+   ]
+  },
+  "zero": {
+   "title": "什么都不加",
+   "short": "不加",
+   "rule": "泛泛地说**一整类**东西（复数或不能数的），什么都不加。还有一些固定说法也不加：一日三餐、去上班、坐公交。",
+   "items": [
+    {
+     "rule": "泛指一类，用复数",
+     "en": "[[Users]] love simple apps.",
+     "zh": "用户都喜欢简单的 App。"
+    },
+    {
+     "rule": "泛指不能数的东西",
+     "en": "[[Coffee]] keeps me awake.",
+     "zh": "咖啡让我保持清醒。"
+    },
+    {
+     "rule": "一日三餐",
+     "en": "Let's talk after [[lunch]].",
+     "zh": "我们吃完午饭再聊。"
+    },
+    {
+     "rule": "go to work、at home、by bus 这类固定说法",
+     "en": "I usually go to [[work]] by [[bus]].",
+     "zh": "我通常坐公交去上班。"
+    }
+   ],
+   "notes": [
+    "说「具体那一些」就要加 the：[[Meetings]] are boring.（会议都很无聊）· [[The meetings]] this week are boring.（这周的那些会很无聊）"
+   ]
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "the",
+     "this": {
+      "meaning": "a：随便哪个都行",
+      "en": "I need [[a]] laptop for testing."
+     },
+     "that": {
+      "meaning": "the：就要那一台",
+      "en": "I need [[the]] laptop on your desk."
+     }
+    },
+    {
+     "with": "什么都不加",
+     "this": {
+      "meaning": "the：特指这一群",
+      "en": "[[The]] users in Japan love this feature."
+     },
+     "that": {
+      "meaning": "不加：泛指所有的",
+      "en": "[[Users]] love simple apps."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "She's ~~engineer~~.",
+     "good": "She's [[an]] engineer.",
+     "why": "说一个人的职业，前面要加 a / an。"
+    },
+    {
+     "bad": "It takes ~~a~~ hour.",
+     "good": "It takes [[an]] hour.",
+     "why": "hour 的 h 不发音，开头是元音的音。"
+    },
+    {
+     "bad": "~~The~~ life is short.",
+     "good": "[[Life]] is short.",
+     "why": "泛泛地说「人生」，什么都不加。"
+    },
+    {
+     "bad": "I go to ~~the~~ work by bus.",
+     "good": "I go to [[work]] by bus.",
+     "why": "go to work 是固定说法，不加 the。"
+    },
+    {
+     "bad": "Let's meet at ~~a~~ same place.",
+     "good": "Let's meet at [[the]] same place.",
+     "why": "same 前面固定用 the。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I saw ___ great talk about SwiftUI yesterday.（第一次说到）",
+   "options": [
+    "a",
+    "an",
+    "the"
+   ],
+   "answer": "a",
+   "explain": "第一次说到，随便一个：[[a]] great talk。"
+  },
+  {
+   "id": "q02",
+   "section": "a-an",
+   "type": "choice",
+   "prompt": "The fix took about ___ hour.",
+   "options": [
+    "a",
+    "an"
+   ],
+   "answer": "an",
+   "explain": "hour 的 h 不发音，用 [[an]]。"
+  },
+  {
+   "id": "q03",
+   "section": "a-an",
+   "type": "fill",
+   "prompt": "She's ___ iOS developer.",
+   "answer": "an",
+   "accept": [],
+   "traps": [
+    {
+     "input": "a",
+     "note": "iOS 开头读 /aɪ/，是元音的音，用 an。"
+    }
+   ],
+   "explain": "看读音：iOS 开头是元音的音，用 [[an]]。"
+  },
+  {
+   "id": "q04",
+   "section": "a-an",
+   "type": "choice",
+   "prompt": "That's ___ useful tip.",
+   "options": [
+    "a",
+    "an"
+   ],
+   "answer": "a",
+   "explain": "useful 开头读 you，是辅音的音，用 [[a]]。"
+  },
+  {
+   "id": "q05",
+   "section": "first",
+   "type": "fill",
+   "prompt": "I found a bug. ___ bug only happens on iPad.",
+   "answer": "The",
+   "accept": [
+    "the"
+   ],
+   "explain": "第二次说起，对方知道是哪个了：[[The]] bug。"
+  },
+  {
+   "id": "q06",
+   "section": "first",
+   "type": "translate",
+   "prompt": "翻译：我有一个想法。这个想法很简单。",
+   "answer": "I've got an idea. The idea is simple.",
+   "accept": [
+    "I have an idea. The idea is simple.",
+    "I have got an idea. The idea is simple.",
+    "I've got an idea. The idea is very simple.",
+    "I have an idea. The idea is very simple."
+   ],
+   "explain": "第一次用 [[an]] idea，再说起用 [[The]] idea。"
+  },
+  {
+   "id": "q07",
+   "section": "the",
+   "type": "choice",
+   "prompt": "Could you close ___ window, please?",
+   "options": [
+    "a",
+    "an",
+    "the"
+   ],
+   "answer": "the",
+   "explain": "就是眼前那扇窗，双方都知道：[[the]] window。"
+  },
+  {
+   "id": "q08",
+   "section": "the",
+   "type": "fill",
+   "prompt": "This is ___ best release so far.",
+   "answer": "the",
+   "accept": [],
+   "explain": "「最」前面用 [[the]]。"
+  },
+  {
+   "id": "q09",
+   "section": "the",
+   "type": "choice",
+   "prompt": "I play ___ guitar at the weekend.",
+   "options": [
+    "a",
+    "the",
+    "不填"
+   ],
+   "answer": "the",
+   "explain": "乐器前面用 [[the]]。"
+  },
+  {
+   "id": "q10",
+   "section": "zero",
+   "type": "choice",
+   "prompt": "I usually go to ___ work by bus.",
+   "options": [
+    "the",
+    "a",
+    "不填"
+   ],
+   "answer": "不填",
+   "explain": "go to [[work]] 是固定说法，什么都不加。"
+  },
+  {
+   "id": "q11",
+   "section": "zero",
+   "type": "fix",
+   "prompt": "改错：The life is too short for long meetings.",
+   "answer": "Life is too short for long meetings.",
+   "accept": [],
+   "explain": "泛泛地说「人生」，不加 the：[[Life]]。"
+  },
+  {
+   "id": "q12",
+   "section": "zero",
+   "type": "choice",
+   "prompt": "___ users love simple apps.（说所有用户）",
+   "options": [
+    "The",
+    "A",
+    "不填"
+   ],
+   "answer": "不填",
+   "explain": "泛指一整类，用复数，什么都不加：[[Users]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：She's engineer.",
+   "answer": "She's an engineer.",
+   "accept": [
+    "She is an engineer."
+   ],
+   "explain": "说职业要加 a / an：[[an]] engineer。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "Let's meet at ___ same place as last time.",
+   "answer": "the",
+   "accept": [],
+   "explain": "same 前面固定用 [[the]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "We need ___ laptop for the new tester. Any laptop is fine.",
+   "options": [
+    "a",
+    "the",
+    "不填"
+   ],
+   "answer": "a",
+   "explain": "随便哪台都行，用 [[a]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话讲一件这周发生的小事：第一次提到某个东西用 a / an，第二次提到它用 the，再加一句泛泛地说一类东西的话。",
+  "rules": [
+   "第一次提到的单数名词用 a / an",
+   "再次提到同一个东西用 the",
+   "泛指一类东西用复数或不可数名词，不加冠词"
+  ],
+  "note": "规则判 a / an / the 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

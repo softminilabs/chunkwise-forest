@@ -1,0 +1,439 @@
+{
+ "id": "g-indefinite-pronouns",
+ "title": "不定代词",
+ "en": "Indefinite Pronouns",
+ "group": "名词和代词",
+ "level": "B1",
+ "order": 43,
+ "keywords": [
+  "不定代词"
+ ],
+ "related": [
+  "g-quantifiers",
+  "g-pronouns",
+  "g-countable"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "不知道是谁、是什么、在哪儿时，用这些词。它们像**拼积木**：前半截 some、any、no、every 管「多少」，后半截 one 是人、thing 是东西、where 是地方。",
+   "uses": [
+    {
+     "zh": "某个人",
+     "en": "[[Someone]] left a comment on your PR.",
+     "en_zh": "有人在你的 PR 上留了评论。"
+    },
+    {
+     "zh": "任何东西（问句）",
+     "en": "Is there [[anything]] I can do?",
+     "en_zh": "有什么我能帮忙的吗？"
+    },
+    {
+     "zh": "哪儿都没有",
+     "en": "My keys are [[nowhere]] to be found.",
+     "en_zh": "我的钥匙哪儿都找不到。"
+    }
+   ]
+  },
+  "build": {
+   "title": "拼积木",
+   "short": "拼积木",
+   "rule": "四个前半截 × 三个后半截，拼出 12 个词。人还可以用 -body：someone = somebody，意思一样。",
+   "rules": [
+    {
+     "ending": "some-",
+     "change": "有那么一个",
+     "examples": [
+      "[[some{one}]]",
+      "[[some{thing}]]",
+      "[[some{where}]]"
+     ]
+    },
+    {
+     "ending": "any-",
+     "change": "否定句、问句；或者「随便哪个」",
+     "examples": [
+      "[[any{one}]]",
+      "[[any{thing}]]",
+      "[[any{where}]]"
+     ]
+    },
+    {
+     "ending": "no-",
+     "change": "一个都没有",
+     "examples": [
+      "[[no one]]",
+      "[[no{thing}]]",
+      "[[no{where}]]"
+     ]
+    },
+    {
+     "ending": "every-",
+     "change": "全部、每一个",
+     "examples": [
+      "[[every{one}]]",
+      "[[every{thing}]]",
+      "[[every{where}]]"
+     ]
+    }
+   ],
+   "tip": "no one 要分开写成两个词，其他的都连在一起写。"
+  },
+  "choose": {
+   "title": "some、any、no 怎么选",
+   "short": "怎么选",
+   "rule": "和 some、any 一样：肯定句用 some-，否定句、问句用 any-。英语一句话**只能有一个「不」**：要么 didn't + anything，要么 nothing。",
+   "examples": [
+    {
+     "en": "I heard [[something]] strange.",
+     "zh": "我听到了奇怪的声音。"
+    },
+    {
+     "en": "I didn't see [[anyone]] in the office.",
+     "zh": "我在办公室没看到人。"
+    },
+    {
+     "en": "I saw [[no one]] in the office.",
+     "zh": "我在办公室一个人都没看到。"
+    },
+    {
+     "en": "Where shall we eat? [[Anywhere]] is fine.",
+     "zh": "去哪儿吃？哪儿都行。"
+    }
+   ],
+   "wrong": {
+    "bad": "I didn't see ~~nobody~~.",
+    "good": "I didn't see [[anybody]]."
+   },
+   "notes": [
+    "any- 用在肯定句里，意思是「**随便哪个都行**」。",
+    "请别人或者希望对方说 yes 的问句，用 some-：Would you like [[something]] to drink?"
+   ]
+  },
+  "singular": {
+   "title": "当一个来用",
+   "short": "单数",
+   "rule": "everyone 虽然是「大家」，语法上却当**一个人**来用，动词要加 s。不过回头说「他们的」时，用 they、their。",
+   "examples": [
+    {
+     "en": "[[Everyone]] [[know{s}]] the deadline.",
+     "zh": "大家都知道截止日期。"
+    },
+    {
+     "en": "[[Nobody]] [[like{s}]] long meetings.",
+     "zh": "没人喜欢开长会。"
+    },
+    {
+     "en": "[[Someone]] left [[their]] umbrella in the meeting room.",
+     "zh": "有人把伞落在会议室了。"
+    },
+    {
+     "en": "[[Is]] [[everything]] OK?",
+     "zh": "一切都还好吗？"
+    }
+   ],
+   "wrong": {
+    "bad": "Everyone ~~are~~ here.",
+    "good": "[[Everyone]] [[is]] here."
+   }
+  },
+  "after": {
+   "title": "后面还能加什么",
+   "short": "后面加",
+   "rule": "形容词要放在这些词**后面**，和中文反过来：「新的东西」= something **new**。还常加 else（别的）和 to do（可以做的）。",
+   "items": [
+    {
+     "rule": "形容词放后面",
+     "en": "Let's try [[something new]].",
+     "zh": "我们试点新的吧。"
+    },
+    {
+     "rule": "else = 别的",
+     "en": "Does [[anyone else]] have a question?",
+     "zh": "还有别人有问题吗？"
+    },
+    {
+     "rule": "to do = 可以做的",
+     "en": "I've got [[nothing to do]] at the weekend.",
+     "zh": "我周末没什么事做。"
+    },
+    {
+     "rule": "「某人的」加 's",
+     "en": "Is this [[someone's]] coffee?",
+     "zh": "这是别人的咖啡吗？"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "anyone",
+     "this": {
+      "meaning": "someone：有这么一个人",
+      "en": "[[Someone]] can help you."
+     },
+     "that": {
+      "meaning": "anyone：随便谁都行",
+      "en": "[[Anyone]] can help you."
+     }
+    },
+    {
+     "with": "every one",
+     "this": {
+      "meaning": "everyone：大家（只说人）",
+      "en": "[[Everyone]] passed the test."
+     },
+     "that": {
+      "meaning": "every one：每一个，一个不落",
+      "en": "[[Every one]] of the tests passed."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I don't know ~~nothing~~.",
+     "good": "I don't know [[anything]].",
+     "why": "一句话只能有一个「不」。"
+    },
+    {
+     "bad": "Everyone ~~have~~ a laptop.",
+     "good": "Everyone [[has]] a laptop.",
+     "why": "everyone 当一个人用，动词加 s。"
+    },
+    {
+     "bad": "Let's try ~~new something~~.",
+     "good": "Let's try [[something new]].",
+     "why": "形容词放在后面。"
+    },
+    {
+     "bad": "Nobody ~~didn't come~~.",
+     "good": "Nobody [[came]].",
+     "why": "nobody 已经是「不」了，不用再加 didn't。"
+    },
+    {
+     "bad": "~~Every body~~ is here.",
+     "good": "[[Everybody]] is here.",
+     "why": "everybody 连在一起写。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I can't find my keys ___.",
+   "options": [
+    "somewhere",
+    "anywhere",
+    "nowhere"
+   ],
+   "answer": "anywhere",
+   "explain": "说地方用 -where，否定句用 any-：[[anywhere]]。"
+  },
+  {
+   "id": "q02",
+   "section": "build",
+   "type": "fill",
+   "prompt": "no + where = ___",
+   "answer": "nowhere",
+   "accept": [],
+   "explain": "哪儿都没有：[[no{where}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "build",
+   "type": "choice",
+   "prompt": "There's ___ at the door. Can you check?",
+   "options": [
+    "someone",
+    "anyone",
+    "no one"
+   ],
+   "answer": "someone",
+   "explain": "肯定句，「有个人」：[[someone]]。"
+  },
+  {
+   "id": "q04",
+   "section": "choose",
+   "type": "fix",
+   "prompt": "改错：I didn't see nobody in the office.",
+   "answer": "I didn't see anybody in the office.",
+   "accept": [
+    "I didn't see anyone in the office.",
+    "I saw nobody in the office.",
+    "I saw no one in the office."
+   ],
+   "explain": "一句话只能有一个「不」：didn't + [[anybody]]。"
+  },
+  {
+   "id": "q05",
+   "section": "choose",
+   "type": "fill",
+   "prompt": "Is there ___ I can do to help?",
+   "answer": "anything",
+   "accept": [],
+   "explain": "问句里说东西，用 [[anything]]。"
+  },
+  {
+   "id": "q06",
+   "section": "choose",
+   "type": "transform",
+   "prompt": "改成否定句：I've got something to say.",
+   "answer": "I haven't got anything to say.",
+   "accept": [
+    "I have not got anything to say.",
+    "I've got nothing to say.",
+    "I have nothing to say.",
+    "I don't have anything to say."
+   ],
+   "traps": [
+    {
+     "input": "I haven't got nothing to say.",
+     "note": "已经有 haven't 了，后面用 anything。"
+    }
+   ],
+   "explain": "否定句里 something 变 [[anything]]。"
+  },
+  {
+   "id": "q07",
+   "section": "choose",
+   "type": "choice",
+   "prompt": "— Where shall we eat? — ___ is fine. I'm not fussy.",
+   "options": [
+    "Anywhere",
+    "Somewhere",
+    "Nowhere"
+   ],
+   "answer": "Anywhere",
+   "explain": "肯定句里的 any- 是「随便哪个都行」：[[Anywhere]]。"
+  },
+  {
+   "id": "q08",
+   "section": "singular",
+   "type": "choice",
+   "prompt": "Everyone ___ the deadline.",
+   "options": [
+    "know",
+    "knows",
+    "are knowing"
+   ],
+   "answer": "knows",
+   "explain": "everyone 当一个人用：[[know{s}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "singular",
+   "type": "fix",
+   "prompt": "改错：Everybody are here, so let's start.",
+   "answer": "Everybody is here, so let's start.",
+   "accept": [
+    "Everybody's here, so let's start."
+   ],
+   "explain": "everybody 当一个人用：[[is]]。"
+  },
+  {
+   "id": "q10",
+   "section": "singular",
+   "type": "fill",
+   "prompt": "Someone left ___ umbrella in the meeting room.",
+   "answer": "their",
+   "accept": [
+    "his or her"
+   ],
+   "explain": "不知道是男是女，用 [[their]]。"
+  },
+  {
+   "id": "q11",
+   "section": "after",
+   "type": "fix",
+   "prompt": "改错：Let's try new something.",
+   "answer": "Let's try something new.",
+   "accept": [],
+   "explain": "形容词放后面：[[something new]]。"
+  },
+  {
+   "id": "q12",
+   "section": "after",
+   "type": "choice",
+   "prompt": "Does anyone ___ have a question?",
+   "options": [
+    "other",
+    "else",
+    "more"
+   ],
+   "answer": "else",
+   "explain": "「别的人」：[[anyone else]]。"
+  },
+  {
+   "id": "q13",
+   "section": "after",
+   "type": "translate",
+   "prompt": "翻译：这个周末我没什么事做。",
+   "answer": "I've got nothing to do this weekend.",
+   "accept": [
+    "I have nothing to do this weekend.",
+    "I have got nothing to do this weekend.",
+    "I don't have anything to do this weekend.",
+    "I haven't got anything to do this weekend."
+   ],
+   "explain": "「没什么事做」：[[nothing to do]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "This task is easy. ___ can do it.",
+   "options": [
+    "Someone",
+    "Anyone",
+    "No one"
+   ],
+   "answer": "Anyone",
+   "explain": "「随便谁都能做」：[[Anyone]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Nobody didn't come to the meeting.",
+   "answer": "Nobody came to the meeting.",
+   "accept": [
+    "No one came to the meeting."
+   ],
+   "explain": "nobody 已经是「不」了：Nobody [[came]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "___ of the tests passed. Not a single one failed.",
+   "options": [
+    "Everyone",
+    "Every one"
+   ],
+   "answer": "Every one",
+   "explain": "说东西「每一个」，分开写：[[Every one]] of。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话说说你上周末或者今天在公司的情况。至少用到一个 some- 词、一个 any- 词，和一个 no- 或 every- 词。",
+  "rules": [
+   "否定句和疑问句用 any-，不和 not 叠用 no-",
+   "everyone / nobody 等做主语时动词用单数",
+   "形容词和 else 放在不定代词后面"
+  ],
+  "note": "规则判不定代词和动词单复数（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

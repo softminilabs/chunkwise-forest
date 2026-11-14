@@ -1,0 +1,627 @@
+{
+ "id": "g-past-simple",
+ "title": "一般过去时",
+ "en": "Past Simple",
+ "group": "时态",
+ "level": "A2",
+ "order": 3,
+ "keywords": [
+  "一般过去时"
+ ],
+ "related": [
+  "g-present-perfect",
+  "g-past-continuous",
+  "g-used-to-would"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "一般过去时说的是**「已经过去、做完了」**的事：昨天、上周、三年前……时间已经翻篇了。动词要变成**过去式**。",
+   "uses": [
+    {
+     "zh": "过去某个时候做完的一件事",
+     "en": "I [[fixed]] the bug <<yesterday>>.",
+     "en_zh": "我昨天把那个 bug 修好了。"
+    },
+    {
+     "zh": "过去一件接一件发生的事",
+     "en": "She [[opened]] the app, [[tapped]] Save and [[waited]].",
+     "en_zh": "她打开 App，点了保存，然后等着。"
+    },
+    {
+     "zh": "过去的状态，现在已经结束",
+     "en": "I [[lived]] in Manchester <<for two years>>.",
+     "en_zh": "我在曼彻斯特住过两年。"
+    }
+   ],
+   "signals": [
+    "yesterday",
+    "last night",
+    "last week",
+    "two days ago",
+    "in 2020",
+    "when I was a child",
+    "just now"
+   ]
+  },
+  "positive": {
+   "title": "肯定句",
+   "short": "肯定",
+   "formula": [
+    "主语",
+    "动词过去式",
+    "其他"
+   ],
+   "rule": "大多数动词后面加 ed，有些动词长得不一样（go → went），要单独记。好消息：**不管谁做的，形式都一样。**",
+   "examples": [
+    {
+     "en": "I [[work{ed}]] late <<last night>>.",
+     "zh": "我昨晚加班到很晚。"
+    },
+    {
+     "en": "The tests [[pass{ed}]] <<this morning>>.",
+     "zh": "今天上午测试都通过了。"
+    },
+    {
+     "en": "We [[went]] to Brighton <<at the weekend>>.",
+     "zh": "我们周末去了布莱顿。"
+    }
+   ],
+   "be": "be 动词有两个过去式：I / he / she / it [[was]] · you / we / they [[were]]"
+  },
+  "negative": {
+   "title": "否定句",
+   "short": "否定",
+   "formula": [
+    "主语",
+    "didn't",
+    "动词原形",
+    "其他"
+   ],
+   "rule": "所有人都用 didn't。**「过去」只能出现一次**：didn't 已经是过去了，后面的动词要变回原形。",
+   "examples": [
+    {
+     "en": "I [[didn't]] ((see)) your message.",
+     "zh": "我没看到你的消息。"
+    },
+    {
+     "en": "The update [[didn't]] ((fix)) the crash.",
+     "zh": "这次更新没修好崩溃。"
+    },
+    {
+     "en": "We [[didn't]] ((go)) out <<last night>>.",
+     "zh": "我们昨晚没出去。"
+    }
+   ],
+   "wrong": {
+    "bad": "She didn't ~~called~~ me.",
+    "good": "She [[didn't]] ((call)) me."
+   },
+   "be": "be 动词直接加 not：I [[wasn't]] there · they [[weren't]] ready"
+  },
+  "question": {
+   "title": "疑问句",
+   "short": "疑问",
+   "formula": [
+    "Did",
+    "主语",
+    "动词原形",
+    "其他？"
+   ],
+   "rule": "把 did 放到最前面，动词用原形。回答也用 did / didn't。",
+   "examples": [
+    {
+     "en": "[[Did]] you ((watch)) the match <<last night>>?",
+     "zh": "你昨晚看比赛了吗？",
+     "answer": "Yes, I [[did]]. / No, I [[didn't]]."
+    },
+    {
+     "en": "[[Did]] the build ((pass))?",
+     "zh": "构建通过了吗？",
+     "answer": "Yes, it [[did]]. / No, it [[didn't]]."
+    },
+    {
+     "en": "When [[did]] you ((join)) the team?",
+     "zh": "你什么时候加入团队的？",
+     "answer": "I [[join{ed}]] <<in 2022>>."
+    }
+   ],
+   "notes": [
+    "问「谁」做了这件事时，不用 did：Who [[broke]] the build?（谁把构建搞坏了？）",
+    "be 动词把 was / were 提到前面：[[Were]] you at the meeting? · [[Was]] it expensive?"
+   ]
+  },
+  "table": {
+   "title": "一张表看全",
+   "short": "一张表",
+   "verb": "work",
+   "rows": [
+    {
+     "who": "I",
+     "pos": "I [[work{ed}]].",
+     "neg": "I [[didn't]] ((work)).",
+     "negFull": "I did not work.",
+     "q": "[[Did]] I ((work))?",
+     "short": "Yes, you [[did]]. / No, you [[didn't]]."
+    },
+    {
+     "who": "you",
+     "pos": "You [[work{ed}]].",
+     "neg": "You [[didn't]] ((work)).",
+     "negFull": "You did not work.",
+     "q": "[[Did]] you ((work))?",
+     "short": "Yes, I [[did]]. / No, I [[didn't]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "He [[work{ed}]].",
+     "neg": "He [[didn't]] ((work)).",
+     "negFull": "He did not work.",
+     "q": "[[Did]] he ((work))?",
+     "short": "Yes, he [[did]]. / No, he [[didn't]]."
+    },
+    {
+     "who": "we",
+     "pos": "We [[work{ed}]].",
+     "neg": "We [[didn't]] ((work)).",
+     "negFull": "We did not work.",
+     "q": "[[Did]] we ((work))?",
+     "short": "Yes, we [[did]]. / No, we [[didn't]]."
+    },
+    {
+     "who": "they",
+     "pos": "They [[work{ed}]].",
+     "neg": "They [[didn't]] ((work)).",
+     "negFull": "They did not work.",
+     "q": "[[Did]] they ((work))?",
+     "short": "Yes, they [[did]]. / No, they [[didn't]]."
+    }
+   ],
+   "be": [
+    {
+     "who": "I",
+     "pos": "I [[was]] busy.",
+     "neg": "I [[wasn't]] busy.",
+     "negFull": "I was not busy.",
+     "q": "[[Was]] I late?",
+     "short": "Yes, you [[were]]. / No, you [[weren't]]."
+    },
+    {
+     "who": "you / we / they",
+     "pos": "You [[were]] busy.",
+     "neg": "You [[weren't]] busy.",
+     "negFull": "You were not busy.",
+     "q": "[[Were]] you busy?",
+     "short": "Yes, I [[was]]. / No, I [[wasn't]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "He [[was]] busy.",
+     "neg": "He [[wasn't]] busy.",
+     "negFull": "He was not busy.",
+     "q": "[[Was]] he busy?",
+     "short": "Yes, he [[was]]. / No, he [[wasn't]]."
+    }
+   ],
+   "contractions": [
+    "did not = [[didn't]]",
+    "was not = [[wasn't]]",
+    "were not = [[weren't]]"
+   ],
+   "tip": "横着看每一行都一样：一般过去时不分人称。只有 be 动词要分 was 和 were。"
+  },
+  "spelling": {
+   "title": "怎么加 ed、怎么读",
+   "short": "加 ed",
+   "rules": [
+    {
+     "ending": "大多数动词",
+     "change": "直接加 ed",
+     "examples": [
+      "work → [[work{ed}]]",
+      "fix → [[fix{ed}]]"
+     ]
+    },
+    {
+     "ending": "e 结尾",
+     "change": "只加 d",
+     "examples": [
+      "like → [[like{d}]]",
+      "use → [[use{d}]]"
+     ]
+    },
+    {
+     "ending": "辅音字母 + y 结尾",
+     "change": "去 y，加 ied",
+     "examples": [
+      "tr~~y~~ → [[tr{ied}]]",
+      "cop~~y~~ → [[cop{ied}]]"
+     ]
+    },
+    {
+     "ending": "元音字母 + y 结尾",
+     "change": "直接加 ed",
+     "examples": [
+      "play → [[play{ed}]]",
+      "stay → [[stay{ed}]]"
+     ]
+    },
+    {
+     "ending": "短词，一个元音字母 + 一个辅音字母结尾",
+     "change": "双写最后一个字母，再加 ed",
+     "examples": [
+      "stop → [[stop{ped}]]",
+      "plan → [[plan{ned}]]"
+     ]
+    },
+    {
+     "ending": "一个元音字母 + l 结尾（英式拼法）",
+     "change": "双写 l，再加 ed",
+     "examples": [
+      "travel → [[travel{led}]]",
+      "cancel → [[cancel{led}]]"
+     ]
+    }
+   ],
+   "sound": [
+    {
+     "say": "/t/",
+     "when": "在 p、k、s、sh、ch、f 这类不震动喉咙的音后面",
+     "examples": [
+      "[[work{ed}]]",
+      "[[stop{ped}]]",
+      "[[fix{ed}]]"
+     ]
+    },
+    {
+     "say": "/d/",
+     "when": "在震动喉咙的音和元音后面",
+     "examples": [
+      "[[play{ed}]]",
+      "[[call{ed}]]",
+      "[[tr{ied}]]"
+     ]
+    },
+    {
+     "say": "/ɪd/",
+     "when": "在 t 和 d 后面，要多读出一个音节",
+     "examples": [
+      "[[want{ed}]]",
+      "[[need{ed}]]",
+      "[[test{ed}]]"
+     ]
+    }
+   ],
+   "oddSounds": "只有 t、d 结尾的才多读一个 /ɪd/。worked 是一个音节，不要读成 work-ed。"
+  },
+  "irregular": {
+   "title": "不规则动词",
+   "short": "不规则",
+   "text": "最常用的动词偏偏不加 ed，只能背。按长相分成几组，记起来轻松一点。",
+   "rules": [
+    {
+     "ending": "过去式和原形一样",
+     "change": "不用变",
+     "examples": [
+      "put → [[put]]",
+      "cut → [[cut]]",
+      "let → [[let]]"
+     ]
+    },
+    {
+     "ending": "变成 ought / aught",
+     "change": "都读 /ɔːt/",
+     "examples": [
+      "buy → [[bought]]",
+      "think → [[thought]]",
+      "teach → [[taught]]"
+     ]
+    },
+    {
+     "ending": "中间的元音变了",
+     "change": "换个元音",
+     "examples": [
+      "get → [[got]]",
+      "write → [[wrote]]",
+      "take → [[took]]",
+      "come → [[came]]"
+     ]
+    },
+    {
+     "ending": "d 结尾变成 t",
+     "change": "把 d 换成 t",
+     "examples": [
+      "send → [[sent]]",
+      "spend → [[spent]]",
+      "build → [[built]]"
+     ]
+    },
+    {
+     "ending": "完全不一样",
+     "change": "单独记",
+     "examples": [
+      "go → [[went]]",
+      "have → [[had]]",
+      "do → [[did]]",
+      "be → [[was / were]]"
+     ]
+    }
+   ],
+   "tip": "read 的过去式还是 read，但读音变成 /red/，跟颜色 red 一样。"
+  },
+  "contrast": {
+   "title": "和其他时态比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "现在完成时",
+     "this": {
+      "meaning": "说了「什么时候」，事情已经翻篇",
+      "en": "I [[lost]] my keys <<yesterday>>."
+     },
+     "that": {
+      "meaning": "不说什么时候，重点是现在的结果",
+      "en": "I[['ve lost]] my keys."
+     }
+    },
+    {
+     "with": "过去进行时",
+     "this": {
+      "meaning": "一件完整的事，做完了",
+      "en": "I [[called]] you <<at 8>>."
+     },
+     "that": {
+      "meaning": "那一刻正在做，还没做完",
+      "en": "I [[was cooking]] <<at 8>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Did you ~~saw~~ my message?",
+     "good": "[[Did]] you ((see)) my message?",
+     "why": "did 已经是过去了，动词用原形。"
+    },
+    {
+     "bad": "I didn't ~~went~~ to the party.",
+     "good": "I [[didn't]] ((go)) to the party.",
+     "why": "「过去」只能出现一次。"
+    },
+    {
+     "bad": "I ~~have seen~~ him yesterday.",
+     "good": "I [[saw]] him <<yesterday>>.",
+     "why": "有 yesterday 这类过去时间，用一般过去时。"
+    },
+    {
+     "bad": "She ~~goed~~ home early.",
+     "good": "She [[went]] home early.",
+     "why": "go 是不规则动词：went。"
+    },
+    {
+     "bad": "We ~~was~~ late for the meeting.",
+     "good": "We [[were]] late for the meeting.",
+     "why": "we 用 were。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I ___ the bug yesterday.",
+   "options": [
+    "fix",
+    "fixed",
+    "have fixed",
+    "am fixing"
+   ],
+   "answer": "fixed",
+   "explain": "<<yesterday>> 是过去的时间，用过去式 [[fix{ed}]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我们周末去了海边。",
+   "answer": "We went to the seaside at the weekend.",
+   "accept": [
+    "We went to the beach at the weekend.",
+    "We went to the seaside on the weekend.",
+    "We went to the beach on the weekend.",
+    "We went to the seaside last weekend.",
+    "We went to the beach last weekend."
+   ],
+   "explain": "go 的过去式是 [[went]]。"
+  },
+  {
+   "id": "q03",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "She ___ (call) me an hour ago.",
+   "answer": "called",
+   "accept": [],
+   "explain": "<<ago>> 说的是过去：[[call{ed}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "We ___ (be) at the office until nine last night.",
+   "answer": "were",
+   "accept": [],
+   "explain": "we 的 be 过去式是 [[were]]。"
+  },
+  {
+   "id": "q05",
+   "section": "negative",
+   "type": "transform",
+   "prompt": "改成否定句：He finished the report.",
+   "answer": "He didn't finish the report.",
+   "accept": [
+    "He did not finish the report."
+   ],
+   "traps": [
+    {
+     "input": "He didn't finished the report.",
+     "note": "didn't 后面用原形 finish。"
+    }
+   ],
+   "explain": "He [[didn't]] ((finish))：didn't 后面变回原形。"
+  },
+  {
+   "id": "q06",
+   "section": "negative",
+   "type": "fix",
+   "prompt": "改错：I didn't saw the email.",
+   "answer": "I didn't see the email.",
+   "accept": [
+    "I did not see the email."
+   ],
+   "explain": "「过去」只能出现一次：[[didn't]] ((see))。"
+  },
+  {
+   "id": "q07",
+   "section": "question",
+   "type": "transform",
+   "prompt": "改成一般疑问句：They released the update.",
+   "answer": "Did they release the update?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Did they released the update?",
+     "note": "did 后面用原形 release。"
+    }
+   ],
+   "explain": "[[Did]] they ((release))：did 放前面，动词用原形。"
+  },
+  {
+   "id": "q08",
+   "section": "question",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：She joined the team in March.（问「什么时候」）",
+   "answer": "When did she join the team?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "When did she joined the team?",
+     "note": "did 后面用原形 join。"
+    }
+   ],
+   "explain": "When [[did]] she ((join))？疑问词 + did + 主语 + 原形。"
+  },
+  {
+   "id": "q09",
+   "section": "question",
+   "type": "fill",
+   "prompt": "— Did the tests pass? — No, they ___.",
+   "answer": "didn't",
+   "accept": [
+    "did not"
+   ],
+   "explain": "用 did 问，就用 [[didn't]] 答。"
+  },
+  {
+   "id": "q10",
+   "section": "table",
+   "type": "choice",
+   "prompt": "I ___ at home all day yesterday.",
+   "options": [
+    "was",
+    "were",
+    "did"
+   ],
+   "answer": "was",
+   "explain": "I 的 be 过去式是 [[was]]。"
+  },
+  {
+   "id": "q11",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "stop 的过去式是 ___",
+   "answer": "stopped",
+   "accept": [],
+   "explain": "短词、一个元音 + 一个辅音结尾，双写：[[stop{ped}]]。"
+  },
+  {
+   "id": "q12",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "try 的过去式是 ___",
+   "answer": "tried",
+   "accept": [],
+   "explain": "辅音 + y：去 y 加 ied，[[tr{ied}]]。"
+  },
+  {
+   "id": "q13",
+   "section": "spelling",
+   "type": "choice",
+   "prompt": "wanted 结尾的 -ed 读作",
+   "options": [
+    "/t/",
+    "/d/",
+    "/ɪd/"
+   ],
+   "answer": "/ɪd/",
+   "explain": "t 结尾的动词，-ed 要多读一个 /ɪd/。"
+  },
+  {
+   "id": "q14",
+   "section": "irregular",
+   "type": "fill",
+   "prompt": "Yesterday I ___ (buy) a new charger.",
+   "answer": "bought",
+   "accept": [],
+   "explain": "buy 是不规则动词：[[bought]]。"
+  },
+  {
+   "id": "q15",
+   "section": "irregular",
+   "type": "fill",
+   "prompt": "Who ___ (write) this code?",
+   "answer": "wrote",
+   "accept": [],
+   "explain": "问「谁」不用 did，write 的过去式是 [[wrote]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I have met him last week.",
+   "answer": "I met him last week.",
+   "accept": [],
+   "explain": "有 <<last week>>，用一般过去时：I [[met]]。"
+  },
+  {
+   "id": "q17",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I ___ my keys, so I can't get into the flat right now.",
+   "options": [
+    "lost",
+    "have lost",
+    "was losing"
+   ],
+   "answer": "have lost",
+   "explain": "重点是现在进不去，用现在完成时：I [[have lost]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用一般过去时说 3 句话，讲讲你上周做过的事。至少一句否定，一句用不规则动词。",
+  "rules": [
+   "有 yesterday、last week、ago 这类过去时间时，用一般过去时",
+   "didn't / did 后面用动词原形",
+   "不规则动词要用对过去式（went、had、made……）"
+  ],
+  "note": "规则判过去式和 did / didn't 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

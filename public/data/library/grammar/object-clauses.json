@@ -1,0 +1,416 @@
+{
+ "id": "g-object-clauses",
+ "title": "宾语从句",
+ "en": "Object Clauses",
+ "group": "句子",
+ "level": "B1",
+ "order": 28,
+ "keywords": [
+  "宾语从句",
+  "间接疑问句"
+ ],
+ "related": [
+  "g-questions",
+  "g-sequence-of-tenses",
+  "g-reported-speech"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "宾语从句就是**把一整句话塞进另一句话里**，放在 think、know、say、wonder 这些词后面，当它们说的「内容」。塞进去以后，这句话要**像平常说话那样排**，不再倒过来。",
+   "uses": [
+    {
+     "zh": "说想法",
+     "en": "I think [[that]] it's a good idea.",
+     "en_zh": "我觉得这是个好主意。"
+    },
+    {
+     "zh": "问是不是",
+     "en": "I'm not sure [[if]] it works.",
+     "en_zh": "我不确定它能不能用。"
+    },
+    {
+     "zh": "客气地问",
+     "en": "Can you tell me [[what time]] it starts?",
+     "en_zh": "你能告诉我几点开始吗？"
+    }
+   ],
+   "signals": [
+    "think",
+    "know",
+    "say",
+    "hope",
+    "wonder",
+    "not sure",
+    "tell me"
+   ]
+  },
+  "that": {
+   "title": "说内容：that",
+   "short": "that",
+   "formula": [
+    "I think / know / hope…",
+    "(that)",
+    "一句话"
+   ],
+   "rule": "说「我觉得、我知道、他说」的内容，用 that 接一整句话。口语里 that **常常省掉**，意思不变。",
+   "examples": [
+    {
+     "en": "I hope [[that]] the demo goes well.",
+     "zh": "我希望演示顺利。"
+    },
+    {
+     "en": "She said [[that]] she'd be late.",
+     "zh": "她说她会晚到。"
+    },
+    {
+     "en": "I'm sure [[that]] he's right.",
+     "zh": "我确定他是对的。"
+    }
+   ],
+   "notes": [
+    "省掉 that 也完全可以：I think it's a bug.（我觉得这是个 bug。）",
+    "说「我觉得不会」，英语习惯把 not 放前面：I [[don't think]] it'll work. 比 I think it won't work 自然。"
+   ]
+  },
+  "if": {
+   "title": "是不是：if / whether",
+   "short": "是不是",
+   "formula": [
+    "I don't know / I wonder…",
+    "if / whether",
+    "一句话"
+   ],
+   "rule": "原来是个 **yes / no 问题**，塞进句子时用 if 或 whether，意思是「**是不是**」。后面变回正常语序。",
+   "examples": [
+    {
+     "en": "I don't know [[if]] it's ready yet.",
+     "zh": "我不知道它好了没有。",
+     "rule": "原来的问题：Is it ready?"
+    },
+    {
+     "en": "Can you check [[whether]] the server is up?",
+     "zh": "你能看看服务器是不是正常吗？"
+    },
+    {
+     "en": "I wonder [[if]] she got my email.",
+     "zh": "不知道她收到我的邮件没有。"
+    }
+   ],
+   "wrong": {
+    "bad": "I wonder ~~that~~ she's coming.",
+    "good": "I wonder [[if]] she's coming."
+   }
+  },
+  "wh": {
+   "title": "问什么：what / where…",
+   "short": "疑问词",
+   "formula": [
+    "Do you know / Can you tell me…",
+    "疑问词",
+    "主语",
+    "动词"
+   ],
+   "rule": "疑问词留下，后面**变回正常说话的顺序**：主语在前，动词在后，**不要** do / does / did。",
+   "examples": [
+    {
+     "en": "Do you know [[where]] the meeting room [[is]]?",
+     "zh": "你知道会议室在哪儿吗？"
+    },
+    {
+     "en": "Can you tell me [[what time]] the train [[leaves]]?",
+     "zh": "你能告诉我火车几点开吗？"
+    },
+    {
+     "en": "I don't remember [[why]] we [[changed]] this.",
+     "zh": "我不记得我们为什么改了这个。"
+    },
+    {
+     "en": "I'm not sure [[how]] it [[works]].",
+     "zh": "我不太清楚它是怎么运作的。"
+    }
+   ],
+   "wrong": {
+    "bad": "Do you know where ~~is the meeting room~~?",
+    "good": "Do you know [[where]] the meeting room [[is]]?"
+   }
+  },
+  "tense": {
+   "title": "时间跟着往后退",
+   "short": "时态",
+   "rule": "前面的词是**过去时**（said、thought、knew），后面那句通常也**退一步**变成过去。是一直都对的事，可以不退。",
+   "examples": [
+    {
+     "en": "I [[thought]] you [[were]] on holiday.",
+     "zh": "我还以为你在休假。"
+    },
+    {
+     "en": "She [[said]] she [[would]] fix it.",
+     "zh": "她说她会修好的。"
+    },
+    {
+     "en": "I [[didn't know]] you [[had]] a dog.",
+     "zh": "我不知道你养了条狗。"
+    }
+   ],
+   "notes": [
+    "一直都对的事不用退：Our teacher told us that water [[boils]] at 100 degrees."
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "直接问",
+     "this": {
+      "meaning": "塞进句子里：正常语序，更客气",
+      "en": "Could you tell me where the station [[is]]?"
+     },
+     "that": {
+      "meaning": "直接问：is 跳到前面",
+      "en": "Where [[is]] the station?"
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Do you know where ~~is he~~?",
+     "good": "Do you know where [[he is]]?",
+     "why": "塞进句子以后用正常语序：主语在前。"
+    },
+    {
+     "bad": "I don't know what ~~does he want~~.",
+     "good": "I don't know what he [[wants]].",
+     "why": "不要 does，动词跟着主语变。"
+    },
+    {
+     "bad": "Can you tell me where ~~did you buy~~ it?",
+     "good": "Can you tell me where you [[bought]] it?",
+     "why": "不要 did，动词直接用过去式。"
+    },
+    {
+     "bad": "I wonder ~~that~~ she got my email.",
+     "good": "I wonder [[if]] she got my email.",
+     "why": "「是不是」用 if / whether。"
+    },
+    {
+     "bad": "I ~~think he won't~~ come.",
+     "good": "I [[don't think]] he'll come.",
+     "why": "英语习惯把 not 放在 think 这边。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I'm not sure ___ the build will pass.",
+   "options": [
+    "if",
+    "what",
+    "which",
+    "where"
+   ],
+   "answer": "if",
+   "explain": "说「是不是」用 [[if]]。"
+  },
+  {
+   "id": "q02",
+   "section": "that",
+   "type": "choice",
+   "prompt": "I hope ___ the demo goes well.",
+   "options": [
+    "that",
+    "what",
+    "if"
+   ],
+   "answer": "that",
+   "explain": "说希望的内容，用 [[that]]（也可以省掉）。"
+  },
+  {
+   "id": "q03",
+   "section": "that",
+   "type": "transform",
+   "prompt": "换成更自然的说法：I think it won't work.",
+   "answer": "I don't think it'll work.",
+   "accept": [
+    "I don't think it will work.",
+    "I do not think it will work.",
+    "I do not think it'll work."
+   ],
+   "explain": "把 not 放在 think 这边：I [[don't think]]…"
+  },
+  {
+   "id": "q04",
+   "section": "if",
+   "type": "transform",
+   "prompt": "把问题塞进句子：Is it ready? → I don't know …",
+   "answer": "I don't know if it's ready.",
+   "accept": [
+    "I don't know whether it's ready.",
+    "I don't know if it is ready.",
+    "I don't know whether it is ready.",
+    "I do not know if it is ready."
+   ],
+   "traps": [
+    {
+     "input": "I don't know if is it ready.",
+     "note": "if 后面用正常语序：it is ready。"
+    }
+   ],
+   "explain": "yes / no 问题用 [[if]]，正常语序：it's ready。"
+  },
+  {
+   "id": "q05",
+   "section": "if",
+   "type": "fix",
+   "prompt": "改错：I wonder that she got my email.",
+   "answer": "I wonder if she got my email.",
+   "accept": [
+    "I wonder whether she got my email."
+   ],
+   "explain": "「是不是」用 [[if]] / whether。"
+  },
+  {
+   "id": "q06",
+   "section": "wh",
+   "type": "transform",
+   "prompt": "把问题塞进句子：Where is the meeting room? → Do you know …",
+   "answer": "Do you know where the meeting room is?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Do you know where is the meeting room?",
+     "note": "塞进句子后用正常语序，is 放到后面。"
+    }
+   ],
+   "explain": "正常语序：the meeting room [[is]]。"
+  },
+  {
+   "id": "q07",
+   "section": "wh",
+   "type": "transform",
+   "prompt": "把问题塞进句子：What time does the train leave? → Can you tell me …",
+   "answer": "Can you tell me what time the train leaves?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Can you tell me what time does the train leave?",
+     "note": "塞进句子后不要 does，说 the train leaves。"
+    }
+   ],
+   "explain": "去掉 does，动词跟着主语变：the train [[leaves]]。"
+  },
+  {
+   "id": "q08",
+   "section": "wh",
+   "type": "choice",
+   "prompt": "I don't remember ___.",
+   "options": [
+    "why we changed this",
+    "why did we change this",
+    "why changed we this"
+   ],
+   "answer": "why we changed this",
+   "explain": "正常语序：why + 主语 + 动词：[[why]] we [[changed]]。"
+  },
+  {
+   "id": "q09",
+   "section": "wh",
+   "type": "fix",
+   "prompt": "改错：I don't know what does he want.",
+   "answer": "I don't know what he wants.",
+   "accept": [
+    "I do not know what he wants."
+   ],
+   "explain": "去掉 does，动词加 s：he [[wants]]。"
+  },
+  {
+   "id": "q10",
+   "section": "tense",
+   "type": "fill",
+   "prompt": "I thought you ___ (be) on holiday this week.",
+   "answer": "were",
+   "accept": [],
+   "explain": "前面 thought 是过去，后面退一步：[[were]]。"
+  },
+  {
+   "id": "q11",
+   "section": "tense",
+   "type": "choice",
+   "prompt": "She said she ___ fix it by Friday.",
+   "options": [
+    "would",
+    "will be",
+    "is"
+   ],
+   "answer": "would",
+   "explain": "said 是过去，will 退成 [[would]]。"
+  },
+  {
+   "id": "q12",
+   "section": "tense",
+   "type": "fill",
+   "prompt": "I didn't know you ___ (have) a dog.",
+   "answer": "had",
+   "accept": [],
+   "explain": "前面是过去，后面也用过去：[[had]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Can you tell me where did you buy it?",
+   "answer": "Can you tell me where you bought it?",
+   "accept": [],
+   "explain": "不要 did，直接用过去式：you [[bought]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Do you know where is he?",
+   "answer": "Do you know where he is?",
+   "accept": [],
+   "explain": "正常语序：[[he is]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：你能告诉我车站在哪儿吗？",
+   "answer": "Could you tell me where the station is?",
+   "accept": [
+    "Can you tell me where the station is?",
+    "Could you tell me where the station is, please?",
+    "Do you know where the station is?"
+   ],
+   "traps": [
+    {
+     "input": "Could you tell me where is the station?",
+     "note": "塞进句子后用正常语序：the station is。"
+    }
+   ],
+   "explain": "客气地问，用正常语序：where the station [[is]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "你在一个新城市问路、问事情：写 3 个客气的问题，用 Do you know… / Could you tell me… / I wonder if… 开头。",
+  "rules": [
+   "塞进句子后的部分用正常语序，主语在前，不用 do / does / did",
+   "yes / no 问题用 if 或 whether"
+  ],
+  "note": "规则判语序和 if / whether（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

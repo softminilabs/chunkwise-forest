@@ -1,0 +1,755 @@
+{
+ "id": "forms-noun-plural",
+ "title": "名词单复数",
+ "module": "词形变化",
+ "idea": "一个用单数，两个以上用复数。大多数加 s；少数要改拼写或整个变样；还有一些**根本不能数**，不加 s，也不用 a / an。",
+ "rules": [
+  {
+   "rule": "大多数",
+   "change": "加 s",
+   "examples": [
+    [
+     "bug",
+     "bugs"
+    ],
+    [
+     "phone",
+     "phones"
+    ],
+    [
+     "user",
+     "users"
+    ]
+   ]
+  },
+  {
+   "rule": "s、x、sh、ch、z 结尾",
+   "change": "加 es",
+   "examples": [
+    [
+     "box",
+     "boxes"
+    ],
+    [
+     "bus",
+     "buses"
+    ],
+    [
+     "match",
+     "matches"
+    ],
+    [
+     "quiz",
+     "quizzes"
+    ]
+   ],
+   "note": "quiz 要双写 z"
+  },
+  {
+   "rule": "辅音 + y",
+   "change": "去 y，加 ies",
+   "examples": [
+    [
+     "city",
+     "cities"
+    ],
+    [
+     "story",
+     "stories"
+    ],
+    [
+     "company",
+     "companies"
+    ],
+    [
+     "library",
+     "libraries"
+    ]
+   ]
+  },
+  {
+   "rule": "元音 + y",
+   "change": "直接加 s",
+   "examples": [
+    [
+     "day",
+     "days"
+    ],
+    [
+     "key",
+     "keys"
+    ],
+    [
+     "boy",
+     "boys"
+    ]
+   ]
+  },
+  {
+   "rule": "f / fe 结尾",
+   "change": "去 f / fe，加 ves",
+   "examples": [
+    [
+     "life",
+     "lives"
+    ],
+    [
+     "knife",
+     "knives"
+    ],
+    [
+     "leaf",
+     "leaves"
+    ],
+    [
+     "half",
+     "halves"
+    ],
+    [
+     "shelf",
+     "shelves"
+    ]
+   ],
+   "except": [
+    [
+     "roof",
+     "roofs"
+    ],
+    [
+     "chef",
+     "chefs"
+    ],
+    [
+     "chief",
+     "chiefs"
+    ],
+    [
+     "belief",
+     "beliefs"
+    ],
+    [
+     "safe",
+     "safes"
+    ]
+   ]
+  },
+  {
+   "rule": "o 结尾",
+   "change": "多数加 s，少数加 es",
+   "examples": [
+    [
+     "photo",
+     "photos"
+    ],
+    [
+     "video",
+     "videos"
+    ],
+    [
+     "piano",
+     "pianos"
+    ],
+    [
+     "memo",
+     "memos"
+    ]
+   ],
+   "except": [
+    [
+     "potato",
+     "potatoes"
+    ],
+    [
+     "tomato",
+     "tomatoes"
+    ],
+    [
+     "hero",
+     "heroes"
+    ],
+    [
+     "echo",
+     "echoes"
+    ]
+   ],
+   "note": "加 es 的就这几个常见的，记住它们，其余加 s"
+  }
+ ],
+ "sound": [
+  {
+   "say": "/s/",
+   "when": "在 p、t、k、f 这类不震动喉咙的音后面",
+   "examples": [
+    "laptops",
+    "cats",
+    "books"
+   ]
+  },
+  {
+   "say": "/z/",
+   "when": "在震动喉咙的音和元音后面",
+   "examples": [
+    "bugs",
+    "phones",
+    "days"
+   ]
+  },
+  {
+   "say": "/ɪz/",
+   "when": "在 s、z、sh、ch、ge 这类「嘶嘶」的音后面",
+   "examples": [
+    "buses",
+    "matches",
+    "pages"
+   ]
+  }
+ ],
+ "specialSound": "house → houses 读 /ˈhaʊzɪz/（s 变成 z 的音）",
+ "irregular": [
+  {
+   "one": "man",
+   "many": "men",
+   "zh": "男人"
+  },
+  {
+   "one": "woman",
+   "many": "women",
+   "zh": "女人"
+  },
+  {
+   "one": "child",
+   "many": "children",
+   "zh": "孩子"
+  },
+  {
+   "one": "person",
+   "many": "people",
+   "zh": "人"
+  },
+  {
+   "one": "foot",
+   "many": "feet",
+   "zh": "脚"
+  },
+  {
+   "one": "tooth",
+   "many": "teeth",
+   "zh": "牙齿"
+  },
+  {
+   "one": "goose",
+   "many": "geese",
+   "zh": "鹅"
+  },
+  {
+   "one": "mouse",
+   "many": "mice",
+   "zh": "老鼠"
+  },
+  {
+   "one": "ox",
+   "many": "oxen",
+   "zh": "牛"
+  }
+ ],
+ "sameForm": [
+  {
+   "word": "sheep",
+   "zh": "羊"
+  },
+  {
+   "word": "fish",
+   "zh": "鱼"
+  },
+  {
+   "word": "deer",
+   "zh": "鹿"
+  },
+  {
+   "word": "series",
+   "zh": "系列"
+  },
+  {
+   "word": "species",
+   "zh": "物种"
+  },
+  {
+   "word": "aircraft",
+   "zh": "飞机"
+  },
+  {
+   "word": "means",
+   "zh": "方法"
+  }
+ ],
+ "pluralOnly": [
+  {
+   "word": "scissors",
+   "zh": "剪刀"
+  },
+  {
+   "word": "trousers",
+   "zh": "裤子"
+  },
+  {
+   "word": "jeans",
+   "zh": "牛仔裤"
+  },
+  {
+   "word": "glasses",
+   "zh": "眼镜"
+  },
+  {
+   "word": "shorts",
+   "zh": "短裤"
+  },
+  {
+   "word": "headphones",
+   "zh": "耳机"
+  },
+  {
+   "word": "clothes",
+   "zh": "衣服"
+  },
+  {
+   "word": "thanks",
+   "zh": "感谢"
+  },
+  {
+   "word": "congratulations",
+   "zh": "祝贺"
+  },
+  {
+   "word": "goods",
+   "zh": "商品"
+  },
+  {
+   "word": "belongings",
+   "zh": "随身物品"
+  },
+  {
+   "word": "surroundings",
+   "zh": "周围环境"
+  }
+ ],
+ "foreign": [
+  {
+   "one": "analysis",
+   "many": "analyses",
+   "zh": "分析"
+  },
+  {
+   "one": "basis",
+   "many": "bases",
+   "zh": "基础"
+  },
+  {
+   "one": "crisis",
+   "many": "crises",
+   "zh": "危机"
+  },
+  {
+   "one": "hypothesis",
+   "many": "hypotheses",
+   "zh": "假设"
+  },
+  {
+   "one": "thesis",
+   "many": "theses",
+   "zh": "论文"
+  },
+  {
+   "one": "criterion",
+   "many": "criteria",
+   "zh": "标准"
+  },
+  {
+   "one": "phenomenon",
+   "many": "phenomena",
+   "zh": "现象"
+  },
+  {
+   "one": "datum",
+   "many": "data",
+   "zh": "数据"
+  },
+  {
+   "one": "medium",
+   "many": "media",
+   "zh": "媒介；媒体"
+  },
+  {
+   "one": "curriculum",
+   "many": "curricula / curriculums",
+   "zh": "课程"
+  },
+  {
+   "one": "index",
+   "many": "indexes / indices",
+   "zh": "索引（技术文档里多用 indexes）"
+  },
+  {
+   "one": "appendix",
+   "many": "appendixes / appendices",
+   "zh": "附录"
+  },
+  {
+   "one": "cactus",
+   "many": "cacti / cactuses",
+   "zh": "仙人掌"
+  },
+  {
+   "one": "focus",
+   "many": "focuses / foci",
+   "zh": "焦点"
+  },
+  {
+   "one": "status",
+   "many": "statuses",
+   "zh": "状态（不是 stati）"
+  },
+  {
+   "one": "virus",
+   "many": "viruses",
+   "zh": "病毒（不是 viri）"
+  }
+ ],
+ "compound": [
+  {
+   "one": "passer-by",
+   "many": "passers-by",
+   "zh": "路人"
+  },
+  {
+   "one": "mother-in-law",
+   "many": "mothers-in-law",
+   "zh": "岳母；婆婆"
+  },
+  {
+   "one": "editor-in-chief",
+   "many": "editors-in-chief",
+   "zh": "主编"
+  },
+  {
+   "one": "grown-up",
+   "many": "grown-ups",
+   "zh": "成年人"
+  }
+ ],
+ "uncountable": [
+  {
+   "word": "code",
+   "zh": "（程序）代码",
+   "howToCount": "a line of code",
+   "wrong": "codes"
+  },
+  {
+   "word": "software",
+   "zh": "软件",
+   "howToCount": "a piece of software",
+   "wrong": "softwares"
+  },
+  {
+   "word": "feedback",
+   "zh": "反馈",
+   "howToCount": "some feedback",
+   "wrong": "feedbacks"
+  },
+  {
+   "word": "advice",
+   "zh": "建议",
+   "howToCount": "a piece of advice",
+   "wrong": "an advice"
+  },
+  {
+   "word": "news",
+   "zh": "消息（单数）",
+   "howToCount": "a piece of news",
+   "example": "The news [[is]] good.",
+   "wrong": "The news are"
+  },
+  {
+   "word": "data",
+   "zh": "数据（日常和技术里常当不可数用）",
+   "howToCount": "a piece of data",
+   "wrong": "datas"
+  },
+  {
+   "word": "information",
+   "zh": "信息",
+   "howToCount": "a piece of information",
+   "wrong": "informations"
+  },
+  {
+   "word": "documentation",
+   "zh": "文档",
+   "howToCount": "",
+   "example": "the documentation",
+   "wrong": "documentations"
+  },
+  {
+   "word": "hardware",
+   "zh": "硬件",
+   "howToCount": "",
+   "example": "some hardware",
+   "wrong": "hardwares"
+  },
+  {
+   "word": "access",
+   "zh": "访问权限",
+   "howToCount": "",
+   "example": "access to the server",
+   "wrong": "an access"
+  },
+  {
+   "word": "permission",
+   "zh": "许可（「权限」一般用复数 permissions）",
+   "howToCount": "",
+   "example": "ask for permission"
+  },
+  {
+   "word": "equipment",
+   "zh": "设备",
+   "howToCount": "a piece of equipment",
+   "wrong": "equipments"
+  },
+  {
+   "word": "research",
+   "zh": "研究",
+   "howToCount": "some research",
+   "example": "do some research",
+   "wrong": "do a research"
+  },
+  {
+   "word": "progress",
+   "zh": "进展",
+   "howToCount": "some progress",
+   "example": "make progress",
+   "wrong": "make a progress"
+  },
+  {
+   "word": "evidence",
+   "zh": "证据",
+   "howToCount": "a piece of evidence",
+   "wrong": "evidences"
+  },
+  {
+   "word": "knowledge",
+   "zh": "知识",
+   "howToCount": "",
+   "example": "some knowledge",
+   "wrong": "knowledges"
+  },
+  {
+   "word": "homework",
+   "zh": "家庭作业",
+   "howToCount": "some homework",
+   "wrong": "homeworks"
+  },
+  {
+   "word": "furniture",
+   "zh": "家具",
+   "howToCount": "a piece of furniture",
+   "wrong": "furnitures"
+  },
+  {
+   "word": "luggage",
+   "zh": "行李",
+   "howToCount": "a piece of luggage",
+   "wrong": "luggages"
+  },
+  {
+   "word": "traffic",
+   "zh": "交通",
+   "howToCount": "",
+   "example": "heavy traffic",
+   "wrong": "heavy traffics"
+  },
+  {
+   "word": "weather",
+   "zh": "天气",
+   "howToCount": "",
+   "example": "nice weather",
+   "wrong": "a nice weather"
+  },
+  {
+   "word": "help",
+   "zh": "帮助",
+   "howToCount": "",
+   "example": "Thanks for your help.",
+   "wrong": "your helps"
+  },
+  {
+   "word": "fun",
+   "zh": "乐趣",
+   "howToCount": "",
+   "example": "have fun",
+   "wrong": "have a fun"
+  },
+  {
+   "word": "damage",
+   "zh": "损坏",
+   "howToCount": "",
+   "example": "a lot of damage",
+   "wrong": "many damages"
+  },
+  {
+   "word": "money",
+   "zh": "钱",
+   "howToCount": "",
+   "example": "a lot of money",
+   "wrong": "many money"
+  },
+  {
+   "word": "music",
+   "zh": "音乐",
+   "howToCount": "a piece of music",
+   "wrong": "musics"
+  },
+  {
+   "word": "staff",
+   "zh": "员工（集合）",
+   "howToCount": "a staff member",
+   "wrong": "a staff"
+  },
+  {
+   "word": "bread",
+   "zh": "面包",
+   "howToCount": "a slice of bread",
+   "wrong": "a bread"
+  }
+ ],
+ "countableWithNewMeaning": [
+  {
+   "word": "time",
+   "uncountable": "时间",
+   "countable": "three [[time{s}]]",
+   "countableZh": "三次"
+  },
+  {
+   "word": "experience",
+   "uncountable": "经验",
+   "countable": "[[an]] experience",
+   "countableZh": "一段经历"
+  },
+  {
+   "word": "paper",
+   "uncountable": "纸",
+   "countable": "[[a]] paper",
+   "countableZh": "一篇论文；一份报纸"
+  },
+  {
+   "word": "room",
+   "uncountable": "空间",
+   "countable": "two [[room{s}]]",
+   "countableZh": "两个房间"
+  },
+  {
+   "word": "work",
+   "uncountable": "工作",
+   "countable": "[[work{s}]] of art",
+   "countableZh": "艺术作品"
+  },
+  {
+   "word": "business",
+   "uncountable": "生意",
+   "countable": "[[a]] small business",
+   "countableZh": "一家小公司"
+  },
+  {
+   "word": "glass",
+   "uncountable": "玻璃",
+   "countable": "two [[glass{es}]]",
+   "countableZh": "两个杯子"
+  }
+ ],
+ "agreement": [
+  {
+   "rule": "news、information、advice 这些不可数名词，动词用单数",
+   "en": "The news [[is]] good."
+  },
+  {
+   "rule": "everyone、everybody、each、every 后面用单数",
+   "en": "Everyone [[is]] here. · Each of the bugs [[needs]] a test."
+  },
+  {
+   "rule": "a number of + 复数名词 → 复数；the number of + 复数名词 → 单数",
+   "en": "A number of users [[are]] waiting. · The number of users [[is]] growing."
+  },
+  {
+   "rule": "时间、钱、距离当一个整体说时用单数",
+   "en": "Two hours [[is]] a long time."
+  },
+  {
+   "rule": "team、company、staff：美式多用单数，英式单复数都常见",
+   "en": "The team [[is]] ready.（美）· The team [[are]] ready.（英）"
+  },
+  {
+   "rule": "data：日常和技术写作里多当不可数用单数，学术写作也有人用复数",
+   "en": "The data [[is]] stored locally."
+  }
+ ],
+ "commonMistakes": [
+  {
+   "bad": "informations",
+   "good": "information",
+   "why": "information 不可数，不加 s"
+  },
+  {
+   "bad": "advices",
+   "good": "advice / pieces of advice",
+   "why": "advice 不可数"
+  },
+  {
+   "bad": "softwares",
+   "good": "software / software products",
+   "why": "software 不可数"
+  },
+  {
+   "bad": "feedbacks",
+   "good": "feedback",
+   "why": "feedback 不可数"
+  },
+  {
+   "bad": "codes（指程序代码）",
+   "good": "code / lines of code",
+   "why": "代码当不可数；codes 是「密码、编码」"
+  },
+  {
+   "bad": "a news",
+   "good": "a piece of news / some news",
+   "why": "news 不可数，而且是单数"
+  },
+  {
+   "bad": "equipments",
+   "good": "equipment",
+   "why": "equipment 不可数"
+  },
+  {
+   "bad": "homeworks",
+   "good": "homework",
+   "why": "homework 不可数"
+  },
+  {
+   "bad": "childs",
+   "good": "children",
+   "why": "不规则"
+  },
+  {
+   "bad": "datas",
+   "good": "data",
+   "why": "data 本身就是复数形式"
+  },
+  {
+   "bad": "criterias",
+   "good": "criteria（复数）/ criterion（单数）",
+   "why": "criteria 已经是复数"
+  },
+  {
+   "bad": "The news are good.",
+   "good": "The news is good.",
+   "why": "news 用单数动词"
+  }
+ ],
+ "ipa": "音标从词典取，不写在这里"
+}

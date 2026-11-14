@@ -146,7 +146,7 @@ export const EN = {
   '今天 {n} 个该复习': ({ n }) => `${n} to review today`,
   '今天 {n} 个新词': ({ n }) => `${n} new ${Number(n) === 1 ? 'word' : 'words'} today`,
   '今天的学完了': 'Done for today',
-  '今天的词': "Today's words", '词库': 'Word library', '书': 'L', '听单词': 'Listen to words', '听': '♪', '门': '←', '图': 'M',
+  '今天的词': "Today's words", '词库': 'Word library', '书': 'L', '听单词': 'Listen to words', '听': '♪', '门': '←', '图': 'M', '讲': 'G',
   '← 回森林': '← Forest', '← 回屋里': '← Back to the room',
   '复习 {n} 个': ({ n }) => `${n} to review`,
   '新词 {n} 个': ({ n }) => `${n} new`,
@@ -249,4 +249,13 @@ export const EN = {
   '{n} 分': '{n} min',
   '上一个（←）': 'Previous word (←)',
   '下一个（→）': 'Next word (→)',
+
+  // 讲堂
+  '讲堂': 'Lecture Hall', '目录': 'Contents',
+  '语法': 'Grammar', '时态': 'Tenses', '动词': 'Verbs', '句子': 'Sentences', '名词和代词': 'Nouns and pronouns',
+  '形容词、副词和介词': 'Adjectives, adverbs and prepositions', 'B2 进阶': 'B2 advanced',
+  '词形表': 'Word forms', '速查表': 'Cheat sheets',
+  '小测': 'Quiz', '用起来': 'Use it', '相关': 'Related',
+  '你的答案': 'Your answer', '检查': 'Check', '看答案': 'Show answer', '答案：': 'Answer: ', '不对。': 'Not quite.',
+  '搜原形、过去式、中文': 'Search base form, past or meaning', '按变化规律筛': 'Filter by pattern',
 }

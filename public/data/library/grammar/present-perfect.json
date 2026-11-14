@@ -1,0 +1,482 @@
+{
+ "id": "g-present-perfect",
+ "title": "现在完成时",
+ "en": "Present Perfect",
+ "group": "时态",
+ "level": "B1",
+ "order": 5,
+ "keywords": [
+  "现在完成时"
+ ],
+ "related": [
+  "g-past-simple",
+  "g-present-perfect-continuous",
+  "g-past-perfect"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "现在完成时像一座**桥**，把过去和现在连起来：事情在过去发生，但**现在**还看得到结果，或者一直持续到现在。",
+   "uses": [
+    {
+     "zh": "过去做了，现在还有结果",
+     "en": "I[['ve lost]] my badge.",
+     "en_zh": "我把工牌弄丢了。（所以现在进不了门）"
+    },
+    {
+     "zh": "到现在为止的经历",
+     "en": "[[Have]] you <<ever>> [[been]] to Scotland?",
+     "en_zh": "你去过苏格兰吗？"
+    },
+    {
+     "zh": "从过去一直到现在",
+     "en": "We[['ve worked]] together <<since>> 2022.",
+     "en_zh": "我们从 2022 年起就一起工作了。"
+    },
+    {
+     "zh": "刚刚发生",
+     "en": "The build [[has]] <<just>> [[finished]].",
+     "en_zh": "构建刚跑完。"
+    }
+   ],
+   "signals": [
+    "just",
+    "already",
+    "yet",
+    "ever",
+    "never",
+    "for",
+    "since",
+    "so far",
+    "recently"
+   ]
+  },
+  "positive": {
+   "title": "肯定句",
+   "short": "肯定",
+   "formula": [
+    "主语",
+    "have / has",
+    "过去分词",
+    "其他"
+   ],
+   "rule": "他她它用 has，其他用 have。后面跟**过去分词**：规则动词跟过去式一样加 ed，不规则的要单独记。",
+   "examples": [
+    {
+     "en": "I[['ve finished]] the report.",
+     "zh": "我写完报告了。"
+    },
+    {
+     "en": "Anna [[has fixed]] the login bug.",
+     "zh": "Anna 已经把登录 bug 修好了。"
+    },
+    {
+     "en": "They[['ve moved]] to a new flat.",
+     "zh": "他们搬进了新公寓。"
+    }
+   ],
+   "be": "口语里常缩写：I[['ve]] · you[['ve]] · we[['ve]] · they[['ve]] · he[['s]] · she[['s]] · it[['s]]",
+   "notes": [
+    "he's 可能是 he is，也可能是 he has。后面是 been、gone、finished 这种「已经做了」的意思，一般就是 he has。"
+   ]
+  },
+  "negq": {
+   "title": "否定和疑问",
+   "short": "否定疑问",
+   "rule": "否定：have / has 后面加 not。疑问：把 have / has 搬到最前面。过去分词不变。",
+   "examples": [
+    {
+     "en": "I [[haven't seen]] that film.",
+     "zh": "我没看过那部电影。"
+    },
+    {
+     "en": "The client [[hasn't replied]] <<yet>>.",
+     "zh": "客户还没回复。"
+    },
+    {
+     "en": "[[Have]] you [[tested]] it on an iPad?",
+     "zh": "你在 iPad 上测过了吗？",
+     "answer": "Yes, I [[have]]. / No, I [[haven't]]."
+    },
+    {
+     "en": "[[Has]] Leo [[merged]] the pull request <<yet>>?",
+     "zh": "Leo 合并那个 PR 了吗？",
+     "answer": "Yes, he [[has]]. / No, he [[hasn't]]."
+    }
+   ],
+   "contractions": [
+    "have not = [[haven't]]",
+    "has not = [[hasn't]]"
+   ]
+  },
+  "participle": {
+   "title": "过去分词",
+   "short": "分词",
+   "text": "过去分词是动词的**「第三个样子」**。规则动词加 ed，跟过去式一样；不规则的，有的跟过去式一样，有的不一样。",
+   "rules": [
+    {
+     "ending": "规则动词",
+     "change": "加 ed，跟过去式一样",
+     "examples": [
+      "work → worked → [[work{ed}]]",
+      "fix → fixed → [[fix{ed}]]"
+     ]
+    },
+    {
+     "ending": "不规则，后两个一样",
+     "change": "跟过去式一样",
+     "examples": [
+      "buy → bought → [[bought]]",
+      "make → made → [[made]]",
+      "send → sent → [[sent]]"
+     ]
+    },
+    {
+     "ending": "不规则，三个都不一样",
+     "change": "要单独记",
+     "examples": [
+      "go → went → [[gone]]",
+      "see → saw → [[seen]]",
+      "write → wrote → [[written]]",
+      "take → took → [[taken]]"
+     ]
+    },
+    {
+     "ending": "三个都一样",
+     "change": "不用变",
+     "examples": [
+      "put → put → [[put]]",
+      "cut → cut → [[cut]]"
+     ]
+    }
+   ],
+   "notes": [
+    "been 和 gone 不一样：She[['s been]] to Paris.（去过，已经回来了）· She[['s gone]] to Paris.（去了，人还在那边）"
+   ]
+  },
+  "words": {
+   "title": "just / already / yet / ever / never",
+   "short": "小词",
+   "text": "这几个小词常和现在完成时一起出现。记住它们**站在哪儿**：大多站在 have 和过去分词中间，只有 yet 站在句子最后。",
+   "items": [
+    {
+     "rule": "just：刚刚。放中间",
+     "en": "I[['ve]] <<just>> [[pushed]] the fix.",
+     "zh": "我刚把修复推上去了。"
+    },
+    {
+     "rule": "already：已经，比想的早。放中间",
+     "en": "We[['ve]] <<already>> [[shipped]] it.",
+     "zh": "我们已经发布了。"
+    },
+    {
+     "rule": "yet：还（没）。用在否定和疑问里，放最后",
+     "en": "I [[haven't tested]] it <<yet>>.",
+     "zh": "我还没测。"
+    },
+    {
+     "rule": "ever / never：问经历用 ever，「从来没有」用 never",
+     "en": "I[['ve]] <<never>> [[used]] Kotlin.",
+     "zh": "我从来没用过 Kotlin。"
+    }
+   ]
+  },
+  "forsince": {
+   "title": "for 和 since",
+   "short": "多久",
+   "text": "说「从过去到现在多久了」：**for + 一段时间**（三年、两周），**since + 开始的那个点**（周一、2022 年）。",
+   "items": [
+    {
+     "rule": "for + 一段时间：for two years、for ages",
+     "en": "I[['ve worked]] here <<for>> three years.",
+     "zh": "我在这儿工作三年了。"
+    },
+    {
+     "rule": "since + 起点：since Monday、since 2019",
+     "en": "She[['s lived]] in London <<since>> 2019.",
+     "zh": "她从 2019 年起就住在伦敦。"
+    },
+    {
+     "rule": "问多久：How long + have / has …？",
+     "en": "How long [[have]] you [[known]] Tom?",
+     "zh": "你认识 Tom 多久了？",
+     "answer": "I[['ve known]] him <<for>> ten years."
+    }
+   ],
+   "wrong": {
+    "bad": "I've worked here ~~since~~ three years.",
+    "good": "I[['ve worked]] here <<for>> three years."
+   }
+  },
+  "contrast": {
+   "title": "和其他时态比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一般过去时",
+     "this": {
+      "meaning": "不说什么时候，重点是现在怎么样",
+      "en": "I[['ve lost]] my phone."
+     },
+     "that": {
+      "meaning": "说了过去的时间，事情已经翻篇",
+      "en": "I [[lost]] my phone <<last week>>."
+     }
+    },
+    {
+     "with": "现在完成进行时",
+     "this": {
+      "meaning": "做完了，看结果：做了多少",
+      "en": "I[['ve written]] three tests."
+     },
+     "that": {
+      "meaning": "一直在做，看过程：做了多久",
+      "en": "I[['ve been writing]] tests <<all morning>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I ~~have seen~~ him yesterday.",
+     "good": "I [[saw]] him <<yesterday>>.",
+     "why": "说了过去的具体时间，用一般过去时。"
+    },
+    {
+     "bad": "She ~~have~~ finished.",
+     "good": "She [[has finished]].",
+     "why": "他她它用 has。"
+    },
+    {
+     "bad": "I've ~~went~~ to Japan.",
+     "good": "I[['ve been]] to Japan.",
+     "why": "have 后面用过去分词；说「去过」用 been。"
+    },
+    {
+     "bad": "I've worked here ~~since~~ two years.",
+     "good": "I[['ve worked]] here <<for>> two years.",
+     "why": "一段时间用 for，起点才用 since。"
+    },
+    {
+     "bad": "~~Did you finish~~ it yet?",
+     "good": "[[Have]] you [[finished]] it <<yet>>?",
+     "why": "有 yet，英式英语用现在完成时。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I ___ my badge, so I can't get into the office.",
+   "options": [
+    "lose",
+    "have lost",
+    "was losing",
+    "am losing"
+   ],
+   "answer": "have lost",
+   "explain": "过去弄丢了，现在还进不去：I [[have lost]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：构建刚跑完。",
+   "answer": "The build has just finished.",
+   "accept": [
+    "The build's just finished."
+   ],
+   "explain": "<<just>> 刚刚：has <<just>> [[finished]]。"
+  },
+  {
+   "id": "q03",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "Anna ___ (fix) the login bug.",
+   "answer": "has fixed",
+   "accept": [],
+   "explain": "Anna 是「她」，用 [[has fixed]]。"
+  },
+  {
+   "id": "q04",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "We ___ (move) to a new office.",
+   "answer": "have moved",
+   "accept": [
+    "'ve moved"
+   ],
+   "explain": "we 用 have：We [[have moved]]。"
+  },
+  {
+   "id": "q05",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成否定句：He has replied.",
+   "answer": "He hasn't replied.",
+   "accept": [
+    "He has not replied."
+   ],
+   "traps": [
+    {
+     "input": "He doesn't have replied.",
+     "note": "完成时的否定直接在 has 后面加 not。"
+    }
+   ],
+   "explain": "He [[hasn't replied]]：has 后面加 not。"
+  },
+  {
+   "id": "q06",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成一般疑问句：You have tested it on an iPad.",
+   "answer": "Have you tested it on an iPad?",
+   "accept": [],
+   "explain": "把 [[Have]] 搬到最前面。"
+  },
+  {
+   "id": "q07",
+   "section": "participle",
+   "type": "fill",
+   "prompt": "write 的过去分词是 ___",
+   "answer": "written",
+   "accept": [],
+   "explain": "write → wrote → [[written]]，三个都不一样。"
+  },
+  {
+   "id": "q08",
+   "section": "participle",
+   "type": "fill",
+   "prompt": "I've ___ (see) that film twice.",
+   "answer": "seen",
+   "accept": [],
+   "traps": [
+    {
+     "input": "saw",
+     "note": "have 后面用过去分词 seen，不用过去式 saw。"
+    }
+   ],
+   "explain": "have 后面跟过去分词：I've [[seen]]。"
+  },
+  {
+   "id": "q09",
+   "section": "participle",
+   "type": "choice",
+   "prompt": "Tom isn't here. He ___ to the bank.",
+   "options": [
+    "has been",
+    "has gone"
+   ],
+   "answer": "has gone",
+   "explain": "人还没回来，用 [[has gone]]。"
+  },
+  {
+   "id": "q10",
+   "section": "words",
+   "type": "choice",
+   "prompt": "I haven't checked the logs ___.",
+   "options": [
+    "already",
+    "yet",
+    "just"
+   ],
+   "answer": "yet",
+   "explain": "否定句里的「还没」用 <<yet>>，放句子最后。"
+  },
+  {
+   "id": "q11",
+   "section": "words",
+   "type": "fill",
+   "prompt": "— Have you ___ been to Scotland? — No, never.",
+   "answer": "ever",
+   "accept": [],
+   "explain": "问经历用 <<ever>>。"
+  },
+  {
+   "id": "q12",
+   "section": "words",
+   "type": "fix",
+   "prompt": "改错：I have already finish the design.",
+   "answer": "I have already finished the design.",
+   "accept": [
+    "I've already finished the design."
+   ],
+   "explain": "have 后面要过去分词：<<already>> [[finished]]。"
+  },
+  {
+   "id": "q13",
+   "section": "forsince",
+   "type": "choice",
+   "prompt": "She's lived in London ___ 2019.",
+   "options": [
+    "for",
+    "since",
+    "from"
+   ],
+   "answer": "since",
+   "explain": "2019 是开始的那个点，用 <<since>>。"
+  },
+  {
+   "id": "q14",
+   "section": "forsince",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：She has worked here for five years.（问「多久」）",
+   "answer": "How long has she worked here?",
+   "accept": [
+    "How long has she been working here?"
+   ],
+   "explain": "How long [[has]] she [[worked]] here？"
+  },
+  {
+   "id": "q15",
+   "section": "forsince",
+   "type": "fix",
+   "prompt": "改错：I've known him since ten years.",
+   "answer": "I've known him for ten years.",
+   "accept": [
+    "I have known him for ten years."
+   ],
+   "explain": "十年是一段时间，用 <<for>>。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I have met him last week.",
+   "answer": "I met him last week.",
+   "accept": [],
+   "explain": "有 <<last week>>，用一般过去时：I [[met]]。"
+  },
+  {
+   "id": "q17",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "— When ___ the update? — Last Friday.",
+   "options": [
+    "have you released",
+    "did you release"
+   ],
+   "answer": "did you release",
+   "explain": "问「什么时候」，答案是过去的时间，用一般过去时：[[did]] you ((release))。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用现在完成时说 3 句话：这周你已经做完了什么、还没做什么。至少用上 already、yet、just 里的两个。",
+  "rules": [
+   "现在完成时 = have / has + 过去分词",
+   "有 yesterday、last week 这类具体过去时间时，不用现在完成时",
+   "yet 用在否定句和疑问句里，放句子最后"
+  ],
+  "note": "规则判 have / has + 过去分词和小词位置（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

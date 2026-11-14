@@ -1,0 +1,405 @@
+{
+ "id": "g-prepositions-time",
+ "title": "时间介词 in / on / at",
+ "en": "Prepositions of Time",
+ "group": "形容词、副词和介词",
+ "level": "A2",
+ "order": 47,
+ "keywords": [
+  "时间介词"
+ ],
+ "related": [
+  "g-prepositions-place",
+  "g-adverbial-time-condition",
+  "g-future-forms"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "说时间用哪个介词，看这段时间有多「大」：**长的用 in，一天用 on，一个点用 at**。像一个倒三角：年和月最大，某一天在中间，几点几分最小。",
+   "uses": [
+    {
+     "zh": "一段长时间：月、年、季节",
+     "en": "The new design goes live [[in]] March.",
+     "en_zh": "新设计三月上线。"
+    },
+    {
+     "zh": "具体的某一天",
+     "en": "We've got a demo [[on]] Friday.",
+     "en_zh": "我们周五有个演示。"
+    },
+    {
+     "zh": "一个时间点：几点几分",
+     "en": "The stand-up starts [[at]] 9:30.",
+     "en_zh": "站会九点半开始。"
+    }
+   ]
+  },
+  "at": {
+   "title": "at：一个点", "short": "at",
+   "rule": "at 用在**一个准确的点**上：几点几分、饭点，还有几个固定说法：at night、at the weekend、at Christmas。",
+   "examples": [
+    {
+     "en": "Let's meet [[at]] half past two.",
+     "zh": "我们两点半见吧。"
+    },
+    {
+     "en": "I'm usually free [[at]] lunchtime.",
+     "zh": "我午饭时间一般有空。"
+    },
+    {
+     "en": "What are you doing [[at]] the weekend?",
+     "zh": "你周末打算干什么？"
+    }
+   ],
+   "notes": [
+    "at night 是「在夜里」；但早上、下午、晚上用 in：[[in]] the morning、[[in]] the evening。",
+    "英国人说 [[at]] the weekend，美国人说 on the weekend，两个都对。"
+   ]
+  },
+  "on": {
+   "title": "on：某一天", "short": "on",
+   "rule": "on 用在**具体的某一天**：星期几、几月几号、生日、节日当天。只要你能说出「是哪一天」，就用 on。",
+   "examples": [
+    {
+     "en": "The release is [[on]] Thursday.",
+     "zh": "发布在周四。"
+    },
+    {
+     "en": "My birthday is [[on]] 12 May.",
+     "zh": "我的生日是 5 月 12 日。"
+    },
+    {
+     "en": "We had a team dinner [[on]] New Year's Eve.",
+     "zh": "我们跨年夜那天吃了团队晚饭。"
+    }
+   ],
+   "notes": [
+    "某一天的早上、晚上，也看「哪一天」，用 on：[[on]] Monday morning，不说 in Monday morning。"
+   ]
+  },
+  "in": {
+   "title": "in：一段长时间", "short": "in",
+   "rule": "in 用在**一段比较长的时间**：月份、年份、季节、几十年，还有一天里的上午、下午、晚上。",
+   "examples": [
+    {
+     "en": "I joined the team [[in]] 2023.",
+     "zh": "我 2023 年加入了这个团队。"
+    },
+    {
+     "en": "It gets dark really early [[in]] winter.",
+     "zh": "冬天天黑得特别早。"
+    },
+    {
+     "en": "I do my best work [[in]] the morning.",
+     "zh": "我上午干活效率最高。"
+    }
+   ]
+  },
+  "none": {
+   "title": "什么时候不用介词", "short": "不用",
+   "rule": "前面有 **this、next、last、every** 时，in / on / at 都不要。today、tomorrow、yesterday 前面也不要。",
+   "examples": [
+    {
+     "en": "We'll ship it [[next week]].",
+     "zh": "我们下周发布。"
+    },
+    {
+     "en": "I talked to her [[yesterday]].",
+     "zh": "我昨天跟她聊过了。"
+    },
+    {
+     "en": "We have a retro [[every Friday]].",
+     "zh": "我们每周五开复盘会。"
+    }
+   ],
+   "wrong": {
+    "bad": "We'll ship it ~~on~~ next Monday.",
+    "good": "We'll ship it [[next Monday]]."
+   }
+  },
+  "special": {
+   "title": "几个容易混的说法", "short": "特殊",
+   "items": [
+    {
+     "rule": "in + 一段时间 = 从现在算，过多久以后。",
+     "en": "I'll call you back [[in]] five minutes.",
+     "zh": "我五分钟后给你回电话。"
+    },
+    {
+     "rule": "on time = 准时，不早不晚。",
+     "en": "The train left [[on time]].",
+     "zh": "火车准时开了。"
+    },
+    {
+     "rule": "in time = 来得及，没有晚。",
+     "en": "We fixed the bug [[in time]] for the release.",
+     "zh": "我们赶在发布前修好了这个 bug。"
+    },
+    {
+     "rule": "at the end of… = 在……的末尾、快结束时；in the end = 最后、到头来。",
+     "en": "[[At the end of]] the meeting, we voted.",
+     "zh": "会议结束的时候，我们投了票。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "on Monday morning",
+     "this": {
+      "meaning": "泛指早上",
+      "en": "I work best [[in]] the morning."
+     },
+     "that": {
+      "meaning": "某一天的早上",
+      "en": "I've got a call [[on]] Monday morning."
+     }
+    },
+    {
+     "with": "in time",
+     "this": {
+      "meaning": "on time：准时",
+      "en": "The meeting started [[on time]]."
+     },
+     "that": {
+      "meaning": "in time：来得及",
+      "en": "I got there just [[in time]]."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "The meeting is ~~in~~ Friday.",
+     "good": "The meeting is [[on]] Friday.",
+     "why": "星期几是某一天，用 on。"
+    },
+    {
+     "bad": "I go to the gym ~~on~~ the morning.",
+     "good": "I go to the gym [[in]] the morning.",
+     "why": "泛指早上用 in the morning。"
+    },
+    {
+     "bad": "I can't sleep ~~in~~ night.",
+     "good": "I can't sleep [[at]] night.",
+     "why": "at night 是固定说法。"
+    },
+    {
+     "bad": "See you ~~at~~ next week.",
+     "good": "See you [[next week]].",
+     "why": "有 next，就不要介词。"
+    },
+    {
+     "bad": "I was born ~~on~~ 1990.",
+     "good": "I was born [[in]] 1990.",
+     "why": "只有年份，是一段长时间，用 in。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "The new design goes live ___ March.",
+   "options": [
+    "in",
+    "on",
+    "at"
+   ],
+   "answer": "in",
+   "explain": "月份是一段长时间，用 [[in]]。"
+  },
+  {
+   "id": "q02",
+   "section": "at",
+   "type": "fill",
+   "prompt": "The stand-up starts ___ 9:30.",
+   "answer": "at",
+   "accept": [],
+   "explain": "几点几分是一个点，用 [[at]]。"
+  },
+  {
+   "id": "q03",
+   "section": "at",
+   "type": "fill",
+   "prompt": "What are you doing ___ the weekend?",
+   "answer": "at",
+   "accept": [
+    "on"
+   ],
+   "explain": "英式说 [[at]] the weekend，美式说 on the weekend。"
+  },
+  {
+   "id": "q04",
+   "section": "on",
+   "type": "fill",
+   "prompt": "My birthday is ___ 12 May.",
+   "answer": "on",
+   "accept": [],
+   "explain": "几月几号是具体的某一天，用 [[on]]。"
+  },
+  {
+   "id": "q05",
+   "section": "on",
+   "type": "choice",
+   "prompt": "I've got a dentist appointment ___ Monday morning.",
+   "options": [
+    "in",
+    "on",
+    "at"
+   ],
+   "answer": "on",
+   "explain": "说的是「周一」这一天的早上，用 [[on]]。"
+  },
+  {
+   "id": "q06",
+   "section": "in",
+   "type": "fill",
+   "prompt": "I joined the company ___ 2022.",
+   "answer": "in",
+   "accept": [],
+   "explain": "年份是一段长时间，用 [[in]]。"
+  },
+  {
+   "id": "q07",
+   "section": "in",
+   "type": "fill",
+   "prompt": "I usually check my emails ___ the morning.",
+   "answer": "in",
+   "accept": [],
+   "traps": [
+    {
+     "input": "on",
+     "note": "只有说「某一天的早上」时才用 on，比如 on Monday morning。"
+    }
+   ],
+   "explain": "泛指早上：[[in]] the morning。"
+  },
+  {
+   "id": "q08",
+   "section": "in",
+   "type": "fill",
+   "prompt": "It gets dark really early ___ winter.",
+   "answer": "in",
+   "accept": [],
+   "explain": "季节是一段长时间，用 [[in]]。"
+  },
+  {
+   "id": "q09",
+   "section": "none",
+   "type": "choice",
+   "prompt": "We'll ship the new version ___ next week.",
+   "options": [
+    "in",
+    "on",
+    "at",
+    "不用介词"
+   ],
+   "answer": "不用介词",
+   "explain": "前面有 <<next>>，不要介词：[[next week]]。"
+  },
+  {
+   "id": "q10",
+   "section": "none",
+   "type": "fix",
+   "prompt": "改错：I talked to her on yesterday.",
+   "answer": "I talked to her yesterday.",
+   "accept": [],
+   "explain": "yesterday 前面不要介词。"
+  },
+  {
+   "id": "q11",
+   "section": "special",
+   "type": "choice",
+   "prompt": "Don't worry, I'll be back ___ ten minutes.",
+   "options": [
+    "in",
+    "on",
+    "after"
+   ],
+   "answer": "in",
+   "explain": "从现在算起过多久，用 [[in]]：[[in]] ten minutes = 十分钟后。"
+  },
+  {
+   "id": "q12",
+   "section": "special",
+   "type": "choice",
+   "prompt": "We fixed the bug just ___ for the release.",
+   "options": [
+    "in time",
+    "on time",
+    "at time"
+   ],
+   "answer": "in time",
+   "explain": "来得及、没晚，用 [[in time]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "The train left exactly ___ time.",
+   "answer": "on",
+   "accept": [],
+   "explain": "准时，不早不晚：[[on time]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：The meeting is in Friday.",
+   "answer": "The meeting is on Friday.",
+   "accept": [],
+   "explain": "星期几用 [[on]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I can't sleep in night.",
+   "answer": "I can't sleep at night.",
+   "accept": [
+    "I cannot sleep at night."
+   ],
+   "explain": "固定说法：[[at]] night。"
+  },
+  {
+   "id": "q16",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：会议周四下午三点开始。",
+   "answer": "The meeting starts at 3 pm on Thursday.",
+   "accept": [
+    "The meeting starts at 3 p.m. on Thursday.",
+    "The meeting starts at 3pm on Thursday.",
+    "The meeting starts at three on Thursday afternoon.",
+    "The meeting starts at 3 on Thursday afternoon.",
+    "The meeting starts on Thursday at 3 pm.",
+    "The meeting starts on Thursday at 3pm.",
+    "The meeting will start at 3 pm on Thursday.",
+    "The meeting begins at 3 pm on Thursday.",
+    "The meeting starts at three o'clock on Thursday afternoon.",
+    "The meeting starts at 3 o'clock on Thursday afternoon.",
+    "The meeting is at 3 pm on Thursday."
+   ],
+   "explain": "几点用 [[at]]，星期几用 [[on]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 in / on / at 说 3 句话，介绍你下周的安排：至少一句有几点几分，一句有星期几，一句有 next 或 this。",
+  "rules": [
+   "几点几分用 at，星期几和日期用 on，月、年、季节用 in",
+   "this / next / last / every 前面不加介词"
+  ],
+  "note": "规则判 in / on / at 的搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

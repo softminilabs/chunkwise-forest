@@ -1,0 +1,414 @@
+{
+ "id": "g-questions",
+ "title": "疑问句与疑问词",
+ "en": "Questions and Question Words",
+ "group": "句子",
+ "level": "A2",
+ "order": 24,
+ "keywords": [
+  "疑问句"
+ ],
+ "related": [
+  "g-tag-questions",
+  "g-object-clauses",
+  "g-present-simple"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "英语问问题有两种：一种只要回答 **yes / no**；一种用 what、where 这些**疑问词**开头，问具体的事。秘诀只有一个：**帮忙的小词跳到主语前面**。",
+   "uses": [
+    {
+     "zh": "问是不是",
+     "en": "[[Are]] you free <<this afternoon>>?",
+     "en_zh": "你今天下午有空吗？"
+    },
+    {
+     "zh": "没有小词，请 do 来帮忙",
+     "en": "[[Do]] you ((use)) Xcode at work?",
+     "en_zh": "你上班用 Xcode 吗？"
+    },
+    {
+     "zh": "问具体的事",
+     "en": "[[Where]] [[did]] you ((put)) the charger?",
+     "en_zh": "你把充电器放哪儿了？"
+    }
+   ],
+   "signals": [
+    "what",
+    "where",
+    "when",
+    "who",
+    "why",
+    "which",
+    "how"
+   ]
+  },
+  "yesno": {
+   "title": "问是不是：yes / no",
+   "short": "是不是",
+   "formula": [
+    "is / can / have / do…",
+    "主语",
+    "其他？"
+   ],
+   "rule": "句子里有 is、can、will、have 这种小词，就把它**挪到最前面**；没有，就请 do / does / did 来帮忙，动词变回原形。",
+   "examples": [
+    {
+     "en": "[[Is]] the build green?",
+     "zh": "构建通过了吗？",
+     "answer": "Yes, it [[is]]. / No, it [[isn't]]."
+    },
+    {
+     "en": "[[Can]] you ((share)) your screen?",
+     "zh": "你能共享一下屏幕吗？",
+     "answer": "Sure. / Sorry, I [[can't]] right now."
+    },
+    {
+     "en": "[[Did]] you ((push)) the fix?",
+     "zh": "你把修复推上去了吗？",
+     "answer": "Yes, I [[did]]. / No, not yet."
+    },
+    {
+     "en": "[[Have]] you ever used SwiftUI?",
+     "zh": "你用过 SwiftUI 吗？",
+     "answer": "Yes, I [[have]]. / No, I [[haven't]]."
+    }
+   ]
+  },
+  "wh": {
+   "title": "问具体的事：疑问词开头",
+   "short": "疑问词",
+   "formula": [
+    "疑问词",
+    "is / do / can…",
+    "主语",
+    "动词…？"
+   ],
+   "rule": "疑问词放**最前面**，后面和 yes / no 问句一模一样。",
+   "examples": [
+    {
+     "en": "[[Where]] [[do]] you ((live))?",
+     "zh": "你住在哪儿？"
+    },
+    {
+     "en": "[[What time]] [[does]] the stand-up ((start))?",
+     "zh": "站会几点开始？"
+    },
+    {
+     "en": "[[Why]] [[did]] the app ((crash))?",
+     "zh": "App 为什么崩溃了？"
+    },
+    {
+     "en": "[[How long]] [[have]] you worked here?",
+     "zh": "你在这儿工作多久了？"
+    }
+   ],
+   "notes": [
+    "介词常常留在句子**最后**：Who are you talking [[to]]?（你在跟谁说话？）· What's it [[about]]?（讲的是什么？）"
+   ]
+  },
+  "words": {
+   "title": "疑问词一张表",
+   "short": "词表",
+   "rule": "每个疑问词问一种东西。how 后面加一个词，能问更多：多久、多少、多常。",
+   "items": [
+    {
+     "rule": "what：问什么东西、什么事",
+     "en": "[[What]] are you working on?",
+     "zh": "你在忙什么？"
+    },
+    {
+     "rule": "which：在几个里面选哪一个",
+     "en": "[[Which]] branch should I use?",
+     "zh": "我该用哪个分支？"
+    },
+    {
+     "rule": "who / whose：问谁、谁的",
+     "en": "[[Whose]] laptop is this?",
+     "zh": "这是谁的笔记本电脑？"
+    },
+    {
+     "rule": "how often：问多久一次",
+     "en": "[[How often]] do you release?",
+     "zh": "你们多久发一次版？"
+    },
+    {
+     "rule": "how much / how many：问多少",
+     "en": "[[How many]] bugs are left?",
+     "zh": "还剩几个 bug？"
+    }
+   ],
+   "tip": "how much 问**不能数的**东西（money、time）；how many 问**能数的**东西（bugs、people）。"
+  },
+  "subject": {
+   "title": "问「谁做的」：不用 do",
+   "short": "问主语",
+   "rule": "疑问词本身就是**做事的那个人或东西**时，直接接动词，**不用** do / does / did。",
+   "examples": [
+    {
+     "en": "[[Who]] [[broke]] the build?",
+     "zh": "谁把构建搞坏了？"
+    },
+    {
+     "en": "[[What]] [[happened]]?",
+     "zh": "发生什么事了？"
+    },
+    {
+     "en": "[[Which]] test [[failed]]?",
+     "zh": "哪个测试没通过？"
+    }
+   ],
+   "wrong": {
+    "bad": "What ~~did happen~~?",
+    "good": "[[What]] [[happened]]?"
+   },
+   "notes": [
+    "比一比：[[Who]] [[called]] you?（谁给你打电话了？）· [[Who]] [[did]] you ((call))?（你给谁打电话了？）"
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "间接问句",
+     "this": {
+      "meaning": "直接问：小词跳到主语前面",
+      "en": "Where [[is]] the meeting room?"
+     },
+     "that": {
+      "meaning": "放进 Do you know 后面：语序变回正常",
+      "en": "Do you know where the meeting room [[is]]?"
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Where ~~you live~~?",
+     "good": "Where [[do]] you ((live))?",
+     "why": "普通动词要请 do 来帮忙。"
+    },
+    {
+     "bad": "Does she ~~likes~~ coffee?",
+     "good": "[[Does]] she ((like)) coffee?",
+     "why": "does 已经带了 s，动词用原形。"
+    },
+    {
+     "bad": "Why ~~you didn't~~ tell me?",
+     "good": "Why [[didn't]] you ((tell)) me?",
+     "why": "didn't 也要跳到主语前面。"
+    },
+    {
+     "bad": "How ~~many~~ time do we have?",
+     "good": "How [[much]] time do we have?",
+     "why": "time 不能数，用 how much。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "___ you free this afternoon?",
+   "options": [
+    "Are",
+    "Do",
+    "Does",
+    "Is"
+   ],
+   "answer": "Are",
+   "explain": "you 后面是 free（形容词），用 be：[[Are]]。"
+  },
+  {
+   "id": "q02",
+   "section": "yesno",
+   "type": "transform",
+   "prompt": "改成一般疑问句：She works from home on Fridays.",
+   "answer": "Does she work from home on Fridays?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Does she works from home on Fridays?",
+     "note": "does 后面用原形 work。"
+    }
+   ],
+   "explain": "she 用 [[Does]]，动词回到原形 ((work))。"
+  },
+  {
+   "id": "q03",
+   "section": "yesno",
+   "type": "transform",
+   "prompt": "改成一般疑问句：They have finished the review.",
+   "answer": "Have they finished the review?",
+   "accept": [],
+   "explain": "有 have 就把它挪到最前面：[[Have]] they…？"
+  },
+  {
+   "id": "q04",
+   "section": "yesno",
+   "type": "fill",
+   "prompt": "— Did you push the fix? — Yes, I ___.",
+   "answer": "did",
+   "accept": [],
+   "explain": "用 did 问，就用 [[did]] 答。"
+  },
+  {
+   "id": "q05",
+   "section": "wh",
+   "type": "make-question",
+   "prompt": "按括号里的提示提问：The stand-up starts at half past nine.（问「几点」）",
+   "answer": "What time does the stand-up start?",
+   "accept": [
+    "When does the stand-up start?"
+   ],
+   "traps": [
+    {
+     "input": "What time does the stand-up starts?",
+     "note": "does 后面用原形 start。"
+    }
+   ],
+   "explain": "What time + [[does]] + 主语 + 原形 ((start))。"
+  },
+  {
+   "id": "q06",
+   "section": "wh",
+   "type": "make-question",
+   "prompt": "按括号里的提示提问：I put the charger in the drawer.（问「在哪儿」）",
+   "answer": "Where did you put the charger?",
+   "accept": [],
+   "explain": "过去的事请 did 帮忙：Where [[did]] you ((put))…？"
+  },
+  {
+   "id": "q07",
+   "section": "wh",
+   "type": "choice",
+   "prompt": "Who are you talking ___?",
+   "options": [
+    "to",
+    "with to",
+    "for to"
+   ],
+   "answer": "to",
+   "explain": "介词留在句子最后：talking [[to]]。"
+  },
+  {
+   "id": "q08",
+   "section": "words",
+   "type": "choice",
+   "prompt": "___ do you go to the gym? — Three times a week.",
+   "options": [
+    "How often",
+    "How long",
+    "How much",
+    "When"
+   ],
+   "answer": "How often",
+   "explain": "回答是「一周三次」，问频率：[[How often]]。"
+  },
+  {
+   "id": "q09",
+   "section": "words",
+   "type": "choice",
+   "prompt": "___ laptop is this? Is it yours?",
+   "options": [
+    "Whose",
+    "Who",
+    "Which"
+   ],
+   "answer": "Whose",
+   "explain": "问「谁的」：[[Whose]]。"
+  },
+  {
+   "id": "q10",
+   "section": "words",
+   "type": "fill",
+   "prompt": "How ___ people are on your team?",
+   "answer": "many",
+   "accept": [],
+   "explain": "people 能数，用 [[many]]。"
+  },
+  {
+   "id": "q11",
+   "section": "subject",
+   "type": "choice",
+   "prompt": "___ the build? It was fine this morning.",
+   "options": [
+    "Who broke",
+    "Who did break",
+    "Who breaks did"
+   ],
+   "answer": "Who broke",
+   "explain": "问「谁做的」，不用 did：[[Who]] [[broke]]。"
+  },
+  {
+   "id": "q12",
+   "section": "subject",
+   "type": "fix",
+   "prompt": "改错：What did happen in the meeting?",
+   "answer": "What happened in the meeting?",
+   "accept": [],
+   "explain": "what 就是发生的事，直接用 [[happened]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Where you live?",
+   "answer": "Where do you live?",
+   "accept": [],
+   "explain": "普通动词要请 [[do]] 来帮忙。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Why you didn't tell me?",
+   "answer": "Why didn't you tell me?",
+   "accept": [
+    "Why did you not tell me?"
+   ],
+   "explain": "didn't 跳到主语前面：Why [[didn't]] you…？"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：How many time do we have?",
+   "answer": "How much time do we have?",
+   "accept": [],
+   "explain": "time 不能数：How [[much]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：你在忙什么？",
+   "answer": "What are you working on?",
+   "accept": [
+    "What are you doing?",
+    "What are you busy with?",
+    "What are you up to?"
+   ],
+   "explain": "[[What]] + are you + -ing，介词 on 留在最后。"
+  }
+ ],
+ "openTask": {
+  "prompt": "假设你第一天见新同事，写 4 个问题问他：至少 1 个 yes / no 问题，2 个用不同疑问词的问题，1 个问「谁」做了什么的问题。",
+  "rules": [
+   "普通动词的疑问句要用 do / does / did，动词变回原形",
+   "疑问词是主语时不用 do / does / did"
+  ],
+  "note": "规则判语序和 do / does / did 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

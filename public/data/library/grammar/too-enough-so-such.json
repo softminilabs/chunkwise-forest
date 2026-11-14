@@ -1,0 +1,419 @@
+{
+ "id": "g-too-enough-so-such",
+ "title": "enough / too / so / such",
+ "en": "Too, Enough, So and Such",
+ "group": "形容词、副词和介词",
+ "level": "B1",
+ "order": 49,
+ "keywords": [
+  "too / enough",
+  "so … that"
+ ],
+ "related": [
+  "g-comparatives",
+  "g-adverbial-reason-result",
+  "g-ed-ing-adjectives"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "这四个词都在说**「有多……」**。too 是**太过了**，有问题；enough 是**刚好够**；so 和 such 是**非常**，后面常跟 that 说结果。",
+   "uses": [
+    {
+     "zh": "too：太……了（不好）",
+     "en": "This laptop is [[too]] slow for Xcode.",
+     "en_zh": "这台电脑跑 Xcode 太慢了。"
+    },
+    {
+     "zh": "enough：够",
+     "en": "Is the room big [[enough]] for ten people?",
+     "en_zh": "这个房间够坐十个人吗？"
+    },
+    {
+     "zh": "so：这么、那么 + 形容词",
+     "en": "The talk was [[so]] good that I watched it twice.",
+     "en_zh": "那个演讲太好了，我看了两遍。"
+    },
+    {
+     "zh": "such：这么一个 + 名词",
+     "en": "It was [[such]] a long meeting.",
+     "en_zh": "那个会开得真长。"
+    }
+   ]
+  },
+  "too": {
+   "title": "too：太……了", "short": "too",
+   "formula": [
+    "too",
+    "形容词 / 副词",
+    "（for 某人）",
+    "（to do）"
+   ],
+   "rule": "too 说的是**超过了，出问题了**，常带着「所以做不了」的意思。too big to email = 太大了，没法发邮件。",
+   "examples": [
+    {
+     "en": "The file is [[too]] big to email.",
+     "zh": "文件太大了，没法用邮件发。"
+    },
+    {
+     "en": "It's [[too]] late to change the design now.",
+     "zh": "现在改设计已经太晚了。"
+    },
+    {
+     "en": "This jacket is [[too]] small for me.",
+     "zh": "这件夹克我穿太小了。"
+    }
+   ],
+   "wrong": {
+    "bad": "This app is ~~too~~ useful, I love it!",
+    "good": "This app is [[really]] useful, I love it!"
+   },
+   "notes": [
+    "名词前面：[[too many]] + 能数的（too many meetings），[[too much]] + 不能数的（too much work）。"
+   ]
+  },
+  "enough": {
+   "title": "enough：够", "short": "够",
+   "formula": [
+    "形容词 / 副词",
+    "enough",
+    "（to do）"
+   ],
+   "rule": "enough 放哪儿很重要：**形容词后面，名词前面**。big enough（够大），enough time（够的时间）。",
+   "examples": [
+    {
+     "en": "Your English is good [[enough]] for the interview.",
+     "zh": "你的英语应付面试够用了。"
+    },
+    {
+     "en": "We don't have [[enough]] time to test everything.",
+     "zh": "我们没有足够的时间把所有东西都测一遍。"
+    },
+    {
+     "en": "He didn't run fast [[enough]] to catch the bus.",
+     "zh": "他跑得不够快，没赶上公交。"
+    }
+   ],
+   "wrong": {
+    "bad": "The screen isn't ~~enough big~~.",
+    "good": "The screen isn't [[big enough]]."
+   }
+  },
+  "so": {
+   "title": "so：这么、那么", "short": "so",
+   "formula": [
+    "so",
+    "形容词 / 副词",
+    "that",
+    "结果"
+   ],
+   "rule": "so 后面**直接跟形容词或副词**，没有名词。想说「所以怎么样了」，就在后面加 that + 一句话。",
+   "examples": [
+    {
+     "en": "The bug was [[so]] tricky that it took us two days.",
+     "zh": "那个 bug 太难搞了，我们花了两天。"
+    },
+    {
+     "en": "She speaks [[so]] fast that I can't follow her.",
+     "zh": "她说话太快了，我跟不上。"
+    },
+    {
+     "en": "I'm [[so]] tired today.",
+     "zh": "我今天好累。"
+    }
+   ],
+   "notes": [
+    "so 也能接 many / much：There were [[so many]] bugs that we delayed the release.",
+    "口语里 that 常常省掉：It was so cold I stayed in."
+   ]
+  },
+  "such": {
+   "title": "such：这么一个", "short": "such",
+   "formula": [
+    "such",
+    "（a / an）",
+    "（形容词）",
+    "名词",
+    "that",
+    "结果"
+   ],
+   "rule": "such 后面**一定有名词**。单个能数的东西要加 a / an，而且 a 站在 such 后面：such a nice day。",
+   "examples": [
+    {
+     "en": "It was [[such]] a nice day that we ate outside.",
+     "zh": "天气太好了，我们在外面吃的饭。"
+    },
+    {
+     "en": "They're [[such]] good friends.",
+     "zh": "他们是特别好的朋友。"
+    },
+    {
+     "en": "We had [[such]] bad weather on holiday.",
+     "zh": "我们度假时天气特别差。"
+    }
+   ],
+   "wrong": {
+    "bad": "It was ~~a such~~ long day.",
+    "good": "It was [[such a]] long day."
+   }
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "very",
+     "this": {
+      "meaning": "too：太……了，有问题",
+      "en": "The coffee is [[too]] hot to drink."
+     },
+     "that": {
+      "meaning": "very：很……，只是很",
+      "en": "The coffee is [[very]] hot, but I can drink it."
+     }
+    },
+    {
+     "with": "such",
+     "this": {
+      "meaning": "so + 形容词",
+      "en": "The meeting was [[so]] long."
+     },
+     "that": {
+      "meaning": "such + (a) + 形容词 + 名词",
+      "en": "It was [[such]] a long meeting."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "The room isn't ~~enough big~~.",
+     "good": "The room isn't [[big enough]].",
+     "why": "enough 放在形容词后面。"
+    },
+    {
+     "bad": "That's ~~so~~ a good idea.",
+     "good": "That's [[such]] a good idea.",
+     "why": "后面有名词 idea，用 such a。"
+    },
+    {
+     "bad": "I'm ~~too~~ happy to see you!",
+     "good": "I'm [[so]] happy to see you!",
+     "why": "too 是「太过了，有问题」；高兴不是问题，用 so 或 very。"
+    },
+    {
+     "bad": "There's too ~~much~~ bugs in this build.",
+     "good": "There are [[too many]] bugs in this build.",
+     "why": "bug 能数，用 too many。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "This laptop is ___ slow to run Xcode.",
+   "options": [
+    "too",
+    "enough",
+    "so",
+    "such"
+   ],
+   "answer": "too",
+   "explain": "慢到没法用，是「太过了」：[[too]] slow。"
+  },
+  {
+   "id": "q02",
+   "section": "too",
+   "type": "fill",
+   "prompt": "There are ___ many meetings this week to get any real work done.",
+   "answer": "too",
+   "accept": [],
+   "traps": [
+    {
+     "input": "so",
+     "note": "后面是 to do，说「多到没法干活」，用 too many。"
+    }
+   ],
+   "explain": "多到做不了事：[[too many]] … to do。"
+  },
+  {
+   "id": "q03",
+   "section": "too",
+   "type": "fix",
+   "prompt": "改错：This app is too useful, I love it!",
+   "answer": "This app is really useful, I love it!",
+   "accept": [
+    "This app is very useful, I love it!",
+    "This app is so useful, I love it!"
+   ],
+   "explain": "夸东西不用 too，用 [[really]] / [[very]] / [[so]]。"
+  },
+  {
+   "id": "q04",
+   "section": "too",
+   "type": "fix",
+   "prompt": "改错：There's too much bugs in this build.",
+   "answer": "There are too many bugs in this build.",
+   "accept": [],
+   "explain": "bug 能数：[[too many]] bugs。"
+  },
+  {
+   "id": "q05",
+   "section": "enough",
+   "type": "transform",
+   "prompt": "用 enough 改写：The room is too small for ten people.",
+   "answer": "The room isn't big enough for ten people.",
+   "accept": [
+    "The room is not big enough for ten people."
+   ],
+   "explain": "too small = not big enough：[[big enough]]。"
+  },
+  {
+   "id": "q06",
+   "section": "enough",
+   "type": "fix",
+   "prompt": "改错：The screen isn't enough big.",
+   "answer": "The screen isn't big enough.",
+   "accept": [
+    "The screen is not big enough."
+   ],
+   "explain": "enough 放在形容词后面：[[big enough]]。"
+  },
+  {
+   "id": "q07",
+   "section": "enough",
+   "type": "choice",
+   "prompt": "He didn't run ___ to catch the bus.",
+   "options": [
+    "fast enough",
+    "enough fast",
+    "too fast"
+   ],
+   "answer": "fast enough",
+   "explain": "副词在前，enough 在后：[[fast enough]]。"
+  },
+  {
+   "id": "q08",
+   "section": "enough",
+   "type": "fill",
+   "prompt": "We don't have ___ testers for this release.（够的）",
+   "answer": "enough",
+   "accept": [],
+   "explain": "名词前面：[[enough]] testers。"
+  },
+  {
+   "id": "q09",
+   "section": "so",
+   "type": "fill",
+   "prompt": "The bug was ___ tricky that it took us two days to fix.",
+   "answer": "so",
+   "accept": [],
+   "traps": [
+    {
+     "input": "such",
+     "note": "such 后面要有名词；这里 tricky 后面直接是 that，用 so。"
+    }
+   ],
+   "explain": "tricky 是形容词，后面没有名词，用 [[so]]。"
+  },
+  {
+   "id": "q10",
+   "section": "so",
+   "type": "transform",
+   "prompt": "用 so … that 连成一句：She speaks very fast. I can't follow her.",
+   "answer": "She speaks so fast that I can't follow her.",
+   "accept": [
+    "She speaks so fast I can't follow her.",
+    "She speaks so fast that I cannot follow her."
+   ],
+   "explain": "[[so]] + 副词 + that + 结果。"
+  },
+  {
+   "id": "q11",
+   "section": "such",
+   "type": "fill",
+   "prompt": "It was ___ a long meeting that I nearly fell asleep.",
+   "answer": "such",
+   "accept": [],
+   "explain": "后面有 a long meeting，用 [[such]]。"
+  },
+  {
+   "id": "q12",
+   "section": "such",
+   "type": "fix",
+   "prompt": "改错：We had a such great time on holiday.",
+   "answer": "We had such a great time on holiday.",
+   "accept": [],
+   "explain": "a 站在 such 后面：[[such a]]。"
+  },
+  {
+   "id": "q13",
+   "section": "such",
+   "type": "choice",
+   "prompt": "They're ___ good friends.",
+   "options": [
+    "so",
+    "such",
+    "such a"
+   ],
+   "answer": "such",
+   "explain": "friends 是复数，不加 a：[[such]] good friends。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "The coffee is ___ hot, but I can drink it.",
+   "options": [
+    "too",
+    "very"
+   ],
+   "answer": "very",
+   "explain": "还能喝，就不是「太」：[[very]] hot。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "It was ___ nice weather that we ate outside.",
+   "options": [
+    "so",
+    "such",
+    "such a"
+   ],
+   "answer": "such",
+   "explain": "weather 不能数，不加 a：[[such]] nice weather。"
+  },
+  {
+   "id": "q16",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：这个文件太大了，没法用邮件发。",
+   "answer": "This file is too big to email.",
+   "accept": [
+    "The file is too big to email.",
+    "This file is too big to send by email.",
+    "The file is too big to send by email.",
+    "This file is too large to email.",
+    "The file is too large to email."
+   ],
+   "explain": "[[too]] + 形容词 + to do = 太……没法……。"
+  }
+ ],
+ "openTask": {
+  "prompt": "说 3 句话，吐槽或夸夸你最近的工作：一句用 too，一句用 enough，一句用 so … that 或 such … that。",
+  "rules": [
+   "enough 放在形容词后面、名词前面",
+   "so 后面接形容词 / 副词，such 后面要有名词，单数加 a"
+  ],
+  "note": "规则判 too / enough / so / such 的位置和搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

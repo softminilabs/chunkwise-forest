@@ -1,0 +1,176 @@
+/* 讲堂：看语法、词形表、速查表的大卡片，装在 #modal 里。卡片几乎占满窗口（四周只留 #modal 那 16px），左边一栏尽量窄，地方都让给正文。
+   讲解要盯着读很久：纯文字的段落一行不超过 46 个字；例句、错句这些一块一块的按宽度排成两三列，表格和「比一比」把宽度用足。
+   一块一块的内容用淡绿底托着，不画边框 */
+.hall { --pad: clamp(28px, 3vw, 56px); --side: color-mix(in srgb, var(--sage-pale) 42%, var(--paper)); width: 100%; height: 100%; display: grid; grid-template: "nav head" auto "nav tabs" auto "nav body" minmax(0, 1fr) / 256px minmax(0, 1fr); overflow: hidden; border-radius: 28px; animation: card-in .4s var(--ease); }
+
+/* —— 左边：能开合的目录。三大块各一支，语法底下六组再各一支 —— */
+.hall-nav { grid-area: nav; display: flex; flex-direction: column; min-height: 0; border-right: 2px solid var(--sage-pale); background: var(--side); }
+.hall-nav h2 { padding: 20px 20px 10px; font-size: 24px; font-weight: 800; line-height: 1.2; }
+.hall-list { flex: 1; min-height: 0; overflow-y: auto; padding: 0 10px 18px; animation: fade-in .3s ease-out; }
+.hall-fold-head, .hall-topic { width: 100%; margin-top: 2px; border: 0; border-radius: 12px; background: none; line-height: 1.4; text-align: left; transition: background-color .15s ease, color .15s ease, scale .15s var(--ease); }
+.hall-fold-head { display: flex; align-items: center; gap: 8px; padding: 8px 10px; font-size: 16px; font-weight: 800; }
+.hall-fold .hall-fold .hall-fold-head { font-size: 15px; font-weight: 700; }
+.hall-fold-head small { font-size: 12px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* 标题前的小箭头：合着朝右，开了朝下 */
+.hall-fold-head::before { content: ""; flex: none; width: 7px; height: 7px; margin: 0 4px 0 1px; border: solid currentColor; border-width: 0 2px 2px 0; rotate: -45deg; transition: rotate .22s var(--ease); }
+.hall-fold.is-open > .hall-fold-head::before { rotate: 45deg; }
+/* 选中的专题在这一支里：标题是苔绿色；这一支合着的时候看不到选中的那一项，标题末尾再点一个绿点 */
+.hall-fold.has-on > .hall-fold-head { color: var(--moss); }
+.hall-fold.has-on:not(.is-open) > .hall-fold-head::after { content: ""; flex: none; width: 8px; height: 8px; margin-left: auto; border-radius: 50%; background: var(--moss); }
+/* 开合：行高在 0 和内容那么高之间过渡，里面的专题在原地淡出来，不从边上滑进来。
+   合着的那一支里的按钮不该被 Tab 走到，所以连 visibility 一起收 */
+.hall-fold-body { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .24s var(--ease), opacity .24s ease, visibility .24s; }
+.hall-fold:not(.is-open) > .hall-fold-body { grid-template-rows: 0fr; opacity: 0; visibility: hidden; }
+.hall-fold-body > div { min-height: 0; overflow: hidden; padding-left: 12px; }
+.hall-topic { display: block; padding: 7px 10px 7px 18px; font-size: 15px; font-weight: 600; }
+.hall-topic:active, .hall-fold-head:active { scale: .98; }
+/* 能开合的那层要把超出去的裁掉，往外扩的焦点框会被裁掉一截：画在按钮里面，颜色跟着字走（选中的那项是浅字深底） */
+.hall-nav :is(.hall-fold-head, .hall-topic):focus-visible { outline-color: currentColor; outline-offset: -2px; }
+.hall-topic.is-on { background: var(--moss); color: var(--paper); }
+
+/* —— 右边：标题、那一排小节、正文 —— */
+.hall-head { grid-area: head; display: flex; align-items: center; gap: 12px; padding: 16px 20px 12px var(--pad); }
+.hall-head .grow { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 14px; }
+.hall-head h2 { font-size: 30px; font-weight: 800; line-height: 1.25; }
+.hall-en { display: flex; align-items: center; gap: 8px; font: 600 16px/1.5 var(--read); color: var(--body); }
+.hall .lv { flex: none; padding: 0 8px; border-radius: 999px; background: var(--sage-pale); font: 700 12px/20px var(--font); color: var(--moss-deep); }
+.hall .only-narrow { display: none; }
+/* 正文顶上那一排小节：不折行，放不下就横着滚，不露滚动条。position 是给脚本量 offsetLeft 用的 */
+.hall-tabs { grid-area: tabs; position: relative; display: flex; gap: 6px; overflow-x: auto; padding: 0 var(--pad) 12px; scrollbar-width: none; }
+.hall-tabs::-webkit-scrollbar { display: none; }
+.hall-tabs .chip { flex: none; white-space: nowrap; transition: scale .15s var(--ease), background-color .15s ease, color .15s ease; }
+.hall-scroll { grid-area: body; overflow-y: auto; padding: 0 var(--pad) 56px; border-top: 2px solid var(--sage-pale); }
+
+/* —— 正文 —— */
+.hall-doc { font-size: 18px; line-height: 1.8; }
+.hall-doc ul { margin: 0; padding: 0; list-style: none; }
+.hall-doc strong { font-weight: 800; }
+/* pretty：最后一行别只剩一两个字 */
+.hall-doc :is(.lead, .sec-text, .sec-rule, .sec-note, .sec-tip, .sec-notes, .task) { max-width: 46em; text-wrap: pretty; }
+.hall-doc .lead { margin-top: 22px; color: var(--body); }
+.hall-doc .sec { margin-top: 40px; }
+.hall-doc > .sec:first-child { margin-top: 24px; }
+.hall-doc h3 { margin-bottom: 12px; font-size: 24px; font-weight: 800; line-height: 1.3; }
+.hall-doc h3 .no { margin-right: .35em; color: var(--moss); }
+.hall-doc h4 { margin: 22px 0 8px; font-size: 15px; font-weight: 700; color: var(--moss-deep); }
+.hall-doc .sec-text, .hall-doc .sec-rule { margin: 12px 0; }
+.hall-doc .sec-note { margin: 10px 0; font-size: 16px; color: var(--body); }
+.hall-doc .sec-tip { margin: 12px 0; padding: 12px 18px; border-radius: 16px; background: var(--amber-soft); }
+.hall-doc .verb-label { margin: 8px 0; font: 800 24px/1.3 var(--read); }
+
+/* 标记。重点形式是荧光笔划过的下半截，和课文里的组块、词库里的例句是同一支笔 */
+.hall-doc .key { background: linear-gradient(transparent 50%, var(--mark) 50%, var(--mark) 95%, transparent 95%); color: inherit; }
+.hall-doc .change { font-weight: 800; text-decoration: underline 2px; text-underline-offset: 3px; }
+.hall-doc .base { text-decoration: underline dotted 2px var(--moss); text-underline-offset: 5px; }
+.hall-doc .signal { padding: 0 6px; border-radius: 7px; box-shadow: inset 0 0 0 1.5px var(--sage); }
+/* 错句整句是灰的，错的那一处是深色加删除线：只错一个字母（drink~~s~~）也看得出来 */
+.hall-doc .wrong { color: var(--ink); text-decoration: line-through 2px; }
+
+.hall-doc .formula { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0; }
+.hall-doc .formula span { padding: 2px 12px; border-radius: 10px; background: var(--sage-pale); font-weight: 700; }
+.hall-doc .formula i { font-style: normal; font-weight: 700; color: var(--muted); }
+.hall-doc .signals { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 12px 0; font: 600 17px/1.7 var(--read); }
+.hall-doc .signals small { margin-right: 4px; font: 600 14px var(--font); color: var(--body); }
+
+/* 一条一条的：用法、例句、拼写规则、读音、错句、小测的题，都是淡绿底的一块。卡片宽的时候排成两三列，同一节里各种块的列是对齐的；
+   「比一比」一块里左右各半句，要宽一些 */
+.hall-doc :is(.uses, .lines, .spell-rules, .sounds, .mistakes, .pairs, .quiz) { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(var(--col, 420px), 100%), 1fr)); gap: 10px; margin: 12px 0; }
+.hall-doc .pairs { --col: 640px; }
+.hall-doc :is(.uses, .lines, .spell-rules, .sounds, .pairs, .mistakes, .prep-cards) > li, .hall-doc .quiz-item { padding: 14px 18px; border-radius: 16px; background: var(--sage-pale); }
+.hall-doc :is(.use-zh, .line-rule, .pair-with, .why) { font-size: 15px; font-weight: 600; line-height: 1.6; color: var(--body); }
+.hall-doc .en { display: block; font: 600 20px/1.55 var(--read); }
+.hall-doc .zh { display: block; font-size: 15px; line-height: 1.6; color: var(--body); }
+.hall-doc .answer { display: block; margin-top: 2px; font: 600 17px/1.6 var(--read); color: var(--moss-deep); }
+.hall-doc .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.hall-doc .chips span { padding: 0 10px; border-radius: 9px; background: var(--sage-pale); font: 600 17px/1.75 var(--read); }
+.hall-doc li .chips span { background: var(--paper); }
+.hall-doc .ipa { font-family: "Charis SIL", "Doulos SIL", "Lucida Grande", sans-serif; }
+.hall-doc .pair { display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 6px 22px; }
+.hall-doc .pair-with { grid-column: 1 / -1; }
+.hall-doc .pair-meaning { font-size: 15px; font-weight: 700; line-height: 1.6; color: var(--moss-deep); }
+.hall-doc :is(.bad, .good) { font: 600 19px/1.55 var(--read); }
+.hall-doc .bad { color: var(--body); }
+.hall-doc .bad::before { content: "✗ "; }
+.hall-doc .good::before { content: "✓ "; color: var(--moss); }
+.hall-doc .sec-notes { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; font-size: 16px; color: var(--body); }
+.hall-doc .sec-notes li { position: relative; padding-left: 16px; }
+.hall-doc .sec-notes li::before { content: ""; position: absolute; left: 2px; top: .78em; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+.hall-doc .task { padding: 14px 18px; border-radius: 16px; background: var(--sage-pale); }
+
+/* 表格比正文宽的时候只让它自己横着滚 */
+.hall-doc .table-wrap { margin: 12px 0; overflow-x: auto; border: 2px solid var(--sage-pale); border-radius: 16px; }
+.hall-doc table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.5; }
+.hall-doc :is(th, td) { padding: 9px 14px; text-align: left; vertical-align: top; border-bottom: 2px solid var(--sage-pale); }
+.hall-doc tr:last-child td { border-bottom: 0; }
+.hall-doc th { background: var(--sage-pale); font-size: 14px; font-weight: 700; color: var(--body); white-space: nowrap; }
+.hall-doc td[lang="en"] { font: 600 17px/1.5 var(--read); }
+.hall-doc td small { display: block; font: 600 14px/1.5 var(--font); color: var(--body); }
+
+/* 三张特殊的表 */
+.hall-doc .pattern-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr)); gap: 2px 20px; font-size: 15px; color: var(--body); }
+.hall-doc .pattern-legend strong { margin-right: 4px; color: var(--ink); }
+.hall-doc .verb-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 16px 0 12px; }
+.hall-doc .verb-search { flex: 0 1 320px; min-width: 0; padding: 7px 16px; border: 3px solid var(--sage-soft); border-radius: 999px; background: var(--paper); font-size: 16px; font-weight: 600; }
+.hall-doc .verb-search:focus { outline: none; border-color: var(--moss); }
+.hall-doc .verb-patterns { display: flex; flex-wrap: wrap; gap: 6px; }
+.hall-doc .word-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 8px; }
+.hall-doc .word-grid li { display: flex; flex-direction: column; padding: 10px 16px; border-radius: 14px; background: var(--sage-pale); line-height: 1.5; }
+.hall-doc .word-grid span { font: 600 18px/1.5 var(--read); }
+.hall-doc .word-grid small { font-size: 14px; color: var(--body); }
+.hall-doc .prep-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 10px; }
+.hall-doc .prep { font: 800 28px/1.3 var(--read); color: var(--moss); }
+
+/* —— 小测 —— 对错的颜色和练习场一样：对的是琥珀色，错的是深色边 */
+.hall-doc .quiz { --col: 460px; }
+.hall-doc .quiz-prompt { margin-bottom: 10px; font: 600 19px/1.55 var(--read); }
+.hall-doc .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.hall-doc .quiz-option { padding: 8px 14px; border: 3px solid transparent; border-radius: 14px; background: var(--paper); font: 700 17px/1.5 var(--read); text-align: left; transition: border-color .15s ease, background-color .15s ease, scale .15s var(--ease); }
+.hall-doc .quiz-option:active { scale: .97; }
+.hall-doc .quiz-option.is-right { border-color: var(--amber-deep); background: var(--amber-soft); }
+.hall-doc .quiz-option.is-wrong { border-color: var(--ink); animation: shake .35s ease; }
+.hall-doc .quiz-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; }
+.hall-doc .quiz-row :is(input, textarea) { flex: 1 1 240px; min-width: 0; min-height: 46px; padding: 6px 14px; border: 3px solid transparent; border-radius: 14px; background: var(--paper); font: 600 18px/1.5 var(--read); resize: vertical; }
+.hall-doc .quiz-row :is(input, textarea):focus { outline: none; border-color: var(--moss); }
+.hall-doc .quiz-row .button { min-height: 46px; padding: 0 18px; font-size: 16px; box-shadow: none; }
+.hall-doc .quiz-row .button.plain { background: var(--paper); }
+.hall-doc :is(.quiz-feedback, .quiz-answer) { margin-top: 10px; font-size: 16px; line-height: 1.65; animation: fade-in .3s ease-out; }
+/* 中文的「对了！」后面是全角标点，自己带着空；英文的要另外隔开 */
+html[lang="en"] .hall-doc .quiz-feedback strong { margin-right: 6px; }
+.hall-doc .quiz-feedback.is-right strong { color: var(--moss-deep); }
+.hall-doc .quiz-answer span { font: 600 18px/1.5 var(--read); }
+
+@media (hover: hover) and (pointer: fine) {
+  .hall-topic:not(.is-on):hover, .hall-fold-head:hover { background: var(--sage-soft); }
+  /* 选中的（深绿底、浅色字）只能再深一档，不能变浅 */
+  .hall-topic.is-on:hover, .hall .chip.is-on:hover { background: var(--moss-deep); }
+  .hall-doc .quiz-option:not(.is-right, .is-wrong):hover { border-color: var(--sage); }
+  .hall-doc .quiz-row .button.plain:hover { background: var(--sage-soft); }
+}
+
+/* 窄屏：只剩一栏。左边那一栏变成盖在小节和正文上面的一层，「目录」按钮开关它；它是原地淡出来的，不从边上滑进来 */
+@media (max-width: 720px) {
+  .hall { --pad: 18px; grid-template: "head" auto "tabs" auto "body" minmax(0, 1fr) / minmax(0, 1fr); }
+  .hall-nav { grid-area: tabs-start / 1 / body-end / auto; z-index: 2; border-right: 0; border-top: 2px solid var(--sage-pale); opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s; }
+  .hall.is-nav .hall-nav { opacity: 1; visibility: visible; }
+  .hall-nav h2 { padding: 14px 18px 6px; font-size: 20px; }
+  .hall-topic { padding-block: 9px; }
+  .hall-fold-head { padding-block: 10px; }
+  .hall .only-narrow { display: inline-flex; }
+  /* 第一行是「目录」和 ✕，标题另起一行占满：长标题才不会被挤成四五行 */
+  .hall-head { flex-wrap: wrap; gap: 8px; padding: 14px 18px 10px; }
+  .hall-head .chip { margin-right: auto; }
+  .hall-head .grow { order: 1; flex-basis: 100%; }
+  .hall-head h2 { font-size: 22px; }
+  .hall-en { font-size: 14px; }
+  .hall-scroll { padding-bottom: 28px; }
+  .hall-doc { font-size: 16px; line-height: 1.75; }
+  .hall-doc .sec { margin-top: 30px; }
+  .hall-doc > .sec:first-child, .hall-doc .lead { margin-top: 18px; }
+  .hall-doc h3 { font-size: 20px; }
+  .hall-doc .en { font-size: 18px; }
+  .hall-doc :is(.bad, .good) { font-size: 18px; }
+  .hall-doc :is(.uses, .lines, .spell-rules, .sounds, .pairs, .mistakes, .prep-cards) > li, .hall-doc .quiz-item { padding: 12px 14px; }
+  .hall-doc .pair, .hall-doc .quiz-options { grid-template-columns: 1fr; }
+  /* 表格别被挤成一个字一行：给个最小宽度，让它在自己的框里横着滚 */
+  .hall-doc table { min-width: 600px; }
+}

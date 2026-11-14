@@ -1,0 +1,445 @@
+{
+ "id": "g-future-forms",
+ "title": "将来的几种说法",
+ "en": "Talking about the Future",
+ "group": "时态",
+ "level": "B1",
+ "order": 8,
+ "keywords": [
+  "be going to 和 will",
+  "将来的三种说法",
+  "预测将来",
+  "be likely to",
+  "有把握的将来",
+  "马上就要",
+  "推测将来",
+  "说将来"
+ ],
+ "related": [
+  "g-future-continuous-perfect",
+  "g-present-continuous",
+  "g-sequence-of-tenses",
+  "g-present-simple"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "英语说将来有好几种说法。选哪种，看你心里：是**刚刚决定**、**早就打算**、**已经约好**，还是**按时刻表**来。",
+   "uses": [
+    {
+     "zh": "刚刚决定，或者主动帮忙：will",
+     "en": "The printer's broken? I[['ll]] ((call)) IT.",
+     "en_zh": "打印机坏了？我来给 IT 打电话。"
+    },
+    {
+     "zh": "早就打算好的事：be going to",
+     "en": "I[['m going to]] ((learn)) SwiftUI <<this year>>.",
+     "en_zh": "我打算今年学 SwiftUI。"
+    },
+    {
+     "zh": "已经约好、定了时间的事：现在进行时",
+     "en": "We[['re meeting]] the client <<on Monday>>.",
+     "en_zh": "我们周一跟客户见面。"
+    },
+    {
+     "zh": "时刻表、日程表上的事：一般现在时",
+     "en": "The train [[leaves]] at 7:15 <<tomorrow>>.",
+     "en_zh": "火车明早 7:15 开。"
+    }
+   ],
+   "signals": [
+    "tomorrow",
+    "next week",
+    "soon",
+    "in two days",
+    "tonight",
+    "I think",
+    "probably"
+   ]
+  },
+  "will": {
+   "title": "will：当场决定、答应、帮忙",
+   "short": "will",
+   "formula": [
+    "主语",
+    "will",
+    "动词原形",
+    "其他"
+   ],
+   "rule": "说话这一刻**才决定**的事，用 will。答应别人、主动帮忙也用 will。will 后面永远是原形，不分人称。",
+   "items": [
+    {
+     "rule": "当场决定",
+     "en": "It's cold in here. I[['ll]] ((close)) the window.",
+     "zh": "这里好冷，我去关窗。"
+    },
+    {
+     "rule": "答应别人",
+     "en": "Don't worry, I[['ll]] ((send)) it to you tonight.",
+     "zh": "别担心，我今晚发给你。"
+    },
+    {
+     "rule": "主动提出帮忙：英式常问 Shall I …？",
+     "en": "[[Shall]] I ((book)) the meeting room?",
+     "zh": "要我去订会议室吗？"
+    },
+    {
+     "rule": "否定：won't = will not",
+     "en": "I [[won't]] ((be)) late, I promise.",
+     "zh": "我不会迟到的，我保证。"
+    }
+   ],
+   "contractions": [
+    "I will = I[['ll]] · it will = it[['ll]]",
+    "will not = [[won't]]"
+   ]
+  },
+  "goingto": {
+   "title": "be going to：早就打算",
+   "short": "打算",
+   "formula": [
+    "主语",
+    "am / is / are going to",
+    "动词原形",
+    "其他"
+   ],
+   "rule": "说话之前**心里早就想好了**的事，用 be going to。be 要跟着主语变：am、is、are。",
+   "examples": [
+    {
+     "en": "I[['m going to]] ((ask)) for a pay rise.",
+     "zh": "我打算去申请加薪。"
+    },
+    {
+     "en": "We[['re going to]] ((rewrite)) the settings screen <<next sprint>>.",
+     "zh": "我们打算下个迭代重写设置页。"
+    },
+    {
+     "en": "[[Are]] you [[going to]] ((watch)) the match tonight?",
+     "zh": "你今晚打算看比赛吗？",
+     "answer": "Yes, I [[am]]. / No, I[['m not]]."
+    }
+   ],
+   "wrong": {
+    "bad": "I ~~going to~~ call him.",
+    "good": "I[['m going to]] ((call)) him."
+   }
+  },
+  "arranged": {
+   "title": "已经约好 / 按时刻表",
+   "short": "约好",
+   "text": "**已经约好**的事（时间、地点、人都定了）用现在进行时；**时刻表、日程表**上的事用一般现在时。",
+   "items": [
+    {
+     "rule": "约好了：日历里已经有了",
+     "en": "I[['m seeing]] the dentist <<on Thursday>>.",
+     "zh": "我周四去看牙医。"
+    },
+    {
+     "rule": "约好了：票都买好了",
+     "en": "We[['re flying]] to Lisbon <<next Friday>>.",
+     "zh": "我们下周五飞里斯本。"
+    },
+    {
+     "rule": "时刻表：会议、火车、航班",
+     "en": "The stand-up [[starts]] at 9:30 <<tomorrow>>.",
+     "zh": "明天站会 9:30 开始。"
+    },
+    {
+     "rule": "时刻表：电影、商店营业时间",
+     "en": "The film [[begins]] at eight.",
+     "zh": "电影八点开始。"
+    }
+   ]
+  },
+  "predict": {
+   "title": "猜将来会怎样",
+   "short": "预测",
+   "text": "猜将来：**凭想法、凭感觉**猜，用 will；**眼睛已经看到了证据**，用 be going to。",
+   "items": [
+    {
+     "rule": "凭想法：常和 I think、I'm sure 一起用",
+     "en": "I think the release [[will]] ((go)) fine.",
+     "zh": "我觉得这次发布会很顺利。"
+    },
+    {
+     "rule": "凭想法：不太确定时加 probably",
+     "en": "It[['ll]] <<probably>> ((take)) two days.",
+     "zh": "这大概要两天。"
+    },
+    {
+     "rule": "看到证据：天上有乌云",
+     "en": "Look at those clouds. It[['s going to]] ((rain)).",
+     "zh": "看那些乌云，要下雨了。"
+    },
+    {
+     "rule": "看到证据：进度条快满了",
+     "en": "It's at 99%. It[['s going to]] ((finish)) any second.",
+     "zh": "已经到 99% 了，马上就好。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "be going to",
+     "this": {
+      "meaning": "will：说话这一刻才决定",
+      "en": "— We're out of milk. — Oh, I[['ll]] ((get)) some."
+     },
+     "that": {
+      "meaning": "going to：之前就决定了",
+      "en": "I[['m going to]] ((get)) some milk after work."
+     }
+    },
+    {
+     "with": "现在进行时",
+     "this": {
+      "meaning": "going to：自己打算，还没约",
+      "en": "I[['m going to]] ((see)) a doctor."
+     },
+     "that": {
+      "meaning": "现在进行时：已经约好了",
+      "en": "I[['m seeing]] the doctor <<at four>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I will ~~to~~ call you later.",
+     "good": "I[['ll]] ((call)) you later.",
+     "why": "will 后面直接跟原形，不加 to。"
+    },
+    {
+     "bad": "She will ~~comes~~ tomorrow.",
+     "good": "She [[will]] ((come)) tomorrow.",
+     "why": "will 后面用原形，不加 s。"
+    },
+    {
+     "bad": "When I ~~will finish~~, I'll call you.",
+     "good": "<<When>> I [[finish]], I'll call you.",
+     "why": "when、if 后面说将来，用一般现在时。"
+    },
+    {
+     "bad": "— The phone's ringing. — I~~'m going to~~ get it!",
+     "good": "— The phone's ringing. — I[['ll]] ((get)) it!",
+     "why": "电话响了才决定去接，是当场决定，用 will。"
+    },
+    {
+     "bad": "I ~~will see~~ the dentist at three tomorrow. It's booked.",
+     "good": "I[['m seeing]] the dentist at three tomorrow. It's booked.",
+     "why": "已经约好的事，用现在进行时更自然。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "— I'm so thirsty. — Wait here, I ___ you some water.",
+   "options": [
+    "will get",
+    "am going to get",
+    "get"
+   ],
+   "answer": "will get",
+   "explain": "听到对方渴了才决定去拿，是当场决定：I[['ll]] ((get))。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我打算今年学 SwiftUI。",
+   "answer": "I'm going to learn SwiftUI this year.",
+   "accept": [
+    "I am going to learn SwiftUI this year."
+   ],
+   "explain": "早就打算好的事：I[['m going to]] ((learn))。"
+  },
+  {
+   "id": "q03",
+   "section": "will",
+   "type": "fill",
+   "prompt": "Don't worry, I ___ (send) it to you tonight.",
+   "answer": "will send",
+   "accept": [
+    "'ll send"
+   ],
+   "explain": "答应别人用 will：[[will]] ((send))。"
+  },
+  {
+   "id": "q04",
+   "section": "will",
+   "type": "fix",
+   "prompt": "改错：I will to call you later.",
+   "answer": "I will call you later.",
+   "accept": [
+    "I'll call you later."
+   ],
+   "explain": "will 后面直接跟原形：[[will]] ((call))。"
+  },
+  {
+   "id": "q05",
+   "section": "will",
+   "type": "transform",
+   "prompt": "改成否定句：I will be late.",
+   "answer": "I won't be late.",
+   "accept": [
+    "I will not be late."
+   ],
+   "explain": "will not = [[won't]]。"
+  },
+  {
+   "id": "q06",
+   "section": "goingto",
+   "type": "fill",
+   "prompt": "We ___ (rewrite) the settings screen next sprint. We decided last week.",
+   "answer": "are going to rewrite",
+   "accept": [
+    "'re going to rewrite",
+    "are rewriting",
+    "'re rewriting"
+   ],
+   "explain": "上周就决定了，是早就打算的事：[[are going to]] ((rewrite))。"
+  },
+  {
+   "id": "q07",
+   "section": "goingto",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：She is going to buy a new laptop.（问「打算买什么」）",
+   "answer": "What is she going to buy?",
+   "accept": [
+    "What's she going to buy?"
+   ],
+   "traps": [
+    {
+     "input": "What she is going to buy?",
+     "note": "问句要把 is 放到 she 前面。"
+    }
+   ],
+   "explain": "What [[is]] she [[going to]] ((buy))？"
+  },
+  {
+   "id": "q08",
+   "section": "goingto",
+   "type": "fix",
+   "prompt": "改错：I going to ask for a pay rise.",
+   "answer": "I'm going to ask for a pay rise.",
+   "accept": [
+    "I am going to ask for a pay rise."
+   ],
+   "explain": "going to 前面不能少了 am：I[['m going to]]。"
+  },
+  {
+   "id": "q09",
+   "section": "arranged",
+   "type": "choice",
+   "prompt": "I ___ the dentist on Thursday. It's in my calendar.",
+   "options": [
+    "see",
+    "am seeing",
+    "will see"
+   ],
+   "answer": "am seeing",
+   "explain": "已经约好、写进日历：[[am seeing]]。"
+  },
+  {
+   "id": "q10",
+   "section": "arranged",
+   "type": "fill",
+   "prompt": "The stand-up ___ (start) at 9:30 tomorrow.",
+   "answer": "starts",
+   "accept": [],
+   "explain": "日程表上的事用一般现在时：[[start{s}]]。"
+  },
+  {
+   "id": "q11",
+   "section": "predict",
+   "type": "choice",
+   "prompt": "Look at those dark clouds! It ___ rain.",
+   "options": [
+    "will",
+    "is going to"
+   ],
+   "answer": "is going to",
+   "explain": "眼睛看到了乌云，有证据：[[is going to]]。"
+  },
+  {
+   "id": "q12",
+   "section": "predict",
+   "type": "fill",
+   "prompt": "I think the release ___ (go) fine.",
+   "answer": "will go",
+   "accept": [
+    "'ll go"
+   ],
+   "explain": "<<I think>> 是凭想法猜：[[will]] ((go))。"
+  },
+  {
+   "id": "q13",
+   "section": "predict",
+   "type": "translate",
+   "prompt": "翻译：这大概要两天。",
+   "answer": "It'll probably take two days.",
+   "accept": [
+    "It will probably take two days."
+   ],
+   "explain": "凭想法猜，不太确定：It[['ll]] <<probably>> ((take))。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "— The phone's ringing. — I ___ it!",
+   "options": [
+    "will get",
+    "am going to get",
+    "get"
+   ],
+   "answer": "will get",
+   "explain": "电话响了才决定去接：[[will]] ((get))，口语说 I'll get it!"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：When I will finish, I'll call you.",
+   "answer": "When I finish, I'll call you.",
+   "accept": [
+    "When I finish, I will call you."
+   ],
+   "explain": "<<When>> 后面说将来，用一般现在时：I [[finish]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：She will comes tomorrow.",
+   "answer": "She will come tomorrow.",
+   "accept": [
+    "She'll come tomorrow."
+   ],
+   "explain": "will 后面用原形：[[will]] ((come))。"
+  }
+ ],
+ "openTask": {
+  "prompt": "说 3 句关于下周的话：一个已经约好的安排、一件你早就打算做的事、一个你对下周的预测。",
+  "rules": [
+   "已经约好的安排用现在进行时",
+   "早就打算的事用 be going to + 动词原形",
+   "will 和 going to 后面都用动词原形；when / if 后面不用 will"
+  ],
+  "note": "规则判 will / going to / 进行时的形式（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

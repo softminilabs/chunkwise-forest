@@ -1,0 +1,400 @@
+{
+ "id": "g-there-be",
+ "title": "there be",
+ "en": "There is and There are",
+ "group": "句子",
+ "level": "A2",
+ "order": 27,
+ "keywords": [
+  "there be"
+ ],
+ "related": [
+  "g-countable",
+  "g-quantifiers",
+  "g-be-verb"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "there be 就是「**某个地方有某个东西**」：桌上有本书 = There's a book on the table。这里的 there **不是**「那里」，只是个开头。",
+   "uses": [
+    {
+     "zh": "某个时间有件事",
+     "en": "[[There's]] a meeting at ten.",
+     "en_zh": "十点有个会。"
+    },
+    {
+     "zh": "还有几个东西",
+     "en": "[[There are]] three bugs left.",
+     "en_zh": "还剩三个 bug。"
+    },
+    {
+     "zh": "问有没有",
+     "en": "[[Is there]] a coffee shop near here?",
+     "en_zh": "这附近有咖啡店吗？"
+    }
+   ]
+  },
+  "positive": {
+   "title": "肯定：is 还是 are",
+   "short": "肯定",
+   "formula": [
+    "There",
+    "is / are",
+    "东西",
+    "地点 / 时间"
+   ],
+   "rule": "be 看**后面的东西**：一个、或者不能数的（milk、time），用 is；好几个，用 are。口诀：**一个用 is，好几个用 are。**",
+   "examples": [
+    {
+     "en": "[[There's]] a problem with the login page.",
+     "zh": "登录页有个问题。"
+    },
+    {
+     "en": "[[There are]] two new people on the team.",
+     "zh": "团队里来了两个新人。"
+    },
+    {
+     "en": "[[There's]] some milk in the fridge.",
+     "zh": "冰箱里有点牛奶。"
+    }
+   ],
+   "notes": [
+    "后面有好几样东西时，看**第一个**：There [[is]] a laptop and two phones on the desk."
+   ],
+   "wrong": {
+    "bad": "There ~~is~~ two bugs in this file.",
+    "good": "There [[are]] two bugs in this file."
+   }
+  },
+  "negative": {
+   "title": "否定：没有",
+   "short": "否定",
+   "formula": [
+    "There",
+    "isn't / aren't",
+    "any + 东西"
+   ],
+   "rule": "is、are 后面加 not；也可以更简单地说 **There's no + 东西**。",
+   "examples": [
+    {
+     "en": "There [[isn't]] any coffee left.",
+     "zh": "咖啡一点都没了。"
+    },
+    {
+     "en": "There [[aren't]] any tickets for Friday.",
+     "zh": "周五的票都没了。"
+    },
+    {
+     "en": "There[['s no]] time to test it properly.",
+     "zh": "没时间好好测了。"
+    }
+   ]
+  },
+  "question": {
+   "title": "疑问：有没有",
+   "short": "疑问",
+   "formula": [
+    "Is / Are",
+    "there",
+    "东西…？"
+   ],
+   "rule": "把 is、are 挪到 there 前面。回答也用 there：Yes, there is. 不说 Yes, it is。",
+   "examples": [
+    {
+     "en": "[[Is there]] a lift in this building?",
+     "zh": "这栋楼有电梯吗？",
+     "answer": "Yes, there [[is]]. / No, there [[isn't]]."
+    },
+    {
+     "en": "[[Are there]] any questions?",
+     "zh": "大家有问题吗？",
+     "answer": "Yes, there [[are]]. / No, there [[aren't]]."
+    },
+    {
+     "en": "How many people [[are there]] on your team?",
+     "zh": "你们团队有几个人？",
+     "answer": "There [[are]] eight."
+    }
+   ]
+  },
+  "tenses": {
+   "title": "过去和将来",
+   "short": "时态",
+   "rule": "说过去、将来，**只改 be**，there 不动。",
+   "items": [
+    {
+     "rule": "过去：was / were",
+     "en": "There [[was]] a power cut last night.",
+     "zh": "昨晚停电了。"
+    },
+    {
+     "rule": "过去：was / were",
+     "en": "There [[were]] lots of people at the meetup.",
+     "zh": "聚会上人很多。"
+    },
+    {
+     "rule": "将来：will be",
+     "en": "There [[will be]] a short delay.",
+     "zh": "会有一点延误。"
+    },
+    {
+     "rule": "已经：has / have been",
+     "en": "There[['s been]] an accident on the motorway.",
+     "zh": "高速上出车祸了。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "have",
+     "this": {
+      "meaning": "there be：某个地方有",
+      "en": "[[There are]] eight people on our team."
+     },
+     "that": {
+      "meaning": "have：某人或某个东西拥有",
+      "en": "Our team [[has]] eight people."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "~~There have~~ a meeting today.",
+     "good": "[[There's]] a meeting today.",
+     "why": "「有」某件事，用 there is，不用 there have。"
+    },
+    {
+     "bad": "~~In my office has~~ a coffee machine.",
+     "good": "[[There's]] a coffee machine in my office.",
+     "why": "中文「我办公室有……」要换成 there is，地点放后面。"
+    },
+    {
+     "bad": "There ~~is~~ three bugs left.",
+     "good": "There [[are]] three bugs left.",
+     "why": "好几个用 are。"
+    },
+    {
+     "bad": "Is there a lift? — Yes, ~~it is~~.",
+     "good": "Is there a lift? — Yes, there [[is]].",
+     "why": "用 there 问，就用 there 答。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：十点有个会。",
+   "answer": "There's a meeting at ten.",
+   "accept": [
+    "There is a meeting at ten.",
+    "There's a meeting at 10.",
+    "There is a meeting at 10.",
+    "There's a meeting at ten o'clock.",
+    "There is a meeting at ten o'clock."
+   ],
+   "traps": [
+    {
+     "input": "There have a meeting at ten.",
+     "note": "「有」某件事用 there is，不用 there have。"
+    }
+   ],
+   "explain": "某个时间有件事：[[There's]]…"
+  },
+  {
+   "id": "q02",
+   "section": "positive",
+   "type": "choice",
+   "prompt": "There ___ two new people on the team.",
+   "options": [
+    "is",
+    "are",
+    "have",
+    "has"
+   ],
+   "answer": "are",
+   "explain": "两个人，用 [[are]]。"
+  },
+  {
+   "id": "q03",
+   "section": "positive",
+   "type": "choice",
+   "prompt": "There ___ some milk in the fridge.",
+   "options": [
+    "is",
+    "are"
+   ],
+   "answer": "is",
+   "explain": "milk 不能数，用 [[is]]。"
+  },
+  {
+   "id": "q04",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "There ___ a laptop and two phones on the desk.",
+   "answer": "is",
+   "accept": [],
+   "traps": [
+    {
+     "input": "are",
+     "note": "看紧跟的第一个东西 a laptop，用 is。"
+    }
+   ],
+   "explain": "看第一个：a laptop，用 [[is]]。"
+  },
+  {
+   "id": "q05",
+   "section": "negative",
+   "type": "transform",
+   "prompt": "改成否定句：There is some coffee left.",
+   "answer": "There isn't any coffee left.",
+   "accept": [
+    "There is not any coffee left.",
+    "There's no coffee left.",
+    "There is no coffee left."
+   ],
+   "explain": "isn't + any：There [[isn't]] any…"
+  },
+  {
+   "id": "q06",
+   "section": "negative",
+   "type": "choice",
+   "prompt": "Sorry, there ___ time to test it properly.",
+   "options": [
+    "'s no",
+    "isn't no",
+    "aren't",
+    "not"
+   ],
+   "answer": "'s no",
+   "explain": "There[['s no]] + 东西 = 没有。"
+  },
+  {
+   "id": "q07",
+   "section": "question",
+   "type": "transform",
+   "prompt": "改成一般疑问句：There are some questions.",
+   "answer": "Are there any questions?",
+   "accept": [],
+   "explain": "Are 挪到 there 前面，some 变 any：[[Are there]] any…？"
+  },
+  {
+   "id": "q08",
+   "section": "question",
+   "type": "fill",
+   "prompt": "— Is there a lift in this building? — Yes, ___ is.",
+   "answer": "there",
+   "accept": [],
+   "traps": [
+    {
+     "input": "it",
+     "note": "用 there 问，就用 there 答。"
+    }
+   ],
+   "explain": "用 there 问，就用 [[there]] 答。"
+  },
+  {
+   "id": "q09",
+   "section": "question",
+   "type": "make-question",
+   "prompt": "按括号里的提示提问：There are eight people on our team.（问「几个人」）",
+   "answer": "How many people are there on your team?",
+   "accept": [
+    "How many people are there in your team?",
+    "How many people are on your team?",
+    "How many people are in your team?"
+   ],
+   "explain": "How many + 名词 + [[are there]]…？"
+  },
+  {
+   "id": "q10",
+   "section": "tenses",
+   "type": "fill",
+   "prompt": "There ___ (be) a power cut last night.",
+   "answer": "was",
+   "accept": [],
+   "explain": "昨晚 + 一次停电：[[was]]。"
+  },
+  {
+   "id": "q11",
+   "section": "tenses",
+   "type": "fill",
+   "prompt": "There ___ (be) lots of people at the meetup yesterday.",
+   "answer": "were",
+   "accept": [],
+   "explain": "过去 + 很多人：[[were]]。"
+  },
+  {
+   "id": "q12",
+   "section": "tenses",
+   "type": "choice",
+   "prompt": "There ___ a short delay to the 8:15 train.",
+   "options": [
+    "will be",
+    "will have",
+    "will"
+   ],
+   "answer": "will be",
+   "explain": "将来只改 be：[[will be]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：In my office has a coffee machine.",
+   "answer": "There's a coffee machine in my office.",
+   "accept": [
+    "There is a coffee machine in my office.",
+    "In my office, there's a coffee machine.",
+    "In my office there is a coffee machine.",
+    "My office has a coffee machine."
+   ],
+   "explain": "「某地有」用 [[There's]]，地点放后面。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：There have a meeting today.",
+   "answer": "There's a meeting today.",
+   "accept": [
+    "There is a meeting today.",
+    "We have a meeting today."
+   ],
+   "explain": "「有」某件事用 [[There's]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：There is three bugs left.",
+   "answer": "There are three bugs left.",
+   "accept": [
+    "There're three bugs left."
+   ],
+   "explain": "好几个用 [[are]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 there be 介绍你的办公室或家附近：写 4 句，至少一句用复数，一句否定，一句问「有没有」。",
+  "rules": [
+   "一个或不可数用 is，好几个用 are，看后面紧跟的第一个东西",
+   "不说 there have；疑问把 is / are 放到 there 前面"
+  ],
+  "note": "规则判 is / are 的选择和语序（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

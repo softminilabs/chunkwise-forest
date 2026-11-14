@@ -1,0 +1,413 @@
+{
+ "id": "g-adverbial-reason-result",
+ "title": "状语从句：原因、结果、让步",
+ "en": "Clauses of Reason, Result and Contrast",
+ "group": "句子",
+ "level": "B1",
+ "order": 32,
+ "keywords": [
+  "原因和结果",
+  "让步",
+  "although / even though",
+  "表目的",
+  "so that"
+ ],
+ "related": [
+  "g-adverbial-time-condition",
+  "g-linking-words",
+  "g-too-enough-so-such"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "这些小句子回答四个问题：**为什么**（because）、**结果怎样**（so … that）、**虽然……还是**（although）、**为了什么**（so that）。",
+   "uses": [
+    {
+     "zh": "说原因",
+     "en": "I'm tired [[because]] I worked late.",
+     "en_zh": "我累了，因为加班到很晚。"
+    },
+    {
+     "zh": "说结果",
+     "en": "The meeting was [[so]] long [[that]] I missed lunch.",
+     "en_zh": "会开得太久，我都没吃上午饭。"
+    },
+    {
+     "zh": "说「虽然……还是」",
+     "en": "[[Although]] it was raining, we went out.",
+     "en_zh": "虽然在下雨，我们还是出门了。"
+    },
+    {
+     "zh": "说目的",
+     "en": "I left early [[so that]] I could catch the train.",
+     "en_zh": "我早点走，好赶上火车。"
+    }
+   ],
+   "signals": [
+    "because",
+    "since",
+    "as",
+    "so",
+    "so … that",
+    "such … that",
+    "although",
+    "even though",
+    "so that"
+   ]
+  },
+  "reason": {
+   "title": "原因：because / since / as",
+   "short": "原因",
+   "rule": "**because** 最常用，回答「为什么」。**since** 和 **as** 常放句首，说大家都知道的原因。**because of** 后面只跟名词，不跟句子。",
+   "examples": [
+    {
+     "en": "I'm late [[because]] my train was cancelled.",
+     "zh": "我迟到了，因为火车取消了。"
+    },
+    {
+     "en": "[[Since]] you're here, can you look at this bug?",
+     "zh": "既然你在，能帮我看看这个 bug 吗？"
+    },
+    {
+     "en": "We stayed in [[because of]] the rain.",
+     "zh": "因为下雨，我们待在家里。"
+    }
+   ],
+   "wrong": {
+    "bad": "We stayed in ~~because~~ the rain.",
+    "good": "We stayed in [[because of]] the rain."
+   }
+  },
+  "result": {
+   "title": "结果：so / so … that / such … that",
+   "short": "结果",
+   "rule": "「**so + 形容词 + that**」和「**such + a + 名词 + that**」都是「太……所以……」。so 单独用就是「所以」。",
+   "examples": [
+    {
+     "en": "The app was [[so]] slow [[that]] users gave up.",
+     "zh": "App 慢到用户都放弃了。"
+    },
+    {
+     "en": "It was [[such]] a good talk [[that]] nobody left early.",
+     "zh": "演讲太精彩了，没一个人提前走。"
+    },
+    {
+     "en": "The server was down, [[so]] we went home.",
+     "zh": "服务器挂了，所以我们回家了。"
+    }
+   ],
+   "tip": "口诀：**so 跟形容词，such 跟名词。** so tired · such a long day。"
+  },
+  "concession": {
+   "title": "让步：although / even though",
+   "short": "让步",
+   "rule": "**although** = 「虽然」。英语里 although 和 but **只能留一个**，不像中文「虽然……但是」。**even though** 语气更强：「就算真的……也」。",
+   "examples": [
+    {
+     "en": "[[Although]] the fix was small, it took all day.",
+     "zh": "虽然改动很小，却花了一整天。"
+    },
+    {
+     "en": "She came to work [[even though]] she was ill.",
+     "zh": "她虽然病了，还是来上班了。"
+    },
+    {
+     "en": "It's a nice flat. It's a bit small, [[though]].",
+     "zh": "这公寓挺好的，就是有点小。"
+    }
+   ],
+   "wrong": {
+    "bad": "Although it was late, ~~but~~ we kept working.",
+    "good": "[[Although]] it was late, we kept working."
+   },
+   "notes": [
+    "though 放句末，意思是「不过」，口语里特别常见。"
+   ]
+  },
+  "purpose": {
+   "title": "目的：so that / to",
+   "short": "目的",
+   "rule": "**so that** = 「为了、好让」，后面是一句完整的话，常带 can / could / will / would。前后是同一个人时，用「**to + 动词**」更简单。",
+   "examples": [
+    {
+     "en": "I'll write it down [[so that]] I don't forget.",
+     "zh": "我把它写下来，免得忘了。"
+    },
+    {
+     "en": "Speak up [[so that]] everyone [[can]] hear you.",
+     "zh": "大声点，好让大家都听得到。"
+    },
+    {
+     "en": "I came in early [[to]] ((finish)) the report.",
+     "zh": "我早点来是为了写完报告。"
+    }
+   ]
+  },
+  "compare": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "so",
+     "this": {
+      "meaning": "so that：目的，「为了」",
+      "en": "I left early [[so that]] I could catch the train."
+     },
+     "that": {
+      "meaning": "so：结果，「所以」",
+      "en": "I left early, [[so]] I caught the train."
+     }
+    },
+    {
+     "with": "despite",
+     "this": {
+      "meaning": "although 后面跟一句话",
+      "en": "[[Although]] it was raining, we went out."
+     },
+     "that": {
+      "meaning": "despite 后面只跟名词或 -ing",
+      "en": "[[Despite]] the rain, we went out."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Although it was late, ~~but~~ we kept working.",
+     "good": "[[Although]] it was late, we kept working.",
+     "why": "although 和 but 只留一个。"
+    },
+    {
+     "bad": "Because it rained, ~~so~~ we stayed in.",
+     "good": "[[Because]] it rained, we stayed in.",
+     "why": "because 和 so 也只留一个。"
+    },
+    {
+     "bad": "It was ~~so~~ a good talk.",
+     "good": "It was [[such]] a good talk.",
+     "why": "后面有名词，用 such。"
+    },
+    {
+     "bad": "~~Despite of~~ the rain, we went out.",
+     "good": "[[Despite]] the rain, we went out.",
+     "why": "despite 后面不加 of。"
+    },
+    {
+     "bad": "We stayed in ~~because~~ the rain.",
+     "good": "We stayed in [[because of]] the rain.",
+     "why": "后面只有名词，用 because of。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我累了，因为我加班到很晚。",
+   "answer": "I'm tired because I worked late.",
+   "accept": [
+    "I am tired because I worked late.",
+    "I'm tired because I worked late last night."
+   ],
+   "explain": "说原因用 [[because]]。"
+  },
+  {
+   "id": "q02",
+   "section": "reason",
+   "type": "choice",
+   "prompt": "We stayed in ___ the rain.",
+   "options": [
+    "because",
+    "because of",
+    "so",
+    "although"
+   ],
+   "answer": "because of",
+   "explain": "后面只有名词 the rain，用 [[because of]]。"
+  },
+  {
+   "id": "q03",
+   "section": "reason",
+   "type": "fill",
+   "prompt": "___ you're here, can you look at this bug?（既然）",
+   "answer": "Since",
+   "accept": [
+    "As",
+    "since",
+    "as"
+   ],
+   "explain": "「既然」用 [[Since]]，也可以用 As。"
+  },
+  {
+   "id": "q04",
+   "section": "result",
+   "type": "choice",
+   "prompt": "It was ___ a good talk that nobody left early.",
+   "options": [
+    "so",
+    "such",
+    "very",
+    "too"
+   ],
+   "answer": "such",
+   "explain": "后面是名词 a good talk，用 [[such]]。"
+  },
+  {
+   "id": "q05",
+   "section": "result",
+   "type": "choice",
+   "prompt": "The app was ___ slow that users gave up.",
+   "options": [
+    "so",
+    "such",
+    "such a"
+   ],
+   "answer": "so",
+   "explain": "后面是形容词 slow，用 [[so]]。"
+  },
+  {
+   "id": "q06",
+   "section": "result",
+   "type": "transform",
+   "prompt": "用 so … that 合成一句：The meeting was very long. I missed lunch.",
+   "answer": "The meeting was so long that I missed lunch.",
+   "accept": [],
+   "explain": "[[so]] + 形容词 + [[that]]。"
+  },
+  {
+   "id": "q07",
+   "section": "concession",
+   "type": "fix",
+   "prompt": "改错：Although it was late, but we kept working.",
+   "answer": "Although it was late, we kept working.",
+   "accept": [
+    "It was late, but we kept working."
+   ],
+   "explain": "although 和 but 只留一个。"
+  },
+  {
+   "id": "q08",
+   "section": "concession",
+   "type": "fill",
+   "prompt": "She came to work even ___ she was ill.",
+   "answer": "though",
+   "accept": [],
+   "explain": "even [[though]] = 就算……也。"
+  },
+  {
+   "id": "q09",
+   "section": "concession",
+   "type": "translate",
+   "prompt": "翻译：虽然改动很小，却花了一整天。",
+   "answer": "Although the fix was small, it took all day.",
+   "accept": [
+    "Although the change was small, it took all day.",
+    "Even though the fix was small, it took all day.",
+    "Though the fix was small, it took all day.",
+    "Although the change was small, it took the whole day.",
+    "Although the fix was small, it took the whole day."
+   ],
+   "explain": "用 [[although]]，后面不再加 but。"
+  },
+  {
+   "id": "q10",
+   "section": "purpose",
+   "type": "fill",
+   "prompt": "I'll write it down so ___ I don't forget.",
+   "answer": "that",
+   "accept": [],
+   "explain": "目的用 so [[that]]。"
+  },
+  {
+   "id": "q11",
+   "section": "purpose",
+   "type": "choice",
+   "prompt": "I came in early ___ finish the report.",
+   "options": [
+    "to",
+    "so that",
+    "for",
+    "because"
+   ],
+   "answer": "to",
+   "explain": "前后同一个人，用 [[to]] + 动词原形。"
+  },
+  {
+   "id": "q12",
+   "section": "purpose",
+   "type": "transform",
+   "prompt": "用 so that 合成一句：Speak up. Everyone can hear you.",
+   "answer": "Speak up so that everyone can hear you.",
+   "accept": [
+    "Speak up so everyone can hear you."
+   ],
+   "explain": "[[so that]] 后面是完整的一句话。"
+  },
+  {
+   "id": "q13",
+   "section": "compare",
+   "type": "choice",
+   "prompt": "I left early, ___ I caught the train.（结果赶上了）",
+   "options": [
+    "so",
+    "so that",
+    "although"
+   ],
+   "answer": "so",
+   "explain": "说结果用 [[so]]。"
+  },
+  {
+   "id": "q14",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：Because it rained, so we stayed in.",
+   "answer": "Because it rained, we stayed in.",
+   "accept": [
+    "It rained, so we stayed in."
+   ],
+   "explain": "because 和 so 只留一个。"
+  },
+  {
+   "id": "q15",
+   "section": "compare",
+   "type": "fix",
+   "prompt": "改错：Despite of the rain, we went out.",
+   "answer": "Despite the rain, we went out.",
+   "accept": [
+    "In spite of the rain, we went out."
+   ],
+   "explain": "despite 后面不加 of。"
+  },
+  {
+   "id": "q16",
+   "section": "compare",
+   "type": "transform",
+   "prompt": "用 despite 改写：Although it was raining, we went out.",
+   "answer": "Despite the rain, we went out.",
+   "accept": [
+    "Despite the rain we went out.",
+    "We went out despite the rain.",
+    "Despite the fact that it was raining, we went out.",
+    "Despite it raining, we went out."
+   ],
+   "explain": "despite 后面跟名词 the rain。"
+  }
+ ],
+ "openTask": {
+  "prompt": "说说你最近遇到的一个麻烦（比如一个难修的 bug 或一次延误），用 3 句话讲清楚：为什么、结果怎样、虽然……还是……。",
+  "rules": [
+   "although 和 but、because 和 so 不能同时用",
+   "so 跟形容词，such 跟名词"
+  ],
+  "note": "规则判连接词搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

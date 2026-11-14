@@ -1,0 +1,683 @@
+{
+ "id": "cheat-make-do-take",
+ "title": "make / do / take / have / get",
+ "en": "Make, Do, Take, Have, Get",
+ "group": "速查表",
+ "order": 5,
+ "symbol": "hammer",
+ "summary": "make a decision、take a break 等",
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "make、do、take、have、get 后面跟什么词，很多是固定搭配，中文都叫「做」「拿」，英语却分得很清。整块记，点句子跟读。"
+  },
+  "make": {
+   "title": "make：做出、造出",
+   "short": "make",
+   "rule": "make 的重点是**做完以后多出一个东西**：一个决定、一个改变、一个计划、一句话。",
+   "items": [
+    {
+     "en": "We need to [[make a decision]] by Friday.",
+     "zh": "我们得在周五前做个决定。",
+     "rule": "make a decision · 做决定"
+    },
+    {
+     "en": "We [[made good progress]] this sprint.",
+     "zh": "这个迭代我们进展不错。",
+     "rule": "make progress · 取得进展"
+    },
+    {
+     "en": "Sorry, I [[made a mistake]] in the config.",
+     "zh": "抱歉，我配置里写错了。",
+     "rule": "make a mistake · 犯错"
+    },
+    {
+     "en": "He's really [[making an effort]] to speak up.",
+     "zh": "他真的在努力多发言。",
+     "rule": "make an effort · 努力"
+    },
+    {
+     "en": "Let's [[make a small change]] to the layout.",
+     "zh": "布局小改一下。",
+     "rule": "make a change · 做改动"
+    },
+    {
+     "en": "Can I [[make a suggestion]]?",
+     "zh": "我能提个建议吗？",
+     "rule": "make a suggestion · 提建议"
+    },
+    {
+     "en": "Let's [[make a plan]] for next week.",
+     "zh": "我们定个下周的计划。",
+     "rule": "make a plan · 定计划"
+    },
+    {
+     "en": "[[Make sure]] the tests pass.",
+     "zh": "确保测试能过。",
+     "rule": "make sure · 确保"
+    },
+    {
+     "en": "That [[makes sense]].",
+     "zh": "有道理。",
+     "rule": "make sense · 说得通"
+    },
+    {
+     "en": "Your fix [[made a big difference]].",
+     "zh": "你的修复效果很明显。",
+     "rule": "make a difference · 起作用、有影响"
+    },
+    {
+     "en": "I need to [[make a quick call]].",
+     "zh": "我得打个电话。",
+     "rule": "make a call · 打电话"
+    },
+    {
+     "en": "I'll [[make an appointment]] with the dentist.",
+     "zh": "我去约一下牙医。",
+     "rule": "make an appointment · 预约"
+    },
+    {
+     "en": "You [[made a good point]] in the meeting.",
+     "zh": "你在会上说得很在理。",
+     "rule": "make a point · 提出一个观点"
+    },
+    {
+     "en": "I'll [[make time]] for a quick review.",
+     "zh": "我会挤时间快速看一下。",
+     "rule": "make time for · 抽出时间"
+    },
+    {
+     "en": "Let's [[make a list]] of the open bugs.",
+     "zh": "把没解决的 bug 列个清单。",
+     "rule": "make a list · 列清单"
+    },
+    {
+     "en": "Let's [[make a start]] on the new screen.",
+     "zh": "新页面开始动手吧。",
+     "rule": "make a start · 开始做（英式常用）"
+    },
+    {
+     "en": "Don't [[make excuses]].",
+     "zh": "别找借口。",
+     "rule": "make an excuse · 找借口"
+    }
+   ]
+  },
+  "do": {
+   "title": "do：干活、完成任务",
+   "short": "do",
+   "rule": "do 的重点是**干这件事本身**：工作、任务、家务、学习。不知道具体是什么事时，也用 do：do something、do anything。",
+   "items": [
+    {
+     "en": "I need to [[do some research]] first.",
+     "zh": "我得先调研一下。",
+     "rule": "do research · 做调研"
+    },
+    {
+     "en": "Could you [[do me a favour]]?",
+     "zh": "能帮我个忙吗？",
+     "rule": "do someone a favour · 帮个忙"
+    },
+    {
+     "en": "I'll [[do the washing-up]] after dinner.",
+     "zh": "晚饭后我来洗碗。",
+     "rule": "do the washing-up / the dishes · 洗碗"
+    },
+    {
+     "en": "Just [[do your best]].",
+     "zh": "尽力就好。",
+     "rule": "do your best · 尽力"
+    },
+    {
+     "en": "Can you [[do a code review]] today?",
+     "zh": "你今天能做下代码评审吗？",
+     "rule": "do a review · 做评审"
+    },
+    {
+     "en": "We [[did a lot of testing]] on old devices.",
+     "zh": "我们在旧设备上测了很多。",
+     "rule": "do testing · 做测试"
+    },
+    {
+     "en": "I've got some [[work to do]].",
+     "zh": "我还有点活要干。",
+     "rule": "do work · 干活"
+    },
+    {
+     "en": "You [[did a great job]] on the release.",
+     "zh": "这次发版你干得很漂亮。",
+     "rule": "do a good job · 干得好"
+    },
+    {
+     "en": "We [[do business]] with several banks.",
+     "zh": "我们和好几家银行有生意往来。",
+     "rule": "do business · 做生意"
+    },
+    {
+     "en": "I'm [[doing an online course]] in design.",
+     "zh": "我在上一门线上设计课。",
+     "rule": "do a course · 上课程"
+    },
+    {
+     "en": "I [[did the presentation]] in English.",
+     "zh": "我用英语做了展示。",
+     "rule": "do a presentation · 做展示（也说 give）"
+    },
+    {
+     "en": "I'll [[do the shopping]] on Saturday.",
+     "zh": "我周六去采购。",
+     "rule": "do the shopping · 采购日用品"
+    },
+    {
+     "en": "Let's [[do the maths]].",
+     "zh": "我们算一下。",
+     "rule": "do the maths · 算一算（英式 maths）"
+    },
+    {
+     "en": "I [[do some exercise]] every morning.",
+     "zh": "我每天早上运动一下。",
+     "rule": "do exercise · 运动"
+    },
+    {
+     "en": "The update [[did more harm than good]].",
+     "zh": "这次更新弊大于利。",
+     "rule": "do harm / do damage · 造成伤害"
+    },
+    {
+     "en": "Can you [[do a quick demo]]?",
+     "zh": "你能快速演示一下吗？",
+     "rule": "do a demo · 做演示"
+    },
+    {
+     "en": "I [[did a lot of overtime]] last month.",
+     "zh": "我上个月加了很多班。",
+     "rule": "do overtime · 加班"
+    }
+   ]
+  },
+  "take": {
+   "title": "take：拿、花、承担",
+   "short": "take",
+   "rule": "take 常有「**拿过来、花掉、接下来**」的意思：花时间、接任务、担责任、休息一下。",
+   "items": [
+    {
+     "en": "Let's [[take a break]].",
+     "zh": "休息一下吧。",
+     "rule": "take a break · 休息"
+    },
+    {
+     "en": "Can someone [[take notes]]?",
+     "zh": "谁来做下记录？",
+     "rule": "take notes · 记笔记"
+    },
+    {
+     "en": "[[Take your time]].",
+     "zh": "慢慢来，不急。",
+     "rule": "take your time · 慢慢来"
+    },
+    {
+     "en": "It'll [[take two days]].",
+     "zh": "这要花两天。",
+     "rule": "take + 时间 · 花多久"
+    },
+    {
+     "en": "I [[take responsibility]] for the bug.",
+     "zh": "这个 bug 我负责。",
+     "rule": "take responsibility · 承担责任"
+    },
+    {
+     "en": "Can you [[take a look]] at my PR?",
+     "zh": "你能看下我的 PR 吗？",
+     "rule": "take a look · 看一下"
+    },
+    {
+     "en": "We can't [[take that risk]].",
+     "zh": "我们冒不起这个险。",
+     "rule": "take a risk · 冒险"
+    },
+    {
+     "en": "I'm [[taking Friday off]].",
+     "zh": "我周五请假。",
+     "rule": "take a day off · 请一天假"
+    },
+    {
+     "en": "I'll [[take care of]] the release notes.",
+     "zh": "发版说明我来搞定。",
+     "rule": "take care of · 负责、照看"
+    },
+    {
+     "en": "We need to [[take action]] now.",
+     "zh": "我们现在就得采取行动。",
+     "rule": "take action · 采取行动"
+    },
+    {
+     "en": "Can you [[take ownership]] of this feature?",
+     "zh": "这个功能你能负责到底吗？",
+     "rule": "take ownership · 负责到底"
+    },
+    {
+     "en": "Sarah will [[take the lead]] on this.",
+     "zh": "这事由萨拉牵头。",
+     "rule": "take the lead · 牵头"
+    },
+    {
+     "en": "We should [[take]] older phones [[into account]].",
+     "zh": "我们应该把旧手机也考虑进去。",
+     "rule": "take into account · 考虑到"
+    },
+    {
+     "en": "Sorry, I have to [[take this call]].",
+     "zh": "抱歉，我得接个电话。",
+     "rule": "take a call · 接电话"
+    },
+    {
+     "en": "Please [[take a seat]].",
+     "zh": "请坐。",
+     "rule": "take a seat · 坐下"
+    },
+    {
+     "en": "We need to [[take a decision]] today.",
+     "zh": "我们今天得做决定。",
+     "rule": "take a decision · 做决定（英式说法，和 make 一样）"
+    },
+    {
+     "en": "[[Take it easy]] this weekend.",
+     "zh": "这周末好好放松。",
+     "rule": "take it easy · 放松、别累着"
+    }
+   ]
+  },
+  "have": {
+   "title": "have：吃喝、经历一件事",
+   "short": "have",
+   "rule": "have 后面常跟一个「**活动**」：聊一聊、看一眼、开个会、吃顿饭。英式英语特别爱用 have a ……。",
+   "items": [
+    {
+     "en": "Can we [[have a quick chat]]?",
+     "zh": "我们能简单聊两句吗？",
+     "rule": "have a chat · 聊一聊"
+    },
+    {
+     "en": "I'll [[have a look]] after lunch.",
+     "zh": "我午饭后看看。",
+     "rule": "have a look · 看一下（英式）"
+    },
+    {
+     "en": "We [[have a meeting]] at ten.",
+     "zh": "我们十点有个会。",
+     "rule": "have a meeting · 开会"
+    },
+    {
+     "en": "Let's [[have a break]].",
+     "zh": "休息一下吧。",
+     "rule": "have a break · 休息（英式）"
+    },
+    {
+     "en": "Shall we [[have lunch]] together?",
+     "zh": "一起吃午饭吗？",
+     "rule": "have lunch · 吃午饭"
+    },
+    {
+     "en": "Can I [[have a go]]?",
+     "zh": "我能试试吗？",
+     "rule": "have a go · 试一试（英式）"
+    },
+    {
+     "en": "Can I [[have a word]] with you?",
+     "zh": "我能跟你单独说两句吗？",
+     "rule": "have a word with · 私下说几句（英式）"
+    },
+    {
+     "en": "Let me [[have a think]] and get back to you.",
+     "zh": "我想一想再回你。",
+     "rule": "have a think · 想一想（英式）"
+    },
+    {
+     "en": "I [[have a question]] about the API.",
+     "zh": "我有个关于接口的问题。",
+     "rule": "have a question · 有个问题"
+    },
+    {
+     "en": "I [[have an idea]].",
+     "zh": "我有个主意。",
+     "rule": "have an idea · 有个主意"
+    },
+    {
+     "en": "We're [[having a problem with]] the payment page.",
+     "zh": "支付页出了点问题。",
+     "rule": "have a problem with · ……出了问题"
+    },
+    {
+     "en": "Do you [[have time]] tomorrow?",
+     "zh": "你明天有空吗？",
+     "rule": "have time · 有空"
+    },
+    {
+     "en": "[[Have a good weekend]].",
+     "zh": "周末愉快。",
+     "rule": "have a good … · 祝……愉快"
+    },
+    {
+     "en": "We [[had a call]] with the client.",
+     "zh": "我们和客户通了个电话。",
+     "rule": "have a call · 通电话、开线上会"
+    },
+    {
+     "en": "[[Have fun]] at the conference.",
+     "zh": "参加大会玩得开心。",
+     "rule": "have fun · 玩得开心"
+    }
+   ]
+  },
+  "get": {
+   "title": "get：得到、变成、到达",
+   "short": "get",
+   "rule": "get 是口语里最万能的词：**得到**（get feedback）、**变成**（get better）、**到达**（get there）、**开始**（get started）。",
+   "items": [
+    {
+     "en": "I'd like to [[get some feedback]] on this.",
+     "zh": "我想听听大家对这个的意见。",
+     "rule": "get feedback · 得到反馈"
+    },
+    {
+     "en": "Let's [[get started]].",
+     "zh": "我们开始吧。",
+     "rule": "get started · 开始"
+    },
+    {
+     "en": "I'll [[get back to you]] tomorrow.",
+     "zh": "我明天回复你。",
+     "rule": "get back to someone · 回头答复某人"
+    },
+    {
+     "en": "I'm [[getting ready]] for the demo.",
+     "zh": "我在准备演示。",
+     "rule": "get ready · 准备好"
+    },
+    {
+     "en": "I'll [[get in touch]] with the vendor.",
+     "zh": "我去联系一下供应商。",
+     "rule": "get in touch · 联系"
+    },
+    {
+     "en": "Let's [[get it done]] today.",
+     "zh": "今天把它搞定吧。",
+     "rule": "get something done · 把……做完"
+    },
+    {
+     "en": "I'm [[getting used to]] the new process.",
+     "zh": "我在慢慢适应新流程。",
+     "rule": "get used to · 习惯"
+    },
+    {
+     "en": "Did you [[get access]] to the repo?",
+     "zh": "仓库权限拿到了吗？",
+     "rule": "get access · 拿到权限"
+    },
+    {
+     "en": "We need to [[get approval]] from legal.",
+     "zh": "我们得拿到法务的批准。",
+     "rule": "get approval · 获得批准"
+    },
+    {
+     "en": "I [[got stuck]] on this bug.",
+     "zh": "我被这个 bug 卡住了。",
+     "rule": "get stuck · 卡住"
+    },
+    {
+     "en": "Sorry, I don't [[get it]].",
+     "zh": "抱歉，我没听懂。",
+     "rule": "get it · 明白"
+    },
+    {
+     "en": "Did you [[get a reply]]?",
+     "zh": "收到回复了吗？",
+     "rule": "get a reply · 收到回复"
+    },
+    {
+     "en": "It's [[getting better]].",
+     "zh": "在变好。",
+     "rule": "get better · 好转"
+    },
+    {
+     "en": "She [[got promoted]] last month.",
+     "zh": "她上个月升职了。",
+     "rule": "get promoted · 升职"
+    },
+    {
+     "en": "We'll [[get there]].",
+     "zh": "我们会做到的。",
+     "rule": "get there · 达到目标"
+    },
+    {
+     "en": "I need to [[get on with]] my work.",
+     "zh": "我得接着干活了。",
+     "rule": "get on with · 继续做（英式）"
+    },
+    {
+     "en": "I never [[got round to]] fixing it.",
+     "zh": "我一直没腾出手来修。",
+     "rule": "get round to · 终于抽空做（英式）"
+    }
+   ]
+  },
+  "choose": {
+   "title": "make 还是 do？",
+   "short": "怎么选",
+   "rule": "**make = 做出一个新东西**（决定、计划、改动、错误、噪音）；**do = 干一件活**（工作、任务、作业、家务、调研）。分不清时问自己：做完多了个东西吗？多了就用 make。",
+   "notes": [
+    "make：a decision, a plan, a change, a mistake, progress, an effort, a suggestion, money, noise",
+    "do：work, a job, a task, research, homework, the dishes, a course, your best, a favour"
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I ~~did~~ a mistake in the config.",
+     "good": "I [[made]] a mistake in the config.",
+     "why": "错误是「造出来」的，用 make。"
+    },
+    {
+     "bad": "Let's ~~do~~ a decision today.",
+     "good": "Let's [[make]] a decision today.",
+     "why": "决定用 make，英式也可以说 take a decision。"
+    },
+    {
+     "bad": "We ~~did~~ good progress.",
+     "good": "We [[made]] good progress.",
+     "why": "进展用 make。"
+    },
+    {
+     "bad": "Could you ~~make~~ me a favour?",
+     "good": "Could you [[do]] me a favour?",
+     "why": "帮忙是固定的 do a favour。"
+    },
+    {
+     "bad": "I need to ~~make~~ some research.",
+     "good": "I need to [[do]] some research.",
+     "why": "调研是干活，用 do。"
+    },
+    {
+     "bad": "Can you ~~make~~ a look at my PR?",
+     "good": "Can you [[take]] a look at my PR?",
+     "why": "看一眼用 take a look 或 have a look。"
+    },
+    {
+     "bad": "Let's ~~make~~ a break.",
+     "good": "Let's [[take]] a break.",
+     "why": "休息用 take a break 或 have a break。"
+    },
+    {
+     "bad": "I'll ~~make~~ you feedback later.",
+     "good": "I'll [[give]] you feedback later.",
+     "why": "给反馈用 give，拿到反馈用 get。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Let's ___ a break.",
+   "options": [
+    "take",
+    "make",
+    "do",
+    "get"
+   ],
+   "answer": "take",
+   "explain": "[[take a break]]：休息一下。"
+  },
+  {
+   "id": "q02",
+   "section": "make",
+   "type": "choice",
+   "prompt": "We need to ___ a decision by Friday.",
+   "options": [
+    "do",
+    "make",
+    "put",
+    "have"
+   ],
+   "answer": "make",
+   "explain": "[[make a decision]]：做决定。"
+  },
+  {
+   "id": "q03",
+   "section": "make",
+   "type": "fill",
+   "prompt": "That ___ sense. (make)",
+   "answer": "makes",
+   "accept": [],
+   "explain": "[[make sense]]：说得通。主语 that 是单数，加 s。"
+  },
+  {
+   "id": "q04",
+   "section": "do",
+   "type": "choice",
+   "prompt": "Could you ___ me a favour?",
+   "options": [
+    "make",
+    "take",
+    "do",
+    "have"
+   ],
+   "answer": "do",
+   "explain": "[[do someone a favour]]：帮个忙。"
+  },
+  {
+   "id": "q05",
+   "section": "do",
+   "type": "fill",
+   "prompt": "You ___ a great job on the release. (do)",
+   "answer": "did",
+   "accept": [],
+   "explain": "[[do a good job]]：干得好，这里用过去式 did。"
+  },
+  {
+   "id": "q06",
+   "section": "take",
+   "type": "choice",
+   "prompt": "Can someone ___ notes?",
+   "options": [
+    "have",
+    "take",
+    "do",
+    "get"
+   ],
+   "answer": "take",
+   "explain": "[[take notes]]：做记录。"
+  },
+  {
+   "id": "q07",
+   "section": "take",
+   "type": "fill",
+   "prompt": "It'll ___ two days. (take)",
+   "answer": "take",
+   "accept": [],
+   "explain": "[[take]] + 时间：要花多久。"
+  },
+  {
+   "id": "q08",
+   "section": "have",
+   "type": "choice",
+   "prompt": "Can I ___ a word with you?",
+   "options": [
+    "have",
+    "make",
+    "do",
+    "take"
+   ],
+   "answer": "have",
+   "explain": "[[have a word with]]：私下说几句。"
+  },
+  {
+   "id": "q09",
+   "section": "have",
+   "type": "fill",
+   "prompt": "Let me ___ a think and get back to you. (have)",
+   "answer": "have",
+   "accept": [],
+   "explain": "[[have a think]]：想一想，英式口语。"
+  },
+  {
+   "id": "q10",
+   "section": "get",
+   "type": "choice",
+   "prompt": "I'll ___ back to you tomorrow.",
+   "options": [
+    "take",
+    "get",
+    "make",
+    "do"
+   ],
+   "answer": "get",
+   "explain": "[[get back to]] someone：回头答复某人。"
+  },
+  {
+   "id": "q11",
+   "section": "get",
+   "type": "fill",
+   "prompt": "I ___ stuck on this bug yesterday. (get)",
+   "answer": "got",
+   "accept": [],
+   "explain": "[[get stuck]]：卡住，过去式 got。"
+  },
+  {
+   "id": "q12",
+   "section": "choose",
+   "type": "choice",
+   "prompt": "I ___ a mistake in the config.",
+   "options": [
+    "did",
+    "made",
+    "took",
+    "had"
+   ],
+   "answer": "made",
+   "explain": "错误是「造出来」的：[[make a mistake]]。"
+  },
+  {
+   "id": "q13",
+   "section": "choose",
+   "type": "choice",
+   "prompt": "I need to ___ some research first.",
+   "options": [
+    "make",
+    "do",
+    "take",
+    "get"
+   ],
+   "answer": "do",
+   "explain": "调研是干活：[[do research]]。"
+  }
+ ]
+}

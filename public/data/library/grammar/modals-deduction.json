@@ -1,0 +1,419 @@
+{
+ "id": "g-modals-deduction",
+ "title": "情态动词：推测",
+ "en": "Modals: Deduction",
+ "group": "动词",
+ "level": "B1",
+ "order": 17,
+ "keywords": [
+  "推测现在",
+  "推测过去"
+ ],
+ "related": [
+  "g-modals-obligation",
+  "g-perception-verbs",
+  "g-present-perfect"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "没亲眼看到，但根据线索去猜。想象一把尺子：**must 是「肯定是」**，**might / may / could 是「可能是」**，**can't 是「肯定不是」**。",
+   "uses": [
+    {
+     "zh": "很有把握：肯定是",
+     "en": "You [[must]] ((be)) tired after that flight.",
+     "en_zh": "坐了那趟飞机，你肯定累了。"
+    },
+    {
+     "zh": "一半一半：可能是",
+     "en": "It [[might]] ((be)) a network problem.",
+     "en_zh": "可能是网络的问题。"
+    },
+    {
+     "zh": "很有把握：肯定不是",
+     "en": "That [[can't]] ((be)) Tom — he's on holiday.",
+     "en_zh": "那不可能是汤姆，他在休假。"
+    }
+   ],
+   "signals": [
+    "must",
+    "might",
+    "may",
+    "could",
+    "can't",
+    "couldn't"
+   ]
+  },
+  "now": {
+   "title": "猜现在", "short": "现在",
+   "text": "猜现在的事：情态动词后面跟**动词原形**，最常见的是 **be**。先找线索，再决定用尺子上的哪一格。",
+   "formula": [
+    "主语",
+    "must / might / can't",
+    "动词原形",
+    "其他"
+   ],
+   "items": [
+    {
+     "rule": "线索：灯亮着 → 肯定在",
+     "en": "The lights are on. She [[must]] ((be)) at home.",
+     "zh": "灯亮着，她肯定在家。"
+    },
+    {
+     "rule": "没线索 → 可能",
+     "en": "He [[may]] ((know)) the answer. Ask him.",
+     "zh": "他可能知道答案，问问他。"
+    },
+    {
+     "rule": "线索：刚吃过 → 肯定不饿",
+     "en": "You [[can't]] ((be)) hungry. You've just had lunch!",
+     "zh": "你不可能饿，你刚吃过午饭！"
+    }
+   ],
+   "tip": "might、may、could 三个意思差不多，都是「可能」，随便挑一个都行。"
+  },
+  "doing": {
+   "title": "猜「正在做」", "short": "正在",
+   "text": "猜别人**此刻正在干什么**，用 must / might / can't 加 **be doing**。",
+   "formula": [
+    "主语",
+    "must / might / can't",
+    "be + 动词 ing"
+   ],
+   "examples": [
+    {
+     "en": "He's not answering. He [[must be driving]].",
+     "zh": "他不接电话，肯定在开车。"
+    },
+    {
+     "en": "She [[might be working]] from home today.",
+     "zh": "她今天可能在家办公。"
+    },
+    {
+     "en": "They [[can't be sleeping]] — it's only seven.",
+     "zh": "他们不可能在睡觉，才七点。"
+    }
+   ]
+  },
+  "past": {
+   "title": "猜过去", "short": "过去",
+   "text": "猜**已经发生**的事，把后面换成 **have + 过去分词**。就像把尺子搬回过去用：must have done、might have done、can't have done。",
+   "formula": [
+    "主语",
+    "must / might / can't",
+    "have + 过去分词"
+   ],
+   "items": [
+    {
+     "rule": "肯定是",
+     "en": "The build is green. Someone [[must have fixed]] it.",
+     "zh": "构建通过了，肯定有人修好了。"
+    },
+    {
+     "rule": "可能是",
+     "en": "I can't find my keys. I [[might have left]] them at work.",
+     "zh": "我找不到钥匙了，可能落在公司了。"
+    },
+    {
+     "rule": "肯定不是",
+     "en": "She [[can't have seen]] my message. She's still offline.",
+     "zh": "她不可能看到我的消息，她一直没上线。"
+    }
+   ],
+   "wrong": {
+    "bad": "He must ~~went~~ home.",
+    "good": "He [[must have gone]] home."
+   },
+   "notes": [
+    "说的时候常连读：must've /ˈmʌstəv/、might've /ˈmaɪtəv/，听着像 must of，但写的时候一定是 have。"
+   ]
+  },
+  "negative": {
+   "title": "肯定不是：can't", "short": "不是",
+   "text": "推测「肯定不是」用 **can't**，不用 mustn't。mustn't 是「不许」，意思完全不一样。「可能不是」用 **might not**。",
+   "items": [
+    {
+     "rule": "肯定不是：can't",
+     "en": "It [[can't]] ((be)) true.",
+     "zh": "这不可能是真的。"
+    },
+    {
+     "rule": "可能不是：might not",
+     "en": "He [[might not]] ((know)) about the change.",
+     "zh": "他可能还不知道这个改动。"
+    },
+    {
+     "rule": "过去肯定没有：couldn't have done 也行",
+     "en": "You [[couldn't have known]].",
+     "zh": "你当时不可能知道的。"
+    }
+   ],
+   "wrong": {
+    "bad": "That ~~mustn't~~ be Tom. He's in Paris.",
+    "good": "That [[can't]] ((be)) Tom. He's in Paris."
+   }
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "表示义务的 must",
+     "this": {
+      "meaning": "推测：肯定是",
+      "en": "You [[must]] ((be)) Anna's brother."
+     },
+     "that": {
+      "meaning": "义务：必须做",
+      "en": "You [[must]] ((sign)) in first."
+     }
+    },
+    {
+     "with": "推测过去",
+     "this": {
+      "meaning": "猜现在：must + 原形",
+      "en": "He [[must]] ((be)) at the office."
+     },
+     "that": {
+      "meaning": "猜过去：must have done",
+      "en": "He [[must have been]] at the office."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "It ~~mustn't~~ be him.",
+     "good": "It [[can't]] ((be)) him.",
+     "why": "「肯定不是」用 can't。"
+    },
+    {
+     "bad": "She ~~can~~ be at home now.",
+     "good": "She [[might]] ((be)) at home now.",
+     "why": "猜「可能是」用 might / may / could，不用 can。"
+    },
+    {
+     "bad": "He might ~~has~~ left.",
+     "good": "He [[might have left]].",
+     "why": "情态动词后面永远是 have，不是 has。"
+    },
+    {
+     "bad": "You must have ~~forget~~ it.",
+     "good": "You [[must have forgotten]] it.",
+     "why": "have 后面用过去分词。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "You've been travelling for 20 hours. You ___ be exhausted.",
+   "options": [
+    "must",
+    "can't",
+    "mustn't"
+   ],
+   "answer": "must",
+   "explain": "线索很清楚，肯定是：[[must]] ((be))。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I'm not sure why the app is slow. It ___ be the network.",
+   "options": [
+    "must",
+    "might",
+    "can't"
+   ],
+   "answer": "might",
+   "explain": "不确定，可能是：[[might]]。"
+  },
+  {
+   "id": "q03",
+   "section": "now",
+   "type": "fill",
+   "prompt": "You ___ be hungry. You've just had lunch!（肯定不）",
+   "answer": "can't",
+   "accept": [
+    "cannot"
+   ],
+   "traps": [
+    {
+     "input": "mustn't",
+     "note": "推测「肯定不是」用 can't。"
+    }
+   ],
+   "explain": "肯定不是：[[can't]]。"
+  },
+  {
+   "id": "q04",
+   "section": "now",
+   "type": "translate",
+   "prompt": "翻译：灯亮着，她肯定在家。",
+   "answer": "The lights are on. She must be at home.",
+   "accept": [
+    "The lights are on, so she must be at home.",
+    "The lights are on. She must be home.",
+    "The light is on. She must be at home."
+   ],
+   "explain": "肯定是：She [[must]] ((be)) at home。"
+  },
+  {
+   "id": "q05",
+   "section": "doing",
+   "type": "fill",
+   "prompt": "He's not answering. He must ___ (drive).",
+   "answer": "be driving",
+   "accept": [],
+   "explain": "猜正在做：[[must be driving]]。"
+  },
+  {
+   "id": "q06",
+   "section": "doing",
+   "type": "choice",
+   "prompt": "She ___ from home today. Her laptop isn't here.",
+   "options": [
+    "might be working",
+    "might works",
+    "might worked"
+   ],
+   "answer": "might be working",
+   "explain": "猜此刻正在做：[[might be working]]。"
+  },
+  {
+   "id": "q07",
+   "section": "past",
+   "type": "fill",
+   "prompt": "The build is green now. Someone must ___ (fix) it.",
+   "answer": "have fixed",
+   "accept": [],
+   "traps": [
+    {
+     "input": "fixed",
+     "note": "情态动词后面不能直接跟过去式，要用 have fixed。"
+    }
+   ],
+   "explain": "猜过去：must [[have fixed]]。"
+  },
+  {
+   "id": "q08",
+   "section": "past",
+   "type": "fix",
+   "prompt": "改错：He must went home early.",
+   "answer": "He must have gone home early.",
+   "accept": [],
+   "explain": "猜过去：[[must have gone]]。"
+  },
+  {
+   "id": "q09",
+   "section": "past",
+   "type": "transform",
+   "prompt": "用 might have 改写：Maybe I left my keys at work.",
+   "answer": "I might have left my keys at work.",
+   "accept": [
+    "I may have left my keys at work.",
+    "I could have left my keys at work."
+   ],
+   "explain": "过去可能：[[might have left]]。"
+  },
+  {
+   "id": "q10",
+   "section": "negative",
+   "type": "fix",
+   "prompt": "改错：That mustn't be Tom. He's in Paris.",
+   "answer": "That can't be Tom. He's in Paris.",
+   "accept": [
+    "That cannot be Tom. He's in Paris.",
+    "That can't be Tom. He is in Paris."
+   ],
+   "explain": "肯定不是用 [[can't]]。"
+  },
+  {
+   "id": "q11",
+   "section": "negative",
+   "type": "fill",
+   "prompt": "She ___ (see) my message. She's been offline all day.（肯定没有）",
+   "answer": "can't have seen",
+   "accept": [
+    "couldn't have seen",
+    "cannot have seen"
+   ],
+   "explain": "过去肯定没有：[[can't have seen]]。"
+  },
+  {
+   "id": "q12",
+   "section": "negative",
+   "type": "choice",
+   "prompt": "He ___ know about the change. Let's tell him just in case.",
+   "options": [
+    "might not",
+    "mustn't",
+    "can"
+   ],
+   "answer": "might not",
+   "explain": "可能不知道：[[might not]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "Which sentence is a guess, not a rule?",
+   "options": [
+    "You must sign in first.",
+    "You must be Anna's brother.",
+    "You must wear a badge."
+   ],
+   "answer": "You must be Anna's brother.",
+   "explain": "看到长得像才猜的，是推测：[[must]] ((be))。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：He might has left already.",
+   "answer": "He might have left already.",
+   "accept": [
+    "He may have left already."
+   ],
+   "explain": "情态动词后面永远是 [[have]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：You must have forget your password.",
+   "answer": "You must have forgotten your password.",
+   "accept": [],
+   "explain": "have 后面用过去分词：[[forgotten]]。"
+  },
+  {
+   "id": "q16",
+   "section": "past",
+   "type": "translate",
+   "prompt": "翻译：他肯定已经回家了。",
+   "answer": "He must have gone home.",
+   "accept": [
+    "He must have gone home already.",
+    "He must have already gone home."
+   ],
+   "explain": "猜过去：[[must have gone]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "想象你早上来到公司，发现三件奇怪的事（比如构建突然通过了、同事没来、桌上有蛋糕）。用 must / might / can't 各写一句猜一猜，至少一句猜过去（have done）。",
+  "rules": [
+   "推测现在用 must / might / can't + 原形，推测过去用 + have + 过去分词",
+   "「肯定不是」用 can't，不用 mustn't"
+  ],
+  "note": "规则判推测的形式和 can't / mustn't（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

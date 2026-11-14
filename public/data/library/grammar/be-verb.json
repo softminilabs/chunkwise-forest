@@ -1,0 +1,457 @@
+{
+ "id": "g-be-verb",
+ "title": "be 动词",
+ "en": "The Verb Be",
+ "group": "动词",
+ "level": "A2",
+ "order": 13,
+ "keywords": [
+  "be 动词"
+ ],
+ "related": [
+  "g-present-simple",
+  "g-there-be",
+  "g-questions",
+  "g-past-simple"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "be 动词就是 am、is、are（过去是 was、were）。它像一个**等号**，把人或东西和「是什么、怎么样、在哪儿」连起来。",
+   "uses": [
+    {
+     "zh": "是什么：身份、职业",
+     "en": "I [[am]] an iOS developer.",
+     "en_zh": "我是一名 iOS 开发。"
+    },
+    {
+     "zh": "怎么样：心情、样子",
+     "en": "The new build [[is]] really fast.",
+     "en_zh": "新的构建包特别快。"
+    },
+    {
+     "zh": "在哪儿：地点",
+     "en": "They [[are]] in the meeting room.",
+     "en_zh": "他们在会议室。"
+    }
+   ]
+  },
+  "present": {
+   "title": "现在：am / is / are", "short": "现在",
+   "text": "跟着主语变：**I 配 am，他她它配 is，其他都配 are**。说话时常常缩短成 I'm、it's、we're。",
+   "verb": "be",
+   "rows": [
+    {
+     "who": "I",
+     "pos": "I[['m]] ready.",
+     "neg": "I[['m not]] ready.",
+     "negFull": "I am not ready.",
+     "q": "[[Am]] I late?",
+     "short": "Yes, you [[are]]. / No, you [[aren't]]."
+    },
+    {
+     "who": "you",
+     "pos": "You[['re]] right.",
+     "neg": "You [[aren't]] right.",
+     "negFull": "You are not right.",
+     "q": "[[Are]] you sure?",
+     "short": "Yes, I [[am]]. / No, I[['m not]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "It[['s]] fine.",
+     "neg": "It [[isn't]] fine.",
+     "negFull": "It is not fine.",
+     "q": "[[Is]] it fine?",
+     "short": "Yes, it [[is]]. / No, it [[isn't]]."
+    },
+    {
+     "who": "we / they",
+     "pos": "We[['re]] online.",
+     "neg": "We [[aren't]] online.",
+     "negFull": "We are not online.",
+     "q": "[[Are]] they online?",
+     "short": "Yes, they [[are]]. / No, they [[aren't]]."
+    }
+   ],
+   "contractions": [
+    "I am = [[I'm]]",
+    "he is / it is = [[he's]] / [[it's]]",
+    "you are / we are = [[you're]] / [[we're]]",
+    "is not = [[isn't]] · are not = [[aren't]]",
+    "am not 没有缩写，说 I[['m not]]"
+   ],
+   "tip": "简短回答 Yes 的时候不能缩写：说 Yes, I am，不说 Yes, I'm。"
+  },
+  "past": {
+   "title": "过去：was / were", "short": "过去",
+   "text": "过去只有两个：**I 和他她它用 was，其他用 were**。否定加 not，疑问把它提到最前面。",
+   "rows": [
+    {
+     "who": "I",
+     "pos": "I [[was]] tired.",
+     "neg": "I [[wasn't]] tired.",
+     "negFull": "I was not tired.",
+     "q": "[[Was]] I wrong?",
+     "short": "Yes, you [[were]]. / No, you [[weren't]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "It [[was]] easy.",
+     "neg": "It [[wasn't]] easy.",
+     "negFull": "It was not easy.",
+     "q": "[[Was]] it easy?",
+     "short": "Yes, it [[was]]. / No, it [[wasn't]]."
+    },
+    {
+     "who": "you / we / they",
+     "pos": "They [[were]] late.",
+     "neg": "They [[weren't]] late.",
+     "negFull": "They were not late.",
+     "q": "[[Were]] they late?",
+     "short": "Yes, they [[were]]. / No, they [[weren't]]."
+    }
+   ],
+   "examples": [
+    {
+     "en": "The meeting [[was]] long <<yesterday>>.",
+     "zh": "昨天的会开得很长。"
+    },
+    {
+     "en": "We [[were]] on holiday <<last week>>.",
+     "zh": "我们上周在度假。"
+    },
+    {
+     "en": "Where [[were]] you <<this morning>>?",
+     "zh": "你今天上午去哪儿了？"
+    }
+   ]
+  },
+  "question": {
+   "title": "疑问和否定", "short": "疑问",
+   "text": "be 动词自己就能变问句和否定，**不用请 do 来帮忙**：问句把 be 搬到最前面，否定直接在 be 后面加 not。",
+   "formula": [
+    "Am / Is / Are",
+    "主语",
+    "其他？"
+   ],
+   "examples": [
+    {
+     "en": "[[Is]] the server down?",
+     "zh": "服务器挂了吗？",
+     "answer": "Yes, it [[is]]. / No, it [[isn't]]."
+    },
+    {
+     "en": "[[Are]] you free at the weekend?",
+     "zh": "你周末有空吗？",
+     "answer": "Yes, I [[am]]. / No, I[['m not]]."
+    },
+    {
+     "en": "The fix [[isn't]] ready yet.",
+     "zh": "修复还没好。"
+    }
+   ],
+   "wrong": {
+    "bad": "~~Do~~ you ~~are~~ ready?",
+    "good": "[[Are]] you ready?"
+   }
+  },
+  "missing": {
+   "title": "别漏掉，也别多加", "short": "漏和多",
+   "text": "中文说「我很忙」「她三十岁」没有「是」，英文**一定要有 be**。可是一句话里已经有 work、like 这种动词了，就**不要再加 be**。",
+   "items": [
+    {
+     "rule": "后面是形容词，要有 be",
+     "en": "I[['m]] very busy today.",
+     "zh": "我今天很忙。"
+    },
+    {
+     "rule": "说年龄用 be，不用 have",
+     "en": "She [[is]] thirty.",
+     "zh": "她三十岁。"
+    },
+    {
+     "rule": "已经有动词，不加 be",
+     "en": "I [[agree]] with you.",
+     "zh": "我同意你的看法。"
+    },
+    {
+     "rule": "已经有动词，不加 be",
+     "en": "The app [[crashes]] on launch.",
+     "zh": "这个 App 一打开就崩溃。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "do / does",
+     "this": {
+      "meaning": "后面是形容词、名词、地点：用 be",
+      "en": "[[Are]] you busy?"
+     },
+     "that": {
+      "meaning": "后面是动作：请 do 帮忙",
+      "en": "[[Do]] you ((work)) here?"
+     }
+    },
+    {
+     "with": "现在和过去",
+     "this": {
+      "meaning": "现在：am / is / are",
+      "en": "The office [[is]] quiet <<today>>."
+     },
+     "that": {
+      "meaning": "过去：was / were",
+      "en": "The office [[was]] busy <<yesterday>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I ~~am~~ agree with you.",
+     "good": "I [[agree]] with you.",
+     "why": "agree 已经是动词，不再加 am。"
+    },
+    {
+     "bad": "She ~~very tired~~ today.",
+     "good": "She [[is]] very tired today.",
+     "why": "形容词前面要有 be，不能漏。"
+    },
+    {
+     "bad": "I ~~have~~ 30 years old.",
+     "good": "I [[am]] 30 years old.",
+     "why": "说年龄用 be。"
+    },
+    {
+     "bad": "~~Do you be~~ ready?",
+     "good": "[[Are]] you ready?",
+     "why": "be 自己变问句，不用 do。"
+    },
+    {
+     "bad": "They ~~was~~ late.",
+     "good": "They [[were]] late.",
+     "why": "they 的过去用 were。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "My manager ___ in the meeting room.",
+   "options": [
+    "am",
+    "is",
+    "are"
+   ],
+   "answer": "is",
+   "explain": "my manager 是「他 / 她」，配 [[is]]。"
+  },
+  {
+   "id": "q02",
+   "section": "present",
+   "type": "fill",
+   "prompt": "We ___ (be) ready for the release.",
+   "answer": "are",
+   "accept": [
+    "'re"
+   ],
+   "explain": "we 配 [[are]]。"
+  },
+  {
+   "id": "q03",
+   "section": "present",
+   "type": "transform",
+   "prompt": "改成否定句：I am ready.",
+   "answer": "I'm not ready.",
+   "accept": [
+    "I am not ready."
+   ],
+   "traps": [
+    {
+     "input": "I amn't ready.",
+     "note": "am not 没有缩写，说 I'm not。"
+    }
+   ],
+   "explain": "I[['m not]] ready。"
+  },
+  {
+   "id": "q04",
+   "section": "present",
+   "type": "choice",
+   "prompt": "— Are you sure? — Yes, I ___.",
+   "options": [
+    "am",
+    "'m",
+    "do"
+   ],
+   "answer": "am",
+   "explain": "简短回答 Yes 时不缩写：Yes, I [[am]]。"
+  },
+  {
+   "id": "q05",
+   "section": "past",
+   "type": "fill",
+   "prompt": "They ___ (be) late for the stand-up yesterday.",
+   "answer": "were",
+   "accept": [],
+   "traps": [
+    {
+     "input": "was",
+     "note": "they 的过去用 were。"
+    }
+   ],
+   "explain": "they 配 [[were]]。"
+  },
+  {
+   "id": "q06",
+   "section": "past",
+   "type": "fill",
+   "prompt": "The test ___ (not be) easy last week.",
+   "answer": "wasn't",
+   "accept": [
+    "was not"
+   ],
+   "explain": "it 的过去是 was，否定 [[wasn't]]。"
+  },
+  {
+   "id": "q07",
+   "section": "past",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：You were in Manchester last week.（问「在哪里」）",
+   "answer": "Where were you last week?",
+   "accept": [],
+   "explain": "Where + [[were]] + you …？"
+  },
+  {
+   "id": "q08",
+   "section": "question",
+   "type": "transform",
+   "prompt": "改成一般疑问句：The server is down.",
+   "answer": "Is the server down?",
+   "accept": [],
+   "explain": "把 [[Is]] 搬到最前面。"
+  },
+  {
+   "id": "q09",
+   "section": "question",
+   "type": "fix",
+   "prompt": "改错：Do you are free at the weekend?",
+   "answer": "Are you free at the weekend?",
+   "accept": [
+    "Are you free on the weekend?"
+   ],
+   "explain": "be 自己变问句，不用 do：[[Are]] you free?"
+  },
+  {
+   "id": "q10",
+   "section": "missing",
+   "type": "fix",
+   "prompt": "改错：I very busy today.",
+   "answer": "I'm very busy today.",
+   "accept": [
+    "I am very busy today."
+   ],
+   "explain": "形容词前面要有 be：I[['m]] very busy。"
+  },
+  {
+   "id": "q11",
+   "section": "missing",
+   "type": "fix",
+   "prompt": "改错：The app is crash on launch.",
+   "answer": "The app crashes on launch.",
+   "accept": [
+    "The app is crashing on launch."
+   ],
+   "explain": "crash 已经是动词，不加 is：[[crashes]]。"
+  },
+  {
+   "id": "q12",
+   "section": "missing",
+   "type": "translate",
+   "prompt": "翻译：她三十岁。",
+   "answer": "She is thirty.",
+   "accept": [
+    "She's thirty.",
+    "She is 30.",
+    "She's 30.",
+    "She is thirty years old.",
+    "She's thirty years old.",
+    "She is 30 years old.",
+    "She's 30 years old."
+   ],
+   "traps": [
+    {
+     "input": "She has thirty.",
+     "note": "说年龄用 be，不用 have。"
+    }
+   ],
+   "explain": "说年龄用 be：She [[is]] thirty。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "___ you work from home on Fridays?",
+   "options": [
+    "Are",
+    "Do",
+    "Is"
+   ],
+   "answer": "Do",
+   "explain": "后面是动作 work，请 [[Do]] 帮忙。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "___ you tired after the trip last week?",
+   "options": [
+    "Are",
+    "Do",
+    "Were"
+   ],
+   "answer": "Were",
+   "explain": "<<last week>> 说的是过去，后面是形容词：[[Were]] you tired?"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I am agree with you.",
+   "answer": "I agree with you.",
+   "accept": [],
+   "explain": "agree 本身是动词：I [[agree]]。"
+  },
+  {
+   "id": "q16",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：他们在会议室。",
+   "answer": "They are in the meeting room.",
+   "accept": [
+    "They're in the meeting room."
+   ],
+   "explain": "在哪儿用 be：They [[are]] in …。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话介绍你的团队：一句说某人是做什么的，一句说你们今天怎么样，一句说你们上周在哪儿或者怎么样（用 was / were）。",
+  "rules": [
+   "I 配 am，他她它配 is，其他配 are；过去 I / 他她它用 was，其他用 were",
+   "句子里已经有别的动词时不再加 be；形容词、年龄、地点前面不能漏 be"
+  ],
+  "note": "规则判 be 动词的人称和有没有漏加、多加（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

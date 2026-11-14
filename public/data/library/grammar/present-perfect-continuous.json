@@ -1,0 +1,421 @@
+{
+ "id": "g-present-perfect-continuous",
+ "title": "现在完成进行时",
+ "en": "Present Perfect Continuous",
+ "group": "时态",
+ "level": "B1",
+ "order": 6,
+ "keywords": [
+  "现在完成进行时"
+ ],
+ "related": [
+  "g-present-perfect",
+  "g-present-continuous",
+  "g-stative-verbs",
+  "g-past-perfect"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "现在完成进行时说的是**从过去一直做到现在**的事：可能还在做，也可能刚停下、看得出痕迹。重点是**做了多久**。",
+   "uses": [
+    {
+     "zh": "从过去开始，现在还在做",
+     "en": "I[['ve been waiting]] <<for>> twenty minutes.",
+     "en_zh": "我已经等了二十分钟了。"
+    },
+    {
+     "zh": "刚停下，还看得到痕迹",
+     "en": "Your eyes are red. [[Have]] you [[been staring]] at the screen <<all day>>?",
+     "en_zh": "你眼睛都红了，一整天都盯着屏幕吗？"
+    },
+    {
+     "zh": "最近一段时间一直在做",
+     "en": "We[['ve been working]] on the new design <<lately>>.",
+     "en_zh": "我们最近一直在做新设计。"
+    }
+   ],
+   "signals": [
+    "for",
+    "since",
+    "all day",
+    "all morning",
+    "how long",
+    "lately",
+    "recently"
+   ]
+  },
+  "positive": {
+   "title": "肯定句",
+   "short": "肯定",
+   "formula": [
+    "主语",
+    "have / has been",
+    "动词 + ing",
+    "其他"
+   ],
+   "rule": "三块拼起来：**have / has + been + 动词 ing**。他她它用 has，其他用 have。been 永远不变。",
+   "examples": [
+    {
+     "en": "I[['ve been learning]] English <<for>> two years.",
+     "zh": "我学英语两年了。"
+    },
+    {
+     "en": "It[['s been raining]] <<since>> this morning.",
+     "zh": "从早上开始一直在下雨。"
+    },
+    {
+     "en": "The team [[has been fixing]] bugs <<all week>>.",
+     "zh": "团队这一整周都在修 bug。"
+    }
+   ],
+   "wrong": {
+    "bad": "I've ~~be~~ waiting for ages.",
+    "good": "I[['ve been waiting]] for ages."
+   }
+  },
+  "negq": {
+   "title": "否定和疑问",
+   "short": "否定疑问",
+   "rule": "否定：在 have / has 后面加 not。疑问：把 have / has 搬到最前面，been 和 ing 跟在后面不动。",
+   "examples": [
+    {
+     "en": "I [[haven't been sleeping]] well <<lately>>.",
+     "zh": "我最近睡得不好。"
+    },
+    {
+     "en": "She [[hasn't been coming]] to the stand-ups.",
+     "zh": "她最近都没来站会。"
+    },
+    {
+     "en": "[[Have]] you [[been waiting]] long?",
+     "zh": "你等很久了吗？",
+     "answer": "Yes, I [[have]]. / No, I [[haven't]]."
+    },
+    {
+     "en": "[[Has]] Mia [[been working]] from home this week?",
+     "zh": "Mia 这周一直在家办公吗？",
+     "answer": "Yes, she [[has]]. / No, she [[hasn't]]."
+    }
+   ],
+   "contractions": [
+    "I have been = I[['ve been]]",
+    "he has been = he[['s been]]",
+    "have not = [[haven't]] · has not = [[hasn't]]"
+   ]
+  },
+  "howlong": {
+   "title": "说「多久了」",
+   "short": "多久",
+   "text": "这个时态最爱和「多久」一起用：**for** 加一段时间，**since** 加开始的那个点，问的时候用 **How long**。",
+   "items": [
+    {
+     "rule": "for + 一段时间",
+     "en": "I[['ve been studying]] <<for>> three hours.",
+     "zh": "我已经学了三个小时了。"
+    },
+    {
+     "rule": "since + 开始的时间点",
+     "en": "He[['s been working]] here <<since>> January.",
+     "zh": "他从一月起就在这儿工作。"
+    },
+    {
+     "rule": "How long + have / has + 主语 + been + ing？",
+     "en": "How long [[have]] you [[been learning]] Swift?",
+     "zh": "你学 Swift 多久了？",
+     "answer": "<<For>> about a year."
+    }
+   ],
+   "notes": [
+    "know、like、want、have（拥有）这类「状态」词不加 ing，改用现在完成时：I[['ve known]] him <<for>> years."
+   ]
+  },
+  "traces": {
+   "title": "看得出痕迹",
+   "short": "痕迹",
+   "text": "事情刚停下，但现在还看得出来：人很累、地上是湿的、手上有油漆。这时用它说**刚才一直在做什么**。",
+   "examples": [
+    {
+     "en": "I'm out of breath because I[['ve been running]].",
+     "zh": "我喘不过气，因为我刚才一直在跑。"
+    },
+    {
+     "en": "The ground is wet. It[['s been raining]].",
+     "zh": "地上湿了，刚才一直在下雨。"
+    },
+    {
+     "en": "You look tired. [[Have]] you [[been working]] late?",
+     "zh": "你看起来很累，最近一直加班到很晚吗？"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "和其他时态比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "现在完成时",
+     "this": {
+      "meaning": "一直在做，看过程：做了多久",
+      "en": "I[['ve been writing]] tests <<all morning>>."
+     },
+     "that": {
+      "meaning": "做完了，看结果：做了多少",
+      "en": "I[['ve written]] ten tests."
+     }
+    },
+    {
+     "with": "现在进行时",
+     "this": {
+      "meaning": "从过去到现在，说了做了多久",
+      "en": "I[['ve been waiting]] <<for>> an hour."
+     },
+     "that": {
+      "meaning": "只说现在这一刻在做",
+      "en": "I[['m waiting]] for the bus."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I ~~am waiting~~ here for an hour.",
+     "good": "I[['ve been waiting]] here <<for>> an hour.",
+     "why": "说「已经多久了」，不能只用现在进行时。"
+    },
+    {
+     "bad": "I've ~~been knowing~~ her for years.",
+     "good": "I[['ve known]] her <<for>> years.",
+     "why": "know 是状态，用现在完成时，不加 ing。"
+    },
+    {
+     "bad": "She ~~have~~ been working all day.",
+     "good": "She [[has been working]] all day.",
+     "why": "他她它用 has。"
+    },
+    {
+     "bad": "We've been ~~work~~ on it since May.",
+     "good": "We[['ve been working]] on it <<since>> May.",
+     "why": "been 后面的动词要加 ing。"
+    },
+    {
+     "bad": "I~~'ve been drinking~~ three cups of tea today.",
+     "good": "I[['ve had]] three cups of tea today.",
+     "why": "说了数量（三杯），重点是结果，用现在完成时。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I ___ for you for twenty minutes! Where are you?",
+   "options": [
+    "wait",
+    "am waiting",
+    "have been waiting",
+    "waited"
+   ],
+   "answer": "have been waiting",
+   "explain": "从二十分钟前一直等到现在：[[have been waiting]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我们最近一直在做新设计。",
+   "answer": "We've been working on the new design lately.",
+   "accept": [
+    "We have been working on the new design lately.",
+    "We've been working on the new design recently.",
+    "We have been working on the new design recently."
+   ],
+   "explain": "最近一直在做：We[['ve been working]]。"
+  },
+  {
+   "id": "q03",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "It ___ (rain) since this morning.",
+   "answer": "has been raining",
+   "accept": [
+    "'s been raining"
+   ],
+   "explain": "it 用 has：[[has been raining]]。"
+  },
+  {
+   "id": "q04",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "They ___ (test) the app all week.",
+   "answer": "have been testing",
+   "accept": [
+    "'ve been testing"
+   ],
+   "explain": "they 用 have：[[have been testing]]。"
+  },
+  {
+   "id": "q05",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成否定句：She has been sleeping well.",
+   "answer": "She hasn't been sleeping well.",
+   "accept": [
+    "She has not been sleeping well."
+   ],
+   "traps": [
+    {
+     "input": "She doesn't have been sleeping well.",
+     "note": "直接在 has 后面加 not。"
+    }
+   ],
+   "explain": "She [[hasn't been sleeping]]：has 后面加 not。"
+  },
+  {
+   "id": "q06",
+   "section": "negq",
+   "type": "transform",
+   "prompt": "改成一般疑问句：You have been waiting long.",
+   "answer": "Have you been waiting long?",
+   "accept": [],
+   "explain": "把 [[Have]] 搬到最前面，been waiting 不动。"
+  },
+  {
+   "id": "q07",
+   "section": "negq",
+   "type": "fix",
+   "prompt": "改错：We've been work on it since May.",
+   "answer": "We've been working on it since May.",
+   "accept": [
+    "We have been working on it since May."
+   ],
+   "explain": "been 后面要加 ing：[[been working]]。"
+  },
+  {
+   "id": "q08",
+   "section": "howlong",
+   "type": "choice",
+   "prompt": "He's been working here ___ January.",
+   "options": [
+    "for",
+    "since",
+    "from"
+   ],
+   "answer": "since",
+   "explain": "January 是开始的那个点，用 <<since>>。"
+  },
+  {
+   "id": "q09",
+   "section": "howlong",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：I've been learning Swift for a year.（问对方「多久」）",
+   "answer": "How long have you been learning Swift?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "How long are you learning Swift?",
+     "note": "问「已经多久了」用 have been + ing。"
+    }
+   ],
+   "explain": "How long [[have]] you [[been learning]] Swift？"
+  },
+  {
+   "id": "q10",
+   "section": "howlong",
+   "type": "fill",
+   "prompt": "I've been studying ___ three hours.",
+   "answer": "for",
+   "accept": [],
+   "explain": "三个小时是一段时间，用 <<for>>。"
+  },
+  {
+   "id": "q11",
+   "section": "traces",
+   "type": "choice",
+   "prompt": "— Why are you out of breath? — I ___.",
+   "options": [
+    "have run",
+    "have been running",
+    "run"
+   ],
+   "answer": "have been running",
+   "explain": "刚停下，还喘着气，看得出痕迹：[[have been running]]。"
+  },
+  {
+   "id": "q12",
+   "section": "traces",
+   "type": "fill",
+   "prompt": "Your hands are covered in paint. What ___ you ___ (do)?",
+   "answer": "have / been doing",
+   "accept": [
+    "have, been doing",
+    "have; been doing"
+   ],
+   "explain": "手上有油漆是痕迹：What [[have]] you [[been doing]]？"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I ___ ten tests this morning.",
+   "options": [
+    "have written",
+    "have been writing"
+   ],
+   "answer": "have written",
+   "explain": "说了数量（十个），看结果：[[have written]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I ___ tests all morning, and I'm really tired.",
+   "options": [
+    "have written",
+    "have been writing"
+   ],
+   "answer": "have been writing",
+   "explain": "<<all morning>> 说的是做了多久，看过程：[[have been writing]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I've been knowing her for years.",
+   "answer": "I've known her for years.",
+   "accept": [
+    "I have known her for years."
+   ],
+   "explain": "know 是状态，不加 ing：I[['ve known]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I am waiting here for an hour.",
+   "answer": "I've been waiting here for an hour.",
+   "accept": [
+    "I have been waiting here for an hour."
+   ],
+   "explain": "说已经多久了：I[['ve been waiting]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用现在完成进行时说 3 句话：你最近一直在忙什么、忙了多久。至少一句用 for，一句用 since。",
+  "rules": [
+   "结构 = have / has + been + 动词 ing",
+   "for 后面跟一段时间，since 后面跟开始的时间点",
+   "know、like 这类状态动词改用现在完成时"
+  ],
+  "note": "规则判 have / has been + ing 和 for / since（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

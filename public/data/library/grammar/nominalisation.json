@@ -1,0 +1,355 @@
+{
+ "id": "g-nominalisation",
+ "title": "名词化",
+ "en": "Nominalisation",
+ "group": "B2 进阶",
+ "level": "B2",
+ "order": 54,
+ "keywords": [
+  "名词化"
+ ],
+ "related": [
+  "g-passive",
+  "g-linking-words",
+  "g-discourse-markers"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "名词化就是**把一个动作变成一个名词**：decide → decision。句子会更短、更正式，适合写报告和邮件。聊天时少用，不然听着很生硬。",
+   "uses": [
+    {
+     "zh": "动作变名词，句子更正式",
+     "en": "The [[decision]] to delay the release was hard.",
+     "en_zh": "推迟发布这个决定很难做。"
+    },
+    {
+     "zh": "把「怎么变了」说成一件事",
+     "en": "There was a big [[improvement]] in speed.",
+     "en_zh": "速度有了很大的提升。"
+    },
+    {
+     "zh": "把重点放在事情上，而不是人上",
+     "en": "The [[introduction]] of dark mode increased usage.",
+     "en_zh": "推出深色模式让使用量增加了。"
+    }
+   ]
+  },
+  "how": {
+   "title": "怎么变成名词", "short": "怎么变",
+   "rule": "大多数靠**加个尾巴**：-tion、-ment、-ance、-ness、-ity。有些词长得一样，直接当名词用。",
+   "rules": [
+    {
+     "ending": "-tion / -sion",
+     "change": "动词变名词",
+     "examples": [
+      "decide → [[deci{sion}]]",
+      "introduce → [[introduc{tion}]]"
+     ]
+    },
+    {
+     "ending": "-ment",
+     "change": "动词变名词",
+     "examples": [
+      "improve → [[improve{ment}]]",
+      "develop → [[develop{ment}]]"
+     ]
+    },
+    {
+     "ending": "-ance / -ence",
+     "change": "动词变名词",
+     "examples": [
+      "perform → [[perform{ance}]]",
+      "prefer → [[prefer{ence}]]"
+     ]
+    },
+    {
+     "ending": "-ness / -ity",
+     "change": "形容词变名词",
+     "examples": [
+      "aware → [[aware{ness}]]",
+      "available → [[availab{ility}]]"
+     ]
+    },
+    {
+     "ending": "不变",
+     "change": "长得一样",
+     "examples": [
+      "change → [[change]]",
+      "release → [[release]]",
+      "increase → [[increase]]"
+     ]
+    }
+   ],
+   "tip": "拿不准就查词典：analyse 的名词是 analysis，fail 的名词是 failure，这些要单独记。"
+  },
+  "rewrite": {
+   "title": "一句话怎么改", "short": "改写",
+   "rule": "三步走：**动作变名词**，**副词变形容词**，再找个简单的动词把句子撑起来，比如 there was、cause、lead to。",
+   "items": [
+    {
+     "rule": "原句：Prices increased sharply.",
+     "en": "There was a sharp [[increase]] in prices.",
+     "zh": "价格大幅上涨。"
+    },
+    {
+     "rule": "原句：We analysed the data carefully and found two problems.",
+     "en": "A careful [[analysis]] of the data showed two problems.",
+     "zh": "仔细分析数据后发现了两个问题。"
+    },
+    {
+     "rule": "原句：The server failed, so users couldn't log in.",
+     "en": "The server [[failure]] stopped users from logging in.",
+     "zh": "服务器故障导致用户登录不了。"
+    }
+   ]
+  },
+  "prep": {
+   "title": "名词后面的小词", "short": "搭配",
+   "rule": "变成名词后，常要配一个介词，**和名词一起记**：increase **in**、decision **on**、demand **for**、reduction **in**。",
+   "examples": [
+    {
+     "en": "There's been a big [[increase in]] crash reports.",
+     "zh": "崩溃报告一下子多了很多。"
+    },
+    {
+     "en": "We need a [[decision on]] the new design by Friday.",
+     "zh": "周五前我们需要对新设计拍板。"
+    },
+    {
+     "en": "There's high [[demand for]] dark mode.",
+     "zh": "用户很想要深色模式。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "动词句",
+     "this": {
+      "meaning": "名词化：正式、简短，写报告用",
+      "en": "The [[delay]] was caused by a supplier problem."
+     },
+     "that": {
+      "meaning": "动词句：口语、清楚，跟同事说",
+      "en": "We [[were delayed]] because a supplier had a problem."
+     }
+    },
+    {
+     "with": "After we…",
+     "this": {
+      "meaning": "名词化",
+      "en": "After the [[introduction]] of Face ID, logins went up."
+     },
+     "that": {
+      "meaning": "动词句",
+      "en": "After we [[introduced]] Face ID, logins went up."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "There was a big ~~improve~~ in speed.",
+     "good": "There was a big [[improvement]] in speed.",
+     "why": "a big 后面要名词，improve 是动词。"
+    },
+    {
+     "bad": "We need a ~~quickly~~ response.",
+     "good": "We need a [[quick]] response.",
+     "why": "修饰名词用形容词，不用副词。"
+    },
+    {
+     "bad": "There was an increase ~~of~~ sales.",
+     "good": "There was an [[increase in]] sales.",
+     "why": "increase 后面配 in。"
+    },
+    {
+     "bad": "A careful ~~analyse~~ of the data showed two problems.",
+     "good": "A careful [[analysis]] of the data showed two problems.",
+     "why": "analyse 的名词是 analysis。"
+    }
+   ],
+   "tip": "别名词化过头：一句话里一两个就够了，太多别人读着累。"
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "The ___ to delay the release was hard.",
+   "options": [
+    "decision",
+    "decide",
+    "deciding",
+    "decided"
+   ],
+   "answer": "decision",
+   "explain": "the 后面要名词：[[decision]]。"
+  },
+  {
+   "id": "q02",
+   "section": "how",
+   "type": "fill",
+   "prompt": "improve 的名词是 ___",
+   "answer": "improvement",
+   "accept": [],
+   "explain": "加 -ment：[[improve{ment}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "how",
+   "type": "fill",
+   "prompt": "available 的名词是 ___",
+   "answer": "availability",
+   "accept": [],
+   "explain": "形容词变名词，加 -ity：[[availab{ility}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "how",
+   "type": "choice",
+   "prompt": "perform 的名词是",
+   "options": [
+    "performance",
+    "performence",
+    "performation"
+   ],
+   "answer": "performance",
+   "explain": "加 -ance：[[perform{ance}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "how",
+   "type": "fill",
+   "prompt": "analyse 的名词是 ___",
+   "answer": "analysis",
+   "accept": [],
+   "explain": "要单独记：[[analysis]]。"
+  },
+  {
+   "id": "q06",
+   "section": "rewrite",
+   "type": "transform",
+   "prompt": "名词化改写（用 There was…）：Prices increased sharply.",
+   "answer": "There was a sharp increase in prices.",
+   "accept": [],
+   "explain": "increased → [[increase]]，sharply → sharp。"
+  },
+  {
+   "id": "q07",
+   "section": "rewrite",
+   "type": "fill",
+   "prompt": "The server ___ stopped users from logging in.（fail 变名词）",
+   "answer": "failure",
+   "accept": [],
+   "explain": "fail 的名词是 [[failure]]。"
+  },
+  {
+   "id": "q08",
+   "section": "rewrite",
+   "type": "choice",
+   "prompt": "We analysed the data carefully. → A ___ analysis of the data showed two problems.",
+   "options": [
+    "careful",
+    "carefully",
+    "care"
+   ],
+   "answer": "careful",
+   "explain": "动词变名词后，副词跟着变形容词：careful。"
+  },
+  {
+   "id": "q09",
+   "section": "prep",
+   "type": "choice",
+   "prompt": "There's been a big increase ___ crash reports this week.",
+   "options": [
+    "in",
+    "of",
+    "on"
+   ],
+   "answer": "in",
+   "explain": "固定搭配：[[increase in]]。"
+  },
+  {
+   "id": "q10",
+   "section": "prep",
+   "type": "fill",
+   "prompt": "We need a decision ___ the new design by Friday.",
+   "answer": "on",
+   "accept": [
+    "about"
+   ],
+   "explain": "固定搭配：[[decision on]]。"
+  },
+  {
+   "id": "q11",
+   "section": "prep",
+   "type": "fill",
+   "prompt": "There's high demand ___ dark mode.",
+   "answer": "for",
+   "accept": [],
+   "explain": "固定搭配：[[demand for]]。"
+  },
+  {
+   "id": "q12",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：There was a big improve in speed.",
+   "answer": "There was a big improvement in speed.",
+   "accept": [],
+   "explain": "要名词：[[improvement]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：We need a quickly response from the client.",
+   "answer": "We need a quick response from the client.",
+   "accept": [],
+   "explain": "修饰名词用形容词：[[quick]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "哪一句更适合写进给老板的项目报告？",
+   "options": [
+    "The delay was caused by a supplier problem.",
+    "We were late because the supplier messed up."
+   ],
+   "answer": "The delay was caused by a supplier problem.",
+   "explain": "名词化的 [[delay]] 更正式、更简短。"
+  },
+  {
+   "id": "q15",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：推出深色模式让使用量增加了。（用 The introduction of…）",
+   "answer": "The introduction of dark mode increased usage.",
+   "accept": [
+    "The introduction of dark mode led to an increase in usage.",
+    "The introduction of dark mode has increased usage.",
+    "The introduction of dark mode caused an increase in usage.",
+    "The introduction of dark mode increased use."
+   ],
+   "explain": "introduce 变名词：[[introduction]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "把一段口语说的项目进展改成 2 到 3 句正式的周报，至少用到 2 个名词化的词（比如 improvement、decision、increase in）。",
+  "rules": [
+   "名词前面用形容词，不用副词",
+   "increase in / decision on / demand for 等介词搭配要对"
+  ],
+  "note": "规则判名词形式和介词搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

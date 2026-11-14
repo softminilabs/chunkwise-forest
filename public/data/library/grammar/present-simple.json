@@ -1,0 +1,586 @@
+{
+ "id": "g-present-simple",
+ "title": "一般现在时",
+ "en": "Present Simple",
+ "group": "时态",
+ "level": "A2",
+ "order": 1,
+ "keywords": [
+  "一般现在时"
+ ],
+ "related": [
+  "g-present-continuous",
+  "g-past-simple",
+  "g-stative-verbs"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "一般现在时说的是**「平常就这样」**的事：经常做的事、一直都对的事、现在的状态。记住：不是「正在做」，是「平常、一直、本来就」。",
+   "uses": [
+    {
+     "zh": "经常做的事、习惯",
+     "en": "I [[drink]] coffee <<every morning>>.",
+     "en_zh": "我每天早上都喝咖啡。"
+    },
+    {
+     "zh": "一直都对的事实",
+     "en": "Water [[boil{s}]] at 100 degrees.",
+     "en_zh": "水在 100 度时沸腾。"
+    },
+    {
+     "zh": "现在的状态",
+     "en": "She [[live{s}]] in Shanghai.",
+     "en_zh": "她住在上海。"
+    }
+   ],
+   "signals": [
+    "always",
+    "usually",
+    "often",
+    "sometimes",
+    "never",
+    "every day",
+    "on Mondays"
+   ]
+  },
+  "positive": {
+   "title": "肯定句", "short": "肯定",
+   "formula": [
+    "主语",
+    "动词原形 / 动词 + s",
+    "其他"
+   ],
+   "rule": "主语是「他、她、它」或者一个人、一件东西时，动词后面加 s 或 es。口诀：**他她它，加个 s。**",
+   "examples": [
+    {
+     "en": "I [[work]] from home <<on Fridays>>.",
+     "zh": "我每周五在家办公。"
+    },
+    {
+     "en": "She [[work{s}]] at a bank.",
+     "zh": "她在银行工作。"
+    },
+    {
+     "en": "Our app [[crash{es}]] on old phones.",
+     "zh": "我们的 App 在旧手机上会崩溃。"
+    }
+   ],
+   "be": "be 动词跟着主语变：I [[am]] · he / she / it [[is]] · you / we / they [[are]]"
+  },
+  "negative": {
+   "title": "否定句", "short": "否定",
+   "formula": [
+    "主语",
+    "don't / doesn't",
+    "动词原形",
+    "其他"
+   ],
+   "rule": "「他她它」用 doesn't，其他用 don't。**s 只能出现一次**：doesn't 已经带了 s，后面的动词要变回原形。",
+   "examples": [
+    {
+     "en": "I [[don't]] ((drink)) tea.",
+     "zh": "我不喝茶。"
+    },
+    {
+     "en": "He [[doesn't]] ((drink)) tea.",
+     "zh": "他不喝茶。"
+    },
+    {
+     "en": "The build [[doesn't]] ((fail)) on my Mac.",
+     "zh": "在我的 Mac 上构建不会失败。"
+    }
+   ],
+   "wrong": {
+    "bad": "He doesn't drink~~s~~ tea.",
+    "good": "He [[doesn't]] ((drink)) tea."
+   },
+   "be": "be 动词直接加 not：I[['m not]] · he [[isn't]] · they [[aren't]]"
+  },
+  "question": {
+   "title": "疑问句", "short": "疑问",
+   "formula": [
+    "Do / Does",
+    "主语",
+    "动词原形",
+    "其他？"
+   ],
+   "rule": "把 do 或 does 放到最前面，动词用原形。回答时也用 do / does。",
+   "examples": [
+    {
+     "en": "[[Do]] you ((work)) <<at weekends>>?",
+     "zh": "你周末上班吗？",
+     "answer": "Yes, I [[do]]. / No, I [[don't]]."
+    },
+    {
+     "en": "[[Does]] she ((work)) <<at weekends>>?",
+     "zh": "她周末上班吗？",
+     "answer": "Yes, she [[does]]. / No, she [[doesn't]]."
+    },
+    {
+     "en": "What time [[does]] the meeting ((start))?",
+     "zh": "会议几点开始？",
+     "answer": "It [[start{s}]] at ten."
+    }
+   ],
+   "notes": [
+    "问「谁」做这件事时，不用 do / does：Who [[work{s}]] here?（谁在这里工作？）",
+    "be 动词把 be 提到前面：[[Are]] you busy? · [[Is]] he at home?"
+   ]
+  },
+  "table": {
+   "title": "一张表看全", "short": "一张表",
+   "verb": "work",
+   "rows": [
+    {
+     "who": "I",
+     "pos": "I [[work]].",
+     "neg": "I [[don't]] ((work)).",
+     "negFull": "I do not work.",
+     "q": "[[Do]] I ((work))?",
+     "short": "Yes, you [[do]]. / No, you [[don't]]."
+    },
+    {
+     "who": "you",
+     "pos": "You [[work]].",
+     "neg": "You [[don't]] ((work)).",
+     "negFull": "You do not work.",
+     "q": "[[Do]] you ((work))?",
+     "short": "Yes, I [[do]]. / No, I [[don't]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "He [[work{s}]].",
+     "neg": "He [[doesn't]] ((work)).",
+     "negFull": "He does not work.",
+     "q": "[[Does]] he ((work))?",
+     "short": "Yes, he [[does]]. / No, he [[doesn't]]."
+    },
+    {
+     "who": "we",
+     "pos": "We [[work]].",
+     "neg": "We [[don't]] ((work)).",
+     "negFull": "We do not work.",
+     "q": "[[Do]] we ((work))?",
+     "short": "Yes, we [[do]]. / No, we [[don't]]."
+    },
+    {
+     "who": "they",
+     "pos": "They [[work]].",
+     "neg": "They [[don't]] ((work)).",
+     "negFull": "They do not work.",
+     "q": "[[Do]] they ((work))?",
+     "short": "Yes, they [[do]]. / No, they [[don't]]."
+    }
+   ],
+   "be": [
+    {
+     "who": "I",
+     "pos": "I [[am]] busy. / I[['m]] busy.",
+     "neg": "I[['m not]] busy.",
+     "negFull": "I am not busy.",
+     "q": "[[Am]] I late?",
+     "short": "Yes, you [[are]]. / No, you [[aren't]]."
+    },
+    {
+     "who": "you / we / they",
+     "pos": "You [[are]] busy. / You[['re]] busy.",
+     "neg": "You [[aren't]] busy. / You[['re not]] busy.",
+     "negFull": "You are not busy.",
+     "q": "[[Are]] you busy?",
+     "short": "Yes, I [[am]]. / No, I[['m not]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "He [[is]] busy. / He[['s]] busy.",
+     "neg": "He [[isn't]] busy. / He[['s not]] busy.",
+     "negFull": "He is not busy.",
+     "q": "[[Is]] he busy?",
+     "short": "Yes, he [[is]]. / No, he [[isn't]]."
+    }
+   ],
+   "contractions": [
+    "do not = [[don't]]",
+    "does not = [[doesn't]]",
+    "am not 没有缩写，说 I[['m not]]",
+    "is not = [[isn't]]",
+    "are not = [[aren't]]"
+   ],
+   "tip": "表里每一格都能点读。看横着的一行：同一个人称的肯定、否定、疑问；看竖着的一列：只有 he / she / it 那一行不一样。"
+  },
+  "special": {
+   "title": "特殊情况", "short": "特殊",
+   "items": [
+    {
+     "rule": "时刻表、日程表说的是将来，也用一般现在时。",
+     "en": "The train [[leave{s}]] at 8:30 <<tomorrow>>.",
+     "zh": "火车明天 8:30 开。"
+    },
+    {
+     "rule": "when、if、as soon as 后面说将来的事，用一般现在时，不用 will。",
+     "en": "<<When>> she [[arrive{s}]], I'll call you.",
+     "zh": "她一到我就给你打电话。"
+    },
+    {
+     "rule": "表示「知道、喜欢、想要、需要」这类状态的动词，一般不用进行时。",
+     "en": "I [[know]] the answer.",
+     "zh": "我知道答案。（不说 I'm knowing）"
+    },
+    {
+     "rule": "have 的「他她它」形式是 has，不是 haves。",
+     "en": "She [[has]] two kids.",
+     "zh": "她有两个孩子。"
+    }
+   ]
+  },
+  "spelling": {
+   "title": "什么时候加 s，什么时候加 es", "short": "加 s",
+   "rules": [
+    {
+     "ending": "大多数动词",
+     "change": "加 s",
+     "examples": [
+      "work → [[work{s}]]",
+      "play → [[play{s}]]"
+     ]
+    },
+    {
+     "ending": "s、x、sh、ch、o 结尾",
+     "change": "加 es",
+     "examples": [
+      "watch → [[watch{es}]]",
+      "fix → [[fix{es}]]",
+      "go → [[go{es}]]"
+     ]
+    },
+    {
+     "ending": "辅音字母 + y 结尾",
+     "change": "去 y，加 ies",
+     "examples": [
+      "stud~~y~~ → [[stud{ies}]]",
+      "tr~~y~~ → [[tr{ies}]]"
+     ]
+    },
+    {
+     "ending": "元音字母 + y 结尾",
+     "change": "直接加 s",
+     "examples": [
+      "play → [[play{s}]]",
+      "say → [[say{s}]]"
+     ]
+    },
+    {
+     "ending": "不规则",
+     "change": "要单独记",
+     "examples": [
+      "have → [[has]]",
+      "be → [[is]]",
+      "do → [[does]]"
+     ]
+    }
+   ],
+   "sound": [
+    {
+     "say": "/s/",
+     "when": "在 p、t、k、f 这类不震动喉咙的音后面",
+     "examples": [
+      "[[work{s}]]",
+      "[[stop{s}]]"
+     ]
+    },
+    {
+     "say": "/z/",
+     "when": "在震动喉咙的音和元音后面",
+     "examples": [
+      "[[play{s}]]",
+      "[[live{s}]]"
+     ]
+    },
+    {
+     "say": "/ɪz/",
+     "when": "在 s、z、sh、ch、ge 这类「嘶嘶」的音后面",
+     "examples": [
+      "[[watch{es}]]",
+      "[[fix{es}]]",
+      "[[us{es}]]"
+     ]
+    }
+   ],
+   "oddSounds": "两个读音特别的：says 读 /sez/，does 读 /dʌz/。"
+  },
+  "contrast": {
+   "title": "和其他时态比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "现在进行时",
+     "this": {
+      "meaning": "平常、习惯、一直",
+      "en": "I [[work]] from home <<on Fridays>>."
+     },
+     "that": {
+      "meaning": "现在这会儿、这段时间临时这样",
+      "en": "I[['m working]] from home <<this week>>."
+     }
+    },
+    {
+     "with": "一般过去时",
+     "this": {
+      "meaning": "现在还是这样",
+      "en": "I [[live]] in Shanghai."
+     },
+     "that": {
+      "meaning": "以前这样，现在不是了",
+      "en": "I [[lived]] in Shanghai <<in 2020>>."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "He ~~go~~ to work by bus.",
+     "good": "He [[go{es}]] to work by bus.",
+     "why": "他她它，加个 s。"
+    },
+    {
+     "bad": "She doesn't like~~s~~ meetings.",
+     "good": "She [[doesn't]] ((like)) meetings.",
+     "why": "s 只能出现一次。"
+    },
+    {
+     "bad": "Does he work~~s~~ here?",
+     "good": "[[Does]] he ((work)) here?",
+     "why": "does 已经带了 s，动词用原形。"
+    },
+    {
+     "bad": "I ~~am~~ agree with you.",
+     "good": "I [[agree]] with you.",
+     "why": "agree 本身就是动词，不用再加 am。"
+    },
+    {
+     "bad": "I~~'m knowing~~ the answer.",
+     "good": "I [[know]] the answer.",
+     "why": "know 是状态，不用进行时。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "positive",
+   "type": "choice",
+   "prompt": "My manager ___ coffee every morning.",
+   "options": [
+    "drink",
+    "drinks",
+    "drinking",
+    "is drink"
+   ],
+   "answer": "drinks",
+   "explain": "my manager 是「他 / 她」，动词加 s：[[drink{s}]]。"
+  },
+  {
+   "id": "q02",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "They ___ (use) Swift for the iOS app.",
+   "answer": "use",
+   "accept": [],
+   "explain": "they 不是「他她它」，动词用原形：They [[use]]。"
+  },
+  {
+   "id": "q03",
+   "section": "negative",
+   "type": "transform",
+   "prompt": "改成否定句：He works on Saturdays.",
+   "answer": "He doesn't work on Saturdays.",
+   "accept": [
+    "He does not work on Saturdays."
+   ],
+   "traps": [
+    {
+     "input": "He doesn't works on Saturdays.",
+     "note": "s 只能出现一次：doesn't 后面用原形 work。"
+    }
+   ],
+   "explain": "He [[doesn't]] ((work))：他用 doesn't，动词回到原形。"
+  },
+  {
+   "id": "q04",
+   "section": "negative",
+   "type": "fix",
+   "prompt": "改错：She don't like long meetings.",
+   "answer": "She doesn't like long meetings.",
+   "accept": [
+    "She does not like long meetings."
+   ],
+   "explain": "she 用 [[doesn't]]。"
+  },
+  {
+   "id": "q05",
+   "section": "question",
+   "type": "transform",
+   "prompt": "改成一般疑问句：They use GitHub.",
+   "answer": "Do they use GitHub?",
+   "accept": [],
+   "explain": "they 用 [[Do]]，放到最前面。"
+  },
+  {
+   "id": "q06",
+   "section": "question",
+   "type": "fill",
+   "prompt": "— Does Leo work here? — Yes, he ___.",
+   "answer": "does",
+   "accept": [],
+   "explain": "用 does 问，就用 [[does]] 答。"
+  },
+  {
+   "id": "q07",
+   "section": "question",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：She lives in Hangzhou.（问「在哪里」）",
+   "answer": "Where does she live?",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Where does she lives?",
+     "note": "does 后面用原形 live。"
+    }
+   ],
+   "explain": "Where [[does]] she ((live))？疑问词 + does + 主语 + 动词原形。"
+  },
+  {
+   "id": "q08",
+   "section": "special",
+   "type": "fill",
+   "prompt": "The train ___ (leave) at 8:30 tomorrow.",
+   "answer": "leaves",
+   "accept": [],
+   "explain": "时刻表说将来也用一般现在时：[[leave{s}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "special",
+   "type": "fill",
+   "prompt": "When she ___ (arrive), I'll call you.",
+   "answer": "arrives",
+   "accept": [],
+   "traps": [
+    {
+     "input": "will arrive",
+     "note": "when 后面说将来，用一般现在时。"
+    }
+   ],
+   "explain": "when 后面不用 will：When she [[arrive{s}]]。"
+  },
+  {
+   "id": "q10",
+   "section": "special",
+   "type": "choice",
+   "prompt": "I ___ the answer.",
+   "options": [
+    "know",
+    "am knowing"
+   ],
+   "answer": "know",
+   "explain": "know 是状态，不用进行时。"
+  },
+  {
+   "id": "q11",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "study 的「他她它」形式是 ___",
+   "answer": "studies",
+   "accept": [],
+   "explain": "辅音 + y：去 y 加 ies，[[stud{ies}]]。"
+  },
+  {
+   "id": "q12",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "watch 的「他她它」形式是 ___",
+   "answer": "watches",
+   "accept": [],
+   "explain": "ch 结尾加 es：[[watch{es}]]。"
+  },
+  {
+   "id": "q13",
+   "section": "spelling",
+   "type": "choice",
+   "prompt": "watches 结尾的 -es 读作",
+   "options": [
+    "/s/",
+    "/z/",
+    "/ɪz/"
+   ],
+   "answer": "/ɪz/",
+   "explain": "ch 是「嘶嘶」的音，后面的 -es 读 /ɪz/。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "I usually ___ (take) the bus, but today I'm driving.",
+   "answer": "take",
+   "accept": [],
+   "explain": "<<usually>> 说的是平常的习惯：I [[take]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "Listen! Someone ___ (sing) in the next room.",
+   "answer": "is singing",
+   "accept": [],
+   "explain": "<<Listen!>> 说的是现在这一刻，用现在进行时：[[is singing]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I am agree with you.",
+   "answer": "I agree with you.",
+   "accept": [],
+   "explain": "agree 本身就是动词：I [[agree]]。"
+  },
+  {
+   "id": "q17",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：他从不在周末工作。",
+   "answer": "He never works at weekends.",
+   "accept": [
+    "He never works on weekends.",
+    "He never works at the weekend.",
+    "He never works on the weekend."
+   ],
+   "explain": "<<never>> 是「平常」的信号，主语 he，动词加 s：[[work{s}]]。"
+  },
+  {
+   "id": "q18",
+   "section": "table",
+   "type": "fill",
+   "prompt": "— ___ they work on Saturdays? — No, they ___.",
+   "answer": "Do / don't",
+   "accept": [
+    "Do, don't",
+    "Do; don't"
+   ],
+   "explain": "they 用 [[Do]] 问，用 [[don't]] 答。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用一般现在时说 3 句话，介绍你平常的一个工作日。至少有一句的主语是你的同事或家人（他 / 她）。",
+  "rules": [
+   "主语是 he / she / 单数名词时，谓语动词必须是三单形式",
+   "否定和疑问用 doesn't / does + 原形"
+  ],
+  "note": "规则判三单和 do / does 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

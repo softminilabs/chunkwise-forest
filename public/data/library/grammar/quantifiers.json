@@ -1,0 +1,427 @@
+{
+ "id": "g-quantifiers",
+ "title": "some / any / much / many / a few / a little",
+ "en": "Quantifiers",
+ "group": "名词和代词",
+ "level": "A2",
+ "order": 40,
+ "keywords": [
+  "说部分和全部"
+ ],
+ "related": [
+  "g-countable",
+  "g-indefinite-pronouns",
+  "g-articles"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "这些小词都在回答「**有多少**」。先看后面的东西能不能数：能数的用 many、a few，不能数的用 much、a little；some、any、a lot of 两边都能用。",
+   "uses": [
+    {
+     "zh": "能数的：多用 many，少用 a few",
+     "en": "I've got [[a few]] questions.",
+     "en_zh": "我有几个问题。"
+    },
+    {
+     "zh": "不能数的：多用 much，少用 a little",
+     "en": "We haven't got [[much]] time.",
+     "en_zh": "我们时间不多。"
+    },
+    {
+     "zh": "两边都能用",
+     "en": "There's [[a lot of]] traffic today.",
+     "en_zh": "今天路上车很多。"
+    }
+   ],
+   "signals": [
+    "some",
+    "any",
+    "many",
+    "much",
+    "a few",
+    "a little",
+    "a lot of"
+   ]
+  },
+  "some-any": {
+   "title": "some 和 any",
+   "short": "some",
+   "rule": "说「有一些」用 some；否定句和问句里用 any。**请别人吃喝、请别人帮忙时，问句也用 some**，因为你希望对方说 yes。",
+   "examples": [
+    {
+     "en": "We've got [[some]] time before the demo.",
+     "zh": "演示前我们还有点时间。"
+    },
+    {
+     "en": "There aren't [[any]] crashes this week.",
+     "zh": "这周没有任何崩溃。"
+    },
+    {
+     "en": "Have you got [[any]] questions?",
+     "zh": "你们有什么问题吗？"
+    },
+    {
+     "en": "Would you like [[some]] tea?",
+     "zh": "要来点茶吗？"
+    }
+   ]
+  },
+  "many-much": {
+   "title": "many 和 much",
+   "short": "多",
+   "rule": "many 跟能数的，much 跟不能数的。much 多用在否定句和问句里；肯定句说「很多」，口语一般说 **a lot of**。",
+   "examples": [
+    {
+     "en": "How [[many]] tickets are left?",
+     "zh": "还剩几张票？"
+    },
+    {
+     "en": "We don't have [[much]] time.",
+     "zh": "我们时间不多。"
+    },
+    {
+     "en": "We had [[a lot of]] feedback on the new design.",
+     "zh": "新设计收到了很多反馈。"
+    }
+   ],
+   "wrong": {
+    "bad": "How ~~much~~ bugs did you fix?",
+    "good": "How [[many]] bugs did you fix?"
+   }
+  },
+  "few-little": {
+   "title": "a few 和 a little",
+   "short": "少",
+   "rule": "a few 跟能数的，a little 跟不能数的，意思是「**有一些，够用**」。去掉 a，变成 few、little，意思就成了「**太少了，几乎没有**」。",
+   "items": [
+    {
+     "rule": "有几个，挺好",
+     "en": "I've got [[a few]] ideas.",
+     "zh": "我有几个想法。"
+    },
+    {
+     "rule": "有一点，够用",
+     "en": "Can I have [[a little]] milk?",
+     "zh": "能给我加一点牛奶吗？"
+    },
+    {
+     "rule": "没几个，不太好",
+     "en": "[[Few]] people came to the meetup.",
+     "zh": "没几个人来参加聚会。"
+    },
+    {
+     "rule": "没什么，不太好",
+     "en": "There's [[little]] chance of finishing today.",
+     "zh": "今天做完的可能性不大。"
+    }
+   ]
+  },
+  "part-all": {
+   "title": "全部、大部分、一个都没有",
+   "short": "全部",
+   "rule": "说「一群里面的多少」，用 **all / most / some / none + of the（或 of my、of us）**。泛泛地说，不指哪一群，就不要 of the。",
+   "items": [
+    {
+     "rule": "全部",
+     "en": "[[All of]] the tests passed.",
+     "zh": "所有测试都通过了。"
+    },
+    {
+     "rule": "大部分",
+     "en": "[[Most of]] my colleagues live near the office.",
+     "zh": "我的同事大多住在公司附近。"
+    },
+    {
+     "rule": "一部分",
+     "en": "[[Some of]] the screens look odd in dark mode.",
+     "zh": "有些页面在深色模式下看着怪怪的。"
+    },
+    {
+     "rule": "一个都没有",
+     "en": "[[None of]] us knew the password.",
+     "zh": "我们没有一个人知道密码。"
+    }
+   ],
+   "notes": [
+    "泛泛地说不加 of the：[[Most]] people like holidays.（大多数人）· [[Most of the]] people here are engineers.（这里的大多数人）",
+    "两个都用 both：[[Both of]] the designs are good."
+   ]
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "few",
+     "this": {
+      "meaning": "a few：有几个，挺好",
+      "en": "[[A few]] users replied."
+     },
+     "that": {
+      "meaning": "few：没几个，不太好",
+      "en": "[[Few]] users replied."
+     }
+    },
+    {
+     "with": "any",
+     "this": {
+      "meaning": "some：肯定句、请别人",
+      "en": "Would you like [[some]] help?"
+     },
+     "that": {
+      "meaning": "any：否定句、普通问句",
+      "en": "Do you need [[any]] help?"
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "How ~~much~~ people came?",
+     "good": "How [[many]] people came?",
+     "why": "people 能数，用 many。"
+    },
+    {
+     "bad": "I don't have ~~some~~ money.",
+     "good": "I don't have [[any]] money.",
+     "why": "否定句用 any。"
+    },
+    {
+     "bad": "There's ~~a few~~ milk left.",
+     "good": "There's [[a little]] milk left.",
+     "why": "milk 不能数，用 a little。"
+    },
+    {
+     "bad": "~~Most of~~ people like holidays.",
+     "good": "[[Most]] people like holidays.",
+     "why": "泛泛地说「大多数人」，不加 of。"
+    },
+    {
+     "bad": "We have ~~a lot~~ bugs.",
+     "good": "We have [[a lot of]] bugs.",
+     "why": "a lot 后面跟名词要加 of。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "哪个词后面能数的、不能数的都能跟？",
+   "options": [
+    "many",
+    "much",
+    "a lot of",
+    "a few"
+   ],
+   "answer": "a lot of",
+   "explain": "[[a lot of]] 两边都能用：a lot of bugs · a lot of time。"
+  },
+  {
+   "id": "q02",
+   "section": "some-any",
+   "type": "fill",
+   "prompt": "There aren't ___ crashes this week.",
+   "answer": "any",
+   "accept": [],
+   "explain": "否定句用 [[any]]。"
+  },
+  {
+   "id": "q03",
+   "section": "some-any",
+   "type": "choice",
+   "prompt": "Would you like ___ tea?",
+   "options": [
+    "some",
+    "any"
+   ],
+   "answer": "some",
+   "explain": "请别人喝东西，希望对方说 yes，用 [[some]]。"
+  },
+  {
+   "id": "q04",
+   "section": "some-any",
+   "type": "transform",
+   "prompt": "改成否定句：We've got some time.",
+   "answer": "We haven't got any time.",
+   "accept": [
+    "We have not got any time.",
+    "We don't have any time.",
+    "We do not have any time."
+   ],
+   "traps": [
+    {
+     "input": "We haven't got some time.",
+     "note": "否定句里 some 要换成 any。"
+    }
+   ],
+   "explain": "否定句里 some 变 [[any]]。"
+  },
+  {
+   "id": "q05",
+   "section": "many-much",
+   "type": "choice",
+   "prompt": "How ___ tickets are left?",
+   "options": [
+    "many",
+    "much"
+   ],
+   "answer": "many",
+   "explain": "tickets 能数，用 [[many]]。"
+  },
+  {
+   "id": "q06",
+   "section": "many-much",
+   "type": "fix",
+   "prompt": "改错：How much bugs did you fix today?",
+   "answer": "How many bugs did you fix today?",
+   "accept": [],
+   "explain": "bugs 能数，用 [[many]]。"
+  },
+  {
+   "id": "q07",
+   "section": "many-much",
+   "type": "fill",
+   "prompt": "We don't have ___ time before the demo.",
+   "answer": "much",
+   "accept": [
+    "a lot of",
+    "lots of"
+   ],
+   "traps": [
+    {
+     "input": "many",
+     "note": "time 不能数，不用 many。"
+    }
+   ],
+   "explain": "time 不能数，否定句用 [[much]]。"
+  },
+  {
+   "id": "q08",
+   "section": "few-little",
+   "type": "choice",
+   "prompt": "Can I have ___ milk in my tea?",
+   "options": [
+    "a few",
+    "a little",
+    "many"
+   ],
+   "answer": "a little",
+   "explain": "milk 不能数，「一点」用 [[a little]]。"
+  },
+  {
+   "id": "q09",
+   "section": "few-little",
+   "type": "choice",
+   "prompt": "I've got ___ ideas. Shall we talk?",
+   "options": [
+    "a few",
+    "few",
+    "a little"
+   ],
+   "answer": "a few",
+   "explain": "ideas 能数，「有几个，挺好」用 [[a few]]。"
+  },
+  {
+   "id": "q10",
+   "section": "few-little",
+   "type": "translate",
+   "prompt": "翻译：我有几个问题。",
+   "answer": "I've got a few questions.",
+   "accept": [
+    "I have a few questions.",
+    "I have got a few questions."
+   ],
+   "explain": "questions 能数，「几个」用 [[a few]]。"
+  },
+  {
+   "id": "q11",
+   "section": "part-all",
+   "type": "fill",
+   "prompt": "___ of the tests passed. Not one failed.",
+   "answer": "All",
+   "accept": [
+    "all"
+   ],
+   "explain": "一个都没失败，就是「全部」：[[All of]] the tests。"
+  },
+  {
+   "id": "q12",
+   "section": "part-all",
+   "type": "choice",
+   "prompt": "___ people like holidays.",
+   "options": [
+    "Most",
+    "Most of",
+    "The most"
+   ],
+   "answer": "Most",
+   "explain": "泛泛地说「大多数人」，不加 of：[[Most]] people。"
+  },
+  {
+   "id": "q13",
+   "section": "part-all",
+   "type": "fill",
+   "prompt": "___ of us knew the password, so we had to reset it.",
+   "answer": "None",
+   "accept": [
+    "none"
+   ],
+   "explain": "「一个都没有」用 [[None of]] us。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I don't have some money with me.",
+   "answer": "I don't have any money with me.",
+   "accept": [
+    "I haven't got any money with me.",
+    "I do not have any money with me."
+   ],
+   "explain": "否定句用 [[any]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：We have a lot bugs this week.",
+   "answer": "We have a lot of bugs this week.",
+   "accept": [
+    "We've got a lot of bugs this week.",
+    "We have lots of bugs this week."
+   ],
+   "explain": "a lot 后面跟名词要加 of：[[a lot of]] bugs。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Most of people work from home on Fridays.",
+   "answer": "Most people work from home on Fridays.",
+   "accept": [
+    "Most of the people work from home on Fridays."
+   ],
+   "explain": "泛泛地说，不加 of：[[Most]] people。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话说说你们团队现在的情况，比如人、时间、bug、反馈。至少用到 many / much 里的一个，a few / a little 里的一个，和一个 some / any。",
+  "rules": [
+   "many / a few 跟可数名词，much / a little 跟不可数名词",
+   "否定句和一般疑问句用 any，肯定句用 some",
+   "most / all / none 后面接具体一群时要加 of the / of my"
+  ],
+  "note": "规则判数量词和名词是否搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

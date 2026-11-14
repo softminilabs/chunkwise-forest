@@ -1,0 +1,625 @@
+{
+ "id": "forms-possessives-articles",
+ "title": "所有格和 a / an",
+ "en": "Possessives and A / An",
+ "group": "词形变化",
+ "order": 5,
+ "symbol": "person.crop.square",
+ "summary": "the bosses' · an API · a URL",
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "说「谁的」：一个人加 **'s**，s 结尾的复数只加 **'**。a 还是 an，**听第一个音，不看字母**：an API、a URL。",
+   "uses": [
+    {
+     "zh": "一个老板的",
+     "en": "That's [[the boss{'s}]] laptop.",
+     "en_zh": "那是老板的电脑。"
+    },
+    {
+     "zh": "几个老板的",
+     "en": "We joined [[the bosses{'}]] meeting.",
+     "en_zh": "我们参加了老板们的会。"
+    },
+    {
+     "zh": "元音音开头用 an",
+     "en": "Is there [[an]] API for this?",
+     "en_zh": "这个有接口吗？"
+    },
+    {
+     "zh": "辅音音开头用 a",
+     "en": "Can you send me [[a]] URL?",
+     "en_zh": "能发我一个链接吗？"
+    }
+   ]
+  },
+  "apostrophe": {
+   "title": "'s 和 ' 怎么加",
+   "short": "加撇号",
+   "rule": "口诀：**先写出「谁」，再加撇号**。谁是 boss，就写 boss's；谁是 bosses，已经有 s 了，只加 '。",
+   "rules": [
+    {
+     "ending": "一个人、一样东西",
+     "change": "加 's",
+     "examples": [
+      "the boss → [[the boss{'s}]] laptop",
+      "my team → [[my team{'s}]] goal",
+      "Tom → [[Tom{'s}]] PR"
+     ]
+    },
+    {
+     "ending": "s 结尾的复数",
+     "change": "只加 '",
+     "examples": [
+      "the bosses → [[the bosses{'}]] meeting",
+      "users → [[users{'}]] data",
+      "two weeks → [[two weeks{'}]] notice"
+     ]
+    },
+    {
+     "ending": "不是 s 结尾的复数",
+     "change": "加 's",
+     "examples": [
+      "children → [[children{'s}]] toys",
+      "people → [[people{'s}]] names",
+      "women → [[women{'s}]] team"
+     ]
+    },
+    {
+     "ending": "s 结尾的名字",
+     "change": "'s 和 ' 都行",
+     "examples": [
+      "James → [[James{'s}]] code",
+      "James → [[James{'}]] code"
+     ]
+    },
+    {
+     "ending": "两个人共有一样",
+     "change": "只在最后一个加",
+     "examples": [
+      "Tom and Anna → [[Tom and Anna{'s}]] app"
+     ]
+    },
+    {
+     "ending": "时间",
+     "change": "也能加 's",
+     "examples": [
+      "today → [[today{'s}]] stand-up",
+      "yesterday → [[yesterday{'s}]] build",
+      "a week → [[a week{'s}]] work"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "[[Tom{'s}]] PR is ready for review.",
+     "zh": "Tom 的 PR 可以审了。"
+    },
+    {
+     "en": "Never log [[users{'}]] passwords.",
+     "zh": "绝对不要把用户的密码打到日志里。"
+    },
+    {
+     "en": "The [[children{'s}]] room is a mess.",
+     "zh": "孩子们的房间乱七八糟。"
+    },
+    {
+     "en": "Did you see [[yesterday{'s}]] crash report?",
+     "zh": "你看到昨天的崩溃报告了吗？"
+    }
+   ]
+  },
+  "of": {
+   "title": "用 's 还是 of",
+   "short": "of",
+   "rule": "人、团队、公司，用 **'s**。东西的一部分，比如开头、结尾、顶部，用 **of**。",
+   "items": [
+    {
+     "rule": "人 → 's",
+     "en": "[[Anna{'s}]] laptop is brand new.",
+     "zh": "Anna 的电脑是全新的。"
+    },
+    {
+     "rule": "公司、团队 → 's",
+     "en": "[[Apple{'s}]] new API looks great.",
+     "zh": "苹果的新接口看起来很棒。"
+    },
+    {
+     "rule": "东西的一部分 → of",
+     "en": "See you at [[the end of the meeting]].",
+     "zh": "会议结束的时候见。"
+    },
+    {
+     "rule": "东西的一部分 → of",
+     "en": "The button is at [[the top of the screen]].",
+     "zh": "按钮在屏幕顶部。"
+    },
+    {
+     "rule": "东西的名字 → of",
+     "en": "What's [[the name of the file]]?",
+     "zh": "这个文件叫什么名字？"
+    },
+    {
+     "rule": "时间 → 's",
+     "en": "Did you watch [[last week{'s}]] demo?",
+     "zh": "你看上周的演示了吗？"
+    }
+   ],
+   "tip": "拿不准的时候，东西用 of 一般不会错：the colour [[of the button]]。"
+  },
+  "its": {
+   "title": "its 还是 it's",
+   "short": "its",
+   "rule": "撇号表示**少了字母**：it's = it is 或 it has。its 是「它的」，和 his、her 一样，没有撇号。",
+   "rules": [
+    {
+     "ending": "it's",
+     "change": "= it is / it has",
+     "examples": [
+      "[[it's]] broken",
+      "[[it's]] been fixed"
+     ]
+    },
+    {
+     "ending": "its",
+     "change": "它的",
+     "examples": [
+      "[[its]] name",
+      "[[its]] icon"
+     ]
+    },
+    {
+     "ending": "who's",
+     "change": "= who is / who has",
+     "examples": [
+      "[[who's]] on call?",
+      "[[who's]] seen my phone?"
+     ]
+    },
+    {
+     "ending": "whose",
+     "change": "谁的",
+     "examples": [
+      "[[whose]] PR is this?"
+     ]
+    },
+    {
+     "ending": "you're / your",
+     "change": "你是 / 你的",
+     "examples": [
+      "[[you're]] right",
+      "[[your]] branch"
+     ]
+    },
+    {
+     "ending": "they're / their",
+     "change": "他们是 / 他们的",
+     "examples": [
+      "[[they're]] late",
+      "[[their]] app"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "[[It's]] been fixed already.",
+     "zh": "已经修好了。"
+    },
+    {
+     "en": "The app lost [[its]] data after the update.",
+     "zh": "这个 App 更新后丢了数据。"
+    },
+    {
+     "en": "[[Whose]] turn is it to do the release?",
+     "zh": "这次轮到谁发版？"
+    },
+    {
+     "en": "[[Who's]] on call this weekend?",
+     "zh": "这个周末谁值班？"
+    }
+   ],
+   "tip": "口诀：**能换成 it is，就写 it's**；换不了，就写 its。"
+  },
+  "a-an": {
+   "title": "a 还是 an",
+   "short": "a/an",
+   "rule": "**听第一个音，不看第一个字母**。读出来是元音开头（a、e、i、o 那样的音）用 an，其他都用 a。",
+   "rules": [
+    {
+     "ending": "元音的音开头",
+     "change": "用 an",
+     "examples": [
+      "[[an]] app",
+      "[[an]] issue",
+      "[[an]] error",
+      "[[an]] email"
+     ]
+    },
+    {
+     "ending": "h 不发音",
+     "change": "用 an",
+     "examples": [
+      "[[an]] hour",
+      "[[an]] honest answer"
+     ]
+    },
+    {
+     "ending": "h 发音",
+     "change": "用 a",
+     "examples": [
+      "[[a]] hotfix",
+      "[[a]] holiday"
+     ]
+    },
+    {
+     "ending": "u 读成 you",
+     "change": "用 a",
+     "examples": [
+      "[[a]] user",
+      "[[a]] unit test",
+      "[[a]] useful tip"
+     ]
+    },
+    {
+     "ending": "u 读成「啊」",
+     "change": "用 an",
+     "examples": [
+      "[[an]] update",
+      "[[an]] umbrella"
+     ]
+    },
+    {
+     "ending": "one 读成 wan",
+     "change": "用 a",
+     "examples": [
+      "[[a]] one-off fix",
+      "[[a]] one-to-one"
+     ]
+    },
+    {
+     "ending": "eu 读成 you",
+     "change": "用 a",
+     "examples": [
+      "[[a]] European client"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "The test took [[an]] hour.",
+     "zh": "测试花了一个小时。"
+    },
+    {
+     "en": "We need [[a]] user ID.",
+     "zh": "我们需要一个用户 ID。"
+    },
+    {
+     "en": "It's just [[a]] one-off fix.",
+     "zh": "这只是一次性的修复。"
+    },
+    {
+     "en": "I've got [[an]] idea.",
+     "zh": "我有个主意。"
+    }
+   ]
+  },
+  "acronyms": {
+   "title": "缩写词怎么配 a / an",
+   "short": "缩写",
+   "rule": "缩写一个字母一个字母读时，看第一个字母**怎么念**。A、E、F、H、I、L、M、N、O、R、S、X 念出来是元音开头，用 an。",
+   "rules": [
+    {
+     "ending": "A、E、I、O 开头",
+     "change": "用 an",
+     "examples": [
+      "[[an]] API",
+      "[[an]] iOS app",
+      "[[an]] OS update"
+     ]
+    },
+    {
+     "ending": "F、H、L、M、N、R、S、X 开头",
+     "change": "念出来是 ef、aitch、em、es…… 用 an",
+     "examples": [
+      "[[an]] SDK",
+      "[[an]] MVP",
+      "[[an]] HTTP request",
+      "[[an]] FAQ",
+      "[[an]] Xcode project"
+     ]
+    },
+    {
+     "ending": "U 开头",
+     "change": "念 you，用 a",
+     "examples": [
+      "[[a]] URL",
+      "[[a]] UI",
+      "[[a]] UX review"
+     ]
+    },
+    {
+     "ending": "其他字母开头",
+     "change": "用 a",
+     "examples": [
+      "[[a]] PR",
+      "[[a]] QA engineer",
+      "[[a]] JSON file",
+      "[[a]] CI job"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "Is there [[an]] SDK for Android?",
+     "zh": "有安卓的 SDK 吗？"
+    },
+    {
+     "en": "We built [[an]] MVP in two weeks.",
+     "zh": "我们两周做出了一个 MVP。"
+    },
+    {
+     "en": "Paste [[a]] URL here.",
+     "zh": "在这里粘贴一个链接。"
+    },
+    {
+     "en": "I left a comment on [[a]] PR.",
+     "zh": "我在一个 PR 上留了评论。"
+    }
+   ],
+   "notes": [
+    "小技巧：**大声念出来**。念 an API 顺，念 a API 卡，卡就换。"
+   ]
+  },
+  "mistakes": {
+   "title": "最常见的错",
+   "short": "常见错",
+   "commonMistakes": [
+    {
+     "bad": "The app lost ~~it's~~ data.",
+     "good": "The app lost [[its]] data.",
+     "why": "its 是「它的」，不加撇号。"
+    },
+    {
+     "bad": "~~Who's~~ laptop is this?",
+     "good": "[[Whose]] laptop is this?",
+     "why": "「谁的」是 whose；who's 是 who is。"
+    },
+    {
+     "bad": "Is there ~~a~~ API for this?",
+     "good": "Is there [[an]] API for this?",
+     "why": "API 念 ei，元音开头用 an。"
+    },
+    {
+     "bad": "Send me ~~an~~ URL.",
+     "good": "Send me [[a]] URL.",
+     "why": "URL 念 you，是辅音音，用 a。"
+    },
+    {
+     "bad": "We joined ~~the bosses's~~ meeting.",
+     "good": "We joined [[the bosses{'}]] meeting.",
+     "why": "bosses 已经有 s，只加 '。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Two bosses share one meeting. It's the ___ meeting.",
+   "options": [
+    "boss's",
+    "bosses'",
+    "bosses's"
+   ],
+   "answer": "bosses'",
+   "explain": "s 结尾的复数只加 '：[[the bosses{'}]]。"
+  },
+  {
+   "id": "q02",
+   "section": "apostrophe",
+   "type": "fill",
+   "prompt": "This is ___ (Tom) laptop.",
+   "answer": "Tom's",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Toms",
+     "note": "要加撇号：Tom's。"
+    }
+   ],
+   "explain": "一个人的东西加 's：[[Tom{'s}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "apostrophe",
+   "type": "choice",
+   "prompt": "The ___ toys are everywhere.",
+   "options": [
+    "children's",
+    "childrens'",
+    "childs'"
+   ],
+   "answer": "children's",
+   "explain": "children 不是 s 结尾，加 's：[[children{'s}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "apostrophe",
+   "type": "transform",
+   "prompt": "用 ' 改写：the data of the users",
+   "answer": "the users' data",
+   "accept": [
+    "users' data"
+   ],
+   "traps": [
+    {
+     "input": "the user's data",
+     "note": "这是一个用户的数据；很多用户要写 users'。"
+    }
+   ],
+   "explain": "users 是 s 结尾的复数，只加 '：[[users{'}]] data。"
+  },
+  {
+   "id": "q05",
+   "section": "of",
+   "type": "translate",
+   "prompt": "翻译：会议结束的时候见。",
+   "answer": "See you at the end of the meeting.",
+   "accept": [
+    "See you at the end of the meeting!",
+    "I'll see you at the end of the meeting."
+   ],
+   "explain": "东西的一部分用 of：[[the end of the meeting]]。"
+  },
+  {
+   "id": "q06",
+   "section": "of",
+   "type": "choice",
+   "prompt": "The button is at the top ___ the screen.",
+   "options": [
+    "of",
+    "in",
+    "from"
+   ],
+   "answer": "of",
+   "explain": "东西的一部分用 [[of]]。"
+  },
+  {
+   "id": "q07",
+   "section": "its",
+   "type": "fill",
+   "prompt": "The app lost ___ data after the update.",
+   "answer": "its",
+   "accept": [],
+   "traps": [
+    {
+     "input": "it's",
+     "note": "it's 是 it is，这里要「它的」。"
+    }
+   ],
+   "explain": "「它的」是 [[its]]，不加撇号。"
+  },
+  {
+   "id": "q08",
+   "section": "its",
+   "type": "choice",
+   "prompt": "___ been fixed already.",
+   "options": [
+    "Its",
+    "It's",
+    "It is"
+   ],
+   "answer": "It's",
+   "explain": "这里是 it has been，缩写成 [[It's]]。"
+  },
+  {
+   "id": "q09",
+   "section": "its",
+   "type": "fix",
+   "prompt": "改错：Who's laptop is this?",
+   "answer": "Whose laptop is this?",
+   "accept": [],
+   "explain": "「谁的」是 [[whose]]。"
+  },
+  {
+   "id": "q10",
+   "section": "a-an",
+   "type": "fill",
+   "prompt": "The test took ___ hour.",
+   "answer": "an",
+   "accept": [],
+   "traps": [
+    {
+     "input": "a",
+     "note": "h 不发音，要用 an。"
+    }
+   ],
+   "explain": "h 不发音，hour 是元音开头，用 [[an]]。"
+  },
+  {
+   "id": "q11",
+   "section": "a-an",
+   "type": "fill",
+   "prompt": "We need ___ user ID for this.",
+   "answer": "a",
+   "accept": [],
+   "traps": [
+    {
+     "input": "an",
+     "note": "user 念 you，开头不是元音音。"
+    }
+   ],
+   "explain": "user 念 you，是辅音音，用 [[a]]。"
+  },
+  {
+   "id": "q12",
+   "section": "acronyms",
+   "type": "choice",
+   "prompt": "哪个是对的？",
+   "options": [
+    "a API",
+    "an API",
+    "an URL",
+    "a SDK"
+   ],
+   "answer": "an API",
+   "explain": "API 念 ei，用 [[an]]。"
+  },
+  {
+   "id": "q13",
+   "section": "acronyms",
+   "type": "fill",
+   "prompt": "Can you send me ___ URL?",
+   "answer": "a",
+   "accept": [],
+   "traps": [
+    {
+     "input": "an",
+     "note": "U 念 you，是辅音音。"
+    }
+   ],
+   "explain": "URL 念 you，用 [[a]]。"
+  },
+  {
+   "id": "q14",
+   "section": "acronyms",
+   "type": "translate",
+   "prompt": "翻译：我们两周做出了一个 MVP。",
+   "answer": "We built an MVP in two weeks.",
+   "accept": [
+    "We made an MVP in two weeks.",
+    "We built an MVP in 2 weeks.",
+    "We made an MVP in 2 weeks."
+   ],
+   "explain": "MVP 念 em，用 [[an]]。"
+  },
+  {
+   "id": "q15",
+   "section": "mistakes",
+   "type": "fix",
+   "prompt": "改错：Is there a API for this?",
+   "answer": "Is there an API for this?",
+   "accept": [],
+   "explain": "API 念 ei，用 [[an]]。"
+  },
+  {
+   "id": "q16",
+   "section": "mistakes",
+   "type": "fix",
+   "prompt": "改错：The app lost it's data.",
+   "answer": "The app lost its data.",
+   "accept": [],
+   "explain": "「它的」是 [[its]]。"
+  }
+ ]
+}

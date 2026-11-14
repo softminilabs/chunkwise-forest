@@ -1,0 +1,401 @@
+{
+ "id": "g-tag-questions",
+ "title": "附加疑问句",
+ "en": "Tag Questions",
+ "group": "句子",
+ "level": "B1",
+ "order": 25,
+ "keywords": [
+  "反意疑问句"
+ ],
+ "related": [
+  "g-questions",
+  "g-be-verb",
+  "g-imperatives"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "附加疑问句就是在一句话后面加个**小尾巴**，像中文的「……对吧？」「……是不是？」。口诀：**前肯后否，前否后肯。**",
+   "uses": [
+    {
+     "zh": "前面肯定，尾巴否定",
+     "en": "It's cold today, [[isn't it]]?",
+     "en_zh": "今天挺冷的，是吧？"
+    },
+    {
+     "zh": "前面否定，尾巴肯定",
+     "en": "He didn't call, [[did he]]?",
+     "en_zh": "他没打电话来，对吧？"
+    },
+    {
+     "zh": "想让对方点头",
+     "en": "You're coming tonight, [[aren't you]]?",
+     "en_zh": "你今晚会来的，对吧？"
+    }
+   ]
+  },
+  "make": {
+   "title": "尾巴怎么做",
+   "short": "怎么做",
+   "formula": [
+    "一句话",
+    "逗号",
+    "小词（反过来）",
+    "代词？"
+   ],
+   "rule": "三步：① 找出句子里的小词（is、can、have、will）；② 肯定变否定，否定变肯定；③ 主语换成代词（he、she、it、they…）。",
+   "examples": [
+    {
+     "en": "The demo [[is]] at three, [[isn't it]]?",
+     "zh": "演示是三点，对吧？"
+    },
+    {
+     "en": "You [[can]] drive, [[can't you]]?",
+     "zh": "你会开车，是吧？"
+    },
+    {
+     "en": "Sara [[has]] left, [[hasn't she]]?",
+     "zh": "Sara 已经走了，是吧？"
+    },
+    {
+     "en": "They [[won't]] be late, [[will they]]?",
+     "zh": "他们不会迟到吧？"
+    }
+   ],
+   "wrong": {
+    "bad": "Tom is in London, isn't ~~Tom~~?",
+    "good": "Tom is in London, [[isn't he]]?"
+   }
+  },
+  "do": {
+   "title": "没有小词：请 do 来",
+   "short": "借 do",
+   "rule": "句子里只有普通动词（work、like、pass）时，尾巴用 **do / does / did**。看是谁、是现在还是过去来选。",
+   "examples": [
+    {
+     "en": "You [[live]] near here, [[don't you]]?",
+     "zh": "你住在这附近，对吧？"
+    },
+    {
+     "en": "She [[works]] in QA, [[doesn't she]]?",
+     "zh": "她在测试组工作，是吧？"
+    },
+    {
+     "en": "The build [[passed]], [[didn't it]]?",
+     "zh": "构建通过了，是吧？"
+    }
+   ],
+   "wrong": {
+    "bad": "She works here, ~~isn't she~~?",
+    "good": "She [[works]] here, [[doesn't she]]?"
+   }
+  },
+  "special": {
+   "title": "特别的尾巴",
+   "short": "特殊",
+   "rule": "这几个要单独记，平时最容易错。",
+   "items": [
+    {
+     "rule": "I am 的尾巴是 aren't I",
+     "en": "I'm on the list, [[aren't I]]?",
+     "zh": "名单上有我，对吧？"
+    },
+    {
+     "rule": "Let's 的尾巴是 shall we",
+     "en": "Let's start, [[shall we]]?",
+     "zh": "我们开始吧，好吗？"
+    },
+    {
+     "rule": "叫人做事，尾巴用 will you / can you",
+     "en": "Pass me the charger, [[will you]]?",
+     "zh": "把充电器递给我一下，好吗？"
+    },
+    {
+     "rule": "never、nobody 已经是否定，尾巴用肯定",
+     "en": "He <<never>> complains, [[does he]]?",
+     "zh": "他从来不抱怨，是吧？"
+    },
+    {
+     "rule": "there is 的尾巴还是 there",
+     "en": "There's a meeting today, [[isn't there]]?",
+     "zh": "今天有个会，对吧？"
+    },
+    {
+     "rule": "this / that 在尾巴里变成 it",
+     "en": "That's your mug, [[isn't it]]?",
+     "zh": "那是你的杯子，对吧？"
+    }
+   ]
+  },
+  "tone": {
+   "title": "语调和回答",
+   "short": "语调",
+   "rule": "尾巴**往下降**：你挺确定，只想对方点头。尾巴**往上扬**：你不确定，真的在问。回答只看**事实**：有就 Yes，没有就 No。",
+   "examples": [
+    {
+     "en": "It's a lovely day, [[isn't it]]?",
+     "zh": "天气真好，是吧？",
+     "rule": "尾巴往下降 ↘：只是聊天"
+    },
+    {
+     "en": "You haven't seen my keys, [[have you]]?",
+     "zh": "你没看到我的钥匙吧？",
+     "rule": "尾巴往上扬 ↗：真的在问",
+     "answer": "No, I [[haven't]]. Sorry."
+    },
+    {
+     "en": "He didn't come, [[did he]]?",
+     "zh": "他没来，对吧？",
+     "answer": "No, he [[didn't]].（对，他没来。）"
+    }
+   ],
+   "notes": [
+    "中文说「对，他没来」，英语要说 **No**, he didn't。因为事实是「没来」，就用 No。"
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一般疑问句",
+     "this": {
+      "meaning": "尾巴问句：心里有答案，想确认一下",
+      "en": "You've tested it, [[haven't you]]?"
+     },
+     "that": {
+      "meaning": "一般疑问句：真不知道，直接问",
+      "en": "[[Have]] you tested it?"
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "It's nice, ~~is it~~?",
+     "good": "It's nice, [[isn't it]]?",
+     "why": "前面肯定，尾巴要否定。"
+    },
+    {
+     "bad": "She likes Swift, ~~isn't she~~?",
+     "good": "She likes Swift, [[doesn't she]]?",
+     "why": "普通动词的尾巴用 do / does / did。"
+    },
+    {
+     "bad": "I'm late, ~~amn't I~~?",
+     "good": "I'm late, [[aren't I]]?",
+     "why": "I am 的尾巴是 aren't I。"
+    },
+    {
+     "bad": "Nobody called, ~~didn't they~~?",
+     "good": "Nobody called, [[did they]]?",
+     "why": "nobody 已经是否定，尾巴用肯定。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "It's really cold today, ___?",
+   "options": [
+    "isn't it",
+    "is it",
+    "doesn't it",
+    "it isn't"
+   ],
+   "answer": "isn't it",
+   "explain": "前面肯定，尾巴否定：[[isn't it]]。"
+  },
+  {
+   "id": "q02",
+   "section": "make",
+   "type": "fill",
+   "prompt": "You can drive, ___ you?",
+   "answer": "can't",
+   "accept": [],
+   "explain": "用 can，前肯后否：[[can't]] you。"
+  },
+  {
+   "id": "q03",
+   "section": "make",
+   "type": "fill",
+   "prompt": "Sara has already left, ___ she?",
+   "answer": "hasn't",
+   "accept": [],
+   "explain": "用 has，前肯后否：[[hasn't]] she。"
+  },
+  {
+   "id": "q04",
+   "section": "make",
+   "type": "choice",
+   "prompt": "They won't be late, ___?",
+   "options": [
+    "will they",
+    "won't they",
+    "do they"
+   ],
+   "answer": "will they",
+   "explain": "前面否定（won't），尾巴肯定：[[will they]]。"
+  },
+  {
+   "id": "q05",
+   "section": "make",
+   "type": "fix",
+   "prompt": "改错：Tom is in London, isn't Tom?",
+   "answer": "Tom is in London, isn't he?",
+   "accept": [],
+   "explain": "尾巴里用代词：[[isn't he]]。"
+  },
+  {
+   "id": "q06",
+   "section": "do",
+   "type": "fill",
+   "prompt": "You live near here, ___ you?",
+   "answer": "don't",
+   "accept": [],
+   "traps": [
+    {
+     "input": "aren't",
+     "note": "live 是普通动词，用 do 不用 be。"
+    }
+   ],
+   "explain": "普通动词 live，用 [[don't]]。"
+  },
+  {
+   "id": "q07",
+   "section": "do",
+   "type": "fill",
+   "prompt": "The tests passed, ___ they?",
+   "answer": "didn't",
+   "accept": [],
+   "explain": "过去的事，用 [[didn't]]。"
+  },
+  {
+   "id": "q08",
+   "section": "do",
+   "type": "fix",
+   "prompt": "改错：She works in QA, isn't she?",
+   "answer": "She works in QA, doesn't she?",
+   "accept": [],
+   "explain": "works 是普通动词，尾巴用 [[doesn't]]。"
+  },
+  {
+   "id": "q09",
+   "section": "special",
+   "type": "choice",
+   "prompt": "I'm on the list, ___?",
+   "options": [
+    "aren't I",
+    "amn't I",
+    "isn't I",
+    "isn't it"
+   ],
+   "answer": "aren't I",
+   "explain": "I am 的尾巴是 [[aren't I]]。"
+  },
+  {
+   "id": "q10",
+   "section": "special",
+   "type": "choice",
+   "prompt": "Let's grab a coffee, ___?",
+   "options": [
+    "shall we",
+    "don't we",
+    "let we"
+   ],
+   "answer": "shall we",
+   "explain": "Let's 的尾巴是 [[shall we]]。"
+  },
+  {
+   "id": "q11",
+   "section": "special",
+   "type": "fill",
+   "prompt": "He never complains, ___ he?",
+   "answer": "does",
+   "accept": [],
+   "traps": [
+    {
+     "input": "doesn't",
+     "note": "never 已经是否定，尾巴要用肯定。"
+    }
+   ],
+   "explain": "never 是否定，尾巴用肯定：[[does]] he。"
+  },
+  {
+   "id": "q12",
+   "section": "special",
+   "type": "fill",
+   "prompt": "There's a meeting at ten, ___ there?",
+   "answer": "isn't",
+   "accept": [],
+   "explain": "there is 的尾巴：[[isn't there]]。"
+  },
+  {
+   "id": "q13",
+   "section": "tone",
+   "type": "choice",
+   "prompt": "— He didn't come, did he? — ___（对，他没来。）",
+   "options": [
+    "No, he didn't.",
+    "Yes, he didn't.",
+    "Yes, he did."
+   ],
+   "answer": "No, he didn't.",
+   "explain": "事实是「没来」，用 No：No, he [[didn't]]。"
+  },
+  {
+   "id": "q14",
+   "section": "tone",
+   "type": "choice",
+   "prompt": "你不确定，真的想知道答案时，尾巴的语调应该",
+   "options": [
+    "往上扬",
+    "往下降"
+   ],
+   "answer": "往上扬",
+   "explain": "不确定就往上扬 ↗。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Nobody called, didn't they?",
+   "answer": "Nobody called, did they?",
+   "accept": [],
+   "explain": "nobody 已经是否定，尾巴用肯定：[[did they]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：你已经测过了，对吧？",
+   "answer": "You've tested it, haven't you?",
+   "accept": [
+    "You have tested it, haven't you?",
+    "You've already tested it, haven't you?",
+    "You have already tested it, haven't you?",
+    "You tested it, didn't you?"
+   ],
+   "explain": "前面用 have，尾巴：[[haven't you]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 个带尾巴的句子，向同事确认今天的安排：一句前面肯定，一句前面否定，一句用普通动词（要借 do / does / did）。",
+  "rules": [
+   "前肯后否，前否后肯",
+   "尾巴里的主语用代词，普通动词借 do / does / did"
+  ],
+  "note": "规则判尾巴的肯否和助动词（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

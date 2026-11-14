@@ -1,0 +1,409 @@
+{
+ "id": "g-past-perfect",
+ "title": "过去完成时",
+ "en": "Past Perfect",
+ "group": "时态",
+ "level": "B1",
+ "order": 7,
+ "keywords": [
+  "过去完成时",
+  "过去完成进行时"
+ ],
+ "related": [
+  "g-past-simple",
+  "g-present-perfect",
+  "g-reported-speech",
+  "g-conditionals-3-mixed"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "过去完成时说的是**「过去的过去」**：过去有两件事，**先发生**的那件用 had + 过去分词。口诀：**过去再往前退一步。**",
+   "uses": [
+    {
+     "zh": "两件过去的事，先发生的那件",
+     "en": "<<When>> I got to the station, the train [[had]] <<already>> [[left]].",
+     "en_zh": "我到车站时，火车已经开走了。"
+    },
+    {
+     "zh": "过去某个时间之前就已经做完",
+     "en": "<<By>> 10 am, we [[had fixed]] the bug.",
+     "en_zh": "到上午十点，我们已经修好了这个 bug。"
+    },
+    {
+     "zh": "回头解释过去的原因",
+     "en": "I was nervous because I [[hadn't given]] a talk <<before>>.",
+     "en_zh": "我很紧张，因为我以前从没做过演讲。"
+    }
+   ],
+   "signals": [
+    "already",
+    "by the time",
+    "before",
+    "after",
+    "when",
+    "by then",
+    "never … before"
+   ]
+  },
+  "form": {
+   "title": "怎么构成",
+   "short": "构成",
+   "formula": [
+    "主语",
+    "had",
+    "过去分词",
+    "其他"
+   ],
+   "rule": "所有人都用 had，不分 I、he、they。否定用 hadn't，疑问把 had 放到最前面。",
+   "examples": [
+    {
+     "en": "She[['d]] <<already>> [[gone]] home.",
+     "zh": "她已经回家了。"
+    },
+    {
+     "en": "We [[hadn't tested]] it on older phones.",
+     "zh": "我们之前没在老手机上测过。"
+    },
+    {
+     "en": "[[Had]] you [[met]] him before the interview?",
+     "zh": "面试前你见过他吗？",
+     "answer": "Yes, I [[had]]. / No, I [[hadn't]]."
+    }
+   ],
+   "contractions": [
+    "I had = I[['d]] · she had = she[['d]]",
+    "had not = [[hadn't]]"
+   ],
+   "notes": [
+    "I'd 可能是 I had，也可能是 I would。后面直接跟过去分词（gone、done）的，就是 I had；跟动词原形（go、do）的，就是 I would。"
+   ]
+  },
+  "timeline": {
+   "title": "画一条时间线",
+   "short": "时间线",
+   "text": "先在时间线上找到「过去的那个点」。比那个点**更早**的事用 had + 过去分词，那个点本身用一般过去时。",
+   "items": [
+    {
+     "rule": "先：会议开始 → 后：我到了",
+     "en": "<<When>> I [[arrived]], the meeting [[had started]].",
+     "zh": "我到的时候，会议已经开始了。"
+    },
+    {
+     "rule": "by the time 后面就是「那个点」",
+     "en": "<<By the time>> we [[released]] the update, users [[had reported]] 50 bugs.",
+     "zh": "等我们发布更新时，用户已经报了 50 个 bug。"
+    },
+    {
+     "rule": "after 后面是先发生的事",
+     "en": "<<After>> she [[had finished]] the review, she [[went]] for lunch.",
+     "zh": "她做完代码审查后，去吃了午饭。"
+    }
+   ]
+  },
+  "notneeded": {
+   "title": "不用 had 也行",
+   "short": "不用",
+   "text": "如果按顺序一件件讲，或者 before、after 已经把先后说清楚了，用一般过去时就够了，不用 had。",
+   "items": [
+    {
+     "rule": "按发生的顺序讲",
+     "en": "I [[made]] a coffee, [[checked]] my emails and then [[went]] to work.",
+     "zh": "我冲了杯咖啡，看了邮件，然后去上班。"
+    },
+    {
+     "rule": "after 已经说清先后",
+     "en": "<<After>> she [[left]], I [[called]] Tom.",
+     "zh": "她走了以后，我给 Tom 打了电话。"
+    }
+   ]
+  },
+  "continuous": {
+   "title": "过去完成进行时",
+   "short": "进行",
+   "text": "在过去某个点之前，一件事**已经持续了一段时间**，用 had been + 动词 ing。说的是「当时已经做了多久」。",
+   "formula": [
+    "主语",
+    "had been",
+    "动词 + ing",
+    "其他"
+   ],
+   "examples": [
+    {
+     "en": "I [[had been waiting]] <<for>> an hour when the bus finally came.",
+     "zh": "我已经等了一个小时，公交才终于来了。"
+    },
+    {
+     "en": "She was tired because she [[had been working]] all night.",
+     "zh": "她很累，因为她整夜都在工作。"
+    },
+    {
+     "en": "We [[had been using]] the old API <<for>> years before we switched.",
+     "zh": "换掉之前，我们用那个旧 API 已经好几年了。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "和其他时态比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一般过去时",
+     "this": {
+      "meaning": "我到的时候，会议早就开始了",
+      "en": "<<When>> I arrived, the meeting [[had started]]."
+     },
+     "that": {
+      "meaning": "我一到，会议才开始",
+      "en": "<<When>> I arrived, the meeting [[started]]."
+     }
+    },
+    {
+     "with": "现在完成时",
+     "this": {
+      "meaning": "站在过去，看更早的事",
+      "en": "I [[had]] <<never>> [[seen]] snow before I moved to Scotland."
+     },
+     "that": {
+      "meaning": "站在现在，看到现在为止",
+      "en": "I[['ve]] <<never>> [[seen]] snow."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "When I arrived, the train ~~already left~~.",
+     "good": "<<When>> I arrived, the train [[had]] <<already>> [[left]].",
+     "why": "火车走在我到之前，更早的事用 had + 过去分词。"
+    },
+    {
+     "bad": "I had ~~went~~ home.",
+     "good": "I [[had gone]] home.",
+     "why": "had 后面用过去分词 gone，不用 went。"
+    },
+    {
+     "bad": "She ~~has~~ already left when I called.",
+     "good": "She [[had]] already [[left]] when I called.",
+     "why": "整件事都在过去，用 had，不用 has。"
+    },
+    {
+     "bad": "Before I joined the team, I had never ~~use~~ Swift.",
+     "good": "Before I joined the team, I [[had]] never [[used]] Swift.",
+     "why": "had 后面要用过去分词 used。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "When I got to the station, the train ___. I'd missed it by five minutes.",
+   "options": [
+    "left",
+    "had left",
+    "has left",
+    "was leaving"
+   ],
+   "answer": "had left",
+   "explain": "火车先走，我后到，先发生的用 [[had left]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我到的时候，会议已经开始了。",
+   "answer": "When I arrived, the meeting had already started.",
+   "accept": [
+    "When I arrived, the meeting had started.",
+    "The meeting had already started when I arrived.",
+    "The meeting had started when I arrived.",
+    "When I got there, the meeting had already started.",
+    "When I got there, the meeting had started.",
+    "By the time I arrived, the meeting had already started.",
+    "By the time I arrived, the meeting had started."
+   ],
+   "explain": "会议开始得更早：[[had]] <<already>> [[started]]。"
+  },
+  {
+   "id": "q03",
+   "section": "form",
+   "type": "fill",
+   "prompt": "By 10 am, we ___ (fix) the bug.",
+   "answer": "had fixed",
+   "accept": [
+    "'d fixed"
+   ],
+   "explain": "到某个过去时间点已经做完：[[had fixed]]。"
+  },
+  {
+   "id": "q04",
+   "section": "form",
+   "type": "transform",
+   "prompt": "改成否定句：They had tested it on older phones.",
+   "answer": "They hadn't tested it on older phones.",
+   "accept": [
+    "They had not tested it on older phones."
+   ],
+   "traps": [
+    {
+     "input": "They didn't have tested it on older phones.",
+     "note": "过去完成时的否定直接用 hadn't。"
+    }
+   ],
+   "explain": "They [[hadn't tested]]：had 后面加 not。"
+  },
+  {
+   "id": "q05",
+   "section": "form",
+   "type": "transform",
+   "prompt": "改成一般疑问句：She had met him before.",
+   "answer": "Had she met him before?",
+   "accept": [],
+   "explain": "把 [[Had]] 放到最前面。"
+  },
+  {
+   "id": "q06",
+   "section": "form",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：She had already sent the email.（问「什么」）",
+   "answer": "What had she already sent?",
+   "accept": [
+    "What had she sent?"
+   ],
+   "traps": [
+    {
+     "input": "What did she had already sent?",
+     "note": "直接用 had 来问，不要再加 did。"
+    }
+   ],
+   "explain": "What [[had]] she <<already>> [[sent]]？"
+  },
+  {
+   "id": "q07",
+   "section": "timeline",
+   "type": "fill",
+   "prompt": "By the time we released the update, users ___ (report) 50 bugs.",
+   "answer": "had reported",
+   "accept": [
+    "'d reported"
+   ],
+   "explain": "报 bug 在发布之前：[[had reported]]。"
+  },
+  {
+   "id": "q08",
+   "section": "timeline",
+   "type": "choice",
+   "prompt": "After she ___ the review, she went for lunch.",
+   "options": [
+    "has finished",
+    "had finished",
+    "finishes"
+   ],
+   "answer": "had finished",
+   "explain": "先做完审查，再去吃饭：[[had finished]]。"
+  },
+  {
+   "id": "q09",
+   "section": "timeline",
+   "type": "fix",
+   "prompt": "改错：When I arrived, the train already left.",
+   "answer": "When I arrived, the train had already left.",
+   "accept": [
+    "When I arrived, the train had left."
+   ],
+   "explain": "火车走得更早：[[had]] <<already>> [[left]]。"
+  },
+  {
+   "id": "q10",
+   "section": "notneeded",
+   "type": "fill",
+   "prompt": "First I ___ (make) a coffee, then I checked my emails.",
+   "answer": "made",
+   "accept": [],
+   "traps": [
+    {
+     "input": "had made",
+     "note": "按顺序一件件讲，用一般过去时就够了。"
+    }
+   ],
+   "explain": "按顺序讲，用一般过去时：I [[made]]。"
+  },
+  {
+   "id": "q11",
+   "section": "continuous",
+   "type": "fill",
+   "prompt": "I ___ (wait) for an hour when the bus finally came.",
+   "answer": "had been waiting",
+   "accept": [
+    "'d been waiting"
+   ],
+   "explain": "公交来之前已经等了一个小时：[[had been waiting]]。"
+  },
+  {
+   "id": "q12",
+   "section": "continuous",
+   "type": "choice",
+   "prompt": "She was exhausted because she ___ all night.",
+   "options": [
+    "had been working",
+    "has been working",
+    "is working"
+   ],
+   "answer": "had been working",
+   "explain": "累是过去的事，在那之前一直在干活：[[had been working]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "When I arrived, the meeting ___, so I missed the start.",
+   "options": [
+    "started",
+    "had started"
+   ],
+   "answer": "had started",
+   "explain": "我错过了开头，说明会议开始得更早：[[had started]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I had went home before it started to rain.",
+   "answer": "I had gone home before it started to rain.",
+   "accept": [
+    "I'd gone home before it started to rain."
+   ],
+   "explain": "had 后面用过去分词：[[had gone]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：She has already left when I called.",
+   "answer": "She had already left when I called.",
+   "accept": [
+    "She'd already left when I called."
+   ],
+   "explain": "整件事都在过去，用 [[had]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用过去完成时说 3 句话，讲一次「我到的时候，事情已经发生了」的经历。至少一句用 by the time 或 when。",
+  "rules": [
+   "更早发生的事用 had + 过去分词",
+   "had 后面用过去分词，不用过去式（had went 是错的）",
+   "按顺序讲或 before / after 已经说清先后时，用一般过去时也可以"
+  ],
+  "note": "规则判 had + 过去分词和先后顺序（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

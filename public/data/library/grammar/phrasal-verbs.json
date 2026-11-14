@@ -1,0 +1,430 @@
+{
+ "id": "g-phrasal-verbs",
+ "title": "短语动词（可分与不可分）",
+ "en": "Phrasal Verbs",
+ "group": "动词",
+ "level": "B1",
+ "order": 21,
+ "keywords": [
+  "短语动词"
+ ],
+ "related": [
+  "g-gerund-infinitive",
+  "g-pronouns",
+  "g-imperatives"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "短语动词 = **动词 + 一个小词**（up、out、off、on、into…）。两个合在一起，意思常常**完全变了**：give 是「给」，give up 是「放弃」。",
+   "uses": [
+    {
+     "zh": "弄明白、想出办法",
+     "en": "We need to [[figure out]] why it crashes.",
+     "en_zh": "我们得弄清楚它为什么崩溃。"
+    },
+    {
+     "zh": "安装、设置",
+     "en": "I'll [[set up]] the new Mac this afternoon.",
+     "en_zh": "我今天下午把新 Mac 装好。"
+    },
+    {
+     "zh": "调查、看一看",
+     "en": "Let me [[look into]] it.",
+     "en_zh": "我来查一下。"
+    }
+   ],
+   "signals": [
+    "up",
+    "out",
+    "off",
+    "on",
+    "down",
+    "into",
+    "back"
+   ]
+  },
+  "parts": {
+   "title": "小词有画面",
+   "short": "小词",
+   "rule": "小词常常带着一个**画面**，记住画面，猜意思就容易多了。",
+   "items": [
+    {
+     "rule": "up：做完、做到底",
+     "en": "Let's [[tidy up]] the code before we merge.",
+     "zh": "合并之前我们把代码整理干净。"
+    },
+    {
+     "rule": "out：出来、弄清楚",
+     "en": "Did you [[find out]] who broke the build?",
+     "zh": "你查出是谁把构建搞坏的了吗？"
+    },
+    {
+     "rule": "off：断开、停下",
+     "en": "Don't forget to [[turn off]] the lights.",
+     "zh": "别忘了关灯。"
+    },
+    {
+     "rule": "back：回来、回去",
+     "en": "I'll [[call]] you [[back]] in five minutes.",
+     "zh": "我五分钟后给你回电话。"
+    }
+   ]
+  },
+  "split": {
+   "title": "可以拆开的",
+   "short": "可拆",
+   "formula": [
+    "动词",
+    "东西",
+    "小词"
+   ],
+   "rule": "很多带「东西」的短语动词能拆开：东西可以放**中间**，也可以放**后面**，意思一样。turn off the TV = turn the TV off。",
+   "examples": [
+    {
+     "en": "Can you [[turn off]] the TV?",
+     "zh": "你能把电视关了吗？"
+    },
+    {
+     "en": "Can you [[turn]] the TV [[off]]?",
+     "zh": "你能把电视关了吗？"
+    },
+    {
+     "en": "We [[put off]] the release until Monday.",
+     "zh": "我们把发布推迟到了周一。"
+    },
+    {
+     "en": "We [[put]] the release [[off]] until Monday.",
+     "zh": "我们把发布推迟到了周一。"
+    }
+   ]
+  },
+  "pronoun": {
+   "title": "it / them 夹中间",
+   "short": "夹中间",
+   "rule": "东西是 it、them、me、you 这种小词时，**必须**夹在中间，不能放后面。口诀：**代词小，夹中间。**",
+   "examples": [
+    {
+     "en": "The TV's still on. Can you [[turn]] it [[off]]?",
+     "zh": "电视还开着，你能把它关了吗？"
+    },
+    {
+     "en": "I'll [[pick]] you [[up]] at eight.",
+     "zh": "我八点来接你。"
+    },
+    {
+     "en": "I don't know that word. I'll [[look]] it [[up]].",
+     "zh": "我不认识那个词，我去查一下。"
+    }
+   ],
+   "wrong": {
+    "bad": "Can you turn ~~off it~~?",
+    "good": "Can you [[turn]] it [[off]]?"
+   }
+  },
+  "together": {
+   "title": "不能拆开的",
+   "short": "不拆",
+   "rule": "有些短语动词像**粘在一起**，东西只能放后面。三个词的（come up with）也不能拆。",
+   "examples": [
+    {
+     "en": "Who [[looks after]] your kids when you're at work?",
+     "zh": "你上班时谁照看孩子？"
+    },
+    {
+     "en": "I'll [[look into]] it after lunch.",
+     "zh": "我午饭后查一下这件事。"
+    },
+    {
+     "en": "I [[ran into]] an old colleague at the station.",
+     "zh": "我在车站碰到一个老同事。"
+    },
+    {
+     "en": "We need to [[come up with]] a better name.",
+     "zh": "我们得想出一个更好的名字。"
+    }
+   ],
+   "wrong": {
+    "bad": "I'll look ~~it into~~.",
+    "good": "I'll [[look into]] it."
+   },
+   "tip": "拿不准能不能拆？查词典：写成 turn **sth** off（sth 在中间）就能拆；写成 look after **sth**（sth 在后面）就不能拆。"
+  },
+  "alone": {
+   "title": "后面不跟东西的",
+   "short": "单用",
+   "rule": "还有一些短语动词后面**不用跟东西**，句子到这儿就完整了。",
+   "examples": [
+    {
+     "en": "My laptop [[broke down]] again.",
+     "zh": "我的笔记本又坏了。"
+    },
+    {
+     "en": "The meeting [[went on]] for two hours.",
+     "zh": "会议开了整整两个小时。"
+    },
+    {
+     "en": "[[Hurry up]], the train's leaving!",
+     "zh": "快点，火车要开了！"
+    },
+    {
+     "en": "Don't [[give up]]. You're nearly there.",
+     "zh": "别放弃，你快成功了。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一个词的说法",
+     "this": {
+      "meaning": "短语动词：口语、随意",
+      "en": "We need to [[find out]] what went wrong."
+     },
+     "that": {
+      "meaning": "一个词：正式，多用在邮件和文档里",
+      "en": "We need to [[discover]] what went wrong."
+     }
+    },
+    {
+     "with": "一个词的说法",
+     "this": {
+      "meaning": "口语",
+      "en": "Let's [[put off]] the meeting."
+     },
+     "that": {
+      "meaning": "正式",
+      "en": "Let's [[postpone]] the meeting."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Please pick ~~up me~~ at the station.",
+     "good": "Please [[pick]] me [[up]] at the station.",
+     "why": "代词小，夹中间。"
+    },
+    {
+     "bad": "I'll look ~~it after~~.",
+     "good": "I'll [[look after]] it.",
+     "why": "look after 不能拆，东西放后面。"
+    },
+    {
+     "bad": "I'm looking forward to ~~see~~ you.",
+     "good": "I'm [[looking forward to]] [[see{ing}]] you.",
+     "why": "这里的 to 是介词，后面用 -ing。"
+    },
+    {
+     "bad": "The meeting was ~~putted~~ off.",
+     "good": "The meeting was [[put off]].",
+     "why": "put 的过去式和过去分词都是 put。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I can't ___ why the tests keep failing.",
+   "options": [
+    "figure out",
+    "figure up",
+    "figure off",
+    "figure into"
+   ],
+   "answer": "figure out",
+   "explain": "「弄明白」是 [[figure out]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：别放弃。",
+   "answer": "Don't give up.",
+   "accept": [
+    "Do not give up."
+   ],
+   "explain": "「放弃」是 [[give up]]。"
+  },
+  {
+   "id": "q03",
+   "section": "parts",
+   "type": "choice",
+   "prompt": "Could you ___ this form and give it to Anna?",
+   "options": [
+    "fill in",
+    "fill off",
+    "fill back"
+   ],
+   "answer": "fill in",
+   "explain": "「填表」是 [[fill in]]，英式英语最常用。"
+  },
+  {
+   "id": "q04",
+   "section": "parts",
+   "type": "fill",
+   "prompt": "I'm in a meeting. Can I call you ___ later?",
+   "answer": "back",
+   "accept": [],
+   "explain": "「回电话」是 [[call]] you [[back]]。"
+  },
+  {
+   "id": "q05",
+   "section": "split",
+   "type": "transform",
+   "prompt": "把小词挪到后面：Can you turn off the heating?",
+   "answer": "Can you turn the heating off?",
+   "accept": [],
+   "explain": "能拆的短语动词，东西可以放中间：[[turn]] the heating [[off]]。"
+  },
+  {
+   "id": "q06",
+   "section": "split",
+   "type": "choice",
+   "prompt": "下面哪一句是对的？",
+   "options": [
+    "We put the launch off until May.",
+    "We put off it until May.",
+    "We off put the launch until May."
+   ],
+   "answer": "We put the launch off until May.",
+   "explain": "put off 能拆：[[put]] the launch [[off]]。"
+  },
+  {
+   "id": "q07",
+   "section": "pronoun",
+   "type": "transform",
+   "prompt": "把 the TV 换成 it：Turn off the TV.",
+   "answer": "Turn it off.",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Turn off it.",
+     "note": "it 必须夹在中间。"
+    }
+   ],
+   "explain": "代词小，夹中间：[[Turn]] it [[off]]。"
+  },
+  {
+   "id": "q08",
+   "section": "pronoun",
+   "type": "fix",
+   "prompt": "改错：I'll pick up you at eight.",
+   "answer": "I'll pick you up at eight.",
+   "accept": [
+    "I will pick you up at eight."
+   ],
+   "explain": "you 是小代词，要夹中间：[[pick]] you [[up]]。"
+  },
+  {
+   "id": "q09",
+   "section": "pronoun",
+   "type": "fill",
+   "prompt": "I don't know this word. I'll look ___ up. (填一个代词)",
+   "answer": "it",
+   "accept": [],
+   "explain": "代词夹中间：[[look]] it [[up]]。"
+  },
+  {
+   "id": "q10",
+   "section": "together",
+   "type": "choice",
+   "prompt": "Don't worry about the bug. I'll ___.",
+   "options": [
+    "look into it",
+    "look it into",
+    "into look it"
+   ],
+   "answer": "look into it",
+   "explain": "look into 不能拆：[[look into]] it。"
+  },
+  {
+   "id": "q11",
+   "section": "together",
+   "type": "fix",
+   "prompt": "改错：Who looks your kids after?",
+   "answer": "Who looks after your kids?",
+   "accept": [],
+   "explain": "look after 不能拆，东西放后面。"
+  },
+  {
+   "id": "q12",
+   "section": "together",
+   "type": "fill",
+   "prompt": "We need to come up ___ a better plan.",
+   "answer": "with",
+   "accept": [],
+   "explain": "「想出」是三个词的 [[come up with]]。"
+  },
+  {
+   "id": "q13",
+   "section": "alone",
+   "type": "choice",
+   "prompt": "Sorry I'm late. The bus ___ on the way.",
+   "options": [
+    "broke down",
+    "broke up",
+    "broke out"
+   ],
+   "answer": "broke down",
+   "explain": "「坏了、抛锚」是 [[broke down]]，后面不用跟东西。"
+  },
+  {
+   "id": "q14",
+   "section": "alone",
+   "type": "translate",
+   "prompt": "翻译：快点，我们要迟到了！",
+   "answer": "Hurry up, we're going to be late!",
+   "accept": [
+    "Hurry up, we are going to be late!",
+    "Hurry up! We're going to be late!",
+    "Hurry up, we'll be late!"
+   ],
+   "explain": "「快点」是 [[Hurry up]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I'm looking forward to see you.",
+   "answer": "I'm looking forward to seeing you.",
+   "accept": [
+    "I am looking forward to seeing you."
+   ],
+   "explain": "这里的 to 是介词，后面用 -ing：[[see{ing}]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "邮件里更正式的说法：We have to ___ the meeting until next week.",
+   "options": [
+    "postpone",
+    "put it off",
+    "put off it"
+   ],
+   "answer": "postpone",
+   "explain": "正式场合常用一个词：[[postpone]] = put off。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 个不同的短语动词说说你今天的工作。至少一句用 it 或 them 代替前面说过的东西。",
+  "rules": [
+   "代词 it / them / me 必须夹在可拆短语动词中间",
+   "不可拆的短语动词（look after / look into）东西放后面"
+  ],
+  "note": "规则判代词位置和可拆不可拆（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

@@ -1,0 +1,378 @@
+{
+ "id": "g-participle-clauses",
+ "title": "分词作状语",
+ "en": "Participle Clauses",
+ "group": "B2 进阶",
+ "level": "B2",
+ "order": 51,
+ "keywords": [
+  "分词"
+ ],
+ "related": [
+  "g-relative-defining",
+  "g-adverbial-time-condition",
+  "g-passive"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "分词作状语就是**把两句话压成一句**：前半句去掉 when、because 和开头的「谁」，动词变成 -ing 或 -ed。前提是：**两半句说的是同一个人或东西**。",
+   "uses": [
+    {
+     "zh": "同时发生：一边……一边……",
+     "en": "[[Walking]] to the office, I saw an old friend.",
+     "en_zh": "走去办公室的路上，我碰到了一个老朋友。"
+    },
+    {
+     "zh": "说原因：因为……",
+     "en": "[[Feeling]] tired, I went to bed early.",
+     "en_zh": "因为觉得累，我早早就睡了。"
+    },
+    {
+     "zh": "被做的：被……",
+     "en": "[[Written]] in Swift, the app runs really fast.",
+     "en_zh": "这个 App 是用 Swift 写的，跑得特别快。"
+    }
+   ]
+  },
+  "ing": {
+   "title": "用 -ing：自己在做", "short": "-ing",
+   "rule": "主语**自己做**这个动作，用 -ing。它可以表示「……的时候」「一边……」或者「因为……」。",
+   "examples": [
+    {
+     "en": "[[Opening]] the app, I noticed a new icon.",
+     "zh": "打开 App 的时候，我注意到一个新图标。"
+    },
+    {
+     "en": "[[Not knowing]] the password, she called the IT desk.",
+     "zh": "她不知道密码，就给 IT 打了电话。"
+    },
+    {
+     "en": "He sat at his desk, [[reading]] the release notes.",
+     "zh": "他坐在桌前，看着发布说明。"
+    }
+   ],
+   "notes": [
+    "否定把 not 放在最前面：[[Not having]] a key, I waited outside.（没带钥匙，我就在外面等。）"
+   ]
+  },
+  "ed": {
+   "title": "用 -ed：被做的", "short": "-ed",
+   "rule": "主语是**被别人做**的，用过去分词（-ed 或不规则的那个形式）。可以想成前面藏了一个「被」。",
+   "examples": [
+    {
+     "en": "[[Built]] in 2010, the office needs a new lift.",
+     "zh": "这栋办公楼建于 2010 年，需要换新电梯了。"
+    },
+    {
+     "en": "[[Shocked]] by the news, nobody said a word.",
+     "zh": "大家被这个消息惊呆了，谁都没说话。"
+    },
+    {
+     "en": "[[Tested]] on real devices, the update is ready to ship.",
+     "zh": "这次更新在真机上测过了，可以发布了。"
+    }
+   ]
+  },
+  "having": {
+   "title": "先做完再……：having done", "short": "先后",
+   "formula": [
+    "Having",
+    "过去分词",
+    "……,",
+    "主句"
+   ],
+   "rule": "第一件事**做完了**，才有第二件事，用 having + 过去分词，意思是「做完……之后」。",
+   "examples": [
+    {
+     "en": "[[Having finished]] the report, she went home.",
+     "zh": "写完报告后，她回家了。"
+    },
+    {
+     "en": "[[Having fixed]] the bug, we ran all the tests again.",
+     "zh": "修完 bug 后，我们把测试又全跑了一遍。"
+    },
+    {
+     "en": "[[Having lived]] in London, he knows the Tube well.",
+     "zh": "他在伦敦住过，所以很熟悉地铁。"
+    }
+   ]
+  },
+  "conj": {
+   "title": "带上 when / after", "short": "连词",
+   "rule": "怕意思不清楚，可以把 **when、while、after、before** 留下来，后面直接接 -ing。这样说更清楚，口语也常用。",
+   "examples": [
+    {
+     "en": "[[While waiting]] for the build, I made a cup of tea.",
+     "zh": "等构建的时候，我泡了杯茶。"
+    },
+    {
+     "en": "[[Before leaving]], please turn off the lights.",
+     "zh": "走之前请把灯关了。"
+    },
+    {
+     "en": "[[After talking]] to the client, we changed the plan.",
+     "zh": "和客户聊过之后，我们改了计划。"
+    }
+   ],
+   "wrong": {
+    "bad": "~~After finished~~ lunch, we went back to work.",
+    "good": "[[After finishing]] lunch, we went back to work."
+   }
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "完整从句",
+     "this": {
+      "meaning": "分词：短，书面一点",
+      "en": "[[Feeling]] ill, she stayed at home."
+     },
+     "that": {
+      "meaning": "从句：长一点，聊天更常用",
+      "en": "[[Because she felt]] ill, she stayed at home."
+     }
+    },
+    {
+     "with": "-ed",
+     "this": {
+      "meaning": "-ing：自己做",
+      "en": "[[Writing]] the report, I found a mistake."
+     },
+     "that": {
+      "meaning": "-ed：被做的",
+      "en": "[[Written]] in a hurry, the report had mistakes."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "~~Walking into the office, the coffee machine~~ was broken.",
+     "good": "[[Walking]] into the office, I saw that the coffee machine was broken.",
+     "why": "前后得是同一个主语：走进办公室的是我，不是咖啡机。"
+    },
+    {
+     "bad": "~~Writing~~ in 2019, the code is hard to read now.",
+     "good": "[[Written]] in 2019, the code is hard to read now.",
+     "why": "代码是被写的，用 written。"
+    },
+    {
+     "bad": "~~Finished~~ the work, I went home.",
+     "good": "[[Having finished]] the work, I went home.",
+     "why": "是我自己做完的，用 having finished。"
+    },
+    {
+     "bad": "Knowing ~~not~~ the answer, I kept quiet.",
+     "good": "[[Not knowing]] the answer, I kept quiet.",
+     "why": "not 放在最前面。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "___ tired, I went to bed early.",
+   "options": [
+    "Feeling",
+    "Felt",
+    "Feel",
+    "To feel"
+   ],
+   "answer": "Feeling",
+   "explain": "我自己觉得累，用 -ing：[[Feeling]]。"
+  },
+  {
+   "id": "q02",
+   "section": "ing",
+   "type": "transform",
+   "prompt": "用 -ing 分词改写：When I opened the app, I noticed a new icon.",
+   "answer": "Opening the app, I noticed a new icon.",
+   "accept": [
+    "When opening the app, I noticed a new icon."
+   ],
+   "explain": "去掉 when 和 I，动词变 -ing：[[Opening]]。"
+  },
+  {
+   "id": "q03",
+   "section": "ing",
+   "type": "fill",
+   "prompt": "___ (not know) the password, she called the IT desk.",
+   "answer": "Not knowing",
+   "accept": [
+    "not knowing"
+   ],
+   "traps": [
+    {
+     "input": "Knowing not",
+     "note": "not 要放在 -ing 前面：Not knowing。"
+    }
+   ],
+   "explain": "not 放最前面：[[Not knowing]]。"
+  },
+  {
+   "id": "q04",
+   "section": "ing",
+   "type": "fill",
+   "prompt": "He sat at his desk, ___ (read) the release notes.",
+   "answer": "reading",
+   "accept": [],
+   "explain": "一边坐着一边看，用 [[reading]]。"
+  },
+  {
+   "id": "q05",
+   "section": "ed",
+   "type": "choice",
+   "prompt": "___ in 2010, the office building needs a new lift.",
+   "options": [
+    "Built",
+    "Building",
+    "Having built"
+   ],
+   "answer": "Built",
+   "explain": "楼是被建的：[[Built]]。"
+  },
+  {
+   "id": "q06",
+   "section": "ed",
+   "type": "fill",
+   "prompt": "___ (test) on real devices, the update is ready to ship.",
+   "answer": "Tested",
+   "accept": [
+    "tested"
+   ],
+   "explain": "更新是被测的：[[Tested]]。"
+  },
+  {
+   "id": "q07",
+   "section": "ed",
+   "type": "fix",
+   "prompt": "改错：Writing in 2019, the code is hard to read now.",
+   "answer": "Written in 2019, the code is hard to read now.",
+   "accept": [],
+   "explain": "代码是被写的：[[Written]]。"
+  },
+  {
+   "id": "q08",
+   "section": "having",
+   "type": "transform",
+   "prompt": "用 having 改写：After she had finished the report, she went home.",
+   "answer": "Having finished the report, she went home.",
+   "accept": [
+    "After finishing the report, she went home."
+   ],
+   "explain": "先做完，用 [[Having finished]]。"
+  },
+  {
+   "id": "q09",
+   "section": "having",
+   "type": "choice",
+   "prompt": "___ the bug, we ran all the tests again.",
+   "options": [
+    "Having fixed",
+    "Fixed",
+    "Having fixing",
+    "Fix"
+   ],
+   "answer": "Having fixed",
+   "explain": "修完了才跑测试：[[Having fixed]]。"
+  },
+  {
+   "id": "q10",
+   "section": "conj",
+   "type": "fill",
+   "prompt": "While ___ (wait) for the build, I made a cup of tea.",
+   "answer": "waiting",
+   "accept": [],
+   "explain": "while 后面接 -ing：[[While waiting]]。"
+  },
+  {
+   "id": "q11",
+   "section": "conj",
+   "type": "fix",
+   "prompt": "改错：After finished lunch, we went back to the meeting.",
+   "answer": "After finishing lunch, we went back to the meeting.",
+   "accept": [
+    "Having finished lunch, we went back to the meeting.",
+    "After we finished lunch, we went back to the meeting.",
+    "After we had finished lunch, we went back to the meeting.",
+    "After lunch, we went back to the meeting."
+   ],
+   "explain": "after 后面接 -ing：[[After finishing]]。"
+  },
+  {
+   "id": "q12",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Walking into the office, the coffee machine was broken.",
+   "answer": "Walking into the office, I saw that the coffee machine was broken.",
+   "accept": [
+    "Walking into the office, I saw the coffee machine was broken.",
+    "Walking into the office, I found the coffee machine was broken.",
+    "Walking into the office, I found that the coffee machine was broken.",
+    "When I walked into the office, the coffee machine was broken."
+   ],
+   "explain": "走进来的是「我」，主句要用 I 开头。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "___ in a hurry, the report had lots of mistakes.",
+   "options": [
+    "Written",
+    "Writing",
+    "Having written"
+   ],
+   "answer": "Written",
+   "explain": "报告是被写的：[[Written]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "transform",
+   "prompt": "改回完整的句子（用 because）：Feeling ill, she stayed at home.",
+   "answer": "Because she felt ill, she stayed at home.",
+   "accept": [
+    "She stayed at home because she felt ill.",
+    "Because she was feeling ill, she stayed at home.",
+    "She stayed at home because she was feeling ill.",
+    "Because she felt ill, she stayed home."
+   ],
+   "explain": "把主语和时态补回来：[[Because she felt]] ill。"
+  },
+  {
+   "id": "q15",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：走去办公室的路上，我碰到了一个老朋友。（用 -ing 开头）",
+   "answer": "Walking to the office, I met an old friend.",
+   "accept": [
+    "Walking to the office, I ran into an old friend.",
+    "Walking to the office, I bumped into an old friend.",
+    "Walking to the office, I saw an old friend.",
+    "Walking to work, I met an old friend.",
+    "Walking to work, I ran into an old friend."
+   ],
+   "explain": "我自己在走，用 [[Walking]]，主句主语也是 I。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话讲你最近的一天，每句都用分词开头：一句用 -ing，一句用 -ed，一句用 having done。",
+  "rules": [
+   "分词的动作和主句是同一个主语",
+   "自己做用 -ing，被做用过去分词，先做完用 having + 过去分词"
+  ],
+  "note": "规则判分词形式和主语是否一致（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

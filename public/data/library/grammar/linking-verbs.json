@@ -1,0 +1,451 @@
+{
+ "id": "g-linking-verbs",
+ "title": "系动词",
+ "en": "Linking Verbs",
+ "group": "动词",
+ "level": "B1",
+ "order": 22,
+ "keywords": [
+  "seem / appear"
+ ],
+ "related": [
+  "g-perception-verbs",
+  "g-be-verb",
+  "g-modals-deduction",
+  "g-ed-ing-adjectives"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "系动词像一个**等号**：它不说「做了什么」，只说主语**是什么样、好像什么样、变成什么样**。be 是最常见的，还有 seem、become、get、stay 这些。",
+   "uses": [
+    {
+     "zh": "是什么样",
+     "en": "The new office [[is]] really bright.",
+     "en_zh": "新办公室特别亮堂。"
+    },
+    {
+     "zh": "好像什么样",
+     "en": "The app [[seems]] slow today.",
+     "en_zh": "今天 App 好像很慢。"
+    },
+    {
+     "zh": "变成什么样",
+     "en": "It[['s getting]] dark.",
+     "en_zh": "天快黑了。"
+    }
+   ],
+   "signals": [
+    "be",
+    "seem",
+    "appear",
+    "become",
+    "get",
+    "stay",
+    "remain",
+    "look",
+    "sound",
+    "feel"
+   ]
+  },
+  "adj": {
+   "title": "后面跟形容词",
+   "short": "+形容词",
+   "formula": [
+    "主语",
+    "系动词",
+    "形容词 / 名词"
+   ],
+   "rule": "系动词后面说的是**主语的样子**，所以用形容词（happy、quiet），不用副词（happily、quietly）。",
+   "examples": [
+    {
+     "en": "Everyone [[seemed]] happy with the demo.",
+     "zh": "大家好像都对演示很满意。"
+    },
+    {
+     "en": "Please [[stay]] calm.",
+     "zh": "请保持冷静。"
+    },
+    {
+     "en": "She [[became]] a team lead last year.",
+     "zh": "她去年当上了组长。"
+    }
+   ],
+   "wrong": {
+    "bad": "He seems ~~happily~~.",
+    "good": "He [[seems]] happy."
+   }
+  },
+  "seem": {
+   "title": "seem / appear：好像",
+   "short": "好像",
+   "formula": [
+    "主语",
+    "seem / appear",
+    "形容词 / to do"
+   ],
+   "rule": "seem 和 appear 都是「**好像、看来**」，说的是你的印象，不一定对。appear 更正式，常出现在邮件和报告里。",
+   "examples": [
+    {
+     "en": "He [[seems]] nice.",
+     "zh": "他人好像挺好的。"
+    },
+    {
+     "en": "She [[seems to know]] everyone here.",
+     "zh": "她好像认识这里的每个人。"
+    },
+    {
+     "en": "The server [[appears to be]] down.",
+     "zh": "服务器好像宕机了。"
+    },
+    {
+     "en": "[[It seems that]] the API has changed.",
+     "zh": "看来接口改了。"
+    }
+   ],
+   "notes": [
+    "两种说法意思一样：[[It seems that]] he's busy. = He [[seems to be]] busy.",
+    "说过去好像发生了什么，用 seem to have done：He [[seems to have left]].（他好像已经走了。）"
+   ]
+  },
+  "become": {
+   "title": "变成：get / become / go / turn",
+   "short": "变成",
+   "rule": "都是「变得」：**get** 最口语；**become** 更正式；**go** 多说变坏（go wrong、go bad）；**turn** 常说颜色。",
+   "examples": [
+    {
+     "en": "It[['s getting]] late. Let's go home.",
+     "zh": "不早了，我们回家吧。"
+    },
+    {
+     "en": "Things [[went]] wrong after the update.",
+     "zh": "更新之后就出问题了。"
+    },
+    {
+     "en": "Swift [[has become]] very popular.",
+     "zh": "Swift 变得很流行。"
+    },
+    {
+     "en": "The leaves [[turn]] red in autumn.",
+     "zh": "秋天叶子会变红。"
+    }
+   ]
+  },
+  "stay": {
+   "title": "保持：stay / remain / keep",
+   "short": "保持",
+   "rule": "说「一直保持这样」，用 **stay**、**keep**，正式一点用 **remain**。后面一样跟形容词。",
+   "examples": [
+    {
+     "en": "[[Stay]] safe!",
+     "zh": "注意安全！"
+    },
+    {
+     "en": "[[Keep]] quiet, the baby's asleep.",
+     "zh": "小点声，宝宝睡着了。"
+    },
+    {
+     "en": "The price [[remains]] the same.",
+     "zh": "价格不变。"
+    }
+   ]
+  },
+  "twoway": {
+   "title": "同一个词，两种用法",
+   "short": "两用",
+   "rule": "look、feel、taste、get 也能当普通动作。判断方法：**能换成 is，意思还通**，就是系动词，用形容词；换不了，就是动作，用副词。",
+   "items": [
+    {
+     "rule": "能换成 is：系动词 + 形容词",
+     "en": "She [[looked]] angry.",
+     "zh": "她看起来很生气。"
+    },
+    {
+     "rule": "换不了 is：动作 + 副词",
+     "en": "She [[looked]] at me angrily.",
+     "zh": "她生气地看着我。"
+    },
+    {
+     "rule": "能换成 is：系动词 + 形容词",
+     "en": "The soup [[tastes]] good.",
+     "zh": "这汤味道很好。"
+    },
+    {
+     "rule": "换不了 is：「得到」的意思",
+     "en": "I [[got]] a new phone.",
+     "zh": "我有了一部新手机。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "be",
+     "this": {
+      "meaning": "seem：好像，不太确定",
+      "en": "He [[seems]] busy."
+     },
+     "that": {
+      "meaning": "be：确定就是",
+      "en": "He [[is]] busy."
+     }
+    },
+    {
+     "with": "look",
+     "this": {
+      "meaning": "seem：整体印象，可能是听说、推断的",
+      "en": "The project [[seems]] difficult."
+     },
+     "that": {
+      "meaning": "look：眼睛看到的样子",
+      "en": "You [[look]] pale."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "She ~~is seem~~ tired.",
+     "good": "She [[seems]] tired.",
+     "why": "seem 本身就是动词，前面不用再加 is。"
+    },
+    {
+     "bad": "The food smells ~~well~~.",
+     "good": "The food [[smells]] good.",
+     "why": "说样子用形容词 good。"
+    },
+    {
+     "bad": "He seems ~~knowing~~ the answer.",
+     "good": "He [[seems to know]] the answer.",
+     "why": "seem 后面接动作用 to do。"
+    },
+    {
+     "bad": "I ~~become~~ hungry every afternoon.",
+     "good": "I [[get]] hungry every afternoon.",
+     "why": "日常小变化，口语用 get 更自然。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "It's ___ cold. You should take a coat.",
+   "options": [
+    "getting",
+    "making",
+    "doing",
+    "taking"
+   ],
+   "answer": "getting",
+   "explain": "「变得」用 [[getting]]：天变冷了。"
+  },
+  {
+   "id": "q02",
+   "section": "adj",
+   "type": "choice",
+   "prompt": "Everyone stayed ___ during the outage.",
+   "options": [
+    "calm",
+    "calmly",
+    "calming"
+   ],
+   "answer": "calm",
+   "explain": "stay 是系动词，后面用形容词 [[calm]]。"
+  },
+  {
+   "id": "q03",
+   "section": "adj",
+   "type": "fix",
+   "prompt": "改错：He seems happily with the result.",
+   "answer": "He seems happy with the result.",
+   "accept": [],
+   "explain": "seem 后面用形容词：[[seems]] happy。"
+  },
+  {
+   "id": "q04",
+   "section": "seem",
+   "type": "fill",
+   "prompt": "She seems ___ (know) everyone in the office.",
+   "answer": "to know",
+   "accept": [],
+   "traps": [
+    {
+     "input": "knowing",
+     "note": "seem 后面用 to do，不用 -ing。"
+    }
+   ],
+   "explain": "seem 后面接动作用 to do：[[seems to know]]。"
+  },
+  {
+   "id": "q05",
+   "section": "seem",
+   "type": "transform",
+   "prompt": "改写成 He seems … 的句子：It seems that he is busy.",
+   "answer": "He seems to be busy.",
+   "accept": [
+    "He seems busy."
+   ],
+   "explain": "It seems that he is… = He [[seems to be]]…"
+  },
+  {
+   "id": "q06",
+   "section": "seem",
+   "type": "choice",
+   "prompt": "报告里更正式的说法：The issue ___ to be fixed.",
+   "options": [
+    "appears",
+    "looks",
+    "gets"
+   ],
+   "answer": "appears",
+   "explain": "正式场合常用 [[appears]]。"
+  },
+  {
+   "id": "q07",
+   "section": "seem",
+   "type": "translate",
+   "prompt": "翻译：服务器好像宕机了。",
+   "answer": "The server seems to be down.",
+   "accept": [
+    "The server appears to be down.",
+    "The server seems down.",
+    "It seems that the server is down.",
+    "It seems the server is down.",
+    "It appears that the server is down.",
+    "It appears the server is down."
+   ],
+   "explain": "「好像」用 [[seems to be]]。"
+  },
+  {
+   "id": "q08",
+   "section": "become",
+   "type": "choice",
+   "prompt": "Everything ___ wrong after the update.",
+   "options": [
+    "went",
+    "turned",
+    "became",
+    "stayed"
+   ],
+   "answer": "went",
+   "explain": "说变坏常用 go：[[went]] wrong。"
+  },
+  {
+   "id": "q09",
+   "section": "become",
+   "type": "choice",
+   "prompt": "My hair is starting to ___ grey.",
+   "options": [
+    "turn",
+    "keep",
+    "stay"
+   ],
+   "answer": "turn",
+   "explain": "说颜色变化常用 [[turn]]。"
+  },
+  {
+   "id": "q10",
+   "section": "stay",
+   "type": "choice",
+   "prompt": "Please ___ quiet. The baby's asleep.",
+   "options": [
+    "keep",
+    "get",
+    "turn"
+   ],
+   "answer": "keep",
+   "explain": "保持安静：[[Keep]] quiet。"
+  },
+  {
+   "id": "q11",
+   "section": "stay",
+   "type": "fill",
+   "prompt": "Despite the changes, the price ___ (remain) the same.",
+   "answer": "remains",
+   "accept": [],
+   "explain": "主语是 the price，「保持不变」：[[remain{s}]]。"
+  },
+  {
+   "id": "q12",
+   "section": "twoway",
+   "type": "choice",
+   "prompt": "She looked at me ___.",
+   "options": [
+    "angry",
+    "angrily"
+   ],
+   "answer": "angrily",
+   "explain": "look at 是「看」这个动作，用副词 [[angrily]]。"
+  },
+  {
+   "id": "q13",
+   "section": "twoway",
+   "type": "choice",
+   "prompt": "She looked ___ when she heard the news.",
+   "options": [
+    "angry",
+    "angrily"
+   ],
+   "answer": "angry",
+   "explain": "能换成 she was angry，是系动词，用形容词 [[angry]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：She is seem tired today.",
+   "answer": "She seems tired today.",
+   "accept": [],
+   "explain": "seem 本身就是动词，不用加 is。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：The coffee smells well.",
+   "answer": "The coffee smells good.",
+   "accept": [
+    "The coffee smells nice.",
+    "The coffee smells great."
+   ],
+   "explain": "说样子用形容词：[[smells]] good。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：他好像不太高兴。",
+   "answer": "He doesn't seem very happy.",
+   "accept": [
+    "He doesn't seem happy.",
+    "He does not seem very happy.",
+    "He seems unhappy.",
+    "He seems a bit unhappy.",
+    "He doesn't seem too happy.",
+    "He doesn't seem to be very happy.",
+    "He doesn't seem to be happy."
+   ],
+   "explain": "英语习惯把 not 放在 seem 这边：He [[doesn't seem]] happy。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用系动词说 3 句话：一句用 seem 或 appear 说你对一件事的印象，一句用 get / become 说一个变化，一句用 stay / keep 说保持的状态。",
+  "rules": [
+   "系动词后面用形容词，不用副词",
+   "seem / appear 后面接动作用 to do，前面不加 be"
+  ],
+  "note": "规则判形容词 / 副词和 seem to do（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

@@ -1,0 +1,375 @@
+{
+ "id": "g-discourse-markers",
+ "title": "话语标记",
+ "en": "Discourse Markers",
+ "group": "B2 进阶",
+ "level": "B2",
+ "order": 55,
+ "keywords": [
+  "表达观点",
+  "说话留余地",
+  "客气地反驳",
+  "留余地的说法"
+ ],
+ "related": [
+  "g-linking-words",
+  "g-modals-deduction",
+  "g-nominalisation"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "话语标记是**说话时的小提示词**，不改意思，但告诉别人你的态度：我要说看法了、我不太确定、我不太同意。用好了，英语**更自然、更有礼貌**。",
+   "uses": [
+    {
+     "zh": "说自己的看法",
+     "en": "[[In my view]], we should wait a week.",
+     "en_zh": "我觉得我们应该再等一周。"
+    },
+    {
+     "zh": "不太确定，留点余地",
+     "en": "[[I might be wrong, but]] I think it's a memory leak.",
+     "en_zh": "我可能说错了，但我觉得是内存泄漏。"
+    },
+    {
+     "zh": "客气地不同意",
+     "en": "[[I see your point, but]] the deadline is tight.",
+     "en_zh": "我明白你的意思，不过时间很紧。"
+    }
+   ]
+  },
+  "opinion": {
+   "title": "说观点", "short": "观点",
+   "rule": "开口先给个信号：**「下面是我的看法」**。I think 最常用；personally 是「我个人」；in my view 正式一点；to be honest 是「说实话」。",
+   "examples": [
+    {
+     "en": "[[Personally]], I prefer SwiftUI.",
+     "zh": "我个人更喜欢 SwiftUI。"
+    },
+    {
+     "en": "[[In my view]], the screen needs more white space.",
+     "zh": "我觉得这个页面需要多留点白。"
+    },
+    {
+     "en": "[[To be honest]], I'm not sure it's worth it.",
+     "zh": "说实话，我不确定值不值得。"
+    }
+   ]
+  },
+  "hedge": {
+   "title": "留余地", "short": "留余地",
+   "rule": "不确定，或者怕说得太冲时，加点**软化的词**：seem、might、probably、a bit、I'm not sure。就像说话前先垫个软垫。",
+   "examples": [
+    {
+     "en": "It [[seems]] that the API is down.",
+     "zh": "看起来接口好像挂了。"
+    },
+    {
+     "en": "This [[might]] be a problem on older devices.",
+     "zh": "这在旧设备上可能会有问题。"
+    },
+    {
+     "en": "The new flow is [[a bit]] confusing.",
+     "zh": "新流程有点让人搞不清。"
+    },
+    {
+     "en": "[[I'm not sure]] this is the best approach.",
+     "zh": "我不太确定这是不是最好的办法。"
+    }
+   ],
+   "wrong": {
+    "bad": "~~This is wrong.~~",
+    "good": "This [[might not]] be quite right."
+   }
+  },
+  "disagree": {
+   "title": "客气地反驳", "short": "反驳",
+   "rule": "先**认一下对方**，再说 but。不要一上来就说 You're wrong，听着像在吵架。",
+   "examples": [
+    {
+     "en": "[[I see what you mean, but]] we don't have time to test it.",
+     "zh": "我懂你的意思，但我们没时间测试。"
+    },
+    {
+     "en": "[[That's a good point. However,]] users might not notice.",
+     "zh": "这点说得好。不过用户可能注意不到。"
+    },
+    {
+     "en": "[[I take your point, but]] the data says something different.",
+     "zh": "你说的有道理，但数据显示的不一样。"
+    }
+   ]
+  },
+  "structure": {
+   "title": "换话题、回正题", "short": "理顺",
+   "rule": "这些词帮你**理顺一段话**：by the way 是顺便说一句，anyway 是回到正题，actually 是「其实」，用来纠正。",
+   "examples": [
+    {
+     "en": "[[By the way]], did you see the new designs?",
+     "zh": "顺便问一下，你看过新设计了吗？"
+    },
+    {
+     "en": "[[Anyway]], let's get back to the bug.",
+     "zh": "好了，我们说回那个 bug。"
+    },
+    {
+     "en": "[[Actually]], the meeting is at three, not two.",
+     "zh": "其实会是三点，不是两点。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "直接说",
+     "this": {
+      "meaning": "带标记：客气，留余地",
+      "en": "[[I might be wrong, but]] this could break the login."
+     },
+     "that": {
+      "meaning": "直接说：清楚，但很冲",
+      "en": "This will break the login."
+     }
+    },
+    {
+     "with": "currently",
+     "this": {
+      "meaning": "actually：其实（纠正别人）",
+      "en": "[[Actually]], I'm from Leeds, not London."
+     },
+     "that": {
+      "meaning": "currently：目前、现在",
+      "en": "I'm [[currently]] working on the payment page."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "~~In my opinion, I think~~ it's fine.",
+     "good": "[[In my opinion]], it's fine.",
+     "why": "两个都是「我觉得」，说一个就够了。"
+    },
+    {
+     "bad": "~~According to me~~, it's a good idea.",
+     "good": "[[In my view]], it's a good idea.",
+     "why": "according to 后面跟别人或资料，不跟 me。"
+    },
+    {
+     "bad": "~~Actually~~ I'm working on the payment page.",
+     "good": "I'm [[currently]] working on the payment page.",
+     "why": "想说「目前」用 currently；actually 是「其实」。"
+    },
+    {
+     "bad": "~~You're wrong.~~ The deadline is too tight.",
+     "good": "[[I see your point, but]] the deadline is too tight.",
+     "why": "先认一下对方，再说不同意。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "___, I prefer SwiftUI to UIKit.",
+   "options": [
+    "Personally",
+    "Anyway",
+    "By the way",
+    "Therefore"
+   ],
+   "answer": "Personally",
+   "explain": "说自己的看法：[[Personally]]。"
+  },
+  {
+   "id": "q02",
+   "section": "opinion",
+   "type": "fix",
+   "prompt": "改错：In my opinion, I think it's fine.",
+   "answer": "In my opinion, it's fine.",
+   "accept": [
+    "I think it's fine.",
+    "In my opinion it's fine."
+   ],
+   "explain": "意思重复，留一个就行：[[In my opinion]]。"
+  },
+  {
+   "id": "q03",
+   "section": "opinion",
+   "type": "fix",
+   "prompt": "改错：According to me, it's a good idea.",
+   "answer": "In my view, it's a good idea.",
+   "accept": [
+    "In my opinion, it's a good idea.",
+    "I think it's a good idea.",
+    "Personally, I think it's a good idea.",
+    "In my view it's a good idea."
+   ],
+   "explain": "说自己的看法用 [[In my view]] 或 In my opinion。"
+  },
+  {
+   "id": "q04",
+   "section": "opinion",
+   "type": "fill",
+   "prompt": "To be ___, I'm not sure it's worth it.",
+   "answer": "honest",
+   "accept": [],
+   "explain": "说实话：[[To be honest]]。"
+  },
+  {
+   "id": "q05",
+   "section": "hedge",
+   "type": "choice",
+   "prompt": "哪一句说得最留余地？",
+   "options": [
+    "This is wrong.",
+    "This might not be quite right.",
+    "This is totally wrong."
+   ],
+   "answer": "This might not be quite right.",
+   "explain": "[[might]] 和 quite 让话软了很多。"
+  },
+  {
+   "id": "q06",
+   "section": "hedge",
+   "type": "fill",
+   "prompt": "It ___ that the API is down. Can someone check?",
+   "answer": "seems",
+   "accept": [
+    "appears"
+   ],
+   "explain": "不太确定：It [[seems]] that…"
+  },
+  {
+   "id": "q07",
+   "section": "hedge",
+   "type": "transform",
+   "prompt": "加上 a bit 说得软一点：The new flow is confusing.",
+   "answer": "The new flow is a bit confusing.",
+   "accept": [
+    "The new flow's a bit confusing."
+   ],
+   "explain": "加 [[a bit]] 放在形容词前。"
+  },
+  {
+   "id": "q08",
+   "section": "disagree",
+   "type": "choice",
+   "prompt": "同事想把发布提前一周，你不太同意。最客气的说法是：",
+   "options": [
+    "You're wrong.",
+    "I see what you mean, but we don't have time to test.",
+    "No, that's a bad idea."
+   ],
+   "answer": "I see what you mean, but we don't have time to test.",
+   "explain": "先认一下对方：[[I see what you mean, but]]…"
+  },
+  {
+   "id": "q09",
+   "section": "disagree",
+   "type": "fill",
+   "prompt": "I take your ___, but the data says something different.",
+   "answer": "point",
+   "accept": [],
+   "explain": "固定说法：[[I take your point, but]]…"
+  },
+  {
+   "id": "q10",
+   "section": "disagree",
+   "type": "fix",
+   "prompt": "改错（说得客气点）：You're wrong, the deadline is too tight.",
+   "answer": "I see your point, but the deadline is too tight.",
+   "accept": [
+    "I see what you mean, but the deadline is too tight.",
+    "I take your point, but the deadline is too tight.",
+    "I see your point, but I think the deadline is too tight.",
+    "I'm not sure I agree. The deadline is too tight."
+   ],
+   "explain": "先认一下对方再说 but：[[I see your point, but]]…"
+  },
+  {
+   "id": "q11",
+   "section": "structure",
+   "type": "fill",
+   "prompt": "___ the way, did you see the new designs?",
+   "answer": "By",
+   "accept": [
+    "by"
+   ],
+   "explain": "顺便说一句：[[By the way]]。"
+  },
+  {
+   "id": "q12",
+   "section": "structure",
+   "type": "choice",
+   "prompt": "OK, that's enough about lunch. ___, let's get back to the bug.",
+   "options": [
+    "Anyway",
+    "Actually",
+    "By the way",
+    "Personally"
+   ],
+   "answer": "Anyway",
+   "explain": "回到正题：[[Anyway]]。"
+  },
+  {
+   "id": "q13",
+   "section": "structure",
+   "type": "choice",
+   "prompt": "— The meeting's at two, right? — ___, it's at three.",
+   "options": [
+    "Actually",
+    "Currently",
+    "Anyway"
+   ],
+   "answer": "Actually",
+   "explain": "纠正对方：[[Actually]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Actually I'm working on the payment page.（想说：我目前在做支付页面）",
+   "answer": "I'm currently working on the payment page.",
+   "accept": [
+    "Currently, I'm working on the payment page.",
+    "Currently I'm working on the payment page.",
+    "I'm working on the payment page at the moment.",
+    "At the moment, I'm working on the payment page."
+   ],
+   "explain": "「目前」是 [[currently]]，不是 actually。"
+  },
+  {
+   "id": "q15",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我可能说错了，但我觉得这是内存泄漏。",
+   "answer": "I might be wrong, but I think it's a memory leak.",
+   "accept": [
+    "I may be wrong, but I think it's a memory leak.",
+    "I could be wrong, but I think it's a memory leak.",
+    "I might be wrong, but I think this is a memory leak.",
+    "I may be wrong, but I think this is a memory leak.",
+    "I could be wrong, but I think this is a memory leak."
+   ],
+   "explain": "留余地：[[I might be wrong, but]]…"
+  }
+ ],
+ "openTask": {
+  "prompt": "假设在评审会上，同事提了一个你不太同意的方案。用 3 句话回应：先说观点，再留点余地，最后客气地提出不同意见。",
+  "rules": [
+   "至少用一个说观点的标记（personally / in my view / to be honest）",
+   "反驳前先认一下对方（I see your point, but…）"
+  ],
+  "note": "规则判有没有用到对应的话语标记（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

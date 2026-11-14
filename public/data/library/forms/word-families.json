@@ -1,0 +1,716 @@
+{
+ "id": "forms-word-families",
+ "title": "构词法与词族",
+ "en": "Word Families",
+ "group": "词形变化",
+ "order": 4,
+ "symbol": "square.stack.3d.up",
+ "summary": "decide · decision · decisive · decisively",
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "一个词能变出**一家人**：动词 decide、名词 decision、形容词 decisive、副词 decisively。意思差不多，用法不同。句子里空的是什么位置，就挑哪个。",
+   "uses": [
+    {
+     "zh": "动词：做这件事",
+     "en": "We need to [[decide]] today.",
+     "en_zh": "我们今天得做决定。"
+    },
+    {
+     "zh": "名词：这件事本身",
+     "en": "We need to make a [[deci{sion}]].",
+     "en_zh": "我们得做个决定。"
+    },
+    {
+     "zh": "形容词：人和东西怎么样",
+     "en": "She's very [[decis{ive}]].",
+     "en_zh": "她很果断。"
+    },
+    {
+     "zh": "副词：事情怎么做",
+     "en": "She acted [[decisive{ly}]].",
+     "en_zh": "她果断地采取了行动。"
+    }
+   ]
+  },
+  "verb-families": {
+   "title": "从动词变出来的一家",
+   "short": "动词家",
+   "rule": "每行顺序：**动词 · 名词 · 形容词 · 副词**，没有的写 —。左边是意思，右边是名词怎么变。",
+   "rules": [
+    {
+     "ending": "决定",
+     "change": "名词 -sion",
+     "examples": [
+      "decide · [[deci{sion}]] · [[decis{ive}]] · [[decisive{ly}]]"
+     ]
+    },
+    {
+     "ending": "开发",
+     "change": "名词 -ment",
+     "examples": [
+      "develop · [[develop{ment}]] · [[develop{ed}]] · —"
+     ]
+    },
+    {
+     "ending": "改进",
+     "change": "名词 -ment",
+     "examples": [
+      "improve · [[improve{ment}]] · [[improve{d}]] · —"
+     ]
+    },
+    {
+     "ending": "依靠",
+     "change": "名词 -ance",
+     "examples": [
+      "rely · [[reli{ance}]] · [[reli{able}]] · [[reli{ably}]]"
+     ]
+    },
+    {
+     "ending": "成功",
+     "change": "名词要单独记",
+     "examples": [
+      "succeed · [[success]] · [[success{ful}]] · [[successful{ly}]]"
+     ]
+    },
+    {
+     "ending": "创造",
+     "change": "名词 -ion",
+     "examples": [
+      "create · [[creat{ion}]] · [[creat{ive}]] · [[creative{ly}]]"
+     ]
+    },
+    {
+     "ending": "解决",
+     "change": "名词 -tion",
+     "examples": [
+      "solve · [[solu{tion}]] · [[solv{able}]] · —"
+     ]
+    },
+    {
+     "ending": "分析",
+     "change": "名词 -sis",
+     "examples": [
+      "analyse · [[analy{sis}]] · [[analyt{ical}]] · [[analytical{ly}]]"
+     ]
+    },
+    {
+     "ending": "沟通",
+     "change": "名词 -ion",
+     "examples": [
+      "communicate · [[communicat{ion}]] · [[communicat{ive}]] · —"
+     ]
+    },
+    {
+     "ending": "依赖",
+     "change": "名词 -ency",
+     "examples": [
+      "depend · [[depend{ency}]] · [[depend{ent}]] · —"
+     ]
+    },
+    {
+     "ending": "使用",
+     "change": "名词 -age",
+     "examples": [
+      "use · [[us{age}]] · [[use{ful}]] · [[useful{ly}]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "We made a lot of [[improve{ment}s]] this sprint.",
+     "zh": "这个迭代我们做了很多改进。"
+    },
+    {
+     "en": "I'm not sure the server is [[reli{able}]].",
+     "zh": "我不确定这台服务器靠不靠谱。"
+    },
+    {
+     "en": "Can you send me your [[analy{sis}]]?",
+     "zh": "能把你的分析发给我吗？"
+    },
+    {
+     "en": "The app has too many [[depend{encies}]].",
+     "zh": "这个 App 的依赖太多了。"
+    }
+   ],
+   "notes": [
+    "英式拼写：[[analyse]]，美式是 analyze；名词都是 analysis。"
+   ]
+  },
+  "adj-families": {
+   "title": "从形容词变出来的一家",
+   "short": "形容词家",
+   "rule": "这些词先有形容词，再变出名词和副词。顺序一样：**动词 · 名词 · 形容词 · 副词**。",
+   "rules": [
+    {
+     "ending": "灵活",
+     "change": "名词 -ity",
+     "examples": [
+      "— · [[flexib{ility}]] · flexible · [[flexib{ly}]]"
+     ]
+    },
+    {
+     "ending": "稳定",
+     "change": "名词 -ity",
+     "examples": [
+      "[[stabil{ise}]] · [[stabil{ity}]] · stable · —"
+     ]
+    },
+    {
+     "ending": "可用",
+     "change": "名词 -ity",
+     "examples": [
+      "— · [[availab{ility}]] · available · —"
+     ]
+    },
+    {
+     "ending": "负责",
+     "change": "名词 -ity",
+     "examples": [
+      "— · [[responsib{ility}]] · responsible · [[responsib{ly}]]"
+     ]
+    },
+    {
+     "ending": "安全",
+     "change": "名词 -ity",
+     "examples": [
+      "secure · [[secur{ity}]] · secure · [[secure{ly}]]"
+     ]
+    },
+    {
+     "ending": "高效",
+     "change": "名词 -cy",
+     "examples": [
+      "— · [[efficien{cy}]] · efficient · [[efficient{ly}]]"
+     ]
+    },
+    {
+     "ending": "准确",
+     "change": "名词 -cy",
+     "examples": [
+      "— · [[accura{cy}]] · accurate · [[accurate{ly}]]"
+     ]
+    },
+    {
+     "ending": "清楚",
+     "change": "动词 -ify",
+     "examples": [
+      "[[clar{ify}]] · [[clar{ity}]] · clear · [[clear{ly}]]"
+     ]
+    },
+    {
+     "ending": "简单",
+     "change": "动词 -ify",
+     "examples": [
+      "[[simpl{ify}]] · [[simplic{ity}]] · simple · [[simpl{y}]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "We need more [[flexib{ility}]] in the plan.",
+     "zh": "计划需要更灵活一点。"
+    },
+    {
+     "en": "[[Secur{ity}]] is our top priority.",
+     "zh": "安全是我们的头等大事。"
+    },
+    {
+     "en": "Could you [[clar{ify}]] the requirements?",
+     "zh": "你能把需求说清楚一点吗？"
+    },
+    {
+     "en": "Let's [[simpl{ify}]] this screen.",
+     "zh": "我们把这个页面简化一下吧。"
+    }
+   ]
+  },
+  "suffixes": {
+   "title": "看结尾，猜词性",
+   "short": "看结尾",
+   "rule": "口诀：**-tion、-ment、-ness、-ity 是名词；-able、-ful、-less、-ive 是形容词；-ise 是动词；-ly 是副词。**",
+   "rules": [
+    {
+     "ending": "-tion / -sion",
+     "change": "名词：这件事",
+     "examples": [
+      "create → [[creat{ion}]]",
+      "decide → [[deci{sion}]]",
+      "inform → [[inform{ation}]]"
+     ]
+    },
+    {
+     "ending": "-ment",
+     "change": "名词：这件事",
+     "examples": [
+      "deploy → [[deploy{ment}]]",
+      "agree → [[agree{ment}]]",
+      "pay → [[pay{ment}]]"
+     ]
+    },
+    {
+     "ending": "-ness",
+     "change": "名词：这种样子",
+     "examples": [
+      "aware → [[aware{ness}]]",
+      "kind → [[kind{ness}]]",
+      "ready → [[readi{ness}]]"
+     ]
+    },
+    {
+     "ending": "-ity",
+     "change": "名词：这种样子",
+     "examples": [
+      "secure → [[secur{ity}]]",
+      "stable → [[stabil{ity}]]",
+      "flexible → [[flexibil{ity}]]"
+     ]
+    },
+    {
+     "ending": "-er / -or",
+     "change": "名词：做这件事的人或东西",
+     "examples": [
+      "develop → [[develop{er}]]",
+      "test → [[test{er}]]",
+      "edit → [[edit{or}]]"
+     ]
+    },
+    {
+     "ending": "-able / -ible",
+     "change": "形容词：能被……的",
+     "examples": [
+      "reuse → [[reus{able}]]",
+      "read → [[read{able}]]",
+      "access → [[access{ible}]]"
+     ]
+    },
+    {
+     "ending": "-ful",
+     "change": "形容词：有……的",
+     "examples": [
+      "use → [[use{ful}]]",
+      "help → [[help{ful}]]",
+      "care → [[care{ful}]]"
+     ]
+    },
+    {
+     "ending": "-less",
+     "change": "形容词：没有……的",
+     "examples": [
+      "use → [[use{less}]]",
+      "care → [[care{less}]]",
+      "wire → [[wire{less}]]"
+     ]
+    },
+    {
+     "ending": "-ive / -al",
+     "change": "形容词",
+     "examples": [
+      "act → [[act{ive}]]",
+      "respond → [[respons{ive}]]",
+      "option → [[option{al}]]"
+     ]
+    },
+    {
+     "ending": "-ise / -ify",
+     "change": "动词：让它变成……",
+     "examples": [
+      "custom → [[custom{ise}]]",
+      "priorit~~y~~ → [[priorit{ise}]]",
+      "simple → [[simpl{ify}]]"
+     ]
+    },
+    {
+     "ending": "-ly",
+     "change": "副词：怎么做",
+     "examples": [
+      "quick → [[quick{ly}]]",
+      "clear → [[clear{ly}]]"
+     ]
+    }
+   ],
+   "notes": [
+    "英式拼写用 -ise：[[optim{ise}]]、[[organ{ise}]]；美式写成 -ize。",
+    "**-ful 只有一个 l**：[[use{ful}]]、[[help{ful}]]，没有 usefull。"
+   ]
+  },
+  "prefixes": {
+   "title": "加在前面，改意思",
+   "short": "前缀",
+   "rule": "前缀加在词的前面，**只改意思，不改词性**。un-、in-、dis- 是「不」；re- 是「再来一次」；over- 是「太多」，under- 是「太少」。",
+   "rules": [
+    {
+     "ending": "un-",
+     "change": "不、反过来",
+     "examples": [
+      "[[{un}clear]]",
+      "[[{un}stable]]",
+      "[[{un}do]]"
+     ]
+    },
+    {
+     "ending": "in-",
+     "change": "不",
+     "examples": [
+      "[[{in}correct]]",
+      "[[{in}valid]]",
+      "[[{in}complete]]"
+     ]
+    },
+    {
+     "ending": "im-（p、m 前面）",
+     "change": "不",
+     "examples": [
+      "[[{im}possible]]",
+      "[[{im}patient]]",
+      "[[{im}mature]]"
+     ]
+    },
+    {
+     "ending": "il- / ir-（l、r 前面）",
+     "change": "不",
+     "examples": [
+      "[[{il}legal]]",
+      "[[{ir}regular]]",
+      "[[{ir}relevant]]"
+     ]
+    },
+    {
+     "ending": "dis-",
+     "change": "不、取消",
+     "examples": [
+      "[[{dis}agree]]",
+      "[[{dis}connect]]",
+      "[[{dis}able]]"
+     ]
+    },
+    {
+     "ending": "re-",
+     "change": "再一次",
+     "examples": [
+      "[[{re}build]]",
+      "[[{re}start]]",
+      "[[{re}install]]"
+     ]
+    },
+    {
+     "ending": "over-",
+     "change": "太多、超过",
+     "examples": [
+      "[[{over}load]]",
+      "[[{over}think]]",
+      "[[{over}estimate]]"
+     ]
+    },
+    {
+     "ending": "under-",
+     "change": "太少、不够",
+     "examples": [
+      "[[{under}estimate]]",
+      "[[{under}used]]",
+      "[[{under}paid]]"
+     ]
+    },
+    {
+     "ending": "mis-",
+     "change": "弄错",
+     "examples": [
+      "[[{mis}read]]",
+      "[[{mis}understand]]",
+      "[[{mis}spell]]"
+     ]
+    },
+    {
+     "ending": "pre-",
+     "change": "提前",
+     "examples": [
+      "[[{pre}view]]",
+      "[[{pre}load]]",
+      "[[{pre}order]]"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "The token is [[{in}valid]].",
+     "zh": "这个 token 无效。"
+    },
+    {
+     "en": "Try to [[{re}start]] the simulator.",
+     "zh": "试试重启模拟器。"
+    },
+    {
+     "en": "We [[{under}estimated]] the work again.",
+     "zh": "我们又把工作量估少了。"
+    },
+    {
+     "en": "Sorry, I [[{mis}read]] your message.",
+     "zh": "抱歉，我看错你的消息了。"
+    }
+   ]
+  },
+  "pick": {
+   "title": "挑对词性，最常见的错",
+   "short": "挑词性",
+   "rule": "先看空的位置：a / the 后面要**名词**；be、very 后面要**形容词**；修饰动词要**副词**；to、can 后面要**动词**。",
+   "items": [
+    {
+     "rule": "a / the 后面 → 名词",
+     "en": "We need to make a [[deci{sion}]] today.",
+     "zh": "我们今天得做个决定。"
+    },
+    {
+     "rule": "be 后面 → 形容词",
+     "en": "The new SDK is more [[reli{able}]].",
+     "zh": "新的 SDK 更可靠。"
+    },
+    {
+     "rule": "修饰动词 → 副词",
+     "en": "She solved it [[creative{ly}]].",
+     "zh": "她用很有创意的办法解决了。"
+    },
+    {
+     "rule": "to 后面 → 动词",
+     "en": "We want to [[improve]] the startup time.",
+     "zh": "我们想缩短启动时间。"
+    },
+    {
+     "rule": "修饰形容词 → 副词",
+     "en": "It's [[surprising{ly}]] fast.",
+     "zh": "它快得出奇。"
+    },
+    {
+     "rule": "形容词后面 → 名词",
+     "en": "Good [[communicat{ion}]] saves time.",
+     "zh": "沟通好能省时间。"
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "We need to make a ~~decide~~.",
+     "good": "We need to make a [[deci{sion}]].",
+     "why": "a 后面要名词。"
+    },
+    {
+     "bad": "The launch was very ~~success~~.",
+     "good": "The launch was very [[success{ful}]].",
+     "why": "very 后面要形容词。"
+    },
+    {
+     "bad": "It works ~~perfect~~ now.",
+     "good": "It works [[perfect{ly}]] now.",
+     "why": "修饰动词要用副词。"
+    },
+    {
+     "bad": "This library isn't ~~rely~~.",
+     "good": "This library isn't [[reli{able}]].",
+     "why": "be 后面要形容词。"
+    },
+    {
+     "bad": "That's ~~unpossible~~.",
+     "good": "That's [[{im}possible]].",
+     "why": "p 前面用 im-。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "We need to make a ___ by Friday.",
+   "options": [
+    "decide",
+    "decision",
+    "decisive"
+   ],
+   "answer": "decision",
+   "explain": "a 后面要名词：[[deci{sion}]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "She's very ___. She never waits too long.",
+   "options": [
+    "decide",
+    "decision",
+    "decisive",
+    "decisively"
+   ],
+   "answer": "decisive",
+   "explain": "very 后面要形容词：[[decis{ive}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "verb-families",
+   "type": "fill",
+   "prompt": "Thanks, that's a big ___ (improve).",
+   "answer": "improvement",
+   "accept": [],
+   "explain": "a big 后面要名词：[[improve{ment}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "verb-families",
+   "type": "fill",
+   "prompt": "The new SDK is more ___ (rely) than the old one.",
+   "answer": "reliable",
+   "accept": [],
+   "traps": [
+    {
+     "input": "relyable",
+     "note": "y 要变成 i：reliable。"
+    }
+   ],
+   "explain": "be 后面要形容词：[[reli{able}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "verb-families",
+   "type": "transform",
+   "prompt": "把 analyse 变成名词",
+   "answer": "analysis",
+   "accept": [],
+   "traps": [
+    {
+     "input": "analysation",
+     "note": "没有这个词，名词是 analysis。"
+    }
+   ],
+   "explain": "analyse 的名词是 [[analy{sis}]]。"
+  },
+  {
+   "id": "q06",
+   "section": "adj-families",
+   "type": "fill",
+   "prompt": "We need more ___ (flexible) in the plan.",
+   "answer": "flexibility",
+   "accept": [],
+   "explain": "more 后面要名词：[[flexib{ility}]]。"
+  },
+  {
+   "id": "q07",
+   "section": "adj-families",
+   "type": "choice",
+   "prompt": "Please write the steps ___.",
+   "options": [
+    "clear",
+    "clearly",
+    "clarity"
+   ],
+   "answer": "clearly",
+   "explain": "修饰动词 write，用副词 [[clear{ly}]]。"
+  },
+  {
+   "id": "q08",
+   "section": "adj-families",
+   "type": "translate",
+   "prompt": "翻译：安全是我们的头等大事。",
+   "answer": "Security is our top priority.",
+   "accept": [
+    "Security is our first priority.",
+    "Security is our biggest priority.",
+    "Safety is our top priority."
+   ],
+   "explain": "「安全」这件事是名词：[[secur{ity}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "suffixes",
+   "type": "choice",
+   "prompt": "哪个是名词？",
+   "options": [
+    "secure",
+    "security",
+    "securely"
+   ],
+   "answer": "security",
+   "explain": "-ity 结尾是名词。"
+  },
+  {
+   "id": "q10",
+   "section": "suffixes",
+   "type": "fill",
+   "prompt": "This tool is really ___ (use). I open it every day.",
+   "answer": "useful",
+   "accept": [],
+   "traps": [
+    {
+     "input": "usefull",
+     "note": "-ful 只有一个 l。"
+    },
+    {
+     "input": "useless",
+     "note": "useless 是「没用的」，意思反了。"
+    }
+   ],
+   "explain": "「有用的」：[[use{ful}]]，只有一个 l。"
+  },
+  {
+   "id": "q11",
+   "section": "prefixes",
+   "type": "fill",
+   "prompt": "That's ___ (possible). We can't ship by tonight.",
+   "answer": "impossible",
+   "accept": [],
+   "traps": [
+    {
+     "input": "unpossible",
+     "note": "p 前面用 im-。"
+    }
+   ],
+   "explain": "p 前面用 im-：[[{im}possible]]。"
+  },
+  {
+   "id": "q12",
+   "section": "prefixes",
+   "type": "choice",
+   "prompt": "It took two weeks, not two days. We ___ the work.",
+   "options": [
+    "overestimated",
+    "underestimated",
+    "overloaded"
+   ],
+   "answer": "underestimated",
+   "explain": "估少了用 under-：[[{under}estimated]]。"
+  },
+  {
+   "id": "q13",
+   "section": "prefixes",
+   "type": "fill",
+   "prompt": "Please ___ (start) the app after the update.（再启动一次）",
+   "answer": "restart",
+   "accept": [],
+   "explain": "「再一次」加 re-：[[{re}start]]。"
+  },
+  {
+   "id": "q14",
+   "section": "pick",
+   "type": "fix",
+   "prompt": "改错：The launch was very success.",
+   "answer": "The launch was very successful.",
+   "accept": [],
+   "explain": "very 后面要形容词。"
+  },
+  {
+   "id": "q15",
+   "section": "pick",
+   "type": "fix",
+   "prompt": "改错：It works perfect now.",
+   "answer": "It works perfectly now.",
+   "accept": [],
+   "explain": "修饰动词 works，要用副词。"
+  }
+ ]
+}

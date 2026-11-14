@@ -1,0 +1,417 @@
+{
+ "id": "g-future-continuous-perfect",
+ "title": "将来进行时与将来完成时",
+ "en": "Future Continuous and Future Perfect",
+ "group": "时态",
+ "level": "B2",
+ "order": 9,
+ "keywords": [
+  "将来进行时",
+  "将来完成时"
+ ],
+ "related": [
+  "g-future-forms",
+  "g-present-perfect",
+  "g-past-continuous",
+  "g-past-perfect"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "站到将来的某一刻去看：那时**正在做**，用 will be + ing；那时**已经做完**，用 will have + 过去分词。",
+   "uses": [
+    {
+     "zh": "将来某一刻正在做",
+     "en": "<<This time tomorrow>>, I[['ll be flying]] to London.",
+     "en_zh": "明天这个时候，我正在飞往伦敦的路上。"
+    },
+    {
+     "zh": "将来某一刻之前已经做完",
+     "en": "<<By>> Friday, we[['ll have fixed]] all the bugs.",
+     "en_zh": "到周五，我们就把 bug 全修完了。"
+    },
+    {
+     "zh": "客气地问别人的安排",
+     "en": "[[Will]] you [[be using]] the meeting room this afternoon?",
+     "en_zh": "你今天下午会用会议室吗？"
+    }
+   ],
+   "signals": [
+    "this time tomorrow",
+    "at ten tomorrow",
+    "this time next week",
+    "by Friday",
+    "by then",
+    "by the end of the year"
+   ]
+  },
+  "continuous": {
+   "title": "将来进行时",
+   "short": "进行",
+   "formula": [
+    "主语",
+    "will be",
+    "动词 + ing",
+    "其他"
+   ],
+   "rule": "像给将来拍一张照片：那一刻你**正在干嘛**。所有人都用 will be，后面的动词加 ing。",
+   "examples": [
+    {
+     "en": "<<At 3 pm>>, I[['ll be presenting]] the demo.",
+     "zh": "下午三点那会儿，我正在做演示。"
+    },
+    {
+     "en": "Don't call at seven. We[['ll be having]] dinner.",
+     "zh": "别七点打来，那时我们正在吃晚饭。"
+    },
+    {
+     "en": "<<This time next week>>, she[['ll be lying]] on a beach.",
+     "zh": "下周这个时候，她正躺在海滩上。"
+    }
+   ],
+   "notes": [
+    "否定：I [[won't be working]] <<tomorrow>>.（我明天不上班。）",
+    "疑问：[[Will]] you [[be working]] <<tomorrow>>?（你明天上班吗？）"
+   ]
+  },
+  "polite": {
+   "title": "客气地问安排",
+   "short": "问安排",
+   "text": "问别人「你会不会……」时，用 Will you be + ing 更客气：你只是问他**本来的安排**，不是在求他做事。",
+   "examples": [
+    {
+     "en": "[[Will]] you [[be using]] your laptop at lunch? Could I borrow it?",
+     "zh": "你午饭时要用笔记本吗？能借我用一下吗？"
+    },
+    {
+     "en": "[[Will]] you [[be joining]] us for dinner?",
+     "zh": "你会和我们一起吃晚饭吗？"
+    },
+    {
+     "en": "[[Will]] you [[be going]] past the post office?",
+     "zh": "你会路过邮局吗？"
+    }
+   ],
+   "tip": "Will you use the room? 语法没错，但听起来像在催对方做决定；加上 be + ing 就只是随口问问。"
+  },
+  "perfect": {
+   "title": "将来完成时",
+   "short": "完成",
+   "formula": [
+    "主语",
+    "will have",
+    "过去分词",
+    "其他"
+   ],
+   "rule": "站在将来某个点往回看：到那时，事情**已经做完了**。所有人都用 will have，后面跟过去分词。",
+   "examples": [
+    {
+     "en": "<<By the time>> you get here, I[['ll have finished]] the review.",
+     "zh": "等你到这儿，我已经审完代码了。"
+    },
+    {
+     "en": "<<By>> June, I[['ll have worked]] here <<for>> five years.",
+     "zh": "到六月，我在这儿就工作满五年了。"
+    },
+    {
+     "en": "The shop [[will have closed]] <<by then>>.",
+     "zh": "到那时商店已经关门了。"
+    }
+   ],
+   "notes": [
+    "否定：I [[won't have finished]] <<by>> six.（六点前我还做不完。）"
+   ]
+  },
+  "by": {
+   "title": "by：最晚到那时",
+   "short": "by",
+   "text": "**by** 是将来完成时的好朋友，意思是「**最晚**到那个时候」，不是「正好在那个时候」。",
+   "items": [
+    {
+     "rule": "by + 时间点",
+     "en": "I[['ll have sent]] it <<by>> 5 pm.",
+     "zh": "下午五点前我会发出去。"
+    },
+    {
+     "rule": "by the time + 一般现在时",
+     "en": "<<By the time>> she [[arrives]], we[['ll have started]].",
+     "zh": "等她到的时候，我们已经开始了。"
+    },
+    {
+     "rule": "by then：到那时",
+     "en": "<<By then>>, the update [[will have gone]] live.",
+     "zh": "到那时，更新已经上线了。"
+    }
+   ],
+   "wrong": {
+    "bad": "By the time she ~~will arrive~~, we'll have started.",
+    "good": "<<By the time>> she [[arrives]], we'll have started."
+   }
+  },
+  "contrast": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一般将来时",
+     "this": {
+      "meaning": "will be doing：那一刻正在吃",
+      "en": "<<At 8>>, I[['ll be having]] dinner."
+     },
+     "that": {
+      "meaning": "will do：到八点才开始吃",
+      "en": "<<At 8>>, I[['ll have]] dinner."
+     }
+    },
+    {
+     "with": "将来完成时",
+     "this": {
+      "meaning": "will be doing：那时还在写",
+      "en": "<<At 6>>, I[['ll be writing]] the report."
+     },
+     "that": {
+      "meaning": "will have done：那时已经写完",
+      "en": "<<By>> 6, I[['ll have written]] the report."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "This time tomorrow I ~~will fly~~ to Rome.",
+     "good": "This time tomorrow I[['ll be flying]] to Rome.",
+     "why": "那一刻正在做，用 will be + ing。"
+    },
+    {
+     "bad": "By Friday, we'll have ~~fix~~ it.",
+     "good": "<<By>> Friday, we[['ll have fixed]] it.",
+     "why": "will have 后面用过去分词。"
+    },
+    {
+     "bad": "By the time you ~~will get~~ here, I'll have left.",
+     "good": "<<By the time>> you [[get]] here, I'll have left.",
+     "why": "by the time 后面说将来，用一般现在时。"
+    },
+    {
+     "bad": "I'll be ~~work~~ at ten.",
+     "good": "I[['ll be working]] at ten.",
+     "why": "will be 后面的动词要加 ing。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "By the time you read this, I ___ the office.",
+   "options": [
+    "will leave",
+    "will be leaving",
+    "will have left"
+   ],
+   "answer": "will have left",
+   "explain": "你读到的时候，我已经走了：[[will have left]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：明天这个时候，我正在飞往伦敦的路上。",
+   "answer": "This time tomorrow, I'll be flying to London.",
+   "accept": [
+    "This time tomorrow I'll be flying to London.",
+    "This time tomorrow, I will be flying to London.",
+    "This time tomorrow I will be flying to London.",
+    "I'll be flying to London this time tomorrow.",
+    "I will be flying to London this time tomorrow."
+   ],
+   "explain": "那一刻正在做：I[['ll be flying]]。"
+  },
+  {
+   "id": "q03",
+   "section": "continuous",
+   "type": "choice",
+   "prompt": "Don't call at seven. We ___ dinner then.",
+   "options": [
+    "will have",
+    "will be having",
+    "will have had"
+   ],
+   "answer": "will be having",
+   "explain": "七点那一刻正在吃：[[will be having]]。"
+  },
+  {
+   "id": "q04",
+   "section": "continuous",
+   "type": "fill",
+   "prompt": "At 3 pm, I ___ (present) the demo, so I can't answer the phone.",
+   "answer": "will be presenting",
+   "accept": [
+    "'ll be presenting"
+   ],
+   "explain": "那一刻正在做：[[will be presenting]]。"
+  },
+  {
+   "id": "q05",
+   "section": "continuous",
+   "type": "transform",
+   "prompt": "改成否定句：I will be working tomorrow.",
+   "answer": "I won't be working tomorrow.",
+   "accept": [
+    "I will not be working tomorrow."
+   ],
+   "explain": "will not = [[won't]]：I [[won't be working]]。"
+  },
+  {
+   "id": "q06",
+   "section": "polite",
+   "type": "choice",
+   "prompt": "哪一句是在客气地问对方的安排？",
+   "options": [
+    "Will you use the room this afternoon?",
+    "Will you be using the room this afternoon?"
+   ],
+   "answer": "Will you be using the room this afternoon?",
+   "explain": "Will you be + ing 只问安排，不像在要求对方：[[Will]] you [[be using]]。"
+  },
+  {
+   "id": "q07",
+   "section": "polite",
+   "type": "make-question",
+   "prompt": "用 Will you be + ing 客气地问：对方会不会和我们一起吃晚饭（join us for dinner）。",
+   "answer": "Will you be joining us for dinner?",
+   "accept": [
+    "Will you be joining us for dinner tonight?"
+   ],
+   "explain": "[[Will]] you [[be joining]] us？"
+  },
+  {
+   "id": "q08",
+   "section": "perfect",
+   "type": "fill",
+   "prompt": "By June, I ___ (work) here for five years.",
+   "answer": "will have worked",
+   "accept": [
+    "'ll have worked"
+   ],
+   "explain": "到六月就满五年：[[will have worked]]。"
+  },
+  {
+   "id": "q09",
+   "section": "perfect",
+   "type": "fix",
+   "prompt": "改错：By Friday, we'll have fix it.",
+   "answer": "By Friday, we'll have fixed it.",
+   "accept": [
+    "By Friday, we will have fixed it.",
+    "By Friday we'll have fixed it."
+   ],
+   "explain": "will have 后面用过去分词：[[fixed]]。"
+  },
+  {
+   "id": "q10",
+   "section": "perfect",
+   "type": "transform",
+   "prompt": "改成否定句：I will have finished by six.",
+   "answer": "I won't have finished by six.",
+   "accept": [
+    "I will not have finished by six."
+   ],
+   "explain": "I [[won't have finished]]：will 后面加 not。"
+  },
+  {
+   "id": "q11",
+   "section": "by",
+   "type": "choice",
+   "prompt": "I'll have sent it ___ 5 pm.",
+   "options": [
+    "by",
+    "until",
+    "since"
+   ],
+   "answer": "by",
+   "explain": "最晚到五点：<<by>> 5 pm。"
+  },
+  {
+   "id": "q12",
+   "section": "by",
+   "type": "fill",
+   "prompt": "By the time she ___ (arrive), we'll have started.",
+   "answer": "arrives",
+   "accept": [],
+   "traps": [
+    {
+     "input": "will arrive",
+     "note": "by the time 后面说将来，用一般现在时。"
+    }
+   ],
+   "explain": "<<By the time>> 后面用一般现在时：she [[arrive{s}]]。"
+  },
+  {
+   "id": "q13",
+   "section": "by",
+   "type": "fix",
+   "prompt": "改错：By the time you will get here, I'll have left.",
+   "answer": "By the time you get here, I'll have left.",
+   "accept": [
+    "By the time you get here, I will have left."
+   ],
+   "explain": "<<By the time>> 后面用一般现在时：you [[get]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "At 6, I ___ the report, so I can't talk then.",
+   "options": [
+    "will be writing",
+    "will have written"
+   ],
+   "answer": "will be writing",
+   "explain": "六点那会儿还在写：[[will be writing]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "By 6, I ___ the report, so we can go out after that.",
+   "options": [
+    "will be writing",
+    "will have written"
+   ],
+   "answer": "will have written",
+   "explain": "六点前已经写完：[[will have written]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：This time tomorrow I will fly to Rome.",
+   "answer": "This time tomorrow I'll be flying to Rome.",
+   "accept": [
+    "This time tomorrow I will be flying to Rome.",
+    "This time tomorrow, I'll be flying to Rome.",
+    "This time tomorrow, I will be flying to Rome."
+   ],
+   "explain": "那一刻正在飞：[[will be flying]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "想象下周五下午五点：用将来进行时说那时你正在做什么，再用将来完成时说那时你已经做完了什么。一共 3 句。",
+  "rules": [
+   "将来进行时 = will be + 动词 ing",
+   "将来完成时 = will have + 过去分词",
+   "by the time 后面说将来，用一般现在时"
+  ],
+  "note": "规则判 will be + ing 和 will have + 过去分词（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

@@ -1,0 +1,422 @@
+{
+ "id": "g-relative-clauses",
+ "title": "定语从句：who / which / that",
+ "en": "Relative Clauses",
+ "group": "句子",
+ "level": "B1",
+ "order": 29,
+ "keywords": [
+  "定语从句：who"
+ ],
+ "related": [
+  "g-relative-defining",
+  "g-object-clauses",
+  "g-cleft-sentences"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "定语从句就是**挂在名词后面的一小句话**，说清「是哪一个」。像贴小标签：the developer **who fixed the bug**＝「修好 bug 的那个开发」。",
+   "uses": [
+    {
+     "zh": "说清是哪个人",
+     "en": "The developer [[who]] fixed the bug is on holiday.",
+     "en_zh": "修好那个 bug 的开发在休假。"
+    },
+    {
+     "zh": "说清是哪个东西",
+     "en": "The app [[which]] crashed yesterday is ours.",
+     "en_zh": "昨天崩溃的那个 App 是我们的。"
+    },
+    {
+     "zh": "人和东西都能用 that",
+     "en": "Is this the laptop [[that]] you ordered?",
+     "en_zh": "这是你订的那台笔记本吗？"
+    }
+   ],
+   "signals": [
+    "who",
+    "which",
+    "that",
+    "whose",
+    "where"
+   ]
+  },
+  "build": {
+   "title": "怎么搭起来",
+   "short": "搭句",
+   "formula": [
+    "名词（人或东西）",
+    "who / which / that",
+    "补充的小句子"
+   ],
+   "rule": "先说名词，紧跟着用 who / which / that 接上小句子。**who / which / that 已经代替了前面那个名词**，小句子里别再说一遍 he、it。",
+   "examples": [
+    {
+     "en": "The woman [[who]] runs the stand-up is our new PM.",
+     "zh": "主持站会的那位女士是我们的新项目经理。"
+    },
+    {
+     "en": "I lost the charger [[which]] I borrowed from Sam.",
+     "zh": "我把从 Sam 那儿借的充电器弄丢了。"
+    },
+    {
+     "en": "The flat [[that]] we saw at the weekend was too small.",
+     "zh": "我们周末看的那套公寓太小了。"
+    }
+   ],
+   "wrong": {
+    "bad": "The app which I downloaded ~~it~~ yesterday is great.",
+    "good": "The app [[which]] I downloaded yesterday is great."
+   },
+   "tip": "找名词：小标签总是紧跟在它要说明的那个名词后面。"
+  },
+  "choose": {
+   "title": "用哪个词",
+   "short": "选词",
+   "items": [
+    {
+     "rule": "前面是人，用 **who**。",
+     "en": "The colleague [[who]] sits next to me is from Leeds.",
+     "zh": "坐我旁边的同事是利兹人。"
+    },
+    {
+     "rule": "前面是东西、事情，用 **which**。",
+     "en": "The bug [[which]] you reported is fixed.",
+     "zh": "你报的那个 bug 修好了。"
+    },
+    {
+     "rule": "**that** 人和东西都能用；前面有 best、first、only、all 时更常用 that。",
+     "en": "It's the best talk [[that]] I've ever heard.",
+     "zh": "这是我听过最好的演讲。"
+    },
+    {
+     "rule": "前面是 anything、something、everything 时，用 **that**。",
+     "en": "Is there anything [[that]] I can do?",
+     "zh": "有什么我能帮忙的吗？"
+    }
+   ],
+   "tip": "拿不准时，说口语用 that 基本不会错。"
+  },
+  "whose": {
+   "title": "whose 和 where",
+   "short": "whose",
+   "items": [
+    {
+     "rule": "**whose** = 「谁的」，后面紧跟一个名词：whose icons。",
+     "en": "That's the designer [[whose]] icons we use.",
+     "zh": "那就是我们用的图标的设计师。"
+    },
+    {
+     "rule": "whose 前面可以是人，也可以是东西。",
+     "en": "I know a guy [[whose]] sister works at Apple.",
+     "zh": "我认识一个人，他姐姐在苹果工作。"
+    },
+    {
+     "rule": "**where** = 「在那儿」，前面是地方，后面句子是完整的。",
+     "en": "This is the café [[where]] we had our first meeting.",
+     "zh": "这就是我们第一次开会的那家咖啡馆。"
+    }
+   ],
+   "notes": [
+    "whose 和 who's 读音一样，意思不同：who's = who is。写的时候别弄混。"
+   ]
+  },
+  "omit": {
+   "title": "什么时候可以省",
+   "short": "省略",
+   "rule": "who / which / that 后面**紧跟着另一个人或东西**（I、you、the team…），这个词可以省掉。后面直接就是动词，就不能省。",
+   "examples": [
+    {
+     "rule": "后面是 you → 可以省",
+     "en": "The bug ([[that]]) you found is fixed now.",
+     "zh": "你发现的那个 bug 现在修好了。"
+    },
+    {
+     "rule": "后面是 I → 可以省",
+     "en": "The book ([[which]]) I'm reading is about design.",
+     "zh": "我正在读的那本书是讲设计的。"
+    },
+    {
+     "rule": "后面是 called → 不能省",
+     "en": "The man [[who]] called you is on the phone again.",
+     "zh": "给你打电话的那个人又打来了。"
+    }
+   ],
+   "tip": "口诀：**后面有人，可以省；后面是动词，不能省。**"
+  },
+  "contrast": {
+   "title": "和宾语从句比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "宾语从句",
+     "this": {
+      "meaning": "定语从句：挂在名词后面，说清是哪个人",
+      "en": "I know the man [[who]] wrote this."
+     },
+     "that": {
+      "meaning": "宾语从句：挂在 know 后面，整句是「知道的内容」",
+      "en": "I know [[who]] wrote this."
+     }
+    },
+    {
+     "with": "which 和 where",
+     "this": {
+      "meaning": "地方 + 后面句子缺东西 → which",
+      "en": "This is the office [[which]] we rented."
+     },
+     "that": {
+      "meaning": "地方 + 后面句子是完整的 → where",
+      "en": "This is the office [[where]] we work."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "The app which I downloaded ~~it~~ is great.",
+     "good": "The app [[which]] I downloaded is great.",
+     "why": "which 已经代替了 app，别再说 it。"
+    },
+    {
+     "bad": "The phone ~~who~~ I bought is broken.",
+     "good": "The phone [[which]] I bought is broken.",
+     "why": "东西用 which 或 that，不用 who。"
+    },
+    {
+     "bad": "The man ~~which~~ helped me was kind.",
+     "good": "The man [[who]] helped me was kind.",
+     "why": "人用 who 或 that。"
+    },
+    {
+     "bad": "The colleague ~~sits~~ next to me is nice.",
+     "good": "The colleague [[who]] sits next to me is nice.",
+     "why": "后面直接是动词，who 不能省。"
+    },
+    {
+     "bad": "That's the thing ~~what~~ I need.",
+     "good": "That's the thing [[that]] I need.",
+     "why": "名词后面接小句子用 that，不用 what。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "The developer ___ fixed the bug is on holiday.",
+   "options": [
+    "who",
+    "which",
+    "where",
+    "what"
+   ],
+   "answer": "who",
+   "explain": "前面是人，用 [[who]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：昨天崩溃的那个 App 是我们的。",
+   "answer": "The app that crashed yesterday is ours.",
+   "accept": [
+    "The app which crashed yesterday is ours."
+   ],
+   "explain": "东西用 [[that]] 或 [[which]]，挂在 app 后面。"
+  },
+  {
+   "id": "q03",
+   "section": "build",
+   "type": "fix",
+   "prompt": "改错：The laptop which I ordered it last week is here.",
+   "answer": "The laptop which I ordered last week is here.",
+   "accept": [
+    "The laptop that I ordered last week is here.",
+    "The laptop I ordered last week is here."
+   ],
+   "traps": [
+    {
+     "input": "The laptop which I ordered it last week is here.",
+     "note": "it 和 which 重复了，要删掉 it。"
+    }
+   ],
+   "explain": "which 已经代替了 laptop，去掉 it。"
+  },
+  {
+   "id": "q04",
+   "section": "build",
+   "type": "transform",
+   "prompt": "用 who 把两句合成一句：The woman runs the stand-up. She is our new PM.",
+   "answer": "The woman who runs the stand-up is our new PM.",
+   "accept": [
+    "The woman that runs the stand-up is our new PM."
+   ],
+   "explain": "把 she 换成 [[who]]，挂在 woman 后面。"
+  },
+  {
+   "id": "q05",
+   "section": "choose",
+   "type": "choice",
+   "prompt": "The bug ___ you reported is fixed.",
+   "options": [
+    "who",
+    "which",
+    "whose",
+    "where"
+   ],
+   "answer": "which",
+   "explain": "bug 是东西，用 [[which]]。"
+  },
+  {
+   "id": "q06",
+   "section": "choose",
+   "type": "fill",
+   "prompt": "It's the best film ___ I've seen this year.",
+   "answer": "that",
+   "accept": [
+    "which"
+   ],
+   "explain": "前面有 best，常用 [[that]]。"
+  },
+  {
+   "id": "q07",
+   "section": "choose",
+   "type": "fill",
+   "prompt": "Is there anything ___ I can do?",
+   "answer": "that",
+   "accept": [],
+   "explain": "anything 后面用 [[that]]。"
+  },
+  {
+   "id": "q08",
+   "section": "whose",
+   "type": "choice",
+   "prompt": "I know a guy ___ sister works at Apple.",
+   "options": [
+    "who",
+    "who's",
+    "whose",
+    "which"
+   ],
+   "answer": "whose",
+   "explain": "「他的姐姐」= 谁的 → [[whose]]。"
+  },
+  {
+   "id": "q09",
+   "section": "whose",
+   "type": "fill",
+   "prompt": "This is the café ___ we had our first meeting.",
+   "answer": "where",
+   "accept": [
+    "in which"
+   ],
+   "explain": "地方，后面句子完整，用 [[where]]。"
+  },
+  {
+   "id": "q10",
+   "section": "whose",
+   "type": "transform",
+   "prompt": "用 whose 合成一句：That's the designer. We use her icons.",
+   "answer": "That's the designer whose icons we use.",
+   "accept": [
+    "That is the designer whose icons we use."
+   ],
+   "explain": "her icons 变成 [[whose]] icons，放到前面。"
+  },
+  {
+   "id": "q11",
+   "section": "omit",
+   "type": "choice",
+   "prompt": "哪一句里的 that 可以省掉？",
+   "options": [
+    "The bug that you found is fixed.",
+    "The man that called you is here.",
+    "The app that crashed is ours."
+   ],
+   "answer": "The bug that you found is fixed.",
+   "explain": "that 后面紧跟 you，可以省。"
+  },
+  {
+   "id": "q12",
+   "section": "omit",
+   "type": "fix",
+   "prompt": "改错：The colleague sits next to me is from Leeds.",
+   "answer": "The colleague who sits next to me is from Leeds.",
+   "accept": [
+    "The colleague that sits next to me is from Leeds."
+   ],
+   "explain": "后面直接是动词 sits，[[who]] 不能省。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：The phone who I bought last week is broken.",
+   "answer": "The phone which I bought last week is broken.",
+   "accept": [
+    "The phone that I bought last week is broken.",
+    "The phone I bought last week is broken."
+   ],
+   "explain": "东西用 [[which]] 或 [[that]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：That's the thing what I need.",
+   "answer": "That's the thing that I need.",
+   "accept": [
+    "That's the thing I need.",
+    "That is the thing that I need.",
+    "That's the thing which I need."
+   ],
+   "explain": "名词后面用 [[that]]，不用 what。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "This is the office ___ we rented last year.",
+   "options": [
+    "where",
+    "which",
+    "who"
+   ],
+   "answer": "which",
+   "explain": "rented 后面缺东西（租了什么），用 [[which]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "translate",
+   "prompt": "翻译：我们周末看的那套公寓太小了。",
+   "answer": "The flat that we saw at the weekend was too small.",
+   "accept": [
+    "The flat we saw at the weekend was too small.",
+    "The flat which we saw at the weekend was too small.",
+    "The flat that we saw on the weekend was too small.",
+    "The flat we saw on the weekend was too small."
+   ],
+   "explain": "flat 后面挂 [[that]] we saw…；英式说 at the weekend。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用定语从句写 3 句话，介绍你团队里的人或你用的工具。至少一句用 who，一句用 which 或 that。",
+  "rules": [
+   "人用 who / that，东西用 which / that",
+   "从句里不要再重复 he / she / it"
+  ],
+  "note": "规则判 who / which / that 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

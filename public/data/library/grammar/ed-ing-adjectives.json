@@ -1,0 +1,483 @@
+{
+ "id": "g-ed-ing-adjectives",
+ "title": "-ed 和 -ing 形容词",
+ "en": "-ed and -ing Adjectives",
+ "group": "形容词、副词和介词",
+ "level": "B1",
+ "order": 45,
+ "keywords": [
+  "-ed 和 -ing"
+ ],
+ "related": [
+  "g-comparatives",
+  "g-linking-verbs",
+  "g-adverb-position"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "-ing 说的是**东西本身怎么样**，它让人有某种感觉；-ed 说的是**人心里的感受**。口诀：**ing 是原因，ed 是感受。**",
+   "uses": [
+    {
+     "zh": "-ing：会议让人觉得无聊",
+     "en": "The meeting was [[bor{ing}]].",
+     "en_zh": "那个会很无聊。"
+    },
+    {
+     "zh": "-ed：我心里觉得无聊",
+     "en": "I was [[bor{ed}]] in the meeting.",
+     "en_zh": "我开会时觉得很无聊。"
+    },
+    {
+     "zh": "-ing：这个 bug 让人烦",
+     "en": "This bug is really [[annoy{ing}]].",
+     "en_zh": "这个 bug 真烦人。"
+    }
+   ]
+  },
+  "ing": {
+   "title": "-ing：它让人觉得……",
+   "short": "-ing",
+   "rule": "-ing 形容的是**带来感觉的那个东西**：电影、会议、消息、工作。可以问自己：是它让人这样觉得吗？是，就用 -ing。",
+   "examples": [
+    {
+     "en": "The talk was really [[interest{ing}]].",
+     "zh": "那个演讲很有意思。"
+    },
+    {
+     "en": "Waiting for the build is so [[frustrat{ing}]].",
+     "zh": "等构建等得真让人抓狂。"
+    },
+    {
+     "en": "The news about the outage was [[shock{ing}]].",
+     "zh": "服务器宕机的消息让人震惊。"
+    }
+   ]
+  },
+  "ed": {
+   "title": "-ed：人觉得……",
+   "short": "-ed",
+   "rule": "-ed 形容的是**心里有感觉的人**。句子的主语一般是 I、she、the team 这样的人。",
+   "examples": [
+    {
+     "en": "I'm [[interest{ed}]] in AI.",
+     "zh": "我对 AI 感兴趣。"
+    },
+    {
+     "en": "She felt [[relax{ed}]] after the holiday.",
+     "zh": "度完假她觉得很放松。"
+    },
+    {
+     "en": "We were [[surpris{ed}]] by the results.",
+     "zh": "结果让我们很意外。"
+    }
+   ],
+   "notes": [
+    "-ed 后面常跟固定的小词：interested **in** · bored **with** · worried **about** · excited **about** · tired **of** · surprised **by**"
+   ]
+  },
+  "people": {
+   "title": "说人的时候要小心",
+   "short": "说人",
+   "rule": "人也能用 -ing，但意思变了：**He's boring 是「他这个人很无聊，别人不爱听他说话」**。说自己的感受，千万别用 -ing。",
+   "items": [
+    {
+     "rule": "他心里觉得无聊",
+     "en": "He's [[bor{ed}]].",
+     "zh": "他觉得没意思。"
+    },
+    {
+     "rule": "他这个人很无趣",
+     "en": "He's [[bor{ing}]].",
+     "zh": "他这人挺无聊的。"
+    },
+    {
+     "rule": "我被搞糊涂了",
+     "en": "I'm [[confus{ed}]].",
+     "zh": "我糊涂了。"
+    },
+    {
+     "rule": "我讲得让人糊涂",
+     "en": "Sorry, I'm being [[confus{ing}]].",
+     "zh": "抱歉，我讲得有点乱。"
+    }
+   ]
+  },
+  "list": {
+   "title": "常见的一对对",
+   "short": "常见词",
+   "rule": "下面每一对：左边说人的感受，右边说让人有这种感受的东西。",
+   "rules": [
+    {
+     "ending": "无聊",
+     "change": "bored / boring",
+     "examples": [
+      "I'm [[bor{ed}]].",
+      "It's [[bor{ing}]]."
+     ]
+    },
+    {
+     "ending": "累",
+     "change": "tired / tiring",
+     "examples": [
+      "I'm [[tir{ed}]].",
+      "It's [[tir{ing}]]."
+     ]
+    },
+    {
+     "ending": "感兴趣",
+     "change": "interested / interesting",
+     "examples": [
+      "I'm [[interest{ed}]].",
+      "It's [[interest{ing}]]."
+     ]
+    },
+    {
+     "ending": "兴奋",
+     "change": "excited / exciting",
+     "examples": [
+      "I'm [[excit{ed}]].",
+      "It's [[excit{ing}]]."
+     ]
+    },
+    {
+     "ending": "担心",
+     "change": "worried / worrying",
+     "examples": [
+      "I'm [[worr{ied}]].",
+      "It's [[worry{ing}]]."
+     ]
+    },
+    {
+     "ending": "烦",
+     "change": "annoyed / annoying",
+     "examples": [
+      "I'm [[annoy{ed}]].",
+      "It's [[annoy{ing}]]."
+     ]
+    },
+    {
+     "ending": "失望",
+     "change": "disappointed / disappointing",
+     "examples": [
+      "I'm [[disappoint{ed}]].",
+      "It's [[disappoint{ing}]]."
+     ]
+    },
+    {
+     "ending": "尴尬",
+     "change": "embarrassed / embarrassing",
+     "examples": [
+      "I'm [[embarrass{ed}]].",
+      "It's [[embarrass{ing}]]."
+     ]
+    }
+   ]
+  },
+  "sound": {
+   "title": "-ed 怎么读",
+   "short": "读音",
+   "rule": "-ed 有三种读法。只有在 t、d 后面，才多读出一个 /ɪd/，别的时候 -ed 都不多出一个音。",
+   "sound": [
+    {
+     "say": "/t/",
+     "when": "在 k、s、sh、ch、p 这类不震动喉咙的音后面",
+     "examples": [
+      "[[relax{ed}]]",
+      "[[shock{ed}]]"
+     ]
+    },
+    {
+     "say": "/d/",
+     "when": "在震动喉咙的音和元音后面",
+     "examples": [
+      "[[bor{ed}]]",
+      "[[annoy{ed}]]",
+      "[[worr{ied}]]"
+     ]
+    },
+    {
+     "say": "/ɪd/",
+     "when": "在 t、d 后面，多读一个音",
+     "examples": [
+      "[[interest{ed}]]",
+      "[[excit{ed}]]",
+      "[[disappoint{ed}]]"
+     ]
+    }
+   ],
+   "oddSounds": "tired 读 /ˈtaɪəd/，-ed 只读 /d/，不读成 tir-ed /ˈtaɪrɪd/。"
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "-ed",
+     "this": {
+      "meaning": "-ing：它让人……",
+      "en": "The demo was [[excit{ing}]]."
+     },
+     "that": {
+      "meaning": "-ed：人觉得……",
+      "en": "Everyone was [[excit{ed}]] about the demo."
+     }
+    },
+    {
+     "with": "worried",
+     "this": {
+      "meaning": "worrying：让人担心的事",
+      "en": "The crash numbers are [[worry{ing}]]."
+     },
+     "that": {
+      "meaning": "worried：担心的人",
+      "en": "The team is [[worr{ied}]] about the crash numbers."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I'm so ~~boring~~ today. There's nothing to do.",
+     "good": "I'm so [[bor{ed}]] today. There's nothing to do.",
+     "why": "说自己的感受用 -ed。I'm boring 是「我这人很无聊」。"
+    },
+    {
+     "bad": "The film was ~~bored~~.",
+     "good": "The film was [[bor{ing}]].",
+     "why": "电影让人无聊，用 -ing。"
+    },
+    {
+     "bad": "I'm ~~interesting~~ in iOS.",
+     "good": "I'm [[interest{ed}]] in iOS.",
+     "why": "我感兴趣，用 -ed。"
+    },
+    {
+     "bad": "She was ~~exciting~~ about the trip.",
+     "good": "She was [[excit{ed}]] about the trip.",
+     "why": "她心里兴奋，用 -ed。"
+    },
+    {
+     "bad": "I'm interested ~~about~~ AI.",
+     "good": "I'm interested [[in]] AI.",
+     "why": "interested 后面固定用 in。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "The meeting was so ___. Nothing new.",
+   "options": [
+    "bored",
+    "boring"
+   ],
+   "answer": "boring",
+   "explain": "会议让人觉得无聊，用 [[bor{ing}]]。"
+  },
+  {
+   "id": "q02",
+   "section": "ing",
+   "type": "fill",
+   "prompt": "Waiting for the build is so ___ (frustrate).",
+   "answer": "frustrating",
+   "accept": [],
+   "explain": "等构建这件事让人抓狂，用 [[frustrat{ing}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "ing",
+   "type": "choice",
+   "prompt": "The news about the outage was ___.",
+   "options": [
+    "shocked",
+    "shocking"
+   ],
+   "answer": "shocking",
+   "explain": "消息让人震惊，用 [[shock{ing}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "ed",
+   "type": "fill",
+   "prompt": "I'm really ___ (interest) in AI.",
+   "answer": "interested",
+   "accept": [],
+   "traps": [
+    {
+     "input": "interesting",
+     "note": "说自己感兴趣，用 -ed。"
+    }
+   ],
+   "explain": "我心里感兴趣，用 [[interest{ed}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "ed",
+   "type": "choice",
+   "prompt": "She felt ___ after the holiday.",
+   "options": [
+    "relaxed",
+    "relaxing"
+   ],
+   "answer": "relaxed",
+   "explain": "她心里觉得放松，用 [[relax{ed}]]。"
+  },
+  {
+   "id": "q06",
+   "section": "ed",
+   "type": "fill",
+   "prompt": "I'm interested ___ machine learning.",
+   "answer": "in",
+   "accept": [],
+   "traps": [
+    {
+     "input": "about",
+     "note": "interested 后面固定用 in。"
+    }
+   ],
+   "explain": "固定搭配：interested [[in]]。"
+  },
+  {
+   "id": "q07",
+   "section": "people",
+   "type": "choice",
+   "prompt": "He talks about his code for hours. He's so ___.",
+   "options": [
+    "bored",
+    "boring"
+   ],
+   "answer": "boring",
+   "explain": "他这个人让别人觉得无聊，用 [[bor{ing}]]。"
+  },
+  {
+   "id": "q08",
+   "section": "people",
+   "type": "translate",
+   "prompt": "翻译：我有点糊涂了。",
+   "answer": "I'm a bit confused.",
+   "accept": [
+    "I am a bit confused.",
+    "I'm a little confused.",
+    "I am a little confused.",
+    "I'm slightly confused."
+   ],
+   "traps": [
+    {
+     "input": "I'm a bit confusing.",
+     "note": "说自己的感受用 -ed：confused。"
+    }
+   ],
+   "explain": "我心里糊涂，用 [[confus{ed}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "list",
+   "type": "fill",
+   "prompt": "This bug is really ___ (annoy).",
+   "answer": "annoying",
+   "accept": [],
+   "explain": "bug 让人烦，用 [[annoy{ing}]]。"
+  },
+  {
+   "id": "q10",
+   "section": "list",
+   "type": "choice",
+   "prompt": "We were ___ by the results.",
+   "options": [
+    "surprised",
+    "surprising"
+   ],
+   "answer": "surprised",
+   "explain": "我们心里意外，用 [[surpris{ed}]]。"
+  },
+  {
+   "id": "q11",
+   "section": "sound",
+   "type": "choice",
+   "prompt": "interested 结尾的 -ed 读作",
+   "options": [
+    "/t/",
+    "/d/",
+    "/ɪd/"
+   ],
+   "answer": "/ɪd/",
+   "explain": "t 后面的 -ed 多读一个音：/ɪd/。"
+  },
+  {
+   "id": "q12",
+   "section": "sound",
+   "type": "choice",
+   "prompt": "relaxed 结尾的 -ed 读作",
+   "options": [
+    "/t/",
+    "/d/",
+    "/ɪd/"
+   ],
+   "answer": "/t/",
+   "explain": "x 读 /ks/，不震动喉咙，-ed 读 /t/。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I'm so boring today. There's nothing to do.",
+   "answer": "I'm so bored today. There's nothing to do.",
+   "accept": [
+    "I am so bored today. There's nothing to do.",
+    "I'm so bored today. There is nothing to do.",
+    "I am so bored today. There is nothing to do."
+   ],
+   "explain": "说自己的感受用 [[bor{ed}]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：The film was bored.",
+   "answer": "The film was boring.",
+   "accept": [],
+   "explain": "电影让人无聊，用 [[bor{ing}]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：She was exciting about the trip.",
+   "answer": "She was excited about the trip.",
+   "accept": [],
+   "explain": "她心里兴奋，用 [[excit{ed}]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "The crash numbers are ___ (worry), so the team is ___ (worry).",
+   "answer": "worrying / worried",
+   "accept": [
+    "worrying, worried",
+    "worrying; worried"
+   ],
+   "explain": "数字让人担心：[[worry{ing}]]；团队心里担心：[[worr{ied}]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "说说你最近的一次会议、一次出行或一部剧，用 3 句话：至少一句用 -ing 说那件事怎么样，一句用 -ed 说你自己的感受。",
+  "rules": [
+   "-ing 形容引起感受的事物",
+   "-ed 形容有感受的人",
+   "interested in / worried about / excited about 等介词搭配要对"
+  ],
+  "note": "规则判 -ed / -ing 选用和介词搭配（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

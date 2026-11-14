@@ -1,0 +1,518 @@
+{
+ "id": "g-present-continuous",
+ "title": "现在进行时",
+ "en": "Present Continuous",
+ "group": "时态",
+ "level": "A2",
+ "order": 2,
+ "keywords": [
+  "现在进行时"
+ ],
+ "related": [
+  "g-present-simple",
+  "g-stative-verbs",
+  "g-past-continuous",
+  "g-future-forms"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "现在进行时说的是**「正在做、还没做完」**的事：就在这一刻，或者最近这段时间。记住公式：**be + 动词 ing。**",
+   "uses": [
+    {
+     "zh": "说话这一刻正在做",
+     "en": "I[['m fixing]] a bug <<right now>>.",
+     "en_zh": "我现在正在修一个 bug。"
+    },
+    {
+     "zh": "最近这段时间在做，不一定是这一秒",
+     "en": "We[['re testing]] the new release <<this week>>.",
+     "en_zh": "我们这周在测新版本。"
+    },
+    {
+     "zh": "已经约好的将来安排",
+     "en": "I[['m meeting]] the designer <<tomorrow>>.",
+     "en_zh": "我明天跟设计师见面。"
+    },
+    {
+     "zh": "正在慢慢变化的事",
+     "en": "The app [[is getting]] slower and slower.",
+     "en_zh": "这个 App 越来越慢了。"
+    }
+   ],
+   "signals": [
+    "now",
+    "right now",
+    "at the moment",
+    "Look!",
+    "Listen!",
+    "this week",
+    "these days",
+    "currently"
+   ]
+  },
+  "positive": {
+   "title": "肯定句",
+   "short": "肯定",
+   "formula": [
+    "主语",
+    "am / is / are",
+    "动词 + ing",
+    "其他"
+   ],
+   "rule": "两样都不能少：**be 动词 + 动词 ing**。I 用 am，他她它用 is，你、我们、他们用 are。",
+   "examples": [
+    {
+     "en": "I[['m working]] from home <<today>>.",
+     "zh": "我今天在家办公。"
+    },
+    {
+     "en": "Sam [[is talking]] to the client <<at the moment>>.",
+     "zh": "Sam 这会儿在跟客户谈。"
+    },
+    {
+     "en": "They[['re waiting]] for the build to finish.",
+     "zh": "他们在等构建跑完。"
+    }
+   ],
+   "wrong": {
+    "bad": "I ~~working~~ on the login page.",
+    "good": "I[['m working]] on the login page."
+   },
+   "be": "口语里常用缩写：I[['m]] · he[['s]] · she[['s]] · we[['re]] · they[['re]]"
+  },
+  "negative": {
+   "title": "否定句",
+   "short": "否定",
+   "formula": [
+    "主语",
+    "am not / isn't / aren't",
+    "动词 + ing",
+    "其他"
+   ],
+   "rule": "在 am / is / are 后面加 not 就行，动词还是 ing。**不用 don't / doesn't。**",
+   "examples": [
+    {
+     "en": "I[['m not using]] my laptop <<right now>>.",
+     "zh": "我现在没在用笔记本电脑。"
+    },
+    {
+     "en": "The server [[isn't responding]].",
+     "zh": "服务器没有反应。"
+    },
+    {
+     "en": "We [[aren't shipping]] the update <<this week>>.",
+     "zh": "我们这周不发这个更新。"
+    }
+   ],
+   "wrong": {
+    "bad": "She ~~doesn't working~~ today.",
+    "good": "She [[isn't working]] today."
+   }
+  },
+  "question": {
+   "title": "疑问句",
+   "short": "疑问",
+   "formula": [
+    "Am / Is / Are",
+    "主语",
+    "动词 + ing",
+    "其他？"
+   ],
+   "rule": "把 am / is / are 搬到最前面，动词还是 ing。回答也用 am / is / are。",
+   "examples": [
+    {
+     "en": "[[Are]] you [[using]] the meeting room?",
+     "zh": "你在用会议室吗？",
+     "answer": "Yes, I [[am]]. / No, I[['m not]]."
+    },
+    {
+     "en": "[[Is]] it [[raining]] outside?",
+     "zh": "外面在下雨吗？",
+     "answer": "Yes, it [[is]]. / No, it [[isn't]]."
+    },
+    {
+     "en": "What [[are]] you [[working]] on <<at the moment>>?",
+     "zh": "你这会儿在忙什么？",
+     "answer": "I[['m updating]] the settings screen."
+    }
+   ],
+   "notes": [
+    "问「谁正在做」时，who 就是主语，不用搬动：Who [[is using]] the printer?（谁在用打印机？）"
+   ]
+  },
+  "table": {
+   "title": "一张表看全",
+   "short": "一张表",
+   "verb": "work",
+   "rows": [
+    {
+     "who": "I",
+     "pos": "I[['m working]].",
+     "neg": "I[['m not working]].",
+     "negFull": "I am not working.",
+     "q": "[[Am]] I [[working]]?",
+     "short": "Yes, you [[are]]. / No, you [[aren't]]."
+    },
+    {
+     "who": "you",
+     "pos": "You[['re working]].",
+     "neg": "You [[aren't working]].",
+     "negFull": "You are not working.",
+     "q": "[[Are]] you [[working]]?",
+     "short": "Yes, I [[am]]. / No, I[['m not]]."
+    },
+    {
+     "who": "he / she / it",
+     "pos": "He[['s working]].",
+     "neg": "He [[isn't working]].",
+     "negFull": "He is not working.",
+     "q": "[[Is]] he [[working]]?",
+     "short": "Yes, he [[is]]. / No, he [[isn't]]."
+    },
+    {
+     "who": "we",
+     "pos": "We[['re working]].",
+     "neg": "We [[aren't working]].",
+     "negFull": "We are not working.",
+     "q": "[[Are]] we [[working]]?",
+     "short": "Yes, we [[are]]. / No, we [[aren't]]."
+    },
+    {
+     "who": "they",
+     "pos": "They[['re working]].",
+     "neg": "They [[aren't working]].",
+     "negFull": "They are not working.",
+     "q": "[[Are]] they [[working]]?",
+     "short": "Yes, they [[are]]. / No, they [[aren't]]."
+    }
+   ],
+   "contractions": [
+    "I am = I[['m]]",
+    "he is / she is / it is = he[['s]] / she[['s]] / it[['s]]",
+    "you are / we are / they are = you[['re]] / we[['re]] / they[['re]]",
+    "is not = [[isn't]] · are not = [[aren't]]",
+    "am not 没有缩写，说 I[['m not]]"
+   ],
+   "tip": "竖着看表：变的只有 am / is / are，后面的 working 一直不变。"
+  },
+  "spelling": {
+   "title": "动词怎么加 ing",
+   "short": "拼写",
+   "rules": [
+    {
+     "ending": "大多数动词",
+     "change": "直接加 ing",
+     "examples": [
+      "work → [[work{ing}]]",
+      "test → [[test{ing}]]"
+     ]
+    },
+    {
+     "ending": "不发音的 e 结尾",
+     "change": "去 e，加 ing",
+     "examples": [
+      "mak~~e~~ → [[mak{ing}]]",
+      "writ~~e~~ → [[writ{ing}]]"
+     ]
+    },
+    {
+     "ending": "ie 结尾",
+     "change": "ie 变 y，加 ing",
+     "examples": [
+      "l~~ie~~ → [[l{ying}]]",
+      "d~~ie~~ → [[d{ying}]]"
+     ]
+    },
+    {
+     "ending": "短词，一个元音字母 + 一个辅音字母结尾",
+     "change": "双写最后一个字母，再加 ing",
+     "examples": [
+      "run → [[run{ning}]]",
+      "stop → [[stop{ping}]]",
+      "plan → [[plan{ning}]]"
+     ]
+    },
+    {
+     "ending": "一个元音字母 + l 结尾（英式拼法）",
+     "change": "双写 l，再加 ing",
+     "examples": [
+      "travel → [[travel{ling}]]",
+      "cancel → [[cancel{ling}]]"
+     ]
+    }
+   ],
+   "tip": "see 结尾是两个 e，不去掉：[[see{ing}]]。美式英语里 traveling 只写一个 l，英式写两个。"
+  },
+  "contrast": {
+   "title": "和其他说法比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "一般现在时",
+     "this": {
+      "meaning": "现在这会儿、最近临时这样",
+      "en": "I[['m taking]] the bus <<this week>>."
+     },
+     "that": {
+      "meaning": "平常、习惯",
+      "en": "I <<usually>> [[drive]] to work."
+     }
+    },
+    {
+     "with": "be going to",
+     "this": {
+      "meaning": "已经约好了：时间、地点、人都定了",
+      "en": "I[['m flying]] to Berlin <<on Friday>>."
+     },
+     "that": {
+      "meaning": "心里打算好了，还没约",
+      "en": "I[['m going to]] ((book)) a flight."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I ~~am work~~ on it now.",
+     "good": "I[['m working]] on it now.",
+     "why": "am / is / are 后面的动词要加 ing。"
+    },
+    {
+     "bad": "She ~~working~~ late tonight.",
+     "good": "She[['s working]] late tonight.",
+     "why": "只有 ing 不够，前面要有 is。"
+    },
+    {
+     "bad": "~~Do~~ you waiting for me?",
+     "good": "[[Are]] you [[waiting]] for me?",
+     "why": "进行时用 am / is / are 来问，不用 do。"
+    },
+    {
+     "bad": "I~~'m knowing~~ the answer.",
+     "good": "I [[know]] the answer.",
+     "why": "know 说的是状态，不是动作，不用进行时。"
+    },
+    {
+     "bad": "We're ~~planing~~ the release.",
+     "good": "We[['re plan{ning}]] the release.",
+     "why": "plan 要双写 n：planning。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Please be quiet. The baby ___.",
+   "options": [
+    "sleeps",
+    "is sleeping",
+    "sleep",
+    "sleeping"
+   ],
+   "answer": "is sleeping",
+   "explain": "说话这一刻正在睡：[[is sleeping]]。"
+  },
+  {
+   "id": "q02",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Listen! Someone ___ at the door.",
+   "options": [
+    "knocks",
+    "is knocking",
+    "knock"
+   ],
+   "answer": "is knocking",
+   "explain": "<<Listen!>> 说的是这一刻，用 [[is knocking]]。"
+  },
+  {
+   "id": "q03",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我们这周在测新版本。",
+   "answer": "We're testing the new version this week.",
+   "accept": [
+    "We are testing the new version this week.",
+    "We're testing the new release this week.",
+    "We are testing the new release this week."
+   ],
+   "explain": "<<this week>> 是最近这段时间，用 We[['re testing]]。"
+  },
+  {
+   "id": "q04",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "Look! It ___ (snow).",
+   "answer": "is snowing",
+   "accept": [],
+   "explain": "<<Look!>> 说的是现在：It [[is snowing]]。"
+  },
+  {
+   "id": "q05",
+   "section": "positive",
+   "type": "fill",
+   "prompt": "My colleagues ___ (have) lunch at the moment.",
+   "answer": "are having",
+   "accept": [],
+   "explain": "they 用 are，have 去 e 加 ing：[[are hav{ing}]]。"
+  },
+  {
+   "id": "q06",
+   "section": "negative",
+   "type": "transform",
+   "prompt": "改成否定句：She is working today.",
+   "answer": "She isn't working today.",
+   "accept": [
+    "She is not working today.",
+    "She's not working today."
+   ],
+   "traps": [
+    {
+     "input": "She doesn't working today.",
+     "note": "进行时在 is 后面加 not，不用 doesn't。"
+    }
+   ],
+   "explain": "She [[isn't working]]：is 后面加 not。"
+  },
+  {
+   "id": "q07",
+   "section": "negative",
+   "type": "fix",
+   "prompt": "改错：I'm not use my phone right now.",
+   "answer": "I'm not using my phone right now.",
+   "accept": [
+    "I am not using my phone right now."
+   ],
+   "explain": "be 后面的动词要加 ing：I[['m not using]]。"
+  },
+  {
+   "id": "q08",
+   "section": "question",
+   "type": "transform",
+   "prompt": "改成一般疑问句：They are waiting for the build.",
+   "answer": "Are they waiting for the build?",
+   "accept": [],
+   "explain": "把 [[Are]] 搬到最前面。"
+  },
+  {
+   "id": "q09",
+   "section": "question",
+   "type": "make-question",
+   "prompt": "针对划线部分提问：He is fixing the login bug.（问「在做什么」）",
+   "answer": "What is he doing?",
+   "accept": [
+    "What's he doing?"
+   ],
+   "traps": [
+    {
+     "input": "What does he doing?",
+     "note": "进行时用 is 来问：What is he doing?"
+    }
+   ],
+   "explain": "What [[is]] he [[doing]]？疑问词 + is + 主语 + 动词 ing。"
+  },
+  {
+   "id": "q10",
+   "section": "question",
+   "type": "fill",
+   "prompt": "— Is Mia coming to the meeting? — Yes, she ___.",
+   "answer": "is",
+   "accept": [],
+   "explain": "用 is 问，就用 [[is]] 答。"
+  },
+  {
+   "id": "q11",
+   "section": "table",
+   "type": "choice",
+   "prompt": "We ___ on the new feature this month.",
+   "options": [
+    "is working",
+    "are working",
+    "am working",
+    "working"
+   ],
+   "answer": "are working",
+   "explain": "we 用 are：We [[are working]]。"
+  },
+  {
+   "id": "q12",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "run 的 ing 形式是 ___",
+   "answer": "running",
+   "accept": [],
+   "explain": "短词、一个元音 + 一个辅音结尾，双写：[[run{ning}]]。"
+  },
+  {
+   "id": "q13",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "write 的 ing 形式是 ___",
+   "answer": "writing",
+   "accept": [],
+   "explain": "不发音的 e 去掉再加 ing：[[writ{ing}]]。"
+  },
+  {
+   "id": "q14",
+   "section": "spelling",
+   "type": "choice",
+   "prompt": "travel 的 ing 形式（英式拼法）是",
+   "options": [
+    "travelling",
+    "traveling",
+    "travelleing"
+   ],
+   "answer": "travelling",
+   "explain": "英式拼法 l 结尾要双写：[[travel{ling}]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "I usually ___ (cycle) to work, but this week I'm taking the bus.",
+   "answer": "cycle",
+   "accept": [],
+   "explain": "<<usually>> 说的是平常的习惯，用一般现在时：I [[cycle]]。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "I ___ (meet) the client at 10 tomorrow. It's in my calendar.",
+   "answer": "am meeting",
+   "accept": [
+    "'m meeting"
+   ],
+   "explain": "已经约好、写进日历的事：I [[am meeting]]。"
+  },
+  {
+   "id": "q17",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I'm knowing the answer.",
+   "answer": "I know the answer.",
+   "accept": [],
+   "explain": "know 是状态，不用进行时：I [[know]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用现在进行时说 3 句话：你和同事此刻或这周正在忙什么。至少一句否定，一句的主语是他 / 她。",
+  "rules": [
+   "必须有 am / is / are + 动词 ing，两样都不能少",
+   "否定在 am / is / are 后面加 not，不用 don't / doesn't",
+   "know、like、want 这类状态动词不用进行时"
+  ],
+  "note": "规则判 be + ing 和拼写（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

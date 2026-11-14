@@ -1,0 +1,448 @@
+{
+ "id": "g-countable",
+ "title": "可数与不可数",
+ "en": "Countable and Uncountable Nouns",
+ "group": "名词和代词",
+ "level": "A2",
+ "order": 38,
+ "keywords": [
+  "可数和不可数"
+ ],
+ "related": [
+  "g-quantifiers",
+  "g-articles",
+  "g-there-be"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "英语把名词分两种：**能一个一个数的**（bug、meeting），和**没法一个个数的**（water、advice）。能数的有单数和复数；不能数的永远只有一个样子，不加 s。",
+   "uses": [
+    {
+     "zh": "能数的：一个、两个、三个都能说",
+     "en": "We found three [[bug{s}]] <<this morning>>.",
+     "en_zh": "我们今天早上发现了三个 bug。"
+    },
+    {
+     "zh": "不能数的：不加 s，前面不放 a",
+     "en": "Can you give me some [[advice]]?",
+     "en_zh": "你能给我一些建议吗？"
+    },
+    {
+     "zh": "不能数的东西想数，借一个「杯、条、块」",
+     "en": "I'd like [[a cup of]] tea.",
+     "en_zh": "我想要一杯茶。"
+    }
+   ],
+   "signals": [
+    "a / an",
+    "many",
+    "a few",
+    "much",
+    "a little",
+    "How many",
+    "How much"
+   ]
+  },
+  "countable": {
+   "title": "可数名词",
+   "short": "可数",
+   "rule": "能数的名词，**一个的时候不能光着**，前面要有 a / an / the / my 这类小词；两个以上就加 s 变复数。",
+   "examples": [
+    {
+     "en": "I've got [[a meeting]] at ten.",
+     "zh": "我十点有个会。"
+    },
+    {
+     "en": "We fixed two [[bug{s}]] yesterday.",
+     "zh": "我们昨天修了两个 bug。"
+    },
+    {
+     "en": "How many [[tester{s}]] have we got?",
+     "zh": "我们有几个测试人员？"
+    }
+   ],
+   "wrong": {
+    "bad": "I need ~~laptop~~ for the demo.",
+    "good": "I need [[a laptop]] for the demo."
+   },
+   "notes": [
+    "复数怎么加 s，和动词加 s 的规则一样：bug → [[bug{s}]] · box → [[box{es}]] · city → [[cit{ies}]]",
+    "有几个要单独记：person → [[people]] · child → [[children]] · man → [[men]]"
+   ]
+  },
+  "uncountable": {
+   "title": "不可数名词",
+   "short": "不可数",
+   "rule": "不能数的名词：**不加 s，前面不放 a / an**。它做主语时，动词当「它」来用：is、was、has。",
+   "examples": [
+    {
+     "en": "The [[information]] [[is]] on the wiki.",
+     "zh": "资料在 wiki 上。"
+    },
+    {
+     "en": "Your [[feedback]] was really useful.",
+     "zh": "你的反馈很有用。"
+    },
+    {
+     "en": "We haven't got much [[time]].",
+     "zh": "我们时间不多了。"
+    }
+   ],
+   "notes": [
+    "这些词中文里能数，英语里**不能数**：advice · information · news · feedback · furniture · luggage · equipment · homework · research · software · traffic · weather",
+    "news 看着像复数，其实不可数：The news [[is]] good."
+   ],
+   "wrong": {
+    "bad": "Thanks for the ~~advices~~.",
+    "good": "Thanks for the [[advice]]."
+   }
+  },
+  "measure": {
+   "title": "不可数的东西怎么数",
+   "short": "量词",
+   "rule": "想数不能数的东西，就找个「杯子、一条、一块」来数。**数的是杯子，所以加 s 的是杯子**：two cups of coffee。",
+   "items": [
+    {
+     "rule": "a piece of 最万能：建议、消息、家具都能用",
+     "en": "Let me give you [[a piece of]] advice.",
+     "zh": "我给你一个建议。"
+    },
+    {
+     "rule": "喝的用 cup、glass、bottle",
+     "en": "Two [[cup{s} of]] coffee, please.",
+     "zh": "请来两杯咖啡。"
+    },
+    {
+     "rule": "口语里常说 a bit of，意思是「一点儿」",
+     "en": "I've just had [[a bit of]] good news.",
+     "zh": "我刚收到一个好消息。"
+    },
+    {
+     "rule": "面包用 slice（片）或 loaf（条）",
+     "en": "Can I have [[a slice of]] bread?",
+     "zh": "我能要一片面包吗？"
+    }
+   ]
+  },
+  "both": {
+   "title": "两种都能当的词",
+   "short": "两用",
+   "rule": "有的词两种都能当，但意思不一样。说**一整片、一种材料**时不可数；说**一个一个、一次一次**时可数。",
+   "items": [
+    {
+     "rule": "time 不可数：时间",
+     "en": "I haven't got much [[time]].",
+     "zh": "我没多少时间。"
+    },
+    {
+     "rule": "time 可数：次数",
+     "en": "I've watched it three [[time{s}]].",
+     "zh": "我已经看了三遍。"
+    },
+    {
+     "rule": "coffee 不可数：咖啡这种东西",
+     "en": "I drink too much [[coffee]].",
+     "zh": "我咖啡喝太多了。"
+    },
+    {
+     "rule": "coffee 可数：点单时说「几杯」",
+     "en": "Can we get [[two coffee{s}]]?",
+     "zh": "能给我们两杯咖啡吗？"
+    }
+   ],
+   "notes": [
+    "experience 也一样：a lot of [[experience]]（经验）· an amazing [[experience]]（一次经历）"
+   ]
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "much",
+     "this": {
+      "meaning": "many：跟能数的",
+      "en": "How [[many]] bugs are left?"
+     },
+     "that": {
+      "meaning": "much：跟不能数的",
+      "en": "How [[much]] time is left?"
+     }
+    },
+    {
+     "with": "a little",
+     "this": {
+      "meaning": "a few：跟能数的",
+      "en": "I've got [[a few]] questions."
+     },
+     "that": {
+      "meaning": "a little：跟不能数的",
+      "en": "I need [[a little]] help."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Can you give me some ~~advices~~?",
+     "good": "Can you give me some [[advice]]?",
+     "why": "advice 不可数，不加 s。"
+    },
+    {
+     "bad": "The news ~~are~~ good.",
+     "good": "The news [[is]] good.",
+     "why": "news 不可数，动词用 is。"
+    },
+    {
+     "bad": "I've got ~~a~~ good news.",
+     "good": "I've got [[some]] good news.",
+     "why": "不可数名词前面不放 a，用 some 或 a piece of。"
+    },
+    {
+     "bad": "How ~~many~~ money do you need?",
+     "good": "How [[much]] money do you need?",
+     "why": "money 不可数，用 much。"
+    },
+    {
+     "bad": "We bought some new ~~furnitures~~.",
+     "good": "We bought some new [[furniture]].",
+     "why": "furniture 是一整类东西，不能数。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "下面哪个词不可数？",
+   "options": [
+    "bug",
+    "meeting",
+    "advice",
+    "laptop"
+   ],
+   "answer": "advice",
+   "explain": "[[advice]] 是「建议」这一类东西，英语里不能一个个数。"
+  },
+  {
+   "id": "q02",
+   "section": "countable",
+   "type": "fill",
+   "prompt": "We found three ___ (bug) this morning.",
+   "answer": "bugs",
+   "accept": [],
+   "explain": "三个，能数，加 s：[[bug{s}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "countable",
+   "type": "fix",
+   "prompt": "改错：I need laptop for the demo.",
+   "answer": "I need a laptop for the demo.",
+   "accept": [
+    "I need the laptop for the demo.",
+    "I need my laptop for the demo."
+   ],
+   "explain": "能数的名词一个的时候不能光着：[[a laptop]]。"
+  },
+  {
+   "id": "q04",
+   "section": "countable",
+   "type": "transform",
+   "prompt": "把 a bug 改成 two bugs：There is a bug on the login screen.",
+   "answer": "There are two bugs on the login screen.",
+   "accept": [],
+   "traps": [
+    {
+     "input": "There is two bugs on the login screen.",
+     "note": "两个 bug 是复数，is 要变 are。"
+    }
+   ],
+   "explain": "复数要配 [[are]]：There [[are]] two [[bug{s}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "uncountable",
+   "type": "choice",
+   "prompt": "Thanks for all the ___.",
+   "options": [
+    "advice",
+    "advices",
+    "an advice"
+   ],
+   "answer": "advice",
+   "explain": "[[advice]] 不可数：不加 s，不放 an。"
+  },
+  {
+   "id": "q06",
+   "section": "uncountable",
+   "type": "fill",
+   "prompt": "The news ___ (be) really good.",
+   "answer": "is",
+   "accept": [],
+   "traps": [
+    {
+     "input": "are",
+     "note": "news 不可数，动词当「它」用：is。"
+    }
+   ],
+   "explain": "news 看着像复数，其实不可数：The news [[is]]。"
+  },
+  {
+   "id": "q07",
+   "section": "uncountable",
+   "type": "fix",
+   "prompt": "改错：We need to buy some new furnitures.",
+   "answer": "We need to buy some new furniture.",
+   "accept": [],
+   "explain": "[[furniture]] 不可数，不加 s。"
+  },
+  {
+   "id": "q08",
+   "section": "measure",
+   "type": "choice",
+   "prompt": "Let me give you ___ advice.",
+   "options": [
+    "an",
+    "a piece of",
+    "two",
+    "many"
+   ],
+   "answer": "a piece of",
+   "explain": "想数 advice，借 [[a piece of]]。"
+  },
+  {
+   "id": "q09",
+   "section": "measure",
+   "type": "fill",
+   "prompt": "Can I have two ___ (cup) of coffee, please?",
+   "answer": "cups",
+   "accept": [],
+   "traps": [
+    {
+     "input": "cup",
+     "note": "数的是杯子，两杯要加 s。"
+    }
+   ],
+   "explain": "加 s 的是杯子：two [[cup{s} of]] coffee。"
+  },
+  {
+   "id": "q10",
+   "section": "measure",
+   "type": "translate",
+   "prompt": "翻译：我有一个好消息。",
+   "answer": "I've got a piece of good news.",
+   "accept": [
+    "I have a piece of good news.",
+    "I have got a piece of good news.",
+    "I've got some good news.",
+    "I have some good news.",
+    "I've got a bit of good news."
+   ],
+   "traps": [
+    {
+     "input": "I have a good news.",
+     "note": "news 不可数，不能说 a news。"
+    }
+   ],
+   "explain": "news 不可数，用 [[a piece of]] good news 或 some good news。"
+  },
+  {
+   "id": "q11",
+   "section": "both",
+   "type": "choice",
+   "prompt": "I've watched this film three ___.",
+   "options": [
+    "time",
+    "times",
+    "timing"
+   ],
+   "answer": "times",
+   "explain": "说「几次」的 time 可数：three [[time{s}]]。"
+  },
+  {
+   "id": "q12",
+   "section": "both",
+   "type": "choice",
+   "prompt": "Sorry, I haven't got much ___ today.",
+   "options": [
+    "time",
+    "times",
+    "a time"
+   ],
+   "answer": "time",
+   "explain": "说「时间」的 time 不可数：much [[time]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "How ___ money have we got left?",
+   "options": [
+    "many",
+    "much",
+    "a few"
+   ],
+   "answer": "much",
+   "explain": "money 不可数，用 [[much]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "How ___ users signed up yesterday?",
+   "answer": "many",
+   "accept": [],
+   "explain": "users 能数，用 [[many]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：How many money do you need?",
+   "answer": "How much money do you need?",
+   "accept": [],
+   "explain": "money 不可数，用 [[much]]。"
+  },
+  {
+   "id": "q16",
+   "section": "uncountable",
+   "type": "translate",
+   "prompt": "翻译：你的反馈很有用。",
+   "answer": "Your feedback is really useful.",
+   "accept": [
+    "Your feedback is very useful.",
+    "Your feedback was really useful.",
+    "Your feedback was very useful.",
+    "Your feedback is useful.",
+    "Your feedback was useful."
+   ],
+   "traps": [
+    {
+     "input": "Your feedbacks are really useful.",
+     "note": "feedback 不可数，不加 s，动词用 is。"
+    }
+   ],
+   "explain": "[[feedback]] 不可数，动词用 is。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话说说你这周的工作。至少用到一个可数名词的复数、一个不可数名词（比如 feedback / information / advice），和一个「量词」说法（比如 a piece of / a cup of）。",
+  "rules": [
+   "不可数名词不加 s，前面不用 a / an",
+   "可数名词单数前面要有 a / an / the / my 这类词",
+   "many 跟可数名词，much 跟不可数名词"
+  ],
+  "note": "规则判名词单复数和 a / an（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

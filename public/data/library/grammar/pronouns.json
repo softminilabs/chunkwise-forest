@@ -1,0 +1,460 @@
+{
+ "id": "g-pronouns",
+ "title": "人称、物主、反身代词",
+ "en": "Personal, Possessive and Reflexive Pronouns",
+ "group": "名词和代词",
+ "level": "A2",
+ "order": 42,
+ "keywords": [
+  "代词"
+ ],
+ "related": [
+  "g-possessives",
+  "g-indefinite-pronouns",
+  "g-articles"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "代词是名字的**替身**：说过的人或东西，第二次就不用再说名字。它有好几套样子，看它在句子里干什么：做事的、被做的、「谁的」、「自己」。",
+   "uses": [
+    {
+     "zh": "做事的人：放在动词前面",
+     "en": "[[She]] fixed the bug.",
+     "en_zh": "她修好了那个 bug。"
+    },
+    {
+     "zh": "被做的人：放在动词或 to、with 后面",
+     "en": "Can you help [[me]]?",
+     "en_zh": "你能帮我一下吗？"
+    },
+    {
+     "zh": "「谁的」：my 跟名词，mine 单独用",
+     "en": "That's [[my]] mug. This one is [[mine]] too.",
+     "en_zh": "那是我的杯子，这个也是我的。"
+    },
+    {
+     "zh": "自己对自己",
+     "en": "I taught [[myself]] Swift.",
+     "en_zh": "我自学了 Swift。"
+    }
+   ]
+  },
+  "table": {
+   "title": "一张表看全",
+   "short": "一张表",
+   "rule": "每一行从左到右是：**做事的 · 被做的 · 的 + 名词 · 单独说「的」 · 自己**。",
+   "rules": [
+    {
+     "ending": "我",
+     "change": "I 永远大写",
+     "examples": [
+      "[[I]]",
+      "[[me]]",
+      "[[my]]",
+      "[[mine]]",
+      "[[myself]]"
+     ]
+    },
+    {
+     "ending": "你 / 你们",
+     "change": "只有「自己」分单复数",
+     "examples": [
+      "[[you]]",
+      "[[you]]",
+      "[[your]]",
+      "[[yours]]",
+      "[[yourself]] / [[yourselves]]"
+     ]
+    },
+    {
+     "ending": "他",
+     "change": "第 3、4 个都是 his",
+     "examples": [
+      "[[he]]",
+      "[[him]]",
+      "[[his]]",
+      "[[his]]",
+      "[[himself]]"
+     ]
+    },
+    {
+     "ending": "她",
+     "change": "第 2、3 个都是 her",
+     "examples": [
+      "[[she]]",
+      "[[her]]",
+      "[[her]]",
+      "[[hers]]",
+      "[[herself]]"
+     ]
+    },
+    {
+     "ending": "它",
+     "change": "its 没有撇号",
+     "examples": [
+      "[[it]]",
+      "[[it]]",
+      "[[its]]",
+      "[[itself]]"
+     ]
+    },
+    {
+     "ending": "我们",
+     "change": "ours 没有撇号",
+     "examples": [
+      "[[we]]",
+      "[[us]]",
+      "[[our]]",
+      "[[ours]]",
+      "[[ourselves]]"
+     ]
+    },
+    {
+     "ending": "他们 / 她们 / 它们",
+     "change": "男女不分，东西也用 they",
+     "examples": [
+      "[[they]]",
+      "[[them]]",
+      "[[their]]",
+      "[[theirs]]",
+      "[[themselves]]"
+     ]
+    }
+   ],
+   "tip": "it 没有「单独说的」那一格，平时不会说 This is its。"
+  },
+  "subject-object": {
+   "title": "I 还是 me",
+   "short": "I/me",
+   "rule": "动词**前面**做事的人，用 I、he、she、we、they；动词或 to、with、for **后面**的，用 me、him、her、us、them。",
+   "examples": [
+    {
+     "en": "[[She]] sent [[me]] the link.",
+     "zh": "她把链接发给我了。"
+    },
+    {
+     "en": "Do you want to come with [[us]]?",
+     "zh": "你要跟我们一起去吗？"
+    },
+    {
+     "en": "I'll call [[him]] after lunch.",
+     "zh": "我午饭后给他打电话。"
+    }
+   ],
+   "wrong": {
+    "bad": "Tom and ~~me~~ fixed it.",
+    "good": "Tom and [[I]] fixed it."
+   },
+   "notes": [
+    "一两个词单独回答时，口语用 me：— Who broke the build? — Not [[me]]!",
+    "中文里「他」「她」读音一样，英语里**一定要分清**：说女同事用 she / her，男同事用 he / him。"
+   ]
+  },
+  "my-mine": {
+   "title": "my 还是 mine",
+   "short": "我的",
+   "rule": "my、your、her 后面**一定跟名词**；mine、yours、hers **单独用**，后面不跟名词，意思是「我的那个」。",
+   "examples": [
+    {
+     "en": "Is this [[your]] charger?",
+     "zh": "这是你的充电器吗？",
+     "answer": "No, it's not [[mine]]."
+    },
+    {
+     "en": "[[Our]] app is faster than [[theirs]].",
+     "zh": "我们的 App 比他们的快。"
+    },
+    {
+     "en": "A friend [[of mine]] works at Apple.",
+     "zh": "我的一个朋友在 Apple 工作。"
+    }
+   ],
+   "wrong": {
+    "bad": "This seat is ~~my~~.",
+    "good": "This seat is [[mine]]."
+   }
+  },
+  "reflexive": {
+   "title": "自己：myself 这一套",
+   "short": "自己",
+   "rule": "**做事的人和被做的人是同一个**时，用 myself 这一套。放在句尾，还能表示「亲自、自己动手」。",
+   "items": [
+    {
+     "rule": "自己对自己",
+     "en": "Did you hurt [[yourself]]?",
+     "zh": "你伤着自己了吗？"
+    },
+    {
+     "rule": "自己动手，没人帮",
+     "en": "I fixed the bug [[myself]].",
+     "zh": "这个 bug 是我自己修的。"
+    },
+    {
+     "rule": "by + 自己 = 一个人",
+     "en": "She often works [[by herself]] at the weekend.",
+     "zh": "她周末常常一个人工作。"
+    },
+    {
+     "rule": "请别人随便拿",
+     "en": "Help [[yourself]] to some cake!",
+     "zh": "蛋糕随便吃！"
+    }
+   ],
+   "notes": [
+    "这些词英语里**不加** -self：I need to [[relax]] · I can't [[concentrate]] · We [[met]] at nine."
+   ]
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "each other",
+     "this": {
+      "meaning": "themselves：各自对自己",
+      "en": "They introduced [[themselves]]."
+     },
+     "that": {
+      "meaning": "each other：互相",
+      "en": "They introduced [[each other]]."
+     }
+    },
+    {
+     "with": "he or she",
+     "this": {
+      "meaning": "they：不知道是男是女（口语最常用）",
+      "en": "If a user complains, reply to [[them]] quickly."
+     },
+     "that": {
+      "meaning": "he or she：正式，有点啰嗦",
+      "en": "If a user complains, reply to [[him or her]] quickly."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "~~Me and Tom~~ went to the meetup.",
+     "good": "[[Tom and I]] went to the meetup.",
+     "why": "动词前面用 I；礼貌起见，把自己放后面。"
+    },
+    {
+     "bad": "My sister? ~~He~~ lives in London.",
+     "good": "My sister? [[She]] lives in London.",
+     "why": "女的用 she，男的用 he，不能混。"
+    },
+    {
+     "bad": "This laptop is ~~my~~.",
+     "good": "This laptop is [[mine]].",
+     "why": "后面没有名词，用 mine。"
+    },
+    {
+     "bad": "I need to ~~relax myself~~.",
+     "good": "I need to [[relax]].",
+     "why": "relax 不加 myself。"
+    },
+    {
+     "bad": "Between you and ~~I~~, it won't work.",
+     "good": "Between you and [[me]], it won't work.",
+     "why": "between 后面用 me。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "My sister lives in London. ___ works in a bank.",
+   "options": [
+    "He",
+    "She",
+    "Her"
+   ],
+   "answer": "She",
+   "explain": "姐姐做事，用 [[She]]。"
+  },
+  {
+   "id": "q02",
+   "section": "table",
+   "type": "fill",
+   "prompt": "we 的「自己」形式是 ___",
+   "answer": "ourselves",
+   "accept": [],
+   "explain": "我们自己：[[ourselves]]。"
+  },
+  {
+   "id": "q03",
+   "section": "table",
+   "type": "choice",
+   "prompt": "The app has ___ own settings.",
+   "options": [
+    "it's",
+    "its",
+    "it"
+   ],
+   "answer": "its",
+   "explain": "「它的」是 [[its]]，没有撇号。"
+  },
+  {
+   "id": "q04",
+   "section": "subject-object",
+   "type": "choice",
+   "prompt": "Can you send ___ the link?",
+   "options": [
+    "I",
+    "me",
+    "my"
+   ],
+   "answer": "me",
+   "explain": "在动词 send 后面，用 [[me]]。"
+  },
+  {
+   "id": "q05",
+   "section": "subject-object",
+   "type": "fix",
+   "prompt": "改错：Me and Tom fixed the bug.",
+   "answer": "Tom and I fixed the bug.",
+   "accept": [],
+   "traps": [
+    {
+     "input": "Tom and me fixed the bug.",
+     "note": "在动词前面做事的人，要用 I。"
+    }
+   ],
+   "explain": "动词前面用 I，把自己放后面：Tom and [[I]]。"
+  },
+  {
+   "id": "q06",
+   "section": "subject-object",
+   "type": "fill",
+   "prompt": "I'll call ___ (he) after lunch.",
+   "answer": "him",
+   "accept": [],
+   "explain": "在动词 call 后面，he 变 [[him]]。"
+  },
+  {
+   "id": "q07",
+   "section": "my-mine",
+   "type": "choice",
+   "prompt": "— Is this your charger? — No, it's not ___.",
+   "options": [
+    "my",
+    "mine",
+    "me"
+   ],
+   "answer": "mine",
+   "explain": "后面没有名词，用 [[mine]]。"
+  },
+  {
+   "id": "q08",
+   "section": "my-mine",
+   "type": "fix",
+   "prompt": "改错：This seat is my.",
+   "answer": "This seat is mine.",
+   "accept": [],
+   "explain": "my 后面必须跟名词，单独用要说 [[mine]]。"
+  },
+  {
+   "id": "q09",
+   "section": "my-mine",
+   "type": "translate",
+   "prompt": "翻译：我的一个朋友在 Apple 工作。",
+   "answer": "A friend of mine works at Apple.",
+   "accept": [
+    "One of my friends works at Apple.",
+    "A friend of mine works for Apple.",
+    "One of my friends works for Apple."
+   ],
+   "explain": "「我的一个朋友」：a friend [[of mine]]。"
+  },
+  {
+   "id": "q10",
+   "section": "reflexive",
+   "type": "fill",
+   "prompt": "Nobody helped me. I fixed the bug ___.",
+   "answer": "myself",
+   "accept": [
+    "by myself"
+   ],
+   "explain": "自己动手，用 [[myself]]。"
+  },
+  {
+   "id": "q11",
+   "section": "reflexive",
+   "type": "choice",
+   "prompt": "Help ___ to some cake!",
+   "options": [
+    "you",
+    "yourself",
+    "your"
+   ],
+   "answer": "yourself",
+   "explain": "请别人随便拿：Help [[yourself]]。"
+  },
+  {
+   "id": "q12",
+   "section": "reflexive",
+   "type": "fix",
+   "prompt": "改错：I need to relax myself after work.",
+   "answer": "I need to relax after work.",
+   "accept": [],
+   "explain": "relax 不加 myself：I need to [[relax]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "Anna and Leo always help ___.（互相帮）",
+   "options": [
+    "themselves",
+    "each other",
+    "them"
+   ],
+   "answer": "each other",
+   "explain": "「互相」用 [[each other]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Between you and I, the plan won't work.",
+   "answer": "Between you and me, the plan won't work.",
+   "accept": [],
+   "explain": "between 后面用 [[me]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "We really enjoyed ___ at the party.",
+   "answer": "ourselves",
+   "accept": [],
+   "traps": [
+    {
+     "input": "us",
+     "note": "做的人和被做的人都是我们自己，用 ourselves。"
+    }
+   ],
+   "explain": "我们让自己玩得开心：enjoyed [[ourselves]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话说说你和一位同事一起做的一件事。至少用到一个 me / him / her 这类「被做的」，一个 mine / yours 这类单独说的「的」，和一个 -self。",
+  "rules": [
+   "动词前用 I / he / she，动词或介词后用 me / him / her",
+   "my / your 后面跟名词，mine / yours 单独用",
+   "自己对自己做事才用 -self"
+  ],
+  "note": "规则判代词形式（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

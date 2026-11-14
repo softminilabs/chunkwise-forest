@@ -1,0 +1,373 @@
+{
+ "id": "g-causative-verbs",
+ "title": "使役动词",
+ "en": "Causative Verbs",
+ "group": "动词",
+ "level": "B1",
+ "order": 19,
+ "keywords": [
+  "make / let / help",
+  "have sth done",
+  "make sb do",
+  "get it working"
+ ],
+ "related": [
+  "g-gerund-infinitive",
+  "g-passive",
+  "g-perception-verbs"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "使役动词说的是**「让别人去做事」**。make 是逼着做，let 是允许做，help 是帮着做，get 是劝着做，have sth done 是**花钱请人帮你做**。",
+   "uses": [
+    {
+     "zh": "逼着做：make",
+     "en": "My boss [[made]] me ((work)) late.",
+     "en_zh": "老板逼着我加班到很晚。"
+    },
+    {
+     "zh": "允许做：let",
+     "en": "She [[let]] me ((use)) her laptop.",
+     "en_zh": "她让我用她的电脑。"
+    },
+    {
+     "zh": "请人帮你做：have sth done",
+     "en": "I [[had]] my hair [[cut]] <<yesterday>>.",
+     "en_zh": "我昨天去剪了头发。"
+    }
+   ]
+  },
+  "make": {
+   "title": "make / let：不带 to", "short": "make",
+   "text": "make 和 let 后面先放**人**，再放**动词原形**，中间**没有 to**。make 是不管你愿不愿意都得做；let 是你想做，我同意。",
+   "formula": [
+    "make / let",
+    "人",
+    "动词原形"
+   ],
+   "examples": [
+    {
+     "en": "The film [[made]] me ((cry)).",
+     "zh": "这部电影把我看哭了。"
+    },
+    {
+     "en": "Don't [[make]] me ((laugh))!",
+     "zh": "别逗我笑了！"
+    },
+    {
+     "en": "Our manager [[lets]] us ((work)) from home on Fridays.",
+     "zh": "经理允许我们周五在家办公。"
+    },
+    {
+     "en": "[[Let]] me ((know)) if you need anything.",
+     "zh": "需要什么就跟我说一声。"
+    }
+   ],
+   "wrong": {
+    "bad": "My boss made me ~~to~~ work late.",
+    "good": "My boss [[made]] me ((work)) late."
+   }
+  },
+  "help": {
+   "title": "help 和 get", "short": "help",
+   "text": "**help** 后面带不带 to 都行，不带更常见。**get** 是「说服、劝动别人去做」，它后面**一定要有 to**。",
+   "items": [
+    {
+     "rule": "help 人 + 原形",
+     "en": "Can you [[help]] me ((move)) this desk?",
+     "zh": "你能帮我挪一下这张桌子吗？"
+    },
+    {
+     "rule": "help 人 + to do 也行",
+     "en": "This tool [[helps]] us [[to find]] bugs faster.",
+     "zh": "这个工具帮我们更快地找到 bug。"
+    },
+    {
+     "rule": "get 人 + to do",
+     "en": "I finally [[got]] him [[to update]] the docs.",
+     "zh": "我终于让他把文档更新了。"
+    },
+    {
+     "rule": "get 人 + to do",
+     "en": "Can you [[get]] Sam [[to call]] me back?",
+     "zh": "你能让萨姆给我回个电话吗？"
+    }
+   ],
+   "wrong": {
+    "bad": "I got him ~~fix~~ the bug.",
+    "good": "I [[got]] him [[to fix]] the bug."
+   }
+  },
+  "done": {
+   "title": "have sth done：请人帮你做", "short": "请人",
+   "text": "事情**不是你自己做的**，是请别人（常常是花钱）做的，就用 have 东西 done。东西放中间，最后是**过去分词**。",
+   "formula": [
+    "have / get",
+    "东西",
+    "过去分词"
+   ],
+   "examples": [
+    {
+     "en": "I[['m having]] my flat [[painted]] <<next week>>.",
+     "zh": "下周我要请人把公寓刷一遍。"
+    },
+    {
+     "en": "We [[had]] the app [[tested]] by an outside company.",
+     "zh": "我们请外面的公司测了这个 App。"
+    },
+    {
+     "en": "You should [[get]] your eyes [[checked]].",
+     "zh": "你应该去查查眼睛。"
+    }
+   ],
+   "notes": [
+    "倒霉的事也这么说：He [[had]] his phone [[stolen]] on the bus.（他在公交上手机被偷了。）"
+   ],
+   "tip": "get sth done 和 have sth done 意思一样，get 更口语。"
+  },
+  "contrast": {
+   "title": "比一比和常见错", "short": "比一比",
+   "pairs": [
+    {
+     "with": "自己做",
+     "this": {
+      "meaning": "请别人做：have sth done",
+      "en": "I [[had]] my hair [[cut]]."
+     },
+     "that": {
+      "meaning": "自己动手：直接用动词",
+      "en": "I [[cut]] my hair myself."
+     }
+    },
+    {
+     "with": "let",
+     "this": {
+      "meaning": "make：逼着做，不想也得做",
+      "en": "Mum [[made]] me ((tidy)) my room."
+     },
+     "that": {
+      "meaning": "let：允许做，想做就做",
+      "en": "Mum [[let]] me ((stay)) up late."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "She let me ~~to~~ go early.",
+     "good": "She [[let]] me ((go)) early.",
+     "why": "let 后面直接跟原形。"
+    },
+    {
+     "bad": "I ~~repaired my car~~ at the garage.",
+     "good": "I [[had]] my car [[repaired]] at the garage.",
+     "why": "修车的是修车师傅，不是你，用 have sth done。"
+    },
+    {
+     "bad": "I had my laptop ~~repair~~.",
+     "good": "I [[had]] my laptop [[repaired]].",
+     "why": "最后用过去分词。"
+    },
+    {
+     "bad": "I ~~had cut my hair~~.",
+     "good": "I [[had]] my hair [[cut]].",
+     "why": "东西放在 had 和 cut 中间。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I didn't cut it myself. I ___ yesterday.",
+   "options": [
+    "had my hair cut",
+    "cut my hair",
+    "had cut my hair"
+   ],
+   "answer": "had my hair cut",
+   "explain": "请别人做：[[had]] my hair [[cut]]。"
+  },
+  {
+   "id": "q02",
+   "section": "make",
+   "type": "fill",
+   "prompt": "My boss made me ___ (work) late.",
+   "answer": "work",
+   "accept": [],
+   "traps": [
+    {
+     "input": "to work",
+     "note": "make 后面直接跟原形，没有 to。"
+    }
+   ],
+   "explain": "make 人 + 原形：made me ((work))。"
+  },
+  {
+   "id": "q03",
+   "section": "make",
+   "type": "fix",
+   "prompt": "改错：She let me to go home early.",
+   "answer": "She let me go home early.",
+   "accept": [],
+   "explain": "let 人 + 原形：[[let]] me ((go))。"
+  },
+  {
+   "id": "q04",
+   "section": "make",
+   "type": "choice",
+   "prompt": "___ me know if you need anything.",
+   "options": [
+    "Let",
+    "Make",
+    "Get"
+   ],
+   "answer": "Let",
+   "explain": "允许、让我知道：[[Let]] me ((know))。"
+  },
+  {
+   "id": "q05",
+   "section": "make",
+   "type": "translate",
+   "prompt": "翻译：这部电影把我看哭了。",
+   "answer": "The film made me cry.",
+   "accept": [
+    "The movie made me cry."
+   ],
+   "explain": "make 人 + 原形：[[made]] me ((cry))。"
+  },
+  {
+   "id": "q06",
+   "section": "help",
+   "type": "choice",
+   "prompt": "Can you help me ___ this desk?",
+   "options": [
+    "move",
+    "moving",
+    "moved"
+   ],
+   "answer": "move",
+   "explain": "help 人 + 原形（to move 也行）：help me ((move))。"
+  },
+  {
+   "id": "q07",
+   "section": "help",
+   "type": "fill",
+   "prompt": "I finally got him ___ (update) the docs.",
+   "answer": "to update",
+   "accept": [],
+   "traps": [
+    {
+     "input": "update",
+     "note": "get 人后面一定要有 to。"
+    }
+   ],
+   "explain": "get 人 + to do：[[to update]]。"
+  },
+  {
+   "id": "q08",
+   "section": "help",
+   "type": "fix",
+   "prompt": "改错：Can you get Sam call me back?",
+   "answer": "Can you get Sam to call me back?",
+   "accept": [],
+   "explain": "get 人 + to do：[[to call]]。"
+  },
+  {
+   "id": "q09",
+   "section": "done",
+   "type": "fill",
+   "prompt": "We had the app ___ (test) by an outside company.",
+   "answer": "tested",
+   "accept": [],
+   "explain": "最后用过去分词：[[tested]]。"
+  },
+  {
+   "id": "q10",
+   "section": "done",
+   "type": "transform",
+   "prompt": "用 have sth done 改写：A painter is going to paint my flat next week.",
+   "answer": "I'm having my flat painted next week.",
+   "accept": [
+    "I am having my flat painted next week.",
+    "I'm going to have my flat painted next week.",
+    "I am going to have my flat painted next week."
+   ],
+   "explain": "请人做：[[having]] my flat [[painted]]。"
+  },
+  {
+   "id": "q11",
+   "section": "done",
+   "type": "fix",
+   "prompt": "改错：I had my laptop repair last week.",
+   "answer": "I had my laptop repaired last week.",
+   "accept": [],
+   "explain": "最后用过去分词：[[repaired]]。"
+  },
+  {
+   "id": "q12",
+   "section": "done",
+   "type": "translate",
+   "prompt": "翻译：他在公交上手机被偷了。",
+   "answer": "He had his phone stolen on the bus.",
+   "accept": [
+    "He got his phone stolen on the bus."
+   ],
+   "explain": "倒霉的事也用 have sth done：[[had]] his phone [[stolen]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "Mum ___ me stay up late. I was so happy!",
+   "options": [
+    "let",
+    "made",
+    "got"
+   ],
+   "answer": "let",
+   "explain": "我愿意，妈妈同意了：[[let]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "Mum ___ me tidy my room. I didn't want to.",
+   "options": [
+    "let",
+    "made",
+    "got"
+   ],
+   "answer": "made",
+   "explain": "不想也得做：[[made]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I had cut my hair at the barber's.",
+   "answer": "I had my hair cut at the barber's.",
+   "accept": [
+    "I got my hair cut at the barber's."
+   ],
+   "explain": "东西放中间：[[had]] my hair [[cut]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "写 3 句话：一句说小时候父母让你做或不让你做的事（make / let），一句说你劝动同事做了什么（get … to do），一句说你最近请人帮你做的事（have sth done）。",
+  "rules": [
+   "make / let + 人 + 动词原形，中间没有 to；get + 人 + to do",
+   "have + 东西 + 过去分词，表示请别人做"
+  ],
+  "note": "规则判使役动词后面的动词形式（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

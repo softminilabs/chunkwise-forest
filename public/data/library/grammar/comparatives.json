@@ -1,0 +1,509 @@
+{
+ "id": "g-comparatives",
+ "title": "比较级与最高级",
+ "en": "Comparatives and Superlatives",
+ "group": "形容词、副词和介词",
+ "level": "A2",
+ "order": 44,
+ "keywords": [
+  "比较级",
+  "最高级",
+  "as … as",
+  "越……越……",
+  "比较的程度",
+  "比较和程度"
+ ],
+ "related": [
+  "g-too-enough-so-such",
+  "g-ed-ing-adjectives",
+  "g-adverb-position"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "两个比，用**比较级**：faster than；三个以上挑「最」，用**最高级**：the fastest。短的词加 -er / -est，长的词前面加 more / most。",
+   "uses": [
+    {
+     "zh": "两个比：更……",
+     "en": "The new build is [[fast{er}]] <<than>> the old one.",
+     "en_zh": "新的构建比旧的快。"
+    },
+    {
+     "zh": "一群里挑「最」",
+     "en": "This is [[the slow{est}]] screen in the app.",
+     "en_zh": "这是 App 里最慢的一个页面。"
+    },
+    {
+     "zh": "两个一样",
+     "en": "The Android app is [[as fast as]] the iOS one.",
+     "en_zh": "安卓版和 iOS 版一样快。"
+    }
+   ],
+   "signals": [
+    "than",
+    "the …est",
+    "the most",
+    "as … as",
+    "much",
+    "a bit"
+   ]
+  },
+  "spelling": {
+   "title": "怎么变",
+   "short": "怎么变",
+   "rule": "看词的长短：只有一个音的短词（fast、big）加 -er / -est；y 结尾的 easy、busy 也这样变；其他长词前面加 more / most。",
+   "rules": [
+    {
+     "ending": "大多数短词",
+     "change": "加 er / est",
+     "examples": [
+      "fast → [[fast{er}]] → [[the fast{est}]]",
+      "cheap → [[cheap{er}]] → [[the cheap{est}]]"
+     ]
+    },
+    {
+     "ending": "e 结尾",
+     "change": "只加 r / st",
+     "examples": [
+      "nice → [[nice{r}]] → [[the nice{st}]]",
+      "safe → [[safe{r}]] → [[the safe{st}]]"
+     ]
+    },
+    {
+     "ending": "一个元音 + 一个辅音结尾",
+     "change": "双写最后一个字母",
+     "examples": [
+      "big → [[big{ger}]] → [[the big{gest}]]",
+      "hot → [[hot{ter}]] → [[the hot{test}]]"
+     ]
+    },
+    {
+     "ending": "辅音 + y 结尾",
+     "change": "去 y，加 ier / iest",
+     "examples": [
+      "eas~~y~~ → [[eas{ier}]] → [[the eas{iest}]]",
+      "bus~~y~~ → [[bus{ier}]] → [[the bus{iest}]]"
+     ]
+    },
+    {
+     "ending": "长词",
+     "change": "前面加 more / most",
+     "examples": [
+      "useful → [[more useful]] → [[the most useful]]",
+      "expensive → [[more expensive]] → [[the most expensive]]"
+     ]
+    },
+    {
+     "ending": "不规则",
+     "change": "要单独记",
+     "examples": [
+      "good → [[better]] → [[the best]]",
+      "bad → [[worse]] → [[the worst]]",
+      "far → [[further]] → [[the furthest]]"
+     ]
+    }
+   ]
+  },
+  "comparative": {
+   "title": "比较级：两个比",
+   "short": "两个比",
+   "formula": [
+    "A",
+    "be / 动词",
+    "比较级",
+    "than B"
+   ],
+   "rule": "两个东西比，比较级后面用 than 带出被比的那一个。than 后面只有一个人时，口语说 me、him。",
+   "examples": [
+    {
+     "en": "SwiftUI is [[eas{ier}]] <<than>> I thought.",
+     "zh": "SwiftUI 比我想的简单。"
+    },
+    {
+     "en": "My commute is [[long{er}]] <<than>> yours.",
+     "zh": "我通勤的路比你的远。"
+    },
+    {
+     "en": "This flat is [[more expensive]] <<than>> the last one.",
+     "zh": "这套公寓比上一套贵。"
+    }
+   ],
+   "notes": [
+    "Tom is taller than [[me]].（口语）= Tom is taller than [[I am]].（完整说法）"
+   ]
+  },
+  "superlative": {
+   "title": "最高级：挑「最」",
+   "short": "最",
+   "formula": [
+    "the",
+    "最高级",
+    "in / of …"
+   ],
+   "rule": "三个以上挑「最」，前面加 the。后面说「在哪个地方、哪个团队里」用 in；说「在一群里」用 of。",
+   "examples": [
+    {
+     "en": "She's [[the best]] developer <<in>> our team.",
+     "zh": "她是我们组最好的开发者。"
+    },
+    {
+     "en": "It was [[the most useful]] talk <<of>> the day.",
+     "zh": "那是当天最有用的一场演讲。"
+    },
+    {
+     "en": "That's [[the best]] film I've ever seen.",
+     "zh": "那是我看过的最好的电影。"
+    }
+   ]
+  },
+  "as-as": {
+   "title": "一样，或者不如",
+   "short": "一样",
+   "rule": "两边一样，用 **as + 原来的词 + as**，中间的词不变。说「不如」，用 **not as … as**，比用 less 更自然。",
+   "examples": [
+    {
+     "en": "The Android app is [[as fast as]] the iOS one.",
+     "zh": "安卓版和 iOS 版一样快。"
+    },
+    {
+     "en": "The second meeting wasn't [[as long as]] the first.",
+     "zh": "第二个会没有第一个长。"
+    },
+    {
+     "en": "Our new office is [[twice as big as]] the old one.",
+     "zh": "我们的新办公室是旧的两倍大。"
+    }
+   ],
+   "wrong": {
+    "bad": "It's as ~~faster~~ as the old one.",
+    "good": "It's [[as fast as]] the old one."
+   }
+  },
+  "degree": {
+   "title": "差多少，越来越",
+   "short": "差多少",
+   "rule": "比较级前面加词，说差多少：much、a lot、far = 多得多；a bit、slightly = 稍微。**不能用 very**。",
+   "items": [
+    {
+     "rule": "多得多",
+     "en": "The new version is [[much fast{er}]].",
+     "zh": "新版本快多了。"
+    },
+    {
+     "rule": "稍微",
+     "en": "Could you make the font [[a bit big{ger}]]?",
+     "zh": "能把字体稍微调大一点吗？"
+    },
+    {
+     "rule": "越……越……：the + 比较级, the + 比较级",
+     "en": "[[The soon{er}]] we start, [[the soon{er}]] we finish.",
+     "zh": "我们开始得越早，结束得越早。"
+    },
+    {
+     "rule": "越来越……：比较级 and 比较级",
+     "en": "The app is getting [[slow{er} and slow{er}]].",
+     "zh": "这个 App 越来越慢了。"
+    },
+    {
+     "rule": "长词越来越：more and more + 词",
+     "en": "Swift is getting [[more and more popular]].",
+     "zh": "Swift 越来越流行了。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "最高级",
+     "this": {
+      "meaning": "比较级：两个比",
+      "en": "This plan is [[better]] than that one."
+     },
+     "that": {
+      "meaning": "最高级：一群里最",
+      "en": "This plan is [[the best]] of the three."
+     }
+    },
+    {
+     "with": "比较级",
+     "this": {
+      "meaning": "not as … as：不如",
+      "en": "Swift isn't [[as hard as]] C++."
+     },
+     "that": {
+      "meaning": "比较级：更……",
+      "en": "C++ is [[hard{er}]] than Swift."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "It's ~~more cheap~~ than the old one.",
+     "good": "It's [[cheap{er}]] than the old one.",
+     "why": "短词加 -er，不加 more。"
+    },
+    {
+     "bad": "This version is ~~more better~~.",
+     "good": "This version is [[better]].",
+     "why": "better 已经是比较级，不能再加 more。"
+    },
+    {
+     "bad": "She's ~~the most good~~ tester.",
+     "good": "She's [[the best]] tester.",
+     "why": "good 不规则：better、best。"
+    },
+    {
+     "bad": "It's ~~very~~ faster now.",
+     "good": "It's [[much]] faster now.",
+     "why": "比较级前面用 much，不用 very。"
+    },
+    {
+     "bad": "Tom is taller ~~then~~ me.",
+     "good": "Tom is taller [[than]] me.",
+     "why": "比较用 than，then 是「然后」。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "Of the three designs, this one is ___.",
+   "options": [
+    "better",
+    "the best",
+    "more good"
+   ],
+   "answer": "the best",
+   "explain": "三个里挑「最」，用最高级：[[the best]]。"
+  },
+  {
+   "id": "q02",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "big 的比较级是 ___",
+   "answer": "bigger",
+   "accept": [],
+   "traps": [
+    {
+     "input": "biger",
+     "note": "一个元音 + 一个辅音结尾，要双写 g。"
+    }
+   ],
+   "explain": "双写最后一个字母：[[big{ger}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "spelling",
+   "type": "fill",
+   "prompt": "easy 的最高级是 ___",
+   "answer": "the easiest",
+   "accept": [
+    "easiest"
+   ],
+   "explain": "辅音 + y：去 y 加 iest，[[the eas{iest}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "spelling",
+   "type": "choice",
+   "prompt": "good → better → ___",
+   "options": [
+    "the goodest",
+    "the best",
+    "the most good"
+   ],
+   "answer": "the best",
+   "explain": "good 不规则：[[better]] → [[the best]]。"
+  },
+  {
+   "id": "q05",
+   "section": "comparative",
+   "type": "fill",
+   "prompt": "The new build is ___ (fast) than the old one.",
+   "answer": "faster",
+   "accept": [],
+   "explain": "两个比，短词加 -er：[[fast{er}]]。"
+  },
+  {
+   "id": "q06",
+   "section": "comparative",
+   "type": "fix",
+   "prompt": "改错：This flat is more cheap than the last one.",
+   "answer": "This flat is cheaper than the last one.",
+   "accept": [],
+   "explain": "cheap 是短词，加 -er：[[cheap{er}]]。"
+  },
+  {
+   "id": "q07",
+   "section": "superlative",
+   "type": "fill",
+   "prompt": "She's ___ (good) developer in our team.",
+   "answer": "the best",
+   "accept": [],
+   "traps": [
+    {
+     "input": "best",
+     "note": "最高级前面要加 the。"
+    }
+   ],
+   "explain": "一群里最好：[[the best]]。"
+  },
+  {
+   "id": "q08",
+   "section": "superlative",
+   "type": "choice",
+   "prompt": "It's the slowest screen ___ the app.",
+   "options": [
+    "of",
+    "in",
+    "than"
+   ],
+   "answer": "in",
+   "explain": "「在 App 里」是一个范围，用 [[in]]。"
+  },
+  {
+   "id": "q09",
+   "section": "superlative",
+   "type": "translate",
+   "prompt": "翻译：这是我看过的最好的电影。",
+   "answer": "This is the best film I've ever seen.",
+   "accept": [
+    "This is the best film I have ever seen.",
+    "It's the best film I've ever seen.",
+    "It's the best film I have ever seen.",
+    "This is the best movie I've ever seen.",
+    "That's the best film I've ever seen.",
+    "That is the best film I've ever seen."
+   ],
+   "explain": "「最好的」：[[the best]] film。"
+  },
+  {
+   "id": "q10",
+   "section": "as-as",
+   "type": "transform",
+   "prompt": "用 not as … as 改写：The first meeting was longer than the second.",
+   "answer": "The second meeting wasn't as long as the first.",
+   "accept": [
+    "The second meeting was not as long as the first.",
+    "The second meeting wasn't as long as the first one.",
+    "The second meeting was not as long as the first one."
+   ],
+   "traps": [
+    {
+     "input": "The second meeting wasn't as longer as the first.",
+     "note": "as … as 中间用原来的词 long。"
+    }
+   ],
+   "explain": "不如：wasn't [[as long as]]。"
+  },
+  {
+   "id": "q11",
+   "section": "as-as",
+   "type": "fill",
+   "prompt": "The Android app is as ___ (fast) as the iOS one.",
+   "answer": "fast",
+   "accept": [],
+   "traps": [
+    {
+     "input": "faster",
+     "note": "as … as 中间的词不变。"
+    }
+   ],
+   "explain": "as … as 中间用原来的词：[[as fast as]]。"
+  },
+  {
+   "id": "q12",
+   "section": "degree",
+   "type": "choice",
+   "prompt": "The new version is ___ faster.",
+   "options": [
+    "very",
+    "much",
+    "more"
+   ],
+   "answer": "much",
+   "explain": "比较级前面说「多得多」用 [[much]]，不用 very。"
+  },
+  {
+   "id": "q13",
+   "section": "degree",
+   "type": "translate",
+   "prompt": "翻译：我们开始得越早，结束得越早。",
+   "answer": "The sooner we start, the sooner we finish.",
+   "accept": [
+    "The earlier we start, the earlier we finish.",
+    "The sooner we start, the earlier we finish.",
+    "The earlier we start, the sooner we finish."
+   ],
+   "explain": "越……越……：[[The soon{er}]] …, [[the soon{er}]] …"
+  },
+  {
+   "id": "q14",
+   "section": "degree",
+   "type": "fill",
+   "prompt": "The app is getting ___ (slow) every week.（越来越慢）",
+   "answer": "slower and slower",
+   "accept": [],
+   "explain": "越来越：比较级 and 比较级，[[slow{er} and slow{er}]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：This version is more better than the last one.",
+   "answer": "This version is better than the last one.",
+   "accept": [],
+   "explain": "better 已经是比较级，去掉 more。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：It's very faster now.",
+   "answer": "It's much faster now.",
+   "accept": [
+    "It is much faster now.",
+    "It's a lot faster now.",
+    "It's far faster now."
+   ],
+   "explain": "比较级前面用 [[much]]。"
+  },
+  {
+   "id": "q17",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "Tom is taller ___ me.",
+   "answer": "than",
+   "accept": [],
+   "traps": [
+    {
+     "input": "then",
+     "note": "then 是「然后」，比较用 than。"
+    }
+   ],
+   "explain": "比较用 [[than]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "比一比你用过的两个工具、两部手机或两个城市，说 3 句话：一句比较级，一句最高级，一句 as … as 或 not as … as。",
+  "rules": [
+   "两者比较用比较级 + than",
+   "三者以上用 the + 最高级",
+   "as … as 中间用形容词原级；比较级前不用 very"
+  ],
+  "note": "规则判比较级、最高级形式（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

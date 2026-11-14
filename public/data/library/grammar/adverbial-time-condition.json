@@ -1,0 +1,412 @@
+{
+ "id": "g-adverbial-time-condition",
+ "title": "状语从句：时间与条件",
+ "en": "Clauses of Time and Condition",
+ "group": "句子",
+ "level": "B1",
+ "order": 31,
+ "keywords": [
+  "时间状语从句",
+  "先后步骤",
+  "条件：unless"
+ ],
+ "related": [
+  "g-conditionals-012",
+  "g-sequence-of-tenses",
+  "g-adverbial-reason-result"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "这种小句子告诉你，事情**什么时候**发生、**在什么条件下**发生。它由 when、after、until、if、unless 这类词带头，放句首句尾都行。",
+   "uses": [
+    {
+     "zh": "说时间",
+     "en": "I'll call you [[when]] I get home.",
+     "en_zh": "我到家就给你打电话。"
+    },
+    {
+     "zh": "排先后步骤",
+     "en": "[[After]] you push the code, the tests run.",
+     "en_zh": "你推完代码以后，测试就会跑。"
+    },
+    {
+     "zh": "说条件",
+     "en": "We'll ship on Friday [[unless]] QA finds a big bug.",
+     "en_zh": "除非测试发现大 bug，否则我们周五发布。"
+    }
+   ],
+   "signals": [
+    "when",
+    "while",
+    "as soon as",
+    "before",
+    "after",
+    "until",
+    "once",
+    "if",
+    "unless",
+    "as long as"
+   ]
+  },
+  "time": {
+   "title": "说时间：when / while / as soon as",
+   "short": "时间",
+   "items": [
+    {
+     "rule": "**when** = 「……的时候」，最常用。",
+     "en": "[[When]] the meeting ended, everyone left.",
+     "zh": "会一开完，大家都走了。"
+    },
+    {
+     "rule": "**while** = 「在……期间」，后面常是一段较长的动作。",
+     "en": "I checked my emails [[while]] the app was building.",
+     "zh": "App 在编译的时候我看了看邮件。"
+    },
+    {
+     "rule": "**as soon as** = 「一……就……」，比 when 更急。",
+     "en": "Text me [[as soon as]] you land.",
+     "zh": "你一落地就给我发消息。"
+    },
+    {
+     "rule": "**since** = 「自从」，主句常用现在完成时。",
+     "en": "I've worked here [[since]] I left uni.",
+     "zh": "我大学毕业后就一直在这儿工作。"
+    }
+   ],
+   "tip": "从句放句首时，后面加逗号；放句尾时，一般不加。"
+  },
+  "steps": {
+   "title": "排先后：before / after / once / until",
+   "short": "先后",
+   "rule": "讲步骤时，用 before（之前）、after（之后）、once（一旦）把两件事排好队。until 是「一直到……为止」。",
+   "examples": [
+    {
+     "en": "[[Before]] you merge, run the tests.",
+     "zh": "合并之前先跑测试。"
+    },
+    {
+     "en": "[[Once]] the build passes, we can release.",
+     "zh": "一旦构建通过，我们就能发布。"
+    },
+    {
+     "en": "Wait here [[until]] I come back.",
+     "zh": "在这儿等我回来。"
+    }
+   ],
+   "notes": [
+    "until 加否定，意思是「不到……不……」：We won't release [[until]] the bug is fixed.（bug 不修好我们不发布。）"
+   ]
+  },
+  "future": {
+   "title": "说将来不用 will",
+   "short": "将来",
+   "rule": "when、before、after、as soon as、until、if、unless 后面说将来的事，**用一般现在时，不用 will**。will 只放在主句里。",
+   "formula": [
+    "When / If … + 一般现在时",
+    "主句 will + 动词原形"
+   ],
+   "examples": [
+    {
+     "en": "I'll call you [[when]] I ((get)) home.",
+     "zh": "我到家就给你打电话。"
+    },
+    {
+     "en": "[[As soon as]] the server [[come{s}]] back, I'll let you know.",
+     "zh": "服务器一恢复我就告诉你。"
+    },
+    {
+     "en": "[[If]] it [[rain{s}]] tomorrow, we'll work from home.",
+     "zh": "明天要是下雨，我们就在家办公。"
+    }
+   ],
+   "wrong": {
+    "bad": "I'll call you when I ~~will get~~ home.",
+    "good": "I'll call you when I [[get]] home."
+   }
+  },
+  "condition": {
+   "title": "说条件：if / unless / as long as",
+   "short": "条件",
+   "rule": "**unless = if … not**，「除非、要不然」。unless 自己就带「不」，后面别再加 not。**as long as** 是「只要」。",
+   "examples": [
+    {
+     "rule": "= If you don't hurry",
+     "en": "[[Unless]] you hurry, you'll miss the train.",
+     "zh": "你不快点就要赶不上火车了。"
+    },
+    {
+     "en": "You can work from home [[as long as]] you join the stand-up.",
+     "zh": "只要参加站会，你就可以在家办公。"
+    },
+    {
+     "rule": "= if you don't come",
+     "en": "I won't go [[unless]] you come too.",
+     "zh": "你不去我也不去。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "if",
+     "this": {
+      "meaning": "when：肯定会发生，只是说什么时候",
+      "en": "[[When]] I finish, I'll email you."
+     },
+     "that": {
+      "meaning": "if：不一定会发生",
+      "en": "[[If]] I finish, I'll email you."
+     }
+    },
+    {
+     "with": "during",
+     "this": {
+      "meaning": "while 后面跟一句话（有主语和动词）",
+      "en": "I fell asleep [[while]] he was talking."
+     },
+     "that": {
+      "meaning": "during 后面只跟一个名词",
+      "en": "I fell asleep [[during]] the meeting."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I'll text you when I ~~will arrive~~.",
+     "good": "I'll text you when I [[arrive]].",
+     "why": "when 后面说将来用一般现在时。"
+    },
+    {
+     "bad": "Unless you ~~don't~~ hurry, you'll be late.",
+     "good": "[[Unless]] you hurry, you'll be late.",
+     "why": "unless 已经有「不」了。"
+    },
+    {
+     "bad": "I'll wait ~~during~~ you finish.",
+     "good": "I'll wait [[while]] you finish.",
+     "why": "后面是一句话，用 while。"
+    },
+    {
+     "bad": "After I ~~will push~~ the code, the tests run.",
+     "good": "[[After]] I push the code, the tests run.",
+     "why": "after 后面不用 will。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：我到家就给你打电话。",
+   "answer": "I'll call you when I get home.",
+   "accept": [
+    "I will call you when I get home.",
+    "I'll call you as soon as I get home.",
+    "I will call you as soon as I get home.",
+    "When I get home, I'll call you.",
+    "When I get home, I will call you."
+   ],
+   "explain": "[[when]] 后面说将来，用一般现在时 get。"
+  },
+  {
+   "id": "q02",
+   "section": "time",
+   "type": "choice",
+   "prompt": "I checked my emails ___ the app was building.",
+   "options": [
+    "while",
+    "during",
+    "until",
+    "unless"
+   ],
+   "answer": "while",
+   "explain": "「在……期间」，后面是一段动作，用 [[while]]。"
+  },
+  {
+   "id": "q03",
+   "section": "time",
+   "type": "fill",
+   "prompt": "Text me ___ ___ ___ you land.（一……就……）",
+   "answer": "as soon as",
+   "accept": [],
+   "explain": "「一……就」= [[as soon as]]。"
+  },
+  {
+   "id": "q04",
+   "section": "time",
+   "type": "fill",
+   "prompt": "I've worked here ___ I left uni.",
+   "answer": "since",
+   "accept": [],
+   "explain": "「自从」用 [[since]]。"
+  },
+  {
+   "id": "q05",
+   "section": "steps",
+   "type": "choice",
+   "prompt": "___ you merge, run the tests.（合并之前先跑测试）",
+   "options": [
+    "Before",
+    "After",
+    "Until",
+    "Unless"
+   ],
+   "answer": "Before",
+   "explain": "先跑测试，再合并 → [[Before]]。"
+  },
+  {
+   "id": "q06",
+   "section": "steps",
+   "type": "translate",
+   "prompt": "翻译：bug 不修好，我们不发布。",
+   "answer": "We won't release until the bug is fixed.",
+   "accept": [
+    "We will not release until the bug is fixed.",
+    "We won't release it until the bug is fixed.",
+    "We won't release until the bug has been fixed.",
+    "We won't release until the bug's fixed."
+   ],
+   "explain": "「不到……不……」= won't … [[until]]。"
+  },
+  {
+   "id": "q07",
+   "section": "future",
+   "type": "fill",
+   "prompt": "As soon as the server ___ (come) back, I'll let you know.",
+   "answer": "comes",
+   "accept": [],
+   "traps": [
+    {
+     "input": "will come",
+     "note": "as soon as 后面不用 will。"
+    }
+   ],
+   "explain": "as soon as 后面说将来用一般现在时：[[come{s}]]。"
+  },
+  {
+   "id": "q08",
+   "section": "future",
+   "type": "fix",
+   "prompt": "改错：I'll text you when I will arrive.",
+   "answer": "I'll text you when I arrive.",
+   "accept": [
+    "I will text you when I arrive."
+   ],
+   "explain": "when 后面用一般现在时：I [[arrive]]。"
+  },
+  {
+   "id": "q09",
+   "section": "future",
+   "type": "fill",
+   "prompt": "If it ___ (rain) tomorrow, we'll work from home.",
+   "answer": "rains",
+   "accept": [],
+   "traps": [
+    {
+     "input": "will rain",
+     "note": "if 后面不用 will。"
+    }
+   ],
+   "explain": "if 后面说将来用一般现在时：[[rain{s}]]。"
+  },
+  {
+   "id": "q10",
+   "section": "condition",
+   "type": "transform",
+   "prompt": "用 unless 改写：If you don't hurry, you'll miss the train.",
+   "answer": "Unless you hurry, you'll miss the train.",
+   "accept": [
+    "Unless you hurry, you will miss the train.",
+    "You'll miss the train unless you hurry.",
+    "You will miss the train unless you hurry."
+   ],
+   "traps": [
+    {
+     "input": "Unless you don't hurry, you'll miss the train.",
+     "note": "unless 已经有「不」，去掉 don't。"
+    }
+   ],
+   "explain": "if … not = [[unless]]，去掉 don't。"
+  },
+  {
+   "id": "q11",
+   "section": "condition",
+   "type": "choice",
+   "prompt": "You can work from home ___ you join the stand-up.",
+   "options": [
+    "unless",
+    "as long as",
+    "until",
+    "while"
+   ],
+   "answer": "as long as",
+   "explain": "「只要」= [[as long as]]。"
+  },
+  {
+   "id": "q12",
+   "section": "condition",
+   "type": "fix",
+   "prompt": "改错：Unless you don't sign up, you can't join.",
+   "answer": "Unless you sign up, you can't join.",
+   "accept": [
+    "Unless you sign up, you cannot join."
+   ],
+   "explain": "unless 已经带「不」，去掉 don't。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I fell asleep ___ the meeting.",
+   "options": [
+    "while",
+    "during",
+    "when"
+   ],
+   "answer": "during",
+   "explain": "后面只有名词 the meeting，用 [[during]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "说一件肯定会发生的事：「我做完了就发邮件给你」",
+   "options": [
+    "When I finish, I'll email you.",
+    "If I finish, I'll email you."
+   ],
+   "answer": "When I finish, I'll email you.",
+   "explain": "肯定会做完，用 [[when]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：After I will push the code, the tests run.",
+   "answer": "After I push the code, the tests run.",
+   "accept": [],
+   "explain": "after 后面不用 will。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话说说你发布一个版本的步骤或明天的安排。至少用到 before / after / as soon as 中的一个，再用一次 unless。",
+  "rules": [
+   "when / before / after / as soon as / if / unless 后面说将来用一般现在时，不用 will",
+   "unless 后面不再加 not"
+  ],
+  "note": "规则判从句里有没有 will 和 unless 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

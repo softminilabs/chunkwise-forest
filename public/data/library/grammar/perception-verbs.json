@@ -1,0 +1,437 @@
+{
+ "id": "g-perception-verbs",
+ "title": "感官动词",
+ "en": "Verbs of Perception",
+ "group": "动词",
+ "level": "B1",
+ "order": 20,
+ "keywords": [
+  "凭感觉推测"
+ ],
+ "related": [
+  "g-linking-verbs",
+  "g-stative-verbs",
+  "g-modals-deduction"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "感官动词就是**看、听、闻、尝、摸**这几个词。它们有两种用法：一是说**东西给人的感觉**（听起来不错）；二是说**你看到、听到别人在做事**。",
+   "uses": [
+    {
+     "zh": "东西给人的感觉",
+     "en": "That [[sounds]] great.",
+     "en_zh": "听起来很棒。"
+    },
+    {
+     "zh": "凭感觉猜一猜",
+     "en": "It [[looks like]] a network problem.",
+     "en_zh": "看样子是网络的问题。"
+    },
+    {
+     "zh": "看到、听到别人做事",
+     "en": "I [[saw]] him ((leave)) the office at six.",
+     "en_zh": "我看到他六点离开了办公室。"
+    }
+   ],
+   "signals": [
+    "look",
+    "sound",
+    "smell",
+    "taste",
+    "feel",
+    "see",
+    "hear",
+    "watch",
+    "notice"
+   ]
+  },
+  "feel": {
+   "title": "给人的感觉：+ 形容词",
+   "short": "感觉",
+   "formula": [
+    "东西 / 人",
+    "look / sound / smell / taste / feel",
+    "形容词"
+   ],
+   "rule": "这时它们后面跟**形容词**（好、累、咸），不跟副词。口诀：**说感觉怎么样，就用形容词。**",
+   "examples": [
+    {
+     "en": "You [[look]] tired <<today>>.",
+     "zh": "你今天看起来很累。"
+    },
+    {
+     "en": "Your plan [[sounds]] good to me.",
+     "zh": "我觉得你的计划听起来不错。"
+    },
+    {
+     "en": "This soup [[tastes]] a bit salty.",
+     "zh": "这汤尝起来有点咸。"
+    },
+    {
+     "en": "The new keyboard [[feels]] really nice.",
+     "zh": "新键盘摸起来手感很好。"
+    }
+   ],
+   "wrong": {
+    "bad": "The new design looks ~~nicely~~.",
+    "good": "The new design [[looks]] nice."
+   }
+  },
+  "like": {
+   "title": "像什么：+ like / as if",
+   "short": "像",
+   "formula": [
+    "look / sound / feel…",
+    "like / as if",
+    "名词 / 一句话"
+   ],
+   "rule": "后面是**一个东西**（名词），中间要加 like；后面是**一整句话**，用 like 或 as if。最常用来**凭感觉猜**：看样子……、听起来像……",
+   "examples": [
+    {
+     "en": "It [[looks like]] a memory leak.",
+     "zh": "看样子是内存泄漏。"
+    },
+    {
+     "en": "That [[sounds like]] a good idea.",
+     "zh": "听起来是个好主意。"
+    },
+    {
+     "en": "You [[sound as if]] you've got a cold.",
+     "zh": "听你的声音像是感冒了。"
+    },
+    {
+     "en": "It [[looks as if]] it's going to rain.",
+     "zh": "看样子要下雨了。"
+    }
+   ],
+   "wrong": {
+    "bad": "It sounds ~~a great plan~~.",
+    "good": "It [[sounds like]] a great plan."
+   }
+  },
+  "see": {
+   "title": "看到别人做事",
+   "short": "看到",
+   "formula": [
+    "see / hear / watch / notice",
+    "人",
+    "动词原形 / -ing"
+   ],
+   "rule": "后面用**原形**：从头到尾看完了整件事。用 **-ing**：只看到正在做的一小段。注意：原形前面**不加 to**。",
+   "examples": [
+    {
+     "en": "I [[watched]] Tom ((fix)) the bug in ten minutes.",
+     "zh": "我看着 Tom 十分钟就修好了那个 bug。",
+     "rule": "原形：整个过程都看完了"
+    },
+    {
+     "en": "When I walked in, Tom was busy. I [[saw]] him [[fix{ing}]] a bug.",
+     "zh": "我进去时 Tom 正忙着，我看到他在修 bug。",
+     "rule": "-ing：只看到正在做的一段"
+    },
+    {
+     "en": "Did you [[hear]] the fire alarm ((go)) off?",
+     "zh": "你听到火警响了吗？"
+    },
+    {
+     "en": "I [[noticed]] a user [[tap{ping}]] the wrong button.",
+     "zh": "我注意到有个用户在点错的按钮。"
+    }
+   ],
+   "wrong": {
+    "bad": "I saw him ~~to leave~~.",
+    "good": "I [[saw]] him ((leave))."
+   }
+  },
+  "can": {
+   "title": "「能看到」：用 can",
+   "short": "can",
+   "rule": "说「现在能看到、听到、闻到」，英式英语常说 **can see / can hear / can smell**，不说 I'm seeing。",
+   "examples": [
+    {
+     "en": "I [[can hear]] you, but your video is frozen.",
+     "zh": "我能听到你说话，但你的视频卡住了。"
+    },
+    {
+     "en": "[[Can]] you ((see)) my screen?",
+     "zh": "你能看到我的屏幕吗？",
+     "answer": "Yes, I [[can]]."
+    },
+    {
+     "en": "I [[can smell]] something burning.",
+     "zh": "我闻到有东西烧焦了。"
+    }
+   ],
+   "notes": [
+    "如果是**主动去做**的动作，可以用进行时：She[['s tasting]] the soup.（她正在尝汤。）",
+    "说「感觉」的 feel，进行时也常见：I[['m feeling]] better today.（我今天感觉好些了。）"
+   ]
+  },
+  "contrast": {
+   "title": "比一比和常见错误",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "look at / listen to",
+     "this": {
+      "meaning": "see / hear：自然就看到、听到",
+      "en": "I [[heard]] a strange noise."
+     },
+     "that": {
+      "meaning": "look at / listen to：有意去看、去听",
+      "en": "[[Listen to]] this song."
+     }
+    },
+    {
+     "with": "-ing",
+     "this": {
+      "meaning": "原形：整件事看完了",
+      "en": "I [[saw]] her ((cross)) the road."
+     },
+     "that": {
+      "meaning": "-ing：看到正在做的一段",
+      "en": "I [[saw]] her [[cross{ing}]] the road."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "Your idea sounds ~~well~~.",
+     "good": "Your idea [[sounds]] good.",
+     "why": "说感觉用形容词 good，不用副词 well。"
+    },
+    {
+     "bad": "It looks ~~a bug~~ in the API.",
+     "good": "It [[looks like]] a bug in the API.",
+     "why": "后面是名词，要加 like。"
+    },
+    {
+     "bad": "I heard her ~~to sing~~.",
+     "good": "I [[heard]] her ((sing)).",
+     "why": "see / hear 后面用原形，不加 to。"
+    },
+    {
+     "bad": "I~~'m hearing~~ you clearly.",
+     "good": "I [[can hear]] you clearly.",
+     "why": "「能听到」用 can hear，不用进行时。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "That ___ like a good plan.",
+   "options": [
+    "sounds",
+    "hears",
+    "listens",
+    "is sounding"
+   ],
+   "answer": "sounds",
+   "explain": "后面是 like + 名词，说「听起来像」：[[sounds like]]。"
+  },
+  {
+   "id": "q02",
+   "section": "feel",
+   "type": "choice",
+   "prompt": "You look ___. Did you sleep well?",
+   "options": [
+    "tired",
+    "tiredly",
+    "tiring"
+   ],
+   "answer": "tired",
+   "explain": "look 后面说样子，用形容词 [[tired]]。"
+  },
+  {
+   "id": "q03",
+   "section": "feel",
+   "type": "fill",
+   "prompt": "This coffee ___ (taste) strange.",
+   "answer": "tastes",
+   "accept": [],
+   "traps": [
+    {
+     "input": "is tasting",
+     "note": "说味道是一种感觉，不用进行时。"
+    }
+   ],
+   "explain": "主语是 this coffee，说味道，加 s：[[taste{s}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "feel",
+   "type": "fix",
+   "prompt": "改错：The new font looks really nicely.",
+   "answer": "The new font looks really nice.",
+   "accept": [],
+   "explain": "look 后面用形容词：[[looks]] nice。"
+  },
+  {
+   "id": "q05",
+   "section": "like",
+   "type": "choice",
+   "prompt": "It ___ a memory leak to me.",
+   "options": [
+    "looks",
+    "looks like",
+    "looks as"
+   ],
+   "answer": "looks like",
+   "explain": "后面是名词，要加 like：[[looks like]]。"
+  },
+  {
+   "id": "q06",
+   "section": "like",
+   "type": "fill",
+   "prompt": "You sound ___ you've had a long day. (两个词)",
+   "answer": "as if",
+   "accept": [
+    "as though",
+    "like"
+   ],
+   "explain": "后面是一整句话，用 [[as if]]。"
+  },
+  {
+   "id": "q07",
+   "section": "like",
+   "type": "translate",
+   "prompt": "翻译：看样子要下雨了。",
+   "answer": "It looks like it's going to rain.",
+   "accept": [
+    "It looks as if it's going to rain.",
+    "It looks like it is going to rain.",
+    "It looks as if it is going to rain.",
+    "It looks like rain."
+   ],
+   "explain": "凭眼睛猜：It [[looks like]] / [[looks as if]] + 一句话。"
+  },
+  {
+   "id": "q08",
+   "section": "see",
+   "type": "fill",
+   "prompt": "I saw him ___ (leave) the office at six.",
+   "answer": "leave",
+   "accept": [],
+   "traps": [
+    {
+     "input": "to leave",
+     "note": "see 后面不加 to。"
+    }
+   ],
+   "explain": "see 后面用原形，不加 to：[[saw]] him ((leave))。"
+  },
+  {
+   "id": "q09",
+   "section": "see",
+   "type": "choice",
+   "prompt": "When I walked past, I heard them ___ about the release.",
+   "options": [
+    "to talk",
+    "talking",
+    "talked"
+   ],
+   "answer": "talking",
+   "explain": "只听到正在说的一段，用 -ing：[[talk{ing}]]。"
+  },
+  {
+   "id": "q10",
+   "section": "see",
+   "type": "fix",
+   "prompt": "改错：Did you notice him to come in?",
+   "answer": "Did you notice him come in?",
+   "accept": [
+    "Did you notice him coming in?"
+   ],
+   "explain": "notice 后面用原形，不加 to。"
+  },
+  {
+   "id": "q11",
+   "section": "see",
+   "type": "transform",
+   "prompt": "把两句合成一句：Tom fixed the bug. I watched the whole thing.",
+   "answer": "I watched Tom fix the bug.",
+   "accept": [],
+   "explain": "从头看到尾，用原形：I [[watched]] Tom ((fix)) the bug。"
+  },
+  {
+   "id": "q12",
+   "section": "can",
+   "type": "choice",
+   "prompt": "Sorry, I ___ you very well. Your mic's breaking up.",
+   "options": [
+    "can't hear",
+    "am not hearing",
+    "don't listen"
+   ],
+   "answer": "can't hear",
+   "explain": "「听不清」用 [[can't hear]]，不用进行时。"
+  },
+  {
+   "id": "q13",
+   "section": "can",
+   "type": "translate",
+   "prompt": "翻译：我闻到有东西烧焦了。",
+   "answer": "I can smell something burning.",
+   "accept": [
+    "I smell something burning."
+   ],
+   "explain": "「闻到」用 [[can smell]] + 东西 + -ing。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "___ this, it's really funny.",
+   "options": [
+    "Listen to",
+    "Hear",
+    "Sound"
+   ],
+   "answer": "Listen to",
+   "explain": "叫人有意去听，用 [[listen to]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：Your idea sounds well.",
+   "answer": "Your idea sounds good.",
+   "accept": [
+    "Your idea sounds great."
+   ],
+   "explain": "说感觉用形容词：[[sounds]] good。"
+  },
+  {
+   "id": "q16",
+   "section": "contrast",
+   "type": "fill",
+   "prompt": "I saw her ___ (cross) the road, then she disappeared into the station.",
+   "answer": "cross",
+   "accept": [
+    "crossing"
+   ],
+   "explain": "整件事看完了，用原形：[[saw]] her ((cross))。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用感官动词说 3 句话：一句说你今天的工作给你的感觉，一句凭感觉猜一件事（looks like / sounds like），一句说你看到或听到同事在做什么。",
+  "rules": [
+   "look / sound / feel / taste / smell 后面用形容词，或用 like + 名词",
+   "see / hear / watch / notice + 人 + 动词原形或 -ing，不加 to"
+  ],
+  "note": "规则判形容词 / like 和 see sb do 的用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

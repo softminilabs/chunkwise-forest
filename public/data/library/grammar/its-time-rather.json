@@ -1,0 +1,391 @@
+{
+ "id": "g-its-time-rather",
+ "title": "It's time… / I'd rather…",
+ "en": "It's Time and I'd Rather",
+ "group": "B2 进阶",
+ "level": "B2",
+ "order": 53,
+ "keywords": [
+  "It's time",
+  "I'd rather"
+ ],
+ "related": [
+  "g-wish",
+  "g-modals-obligation",
+  "g-gerund-infinitive"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "两个常用说法：**It's time** 是「该……了」，**I'd rather** 是「我更想……」。小机关：后面换成别人做时，动词**用过去式**，说的却是现在。",
+   "uses": [
+    {
+     "zh": "该做某事了",
+     "en": "[[It's time to]] ((go)) home.",
+     "en_zh": "该回家了。"
+    },
+    {
+     "zh": "早该做了（有点晚了）",
+     "en": "[[It's time]] we [[left]].",
+     "en_zh": "我们早该走了。"
+    },
+    {
+     "zh": "我更想……",
+     "en": "[[I'd rather]] ((stay)) in tonight.",
+     "en_zh": "我今晚更想待在家里。"
+    },
+    {
+     "zh": "我更希望别人……",
+     "en": "[[I'd rather]] you [[didn't]] ((tell)) anyone.",
+     "en_zh": "我希望你别告诉任何人。"
+    }
+   ]
+  },
+  "time": {
+   "title": "It's time 的三种说法", "short": "该了",
+   "rule": "后面跟主语时，动词用**过去式**，但不是说过去，而是「现在早该这样了，可还没做」。",
+   "items": [
+    {
+     "rule": "It's time to + 原形：普通地说「该……了」",
+     "en": "[[It's time to]] ((start)) the meeting.",
+     "zh": "该开会了。"
+    },
+    {
+     "rule": "It's time for + 名词",
+     "en": "[[It's time for]] lunch.",
+     "zh": "该吃午饭了。"
+    },
+    {
+     "rule": "It's time + 主语 + 过去式：早该做了，有点晚了",
+     "en": "[[It's time]] we [[updated]] this old code.",
+     "zh": "这些老代码早该更新了。"
+    },
+    {
+     "rule": "It's high time / about time：语气更强",
+     "en": "[[It's high time]] you [[got]] a new laptop.",
+     "zh": "你真该换台新电脑了。"
+    }
+   ]
+  },
+  "self": {
+   "title": "I'd rather：我更想", "short": "我想",
+   "formula": [
+    "I'd rather",
+    "动词原形",
+    "（than + 动词原形）"
+   ],
+   "rule": "I'd rather = I would rather，后面直接跟**动词原形**，不加 to。要比较就加 than，than 后面也是原形。",
+   "examples": [
+    {
+     "en": "[[I'd rather]] ((work)) from home today.",
+     "zh": "我今天更想在家办公。"
+    },
+    {
+     "en": "[[I'd rather]] ((walk)) than ((take)) the bus.",
+     "zh": "我宁愿走路，也不想坐公交。"
+    },
+    {
+     "en": "[[I'd rather]] not ((talk)) about it.",
+     "zh": "我不太想聊这个。"
+    }
+   ],
+   "wrong": {
+    "bad": "I'd rather ~~to~~ stay here.",
+    "good": "[[I'd rather]] ((stay)) here."
+   },
+   "notes": [
+    "not 放在 rather 后面：I'd rather [[not]]。问别人：[[Would you rather]] ((have)) tea or coffee?"
+   ]
+  },
+  "other": {
+   "title": "I'd rather 别人……", "short": "别人",
+   "formula": [
+    "I'd rather",
+    "别人",
+    "过去式"
+   ],
+   "rule": "想让**别人**做或不做什么，用过去式，说的却是现在或将来。这是一种很客气的说法。",
+   "examples": [
+    {
+     "en": "[[I'd rather]] you [[came]] tomorrow.",
+     "zh": "你要是明天来就更好了。"
+    },
+    {
+     "en": "[[I'd rather]] you [[didn't]] ((push)) to main.",
+     "zh": "希望你别直接推到 main 分支。"
+    },
+    {
+     "en": "[[I'd rather]] we [[met]] in person.",
+     "zh": "我更想我们当面聊。"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "prefer",
+     "this": {
+      "meaning": "I'd rather + 原形 + than + 原形",
+      "en": "[[I'd rather]] ((read)) than ((watch)) TV."
+     },
+     "that": {
+      "meaning": "prefer + -ing + to + -ing",
+      "en": "I [[prefer]] reading [[to]] watching TV."
+     }
+    },
+    {
+     "with": "It's time to",
+     "this": {
+      "meaning": "It's time we left：早该走了",
+      "en": "[[It's time]] we [[left]]."
+     },
+     "that": {
+      "meaning": "It's time to leave：普通地说该走了",
+      "en": "[[It's time to]] ((leave))."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "It's time we ~~go~~ home.",
+     "good": "It's time we [[went]] home.",
+     "why": "It's time + 主语，后面用过去式。"
+    },
+    {
+     "bad": "I'd rather ~~to~~ stay here.",
+     "good": "[[I'd rather]] ((stay)) here.",
+     "why": "rather 后面直接跟原形，不加 to。"
+    },
+    {
+     "bad": "I'd rather you ~~don't~~ tell him.",
+     "good": "I'd rather you [[didn't]] tell him.",
+     "why": "说别人时用过去式。"
+    },
+    {
+     "bad": "I'd ~~not rather~~ go.",
+     "good": "I'd rather [[not]] go.",
+     "why": "not 放在 rather 后面。"
+    },
+    {
+     "bad": "I'd rather walk than ~~taking~~ the bus.",
+     "good": "I'd rather walk than ((take)) the bus.",
+     "why": "than 后面也用原形。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "It's late. It's time ___ home.",
+   "options": [
+    "to go",
+    "going",
+    "go"
+   ],
+   "answer": "to go",
+   "explain": "普通地说该做了：[[It's time to]] + 原形。"
+  },
+  {
+   "id": "q02",
+   "section": "time",
+   "type": "fill",
+   "prompt": "It's time we ___ (update) this old code.",
+   "answer": "updated",
+   "accept": [],
+   "traps": [
+    {
+     "input": "update",
+     "note": "It's time we 后面要用过去式 updated，意思是「早该做了」。"
+    }
+   ],
+   "explain": "It's time + 主语，用过去式：[[updated]]。"
+  },
+  {
+   "id": "q03",
+   "section": "time",
+   "type": "choice",
+   "prompt": "It's time ___ lunch.",
+   "options": [
+    "for",
+    "to",
+    "of"
+   ],
+   "answer": "for",
+   "explain": "后面是名词，用 [[It's time for]]。"
+  },
+  {
+   "id": "q04",
+   "section": "time",
+   "type": "transform",
+   "prompt": "用 It's time we 改写：We should leave now. We're already late.",
+   "answer": "It's time we left.",
+   "accept": [
+    "It's time we left now.",
+    "It is time we left."
+   ],
+   "explain": "主语后面用过去式：[[It's time]] we [[left]]。"
+  },
+  {
+   "id": "q05",
+   "section": "self",
+   "type": "choice",
+   "prompt": "I'd rather ___ from home today.",
+   "options": [
+    "work",
+    "to work",
+    "working"
+   ],
+   "answer": "work",
+   "explain": "rather 后面直接跟原形：[[I'd rather]] ((work))。"
+  },
+  {
+   "id": "q06",
+   "section": "self",
+   "type": "fix",
+   "prompt": "改错：I'd rather to stay here.",
+   "answer": "I'd rather stay here.",
+   "accept": [
+    "I would rather stay here."
+   ],
+   "explain": "去掉 to：[[I'd rather]] ((stay))。"
+  },
+  {
+   "id": "q07",
+   "section": "self",
+   "type": "fill",
+   "prompt": "I'd rather walk than ___ (take) the bus.",
+   "answer": "take",
+   "accept": [],
+   "traps": [
+    {
+     "input": "taking",
+     "note": "I'd rather … than 两边都是原形：than take。"
+    }
+   ],
+   "explain": "than 后面也用原形：((take))。"
+  },
+  {
+   "id": "q08",
+   "section": "self",
+   "type": "make-question",
+   "prompt": "用 Would you rather 提问：问对方想喝茶还是咖啡。",
+   "answer": "Would you rather have tea or coffee?",
+   "accept": [
+    "Would you rather drink tea or coffee?"
+   ],
+   "explain": "[[Would you rather]] + 原形 + A or B？"
+  },
+  {
+   "id": "q09",
+   "section": "other",
+   "type": "fill",
+   "prompt": "I'd rather you ___ (not tell) anyone yet.",
+   "answer": "didn't tell",
+   "accept": [
+    "did not tell"
+   ],
+   "traps": [
+    {
+     "input": "don't tell",
+     "note": "I'd rather you 后面用过去式：didn't tell。"
+    }
+   ],
+   "explain": "说别人，用过去式：[[didn't]] ((tell))。"
+  },
+  {
+   "id": "q10",
+   "section": "other",
+   "type": "choice",
+   "prompt": "I'd rather we ___ in person next time.",
+   "options": [
+    "met",
+    "meet",
+    "will meet"
+   ],
+   "answer": "met",
+   "explain": "说别人（we），用过去式：[[met]]。"
+  },
+  {
+   "id": "q11",
+   "section": "other",
+   "type": "transform",
+   "prompt": "用 I'd rather 客气地改写：Please don't push to main.",
+   "answer": "I'd rather you didn't push to main.",
+   "accept": [
+    "I would rather you didn't push to main.",
+    "I'd rather you did not push to main."
+   ],
+   "explain": "[[I'd rather]] you + 过去式。"
+  },
+  {
+   "id": "q12",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I prefer reading ___ watching TV.",
+   "options": [
+    "to",
+    "than"
+   ],
+   "answer": "to",
+   "explain": "prefer A [[to]] B。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I'd rather walk than taking the bus.",
+   "answer": "I'd rather walk than take the bus.",
+   "accept": [
+    "I would rather walk than take the bus."
+   ],
+   "explain": "than 后面用原形：((take))。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I'd not rather talk about it.",
+   "answer": "I'd rather not talk about it.",
+   "accept": [
+    "I would rather not talk about it."
+   ],
+   "explain": "not 放在 rather 后面：I'd rather [[not]]。"
+  },
+  {
+   "id": "q15",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：你早该换台新电脑了。（用 It's high time）",
+   "answer": "It's high time you got a new laptop.",
+   "accept": [
+    "It's high time you got a new computer.",
+    "It is high time you got a new laptop.",
+    "It is high time you got a new computer.",
+    "It's high time you bought a new laptop.",
+    "It's high time you bought a new computer.",
+    "It is high time you bought a new laptop.",
+    "It is high time you bought a new computer."
+   ],
+   "explain": "[[It's high time]] + 主语 + 过去式。"
+  }
+ ],
+ "openTask": {
+  "prompt": "说 3 句话：一句用 It's time we…（说团队早该做的事），一句用 I'd rather … than …，一句用 I'd rather you…客气地提个要求。",
+  "rules": [
+   "It's time / I'd rather 后面接别人时用过去式",
+   "I'd rather 自己做时接原形，不加 to"
+  ],
+  "note": "规则判动词形式（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

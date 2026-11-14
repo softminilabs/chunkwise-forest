@@ -1,0 +1,450 @@
+{
+ "id": "g-possessives",
+ "title": "所有格",
+ "en": "Possessives",
+ "group": "名词和代词",
+ "level": "A2",
+ "order": 41,
+ "keywords": [
+  "所有格"
+ ],
+ "related": [
+  "g-pronouns",
+  "g-articles",
+  "g-countable"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清",
+   "short": "说清",
+   "text": "所有格就是中文的「**的**」。人和动物的东西，多用 **'s**：Tom's laptop；东西的某一部分，多用 **of**：the end of the meeting。",
+   "uses": [
+    {
+     "zh": "人的东西：名字加 's",
+     "en": "This is [[Tom{'s}]] laptop.",
+     "en_zh": "这是 Tom 的电脑。"
+    },
+    {
+     "zh": "好几个人的东西：s 后面只加 '",
+     "en": "The [[users{'}]] feedback was mixed.",
+     "en_zh": "用户们的反馈褒贬不一。"
+    },
+    {
+     "zh": "东西的一部分：用 of，顺序和中文反过来",
+     "en": "Let's talk at [[the end of]] the meeting.",
+     "en_zh": "我们会议结束时再聊。"
+    }
+   ]
+  },
+  "apostrophe": {
+   "title": "'s 怎么加",
+   "short": "怎么加",
+   "rule": "一个人加 's；s 结尾的复数只加 '；不是 s 结尾的复数（people、children）还是加 's。",
+   "rules": [
+    {
+     "ending": "一个人、单数名词",
+     "change": "加 's",
+     "examples": [
+      "Tom → [[Tom{'s}]]",
+      "my boss → my [[boss{'s}]]"
+     ]
+    },
+    {
+     "ending": "s 结尾的复数",
+     "change": "只加 '",
+     "examples": [
+      "users → the [[users{'}]]",
+      "parents → my [[parents{'}]]"
+     ]
+    },
+    {
+     "ending": "不是 s 结尾的复数",
+     "change": "加 's",
+     "examples": [
+      "children → [[children{'s}]]",
+      "people → [[people{'s}]]"
+     ]
+    },
+    {
+     "ending": "两个人一起的",
+     "change": "只在最后一个人加 's",
+     "examples": [
+      "[[Tom and Anna{'s}]] flat"
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "en": "My [[boss{'s}]] office is on the third floor.",
+     "zh": "我老板的办公室在三楼。"
+    },
+    {
+     "en": "I'm staying at my [[parents{'}]] this week.",
+     "zh": "这周我住在我爸妈家。"
+    },
+    {
+     "en": "[[Tom and Anna{'s}]] flat is near the station.",
+     "zh": "Tom 和 Anna 的公寓在车站附近。"
+    }
+   ],
+   "sound": [
+    {
+     "say": "/s/",
+     "when": "在 p、t、k、f 这类不震动喉咙的音后面",
+     "examples": [
+      "[[Mike{'s}]]",
+      "[[Pat{'s}]]"
+     ]
+    },
+    {
+     "say": "/z/",
+     "when": "在震动喉咙的音和元音后面",
+     "examples": [
+      "[[Tom{'s}]]",
+      "[[Anna{'s}]]"
+     ]
+    },
+    {
+     "say": "/ɪz/",
+     "when": "在 s、z、sh、ch 这类「嘶嘶」的音后面",
+     "examples": [
+      "[[boss{'s}]]",
+      "[[James{'s}]]"
+     ]
+    }
+   ],
+   "oddSounds": "只加 ' 的复数（users'）不多读音，和 users 读起来一模一样。"
+  },
+  "of": {
+   "title": "什么时候用 of",
+   "short": "用 of",
+   "rule": "说**东西的一部分、东西的名字或特点**，一般用 of。顺序和中文反过来：「会议的结尾」= the end **of** the meeting。",
+   "examples": [
+    {
+     "en": "What's [[the name of]] the file?",
+     "zh": "那个文件叫什么名字？"
+    },
+    {
+     "en": "The button is at [[the top of]] the screen.",
+     "zh": "按钮在屏幕顶部。"
+    },
+    {
+     "en": "I'll send it by [[the end of]] the day.",
+     "zh": "我今天下班前发给你。"
+    }
+   ],
+   "notes": [
+    "公司、团队这种「一群人」两种都行：[[the team{'s}]] plan = the plan [[of the team]]，口语里 's 更常用。"
+   ]
+  },
+  "time-place": {
+   "title": "时间和地方的 's",
+   "short": "时间",
+   "rule": "说「今天的、下周的」或者「两周的」，也用 's。说**某人家、某家店**时，后面的「家」「店」常常省掉不说。",
+   "items": [
+    {
+     "rule": "今天的、下周的",
+     "en": "Did you go to [[today{'s}]] stand-up?",
+     "zh": "你去今天的站会了吗？"
+    },
+    {
+     "rule": "一段时间：两周的假",
+     "en": "I'm taking [[two weeks{'}]] holiday.",
+     "zh": "我要休两周的假。"
+    },
+    {
+     "rule": "某人家，home 省掉",
+     "en": "We had dinner at [[Anna{'s}]].",
+     "zh": "我们在 Anna 家吃的晚饭。"
+    },
+    {
+     "rule": "某家店，shop 省掉",
+     "en": "I'm going to [[the chemist{'s}]].",
+     "zh": "我去趟药店。"
+    }
+   ]
+  },
+  "whose": {
+   "title": "问「谁的」",
+   "short": "谁的",
+   "rule": "问「谁的」用 whose。别和 who's 搞混：**who's 就是 who is**，读音一样，意思完全不同。",
+   "examples": [
+    {
+     "en": "[[Whose]] laptop is this?",
+     "zh": "这是谁的电脑？",
+     "answer": "It's [[Leo{'s}]]."
+    },
+    {
+     "en": "[[Whose]] turn is it to review the code?",
+     "zh": "轮到谁看代码了？",
+     "answer": "It's [[mine]], I think."
+    }
+   ],
+   "wrong": {
+    "bad": "~~Who's~~ phone is ringing?",
+    "good": "[[Whose]] phone is ringing?"
+   }
+  },
+  "contrast": {
+   "title": "比一比，最常见的错",
+   "short": "比一比",
+   "pairs": [
+    {
+     "with": "复数的 s",
+     "this": {
+      "meaning": "'s：某人的东西",
+      "en": "The [[developer{'s}]] laptop is new."
+     },
+     "that": {
+      "meaning": "s：好几个",
+      "en": "The [[developer{s}]] are new."
+     }
+    },
+    {
+     "with": "it's",
+     "this": {
+      "meaning": "its：它的（没有撇号）",
+      "en": "The app has [[its]] own settings."
+     },
+     "that": {
+      "meaning": "it's：就是 it is",
+      "en": "[[It's]] a great app."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "This is ~~the laptop of Tom~~.",
+     "good": "This is [[Tom{'s}]] laptop.",
+     "why": "人的东西用 's，不用 of。"
+    },
+    {
+     "bad": "The ~~users's~~ feedback was good.",
+     "good": "The [[users{'}]] feedback was good.",
+     "why": "s 结尾的复数只加 '。"
+    },
+    {
+     "bad": "~~Who's~~ bag is this?",
+     "good": "[[Whose]] bag is this?",
+     "why": "问「谁的」用 whose，who's 是 who is。"
+    },
+    {
+     "bad": "The app updated ~~it's~~ icon.",
+     "good": "The app updated [[its]] icon.",
+     "why": "「它的」是 its，没有撇号。"
+    },
+    {
+     "bad": "Two ~~developer's~~ joined today.",
+     "good": "Two [[developer{s}]] joined today.",
+     "why": "只是「好几个」，不是「谁的」，不加撇号。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：这是 Tom 的电脑。",
+   "answer": "This is Tom's laptop.",
+   "accept": [
+    "This is Tom's computer.",
+    "It's Tom's laptop.",
+    "It is Tom's laptop."
+   ],
+   "explain": "人的东西，名字加 's：[[Tom{'s}]] laptop。"
+  },
+  {
+   "id": "q02",
+   "section": "apostrophe",
+   "type": "fill",
+   "prompt": "My ___ (boss) office is on the third floor.",
+   "answer": "boss's",
+   "accept": [],
+   "traps": [
+    {
+     "input": "bosses",
+     "note": "这里是「老板的」，不是「好几个老板」。"
+    }
+   ],
+   "explain": "一个人加 's：[[boss{'s}]]。"
+  },
+  {
+   "id": "q03",
+   "section": "apostrophe",
+   "type": "choice",
+   "prompt": "The ___ feedback was mixed.（好几个用户的反馈）",
+   "options": [
+    "user's",
+    "users'",
+    "users's"
+   ],
+   "answer": "users'",
+   "explain": "s 结尾的复数只加 '：[[users{'}]]。"
+  },
+  {
+   "id": "q04",
+   "section": "apostrophe",
+   "type": "fill",
+   "prompt": "The ___ (children) room is upstairs.",
+   "answer": "children's",
+   "accept": [],
+   "explain": "不是 s 结尾的复数，加 's：[[children{'s}]]。"
+  },
+  {
+   "id": "q05",
+   "section": "apostrophe",
+   "type": "choice",
+   "prompt": "Tom's 结尾的 's 读作",
+   "options": [
+    "/s/",
+    "/z/",
+    "/ɪz/"
+   ],
+   "answer": "/z/",
+   "explain": "m 是震动喉咙的音，后面的 's 读 /z/。"
+  },
+  {
+   "id": "q06",
+   "section": "of",
+   "type": "choice",
+   "prompt": "Let's discuss it at ___.",
+   "options": [
+    "the end of the meeting",
+    "the meeting of the end",
+    "the end's meeting"
+   ],
+   "answer": "the end of the meeting",
+   "explain": "东西的一部分用 of，顺序和中文反过来：[[the end of]] the meeting。"
+  },
+  {
+   "id": "q07",
+   "section": "of",
+   "type": "translate",
+   "prompt": "翻译：这个文件叫什么名字？",
+   "answer": "What's the name of the file?",
+   "accept": [
+    "What is the name of the file?",
+    "What's the name of this file?",
+    "What is the name of this file?"
+   ],
+   "explain": "东西的名字用 of：[[the name of]] the file。"
+  },
+  {
+   "id": "q08",
+   "section": "time-place",
+   "type": "fill",
+   "prompt": "Did you go to ___ (today) stand-up?",
+   "answer": "today's",
+   "accept": [],
+   "explain": "「今天的」用 's：[[today{'s}]]。"
+  },
+  {
+   "id": "q09",
+   "section": "time-place",
+   "type": "fill",
+   "prompt": "I'm taking two ___ (week) holiday.",
+   "answer": "weeks'",
+   "accept": [],
+   "traps": [
+    {
+     "input": "weeks",
+     "note": "「两周的」假，要加撇号：weeks'。"
+    }
+   ],
+   "explain": "两周的，s 结尾的复数只加 '：[[two weeks{'}]]。"
+  },
+  {
+   "id": "q10",
+   "section": "time-place",
+   "type": "choice",
+   "prompt": "We had dinner at ___ last night.（在 Anna 家）",
+   "options": [
+    "Anna",
+    "Anna's",
+    "Annas"
+   ],
+   "answer": "Anna's",
+   "explain": "某人家，home 省掉：at [[Anna{'s}]]。"
+  },
+  {
+   "id": "q11",
+   "section": "whose",
+   "type": "choice",
+   "prompt": "___ laptop is this?",
+   "options": [
+    "Who's",
+    "Whose",
+    "Who"
+   ],
+   "answer": "Whose",
+   "explain": "问「谁的」用 [[Whose]]。"
+  },
+  {
+   "id": "q12",
+   "section": "whose",
+   "type": "make-question",
+   "prompt": "按括号里的提示提问：That's Anna's charger.（问「谁的」）",
+   "answer": "Whose charger is that?",
+   "accept": [
+    "Whose charger is it?",
+    "Whose is that charger?"
+   ],
+   "traps": [
+    {
+     "input": "Who's charger is that?",
+     "note": "who's 是 who is，问「谁的」用 whose。"
+    }
+   ],
+   "explain": "[[Whose]] + 东西 + is that？"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：The app updated it's icon.",
+   "answer": "The app updated its icon.",
+   "accept": [],
+   "explain": "「它的」是 [[its]]，没有撇号。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：This is the laptop of Tom.",
+   "answer": "This is Tom's laptop.",
+   "accept": [],
+   "explain": "人的东西用 's：[[Tom{'s}]] laptop。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "Two ___ joined the team today.",
+   "options": [
+    "developer's",
+    "developers",
+    "developers'"
+   ],
+   "answer": "developers",
+   "explain": "只是「两个」，不是「谁的」，不加撇号：[[developer{s}]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 3 句话介绍你工位周围的东西或同事，至少用一个 's（比如 my manager's desk），一个 of（比如 the end of the day），再用 whose 问一个问题。",
+  "rules": [
+   "单数名词加 's，s 结尾的复数只加 '",
+   "东西的一部分用 of 结构",
+   "「它的」写 its，「谁的」写 whose"
+  ],
+  "note": "规则判 's / s' / of / whose 用法（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}

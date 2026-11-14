@@ -1,0 +1,401 @@
+{
+ "id": "g-wish",
+ "title": "I wish / If only",
+ "en": "Wishes and Regrets",
+ "group": "B2 进阶",
+ "level": "B2",
+ "order": 52,
+ "keywords": [
+  "wish",
+  "If only"
+ ],
+ "related": [
+  "g-conditionals-012",
+  "g-conditionals-3-mixed",
+  "g-its-time-rather"
+ ],
+ "markup": {
+  "[[x]]": "重点形式：这个语法要你注意的词（橙底）",
+  "{x}": "变化的部分：只用在 [[ ]] 里，例如 work{s}（橙底里加粗下划线）",
+  "((x))": "变回原形的动词（虚线下划线）",
+  "<<x>>": "信号词（圆角框）",
+  "~~x~~": "错句里错的部分（删除线）"
+ },
+ "sections": {
+  "idea": {
+   "title": "一句话说清", "short": "说清",
+   "text": "wish 说的是**和现实相反的愿望**。秘诀是**往过去退一步**：想要现在不一样，用过去时；后悔过去，用 had done。If only 意思一样，语气更强。",
+   "uses": [
+    {
+     "zh": "希望现在不一样",
+     "en": "I [[wish]] I [[had]] more time.",
+     "en_zh": "要是我有更多时间就好了。（现在没有）"
+    },
+    {
+     "zh": "后悔过去",
+     "en": "I [[wish]] I [[had left]] earlier.",
+     "en_zh": "要是我早点走就好了。（当时没早走）"
+    },
+    {
+     "zh": "希望别人改一改",
+     "en": "I [[wish]] you [[would]] ((stop)) interrupting me.",
+     "en_zh": "希望你别再打断我了。"
+    }
+   ]
+  },
+  "present": {
+   "title": "希望现在不一样", "short": "现在",
+   "formula": [
+    "I wish",
+    "主语",
+    "过去式"
+   ],
+   "rule": "说**现在**的事，退一步用过去时。I wish I had a car = 可惜我现在没车。be 动词常用 were。",
+   "examples": [
+    {
+     "en": "I [[wish]] I [[knew]] the answer.",
+     "zh": "要是我知道答案就好了。"
+    },
+    {
+     "en": "I [[wish]] I [[lived]] closer to the office.",
+     "zh": "要是我住得离公司近点就好了。"
+    },
+    {
+     "en": "I [[wish]] it [[were]] Friday.",
+     "zh": "要是今天是周五就好了。"
+    },
+    {
+     "en": "I [[wish]] I [[could]] speak French.",
+     "zh": "要是我会说法语就好了。"
+    }
+   ],
+   "notes": [
+    "was 和 were 都可以：聊天常说 I wish it was…，正式一点用 were。",
+    "can 退一步变 could，will 退一步变 would。"
+   ]
+  },
+  "past": {
+   "title": "后悔过去", "short": "过去",
+   "formula": [
+    "I wish",
+    "主语",
+    "had + 过去分词"
+   ],
+   "rule": "说**过去**的事，退一步用 had + 过去分词，意思是「要是当时……就好了」。这就是后悔。",
+   "examples": [
+    {
+     "en": "I [[wish]] I [[had backed up]] my files.",
+     "zh": "要是我之前备份了文件就好了。"
+    },
+    {
+     "en": "I [[wish]] we [[hadn't released]] it on a Friday.",
+     "zh": "要是我们没在周五发布就好了。"
+    },
+    {
+     "en": "She [[wishes]] she [[had taken]] the job.",
+     "zh": "她后悔当初没接那份工作。"
+    }
+   ]
+  },
+  "would": {
+   "title": "希望别人改一改", "short": "would",
+   "formula": [
+    "I wish",
+    "别人 / 事情",
+    "would",
+    "动词原形"
+   ],
+   "rule": "对**别人或某件事**不满意，希望它变，用 would + 原形，带点抱怨。说自己不能用 I wish I would。",
+   "examples": [
+    {
+     "en": "I [[wish]] you [[would]] ((reply)) to my emails.",
+     "zh": "真希望你能回一下我的邮件。"
+    },
+    {
+     "en": "I [[wish]] it [[would]] ((stop)) raining.",
+     "zh": "要是雨能停就好了。"
+    },
+    {
+     "en": "I [[wish]] the build [[would]] ((finish)) faster.",
+     "zh": "构建能快点跑完就好了。"
+    }
+   ],
+   "wrong": {
+    "bad": "I wish ~~I would~~ have more time.",
+    "good": "I wish I [[had]] more time."
+   }
+  },
+  "ifonly": {
+   "title": "If only：语气更强", "short": "加强",
+   "rule": "If only 和 I wish 用法一样，**感情更强**，常常单独说一句，带着「唉，要是……该多好」的感觉。",
+   "examples": [
+    {
+     "en": "[[If only]] I [[had]] more time!",
+     "zh": "唉，要是我时间多一点就好了！"
+    },
+    {
+     "en": "[[If only]] we [[had tested]] it first!",
+     "zh": "要是我们先测一下就好了！"
+    },
+    {
+     "en": "[[If only]] he [[would]] ((listen))!",
+     "zh": "他要是能听进去就好了！"
+    }
+   ]
+  },
+  "contrast": {
+   "title": "比一比", "short": "比一比",
+   "pairs": [
+    {
+     "with": "hope",
+     "this": {
+      "meaning": "wish：和现实相反，不太可能",
+      "en": "I [[wish]] I [[had]] a bigger flat."
+     },
+     "that": {
+      "meaning": "hope：真的可能发生",
+      "en": "I [[hope]] the demo [[goes]] well."
+     }
+    },
+    {
+     "with": "wish + had done",
+     "this": {
+      "meaning": "wish + 过去式：说现在",
+      "en": "I wish I [[spoke]] German."
+     },
+     "that": {
+      "meaning": "wish + had done：说过去",
+      "en": "I wish I [[had studied]] German at school."
+     }
+    }
+   ],
+   "commonMistakes": [
+    {
+     "bad": "I wish I ~~have~~ a car.",
+     "good": "I wish I [[had]] a car.",
+     "why": "说现在要退一步，用过去时。"
+    },
+    {
+     "bad": "I wish I ~~didn't go~~ to the party last night.",
+     "good": "I wish I [[hadn't gone]] to the party last night.",
+     "why": "说过去要再退一步，用 had done。"
+    },
+    {
+     "bad": "I wish I ~~can~~ come.",
+     "good": "I wish I [[could]] come.",
+     "why": "can 退一步变 could。"
+    },
+    {
+     "bad": "I ~~wish~~ you have a good holiday.",
+     "good": "I [[hope]] you have a good holiday.",
+     "why": "祝别人、真能发生的事用 hope。也可以说 I wish you a good holiday。"
+    }
+   ]
+  }
+ },
+ "quiz": [
+  {
+   "id": "q01",
+   "section": "idea",
+   "type": "choice",
+   "prompt": "I wish I ___ more time to learn French.",
+   "options": [
+    "had",
+    "have",
+    "will have",
+    "would have"
+   ],
+   "answer": "had",
+   "explain": "说现在，退一步用过去式：[[had]]。"
+  },
+  {
+   "id": "q02",
+   "section": "present",
+   "type": "fill",
+   "prompt": "I wish I ___ (live) closer to the office.",
+   "answer": "lived",
+   "accept": [],
+   "traps": [
+    {
+     "input": "live",
+     "note": "wish 后面说现在的事，要退一步用过去式 lived。"
+    }
+   ],
+   "explain": "说现在，用过去式：[[lived]]。"
+  },
+  {
+   "id": "q03",
+   "section": "present",
+   "type": "fill",
+   "prompt": "I wish it ___ (be) Friday today.",
+   "answer": "were",
+   "accept": [
+    "was"
+   ],
+   "explain": "be 动词常用 [[were]]，口语也说 was。"
+  },
+  {
+   "id": "q04",
+   "section": "present",
+   "type": "choice",
+   "prompt": "I wish I ___ speak Japanese.",
+   "options": [
+    "could",
+    "can",
+    "will"
+   ],
+   "answer": "could",
+   "explain": "can 退一步变 [[could]]。"
+  },
+  {
+   "id": "q05",
+   "section": "past",
+   "type": "fill",
+   "prompt": "I wish I ___ (back up) my files before the update.",
+   "answer": "had backed up",
+   "accept": [],
+   "traps": [
+    {
+     "input": "backed up",
+     "note": "说过去的事要再退一步：had backed up。"
+    }
+   ],
+   "explain": "后悔过去：[[had backed up]]。"
+  },
+  {
+   "id": "q06",
+   "section": "past",
+   "type": "fix",
+   "prompt": "改错：I wish I didn't go to the party last night.",
+   "answer": "I wish I hadn't gone to the party last night.",
+   "accept": [
+    "I wish I had not gone to the party last night."
+   ],
+   "explain": "last night 是过去，用 [[hadn't gone]]。"
+  },
+  {
+   "id": "q07",
+   "section": "past",
+   "type": "transform",
+   "prompt": "用 I wish 改写：I'm sorry I didn't take the job.",
+   "answer": "I wish I had taken the job.",
+   "accept": [
+    "I wish I'd taken the job."
+   ],
+   "explain": "当时没接，现在后悔：[[had taken]]。"
+  },
+  {
+   "id": "q08",
+   "section": "would",
+   "type": "fill",
+   "prompt": "I wish you ___ (stop) interrupting me in meetings.",
+   "answer": "would stop",
+   "accept": [],
+   "explain": "希望别人改：[[would]] + 原形。"
+  },
+  {
+   "id": "q09",
+   "section": "would",
+   "type": "choice",
+   "prompt": "I wish it ___ raining. I want to go for a run.",
+   "options": [
+    "would stop",
+    "stops",
+    "will stop"
+   ],
+   "answer": "would stop",
+   "explain": "希望事情变：[[would]] ((stop))。"
+  },
+  {
+   "id": "q10",
+   "section": "would",
+   "type": "fix",
+   "prompt": "改错：I wish I would have a bigger flat.",
+   "answer": "I wish I had a bigger flat.",
+   "accept": [],
+   "explain": "说自己不用 would，用过去式 [[had]]。"
+  },
+  {
+   "id": "q11",
+   "section": "ifonly",
+   "type": "choice",
+   "prompt": "If only we ___ it before the release!",
+   "options": [
+    "had tested",
+    "tested",
+    "have tested"
+   ],
+   "answer": "had tested",
+   "explain": "后悔过去：[[had tested]]。"
+  },
+  {
+   "id": "q12",
+   "section": "ifonly",
+   "type": "transform",
+   "prompt": "用 If only 改写：I wish I knew her number.",
+   "answer": "If only I knew her number!",
+   "accept": [
+    "If only I knew her number."
+   ],
+   "explain": "直接把 I wish 换成 [[If only]]。"
+  },
+  {
+   "id": "q13",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I ___ you have a good holiday!",
+   "options": [
+    "hope",
+    "wish"
+   ],
+   "answer": "hope",
+   "explain": "真心祝愿、真能发生，用 [[hope]]。"
+  },
+  {
+   "id": "q14",
+   "section": "contrast",
+   "type": "fix",
+   "prompt": "改错：I wish I have a car.",
+   "answer": "I wish I had a car.",
+   "accept": [],
+   "explain": "说现在退一步：[[had]]。"
+  },
+  {
+   "id": "q15",
+   "section": "contrast",
+   "type": "choice",
+   "prompt": "I wish I ___ German at school. Now I need it for work.",
+   "options": [
+    "had studied",
+    "studied",
+    "study"
+   ],
+   "answer": "had studied",
+   "explain": "at school 是过去：[[had studied]]。"
+  },
+  {
+   "id": "q16",
+   "section": "idea",
+   "type": "translate",
+   "prompt": "翻译：要是我昨晚早点睡就好了。",
+   "answer": "I wish I had gone to bed earlier last night.",
+   "accept": [
+    "I wish I'd gone to bed earlier last night.",
+    "If only I had gone to bed earlier last night.",
+    "If only I'd gone to bed earlier last night.",
+    "I wish I had gone to bed earlier yesterday.",
+    "I wish I had gone to sleep earlier last night.",
+    "I wish I'd gone to sleep earlier last night."
+   ],
+   "explain": "后悔过去：I wish I [[had gone]]。"
+  }
+ ],
+ "openTask": {
+  "prompt": "用 I wish 说 3 句话：一个对现在的愿望，一个对过去的后悔，一个希望别人或某件事改一改。",
+  "rules": [
+   "说现在用过去式，说过去用 had + 过去分词",
+   "希望别人改用 would + 原形，不说 I wish I would"
+  ],
+  "note": "规则判 wish 后面的时态（计分）；离线模型给更自然的说法（AI 建议，不计分）"
+ }
+}
