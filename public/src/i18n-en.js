@@ -232,7 +232,7 @@ export const EN = {
   '还没有在学的词': 'No words in progress yet',
   '还没有学过的词': 'No learned words yet',
   '这一级的词都学过了': 'Every word at this level is learned',
-  '{level} 里还没学的前 {n} 个': 'First {n} new words in {level}',
+  '{level} 里还没学的，随机 {n} 个': '{n} random new words in {level}',
   '听哪些': 'Which words',
   '发音': 'Accent',
   '英音': 'British',

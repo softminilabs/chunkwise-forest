@@ -25,7 +25,8 @@ const SOURCES = {
   today: { name: t('今天的词'), none: t('今天还没学词'), refs: listen => listen.ctx.words.progress.today() },
   learning: { name: t('在学的'), none: t('还没有在学的词'), refs: listen => learning(listen.ctx.words.progress).slice(0, LIMIT) },
   learned: { name: t('学过的'), none: t('还没有学过的词'), refs: listen => listen.ctx.words.progress.learned().slice(0, LIMIT) },
-  // 没学的：在学的那一级里还没学的头一批。什么都没学过的人前三样全是空的，靠它才有东西听
+  // 没学的：在学的那一级里还没学的，每回随机抽一批（照词库的顺序取，回回都从同一个词开始）。
+  // 什么都没学过的人前三样全是空的，靠它才有东西听
   fresh: { name: t('没学的'), none: t('这一级的词都学过了') },
 }
 const OPTIONS = [
@@ -40,6 +41,16 @@ const read = () => { try { return { ...DEFAULTS, ...JSON.parse(localStorage.getI
 const save = opts => { try { localStorage.setItem('cw.listen', JSON.stringify(opts)) } catch {} }
 const word = listen => listen.words[listen.at]
 const wait = (listen, ms) => new Promise(done => { listen.release = done; listen.timer = setTimeout(done, ms) })
+
+/// 从 list 里随机抽 count 个
+function sample(list, count) {
+  const pool = [...list]
+  for (let k = pool.length - 1; k > 0; k--) {
+    const j = Math.floor(Math.random() * (k + 1));
+    [pool[k], pool[j]] = [pool[j], pool[k]]
+  }
+  return pool.slice(0, count)
+}
 
 /// 在学的：到期的和学会的并在一起，早到期的在前
 function learning(progress) {
@@ -188,14 +199,14 @@ async function load(listen, auto = false) {
   const turn = ++listen.turn
   const { progress } = listen.ctx.words
   const fresh = listen.source === 'fresh'
-  const words = fresh ? progress.newWords(await loadLevel(progress.store.level), FRESH) : await wordsOf(SOURCES[listen.source].refs(listen))
+  const words = fresh ? sample(progress.newWords(await loadLevel(progress.store.level), Infinity), FRESH) : await wordsOf(SOURCES[listen.source].refs(listen))
   if (turn !== listen.turn) return
   const next = ORDER[ORDER.indexOf(listen.source) + 1]
   // 别让人一打开就对着一句「今天还没学词」
   if (!words.length && auto && next && listen.source !== 'refs') { listen.source = next; return load(listen, true) }
   for (const button of listen.view.root.querySelectorAll('[data-pick^="source:"]')) button.classList.toggle('is-on', button.dataset.pick === `source:${listen.source}`)
   listen.words = words
-  const name = fresh ? t('{level} 里还没学的前 {n} 个', { level: progress.store.level, n: words.length }) : SOURCES[listen.source].name
+  const name = fresh ? t('{level} 里还没学的，随机 {n} 个', { level: progress.store.level, n: words.length }) : SOURCES[listen.source].name
   listen.view.kicker.textContent = `${t('听单词')} · ${name}`
   for (const button of listen.view.keys.children) button.disabled = !words.length
   goTo(listen, 0)
