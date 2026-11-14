@@ -145,7 +145,7 @@ export const EN = {
   '今天 {n} 个该复习': ({ n }) => `${n} to review today`,
   '今天 {n} 个新词': ({ n }) => `${n} new ${Number(n) === 1 ? 'word' : 'words'} today`,
   '今天的学完了': 'Done for today',
-  '今天的词': "Today's words", '词库': 'Word library', '书': 'L', '听单词': 'Listen to words', '听': '♪', '门': '←',
+  '今天的词': "Today's words", '词库': 'Word library', '书': 'L', '听单词': 'Listen to words', '听': '♪', '门': '←', '图': 'M',
   '← 回森林': '← Forest', '← 回屋里': '← Back to the room',
   '复习 {n} 个': ({ n }) => `${n} to review`,
   '新词 {n} 个': ({ n }) => `${n} new`,

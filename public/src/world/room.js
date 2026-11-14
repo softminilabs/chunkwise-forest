@@ -258,6 +258,9 @@ export const PLACES = {
   // 人站在花盆的左前方、比水壶靠镜头：水壶在他身后那一层举起来，从镜头看是壶从他右手边伸向花盆。
   // 站得和水壶一样深的话，壶身会埋进他身体里，只剩壶嘴露着，像肩膀在出水
   pot: { position: [POT.x, 0, POT.z], height: 0.5, radius: 0.8, reach: 1.5, spot: [POT.x - 1.0, POT.z + 0.9] },
+  // 荣誉墙挂在书桌后面的墙上，人走不到它跟前：reach 给得很小，走近时按空格用的永远是书桌，墙只能点。
+  // position 取板子中心往下 0.4、height 取 0.8：能点的那一块正好是整块板子（face），牌子贴着板子的上沿
+  wall: { position: [BOARD.x, BOARD.y - 0.4, BACK + 0.1], height: 0.8, face: [BOARD.wide / 2, BOARD.tall / 2], reach: 0.2, spot: [1.2, BACK + 1.9] },
 }
 // 坐的地方：[x, 离地多高, z, 脸朝哪儿]。书桌前的凳子（脸朝墙）、壁炉前的扶手椅（脸朝火）
 export const SEATS = { desk: [-1.3, -0.08, BACK + 1.85, Math.PI], listen: [-2.5, 0.42, 1.6, Math.atan2(-2.6, -2.0)] }

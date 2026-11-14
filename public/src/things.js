@@ -10,6 +10,8 @@ export function createThings(root, { onChoose, chrome: chromeSelector = '.hud > 
   const list = []
   const spot = new THREE.Vector3()
   const sphere = new THREE.Sphere()
+  const wall = new THREE.Plane()
+  const SOUTH = new THREE.Vector3(0, 0, 1)
   let hovered = null
 
   /// 标签里的字。东西的名字会变（宝箱打开后换成 App 的名字），所以单拎出来
@@ -41,6 +43,13 @@ export function createThings(root, { onChoose, chrome: chromeSelector = '.hud > 
     return best
   }
 
+  /// 贴在墙上的扁东西（荣誉墙）用球罩不准：要么漏掉四个角，要么连上面的圆窗一起罩进去。
+  /// 按它朝着镜头的那块墙面算，face 是 [半宽, 半高]，中心是 sphere.center
+  function onFace(ray, [wide, tall]) {
+    const hit = ray.intersectPlane(wall.setFromNormalAndCoplanarPoint(SOUTH, sphere.center), spot)
+    return Boolean(hit) && Math.abs(hit.x - sphere.center.x) < wide && Math.abs(hit.y - sphere.center.y) < tall
+  }
+
   /// 鼠标指着哪一样。射线同时穿过好几样的范围时，取中心离射线最近的那个，
   /// 不取离镜头最近的：书架的范围又高又大，会把它后面墙角的花盆整个罩住，点花盆就成了点书架
   function pick(ray) {
@@ -50,7 +59,7 @@ export function createThings(root, { onChoose, chrome: chromeSelector = '.hud > 
       if (thing.off) continue
       sphere.center.set(thing.position.x, thing.position.y + thing.height * 0.5, thing.position.z)
       sphere.radius = Math.max(thing.radius, thing.height * 0.5)
-      if (!ray.intersectsSphere(sphere)) continue
+      if (!(thing.face ? onFace(ray, thing.face) : ray.intersectsSphere(sphere))) continue
       const gap = ray.distanceSqToPoint(sphere.center)
       if (gap < bestGap) { best = thing; bestGap = gap }
     }

@@ -1,5 +1,5 @@
 // 单词屋：屋里是另一个场景（world/room.js），用的是同一台镜头、同一套按键。
-// 这里管进出、在屋里走动、屋里几样东西各开什么：书桌 = 今天的词，书架 = 词库，留声机 = 听单词，花盆 = 选种子和浇水，门 = 回森林
+// 这里管进出、在屋里走动、屋里几样东西各开什么：书桌 = 今天的词，书架 = 词库，留声机 = 听单词，花盆 = 选种子和浇水，荣誉墙 = 森林地图，门 = 回森林
 import * as THREE from 'three'
 import { h } from './core.js'
 import { t } from '../i18n.js'
@@ -11,6 +11,7 @@ import { PLANTS, plantName } from '../world/plants/index.js'
 import { portrait } from '../world/portrait.js'
 import { loadIndex, loadLevel } from '../words/deck.js'
 import { openSeeds } from './seeds.js'
+import { openMap } from './map.js'
 import { openDesk } from './words-desk.js'
 
 const FADE = 340
@@ -33,6 +34,7 @@ export function createLodge(ctx) {
   // 先走到花盆跟前再动手
   const pot = add('pot', { title: t('花盆'), badge: t('种'), use: () => player.goTo(...PLACES.pot.spot, 0.35, usePot) })
   add('door', { title: t('回森林'), badge: t('门'), use: leave })
+  add('wall', { title: t('森林地图'), badge: t('图'), use: () => openMap(ctx) })
   hud.append(h('button', { class: 'pill', type: 'button', onclick: () => leave() }, t('← 回森林')), h('div', { class: 'brand sticker' }, h('strong', {}, t('单词屋')), brand), ctx.water.chip())
 
   /// 今天还有几个要复习、几个新词可学。屋外的牌子、屋里书桌的牌子、顶栏上那行字都用它
