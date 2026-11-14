@@ -162,6 +162,9 @@ button.stat { cursor: pointer; }
 .lesson.is-done b { background: var(--amber); }
 .sound-icon { display: block; width: 20px; height: 20px; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; }
 .sound-row:not(.is-done) .sound-icon { color: var(--muted); }
+/* 开着的声音是「选中」，和别处的选中一个绿。它借用了课程那一行的样子，那边 is-done 是「学完了」的琥珀色，这里盖掉 */
+.sound-row.is-done { background: var(--moss); color: var(--paper); }
+.sound-row.is-done b { background: var(--paper); color: var(--moss); }
 .lesson.is-next { background: var(--moss); color: var(--paper); }
 .lesson.is-next small { color: rgba(255, 255, 255, .7); }
 .lesson.is-next b { background: var(--amber); color: var(--ink); }

@@ -65,7 +65,7 @@
 .side-list { flex: 1; overflow-y: auto; padding: 2px 14px 16px; display: flex; flex-direction: column; gap: 8px; scroll-behavior: smooth; transition: filter .3s ease, opacity .3s ease; }
 .item { flex: none; border: 3px solid transparent; border-radius: 16px; background: var(--paper); transition: border-color .2s ease; }
 .item.is-live { border-color: var(--moss); }
-.item.is-open { border-color: var(--ink); }
+.item.is-open { border-color: var(--moss); }
 .item-head { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; width: 100%; padding: 10px 12px; border: 0; border-radius: 13px; background: none; text-align: left; }
 .item-text strong { font: 800 16px/1.4 var(--read); }
 .item-chunk .item-text strong { background: linear-gradient(transparent 58%, var(--mark) 58%, var(--mark) 92%, transparent 92%); }
