@@ -48,8 +48,6 @@ node scripts/serve.mjs
 
 Then open http://localhost:4174/. Node.js 20 or later is enough; there is no build step and nothing to install. Any other static file server pointed at `public/` works too.
 
-The `npm run sync`, `sounds`, `words` and `apps` scripts rebuild the lessons, word audio and sounds from the author's other projects. They are kept here for reference and will not run without those sources.
-
 ### How it is built
 
 - [three.js](https://threejs.org/) for the scene, plain ES modules, no bundler and no framework.
@@ -62,13 +60,13 @@ The `npm run sync`, `sounds`, `words` and `apps` scripts rebuild the lessons, wo
 | `public/src/words/` | Word data loading and the review schedule |
 | `public/src/sounds.js` | Which ambient sounds play, and how loud |
 | `public/src/i18n-en.js` | English interface text |
-| `scripts/` | Local preview server and content sync |
+| `scripts/serve.mjs` | Local preview server |
 
 ### Credits and licenses
 
 - **Word list, definitions, example sentences and their recordings** are adapted from [Word Atlas (词光)](https://github.com/designfuchen/word-atlas) by Word Atlas contributors, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: entries from A2 to C2 were selected and reformatted for this project, and the illustrations are not included.
 - **Ambient sounds** come from the open-source projects [Moodist](https://github.com/remvze/moodist) and [Ambie](https://github.com/jenius-apps/ambie). Each sound keeps the license of its original source.
-- **[three.js](https://github.com/mrdoob/three.js)** and **[qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)** are under the MIT License.
+- **[three.js](https://github.com/mrdoob/three.js)** (0.187.0) and **[qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)** (2.0.4) are under the MIT License. Copies of both are in `public/vendor/`.
 - **Interface icons** are from [Material Symbols](https://fonts.google.com/icons), under the Apache License 2.0.
 - **The lessons** (texts, translations, notes and recordings) and **the source code of this project** are © Softminilabs. No open-source license is granted for them at this time.
 
@@ -114,8 +112,6 @@ node scripts/serve.mjs
 
 然后打开 http://localhost:4174/ 。有 Node.js 20 或更新的版本就够了，不需要构建，也不用安装依赖。换成别的静态文件服务器、指到 `public/` 也一样能跑。
 
-`npm run sync`、`sounds`、`words`、`apps` 这几个脚本是从作者的其他项目里重新整理课文、单词录音和环境声用的，留在这里供参考，没有那些来源是跑不起来的。
-
 ### 怎么做的
 
 - 场景用 [three.js](https://threejs.org/)，原生 ES 模块，没有打包工具，也没有框架。
@@ -128,12 +124,12 @@ node scripts/serve.mjs
 | `public/src/words/` | 词库的读取和复习排程 |
 | `public/src/sounds.js` | 环境声：什么时候响哪几种、各多响 |
 | `public/src/i18n-en.js` | 英文界面的文字 |
-| `scripts/` | 本地预览和内容同步 |
+| `scripts/serve.mjs` | 本地预览 |
 
 ### 署名和授权
 
 - **词表、释义、例句以及它们的录音**改编自 [词光 Word Atlas](https://github.com/designfuchen/word-atlas)，作者是 Word Atlas contributors，采用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授权。改动：挑选了 A2 到 C2 的词条并重新整理成本项目的格式，没有包含插画。
 - **环境声**来自开源项目 [Moodist](https://github.com/remvze/moodist) 和 [Ambie](https://github.com/jenius-apps/ambie)，每一条沿用它原始来源的授权。
-- **[three.js](https://github.com/mrdoob/three.js)** 和 **[qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)** 采用 MIT 授权。
+- **[three.js](https://github.com/mrdoob/three.js)**（0.187.0）和 **[qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)**（2.0.4）采用 MIT 授权，两者的副本放在 `public/vendor/`。
 - **界面图标**来自 [Material Symbols](https://fonts.google.com/icons)，采用 Apache License 2.0。
 - **课文**（原文、译文、讲解和朗读）和**本项目的源代码**版权归 Softminilabs 所有，目前没有以开源协议授权。

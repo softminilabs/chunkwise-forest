@@ -1,4 +1,4 @@
-// 森林里的环境声。文件是眠静 Lull 和 Moodist 声音库里的（npm run sounds 拷过来）。默认「自动」：按下面那张搭配表来；
+// 森林里的环境声，文件在 public/sounds/，来自眠静 Lull 和 Moodist 声音库。默认「自动」：按下面那张搭配表来；
 // 每一种也可以手动常开或关掉
 import { smooth } from './look.js'
 import { STREAM, distanceTo } from './world/land.js'

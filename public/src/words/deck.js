@@ -1,4 +1,4 @@
-// 词库：public/words/ 里的词和录音（npm run words 生成）。一个级别一个文件，用到哪一级才取
+// 词库：public/words/ 里的词和录音。一个级别一个文件，用到哪一级才取
 const files = new Map()
 let index = null
 const json = async url => (await fetch(url)).json()
