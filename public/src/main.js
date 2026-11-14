@@ -310,5 +310,6 @@ boot().catch(error => {
   sessionStorage.removeItem('cw.swap')
   delete document.documentElement.dataset.swap
   delete document.documentElement.dataset.resume
-  document.querySelector('#start button').textContent = t('森林没搭起来，刷新试试')
+  document.getElementById('start').dataset.page = 'keys'
+  document.querySelector('#start .enter').textContent = t('森林没搭起来，刷新试试')
 })
