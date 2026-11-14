@@ -191,13 +191,15 @@ function plantOut(ctx) {
 
 function start(ctx, hud) {
   const screen = document.getElementById('start')
-  const button = screen.querySelector('button')
+  const button = screen.querySelector('.enter')
   const reveal = () => { screen.classList.add('is-leaving'); setTimeout(() => { screen.hidden = true }, 500); hud.show(); canvas.focus() }
-  const enter = () => { ctx.audio.unlock(); reveal() }
+  // 记下进过森林了：下回开始页直接到「操作」那一页，不再从「玩法」讲起（index.html 里读它）
+  const enter = () => { try { localStorage.setItem('cw.seen', '1') } catch {} ctx.audio.unlock(); reveal() }
   button.disabled = false
   button.textContent = ctx.state.totals().lit ? t('回到森林') : t('走进森林')
   button.addEventListener('click', enter, { once: true })
-  button.focus()
+  // 还停在「玩法」那一页的话，进森林的按钮是藏着的，焦点给「下一步」
+  ;(screen.dataset.page === 'play' ? screen.querySelector('.next') : button).focus()
   screen.querySelector('.lang').addEventListener('click', () => setLang(lang === 'zh' ? 'en' : 'zh'))
   // 在森林里换语言是整页重载，回来直接进森林。浏览器要等到下一次点按或按键才肯出声
   if (!sessionStorage.getItem('cw.resume')) return

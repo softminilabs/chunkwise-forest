@@ -45,19 +45,40 @@
     <p class="start-kicker"><span data-lang="zh">用文章学英语</span><span data-lang="en">Learn English through reading</span></p>
     <h1><span data-lang="zh">组块森林</span><span data-lang="en">Chunkwise Forest</span></h1>
     <p class="start-lead"><span data-lang="zh">沿着小路往里走，九间木屋是九个单元。读完一课，屋檐下亮一盏灯。</span><span data-lang="en">Follow the trail into the woods. Nine cabins are nine units. Finish a lesson and a lamp lights up under the eaves.</span></p>
-    <ul class="start-how for-keys">
-      <li><span class="how-art"><span class="wasd"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span></span><b><span data-lang="zh">走动</span><span data-lang="en">Walk</span></b><small><span data-lang="zh">也可以点地面</span><span data-lang="en">or click the ground</span></small></li>
-      <li><span class="how-art"><kbd class="space"><span data-lang="zh">空格</span><span data-lang="en">Space</span></kbd></span><b><span data-lang="zh">打开</span><span data-lang="en">Use</span></b><small><span data-lang="zh">走到跟前再按</span><span data-lang="en">when you are close</span></small></li>
-      <li><span class="how-art"><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="6" width="16" height="28" rx="8"/><path d="M32 6v10"/><path d="M20 20H6m0 0 4-4m-4 4 4 4M44 20h14m0 0-4-4m4 4-4 4"/></svg></span><b><span data-lang="zh">转镜头</span><span data-lang="en">Look</span></b><small><span data-lang="zh">按住拖动</span><span data-lang="en">hold and drag</span></small></li>
-    </ul>
-    <ul class="start-how for-touch">
-      <li><span class="how-art"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="20" r="5" fill="currentColor" stroke="none"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="17" opacity=".35"/></svg></span><b><span data-lang="zh">走动</span><span data-lang="en">Walk</span></b><small><span data-lang="zh">点一下地面</span><span data-lang="en">tap the ground</span></small></li>
-      <li><span class="how-art"><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="52" height="22" rx="11"/><circle cx="18" cy="20" r="5" fill="currentColor" stroke="none"/><path d="M29 20h20"/></svg></span><b><span data-lang="zh">打开</span><span data-lang="en">Use</span></b><small><span data-lang="zh">点它的牌子</span><span data-lang="en">tap its tag</span></small></li>
-      <li><span class="how-art"><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="20" r="6" fill="currentColor" stroke="none"/><path d="M20 20H6m0 0 4-4m-4 4 4 4M44 20h14m0 0-4-4m4 4-4 4"/></svg></span><b><span data-lang="zh">转镜头</span><span data-lang="en">Look</span></b><small><span data-lang="zh">按住拖动</span><span data-lang="en">hold and drag</span></small></li>
-    </ul>
-    <button class="button big" type="button" disabled><span data-lang="zh">正在种树…</span><span data-lang="en">Planting trees…</span></button>
+    <div class="start-pages">
+      <!-- 水滴的数目和 src/garden.js 里的 WORD_DROPS、LESSON_DROPS 是一回事，改了那边这里也要改 -->
+      <ul class="start-how start-play">
+        <li><span class="how-art"><svg viewBox="0 0 48 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 10C19 6 12 6 6 8v24c6-2 13-2 18 2 5-4 12-4 18-2V8c-6-2-13-2-18 2z"/><path d="M24 10v24"/></svg></span><b><span data-lang="zh">学词、听课</span><span data-lang="en">Learn</span></b><small><span data-lang="zh">木屋和单词屋</span><span data-lang="en">words and lessons</span></small></li>
+        <li><span class="how-art"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="how-water"><path d="M20 4c-6 8-10 13.5-10 19.5a10 10 0 0 0 20 0C30 17.5 26 12 20 4z" fill="currentColor" stroke="none"/></svg></span><b><span data-lang="zh">收集水滴</span><span data-lang="en">Collect water</span></b><small><span data-lang="zh">一个词 1 滴，一课 3 滴</span><span data-lang="en">1 drop a word, 3 a lesson</span></small></li>
+        <li><span class="how-art"><svg viewBox="0 0 48 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 5 5 27h24z M32 11 20 33h24z" fill="currentColor" stroke="none"/><path d="M17 27v8M32 33v3"/></svg></span><b><span data-lang="zh">浇树造森林</span><span data-lang="en">Grow a forest</span></b><small><span data-lang="zh">种进这片林子</span><span data-lang="en">water a seed, plant it out</span></small></li>
+      </ul>
+      <ul class="start-how start-keys for-keys">
+        <li><span class="how-art"><span class="wasd"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span></span><b><span data-lang="zh">走动</span><span data-lang="en">Walk</span></b><small><span data-lang="zh">也可以点地面</span><span data-lang="en">or click the ground</span></small></li>
+        <li><span class="how-art"><kbd class="space"><span data-lang="zh">空格</span><span data-lang="en">Space</span></kbd></span><b><span data-lang="zh">打开</span><span data-lang="en">Use</span></b><small><span data-lang="zh">走到跟前再按</span><span data-lang="en">when you are close</span></small></li>
+        <li><span class="how-art"><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="6" width="16" height="28" rx="8"/><path d="M32 6v10"/><path d="M20 20H6m0 0 4-4m-4 4 4 4M44 20h14m0 0-4-4m4 4-4 4"/></svg></span><b><span data-lang="zh">转镜头</span><span data-lang="en">Look</span></b><small><span data-lang="zh">按住拖动</span><span data-lang="en">hold and drag</span></small></li>
+      </ul>
+      <ul class="start-how start-keys for-touch">
+        <li><span class="how-art"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="20" r="5" fill="currentColor" stroke="none"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="17" opacity=".35"/></svg></span><b><span data-lang="zh">走动</span><span data-lang="en">Walk</span></b><small><span data-lang="zh">点一下地面</span><span data-lang="en">tap the ground</span></small></li>
+        <li><span class="how-art"><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="52" height="22" rx="11"/><circle cx="18" cy="20" r="5" fill="currentColor" stroke="none"/><path d="M29 20h20"/></svg></span><b><span data-lang="zh">打开</span><span data-lang="en">Use</span></b><small><span data-lang="zh">点它的牌子</span><span data-lang="en">tap its tag</span></small></li>
+        <li><span class="how-art"><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="20" r="6" fill="currentColor" stroke="none"/><path d="M20 20H6m0 0 4-4m-4 4 4 4M44 20h14m0 0-4-4m4 4-4 4"/></svg></span><b><span data-lang="zh">转镜头</span><span data-lang="en">Look</span></b><small><span data-lang="zh">按住拖动</span><span data-lang="en">hold and drag</span></small></li>
+      </ul>
+    </div>
+    <div class="start-dots"><button type="button" data-page="play" aria-label="玩法"></button><button type="button" data-page="keys" aria-label="操作"></button></div>
+    <button class="button big next" type="button"><span data-lang="zh">下一步</span><span data-lang="en">Next</span></button>
+    <button class="button big enter" type="button" disabled><span data-lang="zh">正在种树…</span><span data-lang="en">Planting trees…</span></button>
     <button class="lang" type="button"><span data-lang="zh" lang="en">English</span><span data-lang="en" lang="zh-CN">中文</span></button>
   </div>
 </section>
+<script>
+  // 开始页的两页：玩法、操作。不等 main.js：森林还在加载的时候就能翻
+  // 头一回打开先看玩法；进过森林的（cw.seen）直接看操作，点小圆点还能翻回去
+  {
+    const start = document.getElementById('start')
+    const turn = page => { start.dataset.page = page }
+    turn(localStorage.getItem('cw.seen') ? 'keys' : 'play')
+    start.querySelector('.next').addEventListener('click', () => turn('keys'))
+    for (const dot of start.querySelectorAll('.start-dots button')) dot.addEventListener('click', () => turn(dot.dataset.page))
+  }
+</script>
 </body>
 </html>
