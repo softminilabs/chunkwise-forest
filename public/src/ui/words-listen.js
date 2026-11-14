@@ -1,5 +1,6 @@
 // 听单词：一个词一个词自己放下去，适合闭着眼听。每个词先放英文，停一下让人自己先想意思（先想再听答案，
-// 比一路被动听记得牢），再报意思、放例句。只听不打分，不动学习进度：被动听过不等于记得。流程照手机 App 的 WordListen
+// 比一路被动听记得牢），再报意思、放例句。只听不打分，不动学习进度：被动听过不等于记得。流程照手机 App 的 WordListen。
+// 纸上从这个词一出来就写全（意思、例句、例句的中文）：跟着声音一步步露的话，例句的中文要等例句读完才亮，不到一秒就换词了
 import { h } from './core.js'
 import { icon } from './reader-view.js'
 import { lang, pick, t } from '../i18n.js'
@@ -38,7 +39,6 @@ const OPTIONS = [
 const read = () => { try { return { ...DEFAULTS, ...JSON.parse(localStorage.getItem('cw.listen')) } } catch { return { ...DEFAULTS } } }
 const save = opts => { try { localStorage.setItem('cw.listen', JSON.stringify(opts)) } catch {} }
 const word = listen => listen.words[listen.at]
-const reveal = (listen, level) => { listen.view.root.dataset.show = level }
 const wait = (listen, ms) => new Promise(done => { listen.release = done; listen.timer = setTimeout(done, ms) })
 
 /// 在学的：到期的和学会的并在一起，早到期的在前
@@ -92,15 +92,9 @@ const STEPS = [
   listen => listen.ctx.words.voice.play(soundUrl(listen.opts.accent, word(listen))),
   listen => wait(listen, listen.opts.think * 1000),
   async (listen, alive) => { if (!await speak(listen, spoken(word(listen))) && alive()) await wait(listen, UNSPOKEN) },
-  async (listen, alive) => {
-    if (!listen.opts.example) return
-    await listen.ctx.words.voice.play(soundUrl('ex', word(listen)))
-    if (alive()) reveal(listen, 3)
-  },
+  listen => listen.opts.example && listen.ctx.words.voice.play(soundUrl('ex', word(listen))),
   listen => wait(listen, GAP),
 ]
-// 每一步开始时纸上露到哪：0 只有词和音标，1 加上意思，2 加上例句，3 加上例句的中文
-const SHOWN = [0, 0, 1, 2, 3]
 
 /// 打断正在放的这一步，并作废还在路上的那一串
 function halt(listen) {
@@ -116,8 +110,6 @@ function setPlaying(listen, on) {
   listen.ctx.speaking = on
   listen.view.play.replaceChildren(icon(on ? 'pause' : 'play'))
   listen.view.play.setAttribute('aria-label', on ? t('暂停') : t('播放'))
-  // 停下来时全露出来，方便看
-  if (!on) reveal(listen, 3)
 }
 
 function example(item) {
@@ -156,7 +148,6 @@ async function run(listen) {
       listen.deadline = null
       return setPlaying(listen, false)
     }
-    reveal(listen, SHOWN[listen.step])
     await STEPS[listen.step](listen, alive)
     if (!alive()) return
     if (++listen.step < STEPS.length) continue
@@ -245,7 +236,7 @@ function build(listen) {
   }
   view.keys = h('div', { class: 'listen-keys' }, round(t('上一个'), t('上一个（←）'), 'prev', () => jump(listen, -1)), view.play, round(t('下一个'), t('下一个（→）'), 'next', () => jump(listen, 1)))
   const options = listen.refs ? [{ ...OPTIONS[0], choices: [['refs', SOURCES.refs.name], ...OPTIONS[0].choices] }, ...OPTIONS.slice(1)] : OPTIONS
-  view.root = h('section', { class: 'listen', 'aria-label': t('听单词'), 'data-show': 3 },
+  view.root = h('section', { class: 'listen', 'aria-label': t('听单词') },
     h('header', { class: 'listen-head' }, view.kicker, view.count),
     view.now,
     h('div', { class: 'listen-opts' }, options.map(option => optionRow(listen, option)), view.keys))

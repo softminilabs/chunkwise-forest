@@ -20,9 +20,6 @@ html[lang="en"] .listen-senses i { font-size: .8em; }
 .listen-ex { font: 600 clamp(16px, 3.1cqi, 21px)/1.4 var(--read); }
 .listen-ex small { display: block; font: 600 .72em/1.5 var(--font); color: var(--body); }
 .listen-none { margin: auto 0; font-size: clamp(20px, 5cqi, 30px); font-weight: 800; color: var(--body); }
-/* 还没报到的先藏着，位置留着：亮出来的时候上面的词不跳 */
-.listen-senses, .listen-ex, .listen-ex small { transition: opacity .4s ease; }
-.listen[data-show="0"] .listen-senses, .listen:is([data-show="0"], [data-show="1"]) .listen-ex, .listen:not([data-show="3"]) .listen-ex small { opacity: 0; }
 
 /* 五样设置挨着排，一行摆得下几样就摆几样：排成整齐的两列要三行，纸上就没地方放词了 */
 .listen-opts { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px clamp(12px, 3cqi, 22px); padding-top: clamp(8px, 1.8vh, 14px); border-top: 2px solid var(--sage-pale); }
