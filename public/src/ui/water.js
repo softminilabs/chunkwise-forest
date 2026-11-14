@@ -30,7 +30,7 @@ export function createWater(ctx) {
     const plant = store.seed ? t('{name}浇了 {a} / {b} 滴', { name: plantName(store.seed), a: store.poured, b: garden.need }) : t('花盆还空着，进单词屋选一颗种子')
     ctx.ui.openDrawer({
       kicker: t('水滴'), title: t('壶里有 {n} 滴水', { n: store.water }),
-      sub: t('到单词屋的花盆前浇水，种的东西就长大；长成了挂到荣誉墙上。'),
+      sub: t('到单词屋的花盆前浇水，种的东西就长大；长成了种进林子里。'),
       body: [
         h('div', { class: 'water-rules' },
           h('div', {}, h('span', {}, t('学完一个词')), h('b', {}, drop(), `+${WORD_DROPS}`)),

@@ -171,7 +171,7 @@ export const EN = {
   // 水滴、花盆、荣誉墙
   '水滴': 'Water', '水': '💧', '花盆': 'Flowerpot', '种': '🌱',
   '壶里有 {n} 滴水': ({ n }) => `${n} ${Number(n) === 1 ? 'drop' : 'drops'} in the can`,
-  '到单词屋的花盆前浇水，种的东西就长大；长成了挂到荣誉墙上。': 'Water the pot in the Word Lodge and what you planted grows. Once it is fully grown, it goes up on the wall of honour.',
+  '到单词屋的花盆前浇水，种的东西就长大；长成了种进林子里。': 'Water the pot in the Word Lodge and what you planted grows. Once it is fully grown, it is planted out in the forest.',
   '学完一个词': 'Finish a word', '听完一课': 'Finish a lesson', '去单词屋': 'Go to the Word Lodge',
   '{name}浇了 {a} / {b} 滴': '{name}: {a} / {b} drops',
   '花盆还空着，进单词屋选一颗种子': 'The pot is empty. Pick a seed in the Word Lodge.',
@@ -185,7 +185,7 @@ export const EN = {
   '种这一颗': 'Plant this one',
   '{n} 滴': ({ n }) => `${n} ${Number(n) === 1 ? 'drop' : 'drops'}`,
   '选一颗种子': 'Pick a seed',
-  '学完一个词得 {a} 滴水，听完一课得 {b} 滴。浇够了它就长成，挂到荣誉墙上。': 'Each word you finish earns {a} drop of water, each lesson {b}. Water it enough and it grows up and goes on the wall of honour.',
+  '学完一个词得 {a} 滴水，听完一课得 {b} 滴。浇够了它就长成，种进林子里。': 'Each word you finish earns {a} drop of water, each lesson {b}. Water it enough and it grows up and is planted out in the forest.',
   '浇了 {a} / {b} 滴': '{a} / {b} drops', '壶里有 {n} 滴': '{n} in the can', '壶里没水': 'the can is empty',
   '荣誉墙': 'Wall of honour', '种的东西长成了，就挂到这里': 'Whatever you grow ends up here',
   '长成 {n} 棵': '{n} grown', '学会 {n} 个词': '{n} words learned', '听完 {n} 课': '{n} lessons heard',
@@ -195,7 +195,23 @@ export const EN = {
   '浇了 {n} 滴，{name}还差 {m} 滴长成': 'Poured {n}. {name} needs {m} more to grow up.',
   '荣誉墙 · 第 {n} 棵': 'Wall of honour · No. {n}',
   '{name}长成了': '{name} is fully grown',
-  '一共浇了 {n} 滴水。它已经挂到荣誉墙上了。': '{n} drops in all. It is on the wall of honour now.',
+  '一共浇了 {n} 滴水。墙上挂了一张，林子里种在{where}。': ({ n, where }) => `${n} drops in all. A card is on the wall, and it is planted out: ${where.toLowerCase()}.`,
+  '一共浇了 {n} 滴水。墙上挂了一张；林子里这一类的位置已经种满了。': '{n} drops in all. A card is on the wall; the forest has no free spot of this kind left.',
+  '去林子里看看': 'See it in the forest', '我种的': 'Planted',
+  '{name}种在{where}了': ({ name, where }) => `${name} planted: ${where.toLowerCase()}`,
+
+  // 森林地图、林子里的位置
+  '森林地图': 'Forest map',
+  '你种下了 {n} 样': ({ n }) => Number(n) === 1 ? "You've grown 1 plant" : `You've grown ${n} plants`,
+  '在单词屋把种子养大，它就会种到这里': 'Grow a seed in the Word Lodge and it will be planted here',
+  '把{name}种在哪儿': ({ name }) => `Where should the ${name.toLowerCase()} go?`,
+  '亮着的圈是空位，点一个': 'The rings are free spots. Tap one.',
+  '空位都种满了': 'Every spot is taken',
+  '点一下你种的树或花': 'Tap a tree or flower you planted',
+  '{date}种下': 'Planted {date}', '现在在{where}': 'Now: {where}',
+  '去看看': 'Go and see', '换个地方': 'Move it', '种到这儿': 'Plant it here', '不换了': 'Keep it there', '你': 'You',
+  '小路旁，第 {n} 间木屋附近': 'By the trail near cabin {n}', '单词屋门口': 'By the Word Lodge door',
+  '第 {n} 间木屋门口': 'By the door of cabin {n}', '篝火空地边': 'At the edge of the campfire clearing',
   '再种一颗': 'Plant another',
 
   // 词库页

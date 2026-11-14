@@ -6,9 +6,11 @@ import { t } from '../i18n.js'
 import { createPlayer } from '../player.js'
 import { createThings } from '../things.js'
 import { PLACES, ROOM_COLLIDERS, ROOM_GROUND, SEATS, createRoom } from '../world/room.js'
+import { HABITAT, SPOTS } from '../world/planted.js'
 import { PLANTS } from '../world/plants/index.js'
 import { portrait } from '../world/portrait.js'
 import { loadIndex, loadLevel } from '../words/deck.js'
+import { openMap } from './map.js'
 import { openSeeds, plantName } from './seeds.js'
 import { openDesk } from './words-desk.js'
 
@@ -32,7 +34,7 @@ export function createLodge(ctx) {
   // 先走到花盆跟前再动手
   const pot = add('pot', { title: t('花盆'), badge: t('种'), use: () => player.goTo(...PLACES.pot.spot, 0.35, tend) })
   add('door', { title: t('回森林'), badge: t('门'), use: leave })
-  hud.append(h('button', { class: 'pill', type: 'button', onclick: leave }, t('← 回森林')), h('div', { class: 'brand sticker' }, h('strong', {}, t('单词屋')), brand), ctx.water.chip())
+  hud.append(h('button', { class: 'pill', type: 'button', onclick: () => leave() }, t('← 回森林')), h('div', { class: 'brand sticker' }, h('strong', {}, t('单词屋')), brand), ctx.water.chip())
 
   /// 今天还有几个要复习、几个新词可学。屋外的牌子、屋里书桌的牌子、顶栏上那行字都用它
   async function plan() {
@@ -112,13 +114,15 @@ export function createLodge(ctx) {
     openSeeds(ctx)
   }
 
-  function leave() {
+  /// then：画面还黑着的时候顺手做的事（「去林子里看看」要在这时候把人挪到那棵树跟前）
+  function leave(then) {
     if (!state.inside || state.seat || state.tending) return
     dismiss()
     return swap(() => {
       state.inside = false
       ctx.rig.yaw = state.yaw
       document.body.classList.remove('is-inside', 'is-night')
+      then?.()
     })
   }
 
@@ -131,7 +135,7 @@ export function createLodge(ctx) {
         h('small', {}, [t('第一次就记得的 {p}%', { p: result.firstTry }), t('明天有 {n} 个该复习', { n: ctx.words.progress.dueTomorrow() })].join(' · '))),
       h('button', { class: 'button', type: 'button', onclick: () => approach(pot) }, ctx.garden.store.seed ? t('去浇水') : t('去选种子')),
       h('button', { class: 'button plain', type: 'button', onclick: () => sit('desk', openDesk) }, t('接着学')),
-      h('button', { class: 'button plain', type: 'button', onclick: leave }, t('回森林')))
+      h('button', { class: 'button plain', type: 'button', onclick: () => leave() }, t('回森林')))
     document.body.append(state.done)
   }
   function dismiss() { state.done?.remove(); state.done = null }
@@ -214,7 +218,7 @@ export function createLodge(ctx) {
     player.place(x, z)
     player.root.rotation.y = Math.atan2(PLACES.pot.position[0] - x, PLACES.pot.position[2] - z)
     room.look('pot')
-    const { seed, poured, grown, bloomed } = garden.pour()
+    const { seed, poured, grown, bloomed, item } = garden.pour()
     // 等镜头推到跟前再开始浇
     await wait(600)
     ctx.audio.pour()
@@ -224,17 +228,23 @@ export function createLodge(ctx) {
     state.tending = false
     delete document.body.dataset.tending
     paint()
-    if (bloomed) celebrate(seed)
+    if (bloomed) celebrate(item)
     else ctx.ui.toast(t('浇了 {n} 滴，{name}还差 {m} 滴长成', { n: poured, name: plantName(seed), m: garden.need - garden.store.poured }))
   }
 
-  function celebrate(seed) {
-    const plant = PLANTS[seed]
+  /// 长成了：墙上挂一张，林子里已经给它占了一个位置（item.slot）。可以去看它种下去、换个地方、接着种下一颗
+  function celebrate(item) {
+    const plant = PLANTS[item.seed]
+    // 这一类的位置种满了的话没有 spot：只挂在墙上
+    const spot = SPOTS[HABITAT[item.seed]][item.slot]
+    const pick = { item, onPick: slot => ctx.garden.move(item, slot) }
+    const next = (label, go) => h('button', { class: 'chip', type: 'button', onclick: () => { ctx.ui.closeDrawer(); go() } }, label)
     ctx.ui.openDrawer({
-      kicker: t('荣誉墙 · 第 {n} 棵', { n: ctx.garden.store.done.length }), title: t('{name}长成了', { name: plantName(seed) }),
-      sub: t('一共浇了 {n} 滴水。它已经挂到荣誉墙上了。', { n: plant.drops }),
+      kicker: t('荣誉墙 · 第 {n} 棵', { n: ctx.garden.store.done.length }), title: t('{name}长成了', { name: plantName(item.seed) }),
+      sub: spot ? t('一共浇了 {n} 滴水。墙上挂了一张，林子里种在{where}。', { n: plant.drops, where: spot.where }) : t('一共浇了 {n} 滴水。墙上挂了一张；林子里这一类的位置已经种满了。', { n: plant.drops }),
       body: [h('img', { class: 'bloom-shot', src: portrait(plant, 4).toDataURL(), alt: '' }),
-        h('button', { class: 'button big', type: 'button', onclick: () => { ctx.ui.closeDrawer(); openSeeds(ctx) } }, t('再种一颗'))],
+        spot && h('button', { class: 'button big', type: 'button', onclick: () => ctx.visit(spot, item) }, t('去林子里看看')),
+        h('div', { class: 'row center' }, spot && next(t('换个地方'), () => openMap(ctx, { pick })), next(t('再种一颗'), () => openSeeds(ctx)))],
     })
   }
 
@@ -248,6 +258,8 @@ export function createLodge(ctx) {
   ctx.garden.on(paint)
   return {
     enter, leave, plan, listenOutside,
+    /// 画面暗一下再亮：暗着的时候做 change。在林子里把人一下挪到远处时用它，免得镜头横穿整片森林
+    dip: swap,
     get inside() { return state.inside },
     get seated() { return Boolean(state.seat) },
     use() { const thing = things.nearest(player.position); if (thing && !state.seat && !state.tending && performance.now() > state.ready) { dismiss(); thing.use() } },

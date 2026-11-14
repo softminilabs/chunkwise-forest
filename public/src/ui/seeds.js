@@ -54,7 +54,7 @@ export function openSeeds(ctx, sown) {
 
   ctx.ui.openModal(h('section', { class: 'seeds sticker', 'aria-label': t('选一颗种子') },
     h('header', { class: 'drawer-head' },
-      h('div', { class: 'grow' }, h('h2', {}, t('选一颗种子')), h('p', {}, t('学完一个词得 {a} 滴水，听完一课得 {b} 滴。浇够了它就长成，挂到荣誉墙上。', { a: WORD_DROPS, b: LESSON_DROPS }))),
+      h('div', { class: 'grow' }, h('h2', {}, t('选一颗种子')), h('p', {}, t('学完一个词得 {a} 滴水，听完一课得 {b} 滴。浇够了它就长成，种进林子里。', { a: WORD_DROPS, b: LESSON_DROPS }))),
       h('button', { class: 'close', type: 'button', 'aria-label': t('关上'), onclick: () => ctx.ui.closeModal() }, '✕')),
     h('div', { class: 'seeds-body' }, h('div', { class: 'seeds-row' }, tiles), grow),
     go))

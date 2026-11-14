@@ -17,13 +17,15 @@ import { createCabins } from './world/cabins.js'
 import { createCamp } from './world/camp.js'
 import { createChests } from './world/chests.js'
 import { createLanternTree } from './world/lanterns.js'
+import { HABITAT, SPOTS, createPlanted } from './world/planted.js'
 import { createXmas } from './world/xmas.js'
 import { ICONS, christmas, daysUntil, openCountdown, springFestival } from './ui/countdown.js'
 import { createLodge } from './ui/lodge.js'
+import { plantName } from './ui/seeds.js'
 import { createWater } from './ui/water.js'
 import { createVoice } from './words/deck.js'
 import { createWordProgress } from './words/progress.js'
-import { createLand } from './world/land.js'
+import { createLand, trailX } from './world/land.js'
 import { PLANTS } from './world/plants/index.js'
 import { createWeather } from './world/weather.js'
 import { createWoods } from './world/woods.js'
@@ -56,9 +58,10 @@ function buildWorld(ctx) {
   const weather = createWeather(scene, renderer, ctx.state)
   const xmas = createXmas(scene, colliders)
   const lanterns = createLanternTree(scene, colliders)
-  weather.onSeason((look, season) => { land.paint(look); woods.paint(look, season); cabins.paint(season); xmas.paint(look, season); lanterns.paint(look, season) })
+  const planted = createPlanted(scene, colliders, weather)
+  weather.onSeason((look, season) => { land.paint(look); woods.paint(look, season); cabins.paint(season); xmas.paint(look, season); lanterns.paint(look, season); planted.paint(look, season) })
   weather.resolve()
-  Object.assign(ctx, { scene, colliders, cabins, weather, xmas, lanterns, camp: createCamp(scene, colliders), player: createPlayer(scene, colliders), fx: createFx(scene) })
+  Object.assign(ctx, { scene, colliders, cabins, weather, xmas, lanterns, planted, camp: createCamp(scene, colliders), player: createPlayer(scene, colliders), fx: createFx(scene) })
 }
 
 function openCamp(ctx) {
@@ -153,6 +156,37 @@ function wire(ctx) {
   }
 }
 
+/// 花盆里养成的东西种进林子：跟着存档摆出来；地图和长成的卡片上的「去看看」把人送到它跟前
+function plantOut(ctx) {
+  /// 长成了的，在林子里有位置的那些
+  const planted = () => ctx.garden.store.done.filter(item => item.slot != null)
+  let shown = ''
+  // 得水、浇水也会通知，林子里的只在种的东西变了时才重摆
+  const plant = () => { const key = JSON.stringify(planted().map(item => [item.seed, item.slot])); if (key !== shown) { shown = key; ctx.planted.set(planted()) } }
+  ctx.garden.on(plant)
+  plant()
+  /// 把人送到林子里某个位置跟前（地图上的「去看看」）。item：刚长成的那一棵，给了就让它当场从地里长出来
+  ctx.visit = async (spot, item) => {
+    ctx.ui.closeModal()
+    ctx.ui.closeDrawer()
+    // 站在它朝小路的那一侧
+    const side = Math.sign(trailX(spot.z) - spot.x) || 1
+    const arrive = () => {
+      ctx.player.place(spot.x + side * 2.2, spot.z + 1.4)
+      ctx.rig.focus.copy(ctx.player.position)
+      // 先不摆它：等画面亮了再让它从地里冒出来
+      if (item) ctx.planted.set(planted().filter(other => other !== item))
+    }
+    await (ctx.lodge.inside ? ctx.lodge.leave(arrive) : ctx.lodge.dip(arrive))
+    if (!item) return
+    ctx.planted.set(planted())
+    ctx.audio.chime(5)
+    ctx.fx.burst(spot.x, ctx.player.position.y + 1.6, spot.z, 18)
+    await ctx.planted.sprout(item.seed, item.slot)
+    ctx.ui.toast(t('{name}种在{where}了', { name: plantName(item.seed), where: spot.where }))
+  }
+}
+
 function start(ctx, hud) {
   const screen = document.getElementById('start')
   const button = screen.querySelector('button')
@@ -184,6 +218,7 @@ function frame(ctx, input, wish, dt, time) {
   ctx.cabins.update(weather.now.night, dt, time)
   ctx.xmas.update(weather.now.night, time)
   ctx.lanterns.update(weather.now.night, time)
+  ctx.planted.update(dt)
   for (const thing of ctx.winterThings) thing.off = weather.now.season !== 'winter'
   ctx.camp.update(dt, time, weather.now.night, weather.now.weather === 'rain')
   ctx.chests.update(time, weather.now)
@@ -193,26 +228,8 @@ function frame(ctx, input, wish, dt, time) {
   renderer.render(scene, camera)
 }
 
-async function boot() {
-  const [course, cards, apps] = await Promise.all(['data/course.json', 'data/cards.json', 'apps/apps.json'].map(load))
-  const state = createState(course)
-  const audio = createAudio(state)
-  const rig = createRig(camera)
-  const ctx = { course, cards, apps, state, audio, rig, camera, renderer, ui: createUI(audio), sounds: createSounds(audio, state) }
-  // lessons：课文里收过的词卡（按小写的词头找）。单词屋里同一个词要带上那句课文
-  ctx.garden = createGarden(PLANTS)
-  ctx.water = createWater(ctx)
-  ctx.words = { progress: createWordProgress(() => ctx.water.gain(WORD_DROPS)), voice: createVoice(), lessons: new Map(Object.values(cards).filter(card => card.kind === 'word').map(card => [card.text.toLowerCase(), card])) }
-  buildWorld(ctx)
-  wire(ctx)
-  ctx.things = createThings(document.getElementById('tags'), { onChoose: thing => ctx.approach(thing) })
-  ctx.lodge = createLodge(ctx)
-  addPlaces(ctx)
-  ctx.winterThings = addFestive(ctx)
-  ctx.chests = createChests(ctx, chest => ctx.openChest(chest))
-  ctx.cabins.setProgress(state.town.stars)
-  const hud = createHud(ctx)
-  const input = createInput(canvas, camera, rig, {
+function listen(ctx) {
+  return createInput(canvas, camera, ctx.rig, {
     // 在单词屋里，按键和点击都交给屋里那一套
     onEscape: () => ctx.lodge.inside ? ctx.lodge.escape() : ctx.ui.escape(),
     onUse: () => { if (ctx.lodge.inside) return ctx.lodge.use(); const thing = ctx.things.nearest(ctx.player.position); if (thing && !ctx.ui.busy) ctx.use(thing) },
@@ -221,6 +238,29 @@ async function boot() {
     onGround: point => { if (ctx.lodge.inside) return ctx.lodge.ground(point); ctx.ui.closeDrawer(); ctx.fx.ping(point.x, ctx.player.position.y, point.z); ctx.player.goTo(point.x, point.z) },
     groundY: () => ctx.lodge.inside ? 0 : ctx.player.position.y,
   })
+}
+
+async function boot() {
+  const [course, cards, apps] = await Promise.all(['data/course.json', 'data/cards.json', 'apps/apps.json'].map(load))
+  const state = createState(course)
+  const audio = createAudio(state)
+  const rig = createRig(camera)
+  const ctx = { course, cards, apps, state, audio, rig, camera, renderer, ui: createUI(audio), sounds: createSounds(audio, state) }
+  ctx.garden = createGarden(PLANTS, HABITAT, { tree: SPOTS.tree.length, flower: SPOTS.flower.length })
+  ctx.water = createWater(ctx)
+  // lessons：课文里收过的词卡（按小写的词头找）。单词屋里同一个词要带上那句课文
+  ctx.words = { progress: createWordProgress(() => ctx.water.gain(WORD_DROPS)), voice: createVoice(), lessons: new Map(Object.values(cards).filter(card => card.kind === 'word').map(card => [card.text.toLowerCase(), card])) }
+  buildWorld(ctx)
+  wire(ctx)
+  plantOut(ctx)
+  ctx.things = createThings(document.getElementById('tags'), { onChoose: thing => ctx.approach(thing) })
+  ctx.lodge = createLodge(ctx)
+  addPlaces(ctx)
+  ctx.winterThings = addFestive(ctx)
+  ctx.chests = createChests(ctx, chest => ctx.openChest(chest))
+  ctx.cabins.setProgress(state.town.stars)
+  const hud = createHud(ctx)
+  const input = listen(ctx)
   const wish = new THREE.Vector3()
   let last = performance.now()
   let steps = 0
