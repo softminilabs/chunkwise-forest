@@ -10,7 +10,6 @@ import { HABITAT, SPOTS } from '../world/planted.js'
 import { PLANTS } from '../world/plants/index.js'
 import { portrait } from '../world/portrait.js'
 import { loadIndex, loadLevel } from '../words/deck.js'
-import { openMap } from './map.js'
 import { openSeeds, plantName } from './seeds.js'
 import { openDesk } from './words-desk.js'
 
@@ -237,14 +236,13 @@ export function createLodge(ctx) {
     const plant = PLANTS[item.seed]
     // 这一类的位置种满了的话没有 spot：只挂在墙上
     const spot = SPOTS[HABITAT[item.seed]][item.slot]
-    const pick = { item, onPick: slot => ctx.garden.move(item, slot) }
     const next = (label, go) => h('button', { class: 'chip', type: 'button', onclick: () => { ctx.ui.closeDrawer(); go() } }, label)
     ctx.ui.openDrawer({
       kicker: t('荣誉墙 · 第 {n} 棵', { n: ctx.garden.store.done.length }), title: t('{name}长成了', { name: plantName(item.seed) }),
       sub: spot ? t('一共浇了 {n} 滴水。墙上挂了一张，林子里种在{where}。', { n: plant.drops, where: spot.where }) : t('一共浇了 {n} 滴水。墙上挂了一张；林子里这一类的位置已经种满了。', { n: plant.drops }),
       body: [h('img', { class: 'bloom-shot', src: portrait(plant, 4).toDataURL(), alt: '' }),
         spot && h('button', { class: 'button big', type: 'button', onclick: () => ctx.visit(spot, item) }, t('去林子里看看')),
-        h('div', { class: 'row center' }, spot && next(t('换个地方'), () => openMap(ctx, { pick })), next(t('再种一颗'), () => openSeeds(ctx)))],
+        h('div', { class: 'row center' }, next(t('再种一颗'), () => openSeeds(ctx)))],
     })
   }
 
