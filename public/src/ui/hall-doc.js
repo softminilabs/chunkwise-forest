@@ -1,4 +1,6 @@
-// 讲堂里一个专题的讲解：文字里的标记，和一节一节的内容。搬自网页版的 markup.mjs、sections.mjs，改成在浏览器里现画
+// 讲堂里一个专题的讲解：文字里的标记，和一节一节的内容。搬自网页版的 markup.mjs、sections.mjs，改成在浏览器里现画。
+// 讲解本身不翻译；表头、「信号词」这类框架上的字走 t()，英文界面下是英文（和 App 一个做法）
+import { t } from '../i18n.js'
 
 export const esc = value => String(value ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -23,7 +25,7 @@ export const mistake = item => `<li><p class="bad" lang="en">${markup(item.bad)}
 export const sound = item => `<li><p><strong class="ipa">${esc(item.say)}</strong> ${markup(item.when)}</p>${chips(item.examples)}</li>`
 
 function table(rows) {
-  const head = ['人称', '肯定', '否定', '完整否定', '疑问', '简短回答']
+  const head = [t('人称'), t('肯定'), t('否定'), t('完整否定'), t('疑问'), t('简短回答')]
   const keys = ['who', 'pos', 'neg', 'negFull', 'q', 'short']
   return `<div class="table-wrap"><table class="conj"><thead><tr>${head.map(text => `<th>${text}</th>`).join('')}</tr></thead>
   <tbody>${rows.map(row => `<tr>${keys.map(key => `<td lang="en">${markup(row[key])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`
@@ -34,7 +36,7 @@ const RENDER = {
   text: value => `<p class="sec-text">${markup(value)}</p>`,
   rule: value => `<p class="sec-rule">${markup(value)}</p>`,
   formula: value => `<p class="formula">${value.map(part => `<span>${markup(part)}</span>`).join('<i>+</i>')}</p>`,
-  signals: value => `<p class="signals"><small>信号词</small>${value.map(word => `<span class="signal" lang="en">${esc(word)}</span>`).join('')}</p>`,
+  signals: value => `<p class="signals"><small>${esc(t('信号词'))}</small>${value.map(word => `<span class="signal" lang="en">${esc(word)}</span>`).join('')}</p>`,
   uses: value => list(value, use => `<li><p class="use-zh">${markup(use.zh)}</p>${pair(use.en, use.en_zh)}</li>`, 'uses'),
   rules: value => list(value, rule => `<li><p><strong>${markup(rule.ending)}</strong> → ${markup(rule.change)}</p>${chips(rule.examples)}</li>`, 'spell-rules'),
   items: value => list(value, line, 'lines'),
@@ -51,7 +53,7 @@ const RENDER = {
     <div><p class="pair-meaning">${markup(item.that.meaning)}</p>${pair(item.that.en)}</div></li>`, 'pairs'),
   // 一节里的 wrong 只有一组（不是数组）。网页版把它当数组画，结果一直没画出来
   wrong: value => list([value], mistake, 'mistakes'),
-  commonMistakes: value => `<h4>常见的错</h4>${list(value, mistake, 'mistakes')}`,
+  commonMistakes: value => `<h4>${esc(t('常见的错'))}</h4>${list(value, mistake, 'mistakes')}`,
   notes: value => list(value, note => `<li>${markup(note)}</li>`, 'sec-notes'),
   tip: value => `<p class="sec-tip">${markup(value)}</p>`,
 }

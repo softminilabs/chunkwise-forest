@@ -258,4 +258,13 @@ export const EN = {
   '小测': 'Quiz', '用起来': 'Use it', '相关': 'Related', '说明': 'What the patterns mean',
   '你的答案': 'Your answer', '检查': 'Check', '看答案': 'Show answer', '答案：': 'Answer: ', '不对。': 'Not quite.',
   '搜原形、过去式、中文': 'Search base form, past or meaning', '按变化规律筛': 'Filter by pattern',
+  // 讲解本身是中文，不翻；下面是表头和每一块前面的小标题
+  '人称': 'Person', '肯定': 'Positive', '否定': 'Negative', '完整否定': 'Full negative', '疑问': 'Question', '简短回答': 'Short answer',
+  '信号词': 'Signal words', '常见的错': 'Common mistakes', '例外': 'Exceptions', '特殊': 'Special',
+  '原形': 'Base form', '过去式': 'Past simple', '过去分词': 'Past participle', '意思': 'Meaning', '级别': 'Level', '规律': 'Pattern',
+  '变化规则': 'Spelling rules', '-s 怎么读': 'How -s sounds', '不规则变化': 'Irregular plurals', '单复数一样': 'Same in both',
+  '只有复数': 'Plural only', '外来词': 'Loan words', '复合名词': 'Compound nouns', '不可数名词': 'Uncountable nouns',
+  '可数时意思变了': 'A new meaning when countable', '主谓一致': 'Agreement',
+  '单词': 'Word', '要数的时候': 'To count it', '例子': 'Example', '别写成': 'Not',
+  '：不可数是「{meaning}」': ': uncountable, it means “{meaning}”',
 }

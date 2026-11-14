@@ -5,14 +5,14 @@ import { chips, esc, list, markup, mistake, sound } from './hall-doc.js'
 
 function irregularVerbs(data) {
   const patterns = Object.keys(data.patterns)
-  const legend = `<ul class="pattern-legend">${patterns.map(key => `<li><strong>${esc(key)}</strong> ${esc(data.patterns[key])}</li>`).join('')}</ul>`
+  const legend = `<ul class="pattern-legend">${patterns.map(key => `<li><strong>${esc(t(key))}</strong> ${esc(data.patterns[key])}</li>`).join('')}</ul>`
   const tools = `<div class="verb-tools"><input type="search" class="verb-search" placeholder="${esc(t('搜原形、过去式、中文'))}" aria-label="${esc(t('搜原形、过去式、中文'))}">
-  <div class="verb-patterns" role="group" aria-label="${esc(t('按变化规律筛'))}"><button type="button" class="chip is-on" data-pattern="">${esc(t('全部'))}</button>${patterns.map(key => `<button type="button" class="chip" data-pattern="${esc(key)}">${esc(key)}</button>`).join('')}</div></div>`
+  <div class="verb-patterns" role="group" aria-label="${esc(t('按变化规律筛'))}"><button type="button" class="chip is-on" data-pattern="">${esc(t('全部'))}</button>${patterns.map(key => `<button type="button" class="chip" data-pattern="${esc(key)}">${esc(t(key))}</button>`).join('')}</div></div>`
   // 另一种写法（burnt、gotten）写在本来那个下面，说明跟在中文意思后面
   const form = (item, key) => `<td lang="en">${esc(item[key])}${item.alt?.[key] ? `<small>${esc(item.alt[key])}</small>` : ''}</td>`
   const note = item => [item.note, item.alt?.note].filter(Boolean).map(text => `<small>${esc(text)}</small>`).join('')
-  const rows = data.items.map(item => `<tr data-pattern="${esc(item.pattern)}"><td lang="en">${esc(item.base)}</td>${form(item, 'past')}${form(item, 'pp')}<td>${esc(item.zh)}${note(item)}</td><td><span class="lv">${esc(item.level)}</span></td><td>${esc(item.pattern)}</td></tr>`).join('')
-  const head = [...data.columns, '意思', '级别', '规律'].map(text => `<th>${esc(text)}</th>`).join('')
+  const rows = data.items.map(item => `<tr data-pattern="${esc(item.pattern)}"><td lang="en">${esc(item.base)}</td>${form(item, 'past')}${form(item, 'pp')}<td>${esc(item.zh)}${note(item)}</td><td><span class="lv">${esc(item.level)}</span></td><td>${esc(t(item.pattern))}</td></tr>`).join('')
+  const head = [...data.columns.map(name => t(name)), t('意思'), t('级别'), t('规律')].map(text => `<th>${esc(text)}</th>`).join('')
   return { info: legend, sections: [['', `${tools}<div class="table-wrap"><table class="verbs"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`]] }
 }
 
@@ -41,20 +41,20 @@ const word = item => `<span lang="en">${esc(item.word)}</span><small>${esc(item.
 const arrows = pairs => chips(pairs, ([one, many]) => `${esc(one)} → ${esc(many)}`)
 
 function nounPlural(data) {
-  const rule = item => `<li><p><strong>${markup(item.rule)}</strong> → ${markup(item.change)}</p>${arrows(item.examples)}${item.except ? `<p class="line-rule">例外</p>${arrows(item.except)}` : ''}${item.note ? `<p class="why">${markup(item.note)}</p>` : ''}</li>`
+  const rule = item => `<li><p><strong>${markup(item.rule)}</strong> → ${markup(item.change)}</p>${arrows(item.examples)}${item.except ? `<p class="line-rule">${esc(t('例外'))}</p>${arrows(item.except)}` : ''}${item.note ? `<p class="why">${markup(item.note)}</p>` : ''}</li>`
   const uncountable = item => `<tr><td lang="en">${esc(item.word)}</td><td>${esc(item.zh)}</td><td lang="en">${esc(item.howToCount)}</td><td lang="en">${markup(item.example)}</td><td lang="en">${item.wrong ? `<del class="wrong">${esc(item.wrong)}</del>` : ''}</td></tr>`
   return { lead: data.idea, sections: [
-    ['变化规则', list(data.rules, rule, 'spell-rules')],
-    ['-s 怎么读', `${list(data.sound, sound, 'sounds')}<p class="sec-note">${markup(data.specialSound)}</p>`],
-    ['不规则变化', wordList(data.irregular, oneMany)],
-    ['单复数一样', wordList(data.sameForm, word)],
-    ['只有复数', wordList(data.pluralOnly, word)],
-    ['外来词', wordList(data.foreign, oneMany)],
-    ['复合名词', wordList(data.compound, oneMany)],
-    ['不可数名词', `<div class="table-wrap"><table><thead><tr><th>词</th><th>意思</th><th>要数的时候</th><th>例子</th><th>别写成</th></tr></thead><tbody>${data.uncountable.map(uncountable).join('')}</tbody></table></div>`],
-    ['可数时意思变了', list(data.countableWithNewMeaning, item => `<li><p class="line-rule"><span lang="en">${esc(item.word)}</span>：不可数是「${esc(item.uncountable)}」</p><span class="en" lang="en">${markup(item.countable)}</span><span class="zh">${esc(item.countableZh)}</span></li>`, 'lines')],
-    ['主谓一致', list(data.agreement, item => `<li><p class="line-rule">${markup(item.rule)}</p><span class="en" lang="en">${markup(item.en)}</span></li>`, 'lines')],
-    ['常见的错', list(data.commonMistakes, mistake, 'mistakes')],
+    [t('变化规则'), list(data.rules, rule, 'spell-rules')],
+    [t('-s 怎么读'), `${list(data.sound, sound, 'sounds')}<p class="sec-note">${markup(data.specialSound)}</p>`],
+    [t('不规则变化'), wordList(data.irregular, oneMany)],
+    [t('单复数一样'), wordList(data.sameForm, word)],
+    [t('只有复数'), wordList(data.pluralOnly, word)],
+    [t('外来词'), wordList(data.foreign, oneMany)],
+    [t('复合名词'), wordList(data.compound, oneMany)],
+    [t('不可数名词'), `<div class="table-wrap"><table><thead><tr>${[t('单词'), t('意思'), t('要数的时候'), t('例子'), t('别写成')].map(name => `<th>${esc(name)}</th>`).join('')}</tr></thead><tbody>${data.uncountable.map(uncountable).join('')}</tbody></table></div>`],
+    [t('可数时意思变了'), list(data.countableWithNewMeaning, item => `<li><p class="line-rule"><span lang="en">${esc(item.word)}</span>${esc(t('：不可数是「{meaning}」', { meaning: item.uncountable }))}</p><span class="en" lang="en">${markup(item.countable)}</span><span class="zh">${esc(item.countableZh)}</span></li>`, 'lines')],
+    [t('主谓一致'), list(data.agreement, item => `<li><p class="line-rule">${markup(item.rule)}</p><span class="en" lang="en">${markup(item.en)}</span></li>`, 'lines')],
+    [t('常见的错'), list(data.commonMistakes, mistake, 'mistakes')],
   ] }
 }
 
