@@ -25,6 +25,9 @@
 .cols b { font-family: var(--read); font-weight: 700; margin-right: .5em; }
 .cols span, .tip { color: var(--body); font-weight: 600; }
 .tip b { color: var(--ink); margin-right: .5em; }
+/* 用法提示：和手机 App 一样单独一块带底色的。只是一行灰字的话，夹在释义和搭配中间没人看得见 */
+.usage { margin: 0; padding: .7em 1em; border-radius: 14px; background: var(--amber-soft); font-weight: 600; line-height: 1.5; }
+.usage b { display: block; font-size: .8em; color: var(--moss-deep); }
 .ex, .heard { display: flex; gap: 12px; align-items: flex-start; }
 .ex p, .heard p { margin: 0; font-family: var(--read); font-weight: 600; line-height: 1.5; }
 .ex small { display: block; font-family: var(--font); color: var(--body); }
@@ -89,7 +92,8 @@ body[data-seat] .room-hud, body[data-seat] #room-tags, body[data-seat] .room-don
 .paper-more > div { display: flex; flex-direction: column; gap: 2cqh; min-width: 0; }
 .paper .senses { font-size: max(16px, 4.2cqh); }
 .paper .cols { gap: .5cqh; font-size: max(14px, 3cqh); }
-.paper .cols span, .paper .tip { font-size: max(12px, 2.5cqh); }
+.paper .cols span { font-size: max(12px, 2.5cqh); }
+.paper .usage { font-size: max(13px, 2.7cqh); }
 .paper .heard p { font-size: max(13px, 2.9cqh); }
 .answers { position: fixed; left: 23%; right: 13%; bottom: 7%; display: flex; gap: 12px; animation: fade-in .3s ease-out; }
 .answers .button { flex: 1; padding: 18px; font-size: 20px; }

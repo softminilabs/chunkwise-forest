@@ -73,12 +73,12 @@ async function start(desk, refs) {
 
 const topicName = (desk, id) => lang === 'zh' ? desk.topics.get(id) ?? id : id[0].toUpperCase() + id.slice(1)
 
-/// 翻面才露出来的那一块：左边释义和辨析，右边搭配和课文里的那一句。英文界面下只有中文的东西不出
+/// 翻面才露出来的那一块：左边释义和用法提示，右边搭配和课文里的那一句。英文界面下只有中文的东西不出
 function backOf(desk, word) {
   const zh = lang === 'zh'
   const line = desk.ctx.words.lessons.get(word.w.toLowerCase())
   return [
-    h('div', {}, h('ul', { class: 'senses' }, word.senses.map(sense => h('li', {}, h('i', {}, sense.pos), zh ? sense.zh : sense.en))), zh && h('p', { class: 'tip' }, h('b', {}, t('辨析')), word.tip)),
+    h('div', {}, h('ul', { class: 'senses' }, word.senses.map(sense => h('li', {}, h('i', {}, sense.pos), zh ? sense.zh : sense.en))), zh && word.tip && h('p', { class: 'usage' }, h('b', {}, t('用法提示')), word.tip)),
     h('div', {}, h('div', { class: 'cols' }, word.col.map(([en, meaning]) => h('div', {}, h('b', { lang: 'en' }, en), zh && h('span', {}, meaning)))),
       line && h('div', { class: 'heard' }, say(() => desk.voice.play(`data/audio/${line.l}.m4a`, line.a, line.b)),
         h('p', { lang: 'en' }, h('span', { class: 'kicker' }, t('第 {n} 课里听过', { n: line.n })), marked(line.en, line.r)))),

@@ -45,6 +45,7 @@
 .library .senses i { font-size: 15px; margin-right: 10px; }
 .library .senses small { font-size: 15px; margin: 0 0 8px 2px; }
 .library .tip, .library .cols span { font-size: 15px; }
+.library .usage { font-size: 17px; }
 .library .cols b { font-size: 19px; }
 .library .ex p { font-size: 22px; }
 .library .ex small { font-size: 15px; }

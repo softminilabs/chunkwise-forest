@@ -6,7 +6,7 @@ import { prons } from './words-pron.js'
 
 // 一个级别一两千个词，一口气全画出来会卡：一次只画这么多张，滚到底再接着画
 const BATCH = 60
-// 英文界面只出英文：辨析、搭配的中文、例句的中文都是给看得懂中文的人的
+// 英文界面只出英文：用法提示、搭配的中文、例句的中文都是给看得懂中文的人的
 const inChinese = lang !== 'en'
 const speaker = () => h('i', { class: 'speaker' })
 const cut = (text, [from, to]) => [text.slice(0, from), h('mark', {}, text.slice(from, to)), text.slice(to)]
@@ -102,7 +102,7 @@ function detail(view, word) {
     h('div', {}, h('h1', { lang: 'en', style: `--w:${widthOf(word.w)}` }, word.w),
       prons(view.voice, word),
       h('ul', { class: 'senses' }, word.senses.map(sense)),
-      inChinese && word.tip && h('p', { class: 'tip' }, h('b', {}, t('辨析')), word.tip),
+      inChinese && word.tip && h('p', { class: 'usage' }, h('b', {}, t('用法提示')), word.tip),
       word.fam.length > 0 && h('p', { class: 'tip' }, h('b', {}, t('同族')), word.fam.join(inChinese ? '、' : ', '))),
     h('div', {}, word.ex.map((_, k) => example(view, word, k)),
       h('div', { class: 'cols' }, word.col.map(([en, zh]) => h('div', {}, h('b', { lang: 'en' }, en), inChinese && h('span', {}, zh)))),
