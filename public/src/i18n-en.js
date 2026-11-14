@@ -195,7 +195,7 @@ export const EN = {
   '浇了 {n} 滴，{name}还差 {m} 滴长成': 'Poured {n}. {name} needs {m} more to grow up.',
   '荣誉墙 · 第 {n} 棵': 'Wall of honour · No. {n}',
   '{name}长成了': '{name} is fully grown',
-  '一共浇了 {n} 滴水。墙上挂了一张，林子里种在{where}。': ({ n, where }) => `${n} drops in all. A card is on the wall, and it is planted out: ${where.toLowerCase()}.`,
+  '一共浇了 {n} 滴水。墙上挂了一张，它种在{where}。': ({ n, where }) => `${n} drops in all. A card is on the wall, and it is planted out: ${where.toLowerCase()}.`,
   '一共浇了 {n} 滴水。墙上挂了一张；林子里这一类的位置已经种满了。': '{n} drops in all. A card is on the wall; the forest has no free spot of this kind left.',
   '去林子里看看': 'See it in the forest', '我种的': 'Planted',
   '{name}种在{where}了': ({ name, where }) => `${name} planted: ${where.toLowerCase()}`,

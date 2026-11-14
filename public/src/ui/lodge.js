@@ -239,7 +239,7 @@ export function createLodge(ctx) {
     const next = (label, go) => h('button', { class: 'chip', type: 'button', onclick: () => { ctx.ui.closeDrawer(); go() } }, label)
     ctx.ui.openDrawer({
       kicker: t('荣誉墙 · 第 {n} 棵', { n: ctx.garden.store.done.length }), title: t('{name}长成了', { name: plantName(item.seed) }),
-      sub: spot ? t('一共浇了 {n} 滴水。墙上挂了一张，林子里种在{where}。', { n: plant.drops, where: spot.where }) : t('一共浇了 {n} 滴水。墙上挂了一张；林子里这一类的位置已经种满了。', { n: plant.drops }),
+      sub: spot ? t('一共浇了 {n} 滴水。墙上挂了一张，它种在{where}。', { n: plant.drops, where: spot.where }) : t('一共浇了 {n} 滴水。墙上挂了一张；林子里这一类的位置已经种满了。', { n: plant.drops }),
       body: [h('img', { class: 'bloom-shot', src: portrait(plant, 4).toDataURL(), alt: '' }),
         spot && h('button', { class: 'button big', type: 'button', onclick: () => ctx.visit(spot, item) }, t('去林子里看看')),
         h('div', { class: 'row center' }, next(t('再种一颗'), () => openSeeds(ctx)))],
