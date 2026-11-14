@@ -59,32 +59,58 @@
 /* 浇水的时候镜头推到花盆跟前，屋里的牌子先收起来 */
 body[data-tending] #room-tags { display: none; }
 
-/* 选种子 */
+/* 选种子：上面一排种子，中间是选中那一种的五个样子，底下把它种下去 */
 .seeds { width: min(860px, 100%); max-height: min(94vh, 900px); display: flex; flex-direction: column; overflow: hidden; border-radius: 28px; animation: card-in .4s var(--ease); }
-.seeds-list { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 4px 24px 24px; }
-.seed { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px 14px; border: 0; border-radius: 22px; background: var(--sage-pale); text-align: left; transition: scale .15s var(--ease), background-color .15s ease; }
-.seed:active { scale: .985; }
-.seed-head { display: flex; align-items: baseline; gap: 12px; }
-.seed-head strong { font-size: 24px; font-weight: 800; }
-.seed-head span { flex: 1; font-size: 14px; color: var(--body); font-weight: 600; }
-.seed-head i { align-self: center; font-style: normal; padding: 8px 18px; border-radius: 999px; background: var(--moss); color: var(--paper); font-weight: 700; font-size: 14px; white-space: nowrap; }
-.seed-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
-.seed-steps figure { margin: 0; display: flex; flex-direction: column; align-items: center; border-radius: 14px; background: var(--paper); overflow: hidden; }
-.seed-steps img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: contain; }
-.seed-steps figcaption { display: flex; flex-direction: column; align-items: center; padding: 0 4px 8px; font-weight: 700; font-size: 14px; line-height: 1.3; }
-.seed-steps small { display: inline-flex; align-items: center; color: var(--water); font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
-@media (hover: hover) and (pointer: fine) { .seed:hover { background: var(--sage-soft); } }
+.seeds-body { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 6px 24px; }
+.seeds-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.seed { position: relative; display: flex; flex-direction: column; align-items: center; padding: 6px 4px 10px; border: 0; border-radius: 18px; background: var(--sage-pale); overflow: hidden; line-height: 1.3; text-align: center; transition: scale .15s var(--ease), background-color .15s ease, color .15s ease; }
+.seed:active { scale: .96; }
+/* 照片是 320×400，四周留白多：放大到格子里只露出有东西的那一块（横 60–260、竖 60–360）。留白是透明的，伸到格子外面叠着也不碍事，到外面那一圈才裁掉 */
+.seed img { display: block; height: 112px; aspect-ratio: 4 / 5; margin: -17px -12px -8px; }
+.seed strong { font-size: 15px; font-weight: 800; }
+.seed small, .seed-steps small { color: var(--water); font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.seed.is-on { background: var(--moss); color: var(--paper); }
+.seed.is-on small { color: #A9DAF0; }
+/* 还没做模型的：一只空花盆，上面空着的地方写「建设中」，整格淡一些 */
+.seed.is-soon:not(.is-on) { background: none; box-shadow: inset 0 0 0 2px var(--sage-pale); }
+.seed.is-soon > :not(em) { opacity: .55; }
+.seed.is-soon.is-on > :not(em) { opacity: .8; }
+.seed.is-soon img, .seed-soon img { filter: saturate(.3); }
+/* 英文是两个词，一个词一行，标签才贴着字；中文三个字不拆 */
+.seed em { position: absolute; inset: 34px 4px auto; translate: 0 -50%; width: min-content; word-break: keep-all; margin: 0 auto; padding: 2px 8px; border-radius: 10px; background: var(--sage-pale); color: var(--body); font-style: normal; font-size: 12px; font-weight: 700; line-height: 1.2; }
+.seed.is-on em { background: rgb(255 255 255 / .16); color: var(--paper); }
+.seed-grow { display: grid; padding: 8px 12px 14px; border-radius: 22px; background: var(--sage-pale); overflow: hidden; }
+/* 换种子时新旧两块叠在同一格里，一块淡出一块淡入 */
+.seed-steps, .seed-soon { grid-area: 1 / 1; animation: fade-in .3s ease-out; }
+.seed-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.seed-steps figure { position: relative; margin: 0; }
+.seed-steps img { display: block; width: 160%; aspect-ratio: 4 / 5; margin: -30% -30% -20%; }
+/* 还没做的：一只空花盆和一句话，占的高度和五个样子一样，来回换时卡片不跟着一跳。花盆上面本该长东西的那一截空着，所以整块往上挪半格，落在正中 */
+.seed-soon { margin: -10% 0 10%; }
+.seed-soon img { display: block; width: 32%; aspect-ratio: 4 / 5; margin: -6% auto -4%; opacity: .55; }
+.seed-grow figcaption { min-height: 37px; display: flex; flex-direction: column; align-items: center; font-weight: 700; font-size: 15px; line-height: 1.3; text-align: center; }
+.seed-soon figcaption { color: var(--body); }
+/* 两只花盆之间的箭头：从左到右一步步长大。上边距按格子宽度算，正好落在花盆的高度上 */
+.seed-steps figure + figure::before { content: '›'; position: absolute; left: 0; top: 0; padding-top: 123%; translate: -50% 0; color: var(--muted); font-size: 26px; font-weight: 700; line-height: 0; }
+.seeds > .button { align-self: center; min-width: 280px; margin: 16px 24px 24px; }
+@media (hover: hover) and (pointer: fine) { .seed:not(.is-on):hover { background: var(--sage-soft); } }
 
 /* 长成了：卡片里那张照片 */
 .bloom-shot { display: block; width: 190px; margin: 0 auto; border-radius: 18px; background: var(--sage-pale); animation: card-in .5s var(--ease); }
 
 @media (max-width: 720px) {
-  .seeds-list { padding: 4px 14px 18px; }
-  .seed { padding: 14px 12px 12px; }
-  .seed-head { flex-wrap: wrap; gap: 2px 10px; }
-  .seed-head strong { font-size: 20px; }
-  .seed-steps { gap: 5px; }
-  .seed-steps figcaption { font-size: 12px; }
+  .seeds-body { padding: 6px 14px; }
+  .seeds-row { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); }
+  .seed img { height: 86px; margin: -13px -12px -6px; }
+  .seed strong { font-size: 13px; }
+  .seed em { top: 28px; font-size: 11px; }
+  .seed-grow { padding: 6px 4px 12px; }
+  .seed small, .seed-steps small, .seed-grow figcaption { font-size: 12px; }
+  .seed-grow figcaption { min-height: 32px; }
+  .seed-steps figure + figure::before { font-size: 20px; }
+  html[lang="en"] .seed strong { font-size: 12px; }
+  html[lang="en"] .seed-steps small { font-size: 11px; }
+  .seeds > .button { align-self: stretch; margin: 14px 14px 18px; }
   .prize-card { padding: 28px 20px 24px; }
   .prize h2 { font-size: 30px; }
   .prize-drops .drop { font-size: 62px; }
