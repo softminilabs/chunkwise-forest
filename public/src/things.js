@@ -41,6 +41,8 @@ export function createThings(root, { onChoose, chrome: chromeSelector = '.hud > 
     return best
   }
 
+  /// 鼠标指着哪一样。射线同时穿过好几样的范围时，取中心离射线最近的那个，
+  /// 不取离镜头最近的：书架的范围又高又大，会把它后面墙角的花盆整个罩住，点花盆就成了点书架
   function pick(ray) {
     let best = null
     let bestGap = Infinity
@@ -49,7 +51,7 @@ export function createThings(root, { onChoose, chrome: chromeSelector = '.hud > 
       sphere.center.set(thing.position.x, thing.position.y + thing.height * 0.5, thing.position.z)
       sphere.radius = Math.max(thing.radius, thing.height * 0.5)
       if (!ray.intersectsSphere(sphere)) continue
-      const gap = ray.origin.distanceTo(sphere.center)
+      const gap = ray.distanceSqToPoint(sphere.center)
       if (gap < bestGap) { best = thing; bestGap = gap }
     }
     return best
