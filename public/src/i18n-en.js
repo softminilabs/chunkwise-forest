@@ -211,6 +211,7 @@ export const EN = {
   '{date}种下': 'Planted {date}', '现在在{where}': 'Now: {where}',
   '去看看': 'Go and see', '换个地方': 'Move it', '种到这儿': 'Plant it here', '不换了': 'Keep it there', '你': 'You',
   '小路旁，第 {n} 间木屋附近': 'By the trail near cabin {n}', '单词屋门口': 'By the Word Lodge door',
+  '林子里，第 {n} 间木屋附近': 'In the woods near cabin {n}', '第 {n} 间木屋旁': 'Beside cabin {n}',
   '第 {n} 间木屋门口': 'By the door of cabin {n}', '篝火空地边': 'At the edge of the campfire clearing',
   '再种一颗': 'Plant another',
 

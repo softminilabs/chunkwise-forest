@@ -17,7 +17,7 @@ import { createCabins } from './world/cabins.js'
 import { createCamp } from './world/camp.js'
 import { createChests } from './world/chests.js'
 import { createLanternTree } from './world/lanterns.js'
-import { HABITAT, SPOTS, createPlanted } from './world/planted.js'
+import { HABITAT, SPOTS, createPlanted, standBy } from './world/planted.js'
 import { createXmas } from './world/xmas.js'
 import { ICONS, christmas, daysUntil, openCountdown, springFestival } from './ui/countdown.js'
 import { createLodge } from './ui/lodge.js'
@@ -25,7 +25,7 @@ import { plantName } from './ui/seeds.js'
 import { createWater } from './ui/water.js'
 import { createVoice } from './words/deck.js'
 import { createWordProgress } from './words/progress.js'
-import { createLand, trailX } from './world/land.js'
+import { createLand } from './world/land.js'
 import { PLANTS } from './world/plants/index.js'
 import { createWeather } from './world/weather.js'
 import { createWoods } from './world/woods.js'
@@ -169,10 +169,9 @@ function plantOut(ctx) {
   ctx.visit = async (spot, item) => {
     ctx.ui.closeModal()
     ctx.ui.closeDrawer()
-    // 站在它朝小路的那一侧
-    const side = Math.sign(trailX(spot.z) - spot.x) || 1
+    const stand = standBy(spot)
     const arrive = () => {
-      ctx.player.place(spot.x + side * 2.2, spot.z + 1.4)
+      ctx.player.place(stand.x, stand.z)
       ctx.rig.focus.copy(ctx.player.position)
       // 先不摆它：等画面亮了再让它从地里冒出来
       if (item) ctx.planted.set(planted().filter(other => other !== item))

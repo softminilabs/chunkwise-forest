@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { mat, seeded } from '../look.js'
 import { t } from '../i18n.js'
 import { SPOTS as CHESTS } from './chests.js'
-import { CABINS, CLEARING, LODGE, height, nearPath, trailX } from './land.js'
+import { CABINS, CLEARING, LODGE, STREAM, distanceTo, height, nearPath, trailX } from './land.js'
 import { PLANTS } from './plants/index.js'
 import { TREES } from './woods.js'
 
@@ -27,10 +27,13 @@ function roadside(z, side, random, taken) {
     const far = z + nudge - reach * lean / Math.hypot(1, lean)
     // 原有的树冠大约是 1.5 × size 那么宽，再留出这棵小树自己的一圈
     if (nearPath(x, far) < 3.3 || taken.some(other => Math.hypot(other.x - x, other.z - far) < 3.6) || TREES.some(tree => Math.hypot(tree.x - x, tree.z - far) < 1.5 * tree.size + 1.2)) continue
-    return { x, z: far, turn, where: t('小路旁，第 {n} 间木屋附近', { n: Math.min(9, Math.max(1, Math.round((-9 - far) / 11.5) + 1)) }) }
+    return { x, z: far, turn, where: t('小路旁，第 {n} 间木屋附近', { n: cabinNear(far) }) }
   }
   return null
 }
+
+/// 按南北位置算，这儿挨着第几间木屋
+const cabinNear = z => Math.min(9, Math.max(1, Math.round((-9 - z) / 11.5) + 1))
 
 /// 树：从空地的北口一路往北，一左一右交替；走完一趟，第二趟再把对面补上。flowers：花的位置，树要让开
 function treeSpots(flowers) {
@@ -79,6 +82,65 @@ function flowerSpots() {
 /// 每一类东西在林子里的位置表，按「先种哪儿」排好。每个位置：{ x, z, turn, where }
 export const SPOTS = { flower: flowerSpots() }
 SPOTS.tree = treeSpots(SPOTS.flower)
+
+// 路边和门口排满以后，接着种进林子里原有的树之间的空地：地图不用扩，位置多出一两倍
+
+/// 一棵原有的树在离地 up 米高的地方有多宽（半径），高过树梢是 0。松树是越往上越尖的三层；阔叶树是一团球，旁边还挂着一小团
+function girthAt(tree, up) {
+  const k = up / tree.size
+  if (tree.pine) return Math.max(0, 1.6 * (5.05 - k) / 4.25) * tree.size
+  return (k < 3.5 ? 1.9 : 1.5 * Math.sqrt(Math.max(0, 1 - ((k - 3.2) / 1.3) ** 2))) * tree.size
+}
+
+/// 从镜头那边看，这一点是不是被挡在后面。镜头在人的正南、斜着往下看：视线从齐胸高往南每米升 0.43 米，
+/// 南边有树或木屋在视线那么高的地方正好挡着，种在这儿就看不见
+function hidden(x, z) {
+  const eye = height(x, z) + 1.2
+  const line = south => eye + 0.43 * south
+  const behind = tree => { const wide = girthAt(tree, line(tree.z - z) - tree.y); return wide > 0 && Math.abs(tree.x - x) < wide + 0.8 }
+  // 木屋按它靠北的那面墙算：烟囱不在正中间，量到屋子中心会漏掉
+  return TREES.some(tree => tree.z > z && behind(tree)) || CABINS.some(cabin => cabin.z > z && line(Math.max(0, cabin.z - z - 3)) < 5.4 && Math.abs(cabin.x - x) < 5.2)
+}
+
+/// 「去看看」时人站在哪儿：稍微靠前，先挑它朝小路的那一侧；从镜头看过去被挡住了，就依次换另一侧、正前方、两边再远一点
+export function standBy({ x, z }) {
+  const side = Math.sign(trailX(z) - x) || 1
+  const places = [[side * 2.2, 1.4], [-side * 2.2, 1.4], [0, 2.6], [side * 4, 0.6], [-side * 4, 0.6]].map(([dx, dz]) => ({ x: x + dx, z: z + dz }))
+  return places.find(place => !hidden(place.x, place.z)) ?? places[0]
+}
+
+/// 这一点能不能种：在路边那一排的外面，不挤着溪水、木屋、宝箱、原有的树和已经排好的位置；
+/// 它自己和「去看看」时站在旁边的人都要看得见
+function roomy(x, z, taken) {
+  const stand = standBy({ x, z })
+  if (nearPath(x, z) < 6.4 || distanceTo(STREAM, x, z) < 3.5 || hidden(x, z) || hidden(stand.x, stand.z)) return false
+  if (CABINS.some(cabin => Math.hypot(cabin.x - x, cabin.z - z) < 5.2) || Object.values(CHESTS).some(([cx, cz]) => Math.hypot(cx - x, cz - z) < 2.6)) return false
+  return !taken.some(other => Math.hypot(other.x - x, other.z - z) < 3.6) && !TREES.some(tree => Math.hypot(tree.x - x, tree.z - z) < 1.5 * tree.size + 1.2)
+}
+
+/// 林子里的空地：随手撒点，能种的留下。挨着木屋的归花（每间屋旁最多 4 个，从第 1 间排起），
+/// 其余归树（离小路近的一圈先种，一圈里从南往北）。
+/// 只在空地以北找：往南是开场镜头看得到的那一片，多出东西会搅乱那个画面
+function deepSpots() {
+  const random = seeded(71)
+  const taken = [...SPOTS.flower, ...SPOTS.tree]
+  const found = []
+  for (let k = 0; k < 6000; k++) {
+    const spot = { x: random.between(-21, 24), z: random.between(-114, -9), turn: random.next() * 6.28 }
+    if (!roomy(spot.x, spot.z, taken)) continue
+    taken.push(spot)
+    found.push(spot)
+  }
+  const gap = (cabin, spot) => Math.hypot(cabin.x - spot.x, cabin.z - spot.z)
+  const ring = spot => Math.floor(nearPath(spot.x, spot.z) / 6)
+  const wild = found.filter(spot => CABINS.every(cabin => gap(cabin, spot) > 9)).sort((p, q) => ring(p) - ring(q) || q.z - p.z)
+  return {
+    tree: wild.map(spot => ({ ...spot, where: t('林子里，第 {n} 间木屋附近', { n: cabinNear(spot.z) }) })),
+    flower: CABINS.flatMap((cabin, k) => found.filter(spot => gap(cabin, spot) <= 9).sort((p, q) => gap(cabin, p) - gap(cabin, q)).slice(0, 4)
+      .map(spot => ({ ...spot, where: t('第 {n} 间木屋旁', { n: k + 1 }) }))),
+  }
+}
+for (const [kind, spots] of Object.entries(deepSpots())) SPOTS[kind].push(...spots)
 
 function geometryOf(position, color) {
   const geometry = new THREE.BufferGeometry()
