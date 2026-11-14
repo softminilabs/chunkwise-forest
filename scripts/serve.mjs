@@ -2,6 +2,7 @@
 // 不支持的话 Safari 和 Chrome 都没法跳
 import { createReadStream, existsSync, statSync } from 'node:fs'
 import { createServer } from 'node:http'
+import { networkInterfaces } from 'node:os'
 import { extname, join, normalize, resolve } from 'node:path'
 
 const ROOT = resolve('public')
@@ -37,4 +38,8 @@ createServer((request, response) => {
   }
   response.writeHead(200, { 'content-type': type, 'accept-ranges': 'bytes', 'content-length': size })
   createReadStream(file).pipe(response)
-}).listen(PORT, () => console.log(`本地预览：http://localhost:${PORT}/`))
+}).listen(PORT, () => {
+  // 同一个 Wi-Fi 下的手机打不开 localhost，要用这台电脑在局域网里的地址
+  const lan = Object.values(networkInterfaces()).flat().find(net => net.family === 'IPv4' && !net.internal)?.address
+  console.log(`本地预览：http://localhost:${PORT}/` + (lan ? `\n手机上看（同一个 Wi-Fi）：http://${lan}:${PORT}/` : ''))
+})
