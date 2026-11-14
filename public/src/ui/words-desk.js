@@ -16,7 +16,7 @@ const marked = (sentence, range) => range ? [sentence.slice(0, range[0]), h('mar
 export function openDesk(ctx, seat, { stand }) {
   const track = h('i', {})
   const count = h('span', { class: 'seat-count' })
-  const bar = h('header', { class: 'seat-bar' }, h('button', { class: 'pill', type: 'button', onclick: () => stand() }, t('← 回屋里')), h('div', { class: 'seat-track' }, track), count)
+  const bar = h('header', { class: 'seat-bar' }, h('button', { class: 'pill', type: 'button', onclick: () => stand() }, t('← 回屋里')), h('div', { class: 'seat-track' }, track), count, ctx.water.chip())
   const paper = h('div', { class: 'paper-in' })
   const answers = h('footer', { class: 'answers' })
   seat.replaceChildren(bar, h('article', { class: 'paper' }, paper), answers)
@@ -54,6 +54,7 @@ async function showToday(desk) {
     h('h2', { class: 'zh' }, t('今天的词')),
     ...rows.map(row => h('button', { class: `plan${row === next ? ' is-next' : ''}`, type: 'button', disabled: !row.go, onclick: row.go },
       h('b', {}, row.name), h('span', {}, row.text), row.go && h('i', {}, row.label, row === next && h('kbd', {}, t('空格'))))),
+    h('p', { class: 'water-note' }, h('i', { class: 'drop' }), t('学完一个词得 1 滴水，可以拿去给窗下的花盆浇水')),
     h('div', { class: 'opts' },
       h('div', { class: 'opt' }, h('span', {}, t('新词学哪一级')), segment(LEVELS, level, value => set({ level: value }))),
       h('div', { class: 'opt' }, h('span', {}, t('每天几个新词')), segment(DAILY, progress.store.daily, value => set({ daily: value })))),

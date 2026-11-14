@@ -1,4 +1,4 @@
-// 顶上右边几个入口（都是能点开的：宝箱、声音、森林、语言），底下三个不用走路的按钮：接着学、练一练、听单词。
+// 顶上右边几个入口（都是能点开的：水滴、宝箱、声音、森林、语言），底下三个不用走路的按钮：接着学、练一练、听单词。
 // 走路是为了好玩，不是门槛：想学的时候一步都不用走
 import { openChestList } from './chests.js'
 import { cycles, marks, openDay, percent } from './day.js'
@@ -36,7 +36,7 @@ export function createHud(ctx) {
   const tongue = h('button', { class: 'stat', type: 'button', 'aria-label': other === 'en' ? 'Switch to English' : '切换到中文', onclick: () => { sessionStorage.setItem('cw.resume', '1'); setLang(other) } }, other === 'en' ? 'EN' : '中文')
   dock.replaceChildren(h('div', { class: 'row center' }, go, drill, listen), dock.querySelector('.keys'))
   hud.querySelector('.hud-left').append(dayCard(ctx))
-  stats.replaceChildren(chests, sounds, scene, tongue)
+  stats.replaceChildren(ctx.water.chip(), chests, sounds, scene, tongue)
 
   function paint() {
     const totals = ctx.state.totals()

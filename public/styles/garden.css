@@ -1,0 +1,92 @@
+/* 水滴、选种子、长成的庆祝。水滴的蓝只在这几样东西上用，别处看到这个蓝就知道说的是水 */
+:root {
+  --water: #3F8FBF; --water-pale: #DCEBF3;
+  --drop: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.2c3.7 4.7 6.8 8.5 6.8 12.4a6.8 6.8 0 0 1-13.6 0c0-3.9 3.1-7.7 6.8-12.4z'/%3E%3C/svg%3E");
+}
+.drop { flex: none; display: inline-block; width: 1em; height: 1em; background: var(--water); -webkit-mask: var(--drop) center / contain no-repeat; mask: var(--drop) center / contain no-repeat; }
+
+/* 计数：一颗水滴和壶里的滴数。森林顶栏、屋里顶栏、书桌那张纸上面都是这一颗 */
+.water { align-items: center; cursor: pointer; pointer-events: auto; }
+.water .drop { font-size: 16px; }
+/* 得到水滴时在计数下面冒出来的那一句 */
+.water-plus { position: fixed; z-index: 55; display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px 5px 9px; border-radius: 999px; background: var(--water); color: #fff; font-weight: 800; font-size: 14px; white-space: nowrap; pointer-events: none; }
+.water-plus .drop { background: #fff; }
+
+/* 说明卡片里的两条规矩 */
+.water-rules { display: flex; flex-direction: column; gap: 8px; }
+.water-rules div { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 14px; background: var(--water-pale); font-weight: 700; }
+.water-rules b { display: inline-flex; align-items: center; gap: 4px; font-size: 18px; color: var(--water); font-variant-numeric: tabular-nums; }
+
+/* 听完一课盖上来的一层，像过关：几滴水、下面水壶、下面「收下」 */
+.prize { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; padding: 16px; background: rgb(14 24 20 / .58); backdrop-filter: blur(3px); animation: fade-in .25s ease; }
+.prize-card { position: relative; width: min(440px, 100%); display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 34px 28px 30px; border-radius: 34px; background: var(--moss); color: var(--paper); text-align: center; overflow: hidden; box-shadow: 0 30px 70px rgb(0 0 0 / .4); animation: prize-in .6s cubic-bezier(.2, 1.35, .4, 1); }
+@keyframes prize-in { from { opacity: 0; scale: .7; } }
+.prize-card > * { position: relative; }
+/* 水滴背后转着的一圈光 */
+.prize-rays { position: absolute; left: 50%; top: 190px; width: 620px; height: 620px; margin: -310px 0 0 -310px; border-radius: 50%; background: repeating-conic-gradient(rgb(255 255 255 / .1) 0 12deg, transparent 12deg 30deg); -webkit-mask: radial-gradient(circle, #000 18%, transparent 66%); mask: radial-gradient(circle, #000 18%, transparent 66%); animation: prize-spin 22s linear infinite; pointer-events: none; }
+@keyframes prize-spin { to { rotate: 360deg; } }
+.prize .confetti { position: absolute; top: 170px; }
+.prize .confetti i { background: var(--amber); animation-delay: .25s; animation-fill-mode: both; }
+.prize .confetti i:nth-child(3n) { background: var(--paper); }
+.prize .confetti i:nth-child(3n + 1) { background: #A9DAF0; }
+.prize-why { font-size: 14px; font-weight: 700; color: rgb(255 255 255 / .72); }
+.prize h2 { font-size: 36px; font-weight: 800; line-height: 1.2; animation: prize-in .5s cubic-bezier(.2, 1.5, .4, 1) .15s both; }
+.prize-drops { display: flex; justify-content: center; gap: 24px; margin: 22px 0 4px; }
+/* 一颗一颗蹦出来，然后在原地轻轻晃着等人收 */
+.prize-drops .drop { font-size: 76px; background: radial-gradient(circle at 37% 64%, #fff 0 8%, transparent 9%), #A9DAF0; animation: prize-pop .55s cubic-bezier(.2, 1.6, .4, 1) var(--wait) both, prize-bob 1.7s ease-in-out calc(var(--wait) + .6s) infinite alternate; }
+@keyframes prize-pop { from { opacity: 0; scale: .2; translate: 0 -30px; } }
+@keyframes prize-bob { to { translate: 0 -7px; } }
+.prize-can { width: 190px; margin-top: 6px; }
+.prize-can svg { display: block; width: 100%; overflow: visible; transform-origin: 50% 100%; }
+/* 壶盖：左边是合页，掀开让水落进去 */
+.prize-lid { transform-box: fill-box; transform-origin: 0 100%; transition: transform .28s var(--ease); }
+.prize.is-taking .prize-lid { transform: rotate(-112deg); }
+.prize.is-full .prize-can { animation: prize-happy .6s ease-out; }
+@keyframes prize-happy { 25% { rotate: -7deg; } 60% { rotate: 6deg; } }
+.prize-splash { position: absolute; font-size: 15px; background: #A9DAF0; pointer-events: none; }
+.prize-count { font-size: 17px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.prize small { font-size: 13px; font-weight: 600; color: rgb(255 255 255 / .72); }
+.prize .button { min-width: 230px; margin-top: 16px; padding: 16px 28px; background: var(--paper); color: var(--ink); font-size: 20px; animation: fade-in .4s ease 1.05s both; transition: scale .15s var(--ease), opacity .25s ease; }
+.prize .button:disabled { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .prize-rays, .prize-drops .drop { animation: none; } }
+
+/* 学完一轮那条结果里的「得到几滴水」 */
+.water-got { display: inline-flex; align-items: center; gap: 5px; margin-left: 12px; vertical-align: 3px; padding: 3px 12px 3px 8px; border-radius: 999px; background: var(--water-pale); color: var(--water); font-weight: 800; font-size: 14px; }
+
+/* 「今天的词」那页上的一句说明 */
+.water-note { display: flex; align-items: center; gap: 6px; font-size: max(12px, 2.5cqh); color: var(--body); font-weight: 600; }
+
+/* 浇水的时候镜头推到花盆跟前，屋里的牌子先收起来 */
+body[data-tending] #room-tags { display: none; }
+
+/* 选种子 */
+.seeds { width: min(860px, 100%); max-height: min(94vh, 900px); display: flex; flex-direction: column; overflow: hidden; border-radius: 28px; animation: card-in .4s var(--ease); }
+.seeds-list { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 4px 24px 24px; }
+.seed { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px 14px; border: 0; border-radius: 22px; background: var(--sage-pale); text-align: left; transition: scale .15s var(--ease), background-color .15s ease; }
+.seed:active { scale: .985; }
+.seed-head { display: flex; align-items: baseline; gap: 12px; }
+.seed-head strong { font-size: 24px; font-weight: 800; }
+.seed-head span { flex: 1; font-size: 14px; color: var(--body); font-weight: 600; }
+.seed-head i { align-self: center; font-style: normal; padding: 8px 18px; border-radius: 999px; background: var(--moss); color: var(--paper); font-weight: 700; font-size: 14px; white-space: nowrap; }
+.seed-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.seed-steps figure { margin: 0; display: flex; flex-direction: column; align-items: center; border-radius: 14px; background: var(--paper); overflow: hidden; }
+.seed-steps img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: contain; }
+.seed-steps figcaption { display: flex; flex-direction: column; align-items: center; padding: 0 4px 8px; font-weight: 700; font-size: 14px; line-height: 1.3; }
+.seed-steps small { display: inline-flex; align-items: center; color: var(--water); font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
+@media (hover: hover) and (pointer: fine) { .seed:hover { background: var(--sage-soft); } }
+
+/* 长成了：卡片里那张照片 */
+.bloom-shot { display: block; width: 190px; margin: 0 auto; border-radius: 18px; background: var(--sage-pale); animation: card-in .5s var(--ease); }
+
+@media (max-width: 720px) {
+  .seeds-list { padding: 4px 14px 18px; }
+  .seed { padding: 14px 12px 12px; }
+  .seed-head { flex-wrap: wrap; gap: 2px 10px; }
+  .seed-head strong { font-size: 20px; }
+  .seed-steps { gap: 5px; }
+  .seed-steps figcaption { font-size: 12px; }
+  .prize-card { padding: 28px 20px 24px; }
+  .prize h2 { font-size: 30px; }
+  .prize-drops .drop { font-size: 62px; }
+  .prize-can { width: 160px; }
+}

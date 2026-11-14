@@ -68,5 +68,12 @@ export function createAudio(state) {
     bell: () => { for (const [k, f] of [1318.5, 1568, 1318.5, 1568].entries()) tone(f, { delay: k * 0.09, length: 0.12, type: 'square', gain: 0.05 }) },
     whoosh: (power = 1) => noise({ length: 0.5 + power * 0.4, gain: 0.25 * power, type: 'bandpass', frequency: 700 }),
     step: () => { if (context) noise({ length: 0.035, gain: 0.025, type: 'lowpass', frequency: 900 }) },
+    // 得到一滴水：「咚」的一声往上滑。连着几滴的时候一滴比一滴高
+    drop: (step = 0) => tone(SCALE[Math.min(step, SCALE.length - 1)], { length: 0.16, slide: 320, gain: 0.15 }),
+    // 浇水：一阵沙沙的水声里夹着几声滴答
+    pour() {
+      noise({ length: 1.6, gain: 0.05, type: 'highpass', frequency: 3200 })
+      for (let k = 0; k < 7; k++) tone(700 + Math.random() * 500, { delay: 0.15 + k * 0.2, length: 0.08, slide: 280, gain: 0.045 })
+    },
   }
 }

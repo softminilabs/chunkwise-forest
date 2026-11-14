@@ -7,7 +7,8 @@ export const DAILY = [5, 10, 15, 20]
 const read = () => { try { return JSON.parse(localStorage.getItem('cw.words')) ?? {} } catch { return {} } }
 const dayKey = now => { const date = new Date(dayStart(now)); return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}` }
 
-export function createWordProgress() {
+/// onDone：一个词这一轮学完了（新词学会、复习答对、早就会了）就叫一次
+export function createWordProgress(onDone) {
   // cards：碰过的词 → 排程，外加 lv（它是哪一级的，复习时要去那一级的文件里找它）、at（哪一刻学会的）。
   // newByDay：每个学习日学了几个新词；today：今天碰过哪些词（「听今天的词」放的就是它们）
   const store = { cards: {}, newByDay: {}, today: { day: '', ids: [] }, level: 'B1', daily: 10, ...read() }
@@ -27,6 +28,7 @@ export function createWordProgress() {
     touch(id, before, now)
     store.cards[id] = { ...next, lv: level, at: isLearned(next) ? before.at ?? now : before.at }
     save()
+    if (next.phase === 'review') onDone?.()
     return store.cards[id]
   }
 

@@ -1,7 +1,9 @@
-// 单词屋的屋里：一间剖开的木屋（朝镜头的那面墙和屋顶拿掉）。壁炉、书桌和绒布板、书架、留声机、窗、门。
+// 单词屋的屋里：一间剖开的木屋（朝镜头的那面墙和屋顶拿掉）。壁炉、书桌和荣誉墙、书架、留声机、窗和窗下的花盆、门。
 // 只分白天黑夜，不跟森林的四季。屋里的东西各管一件事，见 ui/lodge.js
 import * as THREE from 'three'
 import { at, mat, seeded, shade } from '../look.js'
+import { createHonors } from './honors.js'
+import { createPot } from './pot.js'
 
 // 窗外的天、松树、月亮：昼夜是连续变的，这几样各用一份材质，frame 里按夜的深浅调
 const SKY = new THREE.MeshBasicMaterial()
@@ -17,10 +19,15 @@ const WOOD = { wall: '#C69C70', seam: '#A98258', floor: '#A27C55', plank: '#8C6A
 const BOOKS = ['#3F6B55', '#E9B949', '#B8463B', '#26302B', '#A9C4B4', '#D9A531', '#4E7FA8', '#F3EFE4']
 // 右边要给窗帘让出位置，所以板子比书桌窄一点
 const BOARD = { x: 0, y: 2.95, wide: 5.4, tall: 2.2 }
+// 花盆在窗下，书桌和书架中间。离墙一米：树冠长开了不蹭窗台
+const POT = { x: 4.4, z: BACK + 1.0 }
+// fit：这个画面至少要多宽的长宽比才装得下。竖屏窄，装不下就让镜头沿着视线往后退
 const VIEWS = {
-  room: { from: [0, 6.4, 13.4], to: [0, 2.6, -1.4] },
+  room: { from: [0, 6.4, 13.4], to: [0, 2.6, -1.4], fit: 1.45 },
   desk: { from: [0.3, 2.75, 2.2], to: [0.3, 2.75, BACK] },
   listen: { from: [3.6, 3.0, 4.8], to: [-1.2, 1.55, -1.3] },
+  // 浇水时的中景：人（两米高）、水壶、花盆都在画面里。差不多正对着看：从右边斜着看的话，竖屏一后退镜头就退进书架里了
+  pot: { from: [POT.x + 0.05, 1.75, POT.z + 4.3], to: [POT.x - 0.3, 1.05, POT.z], fit: 0.8 },
 }
 
 const paints = new Map()
@@ -142,54 +149,13 @@ function desk() {
   return { group, lamp }
 }
 
-/// 一张写着词的纸条的贴图
-function noteTexture(word) {
-  const canvas = document.createElement('canvas')
-  canvas.width = 320
-  canvas.height = 200
-  const context = canvas.getContext('2d')
-  context.fillStyle = '#FBF8F1'
-  context.fillRect(0, 0, 320, 200)
-  context.fillStyle = '#26302B'
-  let size = 58
-  // 词长了就把字缩小，别写出纸条
-  do { context.font = `700 ${size}px Charter, Georgia, serif`; size -= 4 } while (context.measureText(word).width > 280 && size > 20)
-  context.textAlign = 'center'
-  context.textBaseline = 'middle'
-  context.fillText(word, 160, 108)
-  const texture = new THREE.CanvasTexture(canvas)
-  texture.colorSpace = THREE.SRGBColorSpace
-  return texture
-}
-
-/// 后墙书桌上方的一块大绒布板：学会的词写成纸条钉在上面，五列三行最多十五张
+/// 后墙书桌上方的一块大绒布板：荣誉墙。板上画什么在 honors.js
 function board() {
   const group = new THREE.Group()
-  const notes = new THREE.Group()
   const { x, y, wide, tall } = BOARD
-  const pin = new THREE.MeshBasicMaterial({ color: '#E9B949' })
-  group.add(box(wide + 0.24, tall + 0.24, 0.08, WOOD.dark, x, y, BACK + 0.04), quiet(box(wide, tall, 0.03, '#3F6B55', x, y, BACK + 0.085)), notes)
-  let shown = null
-
-  function set(words) {
-    // 没变就不重画：每张纸条都要现画一张贴图
-    if (words.join() === shown) return
-    shown = words.join()
-    for (const child of notes.children) if (child.material !== pin) { child.material.map.dispose(); child.material.dispose() }
-    notes.clear()
-    const random = seeded(5)
-    words.slice(0, 15).forEach((word, k) => {
-      const texture = noteTexture(word)
-      const note = new THREE.Mesh(new THREE.PlaneGeometry(0.84, 0.52), new THREE.MeshStandardMaterial({ map: texture, emissive: '#ffffff', emissiveMap: texture, emissiveIntensity: 0.08, roughness: 1 }))
-      // 每张歪一点、错开一点，像随手钉的
-      note.position.set(x - wide / 2 + 0.62 + (k % 5) * 1.04 + random.between(-0.06, 0.06), y + tall / 2 - 0.42 - Math.floor(k / 5) * 0.68 + random.between(-0.04, 0.04), BACK + 0.105)
-      note.rotation.z = random.between(-0.06, 0.06)
-      notes.add(note, at(new THREE.Mesh(new THREE.CircleGeometry(0.035, 10), pin), note.position.x, note.position.y + 0.2, BACK + 0.11))
-    })
-  }
-  /// 夜里只有炉火和台灯，纸条自己带一点亮才看得清字
-  const glow = night => { for (const child of notes.children) if (child.material !== pin) child.material.emissiveIntensity = 0.08 + night * 0.27 }
-  return { group, set, glow }
+  const honors = createHonors(wide, tall)
+  group.add(box(wide + 0.24, tall + 0.24, 0.08, WOOD.dark, x, y, BACK + 0.04), quiet(box(wide, tall, 0.03, '#3F6B55', x, y, BACK + 0.085)), at(honors.mesh, x, y, BACK + 0.105))
+  return { group, set: honors.set, glow: honors.glow }
 }
 
 /// 后墙右边的窗：只分白天和黑夜，不跟森林的四季。天色、松树、月亮在 frame 里跟着昼夜变
@@ -281,14 +247,17 @@ function lights(scene) {
 // 小陈在屋里走的地面：一块平地，四面是墙。走得比森林里慢，人按家具的尺寸缩一点
 // （森林里的房子是照着他的大头做的，屋里的桌椅是照着真人的尺寸做的）
 export const ROOM_GROUND = { x: 5.0, north: -3.3, south: 3.5, height: () => 0, start: { x: 4.4, z: 1.5 }, speed: 5, size: 0.9 }
-// 家具挡路的地方：书桌一排、壁炉一排、扶手椅、放留声机的矮柜
-export const ROOM_COLLIDERS = [[-1.9, -3.3, 0.45], [-0.8, -3.3, 0.45], [0.3, -3.3, 0.45], [1.4, -3.3, 0.45], [2.5, -3.3, 0.45], [3.0, -3.3, 0.45], [-5.4, -1.3, 0.9], [-5.4, -0.4, 0.9], [-5.4, 0.5, 0.9], [-2.5, 1.6, 0.5], [-5.05, -3.5, 0.6]].map(([x, z, r]) => ({ x, z, r }))
+// 家具挡路的地方：书桌一排、壁炉一排、扶手椅、放留声机的矮柜、花盆
+export const ROOM_COLLIDERS = [[-1.9, -3.3, 0.45], [-0.8, -3.3, 0.45], [0.3, -3.3, 0.45], [1.4, -3.3, 0.45], [2.5, -3.3, 0.45], [3.0, -3.3, 0.45], [-5.4, -1.3, 0.9], [-5.4, -0.4, 0.9], [-5.4, 0.5, 0.9], [-2.5, 1.6, 0.5], [-5.05, -3.5, 0.6], [POT.x, POT.z, 0.5]].map(([x, z, r]) => ({ x, z, r }))
 // 屋里几样能用的东西在哪儿：position 是东西本身（牌子飘在它头顶 height 那么高），spot 是人走过去站的地方
 export const PLACES = {
   desk: { position: [0.5, 0, BACK + 0.7], height: 0.75, radius: 2.2, reach: 2.6, spot: [-0.4, BACK + 1.9] },
   shelf: { position: [5.6, 0, -1.6], height: 3.9, radius: 1.6, reach: 2.2, spot: [4.4, -1.6] },
   gramophone: { position: [-5.05, 0, BACK + 0.5], height: 1.6, radius: 0.9, reach: 2.0, spot: [-3.9, -2.4] },
   door: { position: [5.9, 0, 1.5], height: 2.6, radius: 1.0, reach: 1.8, spot: [4.7, 1.5] },
+  // 人站在花盆的左前方、比水壶靠镜头：水壶在他身后那一层举起来，从镜头看是壶从他右手边伸向花盆。
+  // 站得和水壶一样深的话，壶身会埋进他身体里，只剩壶嘴露着，像肩膀在出水
+  pot: { position: [POT.x, 0, POT.z], height: 0.5, radius: 0.8, reach: 1.5, spot: [POT.x - 1.0, POT.z + 0.9] },
 }
 // 坐的地方：[x, 离地多高, z, 脸朝哪儿]。书桌前的凳子（脸朝墙）、壁炉前的扶手椅（脸朝火）
 export const SEATS = { desk: [-1.3, -0.08, BACK + 1.85, Math.PI], listen: [-2.5, 0.42, 1.6, Math.atan2(-2.6, -2.0)] }
@@ -299,14 +268,16 @@ export function createRoom() {
   const work = desk()
   const wall = board()
   const shelf = bookshelf()
-  scene.add(shell(), fire.group, lounge(), gramophone(), work.group, wall.group, windowBack(), shelf.group, door())
+  const pot = createPot()
+  pot.group.position.set(POT.x, 0, POT.z)
+  scene.add(shell(), fire.group, lounge(), gramophone(), work.group, wall.group, windowBack(), shelf.group, door(), pot.group)
   const dim = lights(scene)
   const eye = { from: new THREE.Vector3(), to: new THREE.Vector3(), view: 'room', fresh: true }
   const goal = { from: new THREE.Vector3(), to: new THREE.Vector3() }
 
   return {
-    scene, setNotes: wall.set, setShelf: shelf.set,
-    /// 镜头看哪儿：room 屋内全景、desk 书桌前、listen 壁炉前。snap：不慢慢移过去，直接到位
+    scene, pot, setHonors: wall.set, setShelf: shelf.set,
+    /// 镜头看哪儿：room 屋内全景、desk 书桌前、listen 壁炉前、pot 花盆前。snap：不慢慢移过去，直接到位
     look(view, snap = false) { eye.view = view; eye.fresh ||= snap },
     frame(camera, dt, time, night) {
       SKY.color.lerpColors(...TONES.sky, night)
@@ -314,13 +285,14 @@ export function createRoom() {
       MOON.material.opacity = night
       dim(night)
       wall.glow(night)
+      pot.frame(dt, time)
       work.lamp.intensity = 2.5 + 7.5 * night
       fire.glow.intensity = (9 + 21 * night) * (0.86 + 0.14 * Math.sin(time * 9.1) * Math.sin(time * 5.3))
       fire.flames.forEach((flame, k) => { flame.scale.y = 1 + 0.16 * Math.sin(time * (7 + k * 2.3) + k); flame.rotation.y = time * (0.8 + k * 0.4) })
       goal.to.set(...VIEWS[eye.view].to)
       goal.from.set(...VIEWS[eye.view].from)
-      // 竖屏窄，全景装不下一整间屋：镜头沿着视线往后退
-      if (eye.view === 'room') goal.from.sub(goal.to).multiplyScalar(Math.max(1, 1.45 / camera.aspect)).add(goal.to)
+      const { fit } = VIEWS[eye.view]
+      if (fit) goal.from.sub(goal.to).multiplyScalar(Math.max(1, fit / camera.aspect)).add(goal.to)
       const ease = eye.fresh ? 1 : 1 - Math.exp(-4 * dt)
       eye.fresh = false
       eye.from.lerp(goal.from, ease)

@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { createAudio } from './audio.js'
 import { createInput, createRig } from './controls.js'
 import { createFx } from './fx.js'
+import { WORD_DROPS, createGarden } from './garden.js'
 import { createPlayer } from './player.js'
 import { createSounds } from './sounds.js'
 import { createState } from './state.js'
@@ -19,9 +20,11 @@ import { createLanternTree } from './world/lanterns.js'
 import { createXmas } from './world/xmas.js'
 import { ICONS, christmas, daysUntil, openCountdown, springFestival } from './ui/countdown.js'
 import { createLodge } from './ui/lodge.js'
+import { createWater } from './ui/water.js'
 import { createVoice } from './words/deck.js'
 import { createWordProgress } from './words/progress.js'
 import { createLand } from './world/land.js'
+import { PLANTS } from './world/plants/index.js'
 import { createWeather } from './world/weather.js'
 import { createWoods } from './world/woods.js'
 import { lang, pick, setLang, t } from './i18n.js'
@@ -197,7 +200,9 @@ async function boot() {
   const rig = createRig(camera)
   const ctx = { course, cards, apps, state, audio, rig, camera, renderer, ui: createUI(audio), sounds: createSounds(audio, state) }
   // lessons：课文里收过的词卡（按小写的词头找）。单词屋里同一个词要带上那句课文
-  ctx.words = { progress: createWordProgress(), voice: createVoice(), lessons: new Map(Object.values(cards).filter(card => card.kind === 'word').map(card => [card.text.toLowerCase(), card])) }
+  ctx.garden = createGarden(PLANTS)
+  ctx.water = createWater(ctx)
+  ctx.words = { progress: createWordProgress(() => ctx.water.gain(WORD_DROPS)), voice: createVoice(), lessons: new Map(Object.values(cards).filter(card => card.kind === 'word').map(card => [card.text.toLowerCase(), card])) }
   buildWorld(ctx)
   wire(ctx)
   ctx.things = createThings(document.getElementById('tags'), { onChoose: thing => ctx.approach(thing) })

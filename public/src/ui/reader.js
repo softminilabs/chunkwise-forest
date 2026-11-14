@@ -3,6 +3,7 @@
 import { h, stars } from './core.js'
 import { buildSide } from './reader-side.js'
 import { buildReader, clock, icon } from './reader-view.js'
+import { LESSON_DROPS } from '../garden.js'
 import { t } from '../i18n.js'
 
 // 课文录音平均每分钟 163 个词，App 的 PRD 给 B1 定的是 140：慢的那一档取 0.85 倍，正好落在 140 上下
@@ -185,6 +186,8 @@ function complete(session) {
   const { ctx, lesson } = session
   if (session.outcome) return
   session.outcome = ctx.state.finish(lesson, 1)
+  // 重听的也给：和「今天读了一课」一个规矩，每听完一遍都算
+  ctx.garden.earn(LESSON_DROPS)
   ctx.audio.chime(4)
   ctx.onLesson(lesson)
 }
@@ -197,6 +200,7 @@ function finish(session) {
   session.audio.pause()
   complete(session)
   view.main.replaceChildren(resultNode(session, session.outcome))
+  view.root.append(session.ctx.water.prize(LESSON_DROPS, t('第 {n} 课听完了', { n: session.lesson.n })))
   view.bar.hidden = true
 }
 
