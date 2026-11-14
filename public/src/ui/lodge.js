@@ -115,6 +115,7 @@ export function createLodge(ctx) {
     seat.dataset.kind = kind
     seat.hidden = false
     state.leaveSeat = open(ctx, seat, { stand, ...options })
+    seat.querySelector('.paper').append(h('button', { class: 'close', type: 'button', 'aria-label': t('关上'), onclick: () => stand() }, '✕'))
   }
 
   function stand(result) {

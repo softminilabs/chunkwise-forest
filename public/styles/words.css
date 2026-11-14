@@ -62,6 +62,10 @@ body[data-seat] .room-hud, body[data-seat] #room-tags, body[data-seat] .room-don
 .paper-in { max-height: 100%; padding: 4.6cqh 5cqw 5.2cqh; border-radius: 6px; background: var(--paper); box-shadow: 0 3px 0 rgb(var(--shade) / .1), 0 18px 40px rgb(var(--shade) / .4); display: flex; flex-direction: column; gap: 2.2cqh; overflow: hidden auto; }
 /* 纸上换内容（今天的词 → 一个词 → 下一个词）、翻面露出的意思：都淡进来 */
 .paper-in > *, .paper-more { animation: fade-in .3s ease-out; }
+/* 右上角的 ✕：和纸里第一行字对齐，钉在纸上不跟着内容滚 */
+.paper > .close { position: absolute; top: calc(4.6cqh - 8px); right: 5cqw; z-index: 1; }
+/* 听单词那张纸的第一行右边是「第几个」，给 ✕ 让出位置 */
+#seat .listen-head { padding-right: 48px; }
 /* 两颗图钉 */
 .paper::before, .paper::after { content: ""; position: absolute; top: -7px; width: 16px; height: 16px; border-radius: 50%; background: var(--amber); box-shadow: 0 2px 3px rgb(0 0 0 / .35); z-index: 1; }
 .paper::before { left: 6%; }
