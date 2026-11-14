@@ -30,7 +30,7 @@
 .wcard span i { font-style: normal; color: var(--body); font-size: 13px; margin-right: 6px; }
 /* 两个发音放不下一行就折成两行 */
 .wcard .plays { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.wcard .pron { background: var(--paper); box-shadow: var(--press); font-size: 13.5px; }
+.wcard .pron { background: var(--paper); font-size: 13.5px; }
 /* 学过的词：右上角一个深绿色的点，卡片底色和没学的一样 */
 .wcard.is-known::after { content: ""; position: absolute; right: 16px; top: 18px; width: 10px; height: 10px; border-radius: 50%; background: var(--moss); }
 @media (hover: hover) and (pointer: fine) { .library :is(.levels, .topics) button:not(.is-on):hover, .wcard:hover { background: var(--sage-soft); } }
