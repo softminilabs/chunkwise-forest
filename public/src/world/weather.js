@@ -179,7 +179,8 @@ export function createWeather(scene, renderer, state) {
   scene.fog = new THREE.Fog('#ffffff', 34, 118)
   const air = createAir(scene)
   const heaven = createHeaven(scene)
-  const now = { season: 'autumn', weather: 'clear', night: 0, painted: -1, paintedSeason: '', dark: false }
+  // night 一开始就是这会儿该有的天色：从 0 起步的话，夜里每次打开都要先看两秒「天黑下来」
+  const now = { season: 'autumn', weather: 'clear', night: nightGoal(), painted: -1, paintedSeason: '', dark: false }
   const listeners = []
   // 季节、天气、昼夜换了以后要知道的人（顶上「森林」按钮上的字）
   const watchers = []
