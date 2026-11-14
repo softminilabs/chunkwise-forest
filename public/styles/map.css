@@ -1,0 +1,58 @@
+/* 森林地图：一张俯视的图，装在 #modal 里。地、路、溪、木屋都是淡的或者不带彩的，只有自己种的按种类上色、「你在这儿」是琥珀色，
+   所以一眼先看到的是这两样 */
+.map { --sand: #E6D6B2; --wood: #8B6648; width: min(480px, 100%); max-height: min(94vh, 960px); display: flex; flex-direction: column; overflow: hidden; padding-bottom: 20px; border-radius: 28px; animation: card-in .4s var(--ease); }
+/* 图是竖着的一长条，比卡片高：只有图这一块自己滚，标题和底下那一条不动 */
+.map-scroll { flex: 1; min-height: 0; overflow-y: auto; margin: 0 20px; border-radius: 20px; background: var(--sage-pale); }
+.map-svg { display: block; width: 100%; font: 700 13px var(--font); -webkit-user-select: none; user-select: none; }
+.map-svg text { text-anchor: middle; dominant-baseline: central; }
+
+.map-land > path { fill: none; stroke: var(--sand); stroke-linecap: round; stroke-linejoin: round; }
+.map-land .trail { stroke-width: 14; }
+.map-land .spur { stroke-width: 8; }
+.map-land .stream { stroke: #C2DEE6; stroke-width: 11; }
+.map-land .clearing { fill: var(--sand); }
+.map-land .fire path { fill: #EE8A3C; }
+.map-land .fire path + path { fill: var(--sun); }
+.map-land .house path { fill: var(--wood); stroke: var(--wood); stroke-width: 2; stroke-linejoin: round; }
+.map-land .house text { fill: var(--paper); }
+/* 字压在路上、溪上也要看得清：描一圈地的颜色 */
+.map-land .label { fill: var(--body); font-size: 12px; stroke: var(--sage-pale); stroke-width: 4; stroke-linejoin: round; paint-order: stroke; }
+
+.map-svg .hit { fill: transparent; cursor: pointer; }
+.map-svg .glyph path, .map-svg .glyph circle { stroke: var(--sage-pale); stroke-width: 1.5; stroke-linejoin: round; paint-order: stroke; }
+.map-svg .glyph .trunk { fill: var(--wood); }
+.map-svg .glyph .heart { fill: var(--sun); stroke: none; }
+/* 挑位置时，已经种下的都压淡，亮着的只有空位 */
+.map-marks { transition: opacity .25s ease; }
+.map-marks.is-dim { opacity: .3; }
+.map-marks.is-dim .hit { cursor: default; }
+.map-slots { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+.map-slots.is-open { opacity: 1; pointer-events: auto; }
+.map-slots .ring { fill: var(--paper); stroke: var(--moss); stroke-width: 2.5; transition: fill .2s ease; }
+.map-slots .is-on .ring { fill: var(--moss); }
+.map-focus > g > circle { fill: var(--paper); stroke: var(--moss); stroke-width: 2.5; }
+.map-focus .glyph path, .map-focus .glyph circle { stroke: var(--paper); }
+
+.map-you circle { fill: var(--amber); stroke: var(--paper); stroke-width: 2; }
+.map-you text { fill: var(--ink); font-size: 12px; font-weight: 800; }
+html[lang="en"] .map-you text { font-size: 9px; }
+.map-you .pulse { stroke: none; transform-box: fill-box; transform-origin: center; animation: map-pulse 2.4s ease-out infinite; }
+@keyframes map-pulse { from { opacity: .6; } 70%, to { opacity: 0; scale: 2.6; } }
+
+/* 换内容（选了另一个记号、进了挑位置）都是新的淡进来 */
+.map .grow > *, .map-note > *, .map-actions > *, .map-focus > * { animation: fade-in .3s ease-out; }
+/* 底下那一条的高度是定死的：选没选中都一样高，卡片才不会跟着一跳 */
+.map-foot { flex: none; display: flex; flex-direction: column; gap: 10px; padding: 12px 20px 0; }
+.map-note { min-height: 46px; display: flex; flex-direction: column; justify-content: center; line-height: 1.4; }
+.map-note strong { font-size: 18px; font-weight: 800; }
+.map-note small { margin-left: 10px; font-size: 13px; font-weight: 600; color: var(--body); }
+.map-note span { font-size: 14px; font-weight: 600; color: var(--body); }
+.map-actions { display: flex; gap: 8px; }
+.map-actions .button { flex: 1; }
+
+@media (max-width: 720px) {
+  .map { padding-bottom: 16px; }
+  .map-scroll { margin: 0 16px; }
+  .map-foot { padding: 12px 16px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .map-you .pulse { animation: none; opacity: 0; } }
