@@ -213,6 +213,7 @@ export const EN = {
   '林子里，第 {n} 间木屋附近': 'In the woods near cabin {n}', '第 {n} 间木屋旁': 'Beside cabin {n}',
   '第 {n} 间木屋门口': 'By the door of cabin {n}', '篝火空地边': 'At the edge of the campfire clearing',
   '再种一颗': 'Plant another',
+  '浇水': 'Water it', '{name}长成后种在这儿': ({ name }) => `The ${name.toLowerCase()} goes here once it has grown`,
 
   // 词库页
   '{n} 个词': '{n} words',

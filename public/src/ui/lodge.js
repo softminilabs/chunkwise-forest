@@ -31,7 +31,7 @@ export function createLodge(ctx) {
   add('shelf', { title: t('词库'), badge: t('书'), use: openShelf })
   add('gramophone', { title: t('听单词'), badge: t('听'), use: () => listenHere() })
   // 先走到花盆跟前再动手
-  const pot = add('pot', { title: t('花盆'), badge: t('种'), use: () => player.goTo(...PLACES.pot.spot, 0.35, tend) })
+  const pot = add('pot', { title: t('花盆'), badge: t('种'), use: () => player.goTo(...PLACES.pot.spot, 0.35, usePot) })
   add('door', { title: t('回森林'), badge: t('门'), use: leave })
   hud.append(h('button', { class: 'pill', type: 'button', onclick: () => leave() }, t('← 回森林')), h('div', { class: 'brand sticker' }, h('strong', {}, t('单词屋')), brand), ctx.water.chip())
 
@@ -203,6 +203,16 @@ export function createLodge(ctx) {
       h('header', { class: 'reader-head' }, h('div', { class: 'grow' }), h('button', { class: 'close', type: 'button', 'aria-label': t('关上'), onclick: () => ctx.ui.closeModal() }, '✕')),
       listen.node), () => listen.stop())
     listen.start()
+  }
+
+  /// 点花盆。盆里种着东西、林子里又给它定了位置：问是浇水，还是去林子里看看那个位置。别的时候直接走 tend
+  function usePot() {
+    const { seed, slot } = ctx.garden.store
+    const spot = seed && SPOTS[HABITAT[seed]][slot]
+    if (!spot) return tend()
+    const act = (kind, label, go) => h('button', { class: kind, type: 'button', onclick: () => { ctx.ui.closeDrawer(); go() } }, label)
+    const see = async () => { await ctx.visit(spot); ctx.ui.toast(t('{name}长成后种在这儿', { name: plantName(seed) })) }
+    ctx.ui.openDrawer({ title: plantName(seed), sub: pot.hint, body: [act('button big', t('浇水'), tend), act('button big plain', t('去林子里看看'), see)] })
   }
 
   /// 花盆：空着就选种子；有水就浇，浇够了长成
