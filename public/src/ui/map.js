@@ -1,9 +1,9 @@
 // 森林地图：一张俯视的图，标着自己种的每一样和「你在这儿」。种下一颗种子时给它定位置，也在这张图上
 import { h } from './core.js'
-import { lang, t } from '../i18n.js'
+import { t } from '../i18n.js'
 import { CABINS, CLEARING, LODGE, STREAM, trailX } from '../world/land.js'
 import { HABITAT, SPOTS } from '../world/planted.js'
-import { plantName } from '../world/plants/index.js'
+import { PLANTS, plantName } from '../world/plants/index.js'
 
 const AREA = { west: -23, east: 36, north: -119, south: 55 }
 const COLORS = { pine: '#2F7554', peach: '#F08DB0' }
@@ -83,16 +83,11 @@ function tap(view, event) {
 }
 
 function head(view) {
-  const count = planted(view.ctx).length
   if (view.picking) return [h('h2', {}, t('把{name}种在哪儿', { name: plantName(view.picking.seed) })), h('p', {}, t('亮着的圈是空位，点哪个种哪个。种下就不能挪了。'))]
-  return [h('h2', {}, t('森林地图')), h('p', {}, count ? t('你种下了 {n} 样', { n: count }) : t('在单词屋把种子养大，它就会种到这里'))]
-}
-
-/// 选中的那一样是什么、哪天种的、在哪儿（挑位置时没有这一块）
-function note({ chosen }) {
-  if (!chosen) return [h('span', {}, t('点一下你种的树或花'))]
-  const date = new Date(chosen.at).toLocaleDateString(lang === 'en' ? 'en-GB' : 'zh-CN', { month: 'long', day: 'numeric' })
-  return [h('strong', {}, plantName(chosen.seed), h('small', {}, t('{date}种下', { date }))), h('span', {}, spotOf(chosen).where)]
+  // 每一种各种下了多少
+  const done = planted(view.ctx)
+  const counts = Object.keys(PLANTS).map(seed => [seed, done.filter(mark => mark.item.seed === seed).length]).filter(([, n]) => n)
+  return [h('h2', {}, t('森林地图')), h('p', {}, counts.length ? counts.map(([seed, n]) => t('{name} {n} 棵', { name: plantName(seed), n })).join(' · ') : t('在单词屋把种子养大，它就会种到这里'))]
 }
 
 function action(view) {
@@ -116,11 +111,8 @@ function paint(view) {
   const { ctx, picking, chosen } = view
   const id = item => item && `${ctx.garden.store.done.indexOf(item)}:${item.slot}`
   for (const node of view.slots.children) node.classList.toggle('is-on', Number(node.dataset.slot) === chosen)
-  if (!picking) {
-    swap(view.focus, id(chosen), () => [chosen && s('g', { transform: at(spotOf(chosen)) }, s('circle', { r: 13 }), glyph(chosen.seed))])
-    swap(view.note, id(chosen), () => note(view))
-  }
-  view.actions.firstChild.disabled = chosen == null
+  if (!picking) swap(view.focus, id(chosen), () => [chosen && s('g', { transform: at(spotOf(chosen)) }, s('circle', { r: 13 }), glyph(chosen.seed))])
+  view.foot.firstChild.disabled = chosen == null
 }
 
 /// 刚打开时把整张图画出来。之后会变的只有选中的那个（paint）
@@ -131,9 +123,8 @@ function draw(view) {
   view.marks.replaceChildren(...planted(ctx).map(({ item, spot }) => s('g', { transform: at(spot) }, s('circle', { class: 'hit', r: 14 }), glyph(item.seed))))
   view.you.setAttribute('transform', at(ctx.lodge.inside ? LODGE : ctx.player.position))
   view.head.replaceChildren(...head(view))
-  view.actions.replaceChildren(action(view))
+  view.foot.replaceChildren(action(view))
   view.foot.hidden = !picking && !planted(ctx).length
-  view.note.hidden = Boolean(picking)
   // 挑位置时，已经种下的都压淡，亮着的只有空位
   view.marks.classList.toggle('is-dim', Boolean(picking))
   view.slots.classList.toggle('is-open', Boolean(picking))
@@ -151,9 +142,7 @@ export function openMap(ctx, { pick } = {}) {
   view.you.append(s('circle', { class: 'pulse', r: 10 }), s('circle', { r: 10 }), s('text', {}, t('你')))
   view.svg.addEventListener('click', event => tap(view, event))
   view.head = h('div', { class: 'grow' })
-  view.note = h('div', { class: 'map-note' })
-  view.actions = h('div', { class: 'map-actions' })
-  view.foot = h('footer', { class: 'map-foot' }, view.note, view.actions)
+  view.foot = h('footer', { class: 'map-foot' })
   ctx.ui.openModal(h('section', { class: 'map sticker', 'aria-label': t('森林地图') },
     h('header', { class: 'drawer-head' }, view.head, h('button', { class: 'close', type: 'button', 'aria-label': t('关上'), onclick: () => ctx.ui.closeModal() }, '✕')),
     h('div', { class: 'map-scroll' }, view.svg),

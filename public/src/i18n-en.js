@@ -202,12 +202,10 @@ export const EN = {
 
   // 森林地图、林子里的位置
   '森林地图': 'Forest map',
-  '你种下了 {n} 样': ({ n }) => Number(n) === 1 ? "You've grown 1 plant" : `You've grown ${n} plants`,
   '在单词屋把种子养大，它就会种到这里': 'Grow a seed in the Word Lodge and it will be planted here',
   '把{name}种在哪儿': ({ name }) => `Where should the ${name.toLowerCase()} go?`,
   '亮着的圈是空位，点哪个种哪个。种下就不能挪了。': 'The rings are free spots. Tap one to plant there. Once planted, it stays put.',
-  '点一下你种的树或花': 'Tap a tree or flower you planted',
-  '{date}种下': 'Planted {date}',
+  '{name} {n} 棵': ({ name, n }) => `${name} × ${n}`,
   '去看看': 'Go and see', '就种这儿': 'Plant it here', '你': 'You',
   '小路旁，第 {n} 间木屋附近': 'By the trail near cabin {n}', '单词屋门口': 'By the Word Lodge door',
   '林子里，第 {n} 间木屋附近': 'In the woods near cabin {n}', '第 {n} 间木屋旁': 'Beside cabin {n}',
