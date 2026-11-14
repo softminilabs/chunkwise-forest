@@ -48,6 +48,8 @@
 .prize small { font-size: 13px; font-weight: 600; color: rgb(255 255 255 / .72); }
 .prize .button { min-width: 230px; margin-top: 16px; padding: 16px 28px; background: var(--paper); color: var(--ink); font-size: 20px; animation: fade-in .4s ease 1.05s both; transition: scale .15s var(--ease), opacity .25s ease; }
 .prize .button:disabled { opacity: 0; }
+/* 这颗按钮是纸色底、深色字：通用的悬停会把底换成深绿，深字就看不见了 */
+@media (hover: hover) and (pointer: fine) { .prize .button:not(:disabled):hover { background: var(--sage-pale); } }
 @media (prefers-reduced-motion: reduce) { .prize-rays, .prize-drops .drop { animation: none; } }
 
 /* 学完一轮那条结果里的「得到几滴水」 */
