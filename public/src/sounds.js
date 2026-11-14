@@ -9,9 +9,6 @@ export const SOUNDS = {
   crickets: [t('蟋蟀'), 'summer_crickets.mp3'], frogs: [t('蛙鸣'), 'pond_frogs.mp3'], rain: [t('雨打树叶'), 'rain_forest.mp3'], thunder: [t('雷雨'), 'thunderstorm.mp3'], fire: [t('篝火'), 'campfire.mp3'],
   cicada: [t('蝉鸣'), 'cicada.mp3'], owl: [t('猫头鹰'), 'owl.mp3'], drizzle: [t('小雨'), 'light_rain.mp3'], window: [t('雨打窗'), 'rain_window.mp3'],
 }
-// 这几种不是一直响的：放完一遍歇一阵再放，歇多久在这个范围里随机（秒）。猫头鹰的录音大半是空白，
-// 连着循环就成了隔几秒准时叫一声；蝉鸣的录音结尾是淡出的，首尾接不上
-const NOW_AND_THEN = { owl: [14, 40], cicada: [1, 6] }
 const ON_LEVEL = 0.55
 // 在单词屋里，外面的声音隔着墙只剩这么一点
 const INDOORS = 0.18
@@ -52,7 +49,6 @@ export function createSounds(audio, state) {
     gain.connect(audio.out)
     voices[id] = { gain, level: 0 }
     fetch(`sounds/${SOUNDS[id][1]}`).then(response => response.arrayBuffer()).then(data => context.decodeAudioData(data)).then(buffer => {
-      if (NOW_AND_THEN[id]) return nowAndThen(id, buffer)
       const source = context.createBufferSource()
       source.buffer = buffer
       source.loop = true
@@ -60,22 +56,6 @@ export function createSounds(audio, state) {
       source.start()
     }).catch(() => {})
     return voices[id]
-  }
-
-  /// 放一遍、歇一阵、再放。这会儿用不着它（音量是 0）就先不出声，过两秒再来看
-  function nowAndThen(id, buffer) {
-    const [least, most] = NOW_AND_THEN[id]
-    const rest = () => (least + Math.random() * (most - least)) * 1000
-    const once = () => {
-      if (voices[id].level < 0.01) return setTimeout(once, 2000)
-      const source = audio.context.createBufferSource()
-      source.buffer = buffer
-      source.connect(voices[id].gain)
-      source.onended = () => setTimeout(once, rest())
-      source.start()
-    }
-    // 头一声也等一会儿：不然天一黑猫头鹰就立刻开口，像是按了开关
-    setTimeout(once, rest() / 2)
   }
 
   return {
