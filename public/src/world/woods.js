@@ -10,6 +10,9 @@ const tint = new THREE.Color()
 // 开场镜头里正好挡在灯笼树前面（两棵）、贴在圣诞树背后（三棵）的树，种完以后单独拿掉，那两棵树才各自站得清楚。
 // 不能写成上面那种「这里不种」的条件：少种一棵，后面的随机数就全错开了，整片林子都会挪位
 const CLEARED = [[-5.7, 30.7], [-7.3, 33.8], [9.8, 20.6], [10.9, 20.4], [13.1, 18.8]]
+// 讲堂（hall.js）这块地上的树：前三棵贴着它的北墙和屋角（离墙不到一米二），后两棵从开场的镜头看过去正挡在它前面。
+// 只在画和加碰撞的时候跳过，TREES 里要原样留着：种植位置（planted.js）是照着 TREES 排的，少一棵位置表就变了
+const HALL_SITE = [[-20.3, 0.3], [-21.4, -0.1], [-23.4, -0.5], [-22.8, 9.5], [-20.3, 11.1]]
 
 function treeSpots(random) {
   const spots = []
@@ -80,7 +83,7 @@ function litter(scene, random, look, season) {
 export const TREES = treeSpots(seeded(20261113))
 
 export function createWoods(scene, colliders) {
-  const spots = TREES
+  const spots = TREES.filter(spot => !HALL_SITE.some(([x, z]) => Math.hypot(spot.x - x, spot.z - z) < 0.3))
   const pines = spots.filter(spot => spot.pine)
   const leafy = spots.filter(spot => !spot.pine)
   for (const spot of spots) colliders.push({ x: spot.x, z: spot.z, r: 0.35 * spot.size })

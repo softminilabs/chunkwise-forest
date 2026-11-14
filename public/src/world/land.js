@@ -5,6 +5,9 @@ import { mat, smooth } from '../look.js'
 
 export const CLEARING = { x: 0, z: 5 }
 export const LODGE = { x: 14.5, z: 1 }
+// 讲堂：钟楼脚下的位置，屋身从这儿往西伸。在空地西边、单词屋对面，但比单词屋离篝火远一截：
+// 从开场的镜头看过去，整座屋要落在灯笼树和第 1 间木屋的左边，再靠近就和它们叠在一起了
+export const HALL = { x: -16.9, z: 4.1 }
 export const BOUNDS = { x: 56, north: -122, south: 50 }
 const TRAIL = [[0, 52], [1, 32], [-1, 17], [0, 6], [-3, -5], [3, -19], [-3, -34], [4, -50], [-3, -66], [3, -82], [-2, -98], [0, -116]]
 export const STREAM = [[40, -126], [30, -92], [35, -62], [28, -32], [25, -8], [21, 12], [23, 32], [30, 58]]
@@ -25,6 +28,9 @@ export const CABINS = Array.from({ length: 9 }, (_, k) => {
   return { x: trailX(z) + side * 12.5, z, side }
 })
 const SPURS = [...CABINS.map(cabin => [[trailX(cabin.z), cabin.z], [cabin.x - cabin.side * 3.4, cabin.z]]), [[0, 6], [LODGE.x - 4, LODGE.z + 1.5]]]
+// 从空地通到讲堂台阶前的小路：只用来给地面上色、画地图。不能并进 SPURS：
+// 地势、种树、种植位置都按 SPURS 算，多一条整片林子就挪位了
+export const HALL_WALK = [[0, 6], [HALL.x + 2.3, HALL.z + 0.5]]
 
 export function distanceTo(line, x, z) {
   let best = Infinity
@@ -94,7 +100,7 @@ export function createLand(scene) {
         const x = position.getX(i)
         const z = position.getZ(i)
         color.copy(a).lerp(b, 0.5 + 0.5 * Math.sin(x * 0.4 + Math.cos(z * 0.33) * 2))
-        color.lerp(path, smooth(2.1, 0.9, nearPath(x, z)) * 0.9).lerp(path, smooth(9.5, 5.5, Math.hypot(x - CLEARING.x, z - CLEARING.z)) * 0.55)
+        color.lerp(path, smooth(2.1, 0.9, Math.min(nearPath(x, z), distanceTo(HALL_WALK, x, z))) * 0.9).lerp(path, smooth(9.5, 5.5, Math.hypot(x - CLEARING.x, z - CLEARING.z)) * 0.55)
         colors.setXYZ(i, color.r, color.g, color.b)
       }
       colors.needsUpdate = true

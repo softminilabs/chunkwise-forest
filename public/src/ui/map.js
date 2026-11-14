@@ -1,7 +1,7 @@
 // 森林地图：一张俯视的图，标着自己种的每一样和「你在这儿」。种下一颗种子时给它定位置，也在这张图上
 import { h } from './core.js'
 import { t } from '../i18n.js'
-import { CABINS, CLEARING, LODGE, STREAM, trailX } from '../world/land.js'
+import { CABINS, CLEARING, HALL, HALL_WALK, LODGE, STREAM, trailX } from '../world/land.js'
 import { HABITAT, SPOTS } from '../world/planted.js'
 import { PLANTS, plantName } from '../world/plants/index.js'
 
@@ -36,7 +36,7 @@ const house = (spot, label, zoom = '') => s('g', { class: 'house', transform: at
 function land() {
   const trail = []
   for (let z = 52; z >= -116; z -= 4) trail.push([trailX(z), z])
-  const spurs = [...CABINS.map(cabin => [[trailX(cabin.z), cabin.z], [cabin.x - cabin.side * 3.4, cabin.z]]), [[0, 6], [LODGE.x - 4, LODGE.z + 1.5]]]
+  const spurs = [...CABINS.map(cabin => [[trailX(cabin.z), cabin.z], [cabin.x - cabin.side * 3.4, cabin.z]]), [[0, 6], [LODGE.x - 4, LODGE.z + 1.5]], HALL_WALK]
   return [
     s('path', { class: 'stream', d: curve(STREAM) }),
     s('circle', { class: 'clearing', r: 7 * SCALE, transform: at(CLEARING) }),
@@ -48,6 +48,9 @@ function land() {
     house(LODGE, t('词'), ' scale(1.15)'),
     // 单词屋的字放在上面：门口的花在它下边
     s('text', { class: 'label', transform: at(LODGE), y: -26 }, t('单词屋')),
+    house(HALL, t('讲'), ' scale(1.15)'),
+    // 讲堂贴着地图的西边：字放在下面、和图标左边对齐，英文长出来的那截往右伸，不会出界
+    s('text', { class: 'label', style: 'text-anchor: start', transform: at(HALL), x: -14, y: 24 }, t('讲堂')),
   ]
 }
 

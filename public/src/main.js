@@ -16,6 +16,7 @@ import { openUnit } from './ui/unit.js'
 import { createCabins } from './world/cabins.js'
 import { createCamp } from './world/camp.js'
 import { createChests } from './world/chests.js'
+import { createHall } from './world/hall.js'
 import { createLanternTree } from './world/lanterns.js'
 import { HABITAT, ORDER, createPlanted, standBy } from './world/planted.js'
 import { createXmas } from './world/xmas.js'
@@ -54,13 +55,14 @@ function buildWorld(ctx) {
   const land = createLand(scene)
   const woods = createWoods(scene, colliders)
   const cabins = createCabins(scene, ctx.course, colliders)
+  const hall = createHall(scene, colliders)
   const weather = createWeather(scene, renderer, ctx.state)
   const xmas = createXmas(scene, colliders)
   const lanterns = createLanternTree(scene, colliders)
   const planted = createPlanted(scene, colliders, weather)
-  weather.onSeason((look, season) => { land.paint(look); woods.paint(look, season); cabins.paint(season); xmas.paint(look, season); lanterns.paint(look, season); planted.paint(look, season) })
+  weather.onSeason((look, season) => { land.paint(look); woods.paint(look, season); cabins.paint(season); hall.paint(season); xmas.paint(look, season); lanterns.paint(look, season); planted.paint(look, season) })
   weather.resolve()
-  Object.assign(ctx, { scene, colliders, cabins, weather, xmas, lanterns, planted, camp: createCamp(scene, colliders), player: createPlayer(scene, colliders), fx: createFx(scene) })
+  Object.assign(ctx, { scene, colliders, cabins, hall, weather, xmas, lanterns, planted, camp: createCamp(scene, colliders), player: createPlayer(scene, colliders), fx: createFx(scene) })
 }
 
 function openCamp(ctx) {
@@ -75,7 +77,7 @@ function openCamp(ctx) {
   ctx.ui.openDrawer({ kicker: t('林间空地'), title: t('篝火'), sub: t('学完一课，回来坐一会儿，把今天的卡片过一遍。'), body })
 }
 
-/// 把木屋、单词屋、篝火登记成能用的东西；宝箱在 world/chests.js 里自己登记
+/// 把木屋、单词屋、讲堂、篝火登记成能用的东西；宝箱在 world/chests.js 里自己登记
 function addPlaces(ctx) {
   const spot = cabin => new THREE.Vector3(cabin.x, cabin.y, cabin.z)
   for (const house of ctx.cabins.houses) {
@@ -94,6 +96,8 @@ function addPlaces(ctx) {
   }
   ctx.words.progress.on(paintDoor)
   paintDoor()
+  // 牌子挂在钟楼顶上，钟楼不在屋身正中：能点的范围放大到够得着屋尾
+  ctx.things.add({ kind: 'house', title: t('讲堂'), badge: t('讲'), position: spot(ctx.hall), spot: ctx.hall.doorAt, stop: 1.3, height: ctx.hall.height, radius: 5.6, reach: 6, use: async () => (await import('./ui/hall.js')).openHall(ctx) })
   const camp = ctx.camp.state
   ctx.things.add({ kind: 'spot', title: t('篝火'), hint: t('点火 · 坐下来练一轮'), badge: t('火'), position: new THREE.Vector3(camp.x, camp.y, camp.z), height: 2, radius: 1.8, reach: 4.4, use: () => openCamp(ctx) })
 }
@@ -234,6 +238,7 @@ function frame(ctx, input, wish, dt, time) {
   document.body.classList.toggle('is-stargazing', ctx.rig.sky > 0.4)
   weather.update(dt, time, player.position, camera)
   ctx.cabins.update(weather.now.night, dt, time)
+  ctx.hall.update(weather.now.night)
   ctx.xmas.update(weather.now.night, time)
   ctx.lanterns.update(weather.now.night, time)
   ctx.planted.update(dt)
