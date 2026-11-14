@@ -11,7 +11,7 @@
 .pron:active, .say:active { scale: .95; }
 .pron b { font-size: .8em; }
 /* 正在循环读的那一颗 */
-.pron.is-on { background: var(--ink); color: var(--paper); }
+.pron.is-on { background: var(--moss); color: var(--paper); }
 /* 循环读：跟在两颗发音后面，三档直接摆着 */
 .loop { display: inline-flex; align-items: center; gap: 8px; margin-left: 6px; font-size: 13px; font-weight: 700; color: var(--body); white-space: nowrap; }
 .say { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 50%; background: var(--sage-soft); color: var(--ink); font-size: 14px; transition: scale .15s var(--ease); }
@@ -108,7 +108,7 @@ body[data-seat] .room-hud, body[data-seat] #room-tags, body[data-seat] .room-don
 .plan span { flex: 1; font-size: max(13px, 3cqh); color: var(--body); font-weight: 600; }
 .plan i { font-style: normal; display: inline-flex; align-items: center; gap: 1.2cqh; padding: 1.6cqh 3.4cqh; border-radius: 999px; background: var(--moss); color: var(--paper); font-weight: 700; font-size: max(13px, 3cqh); }
 .plan:disabled { cursor: default; }
-.plan.is-next { background: var(--ink); color: var(--paper); }
+.plan.is-next { background: var(--moss); color: var(--paper); }
 .plan.is-next span { color: rgb(255 255 255 / .72); }
 .plan.is-next i { background: var(--amber); color: var(--ink); }
 .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqh 4cqw; padding-top: 2.6cqh; border-top: 2px solid var(--sage-pale); }

@@ -8,7 +8,7 @@
 .segment { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--sage-pale); }
 .segment button { padding: 7px 14px; border: 0; border-radius: 999px; background: none; color: var(--body); font-weight: 800; font-size: 14px; white-space: nowrap; transition: background-color .15s ease, color .15s ease, scale .15s var(--ease); }
 .segment button:active { scale: .95; }
-.segment button.is-on { background: var(--ink); color: var(--paper); }
+.segment button.is-on { background: var(--moss); color: var(--paper); }
 .segment.small button { padding: 5px 11px; font-size: 12px; }
 
 /* 课文页：上面标题，中间左边课文、右边这一课的卡片，底下播放条 */
@@ -32,7 +32,7 @@
 .pre-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .pre-option { padding: 9px 14px; border: 3px solid transparent; border-radius: 14px; background: var(--paper); font-weight: 700; font-size: 15px; text-align: left; transition: border-color .15s ease, scale .15s var(--ease); }
 .pre-option:active { scale: .97; }
-.pre-option.is-picked { border-color: var(--ink); }
+.pre-option.is-picked { border-color: var(--moss); }
 .intro { margin-bottom: 20px; padding: 0 4px; font-size: 14px; line-height: 1.75; color: var(--body); }
 .article { font: 500 22px/1.9 var(--read); }
 .turn { margin-bottom: 18px; }
@@ -76,7 +76,7 @@
 .item-example { font-style: italic; }
 .item-detail .chip, .reader-bar .chip { display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; }
 .item-detail .chip { align-self: flex-start; }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.chip[aria-pressed="true"] { background: var(--moss); color: var(--paper); }
 /* 只在窄屏出现的按钮（打开 / 收起卡片栏）。写在 .chip 的 display 后面，不然会被它盖掉 */
 .only-narrow, .reader-bar .chip.only-narrow { display: none; }
 @media (hover: hover) and (pointer: fine) { .s:not(.is-now):hover { background: color-mix(in srgb, var(--sage-pale) 55%, transparent); } .item-head:hover strong { color: var(--moss-deep); } .pre-option:not(.is-picked):hover { border-color: var(--sage); } .segment button:not(.is-on):hover { color: var(--ink); } .round:hover { background: var(--sage-soft); } }
@@ -158,7 +158,7 @@
 .tile-card.card-word { background: var(--sage-pale); }
 .tile-card.is-zh { background: var(--cream); border-color: var(--sage-soft); font-size: 15px; font-weight: 700; }
 .tile-card:active { scale: .97; }
-.tile-card.is-picked { border-color: var(--ink); scale: 1.03; }
+.tile-card.is-picked { border-color: var(--moss); scale: 1.03; }
 .tile-card.is-done { opacity: .28; scale: .96; cursor: default; }
 .tile-card.is-wrong, .option.is-wrong { animation: shake .35s ease; }
 @keyframes shake { 20% { translate: -6px 0; } 40% { translate: 6px 0; } 60% { translate: -4px 0; } 80% { translate: 4px 0; } }

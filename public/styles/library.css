@@ -14,7 +14,7 @@
 /* 词数跟在级别后面，窄了放不下就自己折到下一行 */
 .library .levels button { flex: 1; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 0 8px; padding: 12px 6px; border: 0; border-radius: 18px; background: var(--sage-pale); font-size: 22px; font-weight: 800; transition: scale .15s var(--ease), background-color .15s ease; }
 .library .levels small { font-size: 13px; color: var(--body); font-weight: 600; font-variant-numeric: tabular-nums; }
-.library .levels .is-on { background: var(--ink); color: var(--paper); }
+.library .levels .is-on { background: var(--moss); color: var(--paper); }
 .library .levels .is-on small { color: rgb(255 255 255 / .7); }
 .library .topics { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 28px 16px; border-bottom: 2px solid var(--sage-pale); }
 .library .topics button { padding: 7px 14px; border: 0; border-radius: 999px; background: var(--sage-pale); font-weight: 700; font-size: 14px; transition: scale .15s var(--ease), background-color .15s ease; }
