@@ -2,7 +2,7 @@
    读课文和练习要盯很久，所以卡片是暖一点的纸色、字是深灰绿不是纯黑、大卡片外面压得很暗 */
 :root {
   --cream: #F3EFE4; --ink: #26302B; --body: #5B655F; --muted: #96A09A; --paper: #FBF8F1;
-  --moss: #3F6B55; --moss-deep: #2F5644; --sage: #A9C4B4; --sage-soft: #D9E4DA; --sage-pale: #EBF0E8;
+  --moss: #296A4A; --moss-deep: #225942; --sage: #A9C4B4; --sage-soft: #D9E4DA; --sage-pale: #EBF0E8;
   --amber: #E9B949; --amber-deep: #D9A531; --amber-soft: #F6ECCB; --mark: #F2DE9B; --sun: #FFF0B8;
   --shade: 20 32 26; --veil: rgb(14 24 20 / .7); --ink-hover: #37443D;
   --lift: 0 2px 0 rgb(var(--shade) / .08), 0 10px 26px rgb(var(--shade) / .14);
