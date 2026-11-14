@@ -25,6 +25,7 @@ It runs in the browser. There is no account and nothing to install.
 - **90 lessons** in nine units. Each lesson has the text, a recording that highlights the sentence and word being read, three ways to listen (read along, listen blind, shadow), and a set of cards for the chunks worth keeping.
 - **A practice fire.** Light the campfire in the clearing and sit down for a round of matching, listening and gap-filling.
 - **The Word Lodge.** 6,513 words from A2 to C2 with British and American recordings and example sentences. Learn a few new words a day, review them on a spaced schedule, browse the library, or just listen.
+- **The Lecture Hall.** A house with a bell tower west of the campfire clearing holds 66 topics on grammar, word forms and quick-reference tables, each with an explanation and a short quiz.
 - **Water and planting.** A finished word is 1 drop, a finished lesson is 3. Water the seed in the pot at the Word Lodge, and when it is grown, choose where it goes in the forest. The map shows everything you have planted.
 - **A forest that changes.** Seasons follow the calendar and day and night follow the clock, or you can set them yourself. Weather is clear, rain, snow or a meteor shower.
 - **Ambient sound.** Birds, crickets, frogs, wind, rain, the stream and the fire are mixed by season, time of day and weather. Each one can be switched on or off.
@@ -65,6 +66,7 @@ Progress is kept in your browser (`localStorage`). Clearing site data, or openin
 - **90 课课文**，分九个单元。每一课有原文、朗读（读到哪一句、哪个词，哪里就亮）、三种听法（看着听、盲听、跟读），还有这一课值得记住的组块卡片。
 - **篝火练习**。点燃空地中间的篝火，坐下来练一轮：连连看、听一句、填个空。
 - **单词屋**。从 A2 到 C2 共 6513 个词，带英音、美音和例句。每天学几个新词，按间隔复习，也可以翻词库，或者只是听。
+- **讲堂**。篝火空地西边有一座带钟楼的屋子，里面是 66 个语法、词形表和速查表专题，每个都有讲解和小测。
 - **水滴和种树**。学完一个词得 1 滴水，听完一课得 3 滴。在单词屋的花盆里浇种子，长成以后自己挑地方种进森林。森林地图上能看到种下的每一棵。
 - **会变的森林**。季节跟着日历走，昼夜跟着时间走，也可以自己改。天气有晴、雨、雪和流星。
 - **环境声**。鸟、蟋蟀、蛙、风、雨、溪水、篝火，按季节、昼夜和天气自动搭配，每一种都可以单独开关。
