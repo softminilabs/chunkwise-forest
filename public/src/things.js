@@ -66,7 +66,7 @@ export function createThings(root, { onChoose, chrome: chromeSelector = '.hud > 
   function update(camera, player, time, width, height) {
     const near = nearest(player)
     for (const thing of list) {
-      spot.set(thing.position.x, thing.position.y + thing.height + 0.9 + Math.sin(time * 2 + thing.position.x) * 0.1, thing.position.z).project(camera)
+      spot.set(thing.position.x, thing.position.y + thing.height + 0.9, thing.position.z).project(camera)
       const gap = Math.hypot(thing.position.x - player.x, thing.position.z - player.z)
       const x = (spot.x + 1) / 2 * width
       const y = (1 - spot.y) / 2 * height
