@@ -189,6 +189,18 @@ function plantOut(ctx) {
   }
 }
 
+/// 换语言重载回来时画面是暗着的（i18n.js 的 setLang、index.html 开头）：森林画出来了再亮
+function unveil() {
+  if (!sessionStorage.getItem('cw.swap')) return
+  sessionStorage.removeItem('cw.swap')
+  const root = document.documentElement
+  // 等两帧：这一帧森林才真正画到屏幕上
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    root.dataset.swap = 'lifting'
+    setTimeout(() => delete root.dataset.swap, 400)
+  }))
+}
+
 function start(ctx, hud) {
   const screen = document.getElementById('start')
   const button = screen.querySelector('.enter')
@@ -200,7 +212,9 @@ function start(ctx, hud) {
   button.addEventListener('click', enter, { once: true })
   // 还停在「玩法」那一页的话，进森林的按钮是藏着的，焦点给「下一步」
   ;(screen.dataset.page === 'play' ? screen.querySelector('.next') : button).focus()
-  screen.querySelector('.lang').addEventListener('click', () => setLang(lang === 'zh' ? 'en' : 'zh'))
+  // 在开始页上换语言：重载回来还要停在现在这一页（玩法 / 操作）
+  screen.querySelector('.lang').addEventListener('click', () => { sessionStorage.setItem('cw.page', screen.dataset.page); setLang(lang === 'zh' ? 'en' : 'zh') })
+  unveil()
   // 在森林里换语言是整页重载，回来直接进森林。浏览器要等到下一次点按或按键才肯出声
   if (!sessionStorage.getItem('cw.resume')) return
   sessionStorage.removeItem('cw.resume')
@@ -292,5 +306,9 @@ async function boot() {
 
 boot().catch(error => {
   console.error(error)
+  // 出了错也要让人看得见：把暗幕和「在森林里」的记号都去掉，回到开场卡片上说
+  sessionStorage.removeItem('cw.swap')
+  delete document.documentElement.dataset.swap
+  delete document.documentElement.dataset.resume
   document.querySelector('#start button').textContent = t('森林没搭起来，刷新试试')
 })

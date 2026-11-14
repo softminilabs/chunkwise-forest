@@ -39,6 +39,11 @@
 /* —— 进屋、出屋：整个画面暗下去，换好场景再亮起来 —— */
 #fade { position: fixed; inset: 0; z-index: 60; background: #0E1512; opacity: 0; pointer-events: none; transition: opacity .32s ease; }
 #fade.is-on { opacity: 1; pointer-events: auto; }
+/* 换语言要整页重载，用这层暗幕盖过去：先暗下来（falling），重载回来接着暗着（held），森林准备好了再亮（lifting）。
+   这时候它得盖在开场卡片上面 */
+html[data-swap] #fade { z-index: 70; }
+html:is([data-swap="falling"], [data-swap="held"]) #fade { opacity: 1; pointer-events: auto; }
+html[data-resume] #start { display: none; }
 
 /* —— 在屋里 —— */
 /* 屋子外面是一片暗：剖开的木屋像一只亮着的盒子。森林的顶栏、底栏、牌子都收起来 */
