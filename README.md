@@ -4,6 +4,10 @@
 
 **Play it / 在线体验：** https://softminilabs.github.io/chunkwise-forest/
 
+> Best on a computer. It also opens on phones and tablets, but walking around and reading a lesson are less comfortable on a small touch screen.
+>
+> 建议用电脑打开。手机和平板也能打开，但在小屏幕和触屏上，走动和读课文都没那么顺手。
+
 ![The forest by day](docs/forest-day.jpg)
 
 ---
