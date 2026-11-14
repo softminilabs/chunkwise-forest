@@ -1,4 +1,4 @@
-// 森林地图：一张俯视的图，标着自己种的每一样和「你在这儿」。给一棵挑位置、换位置也在这张图上
+// 森林地图：一张俯视的图，标着自己种的每一样和「你在这儿」。种下一颗种子时给它定位置，也在这张图上
 import { h } from './core.js'
 import { lang, t } from '../i18n.js'
 import { CABINS, CLEARING, LODGE, STREAM, trailX } from '../world/land.js'
@@ -60,12 +60,8 @@ function glyph(seed) {
   return s('g', { class: 'glyph' }, ...parts)
 }
 
-/// 这一棵能挪去的空位：[{ spot, slot }]
-function freeSlots(view) {
-  const kind = HABITAT[view.picking.item.seed]
-  const taken = new Set(planted(view.ctx).filter(mark => HABITAT[mark.item.seed] === kind).map(mark => mark.item.slot))
-  return SPOTS[kind].map((spot, slot) => ({ spot, slot })).filter(({ slot }) => !taken.has(slot))
-}
+/// 正要种下的这一颗能去的空位：[{ spot, slot }]，离篝火近的在前
+const freeSlots = view => view.ctx.garden.free(view.picking.seed).map(slot => ({ slot, spot: SPOTS[HABITAT[view.picking.seed]][slot] }))
 
 /// 离点下去的地方最近的那一个，太远就不算
 function nearest(view, event, marks) {
@@ -86,40 +82,27 @@ function tap(view, event) {
   paint(view)
 }
 
-/// 挑好了（slot 有值）或者不换了：回到「看」，这一棵接着选中
-function settle(view, slot) {
-  const { item, onPick } = view.picking
-  if (slot != null) onPick(slot)
-  Object.assign(view, { picking: null, chosen: spotOf(item) ? item : null })
-  draw(view)
-  // 挪过去的那一个在新位置上淡出来，别的不动
-  if (slot != null) view.marks.children[planted(view.ctx).findIndex(mark => mark.item === item)]?.animate({ opacity: [0, 1] }, { duration: 300, easing: 'ease-out' })
-}
-
 function head(view) {
   const count = planted(view.ctx).length
-  if (view.picking) return [h('h2', {}, t('把{name}种在哪儿', { name: plantName(view.picking.item.seed) })), h('p', {}, freeSlots(view).length ? t('亮着的圈是空位，点一个') : t('空位都种满了'))]
+  if (view.picking) return [h('h2', {}, t('把{name}种在哪儿', { name: plantName(view.picking.seed) })), h('p', {}, t('亮着的圈是空位，点哪个种哪个。种下就不能挪了。'))]
   return [h('h2', {}, t('森林地图')), h('p', {}, count ? t('你种下了 {n} 样', { n: count }) : t('在单词屋把种子养大，它就会种到这里'))]
 }
 
 function note(view) {
   const { picking, chosen } = view
-  if (picking) {
-    const now = spotOf(picking.item)
-    return [chosen != null && h('strong', {}, SPOTS[HABITAT[picking.item.seed]][chosen].where), now && h('span', {}, t('现在在{where}', { where: now.where }))]
-  }
+  if (picking) return [h('strong', {}, SPOTS[HABITAT[picking.seed]][chosen].where), chosen === view.offered && h('span', {}, t('离篝火最近的空位'))]
   if (!chosen) return [h('span', {}, t('点一下你种的树或花'))]
   const date = new Date(chosen.at).toLocaleDateString(lang === 'en' ? 'en-GB' : 'zh-CN', { month: 'long', day: 'numeric' })
   return [h('strong', {}, plantName(chosen.seed), h('small', {}, t('{date}种下', { date }))), h('span', {}, spotOf(chosen).where)]
 }
 
-function actions(view) {
-  const { ctx } = view
-  const button = (kind, label, onclick) => h('button', { class: kind, type: 'button', onclick }, label)
-  if (view.picking) return [button('button', t('种到这儿'), () => settle(view, view.chosen)), button('button plain', t('不换了'), () => settle(view))]
-  const move = () => { const item = view.chosen; Object.assign(view, { picking: { item, onPick: slot => ctx.garden.move(item, slot) }, chosen: null }); paint(view) }
-  // 先关再送：visit 自己关不关卡片都一样
-  return [button('button', t('去看看'), () => { const spot = spotOf(view.chosen); ctx.ui.closeModal(); ctx.visit(spot) }), button('button plain', t('换个地方'), move)]
+function action(view) {
+  const { ctx, picking } = view
+  const go = picking
+    ? () => picking.onPick(view.chosen)
+    // 先关再送：visit 自己关不关卡片都一样
+    : () => { const spot = spotOf(view.chosen); ctx.ui.closeModal(); ctx.visit(spot) }
+  return h('button', { class: 'button', type: 'button', onclick: go }, picking ? t('就种这儿') : t('去看看'))
 }
 
 /// 内容变了才换。换上去的会淡入（样式里写的），没变的不该跟着闪一下
@@ -129,39 +112,38 @@ function swap(node, key, make) {
   node.replaceChildren(...make().filter(Boolean))
 }
 
-/// 按现在的状态（看 / 挑位置、选中了哪个）把会变的几块对上
+/// 选中的那个变了：把跟着它变的几块对上
 function paint(view) {
   const { ctx, picking, chosen } = view
-  const mode = picking ? 'pick' : 'look'
-  const focused = picking?.item ?? chosen
   const id = item => item && `${ctx.garden.store.done.indexOf(item)}:${item.slot}`
-  swap(view.head, mode + planted(ctx).length, () => head(view))
-  view.marks.classList.toggle('is-dim', Boolean(picking))
-  // 空位只在进「挑位置」时重摆；出去时整层淡掉，圈先留着
-  if (picking) swap(view.slots, mode + id(picking.item), () => freeSlots(view).map(({ spot, slot }) => s('g', { 'data-slot': slot, transform: at(spot) }, s('circle', { class: 'hit', r: 14 }), s('circle', { class: 'ring', r: 7 }))))
-  view.slots.classList.toggle('is-open', Boolean(picking))
   for (const node of view.slots.children) node.classList.toggle('is-on', Number(node.dataset.slot) === chosen)
-  swap(view.focus, id(focused), () => [focused && spotOf(focused) && s('g', { transform: at(spotOf(focused)) }, s('circle', { r: 13 }), glyph(focused.seed))])
-  swap(view.note, mode + (picking ? chosen : id(chosen)), () => note(view))
-  swap(view.actions, mode, () => actions(view))
+  if (!picking) swap(view.focus, id(chosen), () => [chosen && s('g', { transform: at(spotOf(chosen)) }, s('circle', { r: 13 }), glyph(chosen.seed))])
+  swap(view.note, picking ? chosen : id(chosen), () => note(view))
   view.actions.firstChild.disabled = chosen == null
-  view.actions.lastChild.disabled = chosen == null && !picking
-  view.foot.hidden = !picking && !planted(ctx).length
 }
 
-/// 整张图重画：刚打开、种的东西挪了位置
+/// 刚打开时把整张图画出来。之后会变的只有选中的那个（paint）
 function draw(view) {
-  const { ctx } = view
+  const { ctx, picking } = view
   view.svg.setAttribute('viewBox', `0 0 ${point(AREA.east, AREA.south).join(' ')}`)
   view.land.replaceChildren(...land())
   view.marks.replaceChildren(...planted(ctx).map(({ item, spot }) => s('g', { transform: at(spot) }, s('circle', { class: 'hit', r: 14 }), glyph(item.seed))))
   view.you.setAttribute('transform', at(ctx.lodge.inside ? LODGE : ctx.player.position))
+  view.head.replaceChildren(...head(view))
+  view.actions.replaceChildren(action(view))
+  view.foot.hidden = !picking && !planted(ctx).length
+  // 挑位置时，已经种下的都压淡，亮着的只有空位
+  view.marks.classList.toggle('is-dim', Boolean(picking))
+  view.slots.classList.toggle('is-open', Boolean(picking))
+  if (picking) view.slots.replaceChildren(...freeSlots(view).map(({ spot, slot }) => s('g', { 'data-slot': slot, transform: at(spot) }, s('circle', { class: 'hit', r: 14 }), s('circle', { class: 'ring', r: 7 }))))
   paint(view)
 }
 
-/// 森林地图。不带 pick：看自己种的在哪儿。带 pick：给 pick.item 这一棵挑位置，点了「种到这儿」就调 pick.onPick(slot)，然后回到「看」的样子
+/// 森林地图。不带 pick：看自己种的在哪儿。带 pick：{ seed, onPick }，给正要种下的这一颗定位置——
+/// 空位亮着圈，先替人选好离篝火最近的那个；点了「就种这儿」就调 onPick(slot)，卡片由调用的一方关。这一类得还有空位
 export function openMap(ctx, { pick } = {}) {
   const view = { ctx, picking: pick ?? null, chosen: null }
+  if (pick) view.chosen = view.offered = ctx.garden.free(pick.seed)[0]
   const layer = name => view[name] = s('g', { class: `map-${name}` })
   view.svg = s('svg', { class: 'map-svg' }, layer('land'), layer('marks'), layer('you'), layer('slots'), layer('focus'))
   view.you.append(s('circle', { class: 'pulse', r: 10 }), s('circle', { r: 10 }), s('text', {}, t('你')))
@@ -175,7 +157,8 @@ export function openMap(ctx, { pick } = {}) {
     h('div', { class: 'map-scroll' }, view.svg),
     view.foot))
   draw(view)
-  // 一打开先滚到自己站的地方。不用 scrollIntoView：它会连卡片一起滚
+  // 一打开先滚到要看的地方：挑位置时是替人选好的那个圈，平时是自己站的地方。不用 scrollIntoView：它会连卡片一起滚
   const scroll = view.svg.parentNode
-  scroll.scrollTop = view.you.getBoundingClientRect().top - scroll.getBoundingClientRect().top - scroll.clientHeight / 2
+  const target = view.slots.querySelector('.is-on') ?? view.you
+  scroll.scrollTop = target.getBoundingClientRect().top - scroll.getBoundingClientRect().top - scroll.clientHeight / 2
 }

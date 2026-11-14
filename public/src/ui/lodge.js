@@ -231,7 +231,7 @@ export function createLodge(ctx) {
     else ctx.ui.toast(t('浇了 {n} 滴，{name}还差 {m} 滴长成', { n: poured, name: plantName(seed), m: garden.need - garden.store.poured }))
   }
 
-  /// 长成了：墙上挂一张，林子里已经给它占了一个位置（item.slot）。可以去看它种下去、换个地方、接着种下一颗
+  /// 长成了：墙上挂一张，林子里已经给它占了一个位置（item.slot）。可以去看它种下去、接着种下一颗
   function celebrate(item) {
     const plant = PLANTS[item.seed]
     // 这一类的位置种满了的话没有 spot：只挂在墙上

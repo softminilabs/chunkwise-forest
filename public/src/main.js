@@ -17,7 +17,7 @@ import { createCabins } from './world/cabins.js'
 import { createCamp } from './world/camp.js'
 import { createChests } from './world/chests.js'
 import { createLanternTree } from './world/lanterns.js'
-import { HABITAT, SPOTS, createPlanted, standBy } from './world/planted.js'
+import { HABITAT, ORDER, createPlanted, standBy } from './world/planted.js'
 import { createXmas } from './world/xmas.js'
 import { ICONS, christmas, daysUntil, openCountdown, springFestival } from './ui/countdown.js'
 import { createLodge } from './ui/lodge.js'
@@ -244,7 +244,7 @@ async function boot() {
   const audio = createAudio(state)
   const rig = createRig(camera)
   const ctx = { course, cards, apps, state, audio, rig, camera, renderer, ui: createUI(audio), sounds: createSounds(audio, state) }
-  ctx.garden = createGarden(PLANTS, HABITAT, { tree: SPOTS.tree.length, flower: SPOTS.flower.length })
+  ctx.garden = createGarden(PLANTS, HABITAT, ORDER)
   ctx.water = createWater(ctx)
   // lessons：课文里收过的词卡（按小写的词头找）。单词屋里同一个词要带上那句课文
   ctx.words = { progress: createWordProgress(() => ctx.water.gain(WORD_DROPS)), voice: createVoice(), lessons: new Map(Object.values(cards).filter(card => card.kind === 'word').map(card => [card.text.toLowerCase(), card])) }

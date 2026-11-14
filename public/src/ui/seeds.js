@@ -6,6 +6,7 @@ import { LESSON_DROPS, WORD_DROPS } from '../garden.js'
 import { PLANNED, PLANTS, plantName } from '../world/plants/index.js'
 import { dropsFor } from '../world/plants/stages.js'
 import { portrait } from '../world/portrait.js'
+import { openMap } from './map.js'
 
 const STAGES = [t('种子'), t('芽'), t('小苗'), t('小树'), t('长成')]
 // 还没做模型的种子拍不了照：让拍照的那只花盆种一个什么都不长的，拍下来就是一只空花盆
@@ -29,7 +30,9 @@ const preview = plant => ready(plant)
 export function openSeeds(ctx, sown) {
   const plants = [...Object.values(PLANTS), ...PLANNED]
   let chosen = plants[0]
-  const sow = () => { ctx.garden.sow(chosen.id); ctx.audio.pop(); ctx.ui.closeModal(); sown?.() }
+  const plant = slot => { ctx.garden.sow(chosen.id, slot); ctx.audio.pop(); ctx.ui.closeModal(); sown?.() }
+  // 林子里这一类还有空位：先在地图上给它定个地方。种满了就直接种，长成后只挂在墙上
+  const sow = () => ctx.garden.free(chosen.id).length ? openMap(ctx, { pick: { seed: chosen.id, onPick: plant } }) : plant(null)
   const grow = h('div', { class: 'seed-grow' }, preview(chosen))
   const go = h('button', { class: 'button big', type: 'button', onclick: sow }, t('种这一颗'))
   // 鼠标点完把焦点放掉：留着的话之后一按键盘，浏览器就给这一格描上键盘用的焦点圈。键盘回车选的（detail 是 0）不放

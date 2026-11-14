@@ -66,7 +66,7 @@ function lodgeGate(where) {
   return [-1, 1].map(side => ({ x: to[0] - dx * 1.5 - side * dz * 2.8, z: to[1] - dz * 1.5 + side * dx * 2.8, where }))
 }
 
-// 空地边上：从正北顺时针量的角度，按先种哪个排。只有北边和东边这半圈：西半圈从开场的镜头看过去正好在灯笼树背后，
+// 空地边上：从正北顺时针量的角度。只有北边和东边这半圈：西半圈从开场的镜头看过去正好在灯笼树背后，
 // 种了就把那几只灯笼搅乱了；小路南北两头、通单词屋的岔路、那只宝箱的位置也空着
 const RING = [38, 320, 156, 8]
 
@@ -79,7 +79,8 @@ function flowerSpots() {
   return [...lodgeGate(t('单词屋门口')), ...doors[0], ...ring, ...doors.slice(1).flat()].map(spot => ({ ...spot, turn: random.next() * 6.28 }))
 }
 
-/// 每一类东西在林子里的位置表，按「先种哪儿」排好。每个位置：{ x, z, turn, where }
+/// 每一类东西在林子里的位置表。每个位置：{ x, z, turn, where }。
+/// 进度里记的是位置在表里排第几：表只能往后加，不能重排
 export const SPOTS = { flower: flowerSpots() }
 SPOTS.tree = treeSpots(SPOTS.flower)
 
@@ -118,8 +119,7 @@ function roomy(x, z, taken) {
   return !taken.some(other => Math.hypot(other.x - x, other.z - z) < 3.6) && !TREES.some(tree => Math.hypot(tree.x - x, tree.z - z) < 1.5 * tree.size + 1.2)
 }
 
-/// 林子里的空地：随手撒点，能种的留下。挨着木屋的归花（每间屋旁最多 4 个，从第 1 间排起），
-/// 其余归树（离小路近的一圈先种，一圈里从南往北）。
+/// 林子里的空地：随手撒点，能种的留下。挨着木屋的归花（每间屋旁最多 4 个），其余归树。
 /// 只在空地以北找：往南是开场镜头看得到的那一片，多出东西会搅乱那个画面
 function deepSpots() {
   const random = seeded(71)
@@ -141,6 +141,12 @@ function deepSpots() {
   }
 }
 for (const [kind, spots] of Object.entries(deepSpots())) SPOTS[kind].push(...spots)
+
+/// 不挑位置的时候先给哪个：每一类的位置（它在表里排第几）按离篝火从近到远排
+export const ORDER = Object.fromEntries(Object.entries(SPOTS).map(([kind, spots]) => {
+  const far = slot => Math.hypot(spots[slot].x - CLEARING.x, spots[slot].z - CLEARING.z)
+  return [kind, spots.map((_, slot) => slot).sort((p, q) => far(p) - far(q))]
+}))
 
 function geometryOf(position, color) {
   const geometry = new THREE.BufferGeometry()
